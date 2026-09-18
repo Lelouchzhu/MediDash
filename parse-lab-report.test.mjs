@@ -217,6 +217,18 @@ test("recovers hospital LIS OCR that dropped decimals or split labels", () => {
   const portalHost = parseLabReportText("dtsyy.imedicalai.com 报告时间: 2026-09-17 10:52:01 ALT 891.0");
   assert.equal(portalHost.fields.ca, undefined);
   assert.equal(portalHost.fields.alt, 891);
+
+  const laterPco2 = parseLabReportText("PCO2 4ao0 mmHg 35-45 体温纠正的PCO2 PCO2(T) 43.00 mmHg 32-46");
+  assert.equal(laterPco2.fields.pco2, 43);
+
+  const fio2Ocr = parseLabReportText("吸 氧 浓度 Fo2() 500 % 氧分压 PO2 92.00");
+  assert.equal(fio2Ocr.fields.fio2, 50);
+  assert.equal(fio2Ocr.fields.pf, 184);
+
+  const chemOcr = parseLabReportText("尿素 测定 UREA 1780 mmol/L 肌 栈 测定 SCR 3630 umoL 乳酸 脱氧 LDH 9150 UL 备注 9");
+  assert.equal(chemOcr.fields.urea, 17.8);
+  assert.equal(chemOcr.fields.creatinine, 363);
+  assert.equal(chemOcr.fields.lactate, undefined);
 });
 
 test("parses English postop hour labels", () => {
