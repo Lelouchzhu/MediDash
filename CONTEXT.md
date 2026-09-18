@@ -65,8 +65,10 @@ Trend: rise then fall; still far above ref 0–0.05.
 
 ### Support / vitals (family-reported)
 
-- **CRRT** ongoing; overnight urine **70 mL** (was 950 → 300 → 70)
-- Vasopressors **slightly reduced**; last visit-style BP mentioned historically 140/50, HR ~100 (confirm live doses)
+- **Latest bedside (~postop 73h):** BP **120/35** (MAP≈63), HR **109**, RR **15–19**
+- **CRRT:** dehydrate/replacement ~**250 mL/h**, hemofiltration **120 mL/h**; IV fluids ~**200 mL/h** (approx net −50 mL/h — verify at bedside)
+- Urine: overnight had been 70 mL; **since this morning only 20 mL**
+- Vasopressors still required (previously “slightly reduced”); confirm drug names/doses
 
 ### Arterial blood gas — 2026-09-18 06:36 (postop 64h36m)
 
@@ -141,4 +143,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-18 — added categorized all-metric trends + testset screenshot backup policy.
+**Last updated:** 2026-09-18 — bedside vitals/CRRT fluid rates (~postop 73h).
