@@ -177,4 +177,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-18 evening labs + testset reproducibility audit (fixed lac 7.55; backfilled incomplete lab fields).
+**Last updated:** 2026-09-18 21:46 ABG — lac 1.41, P/F 262 (FiO₂ 50%).
