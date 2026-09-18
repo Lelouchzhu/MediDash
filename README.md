@@ -17,7 +17,7 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 ## Cloud Agent
 
 - Config: [`.cursor/environment.json`](.cursor/environment.json) starts a dashboard server on port **8080**.
-- Handoff: [`AGENTS.md`](AGENTS.md) · full clinical context: [`CONTEXT.md`](CONTEXT.md)
+- Handoff: [`AGENTS.md`](AGENTS.md) · clinical context: [`CONTEXT.md`](CONTEXT.md) · transcript summary: [`docs/transcripts/`](docs/transcripts/)
 - Start Cloud Agents on **this** repository and ask them to read those files first.
 
 ## Preview
