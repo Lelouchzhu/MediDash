@@ -65,8 +65,17 @@ Trend: rise then fall; still far above ref 0–0.05.
 
 ### Support / vitals (family-reported)
 
-- **CRRT** ongoing; overnight urine **70 mL** (was 950 → 300 → 70)
-- Vasopressors **slightly reduced**; last visit-style BP mentioned historically 140/50, HR ~100 (confirm live doses)
+- **Latest bedside (~postop 73h):** BP **120/35** (MAP≈63), HR **109**, RR **15–19**
+- **CRRT:** dehydrate/replacement ~**250 mL/h**, hemofiltration **120 mL/h**; IV fluids ~**200 mL/h** (approx net −50 mL/h — verify at bedside)
+- Urine: overnight had been 70 mL; **since this morning only 20 mL**
+- Vasopressors: **still two agents**, each about **½ of the maximum allowed dose** (family estimate); confirm drug names and exact rates
+
+### Arterial blood gas — latest 2026-09-18 13:00 (postop 71h00m)
+
+- pH 7.388, PCO₂ 37.5, PO₂ **72.6↓**, HCO₃⁻ 22.1, BE −2.9
+- Lactate **1.27** (now in ref 0.5–1.6), FiO₂ **50%**, P/F **145↓** (worse than morning 169)
+- Hb 9.1 g/dL, Hct 27%, iCa 1.12
+- Screenshot archived: `testset/reports/abg/20260918T130029__7B968B2C-1BF2-4D59-B4C8-F03D5EDF7DFB_L0_001.jpg` (1079×1157, clear — no higher-res needed)
 
 ### Arterial blood gas — 2026-09-18 06:36 (postop 64h36m)
 
@@ -109,17 +118,22 @@ Trend: rise then fall; still far above ref 0–0.05.
 |------|--------|
 | ABG trend points | `baseReadings` (`h`, `ph`, `lactate`, `pf`, `hb`, `ca`, …) |
 | Labs (Cr, INR, APTT, PCT, CBC…) | `labReadings` |
+| Metric catalog + categories | `metricConfig` + `metricGroups` (分类汇总 sparklines + 详细趋势) |
 | Status cards / insights / timeline / expandable reports | HTML sections near top/middle |
 | Doctor checklist | `doctorQuestions` |
 | Latest non-ABG clock for hero pill | `latestNonBloodGasReport` |
+| Report screenshot archive | `testset/reports/` + `testset/manifest.json` |
 
 Update flow when new reports arrive:
 
-1. Read report clock → compute `h` from surgery end.
-2. Append/update readings.
-3. Refresh status cards, insights, reports, timeline, checklist copy.
-4. Commit message should name the key values (PCT, Cr, APTT, etc.).
-5. Push **MediDash**.
+1. **Backup the screenshot** into `testset/reports/<category>/` (or `inbox/`) and register in `manifest.json`.
+2. Read report clock → compute `h` from surgery end.
+3. Append/update `baseReadings` / `labReadings`; ensure new fields exist in `metricConfig` + `metricGroups`.
+4. Refresh status cards, insights, reports, timeline, checklist copy.
+5. Commit message should name the key values (PCT, Cr, APTT, etc.).
+6. Push **MediDash**.
+
+**Naming traps:** 降钙素原 PCT ≠ 血小板比积 PCT ≠ 氧合指数 P/F.
 
 ---
 
@@ -132,8 +146,8 @@ Update flow when new reports arrive:
 
 ## What is *not* automatically available to new agents
 
-- Full Cursor chat bubbles / screenshots from prior runs are **not** injected unless copied into this repo.
-- To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` → `CONTEXT.md` → `docs/transcripts/...summary.md`.
+- Full Cursor chat bubbles / screenshots from prior runs are **not** injected unless copied into this repo (`testset/` for reports; `docs/transcripts/` for summaries).
+- To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` → `CONTEXT.md` → `testset/README.md` → `docs/transcripts/`.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-18 (postop ~67h) by prior MediDash sync from Allmond-bound agent run.
+**Last updated:** 2026-09-18 13:00 ABG — lac 1.27, P/F 145.

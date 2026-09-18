@@ -293,6 +293,78 @@
       color: var(--green);
     }
 
+    .chip.group-chip {
+      border-radius: 10px;
+      background: #f3f6f4;
+    }
+
+    .chip.group-chip[aria-pressed="true"] {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #fff;
+    }
+
+    .category-overview {
+      display: grid;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .cat-block {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .cat-block h3 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      letter-spacing: .02em;
+    }
+
+    .spark-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    @media (min-width: 720px) {
+      .spark-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
+    .spark-card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px;
+      background: #fff;
+      text-align: left;
+      cursor: pointer;
+      width: 100%;
+      font: inherit;
+      color: inherit;
+    }
+
+    .spark-card:hover, .spark-card:focus-visible {
+      border-color: var(--green);
+      outline: none;
+    }
+
+    .spark-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .spark-name { font-size: 11px; color: var(--muted); font-weight: 700; }
+    .spark-value { font-size: 15px; font-weight: 800; }
+    .spark-unit { font-size: 10px; color: var(--muted); font-weight: 600; margin-left: 2px; }
+    .spark-meta { font-size: 10px; color: var(--muted); margin-bottom: 6px; }
+    .spark-card svg { width: 100%; height: 36px; display: block; }
+
     .range-row {
       display: inline-grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1057,7 +1129,7 @@
       <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
-        <span class="pill" id="latestTimePill">最新化验：术后67h44m</span>
+        <span class="pill" id="latestTimePill">最新：术后71h00m</span>
         <span class="pill">数据已去标识化</span>
       </div>
     </header>
@@ -1083,32 +1155,32 @@
             <span class="status-name">循环</span>
             <span class="level">仍依赖升压</span>
           </div>
-          <div class="status-value">140/50</div>
-          <div class="status-note">升压药已稍减<br>精确剂量仍需床旁确认</div>
+          <div class="status-value">120/35</div>
+          <div class="status-note">MAP≈63 · HR 109 · RR 15–19<br>双药约最大允许量½</div>
         </div>
-        <button class="status-card orange" type="button" data-metric-jump="lactate">
+        <button class="status-card green" type="button" data-metric-jump="lactate">
           <div class="status-top">
             <span class="status-name">组织灌注</span>
-            <span class="level">继续改善</span>
+            <span class="level">接近正常</span>
           </div>
-          <div class="status-value"><span id="latestLactate">1.97</span><span class="status-unit">mmol/L</span></div>
-          <div class="status-note">2.57→1.97 · 仍略高于正常</div>
+          <div class="status-value"><span id="latestLactate">1.27</span><span class="status-unit">mmol/L</span></div>
+          <div class="status-note">1.97→1.27 · 已入参考范围</div>
         </button>
         <button class="status-card red" type="button" data-metric-jump="pf">
           <div class="status-top">
             <span class="status-name">氧合</span>
             <span class="level">仍低</span>
           </div>
-          <div class="status-value"><span id="latestPf">169</span><span class="status-unit">P/F</span></div>
-          <div class="status-note">FiO₂ 仍50% · 较176略降</div>
+          <div class="status-value"><span id="latestPf">145</span><span class="status-unit">P/F</span></div>
+          <div class="status-note">FiO₂ 仍50% · 169→145下降</div>
         </button>
         <button class="status-card green" type="button" data-metric-jump="hco3">
           <div class="status-top">
             <span class="status-name">酸碱</span>
             <span class="level">接近正常</span>
           </div>
-          <div class="status-value"><span id="latestPh">7.392</span><span class="status-unit">pH</span></div>
-          <div class="status-note">HCO₃⁻ 22.4 · 酸碱基本稳定</div>
+          <div class="status-value"><span id="latestPh">7.388</span><span class="status-unit">pH</span></div>
+          <div class="status-note">HCO₃⁻ 22.1 · BE −2.9</div>
         </button>
         <div class="status-card red">
           <div class="status-top">
@@ -1124,7 +1196,7 @@
             <span class="level">透析中</span>
           </div>
           <div class="status-value">212<span class="status-unit">μmol/L</span></div>
-          <div class="status-note">363→212（CRRT下）<br>尿素11.59 · 过夜尿量70mL</div>
+          <div class="status-note">脱水250 · 血滤120 mL/h<br>输液≈200 · 今晨起尿20mL</div>
         </div>
         <div class="status-card red">
           <div class="status-top">
@@ -1148,20 +1220,31 @@
             <span class="level">仍低</span>
           </div>
           <div class="status-value"><span id="latestHb">9.1</span><span class="status-unit">g/dL</span></div>
-          <div class="status-note">Hct 27% · iCa 1.12</div>
+          <div class="status-note">Hct 27% · iCa 1.12（同前）</div>
         </button>
       </div>
+    </section>
+
+    <section class="section" id="overviewTrends" aria-labelledby="overviewTrendsHeading">
+      <div class="section-head">
+        <div>
+          <h2 id="overviewTrendsHeading">分类汇总</h2>
+          <p>全部已录入指标按系统分类；点选任一卡片打开下方详细趋势</p>
+        </div>
+      </div>
+      <div class="category-overview" id="categoryOverview"></div>
     </section>
 
     <section class="section" id="trendSection" aria-labelledby="trendHeading">
       <div class="section-head">
         <div>
-          <h2 id="trendHeading">连续趋势</h2>
-          <p>触摸数据点查看时间、数值和样本类型</p>
+          <h2 id="trendHeading">详细趋势</h2>
+          <p>先选分类，再选指标；触摸数据点查看时间与样本</p>
         </div>
       </div>
       <div class="panel chart-panel">
         <div class="controls">
+          <div class="chip-row" id="groupControls" aria-label="选择指标分类"></div>
           <div class="chip-row" id="metricControls" aria-label="选择趋势指标"></div>
           <div class="range-row" aria-label="选择时间范围">
             <button class="range-btn" type="button" data-range="all" aria-pressed="true">全部</button>
@@ -1187,16 +1270,16 @@
         </div>
         <div class="insights">
           <div class="insight">
-            <strong>乳酸继续下降</strong>
-            <p>峰值8.99→2.57→最新1.97；接近正常，灌注改善与升压药稍减方向一致。</p>
+            <strong>乳酸已入正常</strong>
+            <p>峰值8.99→1.97→最新1.27（参考0.5–1.6）；但尿仍极少，不能单凭乳酸判断脱离危险。</p>
           </div>
           <div class="insight">
-            <strong>PCT先升后降，仍极高</strong>
-            <p>降钙素原146.4→170.3（9月17日10:52）→101.6。今晨FiO₂仍50%，氧合指数169，与PCT不是同一项。</p>
+            <strong>氧合继续恶化</strong>
+            <p>FiO₂仍50%，P/F 169→145，PO₂72.6；乳酸虽正常，呼吸支持需求仍高。</p>
           </div>
           <div class="insight">
             <strong>CRRT中肾指标下降，凝血好转</strong>
-            <p>肌酐363→212、尿素11.59，过夜尿量仅70mL；APTT危急72.4→50.8，INR1.24。</p>
+            <p>CRRT脱水250、血滤120、输液约200 mL/h；今晨起尿仅20mL。血压120/35、HR109。</p>
           </div>
         </div>
       </div>
@@ -1236,14 +1319,19 @@
           <span class="vital-note">MAP≈80<br>单次探视读数</span>
         </div>
         <div class="vital-row">
-          <span class="vital-time">过夜尿量趋势</span>
-          <span class="vital-value">950 → 300 → 70 mL</span>
-          <span class="vital-note">持续少尿<br>已上CRRT</span>
+          <span class="vital-time">最新口述 · 约术后73h</span>
+          <span class="vital-value">120/35 · HR 109</span>
+          <span class="vital-note">MAP≈63 · RR 15–19<br>双升压药 · 各约半量</span>
         </div>
         <div class="vital-row">
-          <span class="vital-time">当前支持</span>
-          <span class="vital-value">CRRT进行中</span>
-          <span class="vital-note">升压药已稍减<br>剂量待精确确认</span>
+          <span class="vital-time">尿量趋势</span>
+          <span class="vital-value">950 → 300 → 70 → 今晨起20 mL</span>
+          <span class="vital-note">持续极少尿<br>CRRT中</span>
+        </div>
+        <div class="vital-row">
+          <span class="vital-time">CRRT / 液体</span>
+          <span class="vital-value">脱水 250 mL/h</span>
+          <span class="vital-note">血滤120 · 输液≈200 mL/h<br>粗算净负约50 mL/h</span>
         </div>
       </div>
     </section>
@@ -1268,7 +1356,7 @@
             <ul>
               <li>降钙素原：9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> ng/mL（参考0–0.05）。先升后降，目前仍极高。</li>
               <li>IL-6 981 pg/mL（术后约45小时）仍提示极强炎症反应。</li>
-              <li>乳酸峰值8.99 → 最新1.97，灌注改善；升压药已稍减。</li>
+              <li>乳酸峰值8.99 → 最新1.27（已入参考范围）；最新口述血压120/35、HR109、呼吸15–19；双升压药约各半量。</li>
               <li>血常规“PCT”是血小板比积0.08%，与降钙素原不是同一指标。</li>
             </ul>
           </div>
@@ -1277,15 +1365,16 @@
           <summary>
             <div>
               <div class="report-title">肾脏与尿检</div>
-              <div class="report-meta">术后至约67小时 · 肌酐 / CRRT / 尿量</div>
+              <div class="report-meta">至约术后73小时 · 肌酐 / CRRT / 尿量</div>
             </div>
             <span class="report-badge orange">CRRT中</span>
           </summary>
           <div class="report-body">
             <ul>
               <li>肌酐121.8→263→363→最新212 μmol/L；尿素峰值17.80→最新11.59 mmol/L（CRRT下下降）。</li>
-              <li>过夜尿量950→300→最新70mL，持续少尿；已在CRRT。</li>
-              <li>最新电解质：K 4.35、Na 137.91、Cl 97.56 mmol/L，大致稳定。</li>
+              <li>尿量950→300→70→今晨起累计仅20mL；CRRT进行中。</li>
+              <li>CRRT（家属口述）：脱水/置换约250 mL/h，血液滤过120 mL/h；静脉输液约200 mL/h（粗算净负约50 mL/h，待床旁核对）。</li>
+              <li>最新电解质（化验）：K 4.35、Na 137.91、Cl 97.56 mmol/L。</li>
               <li>此前尿潜血3+、蛋白2+；CK显著升高需继续结合肌红蛋白评估。</li>
             </ul>
           </div>
@@ -1503,6 +1592,16 @@
           <div class="event-title">APTT降至50.8；PCT从峰值170降至102</div>
           <div class="event-desc">INR1.24、PT13.8。降钙素原170.297→101.563，仍极高。血小板65。</div>
         </article>
+        <article class="event" style="--event-color: var(--blue)">
+          <div class="event-time">约术后73小时 · 家属口述</div>
+          <div class="event-title">血压120/35、HR109；双升压药约半量</div>
+          <div class="event-desc">RR15–19；两种升压药剂量大约各为最大允许量一半。CRRT脱水250、血滤120、输液约200；今晨起尿20mL。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后71小时00分 · 9月18日13:00</div>
+          <div class="event-title">乳酸1.27正常，但P/F降至145</div>
+          <div class="event-desc">FiO₂50%、PO₂72.6；pH7.388、HCO₃⁻22.1、BE−2.9；Hb9.1、iCa1.12。氧合较今晨169进一步下降。</div>
+        </article>
       </div>
     </section>
 
@@ -1707,7 +1806,8 @@
       { h: 49.95, label: "术后49h57m", sample: "动脉", ph: 7.403, pco2: 32.7, po2: 90.6, hco3: 19.9, be: -4.8, lactate: 2.27, fio2: 50, pf: 181, hb: 8.8, ca: .98 },
       { h: 56.78, label: "术后56h47m", sample: "动脉", ph: 7.369, pco2: 43.0, po2: 92.0, hco3: 24.2, be: -1.1, lactate: 2.86, fio2: 50, pf: 184, hb: 9.9, ca: 1.05 },
       { h: 61.73, label: "术后61h44m", sample: "动脉", ph: 7.367, pco2: 40.1, po2: 87.9, hco3: 22.5, be: -2.8, lactate: 2.57, fio2: 50, pf: 176, hb: 8.4, ca: 1.06 },
-      { h: 64.6, label: "术后64h36m", sample: "动脉", ph: 7.392, pco2: 37.6, po2: 84.4, hco3: 22.4, be: -2.6, lactate: 1.97, fio2: 50, pf: 169, hb: 9.1, ca: 1.12 }
+      { h: 64.6, label: "术后64h36m", sample: "动脉", ph: 7.392, pco2: 37.6, po2: 84.4, hco3: 22.4, be: -2.6, lactate: 1.97, fio2: 50, pf: 169, hb: 9.1, ca: 1.12 },
+      { h: 71.01, label: "术后71h00m", sample: "动脉", ph: 7.388, pco2: 37.5, po2: 72.6, hco3: 22.1, be: -2.9, lactate: 1.27, fio2: 50, pf: 145, hb: 9.1, ca: 1.12 }
     ];
 
     const labReadings = [
@@ -1720,8 +1820,8 @@
       { h: 44.87, label: "术后44h52m", sample: "生化", creatinine: 363, urea: 17.80, ck: 8280, ckmb: 132.6, ldh: 915, hbdh: 576, alt: 891, ast: 806, il6: 981, pct: 170.297, k: 4.31, na: 141.27, cl: 98.33 },
       { h: 57.13, label: "术后57h08m", sample: "凝血", aptt: 76.1, critical: true },
       { h: 62.07, label: "术后62h04m", sample: "凝血", aptt: 72.4, critical: true },
-      { h: 43.78, label: "术后43h47m", sample: "血常规", wbc: 11.52, plt: 73 },
-      { h: 66.58, label: "术后66h35m", sample: "血常规", wbc: 14.51, plt: 65 },
+      { h: 43.78, label: "术后43h47m", sample: "血常规", wbc: 11.52, plt: 73, hbg: 85 },
+      { h: 66.58, label: "术后66h35m", sample: "血常规", wbc: 14.51, plt: 65, hbg: 85 },
       { h: 66.97, label: "术后66h58m", sample: "生化", creatinine: 212, urea: 11.59, k: 4.35, na: 137.91, cl: 97.56, pct: 101.563 },
       { h: 67.73, label: "术后67h44m", sample: "凝血", aptt: 50.8, inr: 1.24, pt: 13.8 }
     ];
@@ -1731,18 +1831,42 @@
       ph: { label: "pH", unit: "", minRef: 7.35, maxRef: 7.45, color: "#3978a8", decimals: 3, better: "range" },
       hco3: { label: "HCO₃⁻", unit: "mmol/L", minRef: 22, maxRef: 26, color: "#167a5b", decimals: 1, better: "range" },
       be: { label: "碱剩余 BE", unit: "mmol/L", minRef: -3, maxRef: 3, color: "#7257a3", decimals: 1, better: "range" },
+      pco2: { label: "PCO₂", unit: "mmHg", minRef: 35, maxRef: 45, color: "#3978a8", decimals: 1, better: "range" },
+      po2: { label: "PO₂", unit: "mmHg", minRef: 80, maxRef: 100, color: "#167a5b", decimals: 1, better: "up", arterialOnly: true },
       pf: { label: "氧合指数 P/F", unit: "mmHg", minRef: 400, maxRef: 500, color: "#3978a8", decimals: 0, better: "up", arterialOnly: true },
-      hb: { label: "血红蛋白 Hb", unit: "g/dL", minRef: 12, maxRef: 17.5, color: "#c76a16", decimals: 1, better: "range" },
+      fio2: { label: "FiO₂", unit: "%", minRef: 21, maxRef: 40, color: "#7257a3", decimals: 0, better: "down", arterialOnly: true },
+      hb: { label: "Hb(血气)", unit: "g/dL", minRef: 12, maxRef: 17.5, color: "#c76a16", decimals: 1, better: "range" },
       ca: { label: "离子钙 iCa", unit: "mmol/L", minRef: 1.15, maxRef: 1.29, color: "#7257a3", decimals: 2, better: "range" },
-      creatinine: { label: "肌酐", unit: "μmol/L", minRef: 41, maxRef: 81, color: "#bd3b3b", decimals: 0, better: "down", source: "lab" },
-      inr: { label: "INR", unit: "", minRef: .94, maxRef: 1.2, color: "#c76a16", decimals: 2, better: "range", source: "lab" },
-      ck: { label: "肌酸激酶 CK", unit: "U/L", minRef: 33, maxRef: 192, color: "#7257a3", decimals: 0, better: "down", source: "lab" },
-      aptt: { label: "APTT", unit: "秒", minRef: 21, maxRef: 45, color: "#bd3b3b", decimals: 1, better: "range", source: "lab" },
       pct: { label: "降钙素原", unit: "ng/mL", minRef: 0, maxRef: 0.05, color: "#bd3b3b", decimals: 1, better: "down", source: "lab" },
+      il6: { label: "IL-6", unit: "pg/mL", minRef: 0, maxRef: 7, color: "#bd3b3b", decimals: 0, better: "down", source: "lab" },
       wbc: { label: "白细胞", unit: "10⁹/L", minRef: 3.5, maxRef: 9.5, color: "#c76a16", decimals: 2, better: "range", source: "lab" },
-      plt: { label: "血小板", unit: "10⁹/L", minRef: 125, maxRef: 350, color: "#7257a3", decimals: 0, better: "range", source: "lab" }
+      creatinine: { label: "肌酐", unit: "μmol/L", minRef: 41, maxRef: 81, color: "#bd3b3b", decimals: 0, better: "down", source: "lab" },
+      urea: { label: "尿素", unit: "mmol/L", minRef: 3.1, maxRef: 8.8, color: "#c76a16", decimals: 2, better: "down", source: "lab" },
+      inr: { label: "INR", unit: "", minRef: .94, maxRef: 1.2, color: "#c76a16", decimals: 2, better: "range", source: "lab" },
+      aptt: { label: "APTT", unit: "sec", minRef: 21, maxRef: 45, color: "#bd3b3b", decimals: 1, better: "range", source: "lab" },
+      plt: { label: "血小板", unit: "10⁹/L", minRef: 125, maxRef: 350, color: "#7257a3", decimals: 0, better: "range", source: "lab" },
+      hbg: { label: "Hb(血常规)", unit: "g/L", minRef: 115, maxRef: 150, color: "#c76a16", decimals: 0, better: "range", source: "lab" },
+      alt: { label: "ALT", unit: "U/L", minRef: 0, maxRef: 40, color: "#bd3b3b", decimals: 0, better: "down", source: "lab" },
+      ast: { label: "AST", unit: "U/L", minRef: 0, maxRef: 40, color: "#c76a16", decimals: 0, better: "down", source: "lab" },
+      ck: { label: "CK", unit: "U/L", minRef: 33, maxRef: 192, color: "#7257a3", decimals: 0, better: "down", source: "lab" },
+      ckmb: { label: "CK-MB", unit: "U/L", minRef: 0, maxRef: 24, color: "#3978a8", decimals: 1, better: "down", source: "lab" },
+      ldh: { label: "LDH", unit: "U/L", minRef: 109, maxRef: 245, color: "#167a5b", decimals: 0, better: "down", source: "lab" },
+      k: { label: "钾 K", unit: "mmol/L", minRef: 3.5, maxRef: 5.3, color: "#7257a3", decimals: 2, better: "range", source: "lab" },
+      na: { label: "钠 Na", unit: "mmol/L", minRef: 137, maxRef: 147, color: "#3978a8", decimals: 2, better: "range", source: "lab" },
+      cl: { label: "氯 Cl", unit: "mmol/L", minRef: 96, maxRef: 108, color: "#167a5b", decimals: 2, better: "range", source: "lab" }
     };
 
+    const metricGroups = [
+      { id: "perfusion", label: "灌注/酸碱", metrics: ["lactate", "ph", "hco3", "be", "pco2"] },
+      { id: "oxygen", label: "氧合", metrics: ["pf", "po2", "fio2"] },
+      { id: "infection", label: "感染/炎症", metrics: ["pct", "il6", "wbc"] },
+      { id: "renal", label: "肾脏", metrics: ["creatinine", "urea"] },
+      { id: "coag", label: "凝血/血细胞", metrics: ["inr", "aptt", "plt", "hb", "hbg"] },
+      { id: "organ", label: "肝/肌酶", metrics: ["alt", "ast", "ck", "ckmb", "ldh"] },
+      { id: "electrolyte", label: "电解质", metrics: ["ca", "k", "na", "cl"] }
+    ];
+
+    let selectedGroup = "perfusion";
     let selectedMetric = "lactate";
     let selectedRange = "all";
     const customKey = "perioperative-dashboard-custom-v1";
@@ -1757,19 +1881,19 @@
       aptt: "APTT", inr: "INR", creatinine: "肌酐", urea: "尿素",
       ck: "CK", alt: "ALT", ast: "AST", il6: "IL-6", pct: "降钙素原"
     };
-    const latestNonBloodGasReport = { h: 67.73, label: "术后67h44m", type: "凝血" };
+    const latestNonBloodGasReport = { h: 73.0, label: "术后约73h · 床旁口述", type: "生命体征/CRRT" };
     const doctorQuestions = [
       {
         id: "hemodynamics",
         group: "urgent",
-        title: "升压药已稍减，现在的MAP和两种药剂量分别是多少？",
-        detail: "请确认具体减量幅度、连续血压趋势，以及CRRT时的MAP目标。"
+        title: "双升压药大约各为最大允许量一半，能否继续减量？",
+        detail: "血压120/35、HR109、MAP约63。请确认药名、精确μg/kg/min或mg/h，以及CRRT期间MAP目标。"
       },
       {
         id: "lactate",
         group: "urgent",
-        title: "乳酸已降至1.97，灌注是否可以认为基本改善？",
-        detail: "结合升压药稍减、尿量仍仅70mL/夜，哪些休克问题仍未解决？"
+        title: "乳酸已正常（1.27）但尿极少，灌注是否足够？",
+        detail: "今晨起尿仅20mL，血压120/35、HR109、双升压药约半量。哪些休克问题仍未解决？"
       },
       {
         id: "source-control",
@@ -1786,20 +1910,20 @@
       {
         id: "oxygenation",
         group: "urgent",
-        title: "FiO₂仍为50%、P/F约169，呼吸支持下一步是什么？",
-        detail: "氧合未见明显改善；目前通气模式和拔管评估标准是什么？"
+        title: "P/F从169再降至145，呼吸支持是否需要升级？",
+        detail: "FiO₂仍50%，PO₂72.6。目前通气模式、PEEP和升级标准是什么？"
       },
       {
         id: "next-window",
         group: "urgent",
         title: "未来6–12小时最重要的观察目标是什么？",
-        detail: "降钙素原146→170（9月17日10:52）→102，仍极高；同时看CRRT净平衡、尿量和升压药。"
+        detail: "PCT仍高；CRRT脱水250/血滤120/输液约200 mL/h，今晨起尿20mL——净平衡是否按计划？"
       },
       {
         id: "kidney",
         group: "followup",
-        title: "CRRT已开始，目前净脱水量和停止标准是什么？",
-        detail: "肌酐363→212、尿素11.59，过夜尿量仅70mL；请说明净液体平衡与抗凝方案。"
+        title: "CRRT脱水250、血滤120、输液约200 mL/h，净平衡是否合适？",
+        detail: "今晨起尿仅20mL。请核对实际净超滤、抗凝方案及停止/减量标准。"
       },
       {
         id: "coagulation",
@@ -1892,10 +2016,88 @@
       return Number(value).toFixed(decimals);
     }
 
+    function metricSource(metric) {
+      return metricConfig[metric].source === "lab" ? labReadings : allReadings();
+    }
+
+    function latestPoint(metric) {
+      const pts = filteredReadings(metric);
+      return pts.length ? pts[pts.length - 1] : null;
+    }
+
+    function sparklinePath(metric) {
+      const data = filteredReadings(metric);
+      if (data.length < 2) return "";
+      const vals = data.map(d => d[metric]);
+      let min = Math.min(...vals);
+      let max = Math.max(...vals);
+      if (min === max) { min -= 1; max += 1; }
+      const w = 120, h = 36, pad = 2;
+      return data.map((d, i) => {
+        const x = pad + (i / (data.length - 1)) * (w - pad * 2);
+        const y = h - pad - ((d[metric] - min) / (max - min)) * (h - pad * 2);
+        return `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`;
+      }).join(" ");
+    }
+
+    function renderCategoryOverview() {
+      const root = document.getElementById("categoryOverview");
+      if (!root) return;
+      root.innerHTML = metricGroups.map(group => {
+        const cards = group.metrics.map(key => {
+          const cfg = metricConfig[key];
+          const latest = latestPoint(key);
+          const path = sparklinePath(key);
+          const value = latest ? formatValue(latest[key], cfg.decimals) : "—";
+          const when = latest ? latest.label : "暂无数据";
+          const n = filteredReadings(key).length;
+          return `<button type="button" class="spark-card" data-jump-group="${group.id}" data-jump-metric="${key}">
+            <div class="spark-top"><span class="spark-name">${cfg.label}</span><span class="spark-value">${value}<span class="spark-unit">${cfg.unit}</span></span></div>
+            <div class="spark-meta">${when} · ${n}点</div>
+            <svg viewBox="0 0 120 36" aria-hidden="true">${path ? `<path d="${path}" fill="none" stroke="${cfg.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>` : ""}</svg>
+          </button>`;
+        }).join("");
+        return `<article class="cat-block"><h3>${group.label}</h3><div class="spark-grid">${cards}</div></article>`;
+      }).join("");
+      root.querySelectorAll("[data-jump-metric]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          selectedGroup = btn.dataset.jumpGroup;
+          selectedMetric = btn.dataset.jumpMetric;
+          renderGroupControls();
+          renderMetricControls();
+          renderChart();
+          document.getElementById("trendSection")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+    }
+
+    function renderGroupControls() {
+      const container = document.getElementById("groupControls");
+      if (!container) return;
+      container.innerHTML = "";
+      metricGroups.forEach(group => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "chip group-chip";
+        button.textContent = group.label;
+        button.setAttribute("aria-pressed", String(group.id === selectedGroup));
+        button.addEventListener("click", () => {
+          selectedGroup = group.id;
+          if (!group.metrics.includes(selectedMetric)) selectedMetric = group.metrics[0];
+          renderGroupControls();
+          renderMetricControls();
+          renderChart();
+        });
+        container.appendChild(button);
+      });
+    }
+
     function renderMetricControls() {
       const container = document.getElementById("metricControls");
       container.innerHTML = "";
-      Object.entries(metricConfig).forEach(([key, cfg]) => {
+      const group = metricGroups.find(g => g.id === selectedGroup) || metricGroups[0];
+      group.metrics.forEach(key => {
+        const cfg = metricConfig[key];
         const button = document.createElement("button");
         button.type = "button";
         button.className = "chip";
@@ -2216,7 +2418,9 @@
     }
 
     function renderAll() {
+      renderGroupControls();
       renderMetricControls();
+      renderCategoryOverview();
       renderChart();
       renderRawTable();
       updateLatest();
@@ -2229,6 +2433,7 @@
         document.querySelectorAll(".range-btn").forEach(item =>
           item.setAttribute("aria-pressed", String(item === button))
         );
+        renderCategoryOverview();
         renderChart();
       });
     });
@@ -2236,9 +2441,17 @@
     document.querySelectorAll("[data-metric-jump]").forEach(button => {
       button.addEventListener("click", () => {
         selectedMetric = button.dataset.metricJump;
+        const group = metricGroups.find(g => g.metrics.includes(selectedMetric));
+        if (group) selectedGroup = group.id;
+        selectedRange = "all";
+        document.querySelectorAll(".range-btn").forEach(btn => {
+          btn.setAttribute("aria-pressed", String(btn.dataset.range === "all"));
+        });
+        renderGroupControls();
         renderMetricControls();
+        renderCategoryOverview();
         renderChart();
-        document.getElementById("trendSection").scrollIntoView({ behavior: "smooth" });
+        document.getElementById("trendSection").scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
 
