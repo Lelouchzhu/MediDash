@@ -35,6 +35,7 @@ Priority flags:
 - Acid-base near normal: pH **7.367**, HCO₃⁻ 22.5, BE −2.8
 - Hb **8.4** g/dL, Hct 25%, iCa 1.06
 - Older open issues: Cr 363 / CRRT, IL-6 981, ALT/AST high, pressors (last visit BP 140/50, HR 100)
+- First PCT: **术后19h44m = 2026-09-16 09:44**, value **146.421** ng/mL; no PCT repeat yet
 
 ## How to update when new reports arrive
 
