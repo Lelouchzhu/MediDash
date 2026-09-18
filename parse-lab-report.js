@@ -25,7 +25,7 @@
     hb: [3, 25],
     ca: [0.5, 1.8],
     aptt: [10, 300],
-    inr: [0.5, 12],
+    inr: [0.5, 8],
     creatinine: [20, 2500],
     urea: [1, 80],
     ck: [10, 30000],
@@ -46,6 +46,7 @@
       .replace(/[Ｏ]/g, "O")
       .replace(/[０]/g, "0")
       .replace(/[，]/g, ",")
+      .replace(/(\d{2,4}):(\d{3})\b/g, "$1.$2")
       .replace(/\r/g, "\n");
   }
 
@@ -111,10 +112,15 @@
   function scanNumbersFrom(text, match, span) {
     const start = match.index + match[0].length;
     let slice = text.slice(start, start + (span || 80));
-    const nextAnalyte = slice.search(/(?:酸碱度|二氧化碳分压|氧分压|标准剩余碱|血浆碳酸|乳酸浓度|吸入氧|氧合指数|总血红蛋白|钙离子|谷丙|谷草|肌酐|尿素|\b(?:PCO2|PO2|SBE|cLac|FiO2|ctHb|APTT|ALT|AST|Crea|Urea|IL-?6)\b)/i);
-    if (nextAnalyte >= 3) slice = slice.slice(0, nextAnalyte);
+    const analyteRe = /(?:酸碱度|二氧化碳分压|氧分压|标准剩余碱|血浆碳酸|乳酸浓度|吸入氧|氧合指数|总血红蛋白|钙离子|谷丙|谷草|肌酐|尿素|\b(?:PCO2|PO2|SBE|cLac|FiO2|ctHb|APTT|ALT|AST|Crea|Urea|IL-?6)\b)/ig;
+    const analytes = [...slice.matchAll(analyteRe)];
+    if (analytes.length) {
+      const first = analytes[0];
+      if (first.index < 8 && analytes[1]) slice = slice.slice(0, analytes[1].index);
+      else if (first.index >= 3) slice = slice.slice(0, first.index);
+    }
     slice = slice.replace(/-?\d+(?:[.,]\d+)?\s*[-~～至]\s*-?\d+(?:[.,]\d+)?/g, " ");
-    return [...slice.matchAll(/-?\d+(?:[.,]\d+)?/g)]
+    return [...slice.matchAll(/(?<![A-Za-z])-?\d+(?:[.,]\d+)?(?![A-Za-z])/g)]
       .map(item => Number(String(item[0]).replace(",", ".")))
       .filter(Number.isFinite);
   }
@@ -194,8 +200,10 @@
     }
 
     const reportClock = text.match(/(?:报告时间|检验时间|采样时间)?\s*[:=]?\s*(20\d{2})[-/.](\d{1,2})[-/.](\d{1,2})\s+(\d{1,2}):(\d{2})(?::\d{2})?/);
-    if (reportClock) {
-      const iso = `${reportClock[1]}-${String(reportClock[2]).padStart(2, "0")}-${String(reportClock[3]).padStart(2, "0")}T${String(reportClock[4]).padStart(2, "0")}:${reportClock[5]}:00`;
+    const compactClock = !reportClock && text.match(/(20\d{2})[-/.](\d{1,2})[-/.](\d{1,2})\s+(\d{2})(\d{2})(\d{2})\b/);
+    const clock = reportClock || compactClock;
+    if (clock) {
+      const iso = `${clock[1]}-${String(clock[2]).padStart(2, "0")}-${String(clock[3]).padStart(2, "0")}T${String(clock[4]).padStart(2, "0")}:${clock[5]}:00`;
       const hours = (Date.parse(iso) - SURGERY_END_MS) / 3600000;
       if (Number.isFinite(hours)) {
         const value = Number(hours.toFixed(2));
@@ -216,12 +224,12 @@
     const raw = normalizeReportText(text);
     const fields = {};
 
-    assign(fields, "ph", recoverPh(takeNumber(raw.match(/(?:酸碱度|[^\w]|^)pH\b[\s.|:：]*?(7[.,]\d{2,3}|7\d{3})/i))));
-    assign(fields, "pco2", takeNumber(raw.match(/(?:二氧化碳分压|p\s*C[O0]2|PC[O0]2)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
+    assign(fields, "ph", recoverPh(takeNumber(raw.match(/(?:酸碱度|[^\w]|^)pH\b[\s.|:：]*?(7[.,]\d{2,3}|7\d{3})(?!\s*[-~])/i))));
+    assign(fields, "pco2", recoverDroppedDot(takeNumber(raw.match(/(?:二氧化碳分压|p\s*C[O0]2|PC[O0]2)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 80));
     assign(fields, "po2", recoverDroppedDot(takeNumber(raw.match(/(?:氧分压|(?<![CF/cf])p\s*[O0]2)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 200));
     assign(fields, "hco3", takeNumber(raw.match(/(?:血浆碳酸氢盐(?:浓度)?(?:\s*c?HC[O0]-?3(?:\s*\(\s*P\s*\))?)?|碳酸氢根|c?HC[O0]3-?(?:\s*\(\s*P\s*\))?)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
     assign(fields, "be", recoverBe(takeNumber(raw.match(/(?:碱剩余|碱缺失|BEecf|SBE|\bBE\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i))));
-    assign(fields, "lactate", takeNumber(raw.match(/(?:乳酸(?!\s*脱)|乳酸浓度|cLac|Lac(?:tate)?|\bLAC\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
+    assign(fields, "lactate", recoverDroppedDot(takeNumber(raw.match(/(?:乳酸(?!\s*脱)|乳酸浓度|cLac|Lac(?:tate)?|\bLAC\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 10));
 
     let fio2 = takeNumber(raw.match(/(?:吸\s*入?\s*氧\s*浓度(?:\s*FO2\s*\(\s*I?\s*\))?|FiO2|FIO2|FO2\s*\(\s*I?\s*\))\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i));
     if (fio2 != null && fio2 > 0 && fio2 <= 1) fio2 = Math.round(fio2 * 100);
@@ -247,15 +255,15 @@
     assign(fields, "ck", recoverDroppedDot(takeNumber(raw.match(/(?:肌酸激酶|\bCK\b(?!\s*-?\s*MB))\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 20000));
     assign(fields, "alt", recoverDroppedDot(takeNumber(raw.match(/(?:谷丙转氨酶|\bALT\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 2000));
     assign(fields, "ast", recoverDroppedDot(takeNumber(raw.match(/(?:谷草转氨酶|\bAST\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 2000));
-    assign(fields, "il6", recoverDroppedDot(takeNumber(raw.match(/(?:白细胞介素-?6|IL\s*-?\s*6)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 5000));
+    assign(fields, "il6", recoverDroppedDot(takeNumber(raw.match(/(?:白细胞介素-?6|IL?\s*[=-]?\s*6)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 5000));
 
     assignScanned(fields, "ph", raw, /酸碱度|pH\b/i, recoverPh);
-    assignScanned(fields, "pco2", raw, /二氧化碳分压|p\s*C[O0]2|PC[O0]2/i);
+    assignScanned(fields, "pco2", raw, /二氧化碳分压|p\s*C[O0]2|PC[O0]2/i, value => recoverDroppedDot(value, 80));
     assignScanned(fields, "po2", raw, /氧分压|(?<![CF/cf])p\s*[O0]2/i, value => recoverDroppedDot(value, 200));
     assignScanned(fields, "hco3", raw, /血浆碳酸|碳酸氢|cHC[O0]-?3/i);
     assignScanned(fields, "pf", raw, /氧合指数|pO2\s*\(\s*a\s*\)\s*\/\s*F?O2/i);
     assignScanned(fields, "be", raw, /标准剩余碱|碱剩余|SBE|\bBE\b/i, recoverBe);
-    assignScanned(fields, "lactate", raw, /乳酸(?!\s*脱)|乳酸浓度|cLac|\bLAC\b/i);
+    assignScanned(fields, "lactate", raw, /乳酸(?!\s*脱)|乳酸浓度|cLac|\bLAC\b/i, value => recoverDroppedDot(value, 10));
     assignScanned(fields, "fio2", raw, /吸\s*入?\s*氧\s*浓度|FO2\s*\(\s*I?\s*\)|FiO2/i, value => {
       if (value > 0 && value <= 1) return Math.round(value * 100);
       return recoverDroppedDot(value, 100);
@@ -266,7 +274,7 @@
     assignScanned(fields, "ck", raw, /\bCK\b(?!\s*-?\s*MB)/i, value => recoverDroppedDot(value, 20000));
     assignScanned(fields, "alt", raw, /\bALT\b/i, value => recoverDroppedDot(value, 2000));
     assignScanned(fields, "ast", raw, /\bAST\b/i, value => recoverDroppedDot(value, 2000));
-    assignScanned(fields, "il6", raw, /IL\s*-?\s*6/i, value => recoverDroppedDot(value, 5000));
+    assignScanned(fields, "il6", raw, /IL?\s*[=-]?\s*6/i, value => recoverDroppedDot(value, 5000));
     assignScanned(fields, "creatinine", raw, /肌酐|\bSCR\b|Crea(?!tine)|\bCREA\b/i, value => recoverDroppedDot(value, 2000));
     assignScanned(fields, "urea", raw, /尿素|\bUrea\b/i, value => recoverDroppedDot(value, 80));
 

@@ -267,6 +267,18 @@ test("parses CBC without treating plateletcrit as procalcitonin", () => {
   assert.equal(parsed.fields.pct, undefined);
 });
 
+test("recovers compact report clocks and colon decimals from testset OCR", () => {
+  const compact = parseLabReportText("ABE: 2026-09-18 130020 PH 7.35-745 PCO2 3750 clac 127");
+  assert.equal(compact.hours, 71);
+  assert.equal(compact.fields.pco2, 37.5);
+  assert.equal(compact.fields.lactate, 1.27);
+  assert.equal(compact.fields.ph, undefined);
+
+  const pctColon = parseLabReportText("报告时间: 2026-09-17 10:52:01 降钙素原测定 PCT 170:297 ng/ml I=6 981.000");
+  assert.equal(pctColon.fields.pct, 170.297);
+  assert.equal(pctColon.fields.il6, 981);
+});
+
 test("parses English postop hour labels", () => {
   const parsed = parseLabReportText("ART postop 66h10m\npH 7.371\nLac 2.31");
   assert.equal(parsed.hours, 66.17);
