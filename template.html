@@ -2694,6 +2694,8 @@
     let selectedGroup = "perfusion";
     let selectedMetric = "lactate";
     let selectedRange = "all";
+    let lastAcceptedParse = null;
+    let acceptWaiter = Promise.resolve(null);
     const keyPrefix = TEMPLATE_MODE ? "medidash-template" : "perioperative-dashboard";
     const customKey = `${keyPrefix}-custom-v1`;
     const customLabKey = `${keyPrefix}-custom-lab-v1`;
@@ -3187,20 +3189,31 @@
       const latestLab = allLabReadings().at(-1);
       const latestBedside = allBedsideReadings().at(-1);
       const pill = document.getElementById("latestTimePill");
-      if (!latest && !latestLab && !latestBedside) {
-        if (pill) pill.textContent = TEMPLATE_MODE ? "最新：尚无数据" : pill.textContent;
-        return;
-      }
-      const candidates = [latest, latestLab, latestBedside].filter(Boolean);
-      const newest = candidates.sort((a, b) => a.h - b.h).at(-1);
-      if (pill && newest) {
-        const kind = newest === latestBedside ? "口述" : newest === latestLab ? "化验" : "";
-        pill.textContent = `最新${kind}：${newest.label || relativeLabel(newest.h)}`;
-      }
       const setText = (id, value) => {
         const el = document.getElementById(id);
         if (el && value != null) el.textContent = value;
       };
+      if (TEMPLATE_MODE) {
+        if (!latest && !latestLab && !latestBedside) {
+          if (pill) pill.textContent = "最新：尚无数据";
+          return;
+        }
+        const candidates = [latest, latestLab, latestBedside].filter(Boolean);
+        const newest = candidates.sort((a, b) => a.h - b.h).at(-1);
+        if (pill && newest) {
+          const kind = newest === latestBedside ? "口述" : newest === latestLab ? "化验" : "";
+          pill.textContent = `最新${kind}：${newest.label || relativeLabel(newest.h)}`;
+        }
+      } else {
+        if (!latest && !latestLab) return;
+        const latestLabH = latestLab?.h ?? latestNonBloodGasReport.h;
+        const latestLabLabel = latestLab?.label ?? latestNonBloodGasReport.label;
+        if (latest && latest.h > latestLabH) {
+          if (pill) pill.textContent = `最新：${latest.label || relativeLabel(latest.h)}`;
+        } else if (pill) {
+          pill.textContent = `最新化验：${latestLabLabel}`;
+        }
+      }
       if (latest?.lactate != null) setText("latestLactate", Number(latest.lactate).toFixed(2));
       if (latest?.pf != null) setText("latestPf", String(Math.round(latest.pf)));
       if (latest?.ph != null) setText("latestPh", Number(latest.ph).toFixed(3));
@@ -3782,8 +3795,6 @@
     }
 
     window.MediDashAcceptFile = acceptScreenshotFile;
-    let lastAcceptedParse = null;
-    let acceptWaiter = Promise.resolve(null);
     async function acceptScreenshotFile(file) {
       const reason = parser.fileRejectionReason ? parser.fileRejectionReason(file) : null;
       if (reason) {
