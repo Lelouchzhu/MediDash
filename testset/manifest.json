@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 61,
+  "count": 63,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -336,7 +336,11 @@
       "source_filename": "4A7C4512-AA5C-4961-82D4-D65874D5AC1D_L0_001.jpg",
       "sha256_16": "16c783fa43f5ecf2",
       "bytes": 557185,
-      "labeled": false
+      "labeled": true,
+      "report_time": "2026-09-17T09:24:57",
+      "type": "凝血",
+      "note": "APTT50.8 INR1.43 PT15.8 — see also coag/ promoted copy",
+      "relative_h": 43.42
     },
     {
       "id": "53990787-d010-4458-9778-05a49f764ae8.jpg",
@@ -345,7 +349,11 @@
       "source_filename": "53990787-d010-4458-9778-05a49f764ae8.jpg",
       "sha256_16": "23e5b18725c5704d",
       "bytes": 808861,
-      "labeled": false
+      "labeled": true,
+      "report_time": "2026-09-16T17:06:08",
+      "type": "血气",
+      "note": "lac6.55 PF170 — see also abg/ promoted copy",
+      "relative_h": 27.1
     },
     {
       "id": "6062F6D7-05F5-4E2C-B3F2-74BF48294A1E_L0_001.jpg",
@@ -664,6 +672,54 @@
       "extracted": {
         "aptt": 64.0
       }
+    },
+    {
+      "id": "20260917T092457__4A7C4512-AA5C-4961-82D4-D65874D5AC1D_L0_001.jpg",
+      "path": "reports/coag/20260917T092457__4A7C4512-AA5C-4961-82D4-D65874D5AC1D_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "4A7C4512-AA5C-4961-82D4-D65874D5AC1D_L0_001.jpg",
+      "sha256_16": "16c783fa43f5ecf2",
+      "bytes": 557185,
+      "labeled": true,
+      "report_time": "2026-09-17T09:24:57",
+      "type": "凝血",
+      "note": "APTT50.8 INR1.43 PT15.8 (promoted from other/)",
+      "relative_h": 43.42,
+      "extracted": {
+        "aptt": 50.8,
+        "inr": 1.43,
+        "pt": 15.8,
+        "tt": 12.4,
+        "fbg": 4.38
+      },
+      "promoted_from": "reports/other/4A7C4512-AA5C-4961-82D4-D65874D5AC1D_L0_001.jpg"
+    },
+    {
+      "id": "20260916T170608__53990787-d010-4458-9778-05a49f764ae8.jpg",
+      "path": "reports/abg/20260916T170608__53990787-d010-4458-9778-05a49f764ae8.jpg",
+      "category": "abg",
+      "source_filename": "53990787-d010-4458-9778-05a49f764ae8.jpg",
+      "sha256_16": "23e5b18725c5704d",
+      "bytes": 808861,
+      "labeled": true,
+      "report_time": "2026-09-16T17:06:08",
+      "type": "血气",
+      "note": "lac6.55 PF170 Hb13.2 (promoted from other/)",
+      "relative_h": 27.1,
+      "extracted": {
+        "ph": 7.458,
+        "pco2": 25.6,
+        "po2": 84.8,
+        "be": -6.1,
+        "hco3": 17.7,
+        "lactate": 6.55,
+        "hb": 13.2,
+        "hct": 39.0,
+        "ca": 0.92,
+        "fio2": 50,
+        "pf": 170
+      },
+      "promoted_from": "reports/other/53990787-d010-4458-9778-05a49f764ae8.jpg"
     }
   ]
 }

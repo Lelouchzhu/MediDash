@@ -103,3 +103,7 @@ Convention: dashboard `be` usually follows **ABE** when both SBE and ABE are pri
 - `reports/other/` still holds **44 unlabeled** historical uploads; many are ABG/lab duplicates of labeled clocks or imaging.
 - Recommend gradually promoting matched `other/` files into `abg|chemistry|coag|cbc|imaging/` with `labeled: true` and `extracted` blocks (same policy as recent evening reports).
 - Local `tesseract` chi_sim OCR hung on this host; audit used vision re-read, not OCR.
+
+## Follow-up from batch D (2026-09-18)
+
+Promoted into labeled folders: coag `4A7C4512` (09:24 INR1.43 panel) and abg `53990787` (17:06 lac6.55). Dashboard already had these values (INR+APTT/PT backfilled in `0995b42`).
