@@ -70,18 +70,31 @@ Trend: rise then fall; still far above ref 0–0.05.
 - Urine: overnight had been 70 mL; **since this morning only 20 mL**
 - Vasopressors: **still two agents**, each about **½ of the maximum allowed dose** (family estimate); confirm drug names and exact rates
 
-### Arterial blood gas — latest 2026-09-18 13:00 (postop 71h00m)
+### Arterial blood gas — latest 2026-09-18 17:23 (postop 75h23m)
+
+- pH 7.363, PCO₂ 40.3, PO₂ **82.4**, HCO₃⁻ 22.4, BE −2.8 (SBE)
+- **Lactate not printed on this report** (last known lac **1.27** at 13:00)
+- FiO₂ **50%**, P/F **165** (improved vs 13:00’s 145; still far below 400)
+- Hb **8.8↓** g/dL, Hct **26%↓**; tCO₂ 23.6↓; A-a gradient ↑; no iCa on sheet
+- Screenshot: `testset/reports/abg/20260918T172343__01a0b451-4ecd-7e47-8ab8-9b5d80606e2d.jpg`
+
+### Arterial blood gas — 2026-09-18 13:00 (postop 71h00m)
 
 - pH 7.388, PCO₂ 37.5, PO₂ **72.6↓**, HCO₃⁻ 22.1, BE −2.9
-- Lactate **1.27** (now in ref 0.5–1.6), FiO₂ **50%**, P/F **145↓** (worse than morning 169)
+- Lactate **1.27** (in ref 0.5–1.6), FiO₂ **50%**, P/F **145↓**
 - Hb 9.1 g/dL, Hct 27%, iCa 1.12
-- Screenshot archived: `testset/reports/abg/20260918T130029__7B968B2C-1BF2-4D59-B4C8-F03D5EDF7DFB_L0_001.jpg` (1079×1157, clear — no higher-res needed)
+- Screenshot: `testset/reports/abg/20260918T130029__7B968B2C-1BF2-4D59-B4C8-F03D5EDF7DFB_L0_001.jpg`
 
 ### Arterial blood gas — 2026-09-18 06:36 (postop 64h36m)
 
 - pH 7.392, PCO₂ 37.6, PO₂ 84.4, HCO₃⁻ 22.4, BE ≈ −2.6
 - Lactate **1.97**, FiO₂ **50%**, P/F **169**
 - Hb 9.1 g/dL, Hct 27%, iCa 1.12
+
+### Potassium — 2026-09-18 17:22 (postop 75h22m)
+
+- K **4.17** mmol/L (ref 3.5–5.3) — normal single-item report
+- Screenshot: `testset/reports/chemistry/20260918T172250__01a0b451-4f08-76b7-9cd9-0c8d379fafd4.jpg`
 
 ### Chemistry — 2026-09-18 08:58 (postop 66h58m)
 
@@ -94,9 +107,15 @@ Trend: rise then fall; still far above ref 0–0.05.
 | 2026-09-17 09:46 | 11.52 | 85 | 73 | neut% ~95 |
 | 2026-09-18 08:34 | 14.51 | 85 | 65 | neut% ~91; plateletcrit 0.08% |
 
+### Coagulation — latest 2026-09-18 18:01 (postop 76h01m)
+
+- APTT **64.0↑** (ref 23.3–32.5); note “结果已复查”
+- Rebound from morning **50.8** (was critical 76.1 → 72.4 → 50.8)
+- Screenshot: `testset/reports/coag/20260918T180129__01a0b451-4f3f-7d4c-945a-296f5aeec91c.jpg`
+
 ### Coagulation — 2026-09-18 09:44 (postop 67h44m)
 
-- APTT **50.8** (was critical 76.1 → 72.4), PT 13.8, INR **1.24**, TT 12.6↓, Fbg 4.38
+- APTT **50.8**, PT 13.8, INR **1.24**, TT 12.6↓, Fbg 4.38
 
 ### Peak organ-injury panel — 2026-09-17 10:52 (postop 44h52m)
 
@@ -108,7 +127,7 @@ Trend: rise then fall; still far above ref 0–0.05.
 
 - Lactate peak **8.99**; worst pH ~7.196 / BE −16.2 early postop
 - Portal venous gas / mesenteric ischemia on CT preop; SpO₂ issues at home before admission
-- Coag once critically prolonged (APTT 76.1 / 72.4) then improved
+- Coag critically prolonged (APTT 76.1 / 72.4) → improved to 50.8 → **rebounced to 64.0**
 
 ---
 
@@ -150,4 +169,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-18 13:00 ABG — lac 1.27, P/F 145.
+**Last updated:** 2026-09-18 evening — ABG P/F 165 (no lac on sheet), K 4.17, APTT 64.0 rebound.

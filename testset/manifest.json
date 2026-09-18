@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 58,
+  "count": 61,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -604,6 +604,65 @@
         "fio2": 50,
         "pf": 145,
         "so2": 93.7
+      }
+    },
+    {
+      "id": "20260918T172250__01a0b451-4f08-76b7-9cd9-0c8d379fafd4.jpg",
+      "path": "reports/chemistry/20260918T172250__01a0b451-4f08-76b7-9cd9-0c8d379fafd4.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0b451-4f08-76b7-9cd9-0c8d379fafd4.jpg",
+      "sha256_16": "21afcb7968d0965e",
+      "bytes": 115029,
+      "labeled": true,
+      "report_time": "2026-09-18T17:22:50",
+      "type": "电解质",
+      "note": "K4.17 normal",
+      "relative_h": 75.38,
+      "extracted": {
+        "k": 4.17
+      }
+    },
+    {
+      "id": "20260918T172343__01a0b451-4ecd-7e47-8ab8-9b5d80606e2d.jpg",
+      "path": "reports/abg/20260918T172343__01a0b451-4ecd-7e47-8ab8-9b5d80606e2d.jpg",
+      "category": "abg",
+      "source_filename": "01a0b451-4ecd-7e47-8ab8-9b5d80606e2d.jpg",
+      "sha256_16": "d5e7f4bde6acbaef",
+      "bytes": 222758,
+      "labeled": true,
+      "report_time": "2026-09-18T17:23:43",
+      "type": "血气",
+      "note": "no lac on report; PF165 FiO250% PO282.4 Hb8.8 Hct26 tCO2↓ A-a↑",
+      "relative_h": 75.4,
+      "extracted": {
+        "ph": 7.363,
+        "pco2": 40.3,
+        "po2": 82.4,
+        "be": -2.8,
+        "hco3": 22.4,
+        "hb": 8.8,
+        "hct": 26.0,
+        "fio2": 50,
+        "pf": 165,
+        "so2": 95.2,
+        "tco2": 23.6,
+        "aa_gradient": 30.84
+      }
+    },
+    {
+      "id": "20260918T180129__01a0b451-4f3f-7d4c-945a-296f5aeec91c.jpg",
+      "path": "reports/coag/20260918T180129__01a0b451-4f3f-7d4c-945a-296f5aeec91c.jpg",
+      "category": "coag",
+      "source_filename": "01a0b451-4f3f-7d4c-945a-296f5aeec91c.jpg",
+      "sha256_16": "0a2c5c15954556c2",
+      "bytes": 121131,
+      "labeled": true,
+      "report_time": "2026-09-18T18:01:29",
+      "type": "凝血",
+      "note": "APTT64.0 rebound; 结果已复查",
+      "relative_h": 76.02,
+      "extracted": {
+        "aptt": 64.0
       }
     }
   ]
