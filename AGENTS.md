@@ -17,7 +17,8 @@ Self-contained mobile perioperative monitoring dashboard. **Not medical advice.*
 
 ## Latest corrected state (2026-09-18 morning)
 
-- **Procalcitonin 146.421 → 101.563 ng/mL** at 2026-09-18 08:58 (postop 66h58m). Still extremely high. The earlier “170” was a misread of oxygenation index **169** on a low-resolution ABG.
+- **Procalcitonin 146.421 (2026-09-16 09:44) → 170.297 (2026-09-17 10:52) → 101.563 (2026-09-18 08:58)**. Still extremely high. The Sep 17 10:52 panel also has ALT 891, AST 806, IL-6 981, CK 8280, CK-MB 132.6, LDH 915, HBDH 576, Cr 363, urea 17.80, K 4.31, Na 141.27, Cl 98.33.
+- Morning ABG oxygenation index **169** (FiO₂ 50%) is a different test, not PCT.
 - CBC “PCT” means **plateletcrit 0.08%**, not procalcitonin.
 - ABG 2026-09-18 06:36: lactate **1.97**, FiO₂ **50%**, P/F **169**, pH 7.392, Hb 9.1, iCa 1.12
 - CBC: 09-17 09:46 WBC 11.52 / Hb 85 / PLT 73 → 09-18 08:34 WBC **14.51** / Hb 85 / PLT **65** / neut ~91–95%
