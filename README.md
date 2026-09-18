@@ -4,6 +4,8 @@ Mobile-friendly perioperative monitoring dashboard for family-side trend trackin
 
 > For caregiving coordination only — does **not** replace ICU judgment or formal medical records.
 
+**This repository is the source of truth.** New lab results and dashboard updates should be pushed here (`Lelouchzhu/MediDash`), not to the old Allmond fork.
+
 ## Open locally
 
 ```bash
@@ -21,8 +23,8 @@ node --test parse-lab-report.test.mjs
 ## Cloud Agent
 
 - Config: [`.cursor/environment.json`](.cursor/environment.json) starts a dashboard server on port **8080**.
-- Handoff for continuing work: [`AGENTS.md`](AGENTS.md)
-- Start a new Cloud Agent on **this** repository (`Lelouchzhu/MediDash`), not the old Allmond fork.
+- Handoff: [`AGENTS.md`](AGENTS.md) · clinical context: [`CONTEXT.md`](CONTEXT.md) · transcript summary: [`docs/transcripts/`](docs/transcripts/)
+- Start Cloud Agents on **this** repository and ask them to read those files first.
 
 ## Preview
 

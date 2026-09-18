@@ -9,7 +9,7 @@
   "use strict";
 
   const GAS_KEYS = ["ph", "pco2", "po2", "hco3", "be", "lactate", "fio2", "pf", "hb", "ca"];
-  const LAB_KEYS = ["aptt", "inr", "creatinine", "urea", "ck", "alt", "ast", "il6"];
+  const LAB_KEYS = ["aptt", "inr", "creatinine", "urea", "ck", "alt", "ast", "il6", "pct"];
   const SURGERY_END_HOUR = 14;
 
   const RANGES = {
@@ -30,7 +30,8 @@
     ck: [10, 30000],
     alt: [5, 15000],
     ast: [5, 15000],
-    il6: [1, 200000]
+    il6: [1, 200000],
+    pct: [0.01, 500]
   };
 
   function normalizeReportText(text) {
@@ -141,7 +142,7 @@
     if (fio2 != null && fio2 > 0 && fio2 <= 1) fio2 = Math.round(fio2 * 100);
     assign(fields, "fio2", fio2);
 
-    assign(fields, "pf", takeNumber(raw.match(/(?:氧合指数|P\s*\/\s*F|\bPF\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
+    assign(fields, "pf", takeNumber(raw.match(/(?:氧合指数(?:\s*pO2\s*\(\s*a\s*\)\s*\/\s*F?O2(?:\s*\(\s*I\s*\))?)?|pO2\s*\(\s*a\s*\)\s*\/\s*F?O2(?:\s*\(\s*I\s*\))?|P\s*\/\s*F|\bPF\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
 
     let hb = takeNumber(raw.match(/(?:血红蛋白|(?<![A-Z])t?Hb|\bHGB\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i));
     if (hb != null && hb > 25 && hb <= 250) hb = Number((hb / 10).toFixed(1));
@@ -160,6 +161,16 @@
     assign(fields, "alt", takeNumber(raw.match(/(?:谷丙转氨酶|\bALT\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
     assign(fields, "ast", takeNumber(raw.match(/(?:谷草转氨酶|\bAST\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
     assign(fields, "il6", takeNumber(raw.match(/(?:白细胞介素-?6|IL\s*-?\s*6)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
+
+    // Chem procalcitonin only. Never take CBC 血小板比积 or ABG 氧合指数 as PCT.
+    if (!/血小板比积/.test(raw)) {
+      assign(fields, "pct", takeNumber(raw.match(/(?:降钙素原|Procalcitonin)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
+      if (fields.pct == null) {
+        const pctMatch = raw.match(/\bPCT\b\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)\s*(ng\s*\/\s*mL)?/i);
+        const pctValue = takeNumber(pctMatch);
+        if (pctValue != null && (pctMatch[2] || pctValue >= 1)) assign(fields, "pct", pctValue);
+      }
+    }
 
     if (fields.pf == null && fields.po2 != null && fields.fio2) {
       fields.pf = Math.round(fields.po2 / (fields.fio2 / 100));

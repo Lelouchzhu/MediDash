@@ -93,6 +93,22 @@ test("parses biochemistry and converts creatinine mg/dL", () => {
   assert.equal(parsed.fields.il6, 981);
 });
 
+test("parses chem procalcitonin and ignores plateletcrit / P/F lookalikes", () => {
+  const parsed = parseLabReportText(`
+    生化 术后66h58m
+    降钙素原 101.563
+    ALT 891
+  `);
+  assert.equal(parsed.fields.pct, 101.563);
+
+  const cbc = parseLabReportText("血常规 血小板比积 PCT 0.08%");
+  assert.equal(cbc.fields.pct, undefined);
+
+  const abg = parseLabReportText("动脉血 氧合指数 pO2(a)/FO2(I) 169 FiO2 50 pH 7.392 Lac 1.97");
+  assert.equal(abg.fields.pf, 169);
+  assert.equal(abg.fields.pct, undefined);
+});
+
 test("parses English postop hour labels", () => {
   const parsed = parseLabReportText("ART postop 66h10m\npH 7.371\nLac 2.31");
   assert.equal(parsed.hours, 66.17);
