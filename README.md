@@ -12,6 +12,12 @@ python3 -m http.server 8080
 
 Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
+Add a new result from a lab screenshot: **添加最新结果 → 从化验截图导入**. The image stays on the device; only parsed numbers are saved in this browser. Parser checks:
+
+```bash
+node --test parse-lab-report.test.mjs
+```
+
 ## Cloud Agent
 
 - Config: [`.cursor/environment.json`](.cursor/environment.json) starts a dashboard server on port **8080**.

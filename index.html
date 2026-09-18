@@ -861,6 +861,120 @@
 
     .text-btn.danger { color: var(--red); }
 
+    .shot-import {
+      display: grid;
+      gap: 10px;
+      grid-column: 1 / -1;
+    }
+
+    .shot-drop {
+      display: grid;
+      gap: 6px;
+      padding: 14px;
+      border: 1.5px dashed #b7cfc4;
+      border-radius: 16px;
+      background: #f6faf7;
+      cursor: pointer;
+    }
+
+    .shot-drop:focus-visible,
+    .shot-drop.dragover {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(22, 122, 91, .12);
+    }
+
+    .shot-drop strong { font-size: 14px; }
+    .shot-drop span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .shot-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .shot-preview {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .shot-preview.hidden { display: none; }
+    .shot-preview img {
+      width: 92px;
+      height: 92px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #edf3ef;
+    }
+
+    .shot-status {
+      margin: 0 0 6px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .shot-chips, .shot-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .shot-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .shot-text, .lab-extra {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 8px 12px 12px;
+      background: #fff;
+    }
+
+    .lab-extra {
+      grid-column: 1 / -1;
+      background: #fbfdfc;
+    }
+
+    .shot-text summary, .lab-extra summary {
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .shot-text textarea {
+      width: 100%;
+      min-height: 84px;
+      margin: 8px 0;
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      resize: vertical;
+      background: #fbfdfc;
+      color: var(--ink);
+    }
+
+    .lab-extra-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
     .toast {
       position: fixed;
       z-index: 30;
@@ -928,7 +1042,7 @@
       body { background: #fff; }
       .shell { width: 100%; padding: 0; }
       .hero { box-shadow: none; }
-      .action-bar, .controls, .notice { display: none !important; }
+      .action-bar, .controls, .notice, .shot-import { display: none !important; }
       .panel, .status-card { box-shadow: none; break-inside: avoid; }
       details.report:not([open]) .report-body { display: block; }
     }
@@ -1024,7 +1138,7 @@
             <span class="status-name">凝血</span>
             <span class="level">危急值</span>
           </div>
-          <div class="status-value">72.4<span class="status-unit">APTT</span></div>
+          <div class="status-value"><span id="latestAptt">72.4</span><span class="status-unit">APTT</span></div>
           <div class="status-note">76.1→72.4秒（危急）<br>参考21–45 · 已复查</div>
         </div>
         <button class="status-card red" type="button" data-metric-jump="hb">
@@ -1400,7 +1514,7 @@
     </section>
 
     <footer>
-      自定义新增的数据仅保存在当前浏览器，不会上传服务器。页面不包含姓名、证件号、医院或住址。
+      自定义新增的数据仅保存在当前浏览器，不会上传服务器。化验截图只做本机预览，不会保存原图。页面不包含姓名、证件号、医院或住址。
     </footer>
   </main>
 
@@ -1413,12 +1527,39 @@
   <dialog id="resultDialog">
     <div class="dialog-head">
       <div>
-        <h2>添加血气结果</h2>
-        <div class="report-meta">仅存储在此设备浏览器中</div>
+        <h2>添加最新结果</h2>
+        <div class="report-meta">可导入截图；数值只存在这台设备的浏览器里</div>
       </div>
       <button class="icon-btn" type="button" id="closeDialog" aria-label="关闭">×</button>
     </div>
     <form class="result-form" id="resultForm">
+      <div class="shot-import" id="shotImport">
+        <input id="shotFile" type="file" accept="image/*,.heic,.heif,.txt,text/plain" hidden>
+        <input id="shotCameraFile" type="file" accept="image/*" capture="environment" hidden>
+        <div class="shot-drop" id="shotDrop" tabindex="0" role="button" aria-label="从化验截图导入">
+          <strong>从化验截图导入</strong>
+          <span>拍照、相册、拖入或粘贴。图片只在本机预览，不会上传，也不会写入页面存档。</span>
+          <div class="shot-actions">
+            <button class="text-btn" type="button" id="shotPick">选择截图</button>
+            <button class="text-btn" type="button" id="shotCamera">拍照</button>
+          </div>
+        </div>
+        <div class="shot-preview hidden" id="shotPreviewWrap">
+          <img id="shotPreview" alt="化验截图预览">
+          <div>
+            <p class="shot-status" id="shotStatus">尚未选择截图</p>
+            <div class="shot-chips" id="shotChips"></div>
+            <div class="shot-actions">
+              <button class="text-btn" type="button" id="shotClear">移除截图</button>
+            </div>
+          </div>
+        </div>
+        <details class="shot-text" id="shotTextDetails">
+          <summary>改粘贴报告文字</summary>
+          <textarea id="shotText" placeholder="从微信复制化验文字，或粘贴 OCR 结果"></textarea>
+          <button class="text-btn" type="button" id="shotParseText">识别文字</button>
+        </details>
+      </div>
       <div class="field wide">
         <label for="relativeHours">距手术结束时间（小时）</label>
         <input id="relativeHours" name="relativeHours" type="number" min="-48" max="1000" step="0.1" required placeholder="例如 48.5">
@@ -1470,6 +1611,43 @@
         <label for="ca">离子钙 (mmol/L)</label>
         <input id="ca" name="ca" type="number" step="0.01" inputmode="decimal">
       </div>
+      <details class="lab-extra" id="labExtra">
+        <summary>凝血 / 生化（可选）</summary>
+        <div class="lab-extra-grid">
+          <div class="field">
+            <label for="aptt">APTT (秒)</label>
+            <input id="aptt" name="aptt" type="number" step="0.1" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="inr">INR</label>
+            <input id="inr" name="inr" type="number" step="0.01" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="creatinine">肌酐 (μmol/L)</label>
+            <input id="creatinine" name="creatinine" type="number" step="0.1" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="urea">尿素 (mmol/L)</label>
+            <input id="urea" name="urea" type="number" step="0.01" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="ck">CK (U/L)</label>
+            <input id="ck" name="ck" type="number" step="1" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="alt">ALT (U/L)</label>
+            <input id="alt" name="alt" type="number" step="1" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="ast">AST (U/L)</label>
+            <input id="ast" name="ast" type="number" step="1" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="il6">IL-6</label>
+            <input id="il6" name="il6" type="number" step="1" inputmode="numeric">
+          </div>
+        </div>
+      </details>
       <div class="form-actions">
         <button class="secondary" type="button" id="cancelForm">取消</button>
         <button class="primary" type="submit">保存并更新</button>
@@ -1484,6 +1662,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <div class="sr-only" aria-live="polite" id="liveRegion"></div>
 
+  <script src="parse-lab-report.js"></script>
   <script>
     const baseReadings = [
       { h: -18.85, label: "术前18h51m", sample: "动脉", ph: 7.384, pco2: 29.7, po2: 59.8, hco3: 17.3, be: -7.7, lactate: 5.05, fio2: 33, pf: 181, hb: 14.7, ca: 1.18 },
@@ -1526,13 +1705,24 @@
       ca: { label: "离子钙 iCa", unit: "mmol/L", minRef: 1.15, maxRef: 1.29, color: "#7257a3", decimals: 2, better: "range" },
       creatinine: { label: "肌酐", unit: "μmol/L", minRef: 41, maxRef: 81, color: "#bd3b3b", decimals: 0, better: "down", source: "lab" },
       inr: { label: "INR", unit: "", minRef: .94, maxRef: 1.2, color: "#c76a16", decimals: 2, better: "range", source: "lab" },
-      ck: { label: "肌酸激酶 CK", unit: "U/L", minRef: 33, maxRef: 192, color: "#7257a3", decimals: 0, better: "down", source: "lab" }
+      ck: { label: "肌酸激酶 CK", unit: "U/L", minRef: 33, maxRef: 192, color: "#7257a3", decimals: 0, better: "down", source: "lab" },
+      aptt: { label: "APTT", unit: "秒", minRef: 21, maxRef: 45, color: "#bd3b3b", decimals: 1, better: "range", source: "lab" }
     };
 
     let selectedMetric = "lactate";
     let selectedRange = "all";
     const customKey = "perioperative-dashboard-custom-v1";
+    const customLabKey = "perioperative-dashboard-custom-lab-v1";
     const questionKey = "perioperative-dashboard-questions-v1";
+    const parser = window.MediDashLabParse || {};
+    const GAS_KEYS = parser.GAS_KEYS || ["ph", "pco2", "po2", "hco3", "be", "lactate", "fio2", "pf", "hb", "ca"];
+    const LAB_KEYS = parser.LAB_KEYS || ["aptt", "inr", "creatinine", "urea", "ck", "alt", "ast", "il6"];
+    const FIELD_LABELS = {
+      ph: "pH", pco2: "PCO₂", po2: "PO₂", hco3: "HCO₃⁻", be: "BE",
+      lactate: "乳酸", fio2: "FiO₂", pf: "P/F", hb: "Hb", ca: "iCa",
+      aptt: "APTT", inr: "INR", creatinine: "肌酐", urea: "尿素",
+      ck: "CK", alt: "ALT", ast: "AST", il6: "IL-6"
+    };
     const latestNonBloodGasReport = { h: 62.07, label: "术后62h04m", type: "凝血" };
     const doctorQuestions = [
       {
@@ -1624,8 +1814,21 @@
       }
     }
 
+    function getCustomLabReadings() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(customLabKey) || "[]");
+        return Array.isArray(parsed) ? parsed : [];
+      } catch {
+        return [];
+      }
+    }
+
     function allReadings() {
       return [...baseReadings, ...getCustomReadings()].sort((a, b) => a.h - b.h);
+    }
+
+    function allLabReadings() {
+      return [...labReadings, ...getCustomLabReadings()].sort((a, b) => a.h - b.h);
     }
 
     function relativeLabel(hours) {
@@ -1634,8 +1837,8 @@
     }
 
     function filteredReadings(metric) {
-      const all = metricConfig[metric].source === "lab" ? labReadings : allReadings();
-      const latest = Math.max(allReadings().at(-1)?.h ?? 0, labReadings.at(-1)?.h ?? 0);
+      const all = metricConfig[metric].source === "lab" ? allLabReadings() : allReadings();
+      const latest = Math.max(allReadings().at(-1)?.h ?? 0, allLabReadings().at(-1)?.h ?? 0);
       return all.filter(d => {
         if (d[metric] == null || d.quality === "uncertain") return false;
         if (metricConfig[metric].arterialOnly && d.sample !== "动脉") return false;
@@ -1830,7 +2033,7 @@
         const cell = (value, decimals = 1) => value == null ? "—" : Number(value).toFixed(decimals);
         return `<tr class="${classes}">
           <td>${d.label || relativeLabel(d.h)}</td>
-          <td>${d.sample}${d.quality === "uncertain" ? " ⚠" : ""}</td>
+          <td>${d.sample}${d.quality === "uncertain" ? " ⚠" : ""}${d.via === "screenshot" ? " · 截图" : ""}</td>
           <td>${cell(d.ph, 3)}</td>
           <td>${cell(d.pco2)}</td>
           <td>${cell(d.hco3)}</td>
@@ -1846,15 +2049,20 @@
 
     function updateLatest() {
       const latest = allReadings().filter(d => d.sample === "动脉" && d.quality !== "uncertain").at(-1);
-      if (!latest) return;
-      const bloodGasIsNewer = latest.h > latestNonBloodGasReport.h;
-      document.getElementById("latestTimePill").textContent = bloodGasIsNewer
-        ? `最新：${latest.label || relativeLabel(latest.h)}`
-        : `最新化验：${latestNonBloodGasReport.label}`;
-      if (latest.lactate != null) document.getElementById("latestLactate").textContent = Number(latest.lactate).toFixed(2);
-      if (latest.pf != null) document.getElementById("latestPf").textContent = Math.round(latest.pf);
-      if (latest.ph != null) document.getElementById("latestPh").textContent = Number(latest.ph).toFixed(3);
-      if (latest.hb != null) document.getElementById("latestHb").textContent = Number(latest.hb).toFixed(1);
+      const latestLab = allLabReadings().at(-1);
+      if (!latest && !latestLab) return;
+      const latestLabH = latestLab?.h ?? latestNonBloodGasReport.h;
+      const latestLabLabel = latestLab?.label ?? latestNonBloodGasReport.label;
+      if (latest && latest.h > latestLabH) {
+        document.getElementById("latestTimePill").textContent = `最新：${latest.label || relativeLabel(latest.h)}`;
+      } else {
+        document.getElementById("latestTimePill").textContent = `最新化验：${latestLabLabel}`;
+      }
+      if (latest?.lactate != null) document.getElementById("latestLactate").textContent = Number(latest.lactate).toFixed(2);
+      if (latest?.pf != null) document.getElementById("latestPf").textContent = Math.round(latest.pf);
+      if (latest?.ph != null) document.getElementById("latestPh").textContent = Number(latest.ph).toFixed(3);
+      if (latest?.hb != null) document.getElementById("latestHb").textContent = Number(latest.hb).toFixed(1);
+      if (latestLab?.aptt != null) document.getElementById("latestAptt").textContent = Number(latestLab.aptt).toFixed(1);
     }
 
     function getQuestionState() {
@@ -2001,12 +2209,217 @@
     });
 
     const dialog = document.getElementById("resultDialog");
+    const shotDrop = document.getElementById("shotDrop");
+    const shotFile = document.getElementById("shotFile");
+    const shotCameraFile = document.getElementById("shotCameraFile");
+    let shotPreviewUrl = "";
+    let importViaScreenshot = false;
+    let tesseractLoader = null;
+    let ocrRequestId = 0;
+
+    function resetShotImport() {
+      ocrRequestId += 1;
+      shotFile.value = "";
+      shotCameraFile.value = "";
+      if (shotPreviewUrl) URL.revokeObjectURL(shotPreviewUrl);
+      shotPreviewUrl = "";
+      importViaScreenshot = false;
+      document.getElementById("shotPreview").removeAttribute("src");
+      document.getElementById("shotPreview").style.display = "";
+      document.getElementById("shotPreviewWrap").classList.add("hidden");
+      document.getElementById("shotStatus").textContent = "尚未选择截图";
+      document.getElementById("shotChips").innerHTML = "";
+      document.getElementById("shotText").value = "";
+      document.getElementById("labExtra").open = false;
+    }
+
     const openDialog = () => {
       const latest = allReadings().at(-1);
       document.getElementById("relativeHours").value = latest ? (latest.h + 4).toFixed(1) : "";
       dialog.showModal();
     };
-    const closeDialog = () => dialog.close();
+    const closeDialog = () => {
+      resetShotImport();
+      dialog.close();
+    };
+
+    function renderShotChips(parsed) {
+      const chips = document.getElementById("shotChips");
+      chips.innerHTML = Object.entries(parsed.fields || {}).map(([key, value]) =>
+        `<span class="shot-chip">${FIELD_LABELS[key] || key} ${value}</span>`
+      ).join("");
+    }
+
+    function applyParsedReport(parsed, sourceLabel) {
+      if (!parsed) return;
+      if (parsed.hours != null) document.getElementById("relativeHours").value = parsed.hours;
+      if (parsed.sample) document.getElementById("sample").value = parsed.sample;
+      Object.entries(parsed.fields || {}).forEach(([key, value]) => {
+        const input = document.getElementById(key);
+        if (input) input.value = value;
+      });
+      if (parsed.labCount) document.getElementById("labExtra").open = true;
+      renderShotChips(parsed);
+      const status = parsed.matchedCount
+        ? `已从${sourceLabel}识别 ${parsed.matchedCount} 项，请核对后保存`
+        : `${sourceLabel}已接受，但没有识别到化验数字，请对照预览手动填写`;
+      document.getElementById("shotStatus").textContent = status;
+      showToast(status);
+      document.getElementById("liveRegion").textContent = status;
+    }
+
+    function parseReportText(text) {
+      if (typeof parser.parseLabReportText === "function") return parser.parseLabReportText(text);
+      if (typeof window.parseLabReportText === "function") return window.parseLabReportText(text);
+      return { fields: {}, matchedCount: 0, labCount: 0 };
+    }
+
+    function loadTesseract() {
+      if (window.Tesseract) return Promise.resolve(window.Tesseract);
+      if (tesseractLoader) return tesseractLoader;
+      tesseractLoader = new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js";
+        script.onload = () => resolve(window.Tesseract);
+        script.onerror = () => reject(new Error("OCR 脚本加载失败"));
+        document.head.appendChild(script);
+      });
+      return tesseractLoader;
+    }
+
+    async function ocrImageFile(file, requestId) {
+      const Tesseract = await loadTesseract();
+      if (requestId !== ocrRequestId) return "";
+      const result = await Tesseract.recognize(file, "eng", {
+        logger: message => {
+          if (requestId !== ocrRequestId || message.status !== "recognizing text") return;
+          document.getElementById("shotStatus").textContent = `识别中 ${Math.round((message.progress || 0) * 100)}%`;
+        }
+      });
+      return result?.data?.text || "";
+    }
+
+    window.MediDashAcceptFile = acceptScreenshotFile;
+    async function acceptScreenshotFile(file) {
+      const reason = parser.fileRejectionReason ? parser.fileRejectionReason(file) : null;
+      if (reason) {
+        showToast(reason);
+        document.getElementById("liveRegion").textContent = reason;
+        return;
+      }
+
+      const requestId = ++ocrRequestId;
+      const name = String(file.name || "").toLowerCase();
+      const isText = String(file.type || "").startsWith("text/") || name.endsWith(".txt");
+      importViaScreenshot = !isText;
+
+      if (isText) {
+        const text = await file.text();
+        document.getElementById("shotText").value = text;
+        document.getElementById("shotTextDetails").open = true;
+        document.getElementById("shotPreview").style.display = "none";
+        document.getElementById("shotPreviewWrap").classList.remove("hidden");
+        document.getElementById("shotStatus").textContent = "已接受文字报告";
+        applyParsedReport(parseReportText(text), "文字");
+        return;
+      }
+
+      if (shotPreviewUrl) URL.revokeObjectURL(shotPreviewUrl);
+      shotPreviewUrl = URL.createObjectURL(file);
+      const preview = document.getElementById("shotPreview");
+      preview.style.display = "block";
+      preview.src = shotPreviewUrl;
+      preview.onerror = () => {
+        document.getElementById("shotStatus").textContent = "此格式无法预览，请改用系统截图 PNG/JPG";
+      };
+      document.getElementById("shotPreviewWrap").classList.remove("hidden");
+      document.getElementById("shotStatus").textContent = "截图已接受，正在识别…";
+      document.getElementById("liveRegion").textContent = "截图已接受，正在识别";
+
+      try {
+        const text = await ocrImageFile(file, requestId);
+        if (requestId !== ocrRequestId) return;
+        if (text.trim()) document.getElementById("shotText").value = text;
+        applyParsedReport(parseReportText(text), "截图");
+      } catch (error) {
+        if (requestId !== ocrRequestId) return;
+        const message = "截图已接受，自动识别失败，请对照预览填写或粘贴文字";
+        document.getElementById("shotStatus").textContent = message;
+        showToast(message);
+        document.getElementById("liveRegion").textContent = message;
+      }
+    }
+
+    function pickShotFile(input) {
+      input.click();
+    }
+
+    shotDrop.addEventListener("click", event => {
+      if (event.target.closest("button")) return;
+      pickShotFile(shotFile);
+    });
+    shotDrop.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        pickShotFile(shotFile);
+      }
+    });
+    ["dragenter", "dragover"].forEach(type => {
+      shotDrop.addEventListener(type, event => {
+        event.preventDefault();
+        shotDrop.classList.add("dragover");
+      });
+    });
+    ["dragleave", "drop"].forEach(type => {
+      shotDrop.addEventListener(type, event => {
+        event.preventDefault();
+        shotDrop.classList.remove("dragover");
+      });
+    });
+    shotDrop.addEventListener("drop", event => {
+      const file = event.dataTransfer?.files?.[0];
+      if (file) acceptScreenshotFile(file);
+    });
+    shotFile.addEventListener("change", () => {
+      if (shotFile.files[0]) acceptScreenshotFile(shotFile.files[0]);
+    });
+    shotCameraFile.addEventListener("change", () => {
+      if (shotCameraFile.files[0]) acceptScreenshotFile(shotCameraFile.files[0]);
+    });
+    document.getElementById("shotPick").addEventListener("click", event => {
+      event.stopPropagation();
+      pickShotFile(shotFile);
+    });
+    document.getElementById("shotCamera").addEventListener("click", event => {
+      event.stopPropagation();
+      pickShotFile(shotCameraFile);
+    });
+    document.getElementById("shotClear").addEventListener("click", resetShotImport);
+    document.getElementById("shotParseText").addEventListener("click", () => {
+      const text = document.getElementById("shotText").value;
+      if (!text.trim()) {
+        showToast("请先粘贴化验文字");
+        return;
+      }
+      applyParsedReport(parseReportText(text), "文字");
+    });
+    document.addEventListener("paste", event => {
+      if (!dialog.open) return;
+      const imageItem = [...(event.clipboardData?.items || [])].find(item => item.type.startsWith("image/"));
+      if (imageItem) {
+        event.preventDefault();
+        acceptScreenshotFile(imageItem.getAsFile());
+        return;
+      }
+      if (event.target.id === "shotText") return;
+      const text = event.clipboardData?.getData("text/plain") || "";
+      const parsed = parseReportText(text);
+      if (parsed.matchedCount >= 2) {
+        document.getElementById("shotText").value = text;
+        document.getElementById("shotTextDetails").open = true;
+        applyParsedReport(parsed, "粘贴文字");
+      }
+    });
 
     document.getElementById("openDialog").addEventListener("click", openDialog);
     document.getElementById("closeDialog").addEventListener("click", closeDialog);
@@ -2045,7 +2458,7 @@
       const fio2 = number("fio2");
       let pf = number("pf");
       if (pf == null && po2 != null && fio2) pf = Math.round(po2 / (fio2 / 100));
-      const entry = {
+      const gasEntry = {
         h,
         label: relativeLabel(h),
         sample,
@@ -2059,26 +2472,59 @@
         pf: sample === "静脉" ? null : pf,
         hb: number("hb"),
         ca: number("ca"),
-        custom: true
+        custom: true,
+        via: importViaScreenshot ? "screenshot" : undefined
       };
-      const custom = getCustomReadings();
-      custom.push(entry);
-      localStorage.setItem(customKey, JSON.stringify(custom));
+      const labEntry = {
+        h,
+        label: relativeLabel(h),
+        sample: number("aptt") != null || number("inr") != null ? "凝血" : "生化",
+        aptt: number("aptt"),
+        inr: number("inr"),
+        creatinine: number("creatinine"),
+        urea: number("urea"),
+        ck: number("ck"),
+        alt: number("alt"),
+        ast: number("ast"),
+        il6: number("il6"),
+        custom: true,
+        via: importViaScreenshot ? "screenshot" : undefined
+      };
+      const hasGas = GAS_KEYS.some(key => gasEntry[key] != null);
+      const hasLab = LAB_KEYS.some(key => labEntry[key] != null);
+      if (!hasGas && !hasLab) {
+        showToast("请先填写至少一项化验数值，或导入截图");
+        return;
+      }
+      if (hasGas) {
+        const custom = getCustomReadings();
+        custom.push(gasEntry);
+        localStorage.setItem(customKey, JSON.stringify(custom));
+      }
+      if (hasLab) {
+        const customLabs = getCustomLabReadings();
+        customLabs.push(labEntry);
+        localStorage.setItem(customLabKey, JSON.stringify(customLabs));
+      }
       event.currentTarget.reset();
       closeDialog();
       renderAll();
-      document.getElementById("liveRegion").textContent = `已添加${entry.label}结果`;
+      document.getElementById("liveRegion").textContent = `已添加${relativeLabel(h)}结果`;
     });
 
     document.getElementById("clearData").addEventListener("click", () => {
       if (!confirm("确定清除本机添加的全部结果吗？基础数据不会删除。")) return;
       localStorage.removeItem(customKey);
+      localStorage.removeItem(customLabKey);
       renderAll();
       document.getElementById("liveRegion").textContent = "已清除自定义结果";
     });
 
     document.getElementById("exportData").addEventListener("click", () => {
-      const payload = JSON.stringify(getCustomReadings(), null, 2);
+      const payload = JSON.stringify({
+        bloodGas: getCustomReadings(),
+        labs: getCustomLabReadings()
+      }, null, 2);
       const blob = new Blob([payload], { type: "application/json" });
       const url = URL.createObjectURL(blob);
       const anchor = document.createElement("a");

@@ -1,0 +1,10 @@
+ART blood gas 术后66h10m
+pH 7.371
+pCO2 39.8
+pO2 91.2
+HCO3 22.1
+BE -2.4
+Lac 2.31
+FiO2 45
+tHb 8.6
+iCa 1.08
