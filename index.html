@@ -2324,7 +2324,7 @@
     async function ocrImageFile(file, requestId) {
       const Tesseract = await loadTesseract();
       if (requestId !== ocrRequestId) return "";
-      const result = await Tesseract.recognize(file, "eng", {
+      const result = await Tesseract.recognize(file, "chi_sim+eng", {
         logger: message => {
           if (requestId !== ocrRequestId || message.status !== "recognizing text") return;
           document.getElementById("shotStatus").textContent = `识别中 ${Math.round((message.progress || 0) * 100)}%`;

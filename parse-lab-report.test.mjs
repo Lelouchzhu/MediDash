@@ -109,6 +109,116 @@ test("parses chem procalcitonin and ignores plateletcrit / P/F lookalikes", () =
   assert.equal(abg.fields.pct, undefined);
 });
 
+test("parses hospital LIS screenshots already stored on the dashboard", () => {
+  const aptt = parseLabReportText(`
+    报告时间: 2026-09-17 23:08:38
+    活化部分凝血活酶时间测定 (APTT) APTT 76.1 秒
+    有危急值、结果已复查
+  `);
+  assert.equal(aptt.hours, 57.13);
+  assert.equal(aptt.fields.aptt, 76.1);
+  assert.equal(aptt.critical, true);
+
+  const abg = parseLabReportText(`
+    报告时间: 2026-09-17 22:47:42
+    酸碱度 pH 7.369
+    二氧化碳分压 pCO2 43.00
+    氧分压 pO2 92.00
+    标准剩余碱 SBE -1.10
+    血浆碳酸氢盐浓度 cHCO3-(P) 24.20
+    实测总血红蛋白 ctHb 9.90 g/dl
+    钙离子浓度 cCa2+ 1.05
+    乳酸浓度 cLac 2.86
+    吸入氧浓度 FO2(I) 50.00
+    氧合指数 pO2(a)/FO2(I) 184.00
+  `);
+  assert.equal(abg.hours, 56.78);
+  assert.equal(abg.fields.ph, 7.369);
+  assert.equal(abg.fields.hco3, 24.2);
+  assert.equal(abg.fields.fio2, 50);
+  assert.equal(abg.fields.hb, 9.9);
+  assert.equal(abg.fields.ca, 1.05);
+  assert.equal(abg.fields.lactate, 2.86);
+  assert.equal(abg.fields.pf, 184);
+
+  const chem = parseLabReportText(`
+    报告时间: 2026-09-17 10:52:01
+    谷丙转氨酶 ALT 891.0
+    谷草转氨酶 AST 806.0
+    IL-6 981.00
+    肌酸激酶 CK 8280.0
+    尿素 Urea 17.80
+    肌酐 Crea 363.0
+  `);
+  assert.equal(chem.hours, 44.87);
+  assert.equal(chem.fields.alt, 891);
+  assert.equal(chem.fields.ck, 8280);
+  assert.equal(chem.fields.creatinine, 363);
+});
+
+test("recovers hospital LIS OCR that dropped decimals or split labels", () => {
+  const aptt = parseLabReportText("报告 时 间 : 2026-09-17 23:08:38 活化 部 分 凝血 活 酶 时 间 测 定 (APTT) APTT 76.1 sec 有 危急 值");
+  assert.equal(aptt.hours, 57.13);
+  assert.equal(aptt.fields.aptt, 76.1);
+  assert.equal(aptt.critical, true);
+
+  const apttDotless = parseLabReportText("APTT 761 sec 有危急值");
+  assert.equal(apttDotless.fields.aptt, 76.1);
+
+  const abg = parseLabReportText(`
+    报告 时 间 : 2026-09-17 22:47:42
+    酸碱度 | PH . 7.369 Aaid | 7.35-745
+    二 氧化 左 分 压 PCO2 4ao0 mmHg 35-45
+    氧 分 压 PO2 92.00 mmHg 80-100
+    标准 剩余 碱 SBE -110 mmol/L | -3-3
+    血浆 碳酸 氧 盐 浓度 | cHCO-3(p) 0 24.20 mmolL 22-26
+    实测总血红蛋白 ctHb 9.90
+    钙离子浓度 cCa2+ 1.05
+    乳酸浓度 cLac 2.86
+    吸入氧浓度 FO2(I) 50.00
+    氧合指数 pO2(a)/FO2(I) 184.00
+  `);
+  assert.equal(abg.hours, 56.78);
+  assert.equal(abg.fields.ph, 7.369);
+  assert.equal(abg.fields.po2, 92);
+  assert.equal(abg.fields.be, -1.1);
+  assert.equal(abg.fields.hco3, 24.2);
+  assert.equal(abg.fields.hb, 9.9);
+  assert.equal(abg.fields.ca, 1.05);
+  assert.equal(abg.fields.lactate, 2.86);
+  assert.equal(abg.fields.fio2, 50);
+  assert.equal(abg.fields.pf, 184);
+
+  const chem = parseLabReportText(`
+    报告 时 间 : 2026-09-17 10:52:01
+    ALT 8910 UL T 0-40
+    AST 8060 UL
+    IL-6 981000 pg/ml 0-70
+    CK 82800 UL
+    Urea 17.80
+    Crea 363.0
+  `);
+  assert.equal(chem.hours, 44.87);
+  assert.equal(chem.fields.alt, 891);
+  assert.equal(chem.fields.ast, 806);
+  assert.equal(chem.fields.il6, 981);
+  assert.equal(chem.fields.ck, 8280);
+  assert.equal(chem.fields.urea, 17.8);
+  assert.equal(chem.fields.creatinine, 363);
+
+  const noRefRange = parseLabReportText("二氧化碳分压 PCO2 4ao0 mmHg 35-45 氧分压 PO2 9200 mmHg 80-100");
+  assert.equal(noRefRange.fields.pco2, undefined);
+  assert.equal(noRefRange.fields.po2, 92);
+
+  const noNeighborSteal = parseLabReportText("PCO2 4ao0 mmHg 35-45 氧 分 压 PO2 92.00 mmHg 80-100");
+  assert.equal(noNeighborSteal.fields.pco2, undefined);
+  assert.equal(noNeighborSteal.fields.po2, 92);
+
+  const portalHost = parseLabReportText("dtsyy.imedicalai.com 报告时间: 2026-09-17 10:52:01 ALT 891.0");
+  assert.equal(portalHost.fields.ca, undefined);
+  assert.equal(portalHost.fields.alt, 891);
+});
+
 test("parses English postop hour labels", () => {
   const parsed = parseLabReportText("ART postop 66h10m\npH 7.371\nLac 2.31");
   assert.equal(parsed.hours, 66.17);
