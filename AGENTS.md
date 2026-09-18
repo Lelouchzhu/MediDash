@@ -4,49 +4,41 @@
 
 **All new lab results and dashboard updates must be committed and pushed to this repo (`Lelouchzhu/MediDash`) on `main` (or a `cursor/...` feature branch + PR).**
 
-Do **not** continue updating `Lelouchzhu/Allmond` for clinical dashboard work. Allmond was only a temporary host and is a fork of unrelated bioinformatics code.
+Do **not** continue updating `Lelouchzhu/Allmond` for clinical dashboard work.
 
 ## Purpose
 
-Self-contained mobile perioperative monitoring dashboard for family-side trend tracking after bowel ischemia surgery. **Not medical advice**; used to organize labs, vitals, and doctor questions.
+Self-contained mobile perioperative monitoring dashboard for family-side trend tracking after bowel ischemia surgery. **Not medical advice**.
 
 ## Repo layout
 
 | Path | Role |
 |------|------|
-| `index.html` | Entire app (UI + data + charts + checklist). Edit this file for clinical updates. |
-| `.cursor/environment.json` | Cloud Agent serve config (`python3 -m http.server 8080`). |
-| `README.md` | Human preview / local run notes. |
-| `AGENTS.md` | This handoff for future Cloud Agents. |
+| `index.html` | Entire app. Edit this for clinical updates. |
+| `.cursor/environment.json` | Serves on port 8080. |
+| `README.md` | Human run notes. |
+| `AGENTS.md` | This handoff. |
 
 ## Clinical zero point
 
-- Surgery: **D0 10:00–14:00**
-- Relative hours are measured from **surgery end 14:00**
-- Patient data is de-identified (relative time only; no full identifiers in UI)
+- Surgery: **D0 10:00–14:00** (end ≈ **2026-09-15 14:00**)
+- Relative hours from surgery end
 
-## Latest state at last sync (post-op ~62h)
+## Latest state (post-op ~67h44m)
 
-Priority flags:
+- **PCT 146.4 → 170** (rising; first PCT 2026-09-16 09:44 = postop 19h44m)
+- Lactate **1.97** (improving); FiO₂ **30%**, P/F **~281**
+- **CRRT on**; Cr 363→**212**, urea **11.59**; overnight UO **70 mL**
+- APTT critical cleared: 72.4→**50.8**; INR **1.24**, PT 13.8
+- Hb **9.1**, iCa **1.12**; pressors slightly reduced
+- IL-6 981 (older), ALT/AST still high from prior peak
 
-- **APTT critical**: 76.1 → **72.4 sec** (ref 21–45; rechecked). Ask about CRRT anticoagulation / bleeding.
-- Lactate: 2.27 → 2.86 → **2.57** (still high)
-- P/F: **176** on FiO₂ 50%
-- Acid-base near normal: pH **7.367**, HCO₃⁻ 22.5, BE −2.8
-- Hb **8.4** g/dL, Hct 25%, iCa 1.06
-- Older open issues: Cr 363 / CRRT, IL-6 981, ALT/AST high, pressors (last visit BP 140/50, HR 100)
-- First PCT: **术后19h44m = 2026-09-16 09:44**, value **146.421** ng/mL; no PCT repeat yet
+## How to update
 
-## How to update when new reports arrive
-
-1. Read uploaded lab images / values.
-2. Compute relative hours from surgery end (D0 14:00).
-3. Update `index.html`:
-   - `baseReadings` for arterial/venous blood gas points
-   - `labReadings` for coag/biochem (e.g. APTT, INR, creatinine)
-   - Status cards, insights, expandable reports, timeline, `doctorQuestions`, `latestNonBloodGasReport`
-4. Commit and **push to `Lelouchzhu/MediDash`** (`main` or feature branch + PR).
-5. Verify at `http://localhost:8080/index.html`.
+1. New reports → relative hours from D0 14:00
+2. Update `baseReadings` / `labReadings`, status cards, insights, reports, timeline, `doctorQuestions`, `latestNonBloodGasReport`
+3. Commit & push to **MediDash** `main`
+4. Verify `http://localhost:8080/index.html`
 
 ## Preview
 
