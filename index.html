@@ -2211,21 +2211,19 @@
     });
 
     document.querySelectorAll("[data-metric-jump]").forEach(button => {
-        button.addEventListener("click", () => {
-          selectedMetric = button.dataset.metricJump;
-          const group = metricGroups.find(g => g.metrics.includes(selectedMetric));
-          if (group) selectedGroup = group.id;
-          selectedRange = "all";
-          document.querySelectorAll(".range-btn").forEach(btn => {
-            btn.setAttribute("aria-pressed", String(btn.dataset.range === "all"));
-          });
-          renderGroupControls();
-          renderMetricControls();
-          renderCategoryOverview();
-          renderChart();
-          document.getElementById("trendSection").scrollIntoView({ behavior: "smooth", block: "start" });
+      button.addEventListener("click", () => {
+        selectedMetric = button.dataset.metricJump;
+        const group = metricGroups.find(g => g.metrics.includes(selectedMetric));
+        if (group) selectedGroup = group.id;
+        selectedRange = "all";
+        document.querySelectorAll(".range-btn").forEach(btn => {
+          btn.setAttribute("aria-pressed", String(btn.dataset.range === "all"));
         });
-      });
+        renderGroupControls();
+        renderMetricControls();
+        renderCategoryOverview();
+        renderChart();
+        document.getElementById("trendSection").scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
 
