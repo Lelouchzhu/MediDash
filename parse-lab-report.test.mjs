@@ -93,6 +93,12 @@ test("parses biochemistry and converts creatinine mg/dL", () => {
   assert.equal(parsed.fields.il6, 981);
 });
 
+test("parses English postop hour labels", () => {
+  const parsed = parseLabReportText("ART postop 66h10m\npH 7.371\nLac 2.31");
+  assert.equal(parsed.hours, 66.17);
+  assert.equal(parsed.label, "术后66h10m");
+});
+
 test("does not treat a photo caption as a report", () => {
   const parsed = parseLabReportText("family visit at the bedside, no numbers");
   assert.equal(parsed.matchedCount, 0);

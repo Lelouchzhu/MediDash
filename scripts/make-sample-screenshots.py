@@ -59,7 +59,7 @@ def main():
     draw_report(
         OUT / "sample-abg-screenshot.png",
         "Arterial Blood Gas",
-        "ART  ·  术后66h10m  ·  de-identified",
+        "ART  ·  postop 66h10m  ·  de-identified",
         [
             ("pH", "7.371", ""),
             ("pCO2", "39.8", "mmHg"),
@@ -75,7 +75,7 @@ def main():
     draw_report(
         OUT / "sample-coag-screenshot.png",
         "Coagulation",
-        "凝血  ·  术后66h20m  ·  de-identified",
+        "coag  ·  postop 66h20m  ·  de-identified",
         [
             ("APTT", "68.2", "sec"),
             ("INR", "1.38", ""),

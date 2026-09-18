@@ -85,7 +85,7 @@
   }
 
   function parseRelativeHours(text) {
-    const postop = text.match(/术后\s*(\d+(?:\.\d+)?)\s*(?:h|小时|时)?\s*(?:(\d{1,2})\s*(?:m|分|min)?)?/i);
+    const postop = text.match(/(?:术后|postop(?:erative)?)\s*(\d+(?:\.\d+)?)\s*(?:h|小时|时)?\s*(?:(\d{1,2})\s*(?:m|分|min)?)?/i);
     if (postop) {
       const hours = Number(postop[1]);
       const minutes = postop[2] != null ? Number(postop[2]) : 0;
