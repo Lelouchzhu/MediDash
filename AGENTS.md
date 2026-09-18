@@ -1,5 +1,11 @@
 # MediDash — Cloud Agent Handoff
 
+## Canonical repository
+
+**All new lab results and dashboard updates must be committed and pushed to this repo (`Lelouchzhu/MediDash`) on `main` (or a `cursor/...` feature branch + PR).**
+
+Do **not** continue updating `Lelouchzhu/Allmond` for clinical dashboard work. Allmond was only a temporary host and is a fork of unrelated bioinformatics code.
+
 ## Purpose
 
 Self-contained mobile perioperative monitoring dashboard for family-side trend tracking after bowel ischemia surgery. **Not medical advice**; used to organize labs, vitals, and doctor questions.
@@ -19,7 +25,7 @@ Self-contained mobile perioperative monitoring dashboard for family-side trend t
 - Relative hours are measured from **surgery end 14:00**
 - Patient data is de-identified (relative time only; no full identifiers in UI)
 
-## Latest state at export (post-op ~62h)
+## Latest state at last sync (post-op ~62h)
 
 Priority flags:
 
@@ -38,15 +44,9 @@ Priority flags:
    - `baseReadings` for arterial/venous blood gas points
    - `labReadings` for coag/biochem (e.g. APTT, INR, creatinine)
    - Status cards, insights, expandable reports, timeline, `doctorQuestions`, `latestNonBloodGasReport`
-4. Commit, push to `main` (or a `cursor/...` feature branch + PR).
-5. Verify at `http://localhost:8080/index.html` (terminal `dashboard` should already serve it).
+4. Commit and **push to `Lelouchzhu/MediDash`** (`main` or feature branch + PR).
+5. Verify at `http://localhost:8080/index.html`.
 
 ## Preview
 
 https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
-
-## History note
-
-Earlier work lived on a fork `Lelouchzhu/Allmond` (unrelated bioinformatics parent). **MediDash is the clean non-fork home.** Prefer continuing here.
-
-Prior Allmond branch for reference only: `cursor/medical-dashboard-8b1b` / PR https://github.com/Lelouchzhu/Allmond/pull/2
