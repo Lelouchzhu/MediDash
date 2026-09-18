@@ -980,13 +980,13 @@
           <div class="status-value"><span id="latestLactate">1.97</span><span class="status-unit">mmol/L</span></div>
           <div class="status-note">2.57→1.97 · 仍略高于正常</div>
         </button>
-        <button class="status-card orange" type="button" data-metric-jump="pf">
+        <button class="status-card red" type="button" data-metric-jump="pf">
           <div class="status-top">
             <span class="status-name">氧合</span>
-            <span class="level">改善中</span>
+            <span class="level">仍低</span>
           </div>
-          <div class="status-value"><span id="latestPf">281</span><span class="status-unit">P/F</span></div>
-          <div class="status-note">FiO₂ 已降至30% · P/F约281</div>
+          <div class="status-value"><span id="latestPf">169</span><span class="status-unit">P/F</span></div>
+          <div class="status-note">FiO₂ 仍50% · 较176略降</div>
         </button>
         <button class="status-card green" type="button" data-metric-jump="hco3">
           <div class="status-top">
@@ -1001,8 +1001,8 @@
             <span class="status-name">感染 / 炎症</span>
             <span class="level">上升</span>
           </div>
-          <div class="status-value">170<span class="status-unit">PCT</span></div>
-          <div class="status-note">146.4→170<br>IL-6 981（此前）</div>
+          <div class="status-value">101.6<span class="status-unit">PCT</span></div>
+          <div class="status-note">146.4→101.6（下降）<br>仍远高于0.05</div>
         </div>
         <div class="status-card orange">
           <div class="status-top">
@@ -1077,8 +1077,8 @@
             <p>峰值8.99→2.57→最新1.97；接近正常，灌注改善与升压药稍减方向一致。</p>
           </div>
           <div class="insight">
-            <strong>氧合改善，PCT反而升高</strong>
-            <p>FiO₂50%→30%，P/F约281；但PCT 146.4→170，感染/炎症仍未受控。</p>
+            <strong>PCT下降但仍极高</strong>
+            <p>降钙素原146.4→101.6 ng/mL（不是170；170是氧合指数误读）。FiO₂仍50%，P/F约169。</p>
           </div>
           <div class="insight">
             <strong>CRRT中肾指标下降，凝血好转</strong>
@@ -1146,16 +1146,16 @@
           <summary>
             <div>
               <div class="report-title">感染与循环</div>
-              <div class="report-meta">术后19h44m → 最新晨间 · PCT / IL-6 / 乳酸</div>
+              <div class="report-meta">术后19h44m → 66h58m · 降钙素原</div>
             </div>
-            <span class="report-badge red">PCT↑</span>
+            <span class="report-badge red">仍极高</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>PCT趋势：术后19h44m（9月16日09:44）146.421 → 最新<strong>170</strong>（仍极高，较首次上升）。</li>
-              <li>IL-6 981 pg/mL（术后约45小时，参考0–7）仍提示极强炎症反应；需结合培养与感染源控制。</li>
-              <li>乳酸峰值8.99 → 最新1.97，灌注指标改善，与升压药稍减方向一致。</li>
-              <li>循环仍依赖升压药（已稍减）；探视时曾见140/50、脉搏100。</li>
+              <li>降钙素原：术后19h44m（9月16日09:44）146.421 → 术后66h58m（9月18日08:58）<strong>101.563</strong> ng/mL，有下降但仍极高（参考0–0.05）。此前“170”是低分辨率血气上氧合指数169的误读，已更正。</li>
+              <li>IL-6 981 pg/mL（术后约45小时）仍提示极强炎症反应。</li>
+              <li>乳酸峰值8.99 → 最新1.97，灌注改善；升压药已稍减。</li>
+              <li>血常规“PCT”是血小板比积0.08%，与降钙素原不是同一指标。</li>
             </ul>
           </div>
         </details>
@@ -1220,9 +1220,10 @@
           </summary>
           <div class="report-body">
             <ul>
-              <li>血气Hb最低8.4后回升至最新9.1 g/dL，Hct 27%；仍需血常规确认及出血评估。</li>
-              <li>离子钙最新1.12 mmol/L，仍略低于参考下限（1.15–1.29）。</li>
-              <li>最新生化：K 4.35、Na 137.91、Cl 97.56 mmol/L。</li>
+              <li>血常规Hb：9月17日09:46与9月18日08:34均为85 g/L；血气Hb最新9.1 g/dL，Hct 27%。</li>
+              <li>血小板73→65×10⁹/L，持续偏低；血小板比积0.08%（参考0.17–0.35）。</li>
+              <li>白细胞11.52→14.51，中性粒95%→91.2%，淋巴细胞约2.4–2.5%。</li>
+              <li>离子钙1.12 mmol/L仍略低。最新生化：K 4.35、Na 137.91、Cl 97.56。</li>
             </ul>
           </div>
         </details>
@@ -1375,8 +1376,8 @@
         </article>
         <article class="event" style="--event-color: var(--green)">
           <div class="event-time">术后约64小时36分</div>
-          <div class="event-title">乳酸降至1.97，FiO₂降至30%</div>
-          <div class="event-desc">P/F约281；pH7.392、HCO₃⁻22.4；Hb9.1、iCa1.12。升压药已稍减。</div>
+          <div class="event-title">乳酸降至1.97，FiO₂仍为50%</div>
+          <div class="event-desc">氧合指数169（此前误当成PCT170）；pH7.392、HCO₃⁻22.4；Hb9.1、iCa1.12。</div>
         </article>
         <article class="event" style="--event-color: var(--blue)">
           <div class="event-time">术后约66小时58分</div>
@@ -1385,8 +1386,8 @@
         </article>
         <article class="event" style="--event-color: var(--orange)">
           <div class="event-time">术后约67小时44分</div>
-          <div class="event-title">APTT危急解除至50.8；PCT升至170</div>
-          <div class="event-desc">INR1.24、PT13.8；PCT 146.4→170，感染指标仍加重。</div>
+          <div class="event-title">APTT降至50.8；降钙素原降至101.6</div>
+          <div class="event-desc">INR1.24、PT13.8。降钙素原146.4→101.563，下降但仍极高。血小板65。</div>
         </article>
       </div>
     </section>
@@ -1523,7 +1524,7 @@
       { h: 49.95, label: "术后49h57m", sample: "动脉", ph: 7.403, pco2: 32.7, po2: 90.6, hco3: 19.9, be: -4.8, lactate: 2.27, fio2: 50, pf: 181, hb: 8.8, ca: .98 },
       { h: 56.78, label: "术后56h47m", sample: "动脉", ph: 7.369, pco2: 43.0, po2: 92.0, hco3: 24.2, be: -1.1, lactate: 2.86, fio2: 50, pf: 184, hb: 9.9, ca: 1.05 },
       { h: 61.73, label: "术后61h44m", sample: "动脉", ph: 7.367, pco2: 40.1, po2: 87.9, hco3: 22.5, be: -2.8, lactate: 2.57, fio2: 50, pf: 176, hb: 8.4, ca: 1.06 },
-      { h: 64.6, label: "术后64h36m", sample: "动脉", ph: 7.392, pco2: 37.6, po2: 84.4, hco3: 22.4, be: -2.1, lactate: 1.97, fio2: 30, pf: 281, hb: 9.1, ca: 1.12 }
+      { h: 64.6, label: "术后64h36m", sample: "动脉", ph: 7.392, pco2: 37.6, po2: 84.4, hco3: 22.4, be: -2.6, lactate: 1.97, fio2: 50, pf: 169, hb: 9.1, ca: 1.12 }
     ];
 
     const labReadings = [
@@ -1536,8 +1537,10 @@
       { h: 44.87, label: "术后44h52m", sample: "生化", creatinine: 363, urea: 17.80, ck: 8280, alt: 891, ast: 806, il6: 981 },
       { h: 57.13, label: "术后57h08m", sample: "凝血", aptt: 76.1, critical: true },
       { h: 62.07, label: "术后62h04m", sample: "凝血", aptt: 72.4, critical: true },
-      { h: 66.97, label: "术后66h58m", sample: "生化", creatinine: 212, urea: 11.59, k: 4.35, na: 137.91, cl: 97.56 },
-      { h: 67.73, label: "术后67h44m", sample: "凝血", aptt: 50.8, inr: 1.24, pt: 13.8, pct: 170 }
+      { h: 43.78, label: "术后43h47m", sample: "血常规", wbc: 11.52, plt: 73 },
+      { h: 66.58, label: "术后66h35m", sample: "血常规", wbc: 14.51, plt: 65 },
+      { h: 66.97, label: "术后66h58m", sample: "生化", creatinine: 212, urea: 11.59, k: 4.35, na: 137.91, cl: 97.56, pct: 101.563 },
+      { h: 67.73, label: "术后67h44m", sample: "凝血", aptt: 50.8, inr: 1.24, pt: 13.8 }
     ];
 
     const metricConfig = {
@@ -1550,14 +1553,17 @@
       ca: { label: "离子钙 iCa", unit: "mmol/L", minRef: 1.15, maxRef: 1.29, color: "#7257a3", decimals: 2, better: "range" },
       creatinine: { label: "肌酐", unit: "μmol/L", minRef: 41, maxRef: 81, color: "#bd3b3b", decimals: 0, better: "down", source: "lab" },
       inr: { label: "INR", unit: "", minRef: .94, maxRef: 1.2, color: "#c76a16", decimals: 2, better: "range", source: "lab" },
-      ck: { label: "肌酸激酶 CK", unit: "U/L", minRef: 33, maxRef: 192, color: "#7257a3", decimals: 0, better: "down", source: "lab" }
+      ck: { label: "肌酸激酶 CK", unit: "U/L", minRef: 33, maxRef: 192, color: "#7257a3", decimals: 0, better: "down", source: "lab" },
+      pct: { label: "降钙素原", unit: "ng/mL", minRef: 0, maxRef: 0.05, color: "#bd3b3b", decimals: 1, better: "down", source: "lab" },
+      wbc: { label: "白细胞", unit: "10⁹/L", minRef: 3.5, maxRef: 9.5, color: "#c76a16", decimals: 2, better: "range", source: "lab" },
+      plt: { label: "血小板", unit: "10⁹/L", minRef: 125, maxRef: 350, color: "#7257a3", decimals: 0, better: "range", source: "lab" }
     };
 
     let selectedMetric = "lactate";
     let selectedRange = "all";
     const customKey = "perioperative-dashboard-custom-v1";
     const questionKey = "perioperative-dashboard-questions-v1";
-    const latestNonBloodGasReport = { h: 67.73, label: "术后67h44m", type: "凝血/PCT" };
+    const latestNonBloodGasReport = { h: 67.73, label: "术后67h44m", type: "凝血" };
     const doctorQuestions = [
       {
         id: "hemodynamics",
@@ -1586,14 +1592,14 @@
       {
         id: "oxygenation",
         group: "urgent",
-        title: "FiO₂已降至30%、P/F约281，下一步呼吸支持计划？",
-        detail: "目前通气模式、能否继续减氧，以及拔管评估标准是什么？"
+        title: "FiO₂仍为50%、P/F约169，呼吸支持下一步是什么？",
+        detail: "氧合未见明显改善；目前通气模式和拔管评估标准是什么？"
       },
       {
         id: "next-window",
         group: "urgent",
         title: "未来6–12小时最重要的观察目标是什么？",
-        detail: "尤其是PCT升至170的感染源控制、CRRT净平衡、尿量与升压药能否继续减量。"
+        detail: "降钙素原已从146降至102但仍极高；同时看CRRT净平衡、尿量和升压药。"
       },
       {
         id: "kidney",
@@ -1605,19 +1611,19 @@
         id: "coagulation",
         group: "followup",
         title: "APTT已从危急降至50.8，抗凝方案是否已调整？",
-        detail: "INR1.24、PT13.8；请确认肝素/枸橼酸剂量、血小板及有无出血。"
+        detail: "INR1.24、PT13.8；血小板已降至65。请确认抗凝方案及有无出血。"
       },
       {
         id: "bleeding",
         group: "followup",
-        title: "血气Hb现为9.1，是否仍需输血或排查出血？",
-        detail: "请确认血常规Hb、腹腔引流量、伤口情况及输血阈值。"
+        title: "血常规Hb 85、血小板65，是否需要输血或停抗凝？",
+        detail: "9月17日PLT73→9月18日PLT65；请结合引流量和CRRT抗凝判断。"
       },
       {
         id: "infection",
         group: "followup",
-        title: "PCT升至170，抗感染方案是否需要升级？",
-        detail: "146.4→170，IL-6曾981；培养结果、覆盖范围及CRRT下抗菌药剂量如何？"
+        title: "降钙素原从146降至102，抗感染是否见效？",
+        detail: "仍远高于0.05；白细胞升至14.51、中性粒约91%。培养和CRRT下抗菌药剂量如何？"
       },
       {
         id: "liver",
