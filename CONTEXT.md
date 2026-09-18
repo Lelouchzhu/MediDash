@@ -68,7 +68,7 @@ Trend: rise then fall; still far above ref 0–0.05.
 - **Latest bedside (~postop 73h):** BP **120/35** (MAP≈63), HR **109**, RR **15–19**
 - **CRRT:** dehydrate/replacement ~**250 mL/h**, hemofiltration **120 mL/h**; IV fluids ~**200 mL/h** (approx net −50 mL/h — verify at bedside)
 - Urine: overnight had been 70 mL; **since this morning only 20 mL**
-- Vasopressors still required (previously “slightly reduced”); confirm drug names/doses
+- Vasopressors: **still two agents**, each about **½ of the maximum allowed dose** (family estimate); confirm drug names and exact rates
 
 ### Arterial blood gas — 2026-09-18 06:36 (postop 64h36m)
 
