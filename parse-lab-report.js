@@ -9,7 +9,7 @@
   "use strict";
 
   const GAS_KEYS = ["ph", "pco2", "po2", "hco3", "be", "lactate", "fio2", "pf", "hb", "ca"];
-  const LAB_KEYS = ["aptt", "inr", "creatinine", "urea", "ck", "alt", "ast", "il6", "pct"];
+  const LAB_KEYS = ["aptt", "inr", "creatinine", "urea", "ck", "alt", "ast", "il6", "pct", "wbc", "plt", "hbg"];
   const SURGERY_END_HOUR = 14;
   const SURGERY_END_MS = Date.parse("2026-09-15T14:00:00");
 
@@ -32,7 +32,10 @@
     alt: [5, 15000],
     ast: [5, 15000],
     il6: [1, 200000],
-    pct: [0.01, 500]
+    pct: [0.01, 500],
+    wbc: [0.5, 80],
+    plt: [5, 1000],
+    hbg: [30, 220]
   };
 
   function normalizeReportText(text) {
@@ -266,6 +269,13 @@
     assignScanned(fields, "il6", raw, /IL\s*-?\s*6/i, value => recoverDroppedDot(value, 5000));
     assignScanned(fields, "creatinine", raw, /肌酐|\bSCR\b|Crea(?!tine)|\bCREA\b/i, value => recoverDroppedDot(value, 2000));
     assignScanned(fields, "urea", raw, /尿素|\bUrea\b/i, value => recoverDroppedDot(value, 80));
+
+    assign(fields, "wbc", recoverDroppedDot(takeNumber(raw.match(/(?:白细胞(?:计数)?|\bWBC\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 40));
+    assign(fields, "plt", recoverDroppedDot(takeNumber(raw.match(/(?:血小板计数|血小板(?!\s*比积)|\bPLT\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 400));
+    assign(fields, "hbg", recoverDroppedDot(takeNumber(raw.match(/(?:血红蛋白测定|\bHGB\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 200));
+    assignScanned(fields, "wbc", raw, /白细胞|\bWBC\b/i, value => recoverDroppedDot(value, 40));
+    assignScanned(fields, "plt", raw, /血小板计数|\bPLT\b/i, value => recoverDroppedDot(value, 400));
+    assignScanned(fields, "hbg", raw, /血红蛋白测定|\bHGB\b/i, value => recoverDroppedDot(value, 200));
 
     // Chem procalcitonin only. Never take CBC 血小板比积 or ABG 氧合指数 as PCT.
     if (!/血小板比积/.test(raw)) {

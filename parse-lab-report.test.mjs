@@ -231,6 +231,42 @@ test("recovers hospital LIS OCR that dropped decimals or split labels", () => {
   assert.equal(chemOcr.fields.lactate, undefined);
 });
 
+test("parses latest 13:00 hospital ABG already on the dashboard", () => {
+  const parsed = parseLabReportText(`
+    报告时间: 2026-09-18 13:00:29
+    酸碱度 pH 7.388
+    二氧化碳分压 pCO2 37.5
+    氧分压 pO2 72.6
+    血浆碳酸氢盐浓度 cHCO3-(P) 22.1
+    标准剩余碱 SBE -2.9
+    乳酸浓度 cLac 1.27
+    吸入氧浓度 FO2(I) 50
+    氧合指数 pO2(a)/FO2(I) 145
+    实测总血红蛋白 ctHb 9.1
+    钙离子浓度 cCa2+ 1.12
+  `);
+  assert.equal(parsed.hours, 71);
+  assert.equal(parsed.fields.lactate, 1.27);
+  assert.equal(parsed.fields.pf, 145);
+  assert.equal(parsed.fields.po2, 72.6);
+  assert.equal(parsed.fields.pct, undefined);
+});
+
+test("parses CBC without treating plateletcrit as procalcitonin", () => {
+  const parsed = parseLabReportText(`
+    报告时间: 2026-09-18 08:34:44
+    白细胞 WBC 14.51
+    血红蛋白测定 HGB 85
+    血小板 PLT 65
+    血小板比积 PCT 0.08%
+  `);
+  assert.equal(parsed.hours, 66.57);
+  assert.equal(parsed.fields.wbc, 14.51);
+  assert.equal(parsed.fields.hbg, 85);
+  assert.equal(parsed.fields.plt, 65);
+  assert.equal(parsed.fields.pct, undefined);
+});
+
 test("parses English postop hour labels", () => {
   const parsed = parseLabReportText("ART postop 66h10m\npH 7.371\nLac 2.31");
   assert.equal(parsed.hours, 66.17);

@@ -33,3 +33,14 @@ Do **not** confuse:
 ## Counts
 
 See `manifest.json` → `count`.
+
+## Parser regression
+
+Labeled LIS reports (abg / chemistry / coag / cbc) can be re-read with the shared parser:
+
+```bash
+node --test parse-lab-report.test.mjs
+node scripts/run-testset.mjs --ocr
+```
+
+`--ocr` uses Tesseract `chi_sim+eng` on the JPEGs. Without `--ocr` the script only lists expected values.
