@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 63,
+  "count": 64,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -720,6 +720,33 @@
         "pf": 170
       },
       "promoted_from": "reports/other/53990787-d010-4458-9778-05a49f764ae8.jpg"
+    },
+    {
+      "id": "20260918T214648__7641F637-CDE1-4814-9500-06752068AFD0_L0_001.jpg",
+      "path": "reports/abg/20260918T214648__7641F637-CDE1-4814-9500-06752068AFD0_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "7641F637-CDE1-4814-9500-06752068AFD0_L0_001.jpg",
+      "sha256_16": "11a973cb5ff6e00e",
+      "bytes": 233972,
+      "labeled": true,
+      "report_time": "2026-09-18T21:46:48",
+      "type": "血气",
+      "note": "lac1.41 PF262 FiO250% PO2131.1 Hb9.4 iCa1.14 HCO320.4",
+      "relative_h": 79.78,
+      "extracted": {
+        "ph": 7.398,
+        "pco2": 33.8,
+        "po2": 131.1,
+        "be": -4.5,
+        "hco3": 20.4,
+        "lactate": 1.41,
+        "hb": 9.4,
+        "hct": 28.0,
+        "ca": 1.14,
+        "fio2": 50,
+        "pf": 262,
+        "so2": 98.3
+      }
     }
   ]
 }

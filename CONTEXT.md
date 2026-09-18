@@ -70,11 +70,19 @@ Trend: rise then fall; still far above ref 0–0.05.
 - Urine: overnight had been 70 mL; **since this morning only 20 mL**
 - Vasopressors: **still two agents**, each about **½ of the maximum allowed dose** (family estimate); confirm drug names and exact rates
 
-### Arterial blood gas — latest 2026-09-18 17:23 (postop 75h23m)
+### Arterial blood gas — latest 2026-09-18 21:46 (postop 79h47m)
+
+- pH 7.398, PCO₂ 33.8↓, PO₂ **131.1↑**, HCO₃⁻ **20.4↓**, BE −4.5 (ABE)
+- Lactate **1.41** (still in ref 0.5–1.6)
+- FiO₂ **50%**, P/F **262** (improved vs 17:23’s 165; still below 400)
+- Hb **9.4↓** g/dL, Hct **28%↓**, iCa **1.14↓**
+- Screenshot: `testset/reports/abg/20260918T214648__7641F637-CDE1-4814-9500-06752068AFD0_L0_001.jpg`
+
+### Arterial blood gas — 2026-09-18 17:23 (postop 75h23m)
 
 - pH 7.363, PCO₂ 40.3, PO₂ **82.4**, HCO₃⁻ 22.4, BE −2.8 (SBE)
-- **Lactate not printed on this report** (last known lac **1.27** at 13:00)
-- FiO₂ **50%**, P/F **165** (improved vs 13:00’s 145; still far below 400)
+- **Lactate not printed on this report** (then next known lac **1.41** at 21:46)
+- FiO₂ **50%**, P/F **165** (improved vs 13:00’s 145)
 - Hb **8.8↓** g/dL, Hct **26%↓**; tCO₂ 23.6↓; A-a gradient ↑; no iCa on sheet
 - Screenshot: `testset/reports/abg/20260918T172343__01a0b451-4ecd-7e47-8ab8-9b5d80606e2d.jpg`
 
