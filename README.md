@@ -12,9 +12,21 @@ Mobile-friendly perioperative monitoring dashboard for family-side trend trackin
 python3 -m http.server 8080
 ```
 
-Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
+Then open:
 
-Add a new result from a lab screenshot: **添加最新结果 → 从化验截图导入**. The image stays on the device; only parsed numbers are saved in this browser. Parser checks:
+- Live report: [http://localhost:8080/index.html](http://localhost:8080/index.html)
+- Empty template (no seed labs): [http://localhost:8080/template.html](http://localhost:8080/template.html)
+
+Add a new result from a lab screenshot or oral bedside note: **添加最新结果**. The add form includes BP, pulse, CRRT, and urine. Images stay on the device; only parsed numbers are saved in this browser.
+
+The empty template is for replay tests: import every file in `testset/` plus oral notes, then read the coverage panel against the current seeded report. Rebuild `template.html` after `index.html` edits:
+
+```bash
+node scripts/build-template.mjs
+node scripts/replay-coverage.mjs
+```
+
+Parser checks:
 
 ```bash
 node --test parse-lab-report.test.mjs

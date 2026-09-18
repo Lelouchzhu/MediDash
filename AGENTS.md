@@ -22,7 +22,9 @@ Self-contained mobile perioperative monitoring dashboard for family-side trend t
 
 | Path | Role |
 |------|------|
-| `index.html` | Entire app (UI + data + charts + checklist). Edit this file for clinical updates. |
+| `index.html` | Live dashboard (seeded report + screenshot ingest + oral add form). |
+| `template.html` | Empty replay shell (no seed labs). Rebuild with `node scripts/build-template.mjs`. |
+| `data/current-report.js` | Extract of the live seed + oral bedside series for coverage compare. |
 | `CONTEXT.md` | Living clinical memory and naming traps. |
 | `docs/transcripts/` | Dated summaries of long agent runs (not full chat dumps). |
 | `testset/` | Archived report screenshots + `manifest.json` for re-extraction tests. |
@@ -68,6 +70,9 @@ The add-result dialog accepts a new test-result screenshot without waiting for a
 - Rejects PDF / files over 15MB; HEIC may preview-fail — ask for a system screenshot
 - Client-side OCR (`chi_sim+eng`) fills the form when it can; review signs and hours before save
 - Images are previewed only; they are not uploaded and not written into `localStorage`
+- Oral / bedside fields: SBP/DBP, pulse, RR, pressors, CRRT dehydrate/HF/IV, urine
+- Empty replay page: `template.html` or `index.html?mode=template` (separate `localStorage`)
+- Coverage: `node scripts/replay-coverage.mjs` against `data/current-report.js`
 - Regression: `fixtures/` synthetic shots plus labeled files in `testset/reports/`
 
 ## Preview

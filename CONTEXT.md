@@ -121,6 +121,8 @@ Trend: rise then fall; still far above ref 0–0.05.
 | Metric catalog + categories | `metricConfig` + `metricGroups` (分类汇总 sparklines + 详细趋势) |
 | Status cards / insights / timeline / expandable reports | HTML sections near top/middle |
 | Doctor checklist | `doctorQuestions` |
+| Oral / bedside (BP, HR, CRRT, urine) | add-result form + `bedsideReadings` in `data/current-report.js` |
+| Empty replay template | `template.html` (no seed). Compare imported rows to the live seed. |
 | Latest non-ABG clock for hero pill | `latestNonBloodGasReport` |
 | Report screenshot archive | `testset/reports/` + `testset/manifest.json` |
 

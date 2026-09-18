@@ -44,3 +44,12 @@ node scripts/run-testset.mjs --ocr
 ```
 
 `--ocr` uses Tesseract `chi_sim+eng` on the JPEGs. Without `--ocr` the script only lists expected values.
+
+To see whether the **empty template** can rebuild the live report from these files plus oral notes:
+
+```bash
+node scripts/build-template.mjs
+node scripts/replay-coverage.mjs
+```
+
+Open `template.html` and use **添加最新结果** (screenshot + 口述血压/脉搏/CRRT).

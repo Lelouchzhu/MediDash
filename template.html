@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-mode="template">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f4f7f4">
   <meta name="color-scheme" content="light">
-  <title>围手术期连续监测 Dashboard</title>
+  <title>空白监测模版</title>
   <style>
     :root {
       --ink: #17342f;
@@ -1990,12 +1990,625 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <div class="sr-only" aria-live="polite" id="liveRegion"></div>
 
-  <script src="parse-lab-report.js"></script>
-  <script src="data/current-report.js"></script>
   <script>
-    const TEMPLATE_MODE = window.TEMPLATE_MODE === true
-      || document.documentElement.dataset.mode === "template"
-      || new URLSearchParams(location.search).get("mode") === "template";
+(function (root, factory) {
+  const api = factory();
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = api;
+  }
+  root.MediDashLabParse = api;
+  root.parseLabReportText = api.parseLabReportText;
+})(typeof globalThis !== "undefined" ? globalThis : this, function () {
+  "use strict";
+
+  const GAS_KEYS = ["ph", "pco2", "po2", "hco3", "be", "lactate", "fio2", "pf", "hb", "ca"];
+  const LAB_KEYS = ["aptt", "inr", "creatinine", "urea", "ck", "alt", "ast", "il6", "pct", "wbc", "plt", "hbg"];
+  const SURGERY_END_HOUR = 14;
+  const SURGERY_END_MS = Date.parse("2026-09-15T14:00:00");
+
+  const RANGES = {
+    ph: [6.7, 7.8],
+    pco2: [8, 130],
+    po2: [15, 550],
+    hco3: [4, 55],
+    be: [-35, 25],
+    lactate: [0.1, 30],
+    fio2: [21, 100],
+    pf: [40, 650],
+    hb: [3, 25],
+    ca: [0.5, 1.8],
+    aptt: [10, 300],
+    inr: [0.5, 8],
+    creatinine: [20, 2500],
+    urea: [1, 80],
+    ck: [10, 30000],
+    alt: [5, 15000],
+    ast: [5, 15000],
+    il6: [1, 200000],
+    pct: [0.01, 500],
+    wbc: [0.5, 80],
+    plt: [5, 1000],
+    hbg: [30, 220]
+  };
+
+  function normalizeReportText(text) {
+    return String(text || "")
+      .replace(/\u00a0/g, " ")
+      .replace(/[–—−－]/g, "-")
+      .replace(/[：]/g, ":")
+      .replace(/[Ｏ]/g, "O")
+      .replace(/[０]/g, "0")
+      .replace(/[，]/g, ",")
+      .replace(/(\d{2,4}):(\d{3})\b/g, "$1.$2")
+      .replace(/\r/g, "\n");
+  }
+
+  function inRange(key, value) {
+    const range = RANGES[key];
+    return range ? value >= range[0] && value <= range[1] : Number.isFinite(value);
+  }
+
+  function takeNumber(match, index) {
+    if (!match) return null;
+    const raw = match[index == null ? 1 : index];
+    if (raw == null || raw === "") return null;
+    const value = Number(String(raw).replace(",", "."));
+    return Number.isFinite(value) ? value : null;
+  }
+
+  function assign(fields, key, value, transform) {
+    if (value == null) return;
+    const next = transform ? transform(value) : value;
+    if (next == null || !inRange(key, next)) return;
+    if (fields[key] == null) fields[key] = next;
+  }
+
+  function recoverPh(value) {
+    if (value == null) return null;
+    if (value >= 6.7 && value <= 7.8) return value;
+    if (value >= 670 && value <= 780) return Number((value / 100).toFixed(3));
+    if (value >= 6700 && value <= 7800) return Number((value / 1000).toFixed(3));
+    return null;
+  }
+
+  function recoverDroppedDot(value, typicalMax) {
+    if (value == null || !Number.isFinite(value)) return null;
+    if (value <= typicalMax) return value;
+    if (!Number.isInteger(value)) return null;
+    // LIS prints 981.00 / 891.0; OCR often drops the decimal → 981000 / 8910.
+    if (value % 1000 === 0) {
+      const next = value / 1000;
+      if (next <= typicalMax) return Number(Number(next.toFixed(4)));
+    }
+    let current = value;
+    for (let i = 0; i < 4 && current > typicalMax; i += 1) {
+      current /= 10;
+    }
+    return current <= typicalMax ? Number(Number(current.toFixed(4))) : null;
+  }
+
+  function recoverBe(value) {
+    if (value == null) return null;
+    if (inRange("be", value)) return value;
+    const abs = Math.abs(value);
+    if (abs >= 100 && abs <= 999 && abs % 10 === 0) {
+      const next = Number((value / 100).toFixed(2));
+      if (inRange("be", next)) return next;
+    }
+    if (abs > 35) {
+      const next = Number((value / 10).toFixed(2));
+      if (inRange("be", next)) return next;
+    }
+    return null;
+  }
+
+  function scanNumbersFrom(text, match, span) {
+    const start = match.index + match[0].length;
+    let slice = text.slice(start, start + (span || 80));
+    const analyteRe = /(?:酸碱度|二氧化碳分压|氧分压|标准剩余碱|血浆碳酸|乳酸浓度|吸入氧|氧合指数|总血红蛋白|钙离子|谷丙|谷草|肌酐|尿素|\b(?:PCO2|PO2|SBE|cLac|FiO2|ctHb|APTT|ALT|AST|Crea|Urea|IL-?6)\b)/ig;
+    const analytes = [...slice.matchAll(analyteRe)];
+    if (analytes.length) {
+      const first = analytes[0];
+      if (first.index < 8 && analytes[1]) slice = slice.slice(0, analytes[1].index);
+      else if (first.index >= 3) slice = slice.slice(0, first.index);
+    }
+    slice = slice.replace(/-?\d+(?:[.,]\d+)?\s*[-~～至]\s*-?\d+(?:[.,]\d+)?/g, " ");
+    return [...slice.matchAll(/(?<![A-Za-z])-?\d+(?:[.,]\d+)?(?![A-Za-z])/g)]
+      .map(item => Number(String(item[0]).replace(",", ".")))
+      .filter(Number.isFinite);
+  }
+
+  function assignScanned(fields, key, text, labelRe, recover) {
+    if (fields[key] != null) return;
+    const flags = labelRe.flags.includes("g") ? labelRe.flags : `${labelRe.flags}g`;
+    const re = new RegExp(labelRe.source, flags);
+    let match;
+    while ((match = re.exec(text))) {
+      for (const value of scanNumbersFrom(text, match)) {
+        if (inRange(key, value)) {
+          fields[key] = value;
+          return;
+        }
+        const recovered = recover ? recover(value) : null;
+        if (recovered != null && inRange(key, recovered)) {
+          fields[key] = recovered;
+          return;
+        }
+      }
+      if (!match[0].length) re.lastIndex += 1;
+    }
+  }
+
+  function relativeHoursFromDayClock(day, hour, minute, surgeryEndHour) {
+    const endHour = surgeryEndHour == null ? SURGERY_END_HOUR : surgeryEndHour;
+    return Number((day * 24 + hour + minute / 60 - endHour).toFixed(2));
+  }
+
+  function formatRelativeLabel(hours) {
+    if (hours == null || !Number.isFinite(hours)) return null;
+    const prefix = hours < 0 ? "术前" : "术后";
+    const abs = Math.abs(hours);
+    const whole = Math.floor(abs + 1e-9);
+    let minutes = Math.round((abs - whole) * 60);
+    let displayHours = whole;
+    if (minutes === 60) {
+      displayHours += 1;
+      minutes = 0;
+    }
+    if (minutes === 0) return `${prefix}${displayHours}h`;
+    return `${prefix}${displayHours}h${String(minutes).padStart(2, "0")}m`;
+  }
+
+  function parseRelativeHours(text) {
+    const postop = text.match(/(?:术后|postop(?:erative)?)\s*(\d+(?:\.\d+)?)\s*(?:h|小时|时)?\s*(?:(\d{1,2})\s*(?:m|分|min)?)?/i);
+    if (postop) {
+      const hours = Number(postop[1]);
+      const minutes = postop[2] != null ? Number(postop[2]) : 0;
+      if (Number.isFinite(hours)) {
+        const value = Number((hours + minutes / 60).toFixed(2));
+        return { hours: value, label: formatRelativeLabel(value) };
+      }
+    }
+
+    const preop = text.match(/术前\s*(\d+(?:\.\d+)?)\s*(?:h|小时|时)?\s*(?:(\d{1,2})\s*(?:m|分|min)?)?/i);
+    if (preop) {
+      const hours = Number(preop[1]);
+      const minutes = preop[2] != null ? Number(preop[2]) : 0;
+      if (Number.isFinite(hours)) {
+        const value = Number((-(hours + minutes / 60)).toFixed(2));
+        return { hours: value, label: formatRelativeLabel(value) };
+      }
+    }
+
+    const relative = text.match(/相对(?:时间)?\s*[:=]?\s*(-?\d+(?:\.\d+)?)/);
+    if (relative) {
+      const value = Number(relative[1]);
+      if (Number.isFinite(value)) return { hours: Number(value.toFixed(2)), label: formatRelativeLabel(value) };
+    }
+
+    const dayClock = text.match(/\bD\s*(\d+)\s+(\d{1,2}):(\d{2})\b/i);
+    if (dayClock) {
+      const value = relativeHoursFromDayClock(Number(dayClock[1]), Number(dayClock[2]), Number(dayClock[3]));
+      return { hours: value, label: formatRelativeLabel(value) };
+    }
+
+    const reportClock = text.match(/(?:报告时间|检验时间|采样时间)?\s*[:=]?\s*(20\d{2})[-/.](\d{1,2})[-/.](\d{1,2})\s+(\d{1,2}):(\d{2})(?::\d{2})?/);
+    const compactClock = !reportClock && text.match(/(20\d{2})[-/.](\d{1,2})[-/.](\d{1,2})\s+(\d{2})(\d{2})(\d{2})\b/);
+    const clock = reportClock || compactClock;
+    if (clock) {
+      const iso = `${clock[1]}-${String(clock[2]).padStart(2, "0")}-${String(clock[3]).padStart(2, "0")}T${String(clock[4]).padStart(2, "0")}:${clock[5]}:00`;
+      const hours = (Date.parse(iso) - SURGERY_END_MS) / 3600000;
+      if (Number.isFinite(hours)) {
+        const value = Number(hours.toFixed(2));
+        return { hours: value, label: formatRelativeLabel(value) };
+      }
+    }
+
+    return { hours: null, label: null };
+  }
+
+  function parseSample(text) {
+    if (/静脉血|静脉|venous|\bVEN\b/i.test(text) && !/动脉/.test(text)) return "静脉";
+    if (/动脉血|动脉|arterial|\bART\b/i.test(text)) return "动脉";
+    return null;
+  }
+
+  function parseLabReportText(text) {
+    const raw = normalizeReportText(text);
+    const fields = {};
+
+    assign(fields, "ph", recoverPh(takeNumber(raw.match(/(?:酸碱度|[^\w]|^)pH\b[\s.|:：]*?(7[.,]\d{2,3}|7\d{3})(?!\s*[-~])/i))));
+    assign(fields, "pco2", recoverDroppedDot(takeNumber(raw.match(/(?:二氧化碳分压|p\s*C[O0]2|PC[O0]2)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 80));
+    assign(fields, "po2", recoverDroppedDot(takeNumber(raw.match(/(?:氧分压|(?<![CF/cf])p\s*[O0]2)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 200));
+    assign(fields, "hco3", takeNumber(raw.match(/(?:血浆碳酸氢盐(?:浓度)?(?:\s*c?HC[O0]-?3(?:\s*\(\s*P\s*\))?)?|碳酸氢根|c?HC[O0]3-?(?:\s*\(\s*P\s*\))?)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
+    assign(fields, "be", recoverBe(takeNumber(raw.match(/(?:碱剩余|碱缺失|BEecf|SBE|\bBE\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i))));
+    assign(fields, "lactate", recoverDroppedDot(takeNumber(raw.match(/(?:乳酸(?!\s*脱)|乳酸浓度|cLac|Lac(?:tate)?|\bLAC\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 10));
+
+    let fio2 = takeNumber(raw.match(/(?:吸\s*入?\s*氧\s*浓度(?:\s*FO2\s*\(\s*I?\s*\))?|FiO2|FIO2|FO2\s*\(\s*I?\s*\))\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i));
+    if (fio2 != null && fio2 > 0 && fio2 <= 1) fio2 = Math.round(fio2 * 100);
+    if (fio2 != null && fio2 > 100) fio2 = recoverDroppedDot(fio2, 100);
+    assign(fields, "fio2", fio2);
+
+    assign(fields, "pf", takeNumber(raw.match(/(?:氧合指数(?:\s*pO2\s*\(\s*a\s*\)\s*\/\s*F?O2(?:\s*\(\s*I\s*\))?)?|pO2\s*\(\s*a\s*\)\s*\/\s*F?O2(?:\s*\(\s*I\s*\))?|P\s*\/\s*F|\bPF\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
+
+    let hb = takeNumber(raw.match(/(?:(?:实测)?总?血红蛋白(?:\s*ctHb)?|ctHb|\btHb\b|\bHGB\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i));
+    if (hb == null) hb = takeNumber(raw.match(/(?<![A-Za-z])Hb\b\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/));
+    if (hb != null && hb > 25 && hb <= 250) hb = Number((hb / 10).toFixed(1));
+    assign(fields, "hb", hb);
+
+    assign(fields, "ca", takeNumber(raw.match(/(?:离子钙|游离钙|钙离子(?:浓度)?(?:\s*cCa\s*2\s*\+)?|(?<![A-Za-z])iCa(?![A-Za-z])|cCa\s*2\s*\+|Ca\+\+)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
+    assign(fields, "aptt", takeNumber(raw.match(/(?:活化部分凝血活酶时间|a?PTT)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
+    assign(fields, "inr", takeNumber(raw.match(/(?:国际标准化比值|\bINR\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
+
+    let creatinine = recoverDroppedDot(takeNumber(raw.match(/(?:肌酐|Creatinine|Crea(?!tine)|\bCREA\b|\bSCR\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 2000);
+    if (creatinine != null && creatinine > 0 && creatinine < 20) creatinine = Number((creatinine * 88.4).toFixed(1));
+    assign(fields, "creatinine", creatinine);
+
+    assign(fields, "urea", recoverDroppedDot(takeNumber(raw.match(/(?:尿素(?:氮)?|\bUrea\b|\bBUN\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 80));
+    assign(fields, "ck", recoverDroppedDot(takeNumber(raw.match(/(?:肌酸激酶|\bCK\b(?!\s*-?\s*MB))\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 20000));
+    assign(fields, "alt", recoverDroppedDot(takeNumber(raw.match(/(?:谷丙转氨酶|\bALT\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 2000));
+    assign(fields, "ast", recoverDroppedDot(takeNumber(raw.match(/(?:谷草转氨酶|\bAST\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 2000));
+    assign(fields, "il6", recoverDroppedDot(takeNumber(raw.match(/(?:白细胞介素-?6|IL?\s*[=-]?\s*6)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 5000));
+
+    assignScanned(fields, "ph", raw, /酸碱度|pH\b/i, recoverPh);
+    assignScanned(fields, "pco2", raw, /二氧化碳分压|p\s*C[O0]2|PC[O0]2/i, value => recoverDroppedDot(value, 80));
+    assignScanned(fields, "po2", raw, /氧分压|(?<![CF/cf])p\s*[O0]2/i, value => recoverDroppedDot(value, 200));
+    assignScanned(fields, "hco3", raw, /血浆碳酸|碳酸氢|cHC[O0]-?3/i);
+    assignScanned(fields, "pf", raw, /氧合指数|pO2\s*\(\s*a\s*\)\s*\/\s*F?O2/i);
+    assignScanned(fields, "be", raw, /标准剩余碱|碱剩余|SBE|\bBE\b/i, recoverBe);
+    assignScanned(fields, "lactate", raw, /乳酸(?!\s*脱)|乳酸浓度|cLac|\bLAC\b/i, value => recoverDroppedDot(value, 10));
+    assignScanned(fields, "fio2", raw, /吸\s*入?\s*氧\s*浓度|FO2\s*\(\s*I?\s*\)|FiO2/i, value => {
+      if (value > 0 && value <= 1) return Math.round(value * 100);
+      return recoverDroppedDot(value, 100);
+    });
+    assignScanned(fields, "hb", raw, /总血红蛋白|ctHb|\btHb\b/i);
+    assignScanned(fields, "ca", raw, /钙离子|离子钙|cCa\s*2\s*\+|(?<![A-Za-z])iCa(?![A-Za-z])/i);
+    assignScanned(fields, "aptt", raw, /活化部分凝血|APTT/i, value => recoverDroppedDot(value, 180));
+    assignScanned(fields, "ck", raw, /\bCK\b(?!\s*-?\s*MB)/i, value => recoverDroppedDot(value, 20000));
+    assignScanned(fields, "alt", raw, /\bALT\b/i, value => recoverDroppedDot(value, 2000));
+    assignScanned(fields, "ast", raw, /\bAST\b/i, value => recoverDroppedDot(value, 2000));
+    assignScanned(fields, "il6", raw, /IL?\s*[=-]?\s*6/i, value => recoverDroppedDot(value, 5000));
+    assignScanned(fields, "creatinine", raw, /肌酐|\bSCR\b|Crea(?!tine)|\bCREA\b/i, value => recoverDroppedDot(value, 2000));
+    assignScanned(fields, "urea", raw, /尿素|\bUrea\b/i, value => recoverDroppedDot(value, 80));
+
+    assign(fields, "wbc", recoverDroppedDot(takeNumber(raw.match(/(?:白细胞(?:计数)?|\bWBC\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 40));
+    assign(fields, "plt", recoverDroppedDot(takeNumber(raw.match(/(?:血小板计数|血小板(?!\s*比积)|\bPLT\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 400));
+    assign(fields, "hbg", recoverDroppedDot(takeNumber(raw.match(/(?:血红蛋白测定|\bHGB\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 200));
+    assignScanned(fields, "wbc", raw, /白细胞|\bWBC\b/i, value => recoverDroppedDot(value, 40));
+    assignScanned(fields, "plt", raw, /血小板计数|\bPLT\b/i, value => recoverDroppedDot(value, 400));
+    assignScanned(fields, "hbg", raw, /血红蛋白测定|\bHGB\b/i, value => recoverDroppedDot(value, 200));
+
+    // Chem procalcitonin only. Never take CBC 血小板比积 or ABG 氧合指数 as PCT.
+    if (!/血小板比积/.test(raw)) {
+      assign(fields, "pct", takeNumber(raw.match(/(?:降钙素原|Procalcitonin)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
+      if (fields.pct == null) {
+        const pctMatch = raw.match(/\bPCT\b\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)\s*(ng\s*\/\s*mL)?/i);
+        const pctValue = takeNumber(pctMatch);
+        if (pctValue != null && (pctMatch[2] || pctValue >= 1)) assign(fields, "pct", pctValue);
+      }
+    }
+
+    if (fields.pf == null && fields.po2 != null && fields.fio2) {
+      fields.pf = Math.round(fields.po2 / (fields.fio2 / 100));
+    }
+
+    const time = parseRelativeHours(raw);
+    const sample = parseSample(raw);
+    const gasCount = GAS_KEYS.filter(key => fields[key] != null).length;
+    const labCount = LAB_KEYS.filter(key => fields[key] != null).length;
+    let kind = "unknown";
+    if (gasCount && labCount) kind = "mixed";
+    else if (gasCount) kind = "abg";
+    else if (labCount) kind = "lab";
+
+    let labSample = null;
+    if (labCount) {
+      labSample = fields.aptt != null || fields.inr != null ? "凝血" : "生化";
+    }
+
+    return {
+      fields,
+      hours: time.hours,
+      label: time.label,
+      sample,
+      labSample,
+      kind,
+      critical: /危急\s*值|critical/i.test(raw),
+      matchedCount: gasCount + labCount,
+      gasCount,
+      labCount
+    };
+  }
+
+  function looksLikeImageFile(file) {
+    if (!file || typeof file.name !== "string") return false;
+    const name = file.name.toLowerCase();
+    const type = String(file.type || "").toLowerCase();
+    if (type.startsWith("image/")) return true;
+    return /\.(png|jpe?g|gif|webp|bmp|heic|heif)$/.test(name);
+  }
+
+  function fileRejectionReason(file) {
+    if (!file) return "没有选择文件";
+    if (file.size > 15 * 1024 * 1024) return "图片超过 15MB，请先压缩或改用截图";
+    const name = String(file.name || "").toLowerCase();
+    const type = String(file.type || "").toLowerCase();
+    if (type === "application/pdf" || name.endsWith(".pdf")) return "暂不支持 PDF，请先截图后再导入";
+    if (type.startsWith("text/") || name.endsWith(".txt")) return null;
+    if (!looksLikeImageFile(file) && !name.endsWith(".txt")) return "请选择化验截图（PNG/JPG/WEBP）";
+    return null;
+  }
+
+  return {
+    GAS_KEYS,
+    LAB_KEYS,
+    parseLabReportText,
+    relativeHoursFromDayClock,
+    formatRelativeLabel,
+    looksLikeImageFile,
+    fileRejectionReason
+  };
+});
+
+</script>
+  <script>
+(function (root, factory) {
+  const api = factory();
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = api;
+  }
+  root.MediDashCurrentReport = api;
+})(typeof globalThis !== "undefined" ? globalThis : this, function () {
+  "use strict";
+
+  const GAS_KEYS = ["ph", "pco2", "po2", "hco3", "be", "lactate", "fio2", "pf", "hb", "ca"];
+  const LAB_KEYS = [
+    "aptt", "inr", "pt", "creatinine", "urea", "ck", "ckmb", "ldh", "hbdh",
+    "alt", "ast", "il6", "pct", "wbc", "plt", "hbg", "k", "na", "cl"
+  ];
+  const BEDSIDE_KEYS = [
+    "sbp", "dbp", "hr", "rrLow", "rrHigh", "map", "pressors", "pressorNote",
+    "crrt", "crrtDehydrate", "crrtHf", "ivRate", "urineMl", "urineWindow", "notes"
+  ];
+
+  const baseReadings = [
+    { h: -18.85, label: "术前18h51m", sample: "动脉", ph: 7.384, pco2: 29.7, po2: 59.8, hco3: 17.3, be: -7.7, lactate: 5.05, fio2: 33, pf: 181, hb: 14.7, ca: 1.18 },
+    { h: 1.22, label: "术后1h13m", sample: "动脉", ph: 7.196, pco2: 31.5, po2: 110.6, hco3: 11.9, be: -16.2, lactate: 5.30, fio2: 50, pf: 221, hb: 13.0, ca: 1.15 },
+    { h: 2.97, label: "术后2h58m", sample: "动脉", ph: 7.380, pco2: 25.0, po2: 78.1, hco3: 14.5, be: -10.7, lactate: 6.63, fio2: 50, pf: 156, hb: 13.4, ca: 1.02 },
+    { h: 3.00, label: "术后3h00m", sample: "待核实", ph: 7.302, pco2: 35.0, po2: 32.5, hco3: 16.9, be: -9.5, lactate: 6.53, fio2: 50, pf: 65, hb: 13.7, ca: 1.04, quality: "uncertain" },
+    { h: 7.18, label: "术后7h11m", sample: "动脉", ph: 7.436, pco2: 22.2, po2: 78.7, hco3: 14.5, be: -9.6, lactate: 6.93, fio2: 50, pf: 157, hb: 11.1, ca: .94 },
+    { h: 9.82, label: "术后9h49m", sample: "动脉", ph: 7.476, pco2: 25.0, po2: 121.4, hco3: 18.0, be: -5.5, lactate: 8.99, fio2: 50, pf: 243, hb: 11.5, ca: .93 },
+    { h: 12.55, label: "术后12h33m", sample: "动脉", ph: 7.522, pco2: 18.9, po2: 136.6, hco3: 15.2, be: -7.7, lactate: 7.64, fio2: 50, pf: 273, hb: 11.2, ca: .91 },
+    { h: 16.83, label: "术后16h50m", sample: "动脉", ph: 7.541, pco2: 21.2, po2: 120.1, hco3: 17.8, be: -4.8, lactate: 8.29, fio2: 40, pf: 300, hb: 11.1, ca: .91 },
+    { h: 21.43, label: "术后21h26m", sample: "静脉", ph: 7.452, pco2: 26.5, po2: 26.6, hco3: 18.1, be: -5.9, lactate: 7.52, fio2: null, pf: null, hb: 15.2, ca: .96 },
+    { h: 21.53, label: "术后21h32m", sample: "动脉", ph: 7.528, pco2: 20.5, po2: 64.1, hco3: 16.7, be: -6.1, lactate: 7.35, fio2: 30, pf: 214, hb: 13.4, ca: .91 },
+    { h: 27.10, label: "术后27h06m", sample: "动脉", ph: 7.458, pco2: 25.6, po2: 84.8, hco3: 17.7, be: -6.1, lactate: 6.55, fio2: 50, pf: 170, hb: 13.2, ca: .92 },
+    { h: 31.47, label: "术后31h28m", sample: "动脉", ph: 7.397, pco2: 33.6, po2: 90.1, hco3: 20.2, be: -4.6, lactate: 5.82, fio2: 50, pf: 180, hb: 9.2, ca: .88 },
+    { h: 40.68, label: "术后40h41m", sample: "动脉", ph: 7.415, pco2: 33.8, po2: 79.2, hco3: 21.2, be: -3.4, lactate: 3.25, fio2: 50, pf: 158, hb: 9.5, ca: .99 },
+    { h: 49.95, label: "术后49h57m", sample: "动脉", ph: 7.403, pco2: 32.7, po2: 90.6, hco3: 19.9, be: -4.8, lactate: 2.27, fio2: 50, pf: 181, hb: 8.8, ca: .98 },
+    { h: 56.78, label: "术后56h47m", sample: "动脉", ph: 7.369, pco2: 43.0, po2: 92.0, hco3: 24.2, be: -1.1, lactate: 2.86, fio2: 50, pf: 184, hb: 9.9, ca: 1.05 },
+    { h: 61.73, label: "术后61h44m", sample: "动脉", ph: 7.367, pco2: 40.1, po2: 87.9, hco3: 22.5, be: -2.8, lactate: 2.57, fio2: 50, pf: 176, hb: 8.4, ca: 1.06 },
+    { h: 64.6, label: "术后64h36m", sample: "动脉", ph: 7.392, pco2: 37.6, po2: 84.4, hco3: 22.4, be: -2.6, lactate: 1.97, fio2: 50, pf: 169, hb: 9.1, ca: 1.12 },
+    { h: 71.01, label: "术后71h00m", sample: "动脉", ph: 7.388, pco2: 37.5, po2: 72.6, hco3: 22.1, be: -2.9, lactate: 1.27, fio2: 50, pf: 145, hb: 9.1, ca: 1.12 }
+  ];
+
+  const labReadings = [
+    { h: -22.85, label: "术前22h51m", sample: "生化", creatinine: 121.8, urea: 10.99 },
+    { h: -18.85, label: "术前18h51m", sample: "凝血", inr: .93 },
+    { h: 2.87, label: "术后2h52m", sample: "生化", ck: 5657 },
+    { h: 19.05, label: "术后19h03m", sample: "凝血", inr: 2.11 },
+    { h: 19.73, label: "术后19h44m", sample: "生化", creatinine: 263, urea: 15.95, pct: 146.421 },
+    { h: 43.42, label: "术后43h25m", sample: "凝血", inr: 1.43 },
+    { h: 44.87, label: "术后44h52m", sample: "生化", creatinine: 363, urea: 17.80, ck: 8280, ckmb: 132.6, ldh: 915, hbdh: 576, alt: 891, ast: 806, il6: 981, pct: 170.297, k: 4.31, na: 141.27, cl: 98.33 },
+    { h: 57.13, label: "术后57h08m", sample: "凝血", aptt: 76.1, critical: true },
+    { h: 62.07, label: "术后62h04m", sample: "凝血", aptt: 72.4, critical: true },
+    { h: 43.78, label: "术后43h47m", sample: "血常规", wbc: 11.52, plt: 73, hbg: 85 },
+    { h: 66.58, label: "术后66h35m", sample: "血常规", wbc: 14.51, plt: 65, hbg: 85 },
+    { h: 66.97, label: "术后66h58m", sample: "生化", creatinine: 212, urea: 11.59, k: 4.35, na: 137.91, cl: 97.56, pct: 101.563 },
+    { h: 67.73, label: "术后67h44m", sample: "凝血", aptt: 50.8, inr: 1.24, pt: 13.8 }
+  ];
+
+  const bedsideReadings = [
+    { h: 10, label: "术后夜间", sbp: 101, dbp: 33, hr: 160, pressors: "dual", pressorNote: "高剂量", source: "oral" },
+    { h: 22, label: "术后约22h", sbp: 90, dbp: 30, hr: 130, map: 50, pressors: "dual", pressorNote: "双升压药", source: "oral" },
+    { h: 29, label: "术后约29h", sbp: 100, dbp: 30, hr: 140, map: 53, pressors: "dual", source: "oral" },
+    { h: 44, label: "术后约44h", sbp: 110, dbp: 35, hr: 110, map: 58, pressors: "reduced", pressorNote: "升压药减量", source: "oral" },
+    { h: 50, label: "术后约50h", sbp: 140, dbp: 50, hr: 100, map: 80, pressors: "unknown", pressorNote: "单次探视读数", source: "oral" },
+    {
+      h: 73,
+      label: "术后约73h · 床旁口述",
+      sbp: 120,
+      dbp: 35,
+      hr: 109,
+      rrLow: 15,
+      rrHigh: 19,
+      map: 63,
+      pressors: "dual",
+      pressorNote: "各约最大允许量½",
+      crrt: "on",
+      crrtDehydrate: 250,
+      crrtHf: 120,
+      ivRate: 200,
+      urineMl: 20,
+      urineWindow: "今晨起",
+      notes: "粗算净负约50 mL/h，待床旁核对",
+      source: "oral"
+    }
+  ];
+
+  const sampleOral = bedsideReadings[bedsideReadings.length - 1];
+
+  // Labeled LIS screenshots that can theoretically rebuild a seed row.
+  const labeledTestsetHours = [
+    { h: 43.78, category: "cbc", id: "20260917T094650__01a0b2d6-0d75-703c-bbb7-a7291e72d653.jpg" },
+    { h: 44.87, category: "chemistry", id: "20260917T105201__0C19DB31-46D2-4C66-8E15-D5BFA7D112B4_L0_001.jpg" },
+    { h: 56.78, category: "abg", id: "20260917T224742__eaf679f1-a6a7-4527-99c3-478118ba2198.jpg" },
+    { h: 57.13, category: "coag", id: "20260917T230838__d1333318-35e2-4808-9b3b-9f384be1e313.jpg" },
+    { h: 61.73, category: "abg", id: "20260918T034405__01a0b2d6-0dd2-7331-a63b-22e300d1952a.jpg" },
+    { h: 62.07, category: "coag", id: "20260918T040448__fbc54e05-7e86-4ead-97ca-767c8aad5d23.jpg" },
+    { h: 64.6, category: "abg", id: "20260918T063619__01a0b2d6-0dae-7a3a-9a06-83b9f9b783da.jpg" },
+    { h: 66.58, category: "cbc", id: "20260918T083444__01a0b2d6-0d88-78df-bb43-c0cc61c8567b.jpg" },
+    { h: 66.97, category: "chemistry", id: "20260918T085858__01a0b2d6-0d9a-7071-b1dd-f8d8c12cb965.jpg" },
+    { h: 67.73, category: "coag", id: "20260918T094446__01a0b2d6-0dbe-726a-9881-08c8bc9b8c85.jpg" },
+    { h: 71.01, category: "abg", id: "20260918T130029__7B968B2C-1BF2-4D59-B4C8-F03D5EDF7DFB_L0_001.jpg" }
+  ];
+
+  const HOUR_TOL = 0.15;
+
+  function flattenFields(rows, keys, kind) {
+    const items = [];
+    rows.forEach(row => {
+      keys.forEach(key => {
+        if (row[key] != null && row[key] !== "") {
+          items.push({
+            kind,
+            h: row.h,
+            key,
+            value: row[key],
+            label: row.label || null,
+            sample: row.sample || null
+          });
+        }
+      });
+    });
+    return items;
+  }
+
+  function valuesClose(key, expected, got) {
+    if (expected == null || got == null) return false;
+    const a = Number(expected);
+    const b = Number(got);
+    if (!Number.isFinite(a) || !Number.isFinite(b)) {
+      return String(expected) === String(got);
+    }
+    const abs = Math.abs(a - b);
+    if (["pct", "ph", "inr", "ca", "lactate", "urea"].includes(key)) return abs <= 0.02;
+    if (["ck", "alt", "ast", "il6", "ldh", "hbdh", "ckmb", "creatinine", "hbg"].includes(key)) {
+      return abs <= 1 || abs / Math.max(Math.abs(a), 1) <= 0.01;
+    }
+    return abs <= 0.15;
+  }
+
+  function findMatch(replayRows, seedItem, keys) {
+    const candidates = (replayRows || []).filter(row => Math.abs(Number(row.h) - seedItem.h) <= HOUR_TOL);
+    if (!candidates.length) return null;
+    return candidates.find(row => valuesClose(seedItem.key, seedItem.value, row[seedItem.key]))
+      || candidates.find(row => keys.some(key => row[key] != null))
+      || candidates[0];
+  }
+
+  function scoreGroup(seedRows, replayRows, keys, kind) {
+    const items = flattenFields(seedRows, keys, kind);
+    const details = items.map(item => {
+      const match = findMatch(replayRows, item, keys);
+      const got = match ? match[item.key] : null;
+      const ok = valuesClose(item.key, item.value, got);
+      const nearHour = Boolean(match);
+      return {
+        ...item,
+        got,
+        ok,
+        nearHour,
+        status: ok ? "matched" : nearHour ? "wrong" : "missing"
+      };
+    });
+    const matched = details.filter(item => item.ok).length;
+    const rows = seedRows.map(row => {
+      const replay = (replayRows || []).find(item => Math.abs(Number(item.h) - row.h) <= HOUR_TOL);
+      const rowKeys = keys.filter(key => row[key] != null);
+      const matchedKeys = rowKeys.filter(key => replay && valuesClose(key, row[key], replay[key]));
+      return {
+        h: row.h,
+        label: row.label,
+        kind,
+        covered: rowKeys.length > 0 && matchedKeys.length === rowKeys.length,
+        partial: matchedKeys.length > 0 && matchedKeys.length < rowKeys.length,
+        matchedKeys,
+        missingKeys: rowKeys.filter(key => !matchedKeys.includes(key)),
+        hasReplayHour: Boolean(replay)
+      };
+    });
+    return {
+      kind,
+      seedRows: seedRows.length,
+      seedFields: items.length,
+      matchedFields: matched,
+      fieldRate: items.length ? matched / items.length : 1,
+      fullyCoveredRows: rows.filter(row => row.covered).length,
+      partialRows: rows.filter(row => row.partial).length,
+      missingRows: rows.filter(row => !row.hasReplayHour).length,
+      rows,
+      details
+    };
+  }
+
+  function labeledHourSet() {
+    return labeledTestsetHours.map(item => item.h);
+  }
+
+  function seedRowsWithoutScreenshot(kind) {
+    const hours = labeledHourSet();
+    const rows = kind === "gas" ? baseReadings : kind === "lab" ? labReadings : bedsideReadings;
+    return rows.filter(row => !hours.some(hour => Math.abs(hour - row.h) <= HOUR_TOL)).map(row => ({
+      h: row.h,
+      label: row.label,
+      kind,
+      reason: kind === "bedside" ? "oral-only" : "no-labeled-screenshot"
+    }));
+  }
+
+  function compareCoverage(replayed, options) {
+    const opts = options || {};
+    const gas = scoreGroup(baseReadings, replayed.bloodGas || [], GAS_KEYS, "gas");
+    const lab = scoreGroup(labReadings, replayed.labs || [], LAB_KEYS, "lab");
+    const bedside = scoreGroup(bedsideReadings, replayed.bedside || [], BEDSIDE_KEYS, "bedside");
+    const screenshotGaps = [
+      ...seedRowsWithoutScreenshot("gas"),
+      ...seedRowsWithoutScreenshot("lab")
+    ];
+    const oralRequired = seedRowsWithoutScreenshot("bedside");
+    const fieldTotal = gas.seedFields + lab.seedFields + bedside.seedFields;
+    const fieldMatched = gas.matchedFields + lab.matchedFields + bedside.matchedFields;
+    const complete = fieldTotal > 0 && fieldMatched === fieldTotal;
+    return {
+      complete,
+      fieldTotal,
+      fieldMatched,
+      fieldRate: fieldTotal ? fieldMatched / fieldTotal : 1,
+      gas,
+      lab,
+      bedside,
+      screenshotGaps,
+      oralRequired,
+      notes: opts.notes || [
+        "早期血气（术前至术后约50h）没有 labeled 截图，testset 无法重建。",
+        "PCT 146.421 / 术前肌酐 / 早期 INR / CK 5657 没有 labeled 截图。",
+        "血压、脉搏、CRRT、尿量只存在口述，必须走添加表单。",
+        "粉红危急行（08:58 PCT/Cr、部分凝血）OCR 经常丢字，不能凭空补数。"
+      ]
+    };
+  }
+
+  return {
+    surgeryEnd: "2026-09-15T14:00:00",
+    GAS_KEYS,
+    LAB_KEYS,
+    BEDSIDE_KEYS,
+    baseReadings,
+    labReadings,
+    bedsideReadings,
+    sampleOral,
+    labeledTestsetHours,
+    flattenFields,
+    valuesClose,
+    compareCoverage,
+    seedRowsWithoutScreenshot
+  };
+});
+
+</script>
+  <script>
+    const TEMPLATE_MODE = true;
     const currentReport = window.MediDashCurrentReport || {};
     const seededBaseReadings = [
       { h: -18.85, label: "术前18h51m", sample: "动脉", ph: 7.384, pco2: 29.7, po2: 59.8, hco3: 17.3, be: -7.7, lactate: 5.05, fio2: 33, pf: 181, hb: 14.7, ca: 1.18 },
@@ -2081,8 +2694,6 @@
     let selectedGroup = "perfusion";
     let selectedMetric = "lactate";
     let selectedRange = "all";
-    let lastAcceptedParse = null;
-    let acceptWaiter = Promise.resolve(null);
     const keyPrefix = TEMPLATE_MODE ? "medidash-template" : "perioperative-dashboard";
     const customKey = `${keyPrefix}-custom-v1`;
     const customLabKey = `${keyPrefix}-custom-lab-v1`;
@@ -3171,6 +3782,8 @@
     }
 
     window.MediDashAcceptFile = acceptScreenshotFile;
+    let lastAcceptedParse = null;
+    let acceptWaiter = Promise.resolve(null);
     async function acceptScreenshotFile(file) {
       const reason = parser.fileRejectionReason ? parser.fileRejectionReason(file) : null;
       if (reason) {
