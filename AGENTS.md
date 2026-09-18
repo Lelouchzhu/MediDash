@@ -9,8 +9,9 @@ Do **not** update `Lelouchzhu/Allmond` for clinical dashboard work.
 ## Read first
 
 1. **[`CONTEXT.md`](CONTEXT.md)** — full clinical timeline, PCT naming traps, latest labs, update workflow  
-2. This file — short operating rules  
-3. **`index.html`** — live dashboard data
+2. **[`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)** — prior agent conversation summary  
+3. This file — short operating rules  
+4. **`index.html`** — live dashboard data
 
 ## Purpose
 

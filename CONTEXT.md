@@ -5,6 +5,7 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 
 **Source of truth repo:** `https://github.com/Lelouchzhu/MediDash` (not the Allmond fork)  
 **Prior agent run (Allmond-bound):** https://cursor.com/agents/bc-01a0a01a-a6eb-72c7-b052-ba5e14ed8b1b  
+**Conversation summary:** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
 **Preview:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
 ---
