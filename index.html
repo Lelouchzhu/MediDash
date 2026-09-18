@@ -2336,18 +2336,17 @@
       document.getElementById("shotStatus").textContent = "截图已接受，正在识别…";
       document.getElementById("liveRegion").textContent = "截图已接受，正在识别";
 
-      try {
-        const text = await ocrImageFile(file, requestId);
+      ocrImageFile(file, requestId).then(text => {
         if (requestId !== ocrRequestId) return;
         if (text.trim()) document.getElementById("shotText").value = text;
         applyParsedReport(parseReportText(text), "截图");
-      } catch (error) {
+      }).catch(() => {
         if (requestId !== ocrRequestId) return;
         const message = "截图已接受，自动识别失败，请对照预览填写或粘贴文字";
         document.getElementById("shotStatus").textContent = message;
         showToast(message);
         document.getElementById("liveRegion").textContent = message;
-      }
+      });
     }
 
     function pickShotFile(input) {
