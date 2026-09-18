@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 57,
+  "count": 58,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -578,6 +578,33 @@
       "type": "凝血",
       "note": "APTT50.8 panel (earlier upload)",
       "relative_h": 67.73
+    },
+    {
+      "id": "20260918T130029__7B968B2C-1BF2-4D59-B4C8-F03D5EDF7DFB_L0_001.jpg",
+      "path": "reports/abg/20260918T130029__7B968B2C-1BF2-4D59-B4C8-F03D5EDF7DFB_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "7B968B2C-1BF2-4D59-B4C8-F03D5EDF7DFB_L0_001.jpg",
+      "sha256_16": "e96f30b2b1e891f9",
+      "bytes": 237293,
+      "labeled": true,
+      "report_time": "2026-09-18T13:00:29",
+      "type": "血气",
+      "note": "lac1.27 PF145 FiO250% PO2 72.6 Hb9.1 iCa1.12",
+      "relative_h": 71.01,
+      "extracted": {
+        "ph": 7.388,
+        "pco2": 37.5,
+        "po2": 72.6,
+        "be": -2.9,
+        "hco3": 22.1,
+        "lactate": 1.27,
+        "hb": 9.1,
+        "hct": 27.0,
+        "ca": 1.12,
+        "fio2": 50,
+        "pf": 145,
+        "so2": 93.7
+      }
     }
   ]
 }

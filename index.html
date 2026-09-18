@@ -1015,7 +1015,7 @@
       <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
-        <span class="pill" id="latestTimePill">最新：术后约73h · 床旁口述</span>
+        <span class="pill" id="latestTimePill">最新：术后71h00m</span>
         <span class="pill">数据已去标识化</span>
       </div>
     </header>
@@ -1044,29 +1044,29 @@
           <div class="status-value">120/35</div>
           <div class="status-note">MAP≈63 · HR 109 · RR 15–19<br>双药约最大允许量½</div>
         </div>
-        <button class="status-card orange" type="button" data-metric-jump="lactate">
+        <button class="status-card green" type="button" data-metric-jump="lactate">
           <div class="status-top">
             <span class="status-name">组织灌注</span>
-            <span class="level">继续改善</span>
+            <span class="level">接近正常</span>
           </div>
-          <div class="status-value"><span id="latestLactate">1.97</span><span class="status-unit">mmol/L</span></div>
-          <div class="status-note">2.57→1.97 · 仍略高于正常</div>
+          <div class="status-value"><span id="latestLactate">1.27</span><span class="status-unit">mmol/L</span></div>
+          <div class="status-note">1.97→1.27 · 已入参考范围</div>
         </button>
         <button class="status-card red" type="button" data-metric-jump="pf">
           <div class="status-top">
             <span class="status-name">氧合</span>
             <span class="level">仍低</span>
           </div>
-          <div class="status-value"><span id="latestPf">169</span><span class="status-unit">P/F</span></div>
-          <div class="status-note">FiO₂ 仍50% · 较176略降</div>
+          <div class="status-value"><span id="latestPf">145</span><span class="status-unit">P/F</span></div>
+          <div class="status-note">FiO₂ 仍50% · 169→145下降</div>
         </button>
         <button class="status-card green" type="button" data-metric-jump="hco3">
           <div class="status-top">
             <span class="status-name">酸碱</span>
             <span class="level">接近正常</span>
           </div>
-          <div class="status-value"><span id="latestPh">7.392</span><span class="status-unit">pH</span></div>
-          <div class="status-note">HCO₃⁻ 22.4 · 酸碱基本稳定</div>
+          <div class="status-value"><span id="latestPh">7.388</span><span class="status-unit">pH</span></div>
+          <div class="status-note">HCO₃⁻ 22.1 · BE −2.9</div>
         </button>
         <div class="status-card red">
           <div class="status-top">
@@ -1106,7 +1106,7 @@
             <span class="level">仍低</span>
           </div>
           <div class="status-value"><span id="latestHb">9.1</span><span class="status-unit">g/dL</span></div>
-          <div class="status-note">Hct 27% · iCa 1.12</div>
+          <div class="status-note">Hct 27% · iCa 1.12（同前）</div>
         </button>
       </div>
     </section>
@@ -1156,12 +1156,12 @@
         </div>
         <div class="insights">
           <div class="insight">
-            <strong>乳酸继续下降</strong>
-            <p>峰值8.99→2.57→最新1.97；接近正常，灌注改善与升压药稍减方向一致。</p>
+            <strong>乳酸已入正常</strong>
+            <p>峰值8.99→1.97→最新1.27（参考0.5–1.6）；但尿仍极少，不能单凭乳酸判断脱离危险。</p>
           </div>
           <div class="insight">
-            <strong>PCT先升后降，仍极高</strong>
-            <p>降钙素原146.4→170.3（9月17日10:52）→101.6。今晨FiO₂仍50%，氧合指数169，与PCT不是同一项。</p>
+            <strong>氧合继续恶化</strong>
+            <p>FiO₂仍50%，P/F 169→145，PO₂72.6；乳酸虽正常，呼吸支持需求仍高。</p>
           </div>
           <div class="insight">
             <strong>CRRT中肾指标下降，凝血好转</strong>
@@ -1242,7 +1242,7 @@
             <ul>
               <li>降钙素原：9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> ng/mL（参考0–0.05）。先升后降，目前仍极高。</li>
               <li>IL-6 981 pg/mL（术后约45小时）仍提示极强炎症反应。</li>
-              <li>乳酸峰值8.99 → 最新1.97；最新口述血压120/35、HR109、呼吸15–19；仍用两种升压药，剂量大约各为最大允许量的一半。</li>
+              <li>乳酸峰值8.99 → 最新1.27（已入参考范围）；最新口述血压120/35、HR109、呼吸15–19；双升压药约各半量。</li>
               <li>血常规“PCT”是血小板比积0.08%，与降钙素原不是同一指标。</li>
             </ul>
           </div>
@@ -1483,6 +1483,11 @@
           <div class="event-title">血压120/35、HR109；双升压药约半量</div>
           <div class="event-desc">RR15–19；两种升压药剂量大约各为最大允许量一半。CRRT脱水250、血滤120、输液约200；今晨起尿20mL。</div>
         </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后71小时00分 · 9月18日13:00</div>
+          <div class="event-title">乳酸1.27正常，但P/F降至145</div>
+          <div class="event-desc">FiO₂50%、PO₂72.6；pH7.388、HCO₃⁻22.1、BE−2.9；Hb9.1、iCa1.12。氧合较今晨169进一步下降。</div>
+        </article>
       </div>
     </section>
 
@@ -1618,7 +1623,8 @@
       { h: 49.95, label: "术后49h57m", sample: "动脉", ph: 7.403, pco2: 32.7, po2: 90.6, hco3: 19.9, be: -4.8, lactate: 2.27, fio2: 50, pf: 181, hb: 8.8, ca: .98 },
       { h: 56.78, label: "术后56h47m", sample: "动脉", ph: 7.369, pco2: 43.0, po2: 92.0, hco3: 24.2, be: -1.1, lactate: 2.86, fio2: 50, pf: 184, hb: 9.9, ca: 1.05 },
       { h: 61.73, label: "术后61h44m", sample: "动脉", ph: 7.367, pco2: 40.1, po2: 87.9, hco3: 22.5, be: -2.8, lactate: 2.57, fio2: 50, pf: 176, hb: 8.4, ca: 1.06 },
-      { h: 64.6, label: "术后64h36m", sample: "动脉", ph: 7.392, pco2: 37.6, po2: 84.4, hco3: 22.4, be: -2.6, lactate: 1.97, fio2: 50, pf: 169, hb: 9.1, ca: 1.12 }
+      { h: 64.6, label: "术后64h36m", sample: "动脉", ph: 7.392, pco2: 37.6, po2: 84.4, hco3: 22.4, be: -2.6, lactate: 1.97, fio2: 50, pf: 169, hb: 9.1, ca: 1.12 },
+      { h: 71.01, label: "术后71h00m", sample: "动脉", ph: 7.388, pco2: 37.5, po2: 72.6, hco3: 22.1, be: -2.9, lactate: 1.27, fio2: 50, pf: 145, hb: 9.1, ca: 1.12 }
     ];
 
     const labReadings = [
@@ -1693,8 +1699,8 @@
       {
         id: "lactate",
         group: "urgent",
-        title: "乳酸1.97但尿极少、脉压仍宽，灌注是否足够？",
-        detail: "今晨起尿仅20mL，血压120/35、HR109。哪些休克问题仍未解决？"
+        title: "乳酸已正常（1.27）但尿极少，灌注是否足够？",
+        detail: "今晨起尿仅20mL，血压120/35、HR109、双升压药约半量。哪些休克问题仍未解决？"
       },
       {
         id: "source-control",
@@ -1711,8 +1717,8 @@
       {
         id: "oxygenation",
         group: "urgent",
-        title: "FiO₂仍为50%、P/F约169，呼吸支持下一步是什么？",
-        detail: "氧合未见明显改善；目前通气模式和拔管评估标准是什么？"
+        title: "P/F从169再降至145，呼吸支持是否需要升级？",
+        detail: "FiO₂仍50%，PO₂72.6。目前通气模式、PEEP和升级标准是什么？"
       },
       {
         id: "next-window",

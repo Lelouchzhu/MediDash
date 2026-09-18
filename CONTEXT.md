@@ -70,6 +70,13 @@ Trend: rise then fall; still far above ref 0–0.05.
 - Urine: overnight had been 70 mL; **since this morning only 20 mL**
 - Vasopressors: **still two agents**, each about **½ of the maximum allowed dose** (family estimate); confirm drug names and exact rates
 
+### Arterial blood gas — latest 2026-09-18 13:00 (postop 71h00m)
+
+- pH 7.388, PCO₂ 37.5, PO₂ **72.6↓**, HCO₃⁻ 22.1, BE −2.9
+- Lactate **1.27** (now in ref 0.5–1.6), FiO₂ **50%**, P/F **145↓** (worse than morning 169)
+- Hb 9.1 g/dL, Hct 27%, iCa 1.12
+- Screenshot archived: `testset/reports/abg/20260918T130029__7B968B2C-1BF2-4D59-B4C8-F03D5EDF7DFB_L0_001.jpg` (1079×1157, clear — no higher-res needed)
+
 ### Arterial blood gas — 2026-09-18 06:36 (postop 64h36m)
 
 - pH 7.392, PCO₂ 37.6, PO₂ 84.4, HCO₃⁻ 22.4, BE ≈ −2.6
@@ -143,4 +150,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-18 — bedside vitals/CRRT fluid rates (~postop 73h).
+**Last updated:** 2026-09-18 13:00 ABG — lac 1.27, P/F 145.
