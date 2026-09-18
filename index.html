@@ -293,6 +293,78 @@
       color: var(--green);
     }
 
+    .chip.group-chip {
+      border-radius: 10px;
+      background: #f3f6f4;
+    }
+
+    .chip.group-chip[aria-pressed="true"] {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #fff;
+    }
+
+    .category-overview {
+      display: grid;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .cat-block {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .cat-block h3 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      letter-spacing: .02em;
+    }
+
+    .spark-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    @media (min-width: 720px) {
+      .spark-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
+    .spark-card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px;
+      background: #fff;
+      text-align: left;
+      cursor: pointer;
+      width: 100%;
+      font: inherit;
+      color: inherit;
+    }
+
+    .spark-card:hover, .spark-card:focus-visible {
+      border-color: var(--green);
+      outline: none;
+    }
+
+    .spark-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .spark-name { font-size: 11px; color: var(--muted); font-weight: 700; }
+    .spark-value { font-size: 15px; font-weight: 800; }
+    .spark-unit { font-size: 10px; color: var(--muted); font-weight: 600; margin-left: 2px; }
+    .spark-meta { font-size: 10px; color: var(--muted); margin-bottom: 6px; }
+    .spark-card svg { width: 100%; height: 36px; display: block; }
+
     .range-row {
       display: inline-grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1039,15 +1111,26 @@
       </div>
     </section>
 
+    <section class="section" id="overviewTrends" aria-labelledby="overviewTrendsHeading">
+      <div class="section-head">
+        <div>
+          <h2 id="overviewTrendsHeading">分类汇总</h2>
+          <p>全部已录入指标按系统分类；点选任一卡片打开下方详细趋势</p>
+        </div>
+      </div>
+      <div class="category-overview" id="categoryOverview"></div>
+    </section>
+
     <section class="section" id="trendSection" aria-labelledby="trendHeading">
       <div class="section-head">
         <div>
-          <h2 id="trendHeading">连续趋势</h2>
-          <p>触摸数据点查看时间、数值和样本类型</p>
+          <h2 id="trendHeading">详细趋势</h2>
+          <p>先选分类，再选指标；触摸数据点查看时间与样本</p>
         </div>
       </div>
       <div class="panel chart-panel">
         <div class="controls">
+          <div class="chip-row" id="groupControls" aria-label="选择指标分类"></div>
           <div class="chip-row" id="metricControls" aria-label="选择趋势指标"></div>
           <div class="range-row" aria-label="选择时间范围">
             <button class="range-btn" type="button" data-range="all" aria-pressed="true">全部</button>
@@ -1537,8 +1620,8 @@
       { h: 44.87, label: "术后44h52m", sample: "生化", creatinine: 363, urea: 17.80, ck: 8280, ckmb: 132.6, ldh: 915, hbdh: 576, alt: 891, ast: 806, il6: 981, pct: 170.297, k: 4.31, na: 141.27, cl: 98.33 },
       { h: 57.13, label: "术后57h08m", sample: "凝血", aptt: 76.1, critical: true },
       { h: 62.07, label: "术后62h04m", sample: "凝血", aptt: 72.4, critical: true },
-      { h: 43.78, label: "术后43h47m", sample: "血常规", wbc: 11.52, plt: 73 },
-      { h: 66.58, label: "术后66h35m", sample: "血常规", wbc: 14.51, plt: 65 },
+      { h: 43.78, label: "术后43h47m", sample: "血常规", wbc: 11.52, plt: 73, hbg: 85 },
+      { h: 66.58, label: "术后66h35m", sample: "血常规", wbc: 14.51, plt: 65, hbg: 85 },
       { h: 66.97, label: "术后66h58m", sample: "生化", creatinine: 212, urea: 11.59, k: 4.35, na: 137.91, cl: 97.56, pct: 101.563 },
       { h: 67.73, label: "术后67h44m", sample: "凝血", aptt: 50.8, inr: 1.24, pt: 13.8 }
     ];
@@ -1548,17 +1631,42 @@
       ph: { label: "pH", unit: "", minRef: 7.35, maxRef: 7.45, color: "#3978a8", decimals: 3, better: "range" },
       hco3: { label: "HCO₃⁻", unit: "mmol/L", minRef: 22, maxRef: 26, color: "#167a5b", decimals: 1, better: "range" },
       be: { label: "碱剩余 BE", unit: "mmol/L", minRef: -3, maxRef: 3, color: "#7257a3", decimals: 1, better: "range" },
+      pco2: { label: "PCO₂", unit: "mmHg", minRef: 35, maxRef: 45, color: "#3978a8", decimals: 1, better: "range" },
+      po2: { label: "PO₂", unit: "mmHg", minRef: 80, maxRef: 100, color: "#167a5b", decimals: 1, better: "up", arterialOnly: true },
       pf: { label: "氧合指数 P/F", unit: "mmHg", minRef: 400, maxRef: 500, color: "#3978a8", decimals: 0, better: "up", arterialOnly: true },
-      hb: { label: "血红蛋白 Hb", unit: "g/dL", minRef: 12, maxRef: 17.5, color: "#c76a16", decimals: 1, better: "range" },
+      fio2: { label: "FiO₂", unit: "%", minRef: 21, maxRef: 40, color: "#7257a3", decimals: 0, better: "down", arterialOnly: true },
+      hb: { label: "Hb(血气)", unit: "g/dL", minRef: 12, maxRef: 17.5, color: "#c76a16", decimals: 1, better: "range" },
       ca: { label: "离子钙 iCa", unit: "mmol/L", minRef: 1.15, maxRef: 1.29, color: "#7257a3", decimals: 2, better: "range" },
-      creatinine: { label: "肌酐", unit: "μmol/L", minRef: 41, maxRef: 81, color: "#bd3b3b", decimals: 0, better: "down", source: "lab" },
-      inr: { label: "INR", unit: "", minRef: .94, maxRef: 1.2, color: "#c76a16", decimals: 2, better: "range", source: "lab" },
-      ck: { label: "肌酸激酶 CK", unit: "U/L", minRef: 33, maxRef: 192, color: "#7257a3", decimals: 0, better: "down", source: "lab" },
       pct: { label: "降钙素原", unit: "ng/mL", minRef: 0, maxRef: 0.05, color: "#bd3b3b", decimals: 1, better: "down", source: "lab" },
+      il6: { label: "IL-6", unit: "pg/mL", minRef: 0, maxRef: 7, color: "#bd3b3b", decimals: 0, better: "down", source: "lab" },
       wbc: { label: "白细胞", unit: "10⁹/L", minRef: 3.5, maxRef: 9.5, color: "#c76a16", decimals: 2, better: "range", source: "lab" },
-      plt: { label: "血小板", unit: "10⁹/L", minRef: 125, maxRef: 350, color: "#7257a3", decimals: 0, better: "range", source: "lab" }
+      creatinine: { label: "肌酐", unit: "μmol/L", minRef: 41, maxRef: 81, color: "#bd3b3b", decimals: 0, better: "down", source: "lab" },
+      urea: { label: "尿素", unit: "mmol/L", minRef: 3.1, maxRef: 8.8, color: "#c76a16", decimals: 2, better: "down", source: "lab" },
+      inr: { label: "INR", unit: "", minRef: .94, maxRef: 1.2, color: "#c76a16", decimals: 2, better: "range", source: "lab" },
+      aptt: { label: "APTT", unit: "sec", minRef: 21, maxRef: 45, color: "#bd3b3b", decimals: 1, better: "range", source: "lab" },
+      plt: { label: "血小板", unit: "10⁹/L", minRef: 125, maxRef: 350, color: "#7257a3", decimals: 0, better: "range", source: "lab" },
+      hbg: { label: "Hb(血常规)", unit: "g/L", minRef: 115, maxRef: 150, color: "#c76a16", decimals: 0, better: "range", source: "lab" },
+      alt: { label: "ALT", unit: "U/L", minRef: 0, maxRef: 40, color: "#bd3b3b", decimals: 0, better: "down", source: "lab" },
+      ast: { label: "AST", unit: "U/L", minRef: 0, maxRef: 40, color: "#c76a16", decimals: 0, better: "down", source: "lab" },
+      ck: { label: "CK", unit: "U/L", minRef: 33, maxRef: 192, color: "#7257a3", decimals: 0, better: "down", source: "lab" },
+      ckmb: { label: "CK-MB", unit: "U/L", minRef: 0, maxRef: 24, color: "#3978a8", decimals: 1, better: "down", source: "lab" },
+      ldh: { label: "LDH", unit: "U/L", minRef: 109, maxRef: 245, color: "#167a5b", decimals: 0, better: "down", source: "lab" },
+      k: { label: "钾 K", unit: "mmol/L", minRef: 3.5, maxRef: 5.3, color: "#7257a3", decimals: 2, better: "range", source: "lab" },
+      na: { label: "钠 Na", unit: "mmol/L", minRef: 137, maxRef: 147, color: "#3978a8", decimals: 2, better: "range", source: "lab" },
+      cl: { label: "氯 Cl", unit: "mmol/L", minRef: 96, maxRef: 108, color: "#167a5b", decimals: 2, better: "range", source: "lab" }
     };
 
+    const metricGroups = [
+      { id: "perfusion", label: "灌注/酸碱", metrics: ["lactate", "ph", "hco3", "be", "pco2"] },
+      { id: "oxygen", label: "氧合", metrics: ["pf", "po2", "fio2"] },
+      { id: "infection", label: "感染/炎症", metrics: ["pct", "il6", "wbc"] },
+      { id: "renal", label: "肾脏", metrics: ["creatinine", "urea"] },
+      { id: "coag", label: "凝血/血细胞", metrics: ["inr", "aptt", "plt", "hb", "hbg"] },
+      { id: "organ", label: "肝/肌酶", metrics: ["alt", "ast", "ck", "ckmb", "ldh"] },
+      { id: "electrolyte", label: "电解质", metrics: ["ca", "k", "na", "cl"] }
+    ];
+
+    let selectedGroup = "perfusion";
     let selectedMetric = "lactate";
     let selectedRange = "all";
     const customKey = "perioperative-dashboard-custom-v1";
@@ -1685,10 +1793,88 @@
       return Number(value).toFixed(decimals);
     }
 
+    function metricSource(metric) {
+      return metricConfig[metric].source === "lab" ? labReadings : allReadings();
+    }
+
+    function latestPoint(metric) {
+      const pts = filteredReadings(metric);
+      return pts.length ? pts[pts.length - 1] : null;
+    }
+
+    function sparklinePath(metric) {
+      const data = filteredReadings(metric);
+      if (data.length < 2) return "";
+      const vals = data.map(d => d[metric]);
+      let min = Math.min(...vals);
+      let max = Math.max(...vals);
+      if (min === max) { min -= 1; max += 1; }
+      const w = 120, h = 36, pad = 2;
+      return data.map((d, i) => {
+        const x = pad + (i / (data.length - 1)) * (w - pad * 2);
+        const y = h - pad - ((d[metric] - min) / (max - min)) * (h - pad * 2);
+        return `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`;
+      }).join(" ");
+    }
+
+    function renderCategoryOverview() {
+      const root = document.getElementById("categoryOverview");
+      if (!root) return;
+      root.innerHTML = metricGroups.map(group => {
+        const cards = group.metrics.map(key => {
+          const cfg = metricConfig[key];
+          const latest = latestPoint(key);
+          const path = sparklinePath(key);
+          const value = latest ? formatValue(latest[key], cfg.decimals) : "—";
+          const when = latest ? latest.label : "暂无数据";
+          const n = filteredReadings(key).length;
+          return `<button type="button" class="spark-card" data-jump-group="${group.id}" data-jump-metric="${key}">
+            <div class="spark-top"><span class="spark-name">${cfg.label}</span><span class="spark-value">${value}<span class="spark-unit">${cfg.unit}</span></span></div>
+            <div class="spark-meta">${when} · ${n}点</div>
+            <svg viewBox="0 0 120 36" aria-hidden="true">${path ? `<path d="${path}" fill="none" stroke="${cfg.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>` : ""}</svg>
+          </button>`;
+        }).join("");
+        return `<article class="cat-block"><h3>${group.label}</h3><div class="spark-grid">${cards}</div></article>`;
+      }).join("");
+      root.querySelectorAll("[data-jump-metric]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          selectedGroup = btn.dataset.jumpGroup;
+          selectedMetric = btn.dataset.jumpMetric;
+          renderGroupControls();
+          renderMetricControls();
+          renderChart();
+          document.getElementById("trendSection")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+    }
+
+    function renderGroupControls() {
+      const container = document.getElementById("groupControls");
+      if (!container) return;
+      container.innerHTML = "";
+      metricGroups.forEach(group => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "chip group-chip";
+        button.textContent = group.label;
+        button.setAttribute("aria-pressed", String(group.id === selectedGroup));
+        button.addEventListener("click", () => {
+          selectedGroup = group.id;
+          if (!group.metrics.includes(selectedMetric)) selectedMetric = group.metrics[0];
+          renderGroupControls();
+          renderMetricControls();
+          renderChart();
+        });
+        container.appendChild(button);
+      });
+    }
+
     function renderMetricControls() {
       const container = document.getElementById("metricControls");
       container.innerHTML = "";
-      Object.entries(metricConfig).forEach(([key, cfg]) => {
+      const group = metricGroups.find(g => g.id === selectedGroup) || metricGroups[0];
+      group.metrics.forEach(key => {
+        const cfg = metricConfig[key];
         const button = document.createElement("button");
         button.type = "button";
         button.className = "chip";
@@ -2004,7 +2190,9 @@
     }
 
     function renderAll() {
+      renderGroupControls();
       renderMetricControls();
+      renderCategoryOverview();
       renderChart();
       renderRawTable();
       updateLatest();
@@ -2017,16 +2205,27 @@
         document.querySelectorAll(".range-btn").forEach(item =>
           item.setAttribute("aria-pressed", String(item === button))
         );
+        renderCategoryOverview();
         renderChart();
       });
     });
 
     document.querySelectorAll("[data-metric-jump]").forEach(button => {
-      button.addEventListener("click", () => {
-        selectedMetric = button.dataset.metricJump;
-        renderMetricControls();
-        renderChart();
-        document.getElementById("trendSection").scrollIntoView({ behavior: "smooth" });
+        button.addEventListener("click", () => {
+          selectedMetric = button.dataset.metricJump;
+          const group = metricGroups.find(g => g.metrics.includes(selectedMetric));
+          if (group) selectedGroup = group.id;
+          selectedRange = "all";
+          document.querySelectorAll(".range-btn").forEach(btn => {
+            btn.setAttribute("aria-pressed", String(btn.dataset.range === "all"));
+          });
+          renderGroupControls();
+          renderMetricControls();
+          renderCategoryOverview();
+          renderChart();
+          document.getElementById("trendSection").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
       });
     });
 

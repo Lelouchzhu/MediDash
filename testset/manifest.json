@@ -1,0 +1,583 @@
+{
+  "version": 1,
+  "surgery_end": "2026-09-15T14:00:00",
+  "purpose": "Local extraction testset + report backup to prevent data omission",
+  "policy": "Every new report screenshot must be copied into testset/reports/<category>/ (or inbox/) and registered in manifest.json before/with dashboard updates.",
+  "categories": [
+    "abg",
+    "chemistry",
+    "coag",
+    "cbc",
+    "imaging",
+    "other",
+    "inbox"
+  ],
+  "count": 57,
+  "reports": [
+    {
+      "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
+      "path": "reports/other/01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
+      "category": "other",
+      "source_filename": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
+      "sha256_16": "332f10f2c43e7826",
+      "bytes": 346926,
+      "labeled": false
+    },
+    {
+      "id": "01a0a019-fbe6-746c-8d65-6a58ee56536d.jpg",
+      "path": "reports/other/01a0a019-fbe6-746c-8d65-6a58ee56536d.jpg",
+      "category": "other",
+      "source_filename": "01a0a019-fbe6-746c-8d65-6a58ee56536d.jpg",
+      "sha256_16": "7efb9977ff7fd5dd",
+      "bytes": 304203,
+      "labeled": false
+    },
+    {
+      "id": "01a0a019-fc00-783b-9684-32e6a06676ec.jpg",
+      "path": "reports/other/01a0a019-fc00-783b-9684-32e6a06676ec.jpg",
+      "category": "other",
+      "source_filename": "01a0a019-fc00-783b-9684-32e6a06676ec.jpg",
+      "sha256_16": "9a628262bba5df3c",
+      "bytes": 296540,
+      "labeled": false
+    },
+    {
+      "id": "01a0a019-fc18-79de-8975-5316a657400e.jpg",
+      "path": "reports/other/01a0a019-fc18-79de-8975-5316a657400e.jpg",
+      "category": "other",
+      "source_filename": "01a0a019-fc18-79de-8975-5316a657400e.jpg",
+      "sha256_16": "194d21b6d044a2e4",
+      "bytes": 285517,
+      "labeled": false
+    },
+    {
+      "id": "01a0a019-fc2f-7606-ae21-745cc470144f.jpg",
+      "path": "reports/other/01a0a019-fc2f-7606-ae21-745cc470144f.jpg",
+      "category": "other",
+      "source_filename": "01a0a019-fc2f-7606-ae21-745cc470144f.jpg",
+      "sha256_16": "02371533c39462e1",
+      "bytes": 315812,
+      "labeled": false
+    },
+    {
+      "id": "01a0a019-fc46-7bd1-b089-1c4dc57bd2b6.jpg",
+      "path": "reports/other/01a0a019-fc46-7bd1-b089-1c4dc57bd2b6.jpg",
+      "category": "other",
+      "source_filename": "01a0a019-fc46-7bd1-b089-1c4dc57bd2b6.jpg",
+      "sha256_16": "727fd2a6483096f3",
+      "bytes": 314159,
+      "labeled": false
+    },
+    {
+      "id": "01a0a019-fc87-7799-84e9-1f179e8870aa.jpg",
+      "path": "reports/other/01a0a019-fc87-7799-84e9-1f179e8870aa.jpg",
+      "category": "other",
+      "source_filename": "01a0a019-fc87-7799-84e9-1f179e8870aa.jpg",
+      "sha256_16": "460cddd09e9571c0",
+      "bytes": 302345,
+      "labeled": false
+    },
+    {
+      "id": "01a0a019-fcc8-7b3e-b007-d3b441b37699.jpg",
+      "path": "reports/other/01a0a019-fcc8-7b3e-b007-d3b441b37699.jpg",
+      "category": "other",
+      "source_filename": "01a0a019-fcc8-7b3e-b007-d3b441b37699.jpg",
+      "sha256_16": "c595c1b6333c6393",
+      "bytes": 284677,
+      "labeled": false
+    },
+    {
+      "id": "01a0a019-fcdd-7f91-9c7a-c6498c960203.jpg",
+      "path": "reports/other/01a0a019-fcdd-7f91-9c7a-c6498c960203.jpg",
+      "category": "other",
+      "source_filename": "01a0a019-fcdd-7f91-9c7a-c6498c960203.jpg",
+      "sha256_16": "b36c0c2ed7f7cbb3",
+      "bytes": 292601,
+      "labeled": false
+    },
+    {
+      "id": "01a0a7ba-ccae-7603-aebd-6652f960c209.jpg",
+      "path": "reports/other/01a0a7ba-ccae-7603-aebd-6652f960c209.jpg",
+      "category": "other",
+      "source_filename": "01a0a7ba-ccae-7603-aebd-6652f960c209.jpg",
+      "sha256_16": "5ba72e9fc81f51e7",
+      "bytes": 282816,
+      "labeled": false
+    },
+    {
+      "id": "01a0a7ba-ccc1-7498-b6d1-eb58c016347f.jpg",
+      "path": "reports/other/01a0a7ba-ccc1-7498-b6d1-eb58c016347f.jpg",
+      "category": "other",
+      "source_filename": "01a0a7ba-ccc1-7498-b6d1-eb58c016347f.jpg",
+      "sha256_16": "bf1c8bc3c39e97b0",
+      "bytes": 124373,
+      "labeled": false
+    },
+    {
+      "id": "01a0a7ba-ccd5-75e4-b9de-fcc6906f7636.jpg",
+      "path": "reports/other/01a0a7ba-ccd5-75e4-b9de-fcc6906f7636.jpg",
+      "category": "other",
+      "source_filename": "01a0a7ba-ccd5-75e4-b9de-fcc6906f7636.jpg",
+      "sha256_16": "5915ccefb1e3777a",
+      "bytes": 449920,
+      "labeled": false
+    },
+    {
+      "id": "01a0a7ba-cce6-7f8e-be2a-ad121c4c44a4.jpg",
+      "path": "reports/other/01a0a7ba-cce6-7f8e-be2a-ad121c4c44a4.jpg",
+      "category": "other",
+      "source_filename": "01a0a7ba-cce6-7f8e-be2a-ad121c4c44a4.jpg",
+      "sha256_16": "6b72d48a0d530b7a",
+      "bytes": 265793,
+      "labeled": false
+    },
+    {
+      "id": "01a0a7ba-ccf6-791e-b160-6e159101df05.jpg",
+      "path": "reports/other/01a0a7ba-ccf6-791e-b160-6e159101df05.jpg",
+      "category": "other",
+      "source_filename": "01a0a7ba-ccf6-791e-b160-6e159101df05.jpg",
+      "sha256_16": "b9ecdf6f739fcff1",
+      "bytes": 283071,
+      "labeled": false
+    },
+    {
+      "id": "01a0a7ba-cd09-7662-a1e3-871340ef52a6.jpg",
+      "path": "reports/other/01a0a7ba-cd09-7662-a1e3-871340ef52a6.jpg",
+      "category": "other",
+      "source_filename": "01a0a7ba-cd09-7662-a1e3-871340ef52a6.jpg",
+      "sha256_16": "72cd746df862e8fa",
+      "bytes": 174049,
+      "labeled": false
+    },
+    {
+      "id": "01a0a7ba-cd1b-7e7b-b45c-38cc4aa403d2.jpg",
+      "path": "reports/other/01a0a7ba-cd1b-7e7b-b45c-38cc4aa403d2.jpg",
+      "category": "other",
+      "source_filename": "01a0a7ba-cd1b-7e7b-b45c-38cc4aa403d2.jpg",
+      "sha256_16": "b98a02339f48b6c8",
+      "bytes": 445038,
+      "labeled": false
+    },
+    {
+      "id": "01a0a7ba-cd2f-77ba-89e9-4967c9fd877f.jpg",
+      "path": "reports/other/01a0a7ba-cd2f-77ba-89e9-4967c9fd877f.jpg",
+      "category": "other",
+      "source_filename": "01a0a7ba-cd2f-77ba-89e9-4967c9fd877f.jpg",
+      "sha256_16": "311e5cf4c655370b",
+      "bytes": 407531,
+      "labeled": false
+    },
+    {
+      "id": "01a0a7ba-cd41-759d-9988-2a2143d9ee56.jpg",
+      "path": "reports/other/01a0a7ba-cd41-759d-9988-2a2143d9ee56.jpg",
+      "category": "other",
+      "source_filename": "01a0a7ba-cd41-759d-9988-2a2143d9ee56.jpg",
+      "sha256_16": "239da88b3a5720b9",
+      "bytes": 221889,
+      "labeled": false
+    },
+    {
+      "id": "01a0a7ba-cd53-704d-99b4-9f5ed2206659.jpg",
+      "path": "reports/other/01a0a7ba-cd53-704d-99b4-9f5ed2206659.jpg",
+      "category": "other",
+      "source_filename": "01a0a7ba-cd53-704d-99b4-9f5ed2206659.jpg",
+      "sha256_16": "611ac4bdfe887e68",
+      "bytes": 255800,
+      "labeled": false
+    },
+    {
+      "id": "01a0a84a-af8f-7264-be3e-3519352554a4.jpg",
+      "path": "reports/other/01a0a84a-af8f-7264-be3e-3519352554a4.jpg",
+      "category": "other",
+      "source_filename": "01a0a84a-af8f-7264-be3e-3519352554a4.jpg",
+      "sha256_16": "280e38c3db336d20",
+      "bytes": 547955,
+      "labeled": false
+    },
+    {
+      "id": "01a0a84a-afa0-7d05-a76a-d4140bef42af.jpg",
+      "path": "reports/other/01a0a84a-afa0-7d05-a76a-d4140bef42af.jpg",
+      "category": "other",
+      "source_filename": "01a0a84a-afa0-7d05-a76a-d4140bef42af.jpg",
+      "sha256_16": "9b1108489fed7d76",
+      "bytes": 544128,
+      "labeled": false
+    },
+    {
+      "id": "01a0a84a-afb1-70ea-acb5-085fd0369a30.jpg",
+      "path": "reports/other/01a0a84a-afb1-70ea-acb5-085fd0369a30.jpg",
+      "category": "other",
+      "source_filename": "01a0a84a-afb1-70ea-acb5-085fd0369a30.jpg",
+      "sha256_16": "1f248be424a04cff",
+      "bytes": 537788,
+      "labeled": false
+    },
+    {
+      "id": "01a0a84a-afc2-7c8c-8bc9-e38f480212d3.jpg",
+      "path": "reports/other/01a0a84a-afc2-7c8c-8bc9-e38f480212d3.jpg",
+      "category": "other",
+      "source_filename": "01a0a84a-afc2-7c8c-8bc9-e38f480212d3.jpg",
+      "sha256_16": "48894a00b139d64f",
+      "bytes": 1631301,
+      "labeled": false
+    },
+    {
+      "id": "01a0a84a-afd3-75a7-8988-4be259cf80bf.jpg",
+      "path": "reports/other/01a0a84a-afd3-75a7-8988-4be259cf80bf.jpg",
+      "category": "other",
+      "source_filename": "01a0a84a-afd3-75a7-8988-4be259cf80bf.jpg",
+      "sha256_16": "67f7e16b05c82219",
+      "bytes": 1711620,
+      "labeled": false
+    },
+    {
+      "id": "01a0a84a-afe6-7822-b577-e32af03f6c89.jpg",
+      "path": "reports/other/01a0a84a-afe6-7822-b577-e32af03f6c89.jpg",
+      "category": "other",
+      "source_filename": "01a0a84a-afe6-7822-b577-e32af03f6c89.jpg",
+      "sha256_16": "fdb6b56dbd489baa",
+      "bytes": 482475,
+      "labeled": false
+    },
+    {
+      "id": "01a0a84a-aff9-7322-8af2-7db92f270c15.jpg",
+      "path": "reports/other/01a0a84a-aff9-7322-8af2-7db92f270c15.jpg",
+      "category": "other",
+      "source_filename": "01a0a84a-aff9-7322-8af2-7db92f270c15.jpg",
+      "sha256_16": "fe56cd84d7ce7314",
+      "bytes": 1611619,
+      "labeled": false
+    },
+    {
+      "id": "01a0a84a-b00d-74ad-aee2-081752b302c0.jpg",
+      "path": "reports/other/01a0a84a-b00d-74ad-aee2-081752b302c0.jpg",
+      "category": "other",
+      "source_filename": "01a0a84a-b00d-74ad-aee2-081752b302c0.jpg",
+      "sha256_16": "890cb079469afc1a",
+      "bytes": 1632249,
+      "labeled": false
+    },
+    {
+      "id": "01a0a84a-b022-723a-b968-01d9d22232be.jpg",
+      "path": "reports/other/01a0a84a-b022-723a-b968-01d9d22232be.jpg",
+      "category": "other",
+      "source_filename": "01a0a84a-b022-723a-b968-01d9d22232be.jpg",
+      "sha256_16": "d2f34b26c75c29bc",
+      "bytes": 494607,
+      "labeled": false
+    },
+    {
+      "id": "01a0a84a-b037-7dc5-8029-bb6f0d4a91ee.jpg",
+      "path": "reports/other/01a0a84a-b037-7dc5-8029-bb6f0d4a91ee.jpg",
+      "category": "other",
+      "source_filename": "01a0a84a-b037-7dc5-8029-bb6f0d4a91ee.jpg",
+      "sha256_16": "7fd11dda35c56ea1",
+      "bytes": 1735227,
+      "labeled": false
+    },
+    {
+      "id": "01a0a862-c995-719d-9d03-376988932dcb.jpg",
+      "path": "reports/other/01a0a862-c995-719d-9d03-376988932dcb.jpg",
+      "category": "other",
+      "source_filename": "01a0a862-c995-719d-9d03-376988932dcb.jpg",
+      "sha256_16": "89fe0a394514231a",
+      "bytes": 1716158,
+      "labeled": false
+    },
+    {
+      "id": "01a0a9a9-0a31-77c2-a7ab-4fae286384ec.jpg",
+      "path": "reports/other/01a0a9a9-0a31-77c2-a7ab-4fae286384ec.jpg",
+      "category": "other",
+      "source_filename": "01a0a9a9-0a31-77c2-a7ab-4fae286384ec.jpg",
+      "sha256_16": "8d96beca46044974",
+      "bytes": 1654963,
+      "labeled": false
+    },
+    {
+      "id": "01a0ac5d-e6be-7d69-b83e-6b137d585771.jpg",
+      "path": "reports/other/01a0ac5d-e6be-7d69-b83e-6b137d585771.jpg",
+      "category": "other",
+      "source_filename": "01a0ac5d-e6be-7d69-b83e-6b137d585771.jpg",
+      "sha256_16": "e59aca291cde653b",
+      "bytes": 287866,
+      "labeled": false
+    },
+    {
+      "id": "01a0ac6e-fd90-77f8-bec4-ff85bc28172a.jpg",
+      "path": "reports/other/01a0ac6e-fd90-77f8-bec4-ff85bc28172a.jpg",
+      "category": "other",
+      "source_filename": "01a0ac6e-fd90-77f8-bec4-ff85bc28172a.jpg",
+      "sha256_16": "5191da714af3fb54",
+      "bytes": 287910,
+      "labeled": false
+    },
+    {
+      "id": "01a0ae6a-3258-7363-87d0-d794c703d59e.jpg",
+      "path": "reports/other/01a0ae6a-3258-7363-87d0-d794c703d59e.jpg",
+      "category": "other",
+      "source_filename": "01a0ae6a-3258-7363-87d0-d794c703d59e.jpg",
+      "sha256_16": "f1933813fbb2cb22",
+      "bytes": 286350,
+      "labeled": false
+    },
+    {
+      "id": "4325872E-D946-499D-818F-EBC31BCD9A92_L0_001.jpg",
+      "path": "reports/other/4325872E-D946-499D-818F-EBC31BCD9A92_L0_001.jpg",
+      "category": "other",
+      "source_filename": "4325872E-D946-499D-818F-EBC31BCD9A92_L0_001.jpg",
+      "sha256_16": "f8e2da1a3c6fc1e2",
+      "bytes": 506146,
+      "labeled": false
+    },
+    {
+      "id": "4A7C4512-AA5C-4961-82D4-D65874D5AC1D_L0_001.jpg",
+      "path": "reports/other/4A7C4512-AA5C-4961-82D4-D65874D5AC1D_L0_001.jpg",
+      "category": "other",
+      "source_filename": "4A7C4512-AA5C-4961-82D4-D65874D5AC1D_L0_001.jpg",
+      "sha256_16": "16c783fa43f5ecf2",
+      "bytes": 557185,
+      "labeled": false
+    },
+    {
+      "id": "53990787-d010-4458-9778-05a49f764ae8.jpg",
+      "path": "reports/other/53990787-d010-4458-9778-05a49f764ae8.jpg",
+      "category": "other",
+      "source_filename": "53990787-d010-4458-9778-05a49f764ae8.jpg",
+      "sha256_16": "23e5b18725c5704d",
+      "bytes": 808861,
+      "labeled": false
+    },
+    {
+      "id": "6062F6D7-05F5-4E2C-B3F2-74BF48294A1E_L0_001.jpg",
+      "path": "reports/other/6062F6D7-05F5-4E2C-B3F2-74BF48294A1E_L0_001.jpg",
+      "category": "other",
+      "source_filename": "6062F6D7-05F5-4E2C-B3F2-74BF48294A1E_L0_001.jpg",
+      "sha256_16": "f93585df2bad3108",
+      "bytes": 851110,
+      "labeled": false
+    },
+    {
+      "id": "848bce5d-925a-447f-b1c1-7b117f9c1b18.jpg",
+      "path": "reports/other/848bce5d-925a-447f-b1c1-7b117f9c1b18.jpg",
+      "category": "other",
+      "source_filename": "848bce5d-925a-447f-b1c1-7b117f9c1b18.jpg",
+      "sha256_16": "fb687b47b0a5fdc8",
+      "bytes": 82107,
+      "labeled": false
+    },
+    {
+      "id": "E7CF1151-0C83-4E50-AEF5-DDC23CA0C7D2_L0_001.jpg",
+      "path": "reports/other/E7CF1151-0C83-4E50-AEF5-DDC23CA0C7D2_L0_001.jpg",
+      "category": "other",
+      "source_filename": "E7CF1151-0C83-4E50-AEF5-DDC23CA0C7D2_L0_001.jpg",
+      "sha256_16": "175f2baea68a7765",
+      "bytes": 860389,
+      "labeled": false
+    },
+    {
+      "id": "a32fcb6a-34ad-4127-8881-38815edc3864.jpg",
+      "path": "reports/other/a32fcb6a-34ad-4127-8881-38815edc3864.jpg",
+      "category": "other",
+      "source_filename": "a32fcb6a-34ad-4127-8881-38815edc3864.jpg",
+      "sha256_16": "e9c6d62e3df6ab95",
+      "bytes": 965048,
+      "labeled": false
+    },
+    {
+      "id": "ad3d68a6-fba8-49fe-a99a-6eb69bbf1267.jpg",
+      "path": "reports/other/ad3d68a6-fba8-49fe-a99a-6eb69bbf1267.jpg",
+      "category": "other",
+      "source_filename": "ad3d68a6-fba8-49fe-a99a-6eb69bbf1267.jpg",
+      "sha256_16": "71b7d35ef92d65d3",
+      "bytes": 721132,
+      "labeled": false
+    },
+    {
+      "id": "e1675c71-64c8-4eba-8dce-b398599175ce.jpg",
+      "path": "reports/other/e1675c71-64c8-4eba-8dce-b398599175ce.jpg",
+      "category": "other",
+      "source_filename": "e1675c71-64c8-4eba-8dce-b398599175ce.jpg",
+      "sha256_16": "b574fed3b8bb29f6",
+      "bytes": 83111,
+      "labeled": false
+    },
+    {
+      "id": "e76241e2-b6bf-4a53-abf6-b78362afdc80.jpg",
+      "path": "reports/other/e76241e2-b6bf-4a53-abf6-b78362afdc80.jpg",
+      "category": "other",
+      "source_filename": "e76241e2-b6bf-4a53-abf6-b78362afdc80.jpg",
+      "sha256_16": "a4f85f893e965263",
+      "bytes": 802156,
+      "labeled": false
+    },
+    {
+      "id": "20260917T094650__01a0b2d6-0d75-703c-bbb7-a7291e72d653.jpg",
+      "path": "reports/cbc/20260917T094650__01a0b2d6-0d75-703c-bbb7-a7291e72d653.jpg",
+      "category": "cbc",
+      "source_filename": "01a0b2d6-0d75-703c-bbb7-a7291e72d653.jpg",
+      "sha256_16": "52db35490620bd41",
+      "bytes": 1093014,
+      "labeled": true,
+      "report_time": "2026-09-17T09:46:50",
+      "type": "血常规",
+      "note": "WBC11.52 Hb85 PLT73 plateletcrit0.08",
+      "relative_h": 43.78
+    },
+    {
+      "id": "20260917T105201__0C19DB31-46D2-4C66-8E15-D5BFA7D112B4_L0_001.jpg",
+      "path": "reports/chemistry/20260917T105201__0C19DB31-46D2-4C66-8E15-D5BFA7D112B4_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "0C19DB31-46D2-4C66-8E15-D5BFA7D112B4_L0_001.jpg",
+      "sha256_16": "507ed4c91a25b7f2",
+      "bytes": 857464,
+      "labeled": true,
+      "report_time": "2026-09-17T10:52:01",
+      "type": "生化/肝酶/PCT",
+      "note": "PCT170.297 ALT891 AST806 IL6 981 CK8280 Cr363",
+      "relative_h": 44.87
+    },
+    {
+      "id": "20260917T224742__eaf679f1-a6a7-4527-99c3-478118ba2198.jpg",
+      "path": "reports/abg/20260917T224742__eaf679f1-a6a7-4527-99c3-478118ba2198.jpg",
+      "category": "abg",
+      "source_filename": "eaf679f1-a6a7-4527-99c3-478118ba2198.jpg",
+      "sha256_16": "3bbddd636b7a1a92",
+      "bytes": 156945,
+      "labeled": true,
+      "report_time": "2026-09-17T22:47:42",
+      "type": "血气",
+      "note": "lac2.86 PF184 Hb9.9",
+      "relative_h": 56.78
+    },
+    {
+      "id": "20260917T230838__d1333318-35e2-4808-9b3b-9f384be1e313.jpg",
+      "path": "reports/coag/20260917T230838__d1333318-35e2-4808-9b3b-9f384be1e313.jpg",
+      "category": "coag",
+      "source_filename": "d1333318-35e2-4808-9b3b-9f384be1e313.jpg",
+      "sha256_16": "0e7badae4f85c3aa",
+      "bytes": 86271,
+      "labeled": true,
+      "report_time": "2026-09-17T23:08:38",
+      "type": "凝血危急",
+      "note": "APTT76.1 critical",
+      "relative_h": 57.13
+    },
+    {
+      "id": "20260918T034405__01a0b2d6-0dd2-7331-a63b-22e300d1952a.jpg",
+      "path": "reports/abg/20260918T034405__01a0b2d6-0dd2-7331-a63b-22e300d1952a.jpg",
+      "category": "abg",
+      "source_filename": "01a0b2d6-0dd2-7331-a63b-22e300d1952a.jpg",
+      "sha256_16": "55539fffb30d4cb1",
+      "bytes": 1592693,
+      "labeled": true,
+      "report_time": "2026-09-18T03:44:05",
+      "type": "血气",
+      "note": "lac2.57 PF176 Hb8.4 FiO250%",
+      "relative_h": 61.73
+    },
+    {
+      "id": "20260918T034405__1e4a786c-67ce-4953-b272-69df3498c81d.jpg",
+      "path": "reports/abg/20260918T034405__1e4a786c-67ce-4953-b272-69df3498c81d.jpg",
+      "category": "abg",
+      "source_filename": "1e4a786c-67ce-4953-b272-69df3498c81d.jpg",
+      "sha256_16": "6c6f9bd36bbf1137",
+      "bytes": 159044,
+      "labeled": true,
+      "report_time": "2026-09-18T03:44:05",
+      "type": "血气",
+      "note": "same morning early ABG lac2.57",
+      "relative_h": 61.73
+    },
+    {
+      "id": "20260918T040448__fbc54e05-7e86-4ead-97ca-767c8aad5d23.jpg",
+      "path": "reports/coag/20260918T040448__fbc54e05-7e86-4ead-97ca-767c8aad5d23.jpg",
+      "category": "coag",
+      "source_filename": "fbc54e05-7e86-4ead-97ca-767c8aad5d23.jpg",
+      "sha256_16": "ebaed31236c0ccf8",
+      "bytes": 102171,
+      "labeled": true,
+      "report_time": "2026-09-18T04:04:48",
+      "type": "凝血危急",
+      "note": "APTT72.4 critical",
+      "relative_h": 62.07
+    },
+    {
+      "id": "20260918T063619__01a0b2d6-0dae-7a3a-9a06-83b9f9b783da.jpg",
+      "path": "reports/abg/20260918T063619__01a0b2d6-0dae-7a3a-9a06-83b9f9b783da.jpg",
+      "category": "abg",
+      "source_filename": "01a0b2d6-0dae-7a3a-9a06-83b9f9b783da.jpg",
+      "sha256_16": "303eb13c6c149416",
+      "bytes": 1596670,
+      "labeled": true,
+      "report_time": "2026-09-18T06:36:19",
+      "type": "血气",
+      "note": "lac1.97 FiO2 50% PF169 Hb9.1",
+      "relative_h": 64.6
+    },
+    {
+      "id": "20260918T083444__01a0b2d6-0d88-78df-bb43-c0cc61c8567b.jpg",
+      "path": "reports/cbc/20260918T083444__01a0b2d6-0d88-78df-bb43-c0cc61c8567b.jpg",
+      "category": "cbc",
+      "source_filename": "01a0b2d6-0d88-78df-bb43-c0cc61c8567b.jpg",
+      "sha256_16": "5dac65fc2242dd06",
+      "bytes": 1062785,
+      "labeled": true,
+      "report_time": "2026-09-18T08:34:44",
+      "type": "血常规",
+      "note": "WBC14.51 Hb85 PLT65 plateletcrit0.08",
+      "relative_h": 66.58
+    },
+    {
+      "id": "20260918T085858__01a0b2d6-0d9a-7071-b1dd-f8d8c12cb965.jpg",
+      "path": "reports/chemistry/20260918T085858__01a0b2d6-0d9a-7071-b1dd-f8d8c12cb965.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0b2d6-0d9a-7071-b1dd-f8d8c12cb965.jpg",
+      "sha256_16": "607fd34c93623469",
+      "bytes": 549551,
+      "labeled": true,
+      "report_time": "2026-09-18T08:58:58",
+      "type": "生化/PCT",
+      "note": "PCT101.563 Cr212 urea11.59",
+      "relative_h": 66.97
+    },
+    {
+      "id": "20260918T085858__a27ffa9a-8bf7-4eb9-a2d7-ba8bec686856.jpg",
+      "path": "reports/chemistry/20260918T085858__a27ffa9a-8bf7-4eb9-a2d7-ba8bec686856.jpg",
+      "category": "chemistry",
+      "source_filename": "a27ffa9a-8bf7-4eb9-a2d7-ba8bec686856.jpg",
+      "sha256_16": "4086dd11640337af",
+      "bytes": 121302,
+      "labeled": true,
+      "report_time": "2026-09-18T08:58:58",
+      "type": "电解质/肾",
+      "note": "Cr212 urea11.59 electrolytes (partial earlier upload)",
+      "relative_h": 66.97
+    },
+    {
+      "id": "20260918T094446__01a0b2d6-0dbe-726a-9881-08c8bc9b8c85.jpg",
+      "path": "reports/coag/20260918T094446__01a0b2d6-0dbe-726a-9881-08c8bc9b8c85.jpg",
+      "category": "coag",
+      "source_filename": "01a0b2d6-0dbe-726a-9881-08c8bc9b8c85.jpg",
+      "sha256_16": "cd8f28a58501e22d",
+      "bytes": 544970,
+      "labeled": true,
+      "report_time": "2026-09-18T09:44:46",
+      "type": "凝血",
+      "note": "APTT50.8 INR1.24 PT13.8",
+      "relative_h": 67.73
+    },
+    {
+      "id": "20260918T094446__a3295952-769f-4e23-85a3-a07162cd4180.jpg",
+      "path": "reports/coag/20260918T094446__a3295952-769f-4e23-85a3-a07162cd4180.jpg",
+      "category": "coag",
+      "source_filename": "a3295952-769f-4e23-85a3-a07162cd4180.jpg",
+      "sha256_16": "441b9efb9fc1c2bb",
+      "bytes": 139280,
+      "labeled": true,
+      "report_time": "2026-09-18T09:44:46",
+      "type": "凝血",
+      "note": "APTT50.8 panel (earlier upload)",
+      "relative_h": 67.73
+    }
+  ]
+}

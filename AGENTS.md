@@ -8,10 +8,11 @@ Do **not** update `Lelouchzhu/Allmond` for clinical dashboard work.
 
 ## Read first
 
-1. **[`CONTEXT.md`](CONTEXT.md)** — full clinical timeline, PCT naming traps, latest labs, update workflow  
-2. **[`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)** — prior agent conversation summary  
-3. This file — short operating rules  
-4. **`index.html`** — live dashboard data
+1. **[`CONTEXT.md`](CONTEXT.md)** — clinical timeline, PCT naming traps, latest labs  
+2. **[`testset/README.md`](testset/README.md)** — **mandatory screenshot backup + extraction testset**  
+3. **[`docs/transcripts/`](docs/transcripts/)** — prior agent conversation summaries  
+4. This file — short operating rules  
+5. **`index.html`** — live dashboard (categorized trends for all metrics)
 
 ## Purpose
 
@@ -22,16 +23,17 @@ Self-contained mobile perioperative monitoring dashboard. **Not medical advice.*
 - Surgery end: **2026-09-15 14:00** (D0 10:00–14:00)
 - Relative hours from surgery end
 
-## Latest snapshot (see CONTEXT.md for detail)
+## Mandatory on every new report image
 
-- PCT **146.421 → 170.297 → 101.563** ng/mL  
-- CRRT on; Cr 212; UO overnight 70 mL  
-- Lactate 1.97; FiO₂ 50%; P/F 169  
-- APTT 50.8; INR 1.24; Hb 85 g/L; PLT 65  
+1. Copy screenshot → `testset/reports/<category>/` (or `inbox/`)
+2. Register in `testset/manifest.json`
+3. Extract values into `index.html` (`baseReadings` / `labReadings` + cards/timeline)
+4. Update `CONTEXT.md` if the clinical story changed
+5. Commit + push **MediDash**
 
-## How to update
+## Dashboard trends
 
-Edit `index.html` (`baseReadings`, `labReadings`, cards, reports, timeline, questions), update `CONTEXT.md` if the clinical story changed, commit, push `main`.
+`index.html` now has **分类汇总** (all metrics by system with sparklines) plus **详细趋势** (pick category → pick metric). Categories: 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝血/血细胞, 肝/肌酶, 电解质.
 
 ## Preview
 
