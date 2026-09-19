@@ -66,10 +66,10 @@ Trend: falling since the peak, still far above ref 0–0.05.
 
 ### Support / vitals (family-reported)
 
-- **Latest bedside (~postop 73h, not re-reported):** BP **120/35** (MAP≈63), HR **109**, RR **15–19**
+- **Latest bedside (~postop 97h):** BP **110/36** (MAP≈61), HR/pulse **112**, RR **15–20**
 - **CRRT stopped** early morning 2026-09-19 (family). Before stop: dehydrate/replacement ~**250 mL/h**, hemofiltration **120 mL/h**; IV fluids ~**200 mL/h**
-- Urine: 950 → 300 → 70 → morning 20 mL → **overnight 0**. **Diuretics increased today**
-- Vasopressors (family, confirmed): norepinephrine **9 mL/h = 0.45 mg/h** (= **7.5 μg/min**). At an assumed 50 kg that is ~**0.15 μg/kg/min** — **moderate-low, not a high dose** (high-dose thresholds are often ≥0.5–1 μg/kg/min). The earlier ~0.5 mg/h estimate is superseded. Second agent status unknown. BP last reported 120/35.
+- Urine: 950 → 300 → 70 → morning 20 mL → overnight **0** → after diuretics today **10 mL** (still nearly anuric)
+- Vasopressors (family, confirmed): norepinephrine **9 mL/h = 0.45 mg/h** (= **7.5 μg/min**). At an assumed 50 kg that is ~**0.15 μg/kg/min** — **moderate-low, not a high dose**. Second agent status unknown.
 
 ### Arterial blood gas — latest 2026-09-19 06:44 (postop 88h44m)
 
@@ -196,4 +196,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-19 — chemistry 10:03 PCT 65.368 / Cr 204 / urea 13.27 / ALB 29.3 / Na 134.78; CRRT stopped overnight, urine 0, diuretics increased; norepinephrine 9 mL/h = 0.45 mg/h (moderate-low).
+**Last updated:** 2026-09-19 — bedside BP 110/36 / pulse 112 / RR 15–20 / urine 10 mL after diuretics; chemistry 10:03 PCT 65.368 / Cr 204; CRRT stopped; NE 0.45 mg/h.
