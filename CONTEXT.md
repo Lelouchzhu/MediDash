@@ -68,7 +68,7 @@ Trend: rise then fall; still far above ref 0–0.05.
 - **Latest bedside (~postop 73h):** BP **120/35** (MAP≈63), HR **109**, RR **15–19**
 - **CRRT:** dehydrate/replacement ~**250 mL/h**, hemofiltration **120 mL/h**; IV fluids ~**200 mL/h** (approx net −50 mL/h — verify at bedside)
 - Urine: overnight had been 70 mL; **since this morning only 20 mL**
-- Vasopressors: **still two agents**, each about **½ of the maximum allowed dose** (family estimate); confirm drug names and exact rates
+- Vasopressors (family, ~postop 92h): **norepinephrine reduced to 9 mL/h ≈ 0.5 mg/h** (= **8.3 μg/min**). At an assumed 50 kg that is ~**0.17 μg/kg/min** — **moderate-low, not a high dose** (high-dose thresholds are often ≥0.5–1 μg/kg/min). Concentration not verified: if the pump is the common 4 mg/50 mL mix, 9 mL/h would be 0.72 mg/h, still moderate. Second agent status unknown. BP last reported 120/35.
 
 ### Arterial blood gas — latest 2026-09-19 06:44 (postop 88h44m)
 
@@ -188,4 +188,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-19 — hires ABG copies did not change values; new APTT 67.2 and CBC Hb 76 / PLT 55.
+**Last updated:** 2026-09-19 — norepinephrine 9 mL/h ≈ 0.5 mg/h (moderate-low); CBC Hb 76 / APTT 67.2.
