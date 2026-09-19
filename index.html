@@ -1015,7 +1015,7 @@
       <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
-        <span class="pill" id="latestTimePill">最新：术后104h36m</span>
+        <span class="pill" id="latestTimePill">最新：术后112h46m</span>
         <span class="pill">数据已去标识化</span>
       </div>
     </header>
@@ -1047,26 +1047,26 @@
         <button class="status-card orange" type="button" data-metric-jump="lactate">
           <div class="status-top">
             <span class="status-name">组织灌注</span>
-            <span class="level">略降仍高</span>
+            <span class="level">已回参考</span>
           </div>
-          <div class="status-value"><span id="latestLactate">1.87</span><span class="status-unit">mmol/L</span></div>
-          <div class="status-note">2.14→1.87 · 仍高于参考<br>利尿后尿仅10 mL</div>
+          <div class="status-value"><span id="latestLactate">1.33</span><span class="status-unit">mmol/L</span></div>
+          <div class="status-note">1.87→1.33 · 已入参考<br>尿仍极少，不能单看乳酸</div>
         </button>
-        <button class="status-card orange" type="button" data-metric-jump="pf">
+        <button class="status-card red" type="button" data-metric-jump="pf">
           <div class="status-top">
             <span class="status-name">氧合</span>
-            <span class="level">再下降</span>
+            <span class="level">继续下降</span>
           </div>
-          <div class="status-value"><span id="latestPf">165</span><span class="status-unit">P/F</span></div>
-          <div class="status-note">FiO₂ 仍50% · 210→165<br>仍远低于400</div>
+          <div class="status-value"><span id="latestPf">147</span><span class="status-unit">P/F</span></div>
+          <div class="status-note">FiO₂ 仍50% · PO₂ 73.5<br>165→147 · 远低于400</div>
         </button>
         <button class="status-card orange" type="button" data-metric-jump="hco3">
           <div class="status-top">
             <span class="status-name">酸碱</span>
             <span class="level">代谢酸加重</span>
           </div>
-          <div class="status-value"><span id="latestPh">7.346</span><span class="status-unit">pH</span></div>
-          <div class="status-note">HCO₃⁻ 17.5↓ · BE −8.1</div>
+          <div class="status-value"><span id="latestPh">7.366</span><span class="status-unit">pH</span></div>
+          <div class="status-note">HCO₃⁻ 14.8↓ · BE −10.5<br>pH靠低碳酸代偿</div>
         </button>
         <div class="status-card red">
           <div class="status-top">
@@ -1100,13 +1100,13 @@
           <div class="status-value">67.2<span class="status-unit">APTT</span></div>
           <div class="status-note">64.0→67.2 · 参考21–45<br>仍明显延长</div>
         </div>
-        <button class="status-card orange" type="button" data-metric-jump="hb">
+        <button class="status-card red" type="button" data-metric-jump="hb">
           <div class="status-top">
             <span class="status-name">血红蛋白 / 钙</span>
-            <span class="level">仍低</span>
+            <span class="level">血气Hb骤降</span>
           </div>
-          <div class="status-value"><span id="latestHb">10.1</span><span class="status-unit">g/dL</span></div>
-          <div class="status-note">血气10.1 · 血常规 Hb <strong>76</strong><br>PLT 55 · iCa 1.05</div>
+          <div class="status-value"><span id="latestHb">7.1</span><span class="status-unit">g/dL</span></div>
+          <div class="status-note">血气10.1→<strong>7.1</strong> · Hct 21<br>血常规仍76 · iCa 1.05</div>
         </button>
       </div>
     </section>
@@ -1156,16 +1156,16 @@
         </div>
         <div class="insights">
           <div class="insight">
-            <strong>乳酸降至1.87，仍高于参考</strong>
-            <p>今晨2.14→晚间1.87（参考0.5–1.6）。血压110/36、HR112，利尿后尿仅10 mL，灌注不能仅看单次乳酸。</p>
+            <strong>乳酸1.33已回参考</strong>
+            <p>1.87→1.33（参考0.5–1.6）。血压110/36、HR112，利尿后尿仅10 mL。乳酸正常不等于灌注已经够。</p>
           </div>
           <div class="insight">
-            <strong>氧合再降至165</strong>
-            <p>FiO₂仍50%，P/F 210→165，PO₂82.7；较今晨进一步下降，仍远低于400。</p>
+            <strong>氧合降至147，PO₂73.5</strong>
+            <p>FiO₂仍50%，P/F 165→147。这是氧合指数，不是降钙素原。仍远低于400。</p>
           </div>
           <div class="insight">
-            <strong>代谢酸加重，钙更低</strong>
-            <p>pH 7.382→7.346，HCO₃⁻18.7→17.5，BE −6.4→−8.1。iCa 1.09→1.05。CRRT仍停，利尿后尿仅10 mL。</p>
+            <strong>碱缺更大，血气Hb降至7.1</strong>
+            <p>pH 7.366靠PCO₂26.5代偿。HCO₃⁻17.5→14.8，BE −8.1→−10.5。血气Hb 10.1→7.1、Hct 30→21。iCa仍1.05。</p>
           </div>
         </div>
       </div>
@@ -1252,7 +1252,7 @@
             <ul>
               <li>降钙素原：9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> → 9月19日10:03 <strong>65.368</strong> ng/mL（参考0–0.05）。持续下降，目前仍极高。</li>
               <li>IL-6 981 pg/mL（术后约45小时）仍提示极强炎症反应。</li>
-              <li>乳酸峰值8.99 → 今晨2.14 → 晚间<strong>1.87</strong>（仍高于参考）。最新口述血压<strong>110/36</strong>、脉搏<strong>112</strong>、RR15–20。去甲仍为 <strong>0.45 mg/h</strong>（9 mL/h = 7.5 μg/min），属中等偏低剂量。</li>
+              <li>乳酸峰值8.99 → 2.14 → 1.87 → 今晨<strong>1.33</strong>（已回到参考0.5–1.6）。最新口述血压<strong>110/36</strong>、脉搏<strong>112</strong>、RR15–20，利尿后尿仅10 mL。去甲仍为 <strong>0.45 mg/h</strong>。乳酸正常不能单独说明灌注已恢复。</li>
               <li>血常规“PCT”是血小板比积（最新0.06%），与降钙素原不是同一指标。</li>
             </ul>
           </div>
@@ -1324,7 +1324,7 @@
               <li>血常规Hb：85→最新<strong>76</strong> g/L（9月19日08:46）；同期血气Hb 9.2 g/dL（不同方法，勿直接等同）。Hct 22.9%。</li>
               <li>血小板65→<strong>55</strong>×10⁹/L；血小板比积0.08%→0.06%（参考0.17–0.35）。</li>
               <li>白细胞14.51→13.17，中性粒91.2%→87.9%，仍偏高。</li>
-              <li>最新离子钙 <strong>1.05</strong> mmol/L（1.14→1.09→1.05）。10:03生化：K <strong>4.80</strong>（正常），Na <strong>134.78↓</strong>（参考137–147），Cl 100.69。</li>
+              <li>最新离子钙仍为 <strong>1.05</strong> mmol/L。今晨血气Hb <strong>7.1</strong> g/dL、Hct 21%（昨夜血气10.1 / 30%）。血常规Hb仍是9月19日的76 g/L，两种方法不要直接等同。10:03生化：K 4.80，Na 134.78↓，Cl 100.69。</li>
               <li>白蛋白已测至少两次。已入库的只有9月19日10:03这一次：<strong>29.3↓</strong> g/L（参考34–48）。更早一次的报告不在当前截图里，趋势图暂时只有这一点。</li>
             </ul>
           </div>
@@ -1377,7 +1377,7 @@
           <div class="question-summary-top">
             <div>
               <h3>查房沟通清单</h3>
-              <p>先问危及当前稳定性的6项，再补充7项器官功能和治疗计划。</p>
+              <p>先问危及当前稳定性的7项，再补充6项器官功能和治疗计划。</p>
             </div>
             <span class="question-count" id="questionCount">0 / 13 已确认</span>
           </div>
@@ -1562,6 +1562,11 @@
           <div class="event-title">P/F降至165，代谢酸加重；乳酸1.87</div>
           <div class="event-desc">FiO₂仍50%、PO₂82.7；pH7.346、HCO₃⁻17.5↓、BE−8.1；血气Hb10.1、Hct30%、iCa1.05。乳酸2.14→1.87，仍高于参考。氧合指数165不是降钙素原。</div>
         </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后112小时46分 · 9月20日06:46</div>
+          <div class="event-title">血气Hb降至7.1，P/F 147；乳酸1.33已正常</div>
+          <div class="event-desc">FiO₂仍50%、PO₂73.5↓。pH7.366靠PCO₂26.5代偿；HCO₃⁻14.8、BE−10.5。Hct 21%。iCa仍1.05。147是氧合指数，不是降钙素原。需问出血与是否输血。</div>
+        </article>
       </div>
     </section>
 
@@ -1702,7 +1707,8 @@
       { h: 75.4, label: "术后75h23m", sample: "动脉", ph: 7.363, pco2: 40.3, po2: 82.4, hco3: 22.4, be: -2.8, fio2: 50, pf: 165, hb: 8.8 },
       { h: 79.78, label: "术后79h47m", sample: "动脉", ph: 7.398, pco2: 33.8, po2: 131.1, hco3: 20.4, be: -4.5, lactate: 1.41, fio2: 50, pf: 262, hb: 9.4, ca: 1.14 },
       { h: 88.74, label: "术后88h44m", sample: "动脉", ph: 7.382, pco2: 32.2, po2: 104.8, hco3: 18.7, be: -6.4, lactate: 2.14, fio2: 50, pf: 210, hb: 9.2, ca: 1.09 },
-      { h: 104.61, label: "术后104h36m", sample: "动脉", ph: 7.346, pco2: 32.8, po2: 82.7, hco3: 17.5, be: -8.1, lactate: 1.87, fio2: 50, pf: 165, hb: 10.1, ca: 1.05 }
+      { h: 104.61, label: "术后104h36m", sample: "动脉", ph: 7.346, pco2: 32.8, po2: 82.7, hco3: 17.5, be: -8.1, lactate: 1.87, fio2: 50, pf: 165, hb: 10.1, ca: 1.05 },
+      { h: 112.77, label: "术后112h46m", sample: "动脉", ph: 7.366, pco2: 26.5, po2: 73.5, hco3: 14.8, be: -10.5, lactate: 1.33, fio2: 50, pf: 147, hb: 7.1, ca: 1.05 }
     ];
 
     const labReadings = [
@@ -1776,16 +1782,22 @@
     const latestNonBloodGasReport = { h: 92.06, label: "术后92h03m · PCT 65.4", type: "生化" };
     const doctorQuestions = [
       {
+        id: "bleeding",
+        group: "urgent",
+        title: "血气Hb从10.1降到7.1，现在要不要输血？",
+        detail: "约8小时内血气Hb 10.1→7.1 g/dL，Hct 30→21。血常规仍是9月19日的76 g/L、血小板55，两种方法不要混用。请看引流量、是否活动性出血，以及APTT 67.2时能否输血或停抗凝。"
+      },
+      {
         id: "hemodynamics",
         group: "urgent",
         title: "血压已至110/36、脉搏112，升压与灌注目标是否仍合适？",
-        detail: "MAP≈61，RR15–20。去甲仍为0.45 mg/h。请核对第二种升压药是否仍在用，以及目标MAP和减量标准。"
+        detail: "MAP≈61，RR15–20。去甲仍为0.45 mg/h。乳酸已回到1.33，但尿仍极少。请核对第二种升压药是否仍在用，以及目标MAP。"
       },
       {
         id: "lactate",
         group: "urgent",
-        title: "乳酸从2.14降至1.87，灌注是否改善？",
-        detail: "仍高于参考0.5–1.6。血压110/36、脉搏112，利尿后尿仅10 mL。去甲现为0.45 mg/h。哪些休克问题仍未解决？"
+        title: "乳酸已回到1.33，能否认为灌注改善？",
+        detail: "参考0.5–1.6。血压110/36、脉搏112，利尿后尿仅10 mL，碱缺反而加大到−10.5。哪些休克问题仍未解决？"
       },
       {
         id: "source-control",
@@ -1797,37 +1809,31 @@
         id: "shock-cause",
         group: "urgent",
         title: "目前休克的主要原因判断是什么？",
-        detail: "感染性、失血性、心源性或混合性？是否还有未控制的感染源或活动性出血？"
+        detail: "感染性、失血性、心源性或混合性？血气Hb骤降后，是否还有未控制的出血或感染源？"
       },
       {
         id: "oxygenation",
         group: "urgent",
-        title: "P/F从210再降至165，呼吸支持是否需要重新评估？",
-        detail: "仍FiO₂50%，PO₂82.7。目前通气模式、PEEP和升级/减氧标准是什么？"
+        title: "P/F从165降到147，PO₂只有73.5，呼吸支持要不要升级？",
+        detail: "仍FiO₂50%。目前通气模式、PEEP，以及升级或减氧的标准是什么？"
       },
       {
         id: "next-window",
         group: "urgent",
         title: "未来6–12小时最重要的观察目标是什么？",
-        detail: "晚间血气P/F165、乳酸1.87、pH7.346、BE−8.1。CRRT已停，利尿后尿仅10 mL。血压110/36、脉搏112。肌酐204、尿素13.27、PCT 65.4。重点看尿量、氧合和是否重启CRRT。"
+        detail: "优先看血气Hb是否继续掉、P/F能否稳住、尿量有没有起来。BE已到−10.5，CRRT仍停。肌酐204、尿素13.27、PCT 65.4。"
       },
       {
         id: "kidney",
         group: "followup",
-        title: "利尿后尿仅10 mL，是否需要重启CRRT？",
-        detail: "停前脱水250、血滤120、输液约200 mL/h。肌酐212→204，尿素11.59→13.27。请确认利尿剂种类剂量、重启标准，以及极少尿时的液体与钾管理。"
+        title: "利尿后尿仅10 mL，碱缺加大后是否重启CRRT？",
+        detail: "停前脱水250、血滤120、输液约200 mL/h。肌酐212→204，尿素13.27。HCO₃⁻已到14.8、BE −10.5。请确认重启标准、利尿剂是否还要加。"
       },
       {
         id: "coagulation",
         group: "followup",
         title: "APTT从64.0再升至67.2，抗凝是否需要立即调整？",
-        detail: "22:13为67.2秒（参考21–45），18:01为64.0。请确认抗凝方案及有无出血。"
-      },
-      {
-        id: "bleeding",
-        group: "followup",
-        title: "血常规Hb降至76、血小板55，是否需要输血或停抗凝？",
-        detail: "Hb 85→76 g/L，PLT 65→55。晚间血气Hb报10.1 g/dL，两种方法不要混用。请结合引流量和APTT67.2判断。"
+        detail: "22:13为67.2秒（参考21–45）。今晨血气Hb已降到7.1。请确认有无出血，以及抗凝是否还在用。"
       },
       {
         id: "infection",
@@ -1850,8 +1856,8 @@
       {
         id: "calcium",
         group: "followup",
-        title: "离子钙降至1.05，是否需要加快补钙？",
-        detail: "1.14→1.09→晚间1.05。CRRT已停，若此前为枸橼酸抗凝，补钙目标和监测频率是否因此改变？"
+        title: "离子钙仍为1.05，碱缺加大后还要不要补钙？",
+        detail: "1.14→1.09→1.05，今晨仍是1.05。CRRT已停。补钙目标是否因为代谢酸加重而改变？"
       }
     ];
 
@@ -2198,8 +2204,8 @@
       const state = getQuestionState();
       const container = document.getElementById("questionGroups");
       const groups = [
-        { id: "urgent", label: "优先确认 · 6项", className: "" },
-        { id: "followup", label: "器官功能与治疗计划 · 7项", className: "followup" }
+        { id: "urgent", label: "优先确认 · 7项", className: "" },
+        { id: "followup", label: "器官功能与治疗计划 · 6项", className: "followup" }
       ];
       container.innerHTML = groups.map(group => {
         const items = doctorQuestions.filter(question => question.group === group.id).map(question => `
