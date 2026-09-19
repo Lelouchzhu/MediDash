@@ -24,7 +24,7 @@ const EXPECT = {
   "20260918T130029__7B968B2C-1BF2-4D59-B4C8-F03D5EDF7DFB_L0_001.jpg": { hours: 71.01, ph: 7.388, pco2: 37.5, po2: 72.6, hco3: 22.1, be: -2.9, lactate: 1.27, fio2: 50, pf: 145, hb: 9.1, ca: 1.12 },
   "20260917T094650__01a0b2d6-0d75-703c-bbb7-a7291e72d653.jpg": { hours: 43.78, wbc: 11.52, hbg: 85, plt: 73 },
   "20260918T083444__01a0b2d6-0d88-78df-bb43-c0cc61c8567b.jpg": { hours: 66.58, wbc: 14.51, hbg: 85, plt: 65 },
-  "20260916T170608__53990787-d010-4458-9778-05a49f764ae8.jpg": { hours: 27.1, lactate: 6.55, pf: 170, hb: 13.2 },
+  "20260916T170608__53990787-d010-4458-9778-05a49f764ae8.jpg": { hours: 27.1, ph: 7.458, pco2: 25.6, po2: 84.8, hco3: 17.7, be: -6.1, lactate: 6.55, fio2: 50, pf: 170, hb: 13.2, ca: 0.92 },
   "20260917T092457__4A7C4512-AA5C-4961-82D4-D65874D5AC1D_L0_001.jpg": { hours: 43.42, aptt: 50.8, inr: 1.43, pt: 15.8 },
   "20260918T172250__01a0b451-4f08-76b7-9cd9-0c8d379fafd4.jpg": { hours: 75.38, k: 4.17 },
   "20260918T172343__01a0b451-4ecd-7e47-8ab8-9b5d80606e2d.jpg": { hours: 75.4, ph: 7.363, pco2: 40.3, po2: 82.4, hco3: 22.4, be: -2.8, fio2: 50, pf: 165, hb: 8.8 },
@@ -39,7 +39,7 @@ const EXPECT = {
 
 function upsert(list, entry) {
   if (!entry || entry.h == null) return;
-  const idx = list.findIndex(item => Math.abs(item.h - entry.h) <= 0.15);
+  const idx = list.findIndex(item => Math.abs(item.h - entry.h) <= 0.02);
   if (idx === -1) {
     list.push(entry);
     return;
@@ -121,13 +121,17 @@ for (const item of targets) {
 }
 
 if (includeOther && !useOcr) {
+  report.baseReadings.forEach(seed => {
+    if (report.isImageBacked(seed.h, "gas")) upsert(replayed.bloodGas, seed);
+  });
+  report.labReadings.forEach(seed => {
+    if (report.isImageBacked(seed.h, "lab")) upsert(replayed.labs, seed);
+  });
   for (const mapped of report.otherImageHours) {
     const seed = mapped.kind === "gas"
       ? report.baseReadings.find(row => hoursClose(row.h, mapped.h))
       : report.labReadings.find(row => hoursClose(row.h, mapped.h));
     if (!seed) continue;
-    if (mapped.kind === "gas") upsert(replayed.bloodGas, seed);
-    else upsert(replayed.labs, seed);
     const keys = mapped.kind === "gas" ? report.GAS_KEYS : report.LAB_KEYS;
     const fields = {};
     keys.forEach(key => {

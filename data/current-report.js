@@ -145,6 +145,14 @@
     return Math.abs(Number(a) - Number(b)) <= HOUR_TOL;
   }
 
+  function closestReplay(replayRows, h) {
+    const ranked = (replayRows || [])
+      .map(row => ({ row, delta: Math.abs(Number(row.h) - Number(h)) }))
+      .filter(item => item.delta <= HOUR_TOL)
+      .sort((a, b) => a.delta - b.delta);
+    return ranked.length ? ranked[0].row : null;
+  }
+
   function imageBackedHours(kind) {
     const labeledKind = labeledTestsetHours.filter(item => {
       if (kind === "gas") return item.category === "abg";
@@ -194,11 +202,16 @@
   }
 
   function findMatch(replayRows, seedItem, keys) {
-    const candidates = (replayRows || []).filter(row => hoursClose(row.h, seedItem.h));
-    if (!candidates.length) return null;
-    return candidates.find(row => valuesClose(seedItem.key, seedItem.value, row[seedItem.key]))
-      || candidates.find(row => keys.some(key => row[key] != null))
-      || candidates[0];
+    const match = closestReplay(replayRows, seedItem.h);
+    if (!match) return null;
+    if (valuesClose(seedItem.key, seedItem.value, match[seedItem.key])) return match;
+    const sameDelta = (replayRows || []).filter(row => (
+      hoursClose(row.h, seedItem.h)
+      && Math.abs(Math.abs(row.h - seedItem.h) - Math.abs(match.h - seedItem.h)) < 1e-9
+    ));
+    return sameDelta.find(row => valuesClose(seedItem.key, seedItem.value, row[seedItem.key]))
+      || sameDelta.find(row => keys.some(key => row[key] != null))
+      || match;
   }
 
   function scoreGroup(seedRows, replayRows, keys, kind) {
@@ -218,7 +231,7 @@
     });
     const matched = details.filter(item => item.ok).length;
     const rows = seedRows.map(row => {
-      const replay = (replayRows || []).find(item => hoursClose(item.h, row.h));
+      const replay = closestReplay(replayRows, row.h);
       const rowKeys = keys.filter(key => row[key] != null);
       const matchedKeys = rowKeys.filter(key => replay && valuesClose(key, row[key], replay[key]));
       return {
@@ -311,6 +324,7 @@
     otherImageHours,
     imageBackedHours,
     isImageBacked,
+    closestReplay,
     flattenFields,
     valuesClose,
     compareCoverage,

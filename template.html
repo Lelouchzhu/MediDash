@@ -2536,6 +2536,14 @@
     return Math.abs(Number(a) - Number(b)) <= HOUR_TOL;
   }
 
+  function closestReplay(replayRows, h) {
+    const ranked = (replayRows || [])
+      .map(row => ({ row, delta: Math.abs(Number(row.h) - Number(h)) }))
+      .filter(item => item.delta <= HOUR_TOL)
+      .sort((a, b) => a.delta - b.delta);
+    return ranked.length ? ranked[0].row : null;
+  }
+
   function imageBackedHours(kind) {
     const labeledKind = labeledTestsetHours.filter(item => {
       if (kind === "gas") return item.category === "abg";
@@ -2585,11 +2593,16 @@
   }
 
   function findMatch(replayRows, seedItem, keys) {
-    const candidates = (replayRows || []).filter(row => hoursClose(row.h, seedItem.h));
-    if (!candidates.length) return null;
-    return candidates.find(row => valuesClose(seedItem.key, seedItem.value, row[seedItem.key]))
-      || candidates.find(row => keys.some(key => row[key] != null))
-      || candidates[0];
+    const match = closestReplay(replayRows, seedItem.h);
+    if (!match) return null;
+    if (valuesClose(seedItem.key, seedItem.value, match[seedItem.key])) return match;
+    const sameDelta = (replayRows || []).filter(row => (
+      hoursClose(row.h, seedItem.h)
+      && Math.abs(Math.abs(row.h - seedItem.h) - Math.abs(match.h - seedItem.h)) < 1e-9
+    ));
+    return sameDelta.find(row => valuesClose(seedItem.key, seedItem.value, row[seedItem.key]))
+      || sameDelta.find(row => keys.some(key => row[key] != null))
+      || match;
   }
 
   function scoreGroup(seedRows, replayRows, keys, kind) {
@@ -2609,7 +2622,7 @@
     });
     const matched = details.filter(item => item.ok).length;
     const rows = seedRows.map(row => {
-      const replay = (replayRows || []).find(item => hoursClose(item.h, row.h));
+      const replay = closestReplay(replayRows, row.h);
       const rowKeys = keys.filter(key => row[key] != null);
       const matchedKeys = rowKeys.filter(key => replay && valuesClose(key, row[key], replay[key]));
       return {
@@ -2702,6 +2715,7 @@
     otherImageHours,
     imageBackedHours,
     isImageBacked,
+    closestReplay,
     flattenFields,
     valuesClose,
     compareCoverage,
@@ -2824,7 +2838,8 @@
       wbc: "WBC", plt: "PLT", hbg: "Hb(血常规)", k: "K", na: "Na", cl: "Cl",
       sbp: "SBP", dbp: "DBP", hr: "HR", crrtDehydrate: "CRRT脱水", crrtHf: "血滤", ivRate: "输液", urineMl: "尿量"
     };
-    const HOUR_MATCH = 0.15;
+    // Merge only near-duplicate clocks (~1 min). 16:58 vs 17:00 (2.97h / 3.00h) must stay distinct.
+    const HOUR_MATCH = 0.02;
     const DEFAULT_SAMPLE_ORAL = currentReport.sampleOral || {
       h: 73, label: "术后约73h · 床旁口述", sbp: 120, dbp: 35, hr: 109,
       rrLow: 15, rrHigh: 19, map: 63, pressors: "dual", pressorNote: "各约最大允许量½",

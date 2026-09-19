@@ -50,9 +50,21 @@ test("labeled-only replay still misses early other/ clocks and all oral", () => 
   });
   assert.equal(coverage.complete, false);
   assert.equal(coverage.labsComplete, false);
-  assert.ok(coverage.gas.fullyCoveredRows >= 8);
+  assert.ok(coverage.gas.fullyCoveredRows >= 8, `gas ${coverage.gas.fullyCoveredRows}`);
   assert.ok(coverage.lab.fullyCoveredRows >= 12);
   assert.equal(coverage.bedside.missingRows, 6);
+});
+
+test("close ABG clocks stay distinct when both are replayed", () => {
+  const close = report.baseReadings.filter(row => row.h === 2.97 || row.h === 3);
+  const coverage = report.compareCoverage({
+    bloodGas: close,
+    labs: [],
+    bedside: []
+  });
+  const scored = coverage.gas.rows.filter(row => row.h === 2.97 || row.h === 3);
+  assert.equal(scored.length, 2);
+  assert.ok(scored.every(row => row.covered), JSON.stringify(scored));
 });
 
 test("all image-backed hours plus oral complete the numeric report", () => {

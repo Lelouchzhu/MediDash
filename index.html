@@ -2145,7 +2145,8 @@
       wbc: "WBC", plt: "PLT", hbg: "Hb(血常规)", k: "K", na: "Na", cl: "Cl",
       sbp: "SBP", dbp: "DBP", hr: "HR", crrtDehydrate: "CRRT脱水", crrtHf: "血滤", ivRate: "输液", urineMl: "尿量"
     };
-    const HOUR_MATCH = 0.15;
+    // Merge only near-duplicate clocks (~1 min). 16:58 vs 17:00 (2.97h / 3.00h) must stay distinct.
+    const HOUR_MATCH = 0.02;
     const DEFAULT_SAMPLE_ORAL = currentReport.sampleOral || {
       h: 73, label: "术后约73h · 床旁口述", sbp: 120, dbp: 35, hr: 109,
       rrLow: 15, rrHigh: 19, map: 63, pressors: "dual", pressorNote: "各约最大允许量½",
