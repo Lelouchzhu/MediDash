@@ -71,7 +71,15 @@ Trend: falling since the peak, still far above ref 0–0.05.
 - Urine: 950 → 300 → 70 → morning 20 mL → overnight **0** → after diuretics today **10 mL** (still nearly anuric)
 - Vasopressors (family, confirmed): norepinephrine **9 mL/h = 0.45 mg/h** (= **7.5 μg/min**). At an assumed 50 kg that is ~**0.15 μg/kg/min** — **moderate-low, not a high dose**. Second agent status unknown.
 
-### Arterial blood gas — latest 2026-09-19 06:44 (postop 88h44m)
+### Arterial blood gas — latest 2026-09-19 22:36 (postop 104h36m)
+
+- pH **7.346↓**, PCO₂ **32.8↓**, PO₂ **82.7**, HCO₃⁻ **17.5↓**, BE **−8.1** (ABE; SBE −7.3)
+- Lactate **1.87↑** (down from morning 2.14; still above 0.5–1.6)
+- FiO₂ **50%**, P/F **165** (worse than morning 210; still far below 400). This 165 is oxygenation index, not PCT.
+- Hb **10.1↓** g/dL, Hct **30%↓**, iCa **1.05↓**
+- Screenshot: `testset/reports/abg/20260919T223643__01a0ba3b-075f-7f18-b222-e28323098d73.jpg`
+
+### Arterial blood gas — 2026-09-19 06:44 (postop 88h44m)
 
 - pH 7.382, PCO₂ 32.2↓, PO₂ **104.8↑**, HCO₃⁻ **18.7↓**, BE **−6.4** (ABE)
 - Lactate **2.14↑** (back above 0.5–1.6; was 1.41 at 21:46)
@@ -196,4 +204,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-19 — bedside BP 110/36 / pulse 112 / RR 15–20 / urine 10 mL after diuretics; chemistry 10:03 PCT 65.368 / Cr 204; CRRT stopped; NE 0.45 mg/h.
+**Last updated:** 2026-09-19 — ABG 22:36 lac 1.87 / P/F 165 / pH 7.346 / BE −8.1 / iCa 1.05; bedside BP 110/36, urine 10 mL; CRRT stopped; NE 0.45 mg/h.
