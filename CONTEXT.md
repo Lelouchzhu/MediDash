@@ -116,18 +116,21 @@ Trend: rise then fall; still far above ref 0–0.05.
 
 - PCT **101.563**, Cr **212**, urea **11.59**, K 4.35, Na 137.91, Cl 97.56
 
-### CBC
+### CBC — latest 2026-09-19 08:46 (postop 90h46m)
 
 | Time | WBC | Hb g/L | PLT | Notes |
 |------|-----|--------|-----|-------|
 | 2026-09-17 09:46 | 11.52 | 85 | 73 | neut% ~95 |
 | 2026-09-18 08:34 | 14.51 | 85 | 65 | neut% ~91; plateletcrit 0.08% |
+| 2026-09-19 08:46 | **13.17** | **76** | **55** | neut% 87.9; plateletcrit **0.06%** |
 
-### Coagulation — latest 2026-09-18 18:01 (postop 76h01m)
+Screenshot: `testset/reports/cbc/20260919T084629__01a0b731-359d-77fe-9689-d52f5b99561b.jpg`
 
-- APTT **64.0↑** (ref 23.3–32.5); note “结果已复查”
-- Rebound from morning **50.8** (was critical 76.1 → 72.4 → 50.8)
-- Screenshot: `testset/reports/coag/20260918T180129__01a0b451-4f3f-7d4c-945a-296f5aeec91c.jpg`
+### Coagulation — latest 2026-09-18 22:13 (postop 80h13m)
+
+- APTT **67.2↑** (this sheet’s ref **21–45**)
+- Prior same evening 18:01: APTT **64.0** (that sheet’s ref 23.3–32.5)
+- Screenshot: `testset/reports/coag/20260918T221305__01a0b731-35d4-7a05-b975-9fac7882eef3.jpg`
 
 ### Coagulation — 2026-09-18 09:44 (postop 67h44m)
 
@@ -185,4 +188,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-19 06:44 ABG — lac 2.14, P/F 210 (FiO₂ 50%).
+**Last updated:** 2026-09-19 — hires ABG copies did not change values; new APTT 67.2 and CBC Hb 76 / PLT 55.

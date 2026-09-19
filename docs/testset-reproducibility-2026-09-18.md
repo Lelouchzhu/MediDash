@@ -107,3 +107,11 @@ Convention: dashboard `be` usually follows **ABE** when both SBE and ABE are pri
 ## Follow-up from batch D (2026-09-18)
 
 Promoted into labeled folders: coag `4A7C4512` (09:24 INR1.43 panel) and abg `53990787` (17:06 lac6.55). Dashboard already had these values (INR+APTT/PT backfilled in `0995b42`).
+
+## Resolution pass (2026-09-19)
+
+Higher-resolution copies of the 21:46 and 06:44 ABGs (3520×3772 vs prior 1079×1157) were archived as preferred. Re-read key values (lactate, P/F, pH, HCO3, BE, Hb, iCa, FiO2) **matched the existing extraction**; no dashboard correction. Uploads of K 4.17, APTT 64.0, and the 17:23 ABG were **byte-identical** to files already in the testset, so they are not higher resolution. Two additional 06:44 files were either the same high-res bytes or another 1079-wide copy.
+
+Conclusion: once a full-frame screenshot is already sharp, extra pixels did not change recognized numbers. Higher resolution helps when the prior image is cropped, blurred, or watermark-heavy — not for these already-legible panels.
+
+New unique reports in the same batch (not duplicates): APTT **67.2** at 22:13, CBC Hb **76** / PLT **55** / WBC **13.17** at 08:46.
