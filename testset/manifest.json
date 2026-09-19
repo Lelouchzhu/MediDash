@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 69,
+  "count": 71,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -867,6 +867,51 @@
         "plt": 55,
         "plateletcrit": 0.06,
         "neut_pct": 87.9
+      }
+    },
+    {
+      "id": "20260919T100330__01a0b7bc-519d-72d9-9831-8fd5f6dd93c7.jpg",
+      "path": "reports/chemistry/20260919T100330__01a0b7bc-519d-72d9-9831-8fd5f6dd93c7.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0b7bc-519d-72d9-9831-8fd5f6dd93c7.jpg",
+      "sha256_16": "f9d0d80e73aa2094",
+      "bytes": 521529,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-19T10:03:30",
+      "type": "生化",
+      "note": "PREFERRED 3464px PCT65.368 Cr204 urea13.27 Na134.78 ALB29.3 K4.80",
+      "relative_h": 92.06,
+      "extracted": {
+        "alb": 29.3,
+        "k": 4.8,
+        "na": 134.78,
+        "cl": 100.69,
+        "urea": 13.27,
+        "creatinine": 204,
+        "pct": 65.368
+      }
+    },
+    {
+      "id": "20260919T100330__01a0b7bc-51be-7f0b-890a-2cc1f6dfac4f.jpg",
+      "path": "reports/chemistry/20260919T100330__01a0b7bc-51be-7f0b-890a-2cc1f6dfac4f.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0b7bc-51be-7f0b-890a-2cc1f6dfac4f.jpg",
+      "sha256_16": "159088efcc6b969d",
+      "bytes": 448385,
+      "labeled": true,
+      "report_time": "2026-09-19T10:03:30",
+      "type": "生化",
+      "note": "same 10:03 panel, smaller phone capture; values match preferred",
+      "relative_h": 92.06,
+      "extracted": {
+        "alb": 29.3,
+        "k": 4.8,
+        "na": 134.78,
+        "cl": 100.69,
+        "urea": 13.27,
+        "creatinine": 204,
+        "pct": 65.368
       }
     }
   ]
