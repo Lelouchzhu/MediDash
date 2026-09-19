@@ -125,7 +125,7 @@ Trend: falling since the peak, still far above ref 0–0.05.
 
 - PCT **65.368** (was 101.563), Cr **204.0** (rechecked; was 212), urea **13.27** (was 11.59)
 - K **4.80**, Na **134.78↓** (ref 137–147), Cl **100.69**
-- Albumin **29.3↓** g/L (ref 34–48). GLB and A/G blank on the sheet
+- Albumin **29.3↓** g/L (ref 34–48) on this sheet. GLB and A/G blank. Family confirms albumin was measured **at least twice**; the earlier result is **not** in the archived screenshots, so the trend still has only this point.
 - Preferred screenshot: `testset/reports/chemistry/20260919T100330__01a0b7bc-519d-72d9-9831-8fd5f6dd93c7.jpg`
 
 ### Chemistry — 2026-09-18 08:58 (postop 66h58m)
@@ -204,4 +204,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-19 — ABG 22:36 lac 1.87 / P/F 165 / pH 7.346 / BE −8.1 / iCa 1.05; bedside BP 110/36, urine 10 mL; CRRT stopped; NE 0.45 mg/h.
+**Last updated:** 2026-09-19 — albumin measured at least twice; only 10:03 value 29.3 is image-backed. ABG 22:36 lac 1.87 / P/F 165 / pH 7.346.
