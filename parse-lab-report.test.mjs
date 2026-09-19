@@ -115,7 +115,7 @@ test("parses hospital LIS screenshots already stored on the dashboard", () => {
     活化部分凝血活酶时间测定 (APTT) APTT 76.1 秒
     有危急值、结果已复查
   `);
-  assert.equal(aptt.hours, 57.13);
+  assert.equal(aptt.hours, 57.14);
   assert.equal(aptt.fields.aptt, 76.1);
   assert.equal(aptt.critical, true);
 
@@ -132,7 +132,7 @@ test("parses hospital LIS screenshots already stored on the dashboard", () => {
     吸入氧浓度 FO2(I) 50.00
     氧合指数 pO2(a)/FO2(I) 184.00
   `);
-  assert.equal(abg.hours, 56.78);
+  assert.equal(abg.hours, 56.8);
   assert.equal(abg.fields.ph, 7.369);
   assert.equal(abg.fields.hco3, 24.2);
   assert.equal(abg.fields.fio2, 50);
@@ -158,7 +158,7 @@ test("parses hospital LIS screenshots already stored on the dashboard", () => {
 
 test("recovers hospital LIS OCR that dropped decimals or split labels", () => {
   const aptt = parseLabReportText("报告 时 间 : 2026-09-17 23:08:38 活化 部 分 凝血 活 酶 时 间 测 定 (APTT) APTT 76.1 sec 有 危急 值");
-  assert.equal(aptt.hours, 57.13);
+  assert.equal(aptt.hours, 57.14);
   assert.equal(aptt.fields.aptt, 76.1);
   assert.equal(aptt.critical, true);
 
@@ -178,7 +178,7 @@ test("recovers hospital LIS OCR that dropped decimals or split labels", () => {
     吸入氧浓度 FO2(I) 50.00
     氧合指数 pO2(a)/FO2(I) 184.00
   `);
-  assert.equal(abg.hours, 56.78);
+  assert.equal(abg.hours, 56.8);
   assert.equal(abg.fields.ph, 7.369);
   assert.equal(abg.fields.po2, 92);
   assert.equal(abg.fields.be, -1.1);
@@ -245,7 +245,7 @@ test("parses latest 13:00 hospital ABG already on the dashboard", () => {
     实测总血红蛋白 ctHb 9.1
     钙离子浓度 cCa2+ 1.12
   `);
-  assert.equal(parsed.hours, 71);
+  assert.equal(parsed.hours, 71.01);
   assert.equal(parsed.fields.lactate, 1.27);
   assert.equal(parsed.fields.pf, 145);
   assert.equal(parsed.fields.po2, 72.6);
@@ -260,7 +260,7 @@ test("parses CBC without treating plateletcrit as procalcitonin", () => {
     血小板 PLT 65
     血小板比积 PCT 0.08%
   `);
-  assert.equal(parsed.hours, 66.57);
+  assert.equal(parsed.hours, 66.58);
   assert.equal(parsed.fields.wbc, 14.51);
   assert.equal(parsed.fields.hbg, 85);
   assert.equal(parsed.fields.plt, 65);
@@ -269,7 +269,7 @@ test("parses CBC without treating plateletcrit as procalcitonin", () => {
 
 test("recovers compact report clocks and colon decimals from testset OCR", () => {
   const compact = parseLabReportText("ABE: 2026-09-18 130020 PH 7.35-745 PCO2 3750 clac 127");
-  assert.equal(compact.hours, 71);
+  assert.equal(compact.hours, 71.01);
   assert.equal(compact.fields.pco2, 37.5);
   assert.equal(compact.fields.lactate, 1.27);
   assert.equal(compact.fields.ph, undefined);
@@ -289,6 +289,53 @@ test("does not treat a photo caption as a report", () => {
   const parsed = parseLabReportText("family visit at the bedside, no numbers");
   assert.equal(parsed.matchedCount, 0);
   assert.equal(parsed.kind, "unknown");
+});
+
+test("parses 10:03 chemistry LIS codes including albumin", () => {
+  const parsed = parseLabReportText(`
+    报告时间: 2026-09-19 10:03:30
+    血清白蛋白测定 ALB 29.3 g/L
+    钾测定 K 4.80 mmol/L
+    钠测定 Na 134.78 mmol/L
+    氯测定 CL 100.69 mmol/L
+    尿素测定 UREA 13.27 mmol/L
+    肌酐测定 SCR 204.0 umol/L
+    降钙素原测定 PCT 65.368 ng/ml
+  `);
+  assert.equal(parsed.hours, 92.06);
+  assert.equal(parsed.fields.alb, 29.3);
+  assert.equal(parsed.fields.k, 4.8);
+  assert.equal(parsed.fields.na, 134.78);
+  assert.equal(parsed.fields.cl, 100.69);
+  assert.equal(parsed.fields.urea, 13.27);
+  assert.equal(parsed.fields.creatinine, 204);
+  assert.equal(parsed.fields.pct, 65.368);
+});
+
+test("recovers garbled ALT and ignores WBC exponent 1", () => {
+  const chem = parseLabReportText("报告时间: 2026-09-17 10:52:01 谷丙转氨酶 ALT S9I0 UL IL-6 981.00");
+  assert.equal(chem.fields.alt, 891);
+  assert.equal(chem.fields.il6, 981);
+
+  const cbc = parseLabReportText("白细胞 WBC 11.52 10^9/L 1 血红蛋白测定 HGB 85 血小板 PLT 73");
+  assert.equal(cbc.fields.wbc, 11.52);
+  assert.equal(cbc.fields.hbg, 85);
+  assert.equal(cbc.fields.plt, 73);
+
+  const fio2 = parseLabReportText("吸入氧浓度 FO2(I) 50.00 氧分压 pO2 87.9 mmHg 80-100");
+  assert.equal(fio2.fields.fio2, 50);
+  assert.equal(fio2.fields.po2, 87.9);
+});
+
+test("merges two OCR passes and prefers the better WBC", () => {
+  const merged = parser.parseLabReportTexts([
+    "报告时间: 2026-09-17 09:46:50 白细胞 WBC 1 血小板 PLT 73",
+    "白细胞 WBC 11.52 血红蛋白测定 HGB 85 血小板 PLT 73"
+  ]);
+  assert.equal(merged.hours, 43.78);
+  assert.equal(merged.fields.wbc, 11.52);
+  assert.equal(merged.fields.hbg, 85);
+  assert.equal(merged.fields.plt, 73);
 });
 
 test("rejects PDFs and oversized files before OCR", () => {

@@ -2033,6 +2033,10 @@
             <label for="cl">氯 Cl</label>
             <input id="cl" name="cl" type="number" step="0.01" inputmode="decimal">
           </div>
+          <div class="field">
+            <label for="alb">白蛋白 ALB (g/L)</label>
+            <input id="alb" name="alb" type="number" step="0.1" inputmode="decimal">
+          </div>
         </div>
       </details>
       <div class="form-actions">
@@ -3239,16 +3243,42 @@
       return tesseractLoader;
     }
 
+    async function fileToCanvas(file) {
+      const url = URL.createObjectURL(file);
+      try {
+        const image = await new Promise((resolve, reject) => {
+          const el = new Image();
+          el.onload = () => resolve(el);
+          el.onerror = reject;
+          el.src = url;
+        });
+        const canvas = document.createElement("canvas");
+        const scale = image.width > 2000 ? 2000 / image.width : 1;
+        canvas.width = Math.round(image.width * scale);
+        canvas.height = Math.round(image.height * scale);
+        canvas.getContext("2d").drawImage(image, 0, 0, canvas.width, canvas.height);
+        return canvas;
+      } finally {
+        URL.revokeObjectURL(url);
+      }
+    }
+
     async function ocrImageFile(file, requestId) {
       const Tesseract = await loadTesseract();
-      if (requestId !== ocrRequestId) return "";
-      const result = await Tesseract.recognize(file, "chi_sim+eng", {
-        logger: message => {
-          if (requestId !== ocrRequestId || message.status !== "recognizing text") return;
-          document.getElementById("shotStatus").textContent = `识别中 ${Math.round((message.progress || 0) * 100)}%`;
-        }
-      });
-      return result?.data?.text || "";
+      if (requestId !== ocrRequestId) return [];
+      const log = message => {
+        if (requestId !== ocrRequestId || message.status !== "recognizing text") return;
+        document.getElementById("shotStatus").textContent = `识别中 ${Math.round((message.progress || 0) * 100)}%`;
+      };
+      const canvas = await fileToCanvas(file);
+      const first = await Tesseract.recognize(canvas, "chi_sim+eng", { logger: log });
+      if (requestId !== ocrRequestId) return [];
+      const ctx = canvas.getContext("2d");
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      if (parser.preprocessLabImageData) parser.preprocessLabImageData(imageData);
+      ctx.putImageData(imageData, 0, 0);
+      const second = await Tesseract.recognize(canvas, "chi_sim+eng", { logger: log });
+      return [first?.data?.text || "", second?.data?.text || ""].filter(text => text.trim());
     }
 
     window.MediDashAcceptFile = acceptScreenshotFile;
@@ -3291,10 +3321,13 @@
       document.getElementById("shotStatus").textContent = "截图已接受，正在识别…";
       document.getElementById("liveRegion").textContent = "截图已接受，正在识别";
 
-      acceptWaiter = ocrImageFile(file, requestId).then(text => {
+      acceptWaiter = ocrImageFile(file, requestId).then(texts => {
         if (requestId !== ocrRequestId) return lastAcceptedParse;
-        if (text.trim()) document.getElementById("shotText").value = text;
-        const parsed = parseReportText(text);
+        const joined = Array.isArray(texts) ? texts.join("\n\n---\n\n") : String(texts || "");
+        if (joined.trim()) document.getElementById("shotText").value = joined;
+        const parsed = parser.parseLabReportTexts
+          ? parser.parseLabReportTexts(Array.isArray(texts) ? texts : [joined])
+          : parseReportText(joined);
         lastAcceptedParse = parsed;
         applyParsedReport(parsed, "截图");
         return parsed;

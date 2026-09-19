@@ -1201,7 +1201,7 @@
       <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
-        <span class="pill" id="latestTimePill">最新：术后88h44m</span>
+        <span class="pill" id="latestTimePill">最新化验：术后92h03m · PCT 65.4</span>
         <span class="pill">数据已去标识化</span>
       </div>
     </header>
@@ -1246,7 +1246,7 @@
             <span class="level">仍依赖升压</span>
           </div>
           <div class="status-value">120/35</div>
-          <div class="status-note">MAP≈63 · HR 109 · RR 15–19<br>双药约最大允许量½</div>
+          <div class="status-note">MAP≈63 · HR 109<br>去甲 9 mL/h=0.45 mg/h · 中等偏低</div>
         </div>
         <button class="status-card orange" type="button" data-metric-jump="lactate">
           <div class="status-top">
@@ -1254,7 +1254,7 @@
             <span class="level">乳酸回升</span>
           </div>
           <div class="status-value"><span id="latestLactate">2.14</span><span class="status-unit">mmol/L</span></div>
-          <div class="status-note">1.41→2.14 · 再次高于参考<br>尿仍极少</div>
+          <div class="status-note">1.41→2.14 · 再次高于参考<br>过夜尿0</div>
         </button>
         <button class="status-card orange" type="button" data-metric-jump="pf">
           <div class="status-top">
@@ -1275,18 +1275,18 @@
         <div class="status-card red">
           <div class="status-top">
             <span class="status-name">感染 / 炎症</span>
-            <span class="level">上升</span>
+            <span class="level">下降但仍极高</span>
           </div>
-          <div class="status-value">101.6<span class="status-unit">PCT</span></div>
-          <div class="status-note">146→170→102<br>仍远高于0.05</div>
+          <div class="status-value">65.4<span class="status-unit">PCT</span></div>
+          <div class="status-note">170→102→65<br>仍远高于0.05</div>
         </div>
         <div class="status-card orange">
           <div class="status-top">
-            <span class="status-name">肾功能 / CRRT</span>
-            <span class="level">透析中</span>
+            <span class="status-name">肾功能</span>
+            <span class="level">CRRT已停</span>
           </div>
-          <div class="status-value">212<span class="status-unit">μmol/L</span></div>
-          <div class="status-note">脱水250 · 血滤120 mL/h<br>输液≈200 · 今晨起尿20mL</div>
+          <div class="status-value">204<span class="status-unit">μmol/L</span></div>
+          <div class="status-note">尿素13.27 · 过夜尿0<br>今日已加利尿剂</div>
         </div>
         <div class="status-card red">
           <div class="status-top">
@@ -1361,15 +1361,15 @@
         <div class="insights" id="insightsRow">
           <div class="insight">
             <strong>乳酸再次升高至2.14</strong>
-            <p>昨夜1.41已正常，今晨2.14（参考0.5–1.6）。尿仍极少，灌注不能仅看单次乳酸。</p>
+            <p>昨夜1.41已正常，今晨2.14（参考0.5–1.6）。过夜尿0，灌注不能仅看单次乳酸。</p>
           </div>
           <div class="insight">
             <strong>氧合回落</strong>
             <p>FiO₂仍50%，P/F 262→210，PO₂104.8；昨夜改善未能维持，仍远低于400。</p>
           </div>
           <div class="insight">
-            <strong>代谢酸加重，钙更低</strong>
-            <p>HCO₃⁻20.4→18.7、BE −4.5→−6.4；iCa 1.09。APTT 64.0→67.2。血常规 Hb 85→76、PLT 65→55。</p>
+            <strong>CRRT已停，过夜尿0</strong>
+            <p>凌晨停CRRT，今日加利尿剂。肌酐212→204，尿素11.59→13.27。PCT 102→65，仍极高。白蛋白29.3，钠134.8。</p>
           </div>
         </div>
       </div>
@@ -1409,19 +1409,24 @@
           <span class="vital-note">MAP≈80<br>单次探视读数</span>
         </div>
         <div class="vital-row">
-          <span class="vital-time">最新口述 · 约术后73h</span>
+          <span class="vital-time">约术后73h</span>
           <span class="vital-value">120/35 · HR 109</span>
           <span class="vital-note">MAP≈63 · RR 15–19<br>双升压药 · 各约半量</span>
         </div>
         <div class="vital-row">
-          <span class="vital-time">尿量趋势</span>
-          <span class="vital-value">950 → 300 → 70 → 今晨起20 mL</span>
-          <span class="vital-note">持续极少尿<br>CRRT中</span>
+          <span class="vital-time">最新口述 · 约术后92h</span>
+          <span class="vital-value">去甲 9 mL/h = 0.45 mg/h</span>
+          <span class="vital-note">7.5 μg/min · 约0.15 μg/kg/min<br>中等偏低，非大剂量</span>
         </div>
         <div class="vital-row">
-          <span class="vital-time">CRRT / 液体</span>
-          <span class="vital-value">脱水 250 mL/h</span>
-          <span class="vital-note">血滤120 · 输液≈200 mL/h<br>粗算净负约50 mL/h</span>
+          <span class="vital-time">尿量趋势</span>
+          <span class="vital-value">950 → 300 → 70 → 20 → 过夜0</span>
+          <span class="vital-note">CRRT凌晨已停<br>今日已加利尿剂</span>
+        </div>
+        <div class="vital-row">
+          <span class="vital-time">CRRT / 利尿</span>
+          <span class="vital-value">凌晨已停止</span>
+          <span class="vital-note">停前脱水250 · 血滤120<br>今日利尿剂已加量</span>
         </div>
       </div>
     </section>
@@ -1438,16 +1443,16 @@
           <summary>
             <div>
               <div class="report-title">感染与循环</div>
-              <div class="report-meta">9月16日09:44 → 9月17日10:52 → 9月18日08:58</div>
+              <div class="report-meta">9月16日09:44 → 9月19日10:03</div>
             </div>
             <span class="report-badge red">仍极高</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>降钙素原：9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> ng/mL（参考0–0.05）。先升后降，目前仍极高。</li>
+              <li>降钙素原：9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> → 9月19日10:03 <strong>65.368</strong> ng/mL（参考0–0.05）。持续下降，目前仍极高。</li>
               <li>IL-6 981 pg/mL（术后约45小时）仍提示极强炎症反应。</li>
-              <li>乳酸峰值8.99 → 昨夜1.41 → 今晨<strong>2.14</strong>（再次高于参考）；最新口述血压120/35、HR109、呼吸15–19；双升压药约各半量。</li>
-              <li>血常规“PCT”是血小板比积0.08%，与降钙素原不是同一指标。</li>
+              <li>乳酸峰值8.99 → 昨夜1.41 → 今晨<strong>2.14</strong>（再次高于参考）。血压仍为上次口述120/35、HR109。去甲已确认为 <strong>0.45 mg/h</strong>（9 mL/h = 7.5 μg/min），属中等偏低剂量。</li>
+              <li>血常规“PCT”是血小板比积（最新0.06%），与降钙素原不是同一指标。</li>
             </ul>
           </div>
         </details>
@@ -1455,16 +1460,16 @@
           <summary>
             <div>
               <div class="report-title">肾脏与尿检</div>
-              <div class="report-meta">至约术后73小时 · 肌酐 / CRRT / 尿量</div>
+              <div class="report-meta">至术后92h03m · 肌酐 / CRRT已停 / 尿量</div>
             </div>
-            <span class="report-badge orange">CRRT中</span>
+            <span class="report-badge orange">已停 · 无尿</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>肌酐121.8→263→363→最新212 μmol/L；尿素峰值17.80→最新11.59 mmol/L（CRRT下下降）。</li>
-              <li>尿量950→300→70→今晨起累计仅20mL；CRRT进行中。</li>
-              <li>CRRT（家属口述）：脱水/置换约250 mL/h，血液滤过120 mL/h；静脉输液约200 mL/h（粗算净负约50 mL/h，待床旁核对）。</li>
-              <li>最新电解质：K 4.17（17:22，参考3.5–5.3）正常；此前生化 K 4.35、Na 137.91、Cl 97.56。</li>
+              <li>肌酐121.8→263→363→212→最新<strong>204</strong> μmol/L（结果已复查，参考41–81）；尿素11.59→<strong>13.27</strong> mmol/L（停CRRT后回升，参考3.1–8.8）。</li>
+              <li>尿量950→300→70→曾20 mL→<strong>过夜0</strong>。今日已增加利尿剂。</li>
+              <li>CRRT于9月19日凌晨停止。停前（家属口述）：脱水/置换约250 mL/h，血液滤过120 mL/h；静脉输液约200 mL/h。</li>
+              <li>最新电解质（10:03）：K <strong>4.80</strong>、Na <strong>134.78↓</strong>、Cl 100.69；白蛋白 <strong>29.3↓</strong> g/L。此前17:22 K 4.17。</li>
               <li>此前尿潜血3+、蛋白2+；CK显著升高需继续结合肌红蛋白评估。</li>
             </ul>
           </div>
@@ -1484,7 +1489,7 @@
               <li>9月18日09:44（术后67h44m）：APTT 50.8秒、PT 13.8秒、INR 1.24；危急值曾解除但仍高于参考。</li>
               <li>9月18日18:01（术后76h01m）：APTT 64.0秒↑（参考23.3–32.5），备注“结果已复查”。</li>
               <li>最新（术后80h13m · 22:13）：APTT <strong>67.2</strong>秒↑（本份参考21–45），较64.0继续延长。</li>
-              <li>需立即确认CRRT抗凝方案、有无出血及是否再次干预。</li>
+              <li>需确认停机前抗凝方案、有无出血，以及APTT 67.2在停CRRT后是否回落。</li>
             </ul>
           </div>
         </details>
@@ -1509,7 +1514,7 @@
           <summary>
             <div>
               <div class="report-title">血液与电解质</div>
-              <div class="report-meta">术前至术后约91小时</div>
+              <div class="report-meta">术前至术后92小时</div>
             </div>
             <span class="report-badge">随访</span>
           </summary>
@@ -1518,7 +1523,8 @@
               <li>血常规Hb：85→最新<strong>76</strong> g/L（9月19日08:46）；同期血气Hb 9.2 g/dL（不同方法，勿直接等同）。Hct 22.9%。</li>
               <li>血小板65→<strong>55</strong>×10⁹/L；血小板比积0.08%→0.06%（参考0.17–0.35）。</li>
               <li>白细胞14.51→13.17，中性粒91.2%→87.9%，仍偏高。</li>
-              <li>最新离子钙 <strong>1.09</strong> mmol/L（较昨夜1.14更低）。钾测定 K 4.17 mmol/L（正常）。</li>
+              <li>最新离子钙 <strong>1.09</strong> mmol/L（较昨夜1.14更低）。10:03生化：K <strong>4.80</strong>（正常），Na <strong>134.78↓</strong>（参考137–147），Cl 100.69。</li>
+              <li>白蛋白 <strong>29.3↓</strong> g/L（参考34–48），为目前唯一一次测定。</li>
             </ul>
           </div>
         </details>
@@ -1534,7 +1540,8 @@
             <ul>
               <li>2026-09-17 10:52：ALT 891、AST 806 U/L，AST/ALT 0.90，提示明显肝细胞损伤。</li>
               <li>结合此前持续休克，需重点判断缺血缺氧性肝损伤，同时排查药物、感染等其他原因。</li>
-              <li>仍需胆红素、白蛋白、血糖、氨及动态转氨酶；INR还同时受凝血因子消耗和血浆输注影响。</li>
+              <li>最新白蛋白 <strong>29.3</strong> g/L↓（9月19日10:03，参考34–48）。转氨酶尚未复查。</li>
+              <li>仍需胆红素、血糖、氨及动态转氨酶；INR还同时受凝血因子消耗和血浆输注影响。</li>
             </ul>
           </div>
         </details>
@@ -1728,6 +1735,21 @@
           <div class="event-time">术后90小时46分 · 9月19日08:46</div>
           <div class="event-title">血常规Hb降至76，血小板55</div>
           <div class="event-desc">WBC 14.51→13.17，中性粒87.9%。Hb 85→76 g/L，PLT 65→55。血小板比积0.06%（不是降钙素原）。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">9月19日凌晨 · 家属口述</div>
+          <div class="event-title">CRRT已停止，过夜尿量为0</div>
+          <div class="event-desc">停前脱水约250、血滤120、输液约200 mL/h。今日已增加利尿剂。精确停机时刻待床旁核对。</div>
+        </article>
+        <article class="event" style="--event-color: var(--blue)">
+          <div class="event-time">约术后92小时 · 家属口述</div>
+          <div class="event-title">去甲9 mL/h确认为0.45 mg/h</div>
+          <div class="event-desc">即7.5 μg/min。按50 kg估算约0.15 μg/kg/min，属中等偏低，不是大剂量。第二种升压药是否仍在用待核对。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后92小时03分 · 9月19日10:03</div>
+          <div class="event-title">PCT降至65.4，肌酐204，尿素回升</div>
+          <div class="event-desc">PCT 101.563→65.368，仍远高于0.05。肌酐212→204（已复查），尿素11.59→13.27。白蛋白29.3↓，钠134.78↓，钾4.80。</div>
         </article>
       </div>
     </section>
@@ -2011,6 +2033,10 @@
             <label for="cl">氯 Cl</label>
             <input id="cl" name="cl" type="number" step="0.01" inputmode="decimal">
           </div>
+          <div class="field">
+            <label for="alb">白蛋白 ALB (g/L)</label>
+            <input id="alb" name="alb" type="number" step="0.1" inputmode="decimal">
+          </div>
         </div>
       </details>
       <div class="form-actions">
@@ -2039,7 +2065,10 @@
   "use strict";
 
   const GAS_KEYS = ["ph", "pco2", "po2", "hco3", "be", "lactate", "fio2", "pf", "hb", "ca"];
-  const LAB_KEYS = ["aptt", "inr", "creatinine", "urea", "ck", "alt", "ast", "il6", "pct", "wbc", "plt", "hbg"];
+  const LAB_KEYS = [
+    "aptt", "inr", "pt", "creatinine", "urea", "ck", "ckmb", "ldh", "hbdh",
+    "alt", "ast", "il6", "pct", "wbc", "plt", "hbg", "k", "na", "cl", "alb"
+  ];
   const SURGERY_END_HOUR = 14;
   const SURGERY_END_MS = Date.parse("2026-09-15T14:00:00");
 
@@ -2056,17 +2085,36 @@
     ca: [0.5, 1.8],
     aptt: [10, 300],
     inr: [0.5, 8],
+    pt: [8, 80],
     creatinine: [20, 2500],
     urea: [1, 80],
     ck: [10, 30000],
+    ckmb: [0, 800],
+    ldh: [50, 20000],
+    hbdh: [50, 10000],
     alt: [5, 15000],
     ast: [5, 15000],
     il6: [1, 200000],
     pct: [0.01, 500],
     wbc: [0.5, 80],
     plt: [5, 1000],
-    hbg: [30, 220]
+    hbg: [30, 220],
+    k: [1.5, 9],
+    na: [110, 175],
+    cl: [70, 140],
+    alb: [8, 60]
   };
+
+  function recoverOcrDigitToken(token) {
+    const mapped = String(token)
+      .replace(/[Oo]/g, "0")
+      .replace(/[Il|]/g, "1")
+      .replace(/[Ss]/g, "8")
+      .replace(/[Bb]/g, "8")
+      .replace(/[Z]/g, "2");
+    if (!/^-?\d+(?:[.,]\d+)?$/.test(mapped)) return token;
+    return mapped;
+  }
 
   function normalizeReportText(text) {
     return String(text || "")
@@ -2076,6 +2124,13 @@
       .replace(/[Ｏ]/g, "O")
       .replace(/[０]/g, "0")
       .replace(/[，]/g, ",")
+      .replace(/\bPCTT\b/g, "PCT")
+      .replace(/\bALBB?\b/g, "ALB")
+      .replace(/\bUREAA\b/g, "UREA")
+      .replace(/\bSCRR\b/g, "SCR")
+      .replace(/\bNaa\b/g, "Na")
+      .replace(/\bCLL\b/g, "CL")
+      .replace(/\b(?=[A-Za-z0-9]*\d)[0-9OoIlSszB]{3,}\b/g, recoverOcrDigitToken)
       .replace(/(\d{2,4}):(\d{3})\b/g, "$1.$2")
       .replace(/\r/g, "\n");
   }
@@ -2139,10 +2194,37 @@
     return null;
   }
 
+  function pickCandidate(key, values, recover) {
+    const recovered = [];
+    (values || []).forEach(value => {
+      let next = inRange(key, value) ? value : null;
+      if (next == null && recover) next = recover(value);
+      if (next != null && inRange(key, next)) recovered.push(next);
+    });
+    if (!recovered.length) return null;
+    if (key === "wbc") {
+      const decent = recovered.filter(value => value >= 2);
+      return (decent.length ? decent : recovered)[0];
+    }
+    if (key === "fio2") {
+      const typical = recovered.filter(value => value >= 21 && value <= 80);
+      return (typical.length ? typical : recovered)[0];
+    }
+    if (key === "alt" || key === "ast") {
+      const decent = recovered.filter(value => value >= 10);
+      return (decent.length ? decent : recovered)[0];
+    }
+    if (key === "po2") {
+      const decent = recovered.filter(value => value !== 50 || recovered.length === 1);
+      return decent[0] ?? recovered[0];
+    }
+    return recovered[0];
+  }
+
   function scanNumbersFrom(text, match, span) {
     const start = match.index + match[0].length;
     let slice = text.slice(start, start + (span || 80));
-    const analyteRe = /(?:酸碱度|二氧化碳分压|氧分压|标准剩余碱|血浆碳酸|乳酸浓度|吸入氧|氧合指数|总血红蛋白|钙离子|谷丙|谷草|肌酐|尿素|\b(?:PCO2|PO2|SBE|cLac|FiO2|ctHb|APTT|ALT|AST|Crea|Urea|IL-?6)\b)/ig;
+    const analyteRe = /(?:酸碱度|二氧化碳分压|氧分压|标准剩余碱|血浆碳酸|乳酸浓度|吸入氧|氧合指数|总血红蛋白|钙离子|谷丙|谷草|肌酐|尿素|白蛋白|降钙素原|血小板|白细胞|血红蛋白|钾测定|钠测定|氯测定|\b(?:PCO2|PO2|SBE|cLac|FiO2|ctHb|APTT|INR|ALT|AST|Crea|Urea|IL-?6|PCT|ALB|SCR|UREA)\b)/ig;
     const analytes = [...slice.matchAll(analyteRe)];
     if (analytes.length) {
       const first = analytes[0];
@@ -2161,16 +2243,10 @@
     const re = new RegExp(labelRe.source, flags);
     let match;
     while ((match = re.exec(text))) {
-      for (const value of scanNumbersFrom(text, match)) {
-        if (inRange(key, value)) {
-          fields[key] = value;
-          return;
-        }
-        const recovered = recover ? recover(value) : null;
-        if (recovered != null && inRange(key, recovered)) {
-          fields[key] = recovered;
-          return;
-        }
+      const picked = pickCandidate(key, scanNumbersFrom(text, match), recover);
+      if (picked != null) {
+        fields[key] = picked;
+        return;
       }
       if (!match[0].length) re.lastIndex += 1;
     }
@@ -2229,11 +2305,11 @@
       return { hours: value, label: formatRelativeLabel(value) };
     }
 
-    const reportClock = text.match(/(?:报告时间|检验时间|采样时间)?\s*[:=]?\s*(20\d{2})[-/.](\d{1,2})[-/.](\d{1,2})\s+(\d{1,2}):(\d{2})(?::\d{2})?/);
+    const reportClock = text.match(/(?:报告时间|检验时间|采样时间)?\s*[:=]?\s*(20\d{2})[-/.](\d{1,2})[-/.](\d{1,2})\s+(\d{1,2}):(\d{2})(?::(\d{2}))?/);
     const compactClock = !reportClock && text.match(/(20\d{2})[-/.](\d{1,2})[-/.](\d{1,2})\s+(\d{2})(\d{2})(\d{2})\b/);
     const clock = reportClock || compactClock;
     if (clock) {
-      const iso = `${clock[1]}-${String(clock[2]).padStart(2, "0")}-${String(clock[3]).padStart(2, "0")}T${String(clock[4]).padStart(2, "0")}:${clock[5]}:00`;
+      const iso = `${clock[1]}-${String(clock[2]).padStart(2, "0")}-${String(clock[3]).padStart(2, "0")}T${String(clock[4]).padStart(2, "0")}:${clock[5]}:${String(clock[6] || "00").padStart(2, "0")}`;
       const hours = (Date.parse(iso) - SURGERY_END_MS) / 3600000;
       if (Number.isFinite(hours)) {
         const value = Number(hours.toFixed(2));
@@ -2259,33 +2335,56 @@
     assign(fields, "po2", recoverDroppedDot(takeNumber(raw.match(/(?:氧分压|(?<![CF/cf])p\s*[O0]2)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 200));
     assign(fields, "hco3", takeNumber(raw.match(/(?:血浆碳酸氢盐(?:浓度)?(?:\s*c?HC[O0]-?3(?:\s*\(\s*P\s*\))?)?|碳酸氢根|c?HC[O0]3-?(?:\s*\(\s*P\s*\))?)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
     assign(fields, "be", recoverBe(takeNumber(raw.match(/(?:碱剩余|碱缺失|BEecf|SBE|\bBE\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i))));
-    assign(fields, "lactate", recoverDroppedDot(takeNumber(raw.match(/(?:乳酸(?!\s*脱)|乳酸浓度|cLac|Lac(?:tate)?|\bLAC\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 10));
+    assign(fields, "lactate", recoverDroppedDot(takeNumber(raw.match(/(?:乳酸(?!\s*脱)|乳酸浓度|cLac|clac|Lac(?:tate)?|\bLAC\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 10));
 
-    let fio2 = takeNumber(raw.match(/(?:吸\s*入?\s*氧\s*浓度(?:\s*FO2\s*\(\s*I?\s*\))?|FiO2|FIO2|FO2\s*\(\s*I?\s*\))\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i));
+    let fio2 = takeNumber(raw.match(/(?:吸\s*入?\s*氧\s*浓度(?:\s*FO2\s*\(\s*I?\s*\))?|FiO2|FIO2|FO2\s*\(\s*I\s*\))\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i));
     if (fio2 != null && fio2 > 0 && fio2 <= 1) fio2 = Math.round(fio2 * 100);
     if (fio2 != null && fio2 > 100) fio2 = recoverDroppedDot(fio2, 100);
+    if (fio2 === 100) fio2 = null;
     assign(fields, "fio2", fio2);
 
     assign(fields, "pf", takeNumber(raw.match(/(?:氧合指数(?:\s*pO2\s*\(\s*a\s*\)\s*\/\s*F?O2(?:\s*\(\s*I\s*\))?)?|pO2\s*\(\s*a\s*\)\s*\/\s*F?O2(?:\s*\(\s*I\s*\))?|P\s*\/\s*F|\bPF\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
 
-    let hb = takeNumber(raw.match(/(?:(?:实测)?总?血红蛋白(?:\s*ctHb)?|ctHb|\btHb\b|\bHGB\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i));
+    assign(fields, "hbg", recoverDroppedDot(takeNumber(raw.match(/(?:血红蛋白测定|\bHGB\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 200));
+    if (fields.hbg == null) {
+      const labeledHb = takeNumber(raw.match(/血红蛋白\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)\s*(?:g\s*\/\s*[Ll])?/i));
+      if (labeledHb != null && labeledHb >= 30) {
+        const looksCbc = /白细胞|\bWBC\b|血小板|\bPLT\b/i.test(raw) && !/酸碱度|cLac|ctHb|吸入氧/i.test(raw);
+        if (looksCbc) assign(fields, "hbg", labeledHb);
+        else if (/酸碱度|pH\b|cLac|ctHb|吸入氧/i.test(raw)) assign(fields, "hb", Number((labeledHb / 10).toFixed(1)));
+        else assign(fields, "hbg", labeledHb);
+      }
+    }
+
+    let hb = takeNumber(raw.match(/(?:(?:实测)?总血红蛋白(?:\s*ctHb)?|ctHb|\btHb\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i));
     if (hb == null) hb = takeNumber(raw.match(/(?<![A-Za-z])Hb\b\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/));
-    if (hb != null && hb > 25 && hb <= 250) hb = Number((hb / 10).toFixed(1));
+    if (hb != null && hb > 25 && hb <= 250) {
+      if (fields.hbg == null) assign(fields, "hbg", hb);
+      hb = Number((hb / 10).toFixed(1));
+    }
     assign(fields, "hb", hb);
 
     assign(fields, "ca", takeNumber(raw.match(/(?:离子钙|游离钙|钙离子(?:浓度)?(?:\s*cCa\s*2\s*\+)?|(?<![A-Za-z])iCa(?![A-Za-z])|cCa\s*2\s*\+|Ca\+\+)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
     assign(fields, "aptt", takeNumber(raw.match(/(?:活化部分凝血活酶时间|a?PTT)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
     assign(fields, "inr", takeNumber(raw.match(/(?:国际标准化比值|\bINR\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
+    assign(fields, "pt", takeNumber(raw.match(/(?:凝血酶原时间(?!\s*国际)|(?<![A-Z])\bPT\b(?!T))\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
 
     let creatinine = recoverDroppedDot(takeNumber(raw.match(/(?:肌酐|Creatinine|Crea(?!tine)|\bCREA\b|\bSCR\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 2000);
     if (creatinine != null && creatinine > 0 && creatinine < 20) creatinine = Number((creatinine * 88.4).toFixed(1));
     assign(fields, "creatinine", creatinine);
 
-    assign(fields, "urea", recoverDroppedDot(takeNumber(raw.match(/(?:尿素(?:氮)?|\bUrea\b|\bBUN\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 80));
+    assign(fields, "urea", recoverDroppedDot(takeNumber(raw.match(/(?:尿素(?:氮)?|\bUREA\b|\bUrea\b|\bBUN\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 80));
     assign(fields, "ck", recoverDroppedDot(takeNumber(raw.match(/(?:肌酸激酶|\bCK\b(?!\s*-?\s*MB))\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 20000));
+    assign(fields, "ckmb", recoverDroppedDot(takeNumber(raw.match(/(?:肌酸激酶同工酶|CK\s*-?\s*MB)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 800));
+    assign(fields, "ldh", recoverDroppedDot(takeNumber(raw.match(/(?:乳酸脱氢酶|\bLDH\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 8000));
+    assign(fields, "hbdh", recoverDroppedDot(takeNumber(raw.match(/(?:羟丁酸脱氢酶|\bHBDH\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 5000));
     assign(fields, "alt", recoverDroppedDot(takeNumber(raw.match(/(?:谷丙转氨酶|\bALT\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 2000));
     assign(fields, "ast", recoverDroppedDot(takeNumber(raw.match(/(?:谷草转氨酶|\bAST\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 2000));
     assign(fields, "il6", recoverDroppedDot(takeNumber(raw.match(/(?:白细胞介素-?6|IL?\s*[=-]?\s*6)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 5000));
+    assign(fields, "alb", recoverDroppedDot(takeNumber(raw.match(/(?:血清白蛋白|白蛋白|\bALB\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 60));
+    assign(fields, "k", recoverDroppedDot(takeNumber(raw.match(/(?:钾(?:测定)?|(?<![A-Zc])\bK\b(?!\s*-?\s*MB))\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 8));
+    assign(fields, "na", recoverDroppedDot(takeNumber(raw.match(/(?:钠(?:测定)?|\bNa\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 170));
+    assign(fields, "cl", recoverDroppedDot(takeNumber(raw.match(/(?:氯(?:测定)?|(?<![A-Z])\bCl\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 130));
 
     assignScanned(fields, "ph", raw, /酸碱度|pH\b/i, recoverPh);
     assignScanned(fields, "pco2", raw, /二氧化碳分压|p\s*C[O0]2|PC[O0]2/i, value => recoverDroppedDot(value, 80));
@@ -2293,24 +2392,31 @@
     assignScanned(fields, "hco3", raw, /血浆碳酸|碳酸氢|cHC[O0]-?3/i);
     assignScanned(fields, "pf", raw, /氧合指数|pO2\s*\(\s*a\s*\)\s*\/\s*F?O2/i);
     assignScanned(fields, "be", raw, /标准剩余碱|碱剩余|SBE|\bBE\b/i, recoverBe);
-    assignScanned(fields, "lactate", raw, /乳酸(?!\s*脱)|乳酸浓度|cLac|\bLAC\b/i, value => recoverDroppedDot(value, 10));
+    assignScanned(fields, "lactate", raw, /乳酸(?!\s*脱)|乳酸浓度|cLac|clac|\bLAC\b/i, value => recoverDroppedDot(value, 10));
     assignScanned(fields, "fio2", raw, /吸\s*入?\s*氧\s*浓度|FO2\s*\(\s*I?\s*\)|FiO2/i, value => {
       if (value > 0 && value <= 1) return Math.round(value * 100);
-      return recoverDroppedDot(value, 100);
+      const next = recoverDroppedDot(value, 100);
+      return next === 100 ? null : next;
     });
     assignScanned(fields, "hb", raw, /总血红蛋白|ctHb|\btHb\b/i);
     assignScanned(fields, "ca", raw, /钙离子|离子钙|cCa\s*2\s*\+|(?<![A-Za-z])iCa(?![A-Za-z])/i);
     assignScanned(fields, "aptt", raw, /活化部分凝血|APTT/i, value => recoverDroppedDot(value, 180));
-    assignScanned(fields, "ck", raw, /\bCK\b(?!\s*-?\s*MB)/i, value => recoverDroppedDot(value, 20000));
-    assignScanned(fields, "alt", raw, /\bALT\b/i, value => recoverDroppedDot(value, 2000));
-    assignScanned(fields, "ast", raw, /\bAST\b/i, value => recoverDroppedDot(value, 2000));
-    assignScanned(fields, "il6", raw, /IL?\s*[=-]?\s*6/i, value => recoverDroppedDot(value, 5000));
+    assignScanned(fields, "inr", raw, /国际标准化比值|\bINR\b/i);
+    assignScanned(fields, "pt", raw, /凝血酶原时间|(?<![A-Z])\bPT\b(?!T)/i);
+    assignScanned(fields, "ck", raw, /肌酸激酶|\bCK\b(?!\s*-?\s*MB)/i, value => recoverDroppedDot(value, 20000));
+    assignScanned(fields, "alt", raw, /谷丙转氨酶|\bALT\b/i, value => recoverDroppedDot(value, 2000));
+    assignScanned(fields, "ast", raw, /谷草转氨酶|\bAST\b/i, value => recoverDroppedDot(value, 2000));
+    assignScanned(fields, "il6", raw, /白细胞介素|IL?\s*[=-]?\s*6/i, value => recoverDroppedDot(value, 5000));
     assignScanned(fields, "creatinine", raw, /肌酐|\bSCR\b|Crea(?!tine)|\bCREA\b/i, value => recoverDroppedDot(value, 2000));
-    assignScanned(fields, "urea", raw, /尿素|\bUrea\b/i, value => recoverDroppedDot(value, 80));
+    assignScanned(fields, "urea", raw, /尿素|\bUREA\b|\bUrea\b/i, value => recoverDroppedDot(value, 80));
+    assignScanned(fields, "alb", raw, /白蛋白|\bALB\b/i, value => recoverDroppedDot(value, 60));
+    assignScanned(fields, "k", raw, /钾测定|(?<![A-Zc])\bK\b(?!\s*-?\s*MB)/i, value => recoverDroppedDot(value, 8));
+    assignScanned(fields, "na", raw, /钠测定|\bNa\b/i, value => recoverDroppedDot(value, 170));
+    assignScanned(fields, "cl", raw, /氯测定|(?<![A-Z])\bCl\b/i, value => recoverDroppedDot(value, 130));
 
     assign(fields, "wbc", recoverDroppedDot(takeNumber(raw.match(/(?:白细胞(?:计数)?|\bWBC\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 40));
+    if (fields.wbc != null && fields.wbc < 2) delete fields.wbc;
     assign(fields, "plt", recoverDroppedDot(takeNumber(raw.match(/(?:血小板计数|血小板(?!\s*比积)|\bPLT\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 400));
-    assign(fields, "hbg", recoverDroppedDot(takeNumber(raw.match(/(?:血红蛋白测定|\bHGB\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 200));
     assignScanned(fields, "wbc", raw, /白细胞|\bWBC\b/i, value => recoverDroppedDot(value, 40));
     assignScanned(fields, "plt", raw, /血小板计数|\bPLT\b/i, value => recoverDroppedDot(value, 400));
     assignScanned(fields, "hbg", raw, /血红蛋白测定|\bHGB\b/i, value => recoverDroppedDot(value, 200));
@@ -2323,11 +2429,15 @@
         const pctValue = takeNumber(pctMatch);
         if (pctValue != null && (pctMatch[2] || pctValue >= 1)) assign(fields, "pct", pctValue);
       }
+      assignScanned(fields, "pct", raw, /降钙素原|\bPCT\b/i, value => recoverDroppedDot(value, 500));
     }
 
     if (fields.pf == null && fields.po2 != null && fields.fio2) {
       fields.pf = Math.round(fields.po2 / (fields.fio2 / 100));
     }
+
+    const looksAbg = fields.ph != null || fields.lactate != null || fields.fio2 != null || fields.po2 != null;
+    if (looksAbg && fields.ck != null && !/肌酸激酶/.test(raw)) delete fields.ck;
 
     const time = parseRelativeHours(raw);
     const sample = parseSample(raw);
@@ -2340,7 +2450,9 @@
 
     let labSample = null;
     if (labCount) {
-      labSample = fields.aptt != null || fields.inr != null ? "凝血" : "生化";
+      if (fields.wbc != null || fields.plt != null || fields.hbg != null) labSample = "血常规";
+      else if (fields.aptt != null || fields.inr != null || fields.pt != null) labSample = "凝血";
+      else labSample = "生化";
     }
 
     return {
@@ -2365,6 +2477,83 @@
     return /\.(png|jpe?g|gif|webp|bmp|heic|heif)$/.test(name);
   }
 
+  function fieldQuality(key, value) {
+    if (value == null) return -1;
+    if (key === "wbc" && value < 2) return 0;
+    if ((key === "alt" || key === "ast") && value < 10) return 0;
+    if (key === "fio2" && value === 100) return 1;
+    if (key === "fio2" && value >= 21 && value <= 80) return 3;
+    if (key === "po2" && value === 50) return 1;
+    return 2;
+  }
+
+  function mergeParsedReports(primary, extra) {
+    if (!primary) return extra || parseLabReportText("");
+    if (!extra) return primary;
+    const fields = { ...(primary.fields || {}) };
+    Object.entries(extra.fields || {}).forEach(([key, value]) => {
+      if (value == null) return;
+      if (fields[key] == null || fieldQuality(key, value) > fieldQuality(key, fields[key])) {
+        fields[key] = value;
+      }
+    });
+    const hours = primary.hours != null ? primary.hours : extra.hours;
+    const label = primary.label || extra.label;
+    const sample = primary.sample || extra.sample;
+    const gasCount = GAS_KEYS.filter(key => fields[key] != null).length;
+    const labCount = LAB_KEYS.filter(key => fields[key] != null).length;
+    let kind = "unknown";
+    if (gasCount && labCount) kind = "mixed";
+    else if (gasCount) kind = "abg";
+    else if (labCount) kind = "lab";
+    let labSample = primary.labSample || extra.labSample;
+    if (labCount) {
+      if (fields.wbc != null || fields.plt != null || fields.hbg != null) labSample = "血常规";
+      else if (fields.aptt != null || fields.inr != null || fields.pt != null) labSample = "凝血";
+      else labSample = "生化";
+    }
+    return {
+      fields,
+      hours,
+      label,
+      sample,
+      labSample,
+      kind,
+      critical: Boolean(primary.critical || extra.critical),
+      matchedCount: gasCount + labCount,
+      gasCount,
+      labCount
+    };
+  }
+
+  function parseLabReportTexts(texts) {
+    return (texts || [])
+      .map(item => parseLabReportText(item))
+      .reduce((acc, item) => mergeParsedReports(acc, item), null) || parseLabReportText("");
+  }
+
+  function preprocessLabImageData(imageData) {
+    if (!imageData || !imageData.data) return imageData;
+    const data = imageData.data;
+    for (let i = 0; i < data.length; i += 4) {
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      const max = Math.max(r, g, b);
+      const min = Math.min(r, g, b);
+      const pink = r > 180 && b > 160 && g > 120 && r + b > g * 1.55 && max - min < 100;
+      const blue = b > 180 && b > r && g < 230;
+      if (pink || blue) {
+        data[i] = data[i + 1] = data[i + 2] = 255;
+      } else {
+        const y = 0.299 * r + 0.587 * g + 0.114 * b;
+        const v = y < 145 ? 0 : 255;
+        data[i] = data[i + 1] = data[i + 2] = v;
+      }
+    }
+    return imageData;
+  }
+
   function fileRejectionReason(file) {
     if (!file) return "没有选择文件";
     if (file.size > 15 * 1024 * 1024) return "图片超过 15MB，请先压缩或改用截图";
@@ -2380,6 +2569,9 @@
     GAS_KEYS,
     LAB_KEYS,
     parseLabReportText,
+    parseLabReportTexts,
+    mergeParsedReports,
+    preprocessLabImageData,
     relativeHoursFromDayClock,
     formatRelativeLabel,
     looksLikeImageFile,
@@ -2401,7 +2593,7 @@
   const GAS_KEYS = ["ph", "pco2", "po2", "hco3", "be", "lactate", "fio2", "pf", "hb", "ca"];
   const LAB_KEYS = [
     "aptt", "inr", "pt", "creatinine", "urea", "ck", "ckmb", "ldh", "hbdh",
-    "alt", "ast", "il6", "pct", "wbc", "plt", "hbg", "k", "na", "cl"
+    "alt", "ast", "il6", "pct", "wbc", "plt", "hbg", "k", "na", "cl", "alb"
   ];
   const BEDSIDE_KEYS = [
     "sbp", "dbp", "hr", "rrLow", "rrHigh", "map", "pressors", "pressorNote",
@@ -2450,7 +2642,8 @@
     { h: 75.38, label: "术后75h22m", sample: "生化", k: 4.17 },
     { h: 76.02, label: "术后76h01m", sample: "凝血", aptt: 64.0 },
     { h: 80.22, label: "术后80h13m", sample: "凝血", aptt: 67.2 },
-    { h: 90.77, label: "术后90h46m", sample: "血常规", wbc: 13.17, plt: 55, hbg: 76 }
+    { h: 90.77, label: "术后90h46m", sample: "血常规", wbc: 13.17, plt: 55, hbg: 76 },
+    { h: 92.06, label: "术后92h03m", sample: "生化", creatinine: 204, urea: 13.27, k: 4.80, na: 134.78, cl: 100.69, pct: 65.368, alb: 29.3 }
   ];
 
   const bedsideReadings = [
@@ -2478,10 +2671,21 @@
       urineWindow: "今晨起",
       notes: "粗算净负约50 mL/h，待床旁核对",
       source: "oral"
+    },
+    {
+      h: 92,
+      label: "术后约92h · 床旁口述",
+      pressors: "one",
+      pressorNote: "去甲 9 mL/h = 0.45 mg/h",
+      crrt: "off",
+      urineMl: 0,
+      urineWindow: "过夜",
+      notes: "CRRT凌晨已停，今日利尿剂已加量",
+      source: "oral"
     }
   ];
 
-  const sampleOral = bedsideReadings[bedsideReadings.length - 1];
+  const sampleOral = bedsideReadings.find(row => row.h === 73) || bedsideReadings.at(-1);
 
   // Officially labeled LIS files (folders abg/chemistry/coag/cbc plus promoted copies).
   const labeledTestsetHours = [
@@ -2504,7 +2708,8 @@
     { h: 79.78, category: "abg", id: "20260918T214648__hires__01a0b731-35c4-7621-b6a9-259730bbcb4e.jpg" },
     { h: 80.22, category: "coag", id: "20260918T221305__01a0b731-35d4-7a05-b975-9fac7882eef3.jpg" },
     { h: 88.74, category: "abg", id: "20260919T064443__hires__01a0b731-35b1-761f-ad99-69f82a5fcafa.jpg" },
-    { h: 90.77, category: "cbc", id: "20260919T084629__01a0b731-359d-77fe-9689-d52f5b99561b.jpg" }
+    { h: 90.77, category: "cbc", id: "20260919T084629__01a0b731-359d-77fe-9689-d52f5b99561b.jpg" },
+    { h: 92.06, category: "chemistry", id: "20260919T100330__01a0b7bc-519d-72d9-9831-8fd5f6dd93c7.jpg" }
   ];
 
   // Early clocks live in unlabeled other/ but were vision-matched in the 2026-09-18 audit.
@@ -2769,7 +2974,8 @@
       { h: 75.38, label: "术后75h22m", sample: "生化", k: 4.17 },
       { h: 76.02, label: "术后76h01m", sample: "凝血", aptt: 64.0 },
       { h: 80.22, label: "术后80h13m", sample: "凝血", aptt: 67.2 },
-      { h: 90.77, label: "术后90h46m", sample: "血常规", wbc: 13.17, plt: 55, hbg: 76 }
+      { h: 90.77, label: "术后90h46m", sample: "血常规", wbc: 13.17, plt: 55, hbg: 76 },
+      { h: 92.06, label: "术后92h03m", sample: "生化", creatinine: 204, urea: 13.27, k: 4.80, na: 134.78, cl: 100.69, pct: 65.368, alb: 29.3 }
     ];
 
     const baseReadings = TEMPLATE_MODE ? [] : seededBaseReadings;
@@ -2801,6 +3007,7 @@
       ck: { label: "CK", unit: "U/L", minRef: 33, maxRef: 192, color: "#7257a3", decimals: 0, better: "down", source: "lab" },
       ckmb: { label: "CK-MB", unit: "U/L", minRef: 0, maxRef: 24, color: "#3978a8", decimals: 1, better: "down", source: "lab" },
       ldh: { label: "LDH", unit: "U/L", minRef: 109, maxRef: 245, color: "#167a5b", decimals: 0, better: "down", source: "lab" },
+      alb: { label: "白蛋白", unit: "g/L", minRef: 34, maxRef: 48, color: "#c76a16", decimals: 1, better: "range", source: "lab" },
       k: { label: "钾 K", unit: "mmol/L", minRef: 3.5, maxRef: 5.3, color: "#7257a3", decimals: 2, better: "range", source: "lab" },
       na: { label: "钠 Na", unit: "mmol/L", minRef: 137, maxRef: 147, color: "#3978a8", decimals: 2, better: "range", source: "lab" },
       cl: { label: "氯 Cl", unit: "mmol/L", minRef: 96, maxRef: 108, color: "#167a5b", decimals: 2, better: "range", source: "lab" }
@@ -2812,7 +3019,7 @@
       { id: "infection", label: "感染/炎症", metrics: ["pct", "il6", "wbc"] },
       { id: "renal", label: "肾脏", metrics: ["creatinine", "urea"] },
       { id: "coag", label: "凝血/血细胞", metrics: ["inr", "aptt", "plt", "hb", "hbg"] },
-      { id: "organ", label: "肝/肌酶", metrics: ["alt", "ast", "ck", "ckmb", "ldh"] },
+      { id: "organ", label: "肝/肌酶", metrics: ["alt", "ast", "alb", "ck", "ckmb", "ldh"] },
       { id: "electrolyte", label: "电解质", metrics: ["ca", "k", "na", "cl"] }
     ];
 
@@ -2835,7 +3042,7 @@
       lactate: "乳酸", fio2: "FiO₂", pf: "P/F", hb: "Hb", ca: "iCa",
       aptt: "APTT", inr: "INR", pt: "PT", creatinine: "肌酐", urea: "尿素",
       ck: "CK", ckmb: "CK-MB", ldh: "LDH", alt: "ALT", ast: "AST", il6: "IL-6", pct: "降钙素原",
-      wbc: "WBC", plt: "PLT", hbg: "Hb(血常规)", k: "K", na: "Na", cl: "Cl",
+      wbc: "WBC", plt: "PLT", hbg: "Hb(血常规)", k: "K", na: "Na", cl: "Cl", alb: "白蛋白",
       sbp: "SBP", dbp: "DBP", hr: "HR", crrtDehydrate: "CRRT脱水", crrtHf: "血滤", ivRate: "输液", urineMl: "尿量"
     };
     // Merge only near-duplicate clocks (~1 min). 16:58 vs 17:00 (2.97h / 3.00h) must stay distinct.
@@ -2848,19 +3055,19 @@
     };
     const latestNonBloodGasReport = TEMPLATE_MODE
       ? { h: null, label: "尚无数据", type: "生命体征/CRRT" }
-      : { h: 90.77, label: "术后90h46m · 血常规 Hb76", type: "血常规" };
+      : { h: 92.06, label: "术后92h03m · PCT 65.4", type: "生化" };
     const liveDoctorQuestions = [
       {
         id: "hemodynamics",
         group: "urgent",
-        title: "双升压药大约各为最大允许量一半，能否继续减量？",
-        detail: "血压120/35、HR109、MAP约63。请确认药名、精确μg/kg/min或mg/h，以及CRRT期间MAP目标。"
+        title: "去甲9 mL/h已确认为0.45 mg，另一种升压药还在用吗？",
+        detail: "0.45 mg/h = 7.5 μg/min。按50 kg估算约0.15 μg/kg/min，属中等偏低，不是大剂量。请核对体重和精确μg/kg/min，以及第二种药是否已停。"
       },
       {
         id: "lactate",
         group: "urgent",
         title: "乳酸从1.41回升至2.14，灌注是否再次不足？",
-        detail: "今晨起尿仅20mL，血压120/35、HR109、双升压药约半量。哪些休克问题仍未解决？"
+        detail: "过夜尿0，血压仍为上次口述120/35、HR109。去甲现为0.45 mg/h。哪些休克问题仍未解决？"
       },
       {
         id: "source-control",
@@ -2884,13 +3091,13 @@
         id: "next-window",
         group: "urgent",
         title: "未来6–12小时最重要的观察目标是什么？",
-        detail: "乳酸与P/F较昨夜回落；APTT已至67.2；血常规Hb76、PLT55；PCT仍高。CRRT脱水250/血滤120/输液约200 mL/h，今晨起尿20mL——净平衡是否按计划？"
+        detail: "CRRT已于凌晨停止，过夜尿0，今日已加利尿剂。肌酐204、尿素13.27、钠134.8、白蛋白29.3、PCT 65.4。未来6–12小时重点看尿量、肌酐/钾，以及是否需要重启CRRT。"
       },
       {
         id: "kidney",
         group: "followup",
-        title: "CRRT脱水250、血滤120、输液约200 mL/h，净平衡是否合适？",
-        detail: "今晨起尿仅20mL。请核对实际净超滤、抗凝方案及停止/减量标准。"
+        title: "CRRT已停、过夜尿0，利尿剂后是否需要重启？",
+        detail: "停前脱水250、血滤120、输液约200 mL/h。肌酐212→204，尿素11.59→13.27。请确认重启标准、利尿剂种类剂量，以及无尿时的液体与钾管理。"
       },
       {
         id: "coagulation",
@@ -2907,14 +3114,14 @@
       {
         id: "infection",
         group: "followup",
-        title: "降钙素原146→170→102，抗感染是否见效？",
-        detail: "9月17日10:52峰值170.297，最新101.563，仍远高于0.05。白细胞14.51、中性粒约91%。培养和CRRT下剂量如何？"
+        title: "降钙素原146→170→102→65，抗感染是否见效？",
+        detail: "9月19日10:03为65.368，仍远高于0.05。白细胞13.17、中性粒87.9%。培养和目前抗生素如何？CRRT已停，剂量是否需要调整？"
       },
       {
         id: "liver",
         group: "followup",
         title: "9月17日10:52的ALT891、AST806主要考虑缺血性肝损伤吗？",
-        detail: "同份报告还有IL-6 981、CK8280、PCT170。转氨酶有无复查，胆红素、白蛋白如何？"
+        detail: "同份报告还有IL-6 981、CK8280、PCT当时170。最新白蛋白29.3 g/L（9月19日）。转氨酶有无复查，胆红素如何？"
       },
       {
         id: "heart",
@@ -2926,7 +3133,7 @@
         id: "calcium",
         group: "followup",
         title: "离子钙降至1.09，是否需要加快补钙？",
-        detail: "昨夜1.14，今晨1.09。若CRRT使用枸橼酸抗凝，补钙目标、监测频率以及枸橼酸蓄积的判断标准是什么？"
+        detail: "昨夜1.14，今晨血气1.09。CRRT已于凌晨停止，若此前为枸橼酸抗凝，补钙目标和监测频率是否因此改变？"
       }
     ];
     const templateQuestions = [
@@ -3908,16 +4115,42 @@
       return tesseractLoader;
     }
 
+    async function fileToCanvas(file) {
+      const url = URL.createObjectURL(file);
+      try {
+        const image = await new Promise((resolve, reject) => {
+          const el = new Image();
+          el.onload = () => resolve(el);
+          el.onerror = reject;
+          el.src = url;
+        });
+        const canvas = document.createElement("canvas");
+        const scale = image.width > 2000 ? 2000 / image.width : 1;
+        canvas.width = Math.round(image.width * scale);
+        canvas.height = Math.round(image.height * scale);
+        canvas.getContext("2d").drawImage(image, 0, 0, canvas.width, canvas.height);
+        return canvas;
+      } finally {
+        URL.revokeObjectURL(url);
+      }
+    }
+
     async function ocrImageFile(file, requestId) {
       const Tesseract = await loadTesseract();
-      if (requestId !== ocrRequestId) return "";
-      const result = await Tesseract.recognize(file, "chi_sim+eng", {
-        logger: message => {
-          if (requestId !== ocrRequestId || message.status !== "recognizing text") return;
-          document.getElementById("shotStatus").textContent = `识别中 ${Math.round((message.progress || 0) * 100)}%`;
-        }
-      });
-      return result?.data?.text || "";
+      if (requestId !== ocrRequestId) return [];
+      const log = message => {
+        if (requestId !== ocrRequestId || message.status !== "recognizing text") return;
+        document.getElementById("shotStatus").textContent = `识别中 ${Math.round((message.progress || 0) * 100)}%`;
+      };
+      const canvas = await fileToCanvas(file);
+      const first = await Tesseract.recognize(canvas, "chi_sim+eng", { logger: log });
+      if (requestId !== ocrRequestId) return [];
+      const ctx = canvas.getContext("2d");
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      if (parser.preprocessLabImageData) parser.preprocessLabImageData(imageData);
+      ctx.putImageData(imageData, 0, 0);
+      const second = await Tesseract.recognize(canvas, "chi_sim+eng", { logger: log });
+      return [first?.data?.text || "", second?.data?.text || ""].filter(text => text.trim());
     }
 
     window.MediDashAcceptFile = acceptScreenshotFile;
@@ -3960,10 +4193,13 @@
       document.getElementById("shotStatus").textContent = "截图已接受，正在识别…";
       document.getElementById("liveRegion").textContent = "截图已接受，正在识别";
 
-      acceptWaiter = ocrImageFile(file, requestId).then(text => {
+      acceptWaiter = ocrImageFile(file, requestId).then(texts => {
         if (requestId !== ocrRequestId) return lastAcceptedParse;
-        if (text.trim()) document.getElementById("shotText").value = text;
-        const parsed = parseReportText(text);
+        const joined = Array.isArray(texts) ? texts.join("\n\n---\n\n") : String(texts || "");
+        if (joined.trim()) document.getElementById("shotText").value = joined;
+        const parsed = parser.parseLabReportTexts
+          ? parser.parseLabReportTexts(Array.isArray(texts) ? texts : [joined])
+          : parseReportText(joined);
         lastAcceptedParse = parsed;
         applyParsedReport(parsed, "截图");
         return parsed;

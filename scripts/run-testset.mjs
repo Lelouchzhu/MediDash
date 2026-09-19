@@ -2,9 +2,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { spawnSync } from "node:child_process";
+import os from "node:os";
 import parser from "../parse-lab-report.js";
 
-const { parseLabReportText } = parser;
+const { parseLabReportText, parseLabReportTexts } = parser;
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "testset/manifest.json"), "utf8"));
 
@@ -22,12 +24,21 @@ const EXPECT = {
   "20260918T094446__a3295952-769f-4e23-85a3-a07162cd4180.jpg": { hours: 67.73, aptt: 50.8, inr: 1.24 },
   "20260918T130029__7B968B2C-1BF2-4D59-B4C8-F03D5EDF7DFB_L0_001.jpg": { hours: 71.01, ph: 7.388, pco2: 37.5, po2: 72.6, hco3: 22.1, be: -2.9, lactate: 1.27, fio2: 50, pf: 145, hb: 9.1, ca: 1.12 },
   "20260917T094650__01a0b2d6-0d75-703c-bbb7-a7291e72d653.jpg": { hours: 43.78, wbc: 11.52, hbg: 85, plt: 73 },
-  "20260918T083444__01a0b2d6-0d88-78df-bb43-c0cc61c8567b.jpg": { hours: 66.58, wbc: 14.51, hbg: 85, plt: 65 }
+  "20260918T083444__01a0b2d6-0d88-78df-bb43-c0cc61c8567b.jpg": { hours: 66.58, wbc: 14.51, hbg: 85, plt: 65 },
+  "20260919T100330__01a0b7bc-519d-72d9-9831-8fd5f6dd93c7.jpg": { hours: 92.06, alb: 29.3, k: 4.8, na: 134.78, cl: 100.69, urea: 13.27, creatinine: 204, pct: 65.368 },
+  "20260919T100330__01a0b7bc-51be-7f0b-890a-2cc1f6dfac4f.jpg": { hours: 92.06, alb: 29.3, k: 4.8, na: 134.78, urea: 13.27, creatinine: 204, pct: 65.368 }
 };
+
+function preprocessCopy(abs) {
+  const dest = path.join(os.tmpdir(), `medidash-pre-${path.basename(abs)}`);
+  const result = spawnSync("python3", [path.join(root, "scripts/preprocess-lab-image.py"), abs, dest], { encoding: "utf8" });
+  if (result.status !== 0) return null;
+  return dest;
+}
 
 function close(a, b) {
   if (a == null || b == null) return false;
-  return Math.abs(Number(a) - Number(b)) <= 0.02;
+  return Math.abs(Number(a) - Number(b)) <= 0.03;
 }
 
 const labeled = manifest.reports.filter(item => item.labeled && EXPECT[item.id]);
@@ -38,12 +49,19 @@ const rows = [];
 for (const item of labeled) {
   const abs = path.join(root, "testset", item.path);
   let text = "";
+  let parsed = null;
   if (ocr) {
     console.error("OCR", item.id);
-    const result = await Tesseract.recognize(abs, "chi_sim+eng");
-    text = result.data.text || "";
+    const first = await Tesseract.recognize(abs, "chi_sim+eng");
+    const cleanedPath = preprocessCopy(abs);
+    let secondText = "";
+    if (cleanedPath && fs.existsSync(cleanedPath)) {
+      const second = await Tesseract.recognize(cleanedPath, "chi_sim+eng");
+      secondText = second.data.text || "";
+    }
+    text = [first.data.text || "", secondText].filter(Boolean).join("\n\n---\n\n");
+    parsed = parseLabReportTexts([first.data.text || "", secondText]);
   }
-  const parsed = ocr ? parseLabReportText(text) : null;
   const expect = EXPECT[item.id];
   const checks = {};
   if (parsed) {

@@ -4,11 +4,12 @@ import report from "./current-report.js";
 
 test("current report seed matches the updated live dashboard counts", () => {
   assert.equal(report.baseReadings.length, 21);
-  assert.equal(report.labReadings.length, 18);
-  assert.equal(report.bedsideReadings.length, 6);
+  assert.equal(report.labReadings.length, 19);
+  assert.equal(report.bedsideReadings.length, 7);
   assert.equal(report.baseReadings.at(-1).lactate, 2.14);
   assert.equal(report.baseReadings.at(-1).pf, 210);
-  assert.equal(report.labReadings.at(-1).hbg, 76);
+  assert.equal(report.labReadings.at(-1).pct, 65.368);
+  assert.equal(report.labReadings.at(-1).alb, 29.3);
   assert.equal(report.labReadings.find(row => row.h === 80.22).aptt, 67.2);
   assert.equal(report.sampleOral.sbp, 120);
 });
@@ -22,7 +23,7 @@ test("every gas and lab seed row is image-backed after the main audit", () => {
   }
   assert.equal(report.seedRowsWithoutScreenshot("gas").length, 0);
   assert.equal(report.seedRowsWithoutScreenshot("lab").length, 0);
-  assert.equal(report.seedRowsWithoutScreenshot("bedside").length, 6);
+  assert.equal(report.seedRowsWithoutScreenshot("bedside").length, 7);
 });
 
 test("perfect replay of seed plus oral fully covers the current report", () => {
@@ -52,7 +53,7 @@ test("labeled-only replay still misses early other/ clocks and all oral", () => 
   assert.equal(coverage.labsComplete, false);
   assert.ok(coverage.gas.fullyCoveredRows >= 8, `gas ${coverage.gas.fullyCoveredRows}`);
   assert.ok(coverage.lab.fullyCoveredRows >= 12);
-  assert.equal(coverage.bedside.missingRows, 6);
+  assert.equal(coverage.bedside.missingRows, 7);
 });
 
 test("close ABG clocks stay distinct when both are replayed", () => {

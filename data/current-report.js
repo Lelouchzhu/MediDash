@@ -10,7 +10,7 @@
   const GAS_KEYS = ["ph", "pco2", "po2", "hco3", "be", "lactate", "fio2", "pf", "hb", "ca"];
   const LAB_KEYS = [
     "aptt", "inr", "pt", "creatinine", "urea", "ck", "ckmb", "ldh", "hbdh",
-    "alt", "ast", "il6", "pct", "wbc", "plt", "hbg", "k", "na", "cl"
+    "alt", "ast", "il6", "pct", "wbc", "plt", "hbg", "k", "na", "cl", "alb"
   ];
   const BEDSIDE_KEYS = [
     "sbp", "dbp", "hr", "rrLow", "rrHigh", "map", "pressors", "pressorNote",
@@ -59,7 +59,8 @@
     { h: 75.38, label: "术后75h22m", sample: "生化", k: 4.17 },
     { h: 76.02, label: "术后76h01m", sample: "凝血", aptt: 64.0 },
     { h: 80.22, label: "术后80h13m", sample: "凝血", aptt: 67.2 },
-    { h: 90.77, label: "术后90h46m", sample: "血常规", wbc: 13.17, plt: 55, hbg: 76 }
+    { h: 90.77, label: "术后90h46m", sample: "血常规", wbc: 13.17, plt: 55, hbg: 76 },
+    { h: 92.06, label: "术后92h03m", sample: "生化", creatinine: 204, urea: 13.27, k: 4.80, na: 134.78, cl: 100.69, pct: 65.368, alb: 29.3 }
   ];
 
   const bedsideReadings = [
@@ -87,10 +88,21 @@
       urineWindow: "今晨起",
       notes: "粗算净负约50 mL/h，待床旁核对",
       source: "oral"
+    },
+    {
+      h: 92,
+      label: "术后约92h · 床旁口述",
+      pressors: "one",
+      pressorNote: "去甲 9 mL/h = 0.45 mg/h",
+      crrt: "off",
+      urineMl: 0,
+      urineWindow: "过夜",
+      notes: "CRRT凌晨已停，今日利尿剂已加量",
+      source: "oral"
     }
   ];
 
-  const sampleOral = bedsideReadings[bedsideReadings.length - 1];
+  const sampleOral = bedsideReadings.find(row => row.h === 73) || bedsideReadings.at(-1);
 
   // Officially labeled LIS files (folders abg/chemistry/coag/cbc plus promoted copies).
   const labeledTestsetHours = [
@@ -113,7 +125,8 @@
     { h: 79.78, category: "abg", id: "20260918T214648__hires__01a0b731-35c4-7621-b6a9-259730bbcb4e.jpg" },
     { h: 80.22, category: "coag", id: "20260918T221305__01a0b731-35d4-7a05-b975-9fac7882eef3.jpg" },
     { h: 88.74, category: "abg", id: "20260919T064443__hires__01a0b731-35b1-761f-ad99-69f82a5fcafa.jpg" },
-    { h: 90.77, category: "cbc", id: "20260919T084629__01a0b731-359d-77fe-9689-d52f5b99561b.jpg" }
+    { h: 90.77, category: "cbc", id: "20260919T084629__01a0b731-359d-77fe-9689-d52f5b99561b.jpg" },
+    { h: 92.06, category: "chemistry", id: "20260919T100330__01a0b7bc-519d-72d9-9831-8fd5f6dd93c7.jpg" }
   ];
 
   // Early clocks live in unlabeled other/ but were vision-matched in the 2026-09-18 audit.
