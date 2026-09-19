@@ -1201,7 +1201,7 @@
       <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
-        <span class="pill" id="latestTimePill">最新：术后71h00m</span>
+        <span class="pill" id="latestTimePill">最新：术后88h44m</span>
         <span class="pill">数据已去标识化</span>
       </div>
     </header>
@@ -1248,29 +1248,29 @@
           <div class="status-value">120/35</div>
           <div class="status-note">MAP≈63 · HR 109 · RR 15–19<br>双药约最大允许量½</div>
         </div>
-        <button class="status-card green" type="button" data-metric-jump="lactate">
+        <button class="status-card orange" type="button" data-metric-jump="lactate">
           <div class="status-top">
             <span class="status-name">组织灌注</span>
-            <span class="level">接近正常</span>
+            <span class="level">乳酸回升</span>
           </div>
-          <div class="status-value"><span id="latestLactate">1.27</span><span class="status-unit">mmol/L</span></div>
-          <div class="status-note">1.97→1.27 · 已入参考范围</div>
+          <div class="status-value"><span id="latestLactate">2.14</span><span class="status-unit">mmol/L</span></div>
+          <div class="status-note">1.41→2.14 · 再次高于参考<br>尿仍极少</div>
         </button>
-        <button class="status-card red" type="button" data-metric-jump="pf">
+        <button class="status-card orange" type="button" data-metric-jump="pf">
           <div class="status-top">
             <span class="status-name">氧合</span>
-            <span class="level">仍低</span>
+            <span class="level">较昨夜下降</span>
           </div>
-          <div class="status-value"><span id="latestPf">145</span><span class="status-unit">P/F</span></div>
-          <div class="status-note">FiO₂ 仍50% · 169→145下降</div>
+          <div class="status-value"><span id="latestPf">210</span><span class="status-unit">P/F</span></div>
+          <div class="status-note">FiO₂ 仍50% · 262→210<br>仍远低于400</div>
         </button>
-        <button class="status-card green" type="button" data-metric-jump="hco3">
+        <button class="status-card orange" type="button" data-metric-jump="hco3">
           <div class="status-top">
             <span class="status-name">酸碱</span>
-            <span class="level">接近正常</span>
+            <span class="level">代谢酸加重</span>
           </div>
-          <div class="status-value"><span id="latestPh">7.388</span><span class="status-unit">pH</span></div>
-          <div class="status-note">HCO₃⁻ 22.1 · BE −2.9</div>
+          <div class="status-value"><span id="latestPh">7.382</span><span class="status-unit">pH</span></div>
+          <div class="status-note">HCO₃⁻ 18.7↓ · BE −6.4</div>
         </button>
         <div class="status-card red">
           <div class="status-top">
@@ -1296,21 +1296,21 @@
           <div class="status-value">891<span class="status-unit">ALT</span></div>
           <div class="status-note">AST 806<br>需结合休克判断缺血性损伤</div>
         </div>
-        <div class="status-card orange">
+        <div class="status-card red">
           <div class="status-top">
             <span class="status-name">凝血</span>
-            <span class="level">明显改善</span>
+            <span class="level">再次延长</span>
           </div>
-          <div class="status-value"><span id="latestAptt">50.8</span><span class="status-unit">APTT</span></div>
-          <div class="status-note">72.4→50.8 · INR1.24<br>PT13.8 · 危急值已解除</div>
+          <div class="status-value"><span id="latestAptt">67.2</span><span class="status-unit">APTT</span></div>
+          <div class="status-note">64.0→67.2 · 参考21–45<br>仍明显延长</div>
         </div>
         <button class="status-card orange" type="button" data-metric-jump="hb">
           <div class="status-top">
             <span class="status-name">血红蛋白 / 钙</span>
             <span class="level">仍低</span>
           </div>
-          <div class="status-value"><span id="latestHb">9.1</span><span class="status-unit">g/dL</span></div>
-          <div class="status-note">Hct 27% · iCa 1.12（同前）</div>
+          <div class="status-value"><span id="latestHb">9.2</span><span class="status-unit">g/dL</span></div>
+          <div class="status-note">血气9.2 · 血常规 Hb <strong>76</strong><br>PLT 55 · iCa 1.09</div>
         </button>
       </div>
     </section>
@@ -1360,16 +1360,16 @@
         </div>
         <div class="insights" id="insightsRow">
           <div class="insight">
-            <strong>乳酸已入正常</strong>
-            <p>峰值8.99→1.97→最新1.27（参考0.5–1.6）；但尿仍极少，不能单凭乳酸判断脱离危险。</p>
+            <strong>乳酸再次升高至2.14</strong>
+            <p>昨夜1.41已正常，今晨2.14（参考0.5–1.6）。尿仍极少，灌注不能仅看单次乳酸。</p>
           </div>
           <div class="insight">
-            <strong>氧合继续恶化</strong>
-            <p>FiO₂仍50%，P/F 169→145，PO₂72.6；乳酸虽正常，呼吸支持需求仍高。</p>
+            <strong>氧合回落</strong>
+            <p>FiO₂仍50%，P/F 262→210，PO₂104.8；昨夜改善未能维持，仍远低于400。</p>
           </div>
           <div class="insight">
-            <strong>CRRT中肾指标下降，凝血好转</strong>
-            <p>CRRT脱水250、血滤120、输液约200 mL/h；今晨起尿仅20mL。血压120/35、HR109。</p>
+            <strong>代谢酸加重，钙更低</strong>
+            <p>HCO₃⁻20.4→18.7、BE −4.5→−6.4；iCa 1.09。APTT 64.0→67.2。血常规 Hb 85→76、PLT 65→55。</p>
           </div>
         </div>
       </div>
@@ -1446,7 +1446,7 @@
             <ul>
               <li>降钙素原：9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> ng/mL（参考0–0.05）。先升后降，目前仍极高。</li>
               <li>IL-6 981 pg/mL（术后约45小时）仍提示极强炎症反应。</li>
-              <li>乳酸峰值8.99 → 最新1.27（已入参考范围）；最新口述血压120/35、HR109、呼吸15–19；双升压药约各半量。</li>
+              <li>乳酸峰值8.99 → 昨夜1.41 → 今晨<strong>2.14</strong>（再次高于参考）；最新口述血压120/35、HR109、呼吸15–19；双升压药约各半量。</li>
               <li>血常规“PCT”是血小板比积0.08%，与降钙素原不是同一指标。</li>
             </ul>
           </div>
@@ -1464,7 +1464,7 @@
               <li>肌酐121.8→263→363→最新212 μmol/L；尿素峰值17.80→最新11.59 mmol/L（CRRT下下降）。</li>
               <li>尿量950→300→70→今晨起累计仅20mL；CRRT进行中。</li>
               <li>CRRT（家属口述）：脱水/置换约250 mL/h，血液滤过120 mL/h；静脉输液约200 mL/h（粗算净负约50 mL/h，待床旁核对）。</li>
-              <li>最新电解质（化验）：K 4.35、Na 137.91、Cl 97.56 mmol/L。</li>
+              <li>最新电解质：K 4.17（17:22，参考3.5–5.3）正常；此前生化 K 4.35、Na 137.91、Cl 97.56。</li>
               <li>此前尿潜血3+、蛋白2+；CK显著升高需继续结合肌红蛋白评估。</li>
             </ul>
           </div>
@@ -1473,16 +1473,18 @@
           <summary>
             <div>
               <div class="report-title">凝血系统</div>
-              <div class="report-meta">危急后改善 · 最新术后67h44m</div>
+              <div class="report-meta">危急后一度改善 · 最新术后80h13m</div>
             </div>
-            <span class="report-badge">改善</span>
+            <span class="report-badge red">再次延长</span>
           </summary>
           <div class="report-body">
             <ul>
               <li>补血浆前：PT 23.0秒、INR 2.11、APTT 57.9秒。</li>
               <li>APTT曾危急：76.1→72.4秒（术后约57–62小时）。</li>
-              <li>最新（术后67h44m）：APTT 50.8秒（↑，参考23.3–32.5）、PT 13.8秒、INR 1.24、PT活动度70.4%、TT 12.6秒↓、Fbg 4.38 g/L；危急值已解除但仍未完全正常。</li>
-              <li>需确认CRRT抗凝方案是否已调整，以及有无出血。</li>
+              <li>9月18日09:44（术后67h44m）：APTT 50.8秒、PT 13.8秒、INR 1.24；危急值曾解除但仍高于参考。</li>
+              <li>9月18日18:01（术后76h01m）：APTT 64.0秒↑（参考23.3–32.5），备注“结果已复查”。</li>
+              <li>最新（术后80h13m · 22:13）：APTT <strong>67.2</strong>秒↑（本份参考21–45），较64.0继续延长。</li>
+              <li>需立即确认CRRT抗凝方案、有无出血及是否再次干预。</li>
             </ul>
           </div>
         </details>
@@ -1507,16 +1509,16 @@
           <summary>
             <div>
               <div class="report-title">血液与电解质</div>
-              <div class="report-meta">术前至术后约67小时</div>
+              <div class="report-meta">术前至术后约91小时</div>
             </div>
             <span class="report-badge">随访</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>血常规Hb：9月17日09:46与9月18日08:34均为85 g/L；血气Hb最新9.1 g/dL，Hct 27%。</li>
-              <li>血小板73→65×10⁹/L，持续偏低；血小板比积0.08%（参考0.17–0.35）。</li>
-              <li>白细胞11.52→14.51，中性粒95%→91.2%，淋巴细胞约2.4–2.5%。</li>
-              <li>离子钙1.12 mmol/L仍略低。最新生化：K 4.35、Na 137.91、Cl 97.56。</li>
+              <li>血常规Hb：85→最新<strong>76</strong> g/L（9月19日08:46）；同期血气Hb 9.2 g/dL（不同方法，勿直接等同）。Hct 22.9%。</li>
+              <li>血小板65→<strong>55</strong>×10⁹/L；血小板比积0.08%→0.06%（参考0.17–0.35）。</li>
+              <li>白细胞14.51→13.17，中性粒91.2%→87.9%，仍偏高。</li>
+              <li>最新离子钙 <strong>1.09</strong> mmol/L（较昨夜1.14更低）。钾测定 K 4.17 mmol/L（正常）。</li>
             </ul>
           </div>
         </details>
@@ -1682,15 +1684,50 @@
           <div class="event-title">APTT降至50.8；PCT从峰值170降至102</div>
           <div class="event-desc">INR1.24、PT13.8。降钙素原170.297→101.563，仍极高。血小板65。</div>
         </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后71小时00分 · 9月18日13:00</div>
+          <div class="event-title">乳酸1.27正常，但P/F降至145</div>
+          <div class="event-desc">FiO₂50%、PO₂72.6；pH7.388、HCO₃⁻22.1、BE−2.9；Hb9.1、iCa1.12。氧合较今晨169进一步下降。</div>
+        </article>
         <article class="event" style="--event-color: var(--blue)">
           <div class="event-time">约术后73小时 · 家属口述</div>
           <div class="event-title">血压120/35、HR109；双升压药约半量</div>
           <div class="event-desc">RR15–19；两种升压药剂量大约各为最大允许量一半。CRRT脱水250、血滤120、输液约200；今晨起尿20mL。</div>
         </article>
+        <article class="event" style="--event-color: var(--green)">
+          <div class="event-time">术后75小时22分 · 9月18日17:22</div>
+          <div class="event-title">血钾4.17，正常</div>
+          <div class="event-desc">参考3.5–5.3 mmol/L；单项目钾测定报告。</div>
+        </article>
         <article class="event" style="--event-color: var(--orange)">
-          <div class="event-time">术后71小时00分 · 9月18日13:00</div>
-          <div class="event-title">乳酸1.27正常，但P/F降至145</div>
-          <div class="event-desc">FiO₂50%、PO₂72.6；pH7.388、HCO₃⁻22.1、BE−2.9；Hb9.1、iCa1.12。氧合较今晨169进一步下降。</div>
+          <div class="event-time">术后75小时23分 · 9月18日17:23</div>
+          <div class="event-title">P/F回升至165；本份血气未报乳酸</div>
+          <div class="event-desc">FiO₂50%、PO₂82.4；pH7.363、HCO₃⁻22.4、BE−2.8；Hb8.8、Hct26%；tCO₂↓、A-a差↑。氧合较13:00的145略改善，仍低。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后76小时01分 · 9月18日18:01</div>
+          <div class="event-title">APTT回升至64.0秒</div>
+          <div class="event-desc">较09:44的50.8明显延长（参考23.3–32.5）；备注“结果已复查”。需核对CRRT抗凝与出血。</div>
+        </article>
+        <article class="event" style="--event-color: var(--green)">
+          <div class="event-time">术后79小时47分 · 9月18日21:46</div>
+          <div class="event-title">P/F升至262；乳酸1.41仍正常</div>
+          <div class="event-desc">FiO₂50%、PO₂131.1；pH7.398、HCO₃⁻20.4↓、BE−4.5；Hb9.4、Hct28%、iCa1.14。氧合较17:23的165明显改善，仍低于400。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后80小时13分 · 9月18日22:13</div>
+          <div class="event-title">APTT继续升至67.2秒</div>
+          <div class="event-desc">较18:01的64.0再延长（本份参考21–45）。抗凝与出血仍需核对。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后88小时44分 · 9月19日06:44</div>
+          <div class="event-title">乳酸回升至2.14，P/F降至210</div>
+          <div class="event-desc">FiO₂仍50%、PO₂104.8；pH7.382、HCO₃⁻18.7↓、BE−6.4；血气Hb9.2、Hct27%、iCa1.09。较昨夜氧合与灌注均回落。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后90小时46分 · 9月19日08:46</div>
+          <div class="event-title">血常规Hb降至76，血小板55</div>
+          <div class="event-desc">WBC 14.51→13.17，中性粒87.9%。Hb 85→76 g/L，PLT 65→55。血小板比积0.06%（不是降钙素原）。</div>
         </article>
       </div>
     </section>
@@ -2373,15 +2410,15 @@
 
   const baseReadings = [
     { h: -18.85, label: "术前18h51m", sample: "动脉", ph: 7.384, pco2: 29.7, po2: 59.8, hco3: 17.3, be: -7.7, lactate: 5.05, fio2: 33, pf: 181, hb: 14.7, ca: 1.18 },
-    { h: 1.22, label: "术后1h13m", sample: "动脉", ph: 7.196, pco2: 31.5, po2: 110.6, hco3: 11.9, be: -16.2, lactate: 5.30, fio2: 50, pf: 221, hb: 13.0, ca: 1.15 },
+    { h: 1.53, label: "术后1h32m", sample: "动脉", ph: 7.196, pco2: 31.5, po2: 110.6, hco3: 11.9, be: -16.2, lactate: 5.30, fio2: 50, pf: 221, hb: 13.0, ca: 1.15 },
     { h: 2.97, label: "术后2h58m", sample: "动脉", ph: 7.380, pco2: 25.0, po2: 78.1, hco3: 14.5, be: -10.7, lactate: 6.63, fio2: 50, pf: 156, hb: 13.4, ca: 1.02 },
     { h: 3.00, label: "术后3h00m", sample: "待核实", ph: 7.302, pco2: 35.0, po2: 32.5, hco3: 16.9, be: -9.5, lactate: 6.53, fio2: 50, pf: 65, hb: 13.7, ca: 1.04, quality: "uncertain" },
-    { h: 7.18, label: "术后7h11m", sample: "动脉", ph: 7.436, pco2: 22.2, po2: 78.7, hco3: 14.5, be: -9.6, lactate: 6.93, fio2: 50, pf: 157, hb: 11.1, ca: .94 },
+    { h: 7.18, label: "术后7h11m", sample: "动脉", ph: 7.436, pco2: 22.2, po2: 78.7, hco3: 14.6, be: -9.6, lactate: 6.93, fio2: 50, pf: 157, hb: 11.1, ca: .94 },
     { h: 9.82, label: "术后9h49m", sample: "动脉", ph: 7.476, pco2: 25.0, po2: 121.4, hco3: 18.0, be: -5.5, lactate: 8.99, fio2: 50, pf: 243, hb: 11.5, ca: .93 },
     { h: 12.55, label: "术后12h33m", sample: "动脉", ph: 7.522, pco2: 18.9, po2: 136.6, hco3: 15.2, be: -7.7, lactate: 7.64, fio2: 50, pf: 273, hb: 11.2, ca: .91 },
     { h: 16.83, label: "术后16h50m", sample: "动脉", ph: 7.541, pco2: 21.2, po2: 120.1, hco3: 17.8, be: -4.8, lactate: 8.29, fio2: 40, pf: 300, hb: 11.1, ca: .91 },
     { h: 21.43, label: "术后21h26m", sample: "静脉", ph: 7.452, pco2: 26.5, po2: 26.6, hco3: 18.1, be: -5.9, lactate: 7.52, fio2: null, pf: null, hb: 15.2, ca: .96 },
-    { h: 21.53, label: "术后21h32m", sample: "动脉", ph: 7.528, pco2: 20.5, po2: 64.1, hco3: 16.7, be: -6.1, lactate: 7.35, fio2: 30, pf: 214, hb: 13.4, ca: .91 },
+    { h: 21.53, label: "术后21h32m", sample: "动脉", ph: 7.528, pco2: 20.5, po2: 64.1, hco3: 16.7, be: -6.1, lactate: 7.55, fio2: 30, pf: 214, hb: 13.4, ca: .91 },
     { h: 27.10, label: "术后27h06m", sample: "动脉", ph: 7.458, pco2: 25.6, po2: 84.8, hco3: 17.7, be: -6.1, lactate: 6.55, fio2: 50, pf: 170, hb: 13.2, ca: .92 },
     { h: 31.47, label: "术后31h28m", sample: "动脉", ph: 7.397, pco2: 33.6, po2: 90.1, hco3: 20.2, be: -4.6, lactate: 5.82, fio2: 50, pf: 180, hb: 9.2, ca: .88 },
     { h: 40.68, label: "术后40h41m", sample: "动脉", ph: 7.415, pco2: 33.8, po2: 79.2, hco3: 21.2, be: -3.4, lactate: 3.25, fio2: 50, pf: 158, hb: 9.5, ca: .99 },
@@ -2389,23 +2426,31 @@
     { h: 56.78, label: "术后56h47m", sample: "动脉", ph: 7.369, pco2: 43.0, po2: 92.0, hco3: 24.2, be: -1.1, lactate: 2.86, fio2: 50, pf: 184, hb: 9.9, ca: 1.05 },
     { h: 61.73, label: "术后61h44m", sample: "动脉", ph: 7.367, pco2: 40.1, po2: 87.9, hco3: 22.5, be: -2.8, lactate: 2.57, fio2: 50, pf: 176, hb: 8.4, ca: 1.06 },
     { h: 64.6, label: "术后64h36m", sample: "动脉", ph: 7.392, pco2: 37.6, po2: 84.4, hco3: 22.4, be: -2.6, lactate: 1.97, fio2: 50, pf: 169, hb: 9.1, ca: 1.12 },
-    { h: 71.01, label: "术后71h00m", sample: "动脉", ph: 7.388, pco2: 37.5, po2: 72.6, hco3: 22.1, be: -2.9, lactate: 1.27, fio2: 50, pf: 145, hb: 9.1, ca: 1.12 }
+    { h: 71.01, label: "术后71h00m", sample: "动脉", ph: 7.388, pco2: 37.5, po2: 72.6, hco3: 22.1, be: -2.9, lactate: 1.27, fio2: 50, pf: 145, hb: 9.1, ca: 1.12 },
+    { h: 75.4, label: "术后75h23m", sample: "动脉", ph: 7.363, pco2: 40.3, po2: 82.4, hco3: 22.4, be: -2.8, fio2: 50, pf: 165, hb: 8.8 },
+    { h: 79.78, label: "术后79h47m", sample: "动脉", ph: 7.398, pco2: 33.8, po2: 131.1, hco3: 20.4, be: -4.5, lactate: 1.41, fio2: 50, pf: 262, hb: 9.4, ca: 1.14 },
+    { h: 88.74, label: "术后88h44m", sample: "动脉", ph: 7.382, pco2: 32.2, po2: 104.8, hco3: 18.7, be: -6.4, lactate: 2.14, fio2: 50, pf: 210, hb: 9.2, ca: 1.09 }
   ];
 
   const labReadings = [
-    { h: -22.85, label: "术前22h51m", sample: "生化", creatinine: 121.8, urea: 10.99 },
-    { h: -18.85, label: "术前18h51m", sample: "凝血", inr: .93 },
-    { h: 2.87, label: "术后2h52m", sample: "生化", ck: 5657 },
-    { h: 19.05, label: "术后19h03m", sample: "凝血", inr: 2.11 },
-    { h: 19.73, label: "术后19h44m", sample: "生化", creatinine: 263, urea: 15.95, pct: 146.421 },
-    { h: 43.42, label: "术后43h25m", sample: "凝血", inr: 1.43 },
+    { h: -22.85, label: "术前22h51m", sample: "生化", creatinine: 121.8, urea: 10.99, k: 4.02, na: 141, cl: 104 },
+    { h: -18.45, label: "术前18h27m", sample: "凝血", inr: .93, aptt: 26.1, pt: 11.1 },
+    { h: 2.87, label: "术后2h52m", sample: "生化", ck: 5657, ckmb: 228.5, ldh: 1660, hbdh: 669 },
+    { h: 10.18, label: "术后10h11m", sample: "生化", k: 3.59 },
+    { h: 19.05, label: "术后19h03m", sample: "凝血", inr: 2.11, aptt: 57.9, pt: 23.0 },
+    { h: 19.73, label: "术后19h44m", sample: "生化", creatinine: 263, urea: 15.95, pct: 146.421, k: 4.43, na: 142.28, cl: 99.53 },
+    { h: 43.42, label: "术后43h25m", sample: "凝血", inr: 1.43, aptt: 50.8, pt: 15.8 },
     { h: 44.87, label: "术后44h52m", sample: "生化", creatinine: 363, urea: 17.80, ck: 8280, ckmb: 132.6, ldh: 915, hbdh: 576, alt: 891, ast: 806, il6: 981, pct: 170.297, k: 4.31, na: 141.27, cl: 98.33 },
     { h: 57.13, label: "术后57h08m", sample: "凝血", aptt: 76.1, critical: true },
     { h: 62.07, label: "术后62h04m", sample: "凝血", aptt: 72.4, critical: true },
     { h: 43.78, label: "术后43h47m", sample: "血常规", wbc: 11.52, plt: 73, hbg: 85 },
     { h: 66.58, label: "术后66h35m", sample: "血常规", wbc: 14.51, plt: 65, hbg: 85 },
     { h: 66.97, label: "术后66h58m", sample: "生化", creatinine: 212, urea: 11.59, k: 4.35, na: 137.91, cl: 97.56, pct: 101.563 },
-    { h: 67.73, label: "术后67h44m", sample: "凝血", aptt: 50.8, inr: 1.24, pt: 13.8 }
+    { h: 67.73, label: "术后67h44m", sample: "凝血", aptt: 50.8, inr: 1.24, pt: 13.8 },
+    { h: 75.38, label: "术后75h22m", sample: "生化", k: 4.17 },
+    { h: 76.02, label: "术后76h01m", sample: "凝血", aptt: 64.0 },
+    { h: 80.22, label: "术后80h13m", sample: "凝血", aptt: 67.2 },
+    { h: 90.77, label: "术后90h46m", sample: "血常规", wbc: 13.17, plt: 55, hbg: 76 }
   ];
 
   const bedsideReadings = [
@@ -2438,8 +2483,10 @@
 
   const sampleOral = bedsideReadings[bedsideReadings.length - 1];
 
-  // Labeled LIS screenshots that can theoretically rebuild a seed row.
+  // Officially labeled LIS files (folders abg/chemistry/coag/cbc plus promoted copies).
   const labeledTestsetHours = [
+    { h: 27.1, category: "abg", id: "20260916T170608__53990787-d010-4458-9778-05a49f764ae8.jpg" },
+    { h: 43.42, category: "coag", id: "20260917T092457__4A7C4512-AA5C-4961-82D4-D65874D5AC1D_L0_001.jpg" },
     { h: 43.78, category: "cbc", id: "20260917T094650__01a0b2d6-0d75-703c-bbb7-a7291e72d653.jpg" },
     { h: 44.87, category: "chemistry", id: "20260917T105201__0C19DB31-46D2-4C66-8E15-D5BFA7D112B4_L0_001.jpg" },
     { h: 56.78, category: "abg", id: "20260917T224742__eaf679f1-a6a7-4527-99c3-478118ba2198.jpg" },
@@ -2450,10 +2497,58 @@
     { h: 66.58, category: "cbc", id: "20260918T083444__01a0b2d6-0d88-78df-bb43-c0cc61c8567b.jpg" },
     { h: 66.97, category: "chemistry", id: "20260918T085858__01a0b2d6-0d9a-7071-b1dd-f8d8c12cb965.jpg" },
     { h: 67.73, category: "coag", id: "20260918T094446__01a0b2d6-0dbe-726a-9881-08c8bc9b8c85.jpg" },
-    { h: 71.01, category: "abg", id: "20260918T130029__7B968B2C-1BF2-4D59-B4C8-F03D5EDF7DFB_L0_001.jpg" }
+    { h: 71.01, category: "abg", id: "20260918T130029__7B968B2C-1BF2-4D59-B4C8-F03D5EDF7DFB_L0_001.jpg" },
+    { h: 75.38, category: "chemistry", id: "20260918T172250__01a0b451-4f08-76b7-9cd9-0c8d379fafd4.jpg" },
+    { h: 75.4, category: "abg", id: "20260918T172343__01a0b451-4ecd-7e47-8ab8-9b5d80606e2d.jpg" },
+    { h: 76.02, category: "coag", id: "20260918T180129__01a0b451-4f3f-7d4c-945a-296f5aeec91c.jpg" },
+    { h: 79.78, category: "abg", id: "20260918T214648__hires__01a0b731-35c4-7621-b6a9-259730bbcb4e.jpg" },
+    { h: 80.22, category: "coag", id: "20260918T221305__01a0b731-35d4-7a05-b975-9fac7882eef3.jpg" },
+    { h: 88.74, category: "abg", id: "20260919T064443__hires__01a0b731-35b1-761f-ad99-69f82a5fcafa.jpg" },
+    { h: 90.77, category: "cbc", id: "20260919T084629__01a0b731-359d-77fe-9689-d52f5b99561b.jpg" }
+  ];
+
+  // Early clocks live in unlabeled other/ but were vision-matched in the 2026-09-18 audit.
+  const otherImageHours = [
+    { h: -18.85, kind: "gas", id: "01a0a019-fc18-79de-8975-5316a657400e.jpg" },
+    { h: 1.53, kind: "gas", id: "01a0a84a-afd3-75a7-8988-4be259cf80bf.jpg" },
+    { h: 2.97, kind: "gas", id: "01a0a84a-aff9-7322-8af2-7db92f270c15.jpg" },
+    { h: 3.00, kind: "gas", id: "01a0a84a-b00d-74ad-aee2-081752b302c0.jpg" },
+    { h: 7.18, kind: "gas", id: "01a0a7ba-cce6-7f8e-be2a-ad121c4c44a4.jpg" },
+    { h: 9.82, kind: "gas", id: "01a0a7ba-ccd5-75e4-b9de-fcc6906f7636.jpg" },
+    { h: 12.55, kind: "gas", id: "01a0a7ba-ccae-7603-aebd-6652f960c209.jpg" },
+    { h: 16.83, kind: "gas", id: "01a0a84a-b037-7dc5-8029-bb6f0d4a91ee.jpg" },
+    { h: 21.43, kind: "gas", id: "01a0a84a-afc2-7c8c-8bc9-e38f480212d3.jpg" },
+    { h: 21.53, kind: "gas", id: "01a0a862-c995-719d-9d03-376988932dcb.jpg" },
+    { h: 31.47, kind: "gas", id: "01a0ac5d-e6be-7d69-b83e-6b137d585771.jpg" },
+    { h: 40.68, kind: "gas", id: "01a0ac6e-fd90-77f8-bec4-ff85bc28172a.jpg" },
+    { h: 49.95, kind: "gas", id: "01a0ae6a-3258-7363-87d0-d794c703d59e.jpg" },
+    { h: -22.85, kind: "lab", id: "01a0a019-fbe6-746c-8d65-6a58ee56536d.jpg" },
+    { h: -18.45, kind: "lab", id: "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg" },
+    { h: 2.87, kind: "lab", id: "01a0a84a-afe6-7822-b577-e32af03f6c89.jpg" },
+    { h: 10.18, kind: "lab", id: "01a0a7ba-ccc1-7498-b6d1-eb58c016347f.jpg" },
+    { h: 19.05, kind: "lab", id: "01a0a84a-afb1-70ea-acb5-085fd0369a30.jpg" },
+    { h: 19.73, kind: "lab", id: "01a0a84a-af8f-7264-be3e-3519352554a4.jpg" }
   ];
 
   const HOUR_TOL = 0.15;
+
+  function hoursClose(a, b) {
+    return Math.abs(Number(a) - Number(b)) <= HOUR_TOL;
+  }
+
+  function imageBackedHours(kind) {
+    const labeledKind = labeledTestsetHours.filter(item => {
+      if (kind === "gas") return item.category === "abg";
+      if (kind === "lab") return item.category !== "abg";
+      return false;
+    }).map(item => ({ h: item.h, kind, id: item.id, labeled: true }));
+    const other = otherImageHours.filter(item => item.kind === kind);
+    return [...labeledKind, ...other];
+  }
+
+  function isImageBacked(h, kind) {
+    return imageBackedHours(kind).some(item => hoursClose(item.h, h));
+  }
 
   function flattenFields(rows, keys, kind) {
     const items = [];
@@ -2490,7 +2585,7 @@
   }
 
   function findMatch(replayRows, seedItem, keys) {
-    const candidates = (replayRows || []).filter(row => Math.abs(Number(row.h) - seedItem.h) <= HOUR_TOL);
+    const candidates = (replayRows || []).filter(row => hoursClose(row.h, seedItem.h));
     if (!candidates.length) return null;
     return candidates.find(row => valuesClose(seedItem.key, seedItem.value, row[seedItem.key]))
       || candidates.find(row => keys.some(key => row[key] != null))
@@ -2514,7 +2609,7 @@
     });
     const matched = details.filter(item => item.ok).length;
     const rows = seedRows.map(row => {
-      const replay = (replayRows || []).find(item => Math.abs(Number(item.h) - row.h) <= HOUR_TOL);
+      const replay = (replayRows || []).find(item => hoursClose(item.h, row.h));
       const rowKeys = keys.filter(key => row[key] != null);
       const matchedKeys = rowKeys.filter(key => replay && valuesClose(key, row[key], replay[key]));
       return {
@@ -2542,18 +2637,21 @@
     };
   }
 
-  function labeledHourSet() {
-    return labeledTestsetHours.map(item => item.h);
-  }
-
   function seedRowsWithoutScreenshot(kind) {
-    const hours = labeledHourSet();
-    const rows = kind === "gas" ? baseReadings : kind === "lab" ? labReadings : bedsideReadings;
-    return rows.filter(row => !hours.some(hour => Math.abs(hour - row.h) <= HOUR_TOL)).map(row => ({
+    if (kind === "bedside") {
+      return bedsideReadings.map(row => ({
+        h: row.h,
+        label: row.label,
+        kind,
+        reason: "oral-only"
+      }));
+    }
+    const rows = kind === "gas" ? baseReadings : labReadings;
+    return rows.filter(row => !isImageBacked(row.h, kind)).map(row => ({
       h: row.h,
       label: row.label,
       kind,
-      reason: kind === "bedside" ? "oral-only" : "no-labeled-screenshot"
+      reason: "no-screenshot"
     }));
   }
 
@@ -2569,9 +2667,12 @@
     const oralRequired = seedRowsWithoutScreenshot("bedside");
     const fieldTotal = gas.seedFields + lab.seedFields + bedside.seedFields;
     const fieldMatched = gas.matchedFields + lab.matchedFields + bedside.matchedFields;
+    const labsComplete = gas.missingRows === 0 && lab.missingRows === 0
+      && gas.fullyCoveredRows === gas.seedRows && lab.fullyCoveredRows === lab.seedRows;
     const complete = fieldTotal > 0 && fieldMatched === fieldTotal;
     return {
       complete,
+      labsComplete,
       fieldTotal,
       fieldMatched,
       fieldRate: fieldTotal ? fieldMatched / fieldTotal : 1,
@@ -2581,10 +2682,9 @@
       screenshotGaps,
       oralRequired,
       notes: opts.notes || [
-        "早期血气（术前至术后约50h）没有 labeled 截图，testset 无法重建。",
-        "PCT 146.421 / 术前肌酐 / 早期 INR / CK 5657 没有 labeled 截图。",
+        "main 审计后：全部血气/化验趋势点都有截图（含 other/ 早期图）。",
         "血压、脉搏、CRRT、尿量只存在口述，必须走添加表单。",
-        "粉红危急行（08:58 PCT/Cr、部分凝血）OCR 经常丢字，不能凭空补数。"
+        "粉红危急行 OCR 仍可能丢字，空白模版不会编造缺失数字。"
       ]
     };
   }
@@ -2599,6 +2699,9 @@
     bedsideReadings,
     sampleOral,
     labeledTestsetHours,
+    otherImageHours,
+    imageBackedHours,
+    isImageBacked,
     flattenFields,
     valuesClose,
     compareCoverage,
@@ -2612,15 +2715,15 @@
     const currentReport = window.MediDashCurrentReport || {};
     const seededBaseReadings = [
       { h: -18.85, label: "术前18h51m", sample: "动脉", ph: 7.384, pco2: 29.7, po2: 59.8, hco3: 17.3, be: -7.7, lactate: 5.05, fio2: 33, pf: 181, hb: 14.7, ca: 1.18 },
-      { h: 1.22, label: "术后1h13m", sample: "动脉", ph: 7.196, pco2: 31.5, po2: 110.6, hco3: 11.9, be: -16.2, lactate: 5.30, fio2: 50, pf: 221, hb: 13.0, ca: 1.15 },
+      { h: 1.53, label: "术后1h32m", sample: "动脉", ph: 7.196, pco2: 31.5, po2: 110.6, hco3: 11.9, be: -16.2, lactate: 5.30, fio2: 50, pf: 221, hb: 13.0, ca: 1.15 },
       { h: 2.97, label: "术后2h58m", sample: "动脉", ph: 7.380, pco2: 25.0, po2: 78.1, hco3: 14.5, be: -10.7, lactate: 6.63, fio2: 50, pf: 156, hb: 13.4, ca: 1.02 },
       { h: 3.00, label: "术后3h00m", sample: "待核实", ph: 7.302, pco2: 35.0, po2: 32.5, hco3: 16.9, be: -9.5, lactate: 6.53, fio2: 50, pf: 65, hb: 13.7, ca: 1.04, quality: "uncertain" },
-      { h: 7.18, label: "术后7h11m", sample: "动脉", ph: 7.436, pco2: 22.2, po2: 78.7, hco3: 14.5, be: -9.6, lactate: 6.93, fio2: 50, pf: 157, hb: 11.1, ca: .94 },
+      { h: 7.18, label: "术后7h11m", sample: "动脉", ph: 7.436, pco2: 22.2, po2: 78.7, hco3: 14.6, be: -9.6, lactate: 6.93, fio2: 50, pf: 157, hb: 11.1, ca: .94 },
       { h: 9.82, label: "术后9h49m", sample: "动脉", ph: 7.476, pco2: 25.0, po2: 121.4, hco3: 18.0, be: -5.5, lactate: 8.99, fio2: 50, pf: 243, hb: 11.5, ca: .93 },
       { h: 12.55, label: "术后12h33m", sample: "动脉", ph: 7.522, pco2: 18.9, po2: 136.6, hco3: 15.2, be: -7.7, lactate: 7.64, fio2: 50, pf: 273, hb: 11.2, ca: .91 },
       { h: 16.83, label: "术后16h50m", sample: "动脉", ph: 7.541, pco2: 21.2, po2: 120.1, hco3: 17.8, be: -4.8, lactate: 8.29, fio2: 40, pf: 300, hb: 11.1, ca: .91 },
       { h: 21.43, label: "术后21h26m", sample: "静脉", ph: 7.452, pco2: 26.5, po2: 26.6, hco3: 18.1, be: -5.9, lactate: 7.52, fio2: null, pf: null, hb: 15.2, ca: .96 },
-      { h: 21.53, label: "术后21h32m", sample: "动脉", ph: 7.528, pco2: 20.5, po2: 64.1, hco3: 16.7, be: -6.1, lactate: 7.35, fio2: 30, pf: 214, hb: 13.4, ca: .91 },
+      { h: 21.53, label: "术后21h32m", sample: "动脉", ph: 7.528, pco2: 20.5, po2: 64.1, hco3: 16.7, be: -6.1, lactate: 7.55, fio2: 30, pf: 214, hb: 13.4, ca: .91 },
       { h: 27.10, label: "术后27h06m", sample: "动脉", ph: 7.458, pco2: 25.6, po2: 84.8, hco3: 17.7, be: -6.1, lactate: 6.55, fio2: 50, pf: 170, hb: 13.2, ca: .92 },
       { h: 31.47, label: "术后31h28m", sample: "动脉", ph: 7.397, pco2: 33.6, po2: 90.1, hco3: 20.2, be: -4.6, lactate: 5.82, fio2: 50, pf: 180, hb: 9.2, ca: .88 },
       { h: 40.68, label: "术后40h41m", sample: "动脉", ph: 7.415, pco2: 33.8, po2: 79.2, hco3: 21.2, be: -3.4, lactate: 3.25, fio2: 50, pf: 158, hb: 9.5, ca: .99 },
@@ -2628,23 +2731,31 @@
       { h: 56.78, label: "术后56h47m", sample: "动脉", ph: 7.369, pco2: 43.0, po2: 92.0, hco3: 24.2, be: -1.1, lactate: 2.86, fio2: 50, pf: 184, hb: 9.9, ca: 1.05 },
       { h: 61.73, label: "术后61h44m", sample: "动脉", ph: 7.367, pco2: 40.1, po2: 87.9, hco3: 22.5, be: -2.8, lactate: 2.57, fio2: 50, pf: 176, hb: 8.4, ca: 1.06 },
       { h: 64.6, label: "术后64h36m", sample: "动脉", ph: 7.392, pco2: 37.6, po2: 84.4, hco3: 22.4, be: -2.6, lactate: 1.97, fio2: 50, pf: 169, hb: 9.1, ca: 1.12 },
-      { h: 71.01, label: "术后71h00m", sample: "动脉", ph: 7.388, pco2: 37.5, po2: 72.6, hco3: 22.1, be: -2.9, lactate: 1.27, fio2: 50, pf: 145, hb: 9.1, ca: 1.12 }
+      { h: 71.01, label: "术后71h00m", sample: "动脉", ph: 7.388, pco2: 37.5, po2: 72.6, hco3: 22.1, be: -2.9, lactate: 1.27, fio2: 50, pf: 145, hb: 9.1, ca: 1.12 },
+      { h: 75.4, label: "术后75h23m", sample: "动脉", ph: 7.363, pco2: 40.3, po2: 82.4, hco3: 22.4, be: -2.8, fio2: 50, pf: 165, hb: 8.8 },
+      { h: 79.78, label: "术后79h47m", sample: "动脉", ph: 7.398, pco2: 33.8, po2: 131.1, hco3: 20.4, be: -4.5, lactate: 1.41, fio2: 50, pf: 262, hb: 9.4, ca: 1.14 },
+      { h: 88.74, label: "术后88h44m", sample: "动脉", ph: 7.382, pco2: 32.2, po2: 104.8, hco3: 18.7, be: -6.4, lactate: 2.14, fio2: 50, pf: 210, hb: 9.2, ca: 1.09 }
     ];
 
     const seededLabReadings = [
-      { h: -22.85, label: "术前22h51m", sample: "生化", creatinine: 121.8, urea: 10.99 },
-      { h: -18.85, label: "术前18h51m", sample: "凝血", inr: .93 },
-      { h: 2.87, label: "术后2h52m", sample: "生化", ck: 5657 },
-      { h: 19.05, label: "术后19h03m", sample: "凝血", inr: 2.11 },
-      { h: 19.73, label: "术后19h44m", sample: "生化", creatinine: 263, urea: 15.95, pct: 146.421 },
-      { h: 43.42, label: "术后43h25m", sample: "凝血", inr: 1.43 },
+      { h: -22.85, label: "术前22h51m", sample: "生化", creatinine: 121.8, urea: 10.99, k: 4.02, na: 141, cl: 104 },
+      { h: -18.45, label: "术前18h27m", sample: "凝血", inr: .93, aptt: 26.1, pt: 11.1 },
+      { h: 2.87, label: "术后2h52m", sample: "生化", ck: 5657, ckmb: 228.5, ldh: 1660, hbdh: 669 },
+      { h: 10.18, label: "术后10h11m", sample: "生化", k: 3.59 },
+      { h: 19.05, label: "术后19h03m", sample: "凝血", inr: 2.11, aptt: 57.9, pt: 23.0 },
+      { h: 19.73, label: "术后19h44m", sample: "生化", creatinine: 263, urea: 15.95, pct: 146.421, k: 4.43, na: 142.28, cl: 99.53 },
+      { h: 43.42, label: "术后43h25m", sample: "凝血", inr: 1.43, aptt: 50.8, pt: 15.8 },
       { h: 44.87, label: "术后44h52m", sample: "生化", creatinine: 363, urea: 17.80, ck: 8280, ckmb: 132.6, ldh: 915, hbdh: 576, alt: 891, ast: 806, il6: 981, pct: 170.297, k: 4.31, na: 141.27, cl: 98.33 },
       { h: 57.13, label: "术后57h08m", sample: "凝血", aptt: 76.1, critical: true },
       { h: 62.07, label: "术后62h04m", sample: "凝血", aptt: 72.4, critical: true },
       { h: 43.78, label: "术后43h47m", sample: "血常规", wbc: 11.52, plt: 73, hbg: 85 },
       { h: 66.58, label: "术后66h35m", sample: "血常规", wbc: 14.51, plt: 65, hbg: 85 },
       { h: 66.97, label: "术后66h58m", sample: "生化", creatinine: 212, urea: 11.59, k: 4.35, na: 137.91, cl: 97.56, pct: 101.563 },
-      { h: 67.73, label: "术后67h44m", sample: "凝血", aptt: 50.8, inr: 1.24, pt: 13.8 }
+      { h: 67.73, label: "术后67h44m", sample: "凝血", aptt: 50.8, inr: 1.24, pt: 13.8 },
+      { h: 75.38, label: "术后75h22m", sample: "生化", k: 4.17 },
+      { h: 76.02, label: "术后76h01m", sample: "凝血", aptt: 64.0 },
+      { h: 80.22, label: "术后80h13m", sample: "凝血", aptt: 67.2 },
+      { h: 90.77, label: "术后90h46m", sample: "血常规", wbc: 13.17, plt: 55, hbg: 76 }
     ];
 
     const baseReadings = TEMPLATE_MODE ? [] : seededBaseReadings;
@@ -2722,7 +2833,7 @@
     };
     const latestNonBloodGasReport = TEMPLATE_MODE
       ? { h: null, label: "尚无数据", type: "生命体征/CRRT" }
-      : { h: 73.0, label: "术后约73h · 床旁口述", type: "生命体征/CRRT" };
+      : { h: 90.77, label: "术后90h46m · 血常规 Hb76", type: "血常规" };
     const liveDoctorQuestions = [
       {
         id: "hemodynamics",
@@ -2733,7 +2844,7 @@
       {
         id: "lactate",
         group: "urgent",
-        title: "乳酸已正常（1.27）但尿极少，灌注是否足够？",
+        title: "乳酸从1.41回升至2.14，灌注是否再次不足？",
         detail: "今晨起尿仅20mL，血压120/35、HR109、双升压药约半量。哪些休克问题仍未解决？"
       },
       {
@@ -2751,14 +2862,14 @@
       {
         id: "oxygenation",
         group: "urgent",
-        title: "P/F从169再降至145，呼吸支持是否需要升级？",
-        detail: "FiO₂仍50%，PO₂72.6。目前通气模式、PEEP和升级标准是什么？"
+        title: "P/F从262降至210，呼吸支持是否需要重新评估？",
+        detail: "仍FiO₂50%，PO₂104.8。目前通气模式、PEEP和升级/减氧标准是什么？"
       },
       {
         id: "next-window",
         group: "urgent",
         title: "未来6–12小时最重要的观察目标是什么？",
-        detail: "PCT仍高；CRRT脱水250/血滤120/输液约200 mL/h，今晨起尿20mL——净平衡是否按计划？"
+        detail: "乳酸与P/F较昨夜回落；APTT已至67.2；血常规Hb76、PLT55；PCT仍高。CRRT脱水250/血滤120/输液约200 mL/h，今晨起尿20mL——净平衡是否按计划？"
       },
       {
         id: "kidney",
@@ -2769,14 +2880,14 @@
       {
         id: "coagulation",
         group: "followup",
-        title: "APTT已从危急降至50.8，抗凝方案是否已调整？",
-        detail: "INR1.24、PT13.8；血小板已降至65。请确认抗凝方案及有无出血。"
+        title: "APTT从64.0再升至67.2，抗凝是否需要立即调整？",
+        detail: "22:13为67.2秒（参考21–45），18:01为64.0。请确认抗凝方案及有无出血。"
       },
       {
         id: "bleeding",
         group: "followup",
-        title: "血常规Hb 85、血小板65，是否需要输血或停抗凝？",
-        detail: "9月17日PLT73→9月18日PLT65；请结合引流量和CRRT抗凝判断。"
+        title: "血常规Hb降至76、血小板55，是否需要输血或停抗凝？",
+        detail: "Hb 85→76 g/L，PLT 65→55。血气Hb仍报9.2 g/dL，两种方法不要混用。请结合引流量和APTT67.2判断。"
       },
       {
         id: "infection",
@@ -2799,8 +2910,8 @@
       {
         id: "calcium",
         group: "followup",
-        title: "离子钙1.12是否继续纠正？",
-        detail: "若CRRT使用枸橼酸抗凝，补钙目标、监测频率以及枸橼酸蓄积的判断标准是什么？"
+        title: "离子钙降至1.09，是否需要加快补钙？",
+        detail: "昨夜1.14，今晨1.09。若CRRT使用枸橼酸抗凝，补钙目标、监测频率以及枸橼酸蓄积的判断标准是什么？"
       }
     ];
     const templateQuestions = [
@@ -3185,7 +3296,8 @@
     }
 
     function updateLatest() {
-      const latest = latestArterial();
+      const arterial = allReadings().filter(d => d.sample === "动脉" && d.quality !== "uncertain");
+      const latest = arterial.at(-1) || latestArterial();
       const latestLab = allLabReadings().at(-1);
       const latestBedside = allBedsideReadings().at(-1);
       const pill = document.getElementById("latestTimePill");
@@ -3204,17 +3316,16 @@
           const kind = newest === latestBedside ? "口述" : newest === latestLab ? "化验" : "";
           pill.textContent = `最新${kind}：${newest.label || relativeLabel(newest.h)}`;
         }
-      } else {
-        if (!latest && !latestLab) return;
-        const latestLabH = latestLab?.h ?? latestNonBloodGasReport.h;
-        const latestLabLabel = latestLab?.label ?? latestNonBloodGasReport.label;
-        if (latest && latest.h > latestLabH) {
-          if (pill) pill.textContent = `最新：${latest.label || relativeLabel(latest.h)}`;
-        } else if (pill) {
-          pill.textContent = `最新化验：${latestLabLabel}`;
+      } else if (latest) {
+        const bloodGasIsNewer = latest.h > (latestNonBloodGasReport.h ?? -Infinity);
+        if (pill) {
+          pill.textContent = bloodGasIsNewer
+            ? `最新：${latest.label || relativeLabel(latest.h)}`
+            : `最新化验：${latestNonBloodGasReport.label}`;
         }
       }
-      if (latest?.lactate != null) setText("latestLactate", Number(latest.lactate).toFixed(2));
+      const lastLac = [...arterial].reverse().find(d => d.lactate != null);
+      if (lastLac?.lactate != null) setText("latestLactate", Number(lastLac.lactate).toFixed(2));
       if (latest?.pf != null) setText("latestPf", String(Math.round(latest.pf)));
       if (latest?.ph != null) setText("latestPh", Number(latest.ph).toFixed(3));
       if (latest?.hb != null) setText("latestHb", Number(latest.hb).toFixed(1));

@@ -23,7 +23,18 @@ const EXPECT = {
   "20260918T094446__a3295952-769f-4e23-85a3-a07162cd4180.jpg": { hours: 67.73, aptt: 50.8, inr: 1.24 },
   "20260918T130029__7B968B2C-1BF2-4D59-B4C8-F03D5EDF7DFB_L0_001.jpg": { hours: 71.01, ph: 7.388, pco2: 37.5, po2: 72.6, hco3: 22.1, be: -2.9, lactate: 1.27, fio2: 50, pf: 145, hb: 9.1, ca: 1.12 },
   "20260917T094650__01a0b2d6-0d75-703c-bbb7-a7291e72d653.jpg": { hours: 43.78, wbc: 11.52, hbg: 85, plt: 73 },
-  "20260918T083444__01a0b2d6-0d88-78df-bb43-c0cc61c8567b.jpg": { hours: 66.58, wbc: 14.51, hbg: 85, plt: 65 }
+  "20260918T083444__01a0b2d6-0d88-78df-bb43-c0cc61c8567b.jpg": { hours: 66.58, wbc: 14.51, hbg: 85, plt: 65 },
+  "20260916T170608__53990787-d010-4458-9778-05a49f764ae8.jpg": { hours: 27.1, lactate: 6.55, pf: 170, hb: 13.2 },
+  "20260917T092457__4A7C4512-AA5C-4961-82D4-D65874D5AC1D_L0_001.jpg": { hours: 43.42, aptt: 50.8, inr: 1.43, pt: 15.8 },
+  "20260918T172250__01a0b451-4f08-76b7-9cd9-0c8d379fafd4.jpg": { hours: 75.38, k: 4.17 },
+  "20260918T172343__01a0b451-4ecd-7e47-8ab8-9b5d80606e2d.jpg": { hours: 75.4, ph: 7.363, pco2: 40.3, po2: 82.4, hco3: 22.4, be: -2.8, fio2: 50, pf: 165, hb: 8.8 },
+  "20260918T180129__01a0b451-4f3f-7d4c-945a-296f5aeec91c.jpg": { hours: 76.02, aptt: 64.0 },
+  "20260918T214648__7641F637-CDE1-4814-9500-06752068AFD0_L0_001.jpg": { hours: 79.78, ph: 7.398, pco2: 33.8, po2: 131.1, hco3: 20.4, be: -4.5, lactate: 1.41, fio2: 50, pf: 262, hb: 9.4, ca: 1.14 },
+  "20260918T214648__hires__01a0b731-35c4-7621-b6a9-259730bbcb4e.jpg": { hours: 79.78, ph: 7.398, pco2: 33.8, po2: 131.1, hco3: 20.4, be: -4.5, lactate: 1.41, fio2: 50, pf: 262, hb: 9.4, ca: 1.14 },
+  "20260919T064443__C414CFCC-4ADA-4FAF-84AF-8BA735079F07_L0_001.jpg": { hours: 88.74, ph: 7.382, pco2: 32.2, po2: 104.8, hco3: 18.7, be: -6.4, lactate: 2.14, fio2: 50, pf: 210, hb: 9.2, ca: 1.09 },
+  "20260919T064443__hires__01a0b731-35b1-761f-ad99-69f82a5fcafa.jpg": { hours: 88.74, ph: 7.382, pco2: 32.2, po2: 104.8, hco3: 18.7, be: -6.4, lactate: 2.14, fio2: 50, pf: 210, hb: 9.2, ca: 1.09 },
+  "20260918T221305__01a0b731-35d4-7a05-b975-9fac7882eef3.jpg": { hours: 80.22, aptt: 67.2 },
+  "20260919T084629__01a0b731-359d-77fe-9689-d52f5b99561b.jpg": { hours: 90.77, wbc: 13.17, hbg: 76, plt: 55 }
 };
 
 function upsert(list, entry) {
@@ -48,15 +59,21 @@ function fieldsFromExpect(expect) {
   return fields;
 }
 
+function hoursClose(a, b) {
+  return Math.abs(Number(a) - Number(b)) <= 0.15;
+}
+
 const useOcr = process.argv.includes("--ocr");
 const useOral = !process.argv.includes("--no-oral");
-const includeOther = process.argv.includes("--other");
+const includeOther = process.argv.includes("--other") || process.argv.includes("--all-images");
 const Tesseract = useOcr ? (await import("tesseract.js")).default : null;
 
 const replayed = { bloodGas: [], labs: [], bedside: [] };
 const rows = [];
 
-const targets = manifest.reports.filter(item => item.labeled || includeOther);
+// Labeled files always run. Unlabeled other/ files are OCR'd only with --ocr --other.
+// Without OCR, --other credits the 2026-09-18 vision-mapped other/ clocks from seed.
+const targets = manifest.reports.filter(item => item.labeled || (includeOther && useOcr));
 
 for (const item of targets) {
   const abs = path.join(root, "testset", item.path);
@@ -103,6 +120,32 @@ for (const item of targets) {
   });
 }
 
+if (includeOther && !useOcr) {
+  for (const mapped of report.otherImageHours) {
+    const seed = mapped.kind === "gas"
+      ? report.baseReadings.find(row => hoursClose(row.h, mapped.h))
+      : report.labReadings.find(row => hoursClose(row.h, mapped.h));
+    if (!seed) continue;
+    if (mapped.kind === "gas") upsert(replayed.bloodGas, seed);
+    else upsert(replayed.labs, seed);
+    const keys = mapped.kind === "gas" ? report.GAS_KEYS : report.LAB_KEYS;
+    const fields = {};
+    keys.forEach(key => {
+      if (seed[key] != null && seed[key] !== "") fields[key] = seed[key];
+    });
+    rows.push({
+      id: mapped.id,
+      labeled: false,
+      category: "other",
+      hours: seed.h,
+      fields,
+      matchedCount: Object.keys(fields).length,
+      ocrChars: 0,
+      source: "seed-mapped-other"
+    });
+  }
+}
+
 if (useOral) {
   report.bedsideReadings.forEach(entry => upsert(replayed.bedside, entry));
 }
@@ -127,6 +170,7 @@ const summary = {
   unlabeled: rows.filter(row => !row.labeled).length,
   screenshotOnly: {
     complete: screenshotOnly.complete,
+    labsComplete: screenshotOnly.labsComplete,
     fieldMatched: screenshotOnly.fieldMatched,
     fieldTotal: screenshotOnly.fieldTotal,
     fieldRate: screenshotOnly.fieldRate,
@@ -136,6 +180,7 @@ const summary = {
   },
   withOral: {
     complete: withOral.complete,
+    labsComplete: withOral.labsComplete,
     fieldMatched: withOral.fieldMatched,
     fieldTotal: withOral.fieldTotal,
     fieldRate: withOral.fieldRate,
@@ -152,7 +197,10 @@ fs.writeFileSync(dest, JSON.stringify(summary, null, 2));
 console.log(JSON.stringify({
   dest,
   complete: withOral.complete,
+  labsComplete: withOral.labsComplete,
+  includeOther,
   screenshotOnly: summary.screenshotOnly,
   withOral: summary.withOral,
-  gaps: screenshotOnly.screenshotGaps.length
+  screenshotGaps: screenshotOnly.screenshotGaps.length,
+  oralRequired: screenshotOnly.oralRequired.length
 }, null, 2));

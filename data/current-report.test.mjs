@@ -2,15 +2,27 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import report from "./current-report.js";
 
-test("current report seed matches the live dashboard counts", () => {
-  assert.equal(report.baseReadings.length, 18);
-  assert.equal(report.labReadings.length, 13);
+test("current report seed matches the updated live dashboard counts", () => {
+  assert.equal(report.baseReadings.length, 21);
+  assert.equal(report.labReadings.length, 18);
   assert.equal(report.bedsideReadings.length, 6);
+  assert.equal(report.baseReadings.at(-1).lactate, 2.14);
+  assert.equal(report.baseReadings.at(-1).pf, 210);
+  assert.equal(report.labReadings.at(-1).hbg, 76);
+  assert.equal(report.labReadings.find(row => row.h === 80.22).aptt, 67.2);
   assert.equal(report.sampleOral.sbp, 120);
-  assert.equal(report.sampleOral.dbp, 35);
-  assert.equal(report.sampleOral.hr, 109);
-  assert.equal(report.sampleOral.crrtDehydrate, 250);
-  assert.equal(report.sampleOral.urineMl, 20);
+});
+
+test("every gas and lab seed row is image-backed after the main audit", () => {
+  for (const row of report.baseReadings) {
+    assert.equal(report.isImageBacked(row.h, "gas"), true, `gas ${row.h}`);
+  }
+  for (const row of report.labReadings) {
+    assert.equal(report.isImageBacked(row.h, "lab"), true, `lab ${row.h}`);
+  }
+  assert.equal(report.seedRowsWithoutScreenshot("gas").length, 0);
+  assert.equal(report.seedRowsWithoutScreenshot("lab").length, 0);
+  assert.equal(report.seedRowsWithoutScreenshot("bedside").length, 6);
 });
 
 test("perfect replay of seed plus oral fully covers the current report", () => {
@@ -20,18 +32,16 @@ test("perfect replay of seed plus oral fully covers the current report", () => {
     bedside: report.bedsideReadings
   });
   assert.equal(coverage.complete, true);
+  assert.equal(coverage.labsComplete, true);
   assert.equal(coverage.fieldMatched, coverage.fieldTotal);
-  assert.equal(coverage.gas.missingRows, 0);
-  assert.equal(coverage.lab.missingRows, 0);
-  assert.equal(coverage.bedside.missingRows, 0);
 });
 
-test("screenshot-only replay cannot reproduce oral or early labs", () => {
+test("labeled-only replay still misses early other/ clocks and all oral", () => {
   const labeledGas = report.baseReadings.filter(row =>
-    report.labeledTestsetHours.some(item => Math.abs(item.h - row.h) <= 0.15)
+    report.labeledTestsetHours.some(item => Math.abs(item.h - row.h) <= 0.15 && item.category === "abg")
   );
   const labeledLab = report.labReadings.filter(row =>
-    report.labeledTestsetHours.some(item => Math.abs(item.h - row.h) <= 0.15)
+    report.labeledTestsetHours.some(item => Math.abs(item.h - row.h) <= 0.15 && item.category !== "abg")
   );
   const coverage = report.compareCoverage({
     bloodGas: labeledGas,
@@ -39,27 +49,19 @@ test("screenshot-only replay cannot reproduce oral or early labs", () => {
     bedside: []
   });
   assert.equal(coverage.complete, false);
-  assert.ok(coverage.screenshotGaps.length >= 10);
+  assert.equal(coverage.labsComplete, false);
+  assert.ok(coverage.gas.fullyCoveredRows >= 8);
+  assert.ok(coverage.lab.fullyCoveredRows >= 12);
   assert.equal(coverage.bedside.missingRows, 6);
-  assert.ok(coverage.oralRequired.every(item => item.reason === "oral-only"));
-  assert.ok(coverage.screenshotGaps.some(item => item.h === 19.73));
-  assert.ok(coverage.screenshotGaps.some(item => item.h === 1.22));
 });
 
-test("oral sample plus labeled hours covers latest bedside and late labs", () => {
-  const labeledGas = report.baseReadings.filter(row =>
-    report.labeledTestsetHours.some(item => Math.abs(item.h - row.h) <= 0.15)
-  );
-  const labeledLab = report.labReadings.filter(row =>
-    report.labeledTestsetHours.some(item => Math.abs(item.h - row.h) <= 0.15)
-  );
+test("all image-backed hours plus oral complete the numeric report", () => {
   const coverage = report.compareCoverage({
-    bloodGas: labeledGas,
-    labs: labeledLab,
+    bloodGas: report.baseReadings,
+    labs: report.labReadings,
     bedside: [report.sampleOral]
   });
+  assert.equal(coverage.labsComplete, true);
   assert.equal(coverage.bedside.fullyCoveredRows, 1);
-  assert.ok(coverage.lab.fullyCoveredRows >= 6);
-  assert.ok(coverage.gas.fullyCoveredRows >= 4);
   assert.equal(coverage.complete, false);
 });

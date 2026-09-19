@@ -23,7 +23,8 @@ The empty template is for replay tests: import every file in `testset/` plus ora
 
 ```bash
 node scripts/build-template.mjs
-node scripts/replay-coverage.mjs
+node scripts/replay-coverage.mjs            # labeled LIS files only
+node scripts/replay-coverage.mjs --other    # also credit mapped other/ early clocks
 ```
 
 Parser checks:

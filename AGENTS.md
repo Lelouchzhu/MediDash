@@ -42,10 +42,12 @@ Self-contained mobile perioperative monitoring dashboard for family-side trend t
 
 ## Latest snapshot (see CONTEXT.md)
 
-- ABG 13:00: lactate **1.27**, P/F **145**, FiO₂ 50%
+- ABG 06:44 (88h44m): lactate **2.14**, P/F **210**, FiO₂ 50%
+- CBC 08:46 (90h46m): Hb **76**, PLT **55**, WBC 13.17
+- APTT **67.2** (80h13m); was 64.0 at 76h
 - Bedside ~73h: BP **120/35**, HR **109**, dual pressors ~½ max
 - CRRT on; urine since morning **20 mL**
-- PCT **146.421 → 170.297 → 101.563**; APTT 50.8; Cr 212
+- PCT **146.421 → 170.297 → 101.563**; Cr 212
 
 ## Mandatory on every new report image
 

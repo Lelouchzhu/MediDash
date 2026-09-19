@@ -49,7 +49,10 @@ To see whether the **empty template** can rebuild the live report from these fil
 
 ```bash
 node scripts/build-template.mjs
-node scripts/replay-coverage.mjs
+node scripts/replay-coverage.mjs            # labeled LIS files only
+node scripts/replay-coverage.mjs --other    # also credit mapped other/ early clocks
 ```
+
+Default labeled-only coverage still misses early `other/` clocks. `--other` without `--ocr` credits the vision-mapped `other/` hours from `data/current-report.js` (all gas/lab rows are image-backed after the 2026-09-18 audit). Oral BP / pulse / CRRT / urine still have to be typed into the add form.
 
 Open `template.html` and use **添加最新结果** (screenshot + 口述血压/脉搏/CRRT).
