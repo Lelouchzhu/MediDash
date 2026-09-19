@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MediDash 预览入口</title>
+  <style>
+    :root { color-scheme: light; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      background: #f2f5f2;
+      color: #17342f;
+    }
+    main { max-width: 420px; margin: 0 auto; padding: 28px 18px 48px; }
+    h1 { font-size: 1.35rem; margin: 0 0 8px; }
+    p { color: #62746f; line-height: 1.55; }
+    a.card {
+      display: block;
+      margin: 14px 0;
+      padding: 18px 16px;
+      border-radius: 18px;
+      background: #fff;
+      color: inherit;
+      text-decoration: none;
+      box-shadow: 0 12px 38px rgba(26, 56, 48, .08);
+    }
+    a.card strong { display: block; font-size: 1.05rem; margin-bottom: 6px; }
+    .note { font-size: .85rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>MediDash 预览</h1>
+    <p>这两页在功能分支上，<strong>不会覆盖 main</strong>。识图版带当前报告和截图识别；空白版从零录入。</p>
+    <a class="card" href="https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/live.html">
+      <strong>识图版</strong>
+      已有化验种子 + 从截图/文字识别添加结果
+    </a>
+    <a class="card" href="https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/template.html">
+      <strong>空白版</strong>
+      不含预置化验，对照当前报告看覆盖率
+    </a>
+    <p class="note">备用（相对资源更稳）：<br>
+      <a href="https://raw.githack.com/Lelouchzhu/MediDash/cursor/empty-template-replay-b98e/live.html">识图版 raw.githack</a><br>
+      <a href="https://raw.githack.com/Lelouchzhu/MediDash/cursor/empty-template-replay-b98e/template.html">空白版 raw.githack</a>
+    </p>
+  </main>
+</body>
+</html>

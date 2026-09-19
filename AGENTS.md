@@ -23,7 +23,9 @@ Self-contained mobile perioperative monitoring dashboard for family-side trend t
 | Path | Role |
 |------|------|
 | `index.html` | Live dashboard (seeded report + screenshot ingest + oral add form). |
-| `template.html` | Empty replay shell (no seed labs). Rebuild with `node scripts/build-template.mjs`. |
+| `live.html` | Standalone 识图版 (inlined parser + seed). Built by `node scripts/build-template.mjs`. |
+| `template.html` | Standalone 空白版 (no seed labs). Same builder. |
+| `previews.html` | Public hub with htmlpreview / raw.githack links for both pages. |
 | `data/current-report.js` | Extract of the live seed + oral bedside series for coverage compare. |
 | `CONTEXT.md` | Living clinical memory and naming traps. |
 | `docs/transcripts/` | Dated summaries of long agent runs (not full chat dumps). |
@@ -72,10 +74,19 @@ The add-result dialog accepts a new test-result screenshot without waiting for a
 - Client-side OCR (`chi_sim+eng`) fills the form when it can; review signs and hours before save
 - Images are previewed only; they are not uploaded and not written into `localStorage`
 - Oral / bedside fields: SBP/DBP, pulse, RR, pressors, CRRT dehydrate/HF/IV, urine
-- Empty replay page: `template.html` or `index.html?mode=template` (separate `localStorage`)
+- Standalone pages: `live.html` (识图版, seeded) and `template.html` (空白版); or `index.html?mode=template` (separate `localStorage`)
 - Coverage: `node scripts/replay-coverage.mjs` against `data/current-report.js`
 - Regression: `fixtures/` synthetic shots plus labeled files in `testset/reports/`
 
 ## Preview
 
+`main` (canonical; do not overwrite from feature branches):
+
 https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
+
+Feature-branch web pages (`cursor/empty-template-replay-b98e`, not `main`):
+
+- Hub: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/previews.html
+- 识图版: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/live.html
+- 空白版: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/template.html
+- Backup: https://raw.githack.com/Lelouchzhu/MediDash/cursor/empty-template-replay-b98e/live.html · https://raw.githack.com/Lelouchzhu/MediDash/cursor/empty-template-replay-b98e/template.html
