@@ -1218,7 +1218,7 @@
       <span class="notice-icon">◻</span>
       <div>
         <strong>空白模版 · 不含预置化验</strong>
-        用「添加最新结果」导入全部测试截图，并填写口述（血压、脉搏、CRRT、尿量）。本页对照当前报告计算覆盖率；截图没有的早期血气和床旁数字不会被自动编造。
+        用「添加最新结果」导入全部测试截图（含 other/ 早期图），并填写口述（血压、脉搏、CRRT、尿量）。本页对照当前报告计算覆盖率；床旁数字不会被自动编造。
       </div>
     </aside>
 
@@ -1226,7 +1226,7 @@
       <div class="section-head">
         <div>
           <h2 id="coverageHeading">相对当前报告的覆盖率</h2>
-          <p>截图能重建哪些已录入点；口述必须手填</p>
+          <p>标名化验 + other/ 早期图能重建全部血气/化验点；口述必须手填</p>
         </div>
       </div>
       <div class="coverage-panel" id="coveragePanel"></div>
@@ -3744,15 +3744,15 @@
       const pct = value => `${Math.round(value * 100)}%`;
       panel.innerHTML = `
         <strong>${coverage.complete ? "已完整复现当前报告" : "尚未完整复现当前报告"}</strong>
-        <p class="chart-subtitle">字段命中 ${coverage.fieldMatched}/${coverage.fieldTotal}（${pct(coverage.fieldRate)}）。截图没有的早期点和口述不会自动生成。</p>
+        <p class="chart-subtitle">字段命中 ${coverage.fieldMatched}/${coverage.fieldTotal}（${pct(coverage.fieldRate)}）。${coverage.labsComplete ? "血气/化验点已齐（含 other/ 早期图）。" : "只导入标名化验时，早期 other/ 时钟仍会缺。"}口述不会自动生成。</p>
         <div class="coverage-stats">
           <div class="coverage-stat"><strong>${coverage.gas.fullyCoveredRows}/${coverage.gas.seedRows}</strong><span>血气整行</span></div>
           <div class="coverage-stat"><strong>${coverage.lab.fullyCoveredRows}/${coverage.lab.seedRows}</strong><span>化验整行</span></div>
           <div class="coverage-stat"><strong>${coverage.bedside.fullyCoveredRows}/${coverage.bedside.seedRows}</strong><span>口述整行</span></div>
         </div>
-        <details open>
+        <details ${coverage.screenshotGaps.length ? "open" : ""}>
           <summary>截图覆盖不到的当前报告点</summary>
-          <ul class="coverage-list">${coverage.screenshotGaps.map(item => `<li>${item.label || relativeLabel(item.h)} · ${item.kind}</li>`).join("") || "<li>无</li>"}</ul>
+          <ul class="coverage-list">${coverage.screenshotGaps.map(item => `<li>${item.label || relativeLabel(item.h)} · ${item.kind}</li>`).join("") || "<li>无（审计后全部血气/化验都有对应截图）</li>"}</ul>
         </details>
         <details>
           <summary>必须口述填写的床旁点</summary>
