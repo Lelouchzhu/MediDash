@@ -252,6 +252,14 @@ test("parses latest 13:00 hospital ABG already on the dashboard", () => {
   assert.equal(parsed.fields.pct, undefined);
 });
 
+test("ignores CBC PCT 0.08 even when 血小板比积 is missing from OCR", () => {
+  const parsed = parseLabReportText("报告时间: 2026-09-17 09:46:50 WBC 11.52 PLT 73 PCT 0.08% HGB 85");
+  assert.equal(parsed.fields.wbc, 11.52);
+  assert.equal(parsed.fields.hbg, 85);
+  assert.equal(parsed.fields.plt, 73);
+  assert.equal(parsed.fields.pct, undefined);
+});
+
 test("parses CBC without treating plateletcrit as procalcitonin", () => {
   const parsed = parseLabReportText(`
     报告时间: 2026-09-18 08:34:44

@@ -147,7 +147,9 @@
     });
     if (!recovered.length) return null;
     if (key === "wbc") {
-      const decent = recovered.filter(value => value >= 2);
+      const dotted = recovered.filter(value => value >= 2 && !Number.isInteger(value));
+      if (dotted.length) return dotted[0];
+      const decent = recovered.filter(value => value >= 2 && value <= 40);
       return (decent.length ? decent : recovered)[0];
     }
     if (key === "fio2") {
@@ -366,6 +368,7 @@
     assignScanned(fields, "hbg", raw, /血红蛋白测定|\bHGB\b/i, value => recoverDroppedDot(value, 200));
 
     // Chem procalcitonin only. Never take CBC 血小板比积 or ABG 氧合指数 as PCT.
+    const hasChemPct = /降钙素原|Procalcitonin|ng\s*\/\s*m[lL]/i.test(raw);
     if (!/血小板比积/.test(raw)) {
       assign(fields, "pct", takeNumber(raw.match(/(?:降钙素原|Procalcitonin)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)));
       if (fields.pct == null) {
@@ -373,8 +376,14 @@
         const pctValue = takeNumber(pctMatch);
         if (pctValue != null && (pctMatch[2] || pctValue >= 1)) assign(fields, "pct", pctValue);
       }
-      assignScanned(fields, "pct", raw, /降钙素原|\bPCT\b/i, value => recoverDroppedDot(value, 500));
+      if (hasChemPct || (fields.pct == null && !/血小板|\bPLT\b|\bWBC\b/i.test(raw))) {
+        assignScanned(fields, "pct", raw, /降钙素原|\bPCT\b/i, value => {
+          if (value < 1 && !hasChemPct) return null;
+          return recoverDroppedDot(value, 500);
+        });
+      }
     }
+    if (fields.pct != null && fields.pct < 1 && !hasChemPct) delete fields.pct;
 
     if (fields.pf == null && fields.po2 != null && fields.fio2) {
       fields.pf = Math.round(fields.po2 / (fields.fio2 / 100));
