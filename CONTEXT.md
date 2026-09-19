@@ -41,7 +41,7 @@ Formula: `relative_h = (report_datetime − 2026-09-15 14:00)` in hours.
 
 | Label in Chinese reports | Meaning | Example |
 |--------------------------|---------|---------|
-| **降钙素原 / PCT** (biochem) | **Procalcitonin** ng/mL | 146 → 170 → 102 |
+| **降钙素原 / PCT** (biochem) | **Procalcitonin** ng/mL | 146 → 170 → 102 → **65** |
 | **血小板比积 / PCT** (CBC) | **Plateletcrit** % | 0.08% |
 | **氧合指数 pO2(a)/FO2(I)** | PaO₂/FiO₂ | morning ABG **169** |
 
@@ -56,8 +56,9 @@ A low-resolution ABG once caused “PCT 170” confusion with oxygenation index 
 | 2026-09-16 09:44 | postop 19h44m | **146.421** |
 | 2026-09-17 10:52 | postop 44h52m | **170.297** |
 | 2026-09-18 08:58 | postop 66h58m | **101.563** |
+| 2026-09-19 10:03 | postop 92h03m | **65.368** |
 
-Trend: rise then fall; still far above ref 0–0.05.
+Trend: falling since the peak, still far above ref 0–0.05.
 
 ---
 
@@ -65,10 +66,10 @@ Trend: rise then fall; still far above ref 0–0.05.
 
 ### Support / vitals (family-reported)
 
-- **Latest bedside (~postop 73h):** BP **120/35** (MAP≈63), HR **109**, RR **15–19**
-- **CRRT:** dehydrate/replacement ~**250 mL/h**, hemofiltration **120 mL/h**; IV fluids ~**200 mL/h** (approx net −50 mL/h — verify at bedside)
-- Urine: overnight had been 70 mL; **since this morning only 20 mL**
-- Vasopressors (family, ~postop 92h): **norepinephrine reduced to 9 mL/h ≈ 0.5 mg/h** (= **8.3 μg/min**). At an assumed 50 kg that is ~**0.17 μg/kg/min** — **moderate-low, not a high dose** (high-dose thresholds are often ≥0.5–1 μg/kg/min). Concentration not verified: if the pump is the common 4 mg/50 mL mix, 9 mL/h would be 0.72 mg/h, still moderate. Second agent status unknown. BP last reported 120/35.
+- **Latest bedside (~postop 73h, not re-reported):** BP **120/35** (MAP≈63), HR **109**, RR **15–19**
+- **CRRT stopped** early morning 2026-09-19 (family). Before stop: dehydrate/replacement ~**250 mL/h**, hemofiltration **120 mL/h**; IV fluids ~**200 mL/h**
+- Urine: 950 → 300 → 70 → morning 20 mL → **overnight 0**. **Diuretics increased today**
+- Vasopressors (family, confirmed): norepinephrine **9 mL/h = 0.45 mg/h** (= **7.5 μg/min**). At an assumed 50 kg that is ~**0.15 μg/kg/min** — **moderate-low, not a high dose** (high-dose thresholds are often ≥0.5–1 μg/kg/min). The earlier ~0.5 mg/h estimate is superseded. Second agent status unknown. BP last reported 120/35.
 
 ### Arterial blood gas — latest 2026-09-19 06:44 (postop 88h44m)
 
@@ -111,6 +112,13 @@ Trend: rise then fall; still far above ref 0–0.05.
 
 - K **4.17** mmol/L (ref 3.5–5.3) — normal single-item report
 - Screenshot: `testset/reports/chemistry/20260918T172250__01a0b451-4f08-76b7-9cd9-0c8d379fafd4.jpg`
+
+### Chemistry — 2026-09-19 10:03 (postop 92h03m)
+
+- PCT **65.368** (was 101.563), Cr **204.0** (rechecked; was 212), urea **13.27** (was 11.59)
+- K **4.80**, Na **134.78↓** (ref 137–147), Cl **100.69**
+- Albumin **29.3↓** g/L (ref 34–48). GLB and A/G blank on the sheet
+- Preferred screenshot: `testset/reports/chemistry/20260919T100330__01a0b7bc-519d-72d9-9831-8fd5f6dd93c7.jpg`
 
 ### Chemistry — 2026-09-18 08:58 (postop 66h58m)
 
@@ -188,4 +196,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-19 — norepinephrine 9 mL/h ≈ 0.5 mg/h (moderate-low); CBC Hb 76 / APTT 67.2.
+**Last updated:** 2026-09-19 — chemistry 10:03 PCT 65.368 / Cr 204 / urea 13.27 / ALB 29.3 / Na 134.78; CRRT stopped overnight, urine 0, diuretics increased; norepinephrine 9 mL/h = 0.45 mg/h (moderate-low).
