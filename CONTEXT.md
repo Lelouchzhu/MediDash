@@ -140,17 +140,26 @@ Trend: falling since the peak, still far above ref 0–0.05.
 
 - PCT **101.563**, Cr **212**, urea **11.59**, K 4.35, Na 137.91, Cl 97.56
 
-### CBC — latest 2026-09-19 08:46 (postop 90h46m)
+### CBC — latest 2026-09-20 08:23 (postop 114h23m)
 
 | Time | WBC | Hb g/L | PLT | Notes |
 |------|-----|--------|-----|-------|
 | 2026-09-17 09:46 | 11.52 | 85 | 73 | neut% ~95 |
 | 2026-09-18 08:34 | 14.51 | 85 | 65 | neut% ~91; plateletcrit 0.08% |
-| 2026-09-19 08:46 | **13.17** | **76** | **55** | neut% 87.9; plateletcrit **0.06%** |
+| 2026-09-19 08:46 | 13.17 | 76 | 55 | neut% 87.9; plateletcrit 0.06% |
+| 2026-09-20 08:23 | **17.42** | **67** | **60** | HCT 19.7; neut% **89.0** / neut 15.50; lymph 0.56; plateletcrit **0.07%** (not procalcitonin) |
 
-Screenshot: `testset/reports/cbc/20260919T084629__01a0b731-359d-77fe-9689-d52f5b99561b.jpg`
+Screenshot: `testset/reports/cbc/20260920T082350__AB9B583D-80E7-4A01-8AB1-2BC6564410ED_L0_001.jpg`
 
-### Coagulation — latest 2026-09-18 22:13 (postop 80h13m)
+Agrees in direction with the 06:46 ABG Hb 7.1 g/dL / Hct 21%. Do not equate the two methods point for point.
+
+### Coagulation — latest 2026-09-20 08:51 (postop 114h51m)
+
+- APTT **45.9↑** (this sheet’s ref **23.3–32.5**), down from 67.2
+- PT **11.8**, INR **1.03**, TT **16.6**, fibrinogen **4.02** — all in range
+- Screenshot: `testset/reports/coag/20260920T085123__EAF483F6-82EA-49BB-882F-74F7602D7C31_L0_001.jpg`
+
+### Coagulation — 2026-09-18 22:13 (postop 80h13m)
 
 - APTT **67.2↑** (this sheet’s ref **21–45**)
 - Prior same evening 18:01: APTT **64.0** (that sheet’s ref 23.3–32.5)
@@ -212,4 +221,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-20 — ABG 06:46 lac 1.33 / P/F 147 / pH 7.366 / BE −10.5 / Hb 7.1; ask about transfusion and whether to restart CRRT.
+**Last updated:** 2026-09-20 — CBC 08:23 Hb 67 / WBC 17.42 / PLT 60; APTT 45.9 / INR 1.03; ABG 06:46 Hb 7.1 / P/F 147 / lac 1.33.

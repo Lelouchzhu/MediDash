@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 73,
+  "count": 75,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -968,6 +968,53 @@
         "ca": 1.05,
         "fio2": 50,
         "pf": 147
+      }
+    },
+    {
+      "id": "20260920T082350__AB9B583D-80E7-4A01-8AB1-2BC6564410ED_L0_001.jpg",
+      "path": "reports/cbc/20260920T082350__AB9B583D-80E7-4A01-8AB1-2BC6564410ED_L0_001.jpg",
+      "category": "cbc",
+      "source_filename": "AB9B583D-80E7-4A01-8AB1-2BC6564410ED_L0_001.jpg",
+      "sha256_16": "1fbfe5d61457d3f5",
+      "bytes": 865503,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-20T08:23:50",
+      "type": "血常规",
+      "note": "WBC17.42 Hb67 PLT60 HCT19.7 NEUT%89 plateletcrit0.07",
+      "relative_h": 114.4,
+      "extracted": {
+        "wbc": 17.42,
+        "rbc": 2.1,
+        "hbg": 67,
+        "hct": 19.7,
+        "plt": 60,
+        "neut_pct": 89.0,
+        "neut": 15.5,
+        "lymph": 0.56,
+        "plateletcrit": 0.07
+      }
+    },
+    {
+      "id": "20260920T085123__EAF483F6-82EA-49BB-882F-74F7602D7C31_L0_001.jpg",
+      "path": "reports/coag/20260920T085123__EAF483F6-82EA-49BB-882F-74F7602D7C31_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "EAF483F6-82EA-49BB-882F-74F7602D7C31_L0_001.jpg",
+      "sha256_16": "343fee43d0a99920",
+      "bytes": 439524,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-20T08:51:23",
+      "type": "凝血",
+      "note": "APTT45.9 INR1.03 PT11.8 TT16.6 Fbg4.02 ref APTT 23.3-32.5",
+      "relative_h": 114.86,
+      "extracted": {
+        "aptt": 45.9,
+        "tt": 16.6,
+        "pt": 11.8,
+        "pt_pct": 91.4,
+        "inr": 1.03,
+        "fbg": 4.02
       }
     }
   ]
