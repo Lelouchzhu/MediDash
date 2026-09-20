@@ -70,10 +70,24 @@ Trend: falling since the peak, still far above ref 0–0.05.
 - **CRRT:** settings entered but **not started yet** — blood flow **130 mL/min**, dehydrate/UF **300 mL/h**. Prior stop morning 2026-09-19.
 - Urine overnight **50 mL** (still oliguric). **Bowel movement** reported today.
 - Vasopressors **maintained**: norepinephrine **9 mL/h = 0.45 mg/h** + dopamine **10 mL/h**
-- **Transfusion:** **4 units RBC**, blood type **B Rh-positive** — **not started yet**
-- **K supplement:** **5 mL** given (family)
+- **Transfusion:** **4 units RBC**, blood type **B Rh-positive** — previously pending; ABG Hb later rose **7.7→10.4** (ask whether units completed)
+- **K:** dry-chem **4.50** at 22:31 (was 5.09). Earlier family: K supplement **5 mL**
 
-### Arterial blood gas — latest 2026-09-20 17:48 (postop 123h48m)
+### Arterial blood gas — latest 2026-09-20 22:16 (postop 128h16m)
+
+- pH **7.420** (back in range), PCO₂ **27.5↓**, PO₂ **86.0**, HCO₃⁻ **17.4↓**, BE **−7.0** (ABE; SBE −5.9)
+- Lactate **1.64↑** (just above ref 0.5–1.6; was 1.52)
+- FiO₂ **50%**, P/F **172** (down from evening 188; still far below 400). This 172 is oxygenation index, not PCT.
+- Hb **10.4↓** g/dL (was 7.7), Hct **31%↓**, iCa **1.05↓**
+- Screenshot: `testset/reports/abg/20260920T221605__01a0bfbf-47c7-7b79-9021-63de7df46829.jpg`
+
+### Coag / electrolytes — 2026-09-20 22:31 (postop 128h31m)
+
+- APTT **49.2↑** sec (ref 21–45 on this sheet; was 45.9 at 08:51)
+- K **4.50** mmol/L (ref 3.5–5.3; dry chemistry)
+- Screenshots: `testset/reports/coag/20260920T223131__01a0bfbf-47b4-7c64-92dd-e07ae00e4cc8.jpg`, `testset/reports/chemistry/20260920T223137__01a0bfbf-4799-7d1b-8d0e-35cac0a9bf41.jpg`
+
+### Arterial blood gas — 2026-09-20 17:48 (postop 123h48m)
 
 - pH **7.339↓**, PCO₂ **29.9↓**, PO₂ **94.0**, HCO₃⁻ **15.7↓** (cHCO3-(p); tCO₂(B) 16.7), BE **−10.1** (ABE; SBE −9.1)
 - Lactate **1.52** (in ref 0.5–1.6; was 1.33)
@@ -237,4 +251,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-20 17:48 — ABG lac 1.52 / PF 188 / Hb 7.7 / pH 7.339 / HCO₃⁻ 15.7 / BE −10.1; BP 125/35 HR 100; CRRT set not on; RBC 4U B Rh+ not started.
+**Last updated:** 2026-09-20 22:31 — ABG 22:16 lac 1.64 / PF 172 / Hb 10.4 / pH 7.420; APTT 49.2; K 4.50; CRRT set not on.

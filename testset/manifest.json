@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 78,
+  "count": 81,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1093,6 +1093,68 @@
         "ca": 1.06,
         "fio2": 50,
         "pf": 188
+      }
+    },
+    {
+      "id": "20260920T221605__01a0bfbf-47c7-7b79-9021-63de7df46829.jpg",
+      "path": "reports/abg/20260920T221605__01a0bfbf-47c7-7b79-9021-63de7df46829.jpg",
+      "category": "abg",
+      "source_filename": "01a0bfbf-47c7-7b79-9021-63de7df46829.jpg",
+      "sha256_16": "4110c6114fe045e6",
+      "bytes": 1303891,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-20T22:16:05",
+      "type": "血气",
+      "note": "3520x3772 lac1.64↑ PF172 pH7.420 BE-7.0 HCO3 17.4 Hb10.4 Hct31 iCa1.05",
+      "relative_h": 128.27,
+      "extracted": {
+        "ph": 7.42,
+        "pco2": 27.5,
+        "po2": 86.0,
+        "sbe": -5.9,
+        "be": -7.0,
+        "hco3": 17.4,
+        "lactate": 1.64,
+        "hb": 10.4,
+        "hct": 31.0,
+        "ca": 1.05,
+        "fio2": 50,
+        "pf": 172
+      }
+    },
+    {
+      "id": "20260920T223131__01a0bfbf-47b4-7c64-92dd-e07ae00e4cc8.jpg",
+      "path": "reports/coag/20260920T223131__01a0bfbf-47b4-7c64-92dd-e07ae00e4cc8.jpg",
+      "category": "coag",
+      "source_filename": "01a0bfbf-47b4-7c64-92dd-e07ae00e4cc8.jpg",
+      "sha256_16": "c923f66e9f052d3c",
+      "bytes": 288209,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-20T22:31:31",
+      "type": "凝血",
+      "note": "APTT49.2↑ ref 21-45",
+      "relative_h": 128.53,
+      "extracted": {
+        "aptt": 49.2
+      }
+    },
+    {
+      "id": "20260920T223137__01a0bfbf-4799-7d1b-8d0e-35cac0a9bf41.jpg",
+      "path": "reports/chemistry/20260920T223137__01a0bfbf-4799-7d1b-8d0e-35cac0a9bf41.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0bfbf-4799-7d1b-8d0e-35cac0a9bf41.jpg",
+      "sha256_16": "d6c5d43524e2cc72",
+      "bytes": 279130,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-20T22:31:37",
+      "type": "生化",
+      "note": "K4.50 dry chem ref 3.5-5.3",
+      "relative_h": 128.53,
+      "extracted": {
+        "k": 4.5
       }
     }
   ]
