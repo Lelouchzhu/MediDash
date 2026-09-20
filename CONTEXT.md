@@ -70,6 +70,7 @@ Trend: falling since the peak, still far above ref 0–0.05.
 - **CRRT:** stopped early morning 2026-09-19; family now says **restart is imminent**, along with **transfusion**. Before prior stop: dehydrate ~**250 mL/h**, hemofiltration **120 mL/h**; IV ~**200 mL/h**
 - Urine: … → diuretics **10 mL** → overnight **50 mL** (still oliguric)
 - Vasopressors **maintained**: norepinephrine **9 mL/h = 0.45 mg/h** + dopamine **10 mL/h** (dopamine concentration not verified)
+- **Transfusion:** **4 units**, blood type **B Rh-positive** (family). Product (RBC vs other) not specified. CRRT restart still imminent.
 
 ### Arterial blood gas — latest 2026-09-20 06:46 (postop 112h46m)
 
@@ -227,4 +228,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-20 — chemistry 09:55 Cr 314 / urea 25.69 / Na 130.77; overnight urine 50 mL; NE 9 + dopamine 10 maintained; transfusion and CRRT restart imminent.
+**Last updated:** 2026-09-20 — transfusion 4 units B Rh+; Cr 314 / urea 25.69; overnight urine 50 mL; NE 9 + dopamine 10; CRRT restart imminent.
