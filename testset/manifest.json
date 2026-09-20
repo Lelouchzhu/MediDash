@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 81,
+  "count": 88,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1155,6 +1155,158 @@
       "relative_h": 128.53,
       "extracted": {
         "k": 4.5
+      }
+    },
+    {
+      "id": "20260921T011350__01a0c12e-1f46-7fa8-a529-b3967ba90982.jpg",
+      "path": "reports/abg/20260921T011350__01a0c12e-1f46-7fa8-a529-b3967ba90982.jpg",
+      "category": "abg",
+      "source_filename": "01a0c12e-1f46-7fa8-a529-b3967ba90982.jpg",
+      "sha256_16": "1f54e8c861b96098",
+      "bytes": 1290845,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T01:13:50",
+      "type": "血气",
+      "note": "3520x3772 lac1.92↑ PF196 pH7.445 BE-3.0 HCO3 21.1 Hb10.2 Hct30 iCa1.05",
+      "relative_h": 131.23,
+      "extracted": {
+        "ph": 7.445,
+        "pco2": 31.4,
+        "po2": 98.0,
+        "sbe": -2.3,
+        "be": -3.0,
+        "hco3": 21.1,
+        "lactate": 1.92,
+        "hb": 10.2,
+        "hct": 30.0,
+        "ca": 1.05,
+        "fio2": 50,
+        "pf": 196
+      }
+    },
+    {
+      "id": "20260921T012307__01a0c12e-1f2f-7986-8546-7731c8929d67.jpg",
+      "path": "reports/chemistry/20260921T012307__01a0c12e-1f2f-7986-8546-7731c8929d67.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0c12e-1f2f-7986-8546-7731c8929d67.jpg",
+      "sha256_16": "d1135fc20842faff",
+      "bytes": 278697,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T01:23:07",
+      "type": "生化",
+      "note": "K4.24 dry chem ref 3.5-5.3",
+      "relative_h": 131.39,
+      "extracted": {
+        "k": 4.24
+      }
+    },
+    {
+      "id": "20260921T012504__01a0c12e-1f17-7255-8629-d54e2c10f627.jpg",
+      "path": "reports/coag/20260921T012504__01a0c12e-1f17-7255-8629-d54e2c10f627.jpg",
+      "category": "coag",
+      "source_filename": "01a0c12e-1f17-7255-8629-d54e2c10f627.jpg",
+      "sha256_16": "4e45f1203ede1bd7",
+      "bytes": 287983,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T01:25:04",
+      "type": "凝血",
+      "note": "APTT52.4↑ ref 21-45",
+      "relative_h": 131.42,
+      "extracted": {
+        "aptt": 52.4
+      }
+    },
+    {
+      "id": "20260921T042017__01a0c12e-1edf-738a-a9c0-2af432ab594d.jpg",
+      "path": "reports/abg/20260921T042017__01a0c12e-1edf-738a-a9c0-2af432ab594d.jpg",
+      "category": "abg",
+      "source_filename": "01a0c12e-1edf-738a-a9c0-2af432ab594d.jpg",
+      "sha256_16": "64c8d13c062eaec5",
+      "bytes": 1311410,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T04:20:17",
+      "type": "血气",
+      "note": "3520x3772 lac2.20↑ PF151 pH7.483 BE-2.5 HCO3 21.0 Hb10.3 Hct30 iCa1.06",
+      "relative_h": 134.34,
+      "extracted": {
+        "ph": 7.483,
+        "pco2": 28.6,
+        "po2": 76.3,
+        "sbe": -1.7,
+        "be": -2.5,
+        "hco3": 21.0,
+        "lactate": 2.2,
+        "hb": 10.3,
+        "hct": 30.0,
+        "ca": 1.06,
+        "fio2": 50,
+        "pf": 151
+      }
+    },
+    {
+      "id": "20260921T042800__01a0c12e-1f07-70b4-a86e-c66090ef13dc.jpg",
+      "path": "reports/chemistry/20260921T042800__01a0c12e-1f07-70b4-a86e-c66090ef13dc.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0c12e-1f07-70b4-a86e-c66090ef13dc.jpg",
+      "sha256_16": "c5d4c4370314f5eb",
+      "bytes": 313972,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T04:28:00",
+      "type": "生化",
+      "note": "K4.20 dry chem ref 3.5-5.3",
+      "relative_h": 134.47,
+      "extracted": {
+        "k": 4.2
+      }
+    },
+    {
+      "id": "20260921T043124__01a0c12e-1ef3-79a1-b48a-d3d9b8dbadec.jpg",
+      "path": "reports/coag/20260921T043124__01a0c12e-1ef3-79a1-b48a-d3d9b8dbadec.jpg",
+      "category": "coag",
+      "source_filename": "01a0c12e-1ef3-79a1-b48a-d3d9b8dbadec.jpg",
+      "sha256_16": "b2a4bd898fd727e3",
+      "bytes": 323397,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T04:31:24",
+      "type": "凝血",
+      "note": "APTT51.1↑ ref 21-45",
+      "relative_h": 134.52,
+      "extracted": {
+        "aptt": 51.1
+      }
+    },
+    {
+      "id": "20260921T065257__01a0c12e-1ecc-7bc1-b032-eade760dcb87.jpg",
+      "path": "reports/abg/20260921T065257__01a0c12e-1ecc-7bc1-b032-eade760dcb87.jpg",
+      "category": "abg",
+      "source_filename": "01a0c12e-1ecc-7bc1-b032-eade760dcb87.jpg",
+      "sha256_16": "a47a3876dd8fffd7",
+      "bytes": 1300202,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T06:52:57",
+      "type": "血气",
+      "note": "3520x3772 lac1.61↑ PF161 pH7.485 BE-2.2 HCO3 21.2 Hb10.7 Hct31 iCa1.08",
+      "relative_h": 136.88,
+      "extracted": {
+        "ph": 7.485,
+        "pco2": 28.8,
+        "po2": 80.7,
+        "sbe": -1.4,
+        "be": -2.2,
+        "hco3": 21.2,
+        "lactate": 1.61,
+        "hb": 10.7,
+        "hct": 31.0,
+        "ca": 1.08,
+        "fio2": 50,
+        "pf": 161
       }
     }
   ]

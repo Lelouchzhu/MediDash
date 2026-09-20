@@ -70,10 +70,45 @@ Trend: falling since the peak, still far above ref 0–0.05.
 - **CRRT:** settings entered but **not started yet** — blood flow **130 mL/min**, dehydrate/UF **300 mL/h**. Prior stop morning 2026-09-19.
 - Urine overnight **50 mL** (still oliguric). **Bowel movement** reported today.
 - Vasopressors **maintained**: norepinephrine **9 mL/h = 0.45 mg/h** + dopamine **10 mL/h**
-- **Transfusion:** **4 units RBC**, blood type **B Rh-positive** — previously pending; ABG Hb later rose **7.7→10.4** (ask whether units completed)
-- **K:** dry-chem **4.50** at 22:31 (was 5.09). Earlier family: K supplement **5 mL**
+- **Transfusion:** **4 units RBC**, blood type **B Rh-positive** — ABG Hb later rose **7.7→10.4** and stayed **10.2–10.7** (ask whether units completed)
+- **K:** dry-chem **4.20** at 04:28 (was 4.24 at 01:23, 4.50 at 22:31)
 
-### Arterial blood gas — latest 2026-09-20 22:16 (postop 128h16m)
+### Arterial blood gas — latest 2026-09-21 06:52 (postop 136h52m)
+
+- pH **7.485↑**, PCO₂ **28.8↓**, PO₂ **80.7**, HCO₃⁻ **21.2↓**, BE **−2.2** (ABE; SBE −1.4)
+- Lactate **1.61↑** (down from 04:20’s 2.20; still just above 0.5–1.6)
+- FiO₂ **50%**, P/F **161** (up from 151; still far below 400). This 161 is oxygenation index, not PCT.
+- Hb **10.7↓** g/dL, Hct **31%↓**, iCa **1.08↓**
+- Screenshot: `testset/reports/abg/20260921T065257__01a0c12e-1ecc-7bc1-b032-eade760dcb87.jpg`
+
+### Coag / electrolytes — 2026-09-21 04:28–04:31 (postop 134h28–31m)
+
+- APTT **51.1↑** sec (ref 21–45; was 52.4 at 01:25)
+- K **4.20** mmol/L (ref 3.5–5.3)
+- Screenshots: `testset/reports/coag/20260921T043124__01a0c12e-1ef3-79a1-b48a-d3d9b8dbadec.jpg`, `testset/reports/chemistry/20260921T042800__01a0c12e-1f07-70b4-a86e-c66090ef13dc.jpg`
+
+### Arterial blood gas — 2026-09-21 04:20 (postop 134h20m)
+
+- pH **7.483↑**, PCO₂ **28.6↓**, PO₂ **76.3↓**, HCO₃⁻ **21.0↓**, BE **−2.5** (ABE; SBE −1.7)
+- Lactate **2.20↑** (peak of this night)
+- FiO₂ **50%**, P/F **151**
+- Hb **10.3**, Hct **30%**, iCa **1.06**
+- Screenshot: `testset/reports/abg/20260921T042017__01a0c12e-1edf-738a-a9c0-2af432ab594d.jpg`
+
+### Arterial blood gas — 2026-09-21 01:13 (postop 131h13m)
+
+- pH **7.445**, PCO₂ **31.4↓**, PO₂ **98.0**, HCO₃⁻ **21.1↓**, BE **−3.0** (ABE; SBE −2.3)
+- Lactate **1.92↑**
+- FiO₂ **50%**, P/F **196**
+- Hb **10.2**, Hct **30%**, iCa **1.05**
+- Screenshot: `testset/reports/abg/20260921T011350__01a0c12e-1f46-7fa8-a529-b3967ba90982.jpg`
+
+### Coag / electrolytes — 2026-09-21 01:23–01:25 (postop 131h23–25m)
+
+- APTT **52.4↑** sec; K **4.24**
+- Screenshots: `testset/reports/coag/20260921T012504__01a0c12e-1f17-7255-8629-d54e2c10f627.jpg`, `testset/reports/chemistry/20260921T012307__01a0c12e-1f2f-7986-8546-7731c8929d67.jpg`
+
+### Arterial blood gas — 2026-09-20 22:16 (postop 128h16m)
 
 - pH **7.420** (back in range), PCO₂ **27.5↓**, PO₂ **86.0**, HCO₃⁻ **17.4↓**, BE **−7.0** (ABE; SBE −5.9)
 - Lactate **1.64↑** (just above ref 0.5–1.6; was 1.52)
@@ -251,4 +286,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-20 22:31 — ABG 22:16 lac 1.64 / PF 172 / Hb 10.4 / pH 7.420; APTT 49.2; K 4.50; CRRT set not on.
+**Last updated:** 2026-09-21 06:52 — ABG lac 1.61 / PF 161 / Hb 10.7 / pH 7.485 / HCO₃⁻ 21.2 / BE −2.2; night lac peak 2.20; APTT 51.1; K 4.20.
