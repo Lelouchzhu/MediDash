@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 77,
+  "count": 78,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1046,11 +1046,40 @@
       "sha256_16": "9579adf9638a7fad",
       "bytes": 499710,
       "labeled": true,
-      "preferred": true,
       "report_time": "2026-09-20T17:48:24",
       "type": "血气",
-      "note": "955x1024 lac1.52 PF188 pH7.339 BE-10.1 HCO3 15.7 Hb7.7 Hct23 iCa1.06",
+      "note": "955x1024 lac1.52 PF188 pH7.339 BE-10.1 HCO3 15.7 Hb7.7 Hct23 iCa1.06 · superseded by 3520x3772 hires; values unchanged",
       "relative_h": 123.81,
+      "extracted": {
+        "ph": 7.339,
+        "pco2": 29.9,
+        "po2": 94.0,
+        "sbe": -9.1,
+        "be": -10.1,
+        "hco3": 15.7,
+        "lactate": 1.52,
+        "hb": 7.7,
+        "hct": 23.0,
+        "ca": 1.06,
+        "fio2": 50,
+        "pf": 188
+      },
+      "superseded_by": "reports/abg/20260920T174824__hires__E52C65DD-C1D7-4471-92BE-DE877A9FFF96_L0_001.jpg"
+    },
+    {
+      "id": "20260920T174824__hires__E52C65DD-C1D7-4471-92BE-DE877A9FFF96_L0_001.jpg",
+      "path": "reports/abg/20260920T174824__hires__E52C65DD-C1D7-4471-92BE-DE877A9FFF96_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "E52C65DD-C1D7-4471-92BE-DE877A9FFF96_L0_001.jpg",
+      "sha256_16": "f667837867f6a0dd",
+      "bytes": 1352313,
+      "labeled": true,
+      "report_time": "2026-09-20T17:48:24",
+      "type": "血气",
+      "note": "PREFERRED hires 3520x3772 of lac1.52 PF188; key values match 955px copy",
+      "relative_h": 123.81,
+      "preferred": true,
+      "resolution_vs_prior": "3520x3772 vs 955x1024",
       "extracted": {
         "ph": 7.339,
         "pco2": 29.9,

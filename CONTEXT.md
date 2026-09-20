@@ -79,7 +79,7 @@ Trend: falling since the peak, still far above ref 0–0.05.
 - Lactate **1.52** (in ref 0.5–1.6; was 1.33)
 - FiO₂ **50%**, P/F **188** (improved vs morning 147; still far below 400). This 188 is oxygenation index, not PCT.
 - Hb **7.7↓** g/dL (was 7.1), Hct **23%↓**, iCa **1.06↓**
-- Screenshot: `testset/reports/abg/20260920T174824__2EF271A6-AC43-46C4-8B3C-78C2A60EE802_L0_001.jpg`
+- Screenshot (preferred hires 3520×3772): `testset/reports/abg/20260920T174824__hires__E52C65DD-C1D7-4471-92BE-DE877A9FFF96_L0_001.jpg`
 
 ### Arterial blood gas — 2026-09-20 06:46 (postop 112h46m)
 
