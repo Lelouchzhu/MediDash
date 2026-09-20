@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 76,
+  "count": 77,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1036,6 +1036,34 @@
         "cl": 96.24,
         "urea": 25.69,
         "creatinine": 314
+      }
+    },
+    {
+      "id": "20260920T174824__2EF271A6-AC43-46C4-8B3C-78C2A60EE802_L0_001.jpg",
+      "path": "reports/abg/20260920T174824__2EF271A6-AC43-46C4-8B3C-78C2A60EE802_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "2EF271A6-AC43-46C4-8B3C-78C2A60EE802_L0_001.jpg",
+      "sha256_16": "9579adf9638a7fad",
+      "bytes": 499710,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-20T17:48:24",
+      "type": "血气",
+      "note": "955x1024 lac1.52 PF188 pH7.339 BE-10.1 HCO3 15.7 Hb7.7 Hct23 iCa1.06",
+      "relative_h": 123.81,
+      "extracted": {
+        "ph": 7.339,
+        "pco2": 29.9,
+        "po2": 94.0,
+        "sbe": -9.1,
+        "be": -10.1,
+        "hco3": 15.7,
+        "lactate": 1.52,
+        "hb": 7.7,
+        "hct": 23.0,
+        "ca": 1.06,
+        "fio2": 50,
+        "pf": 188
       }
     }
   ]

@@ -1015,7 +1015,7 @@
       <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
-        <span class="pill" id="latestTimePill">最新化验：术后115h55m · 肌酐314</span>
+        <span class="pill" id="latestTimePill">最新：术后123h48m</span>
         <span class="pill">数据已去标识化</span>
       </div>
     </header>
@@ -1047,26 +1047,26 @@
         <button class="status-card orange" type="button" data-metric-jump="lactate">
           <div class="status-top">
             <span class="status-name">组织灌注</span>
-            <span class="level">已回参考</span>
+            <span class="level">仍在参考内</span>
           </div>
-          <div class="status-value"><span id="latestLactate">1.33</span><span class="status-unit">mmol/L</span></div>
-          <div class="status-note">1.87→1.33 · 已入参考<br>过夜尿50 mL</div>
+          <div class="status-value"><span id="latestLactate">1.52</span><span class="status-unit">mmol/L</span></div>
+          <div class="status-note">1.33→1.52 · 仍在参考<br>过夜尿50 mL</div>
         </button>
         <button class="status-card red" type="button" data-metric-jump="pf">
           <div class="status-top">
             <span class="status-name">氧合</span>
-            <span class="level">继续下降</span>
+            <span class="level">较今晨回升</span>
           </div>
-          <div class="status-value"><span id="latestPf">147</span><span class="status-unit">P/F</span></div>
-          <div class="status-note">FiO₂ 仍50% · PO₂ 73.5<br>165→147 · 远低于400</div>
+          <div class="status-value"><span id="latestPf">188</span><span class="status-unit">P/F</span></div>
+          <div class="status-note">FiO₂ 仍50% · PO₂ 94<br>147→188 · 仍远低于400</div>
         </button>
         <button class="status-card orange" type="button" data-metric-jump="hco3">
           <div class="status-top">
             <span class="status-name">酸碱</span>
             <span class="level">代谢酸加重</span>
           </div>
-          <div class="status-value"><span id="latestPh">7.366</span><span class="status-unit">pH</span></div>
-          <div class="status-note">HCO₃⁻ 14.8↓ · BE −10.5<br>pH靠低碳酸代偿</div>
+          <div class="status-value"><span id="latestPh">7.339</span><span class="status-unit">pH</span></div>
+          <div class="status-note">HCO₃⁻ 15.7↓ · BE −10.1<br>pH再次略低于参考</div>
         </button>
         <div class="status-card red">
           <div class="status-top">
@@ -1103,10 +1103,10 @@
         <button class="status-card red" type="button" data-metric-jump="hb">
           <div class="status-top">
             <span class="status-name">血红蛋白 / 钙</span>
-            <span class="level">血常规确认下降</span>
+            <span class="level">仍低 · 红细胞未开输</span>
           </div>
-          <div class="status-value"><span id="latestHb">7.1</span><span class="status-unit">g/dL</span></div>
-          <div class="status-note">血常规 76→<strong>67</strong> · PLT 60<br>血气7.1 · iCa 1.05</div>
+          <div class="status-value"><span id="latestHb">7.7</span><span class="status-unit">g/dL</span></div>
+          <div class="status-note">血气7.1→<strong>7.7</strong> · Hct 23<br>血常规仍67 · iCa 1.06</div>
         </button>
       </div>
     </section>
@@ -1156,16 +1156,16 @@
         </div>
         <div class="insights">
           <div class="insight">
-            <strong>乳酸1.33已回参考</strong>
-            <p>1.87→1.33（参考0.5–1.6）。过夜尿50 mL。血压125/35、HR100；升压药仍去甲9 + 多巴胺10。乳酸正常不等于灌注已经够。</p>
+            <strong>乳酸1.52仍在参考</strong>
+            <p>1.33→1.52（参考0.5–1.6）。血压125/35、HR100；升压药仍去甲9 + 多巴胺10。乳酸正常不等于灌注已经够。</p>
           </div>
           <div class="insight">
-            <strong>CRRT已设定，暂未开机</strong>
-            <p>血流速130 mL/min，脱水300 mL/h。肌酐314、尿素25.69。已补钾5 mL。有排便。</p>
+            <strong>氧合回升至188，仍低</strong>
+            <p>FiO₂仍50%，P/F 147→188，PO₂94。这是氧合指数，不是降钙素原。仍远低于400。</p>
           </div>
           <div class="insight">
-            <strong>红细胞4U尚未开始输</strong>
-            <p>血型B型Rh阳性。血常规Hb 67、血气7.1。请确认开输时间，以及与CRRT开机的先后顺序。</p>
+            <strong>代谢酸仍重，血气Hb 7.7</strong>
+            <p>pH 7.339，HCO₃⁻15.7，BE −10.1。血气Hb 7.1→7.7，红细胞4U尚未开输。CRRT已设未开。</p>
           </div>
         </div>
       </div>
@@ -1257,7 +1257,7 @@
             <ul>
               <li>降钙素原：9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> → 9月19日10:03 <strong>65.368</strong> ng/mL（参考0–0.05）。持续下降，目前仍极高。</li>
               <li>IL-6 981 pg/mL（术后约45小时）仍提示极强炎症反应。</li>
-              <li>乳酸峰值8.99 → 2.14 → 1.87 → 今晨<strong>1.33</strong>（已回到参考0.5–1.6）。最新口述血压<strong>125/35</strong>、心率<strong>100</strong>；升压药维持<strong>去甲9 + 多巴胺10 mL/h</strong>（去甲=0.45 mg/h）。过夜尿<strong>50 mL</strong>，有排便。CRRT已设定（血液130 mL/min、脱水300 mL/h）暂未开机；红细胞4U（B型Rh+）尚未开输；已补钾5 mL。</li>
+              <li>乳酸峰值8.99 → 2.14 → 1.87 → 1.33 → 最新<strong>1.52</strong>（仍在参考0.5–1.6）。最新口述血压<strong>125/35</strong>、心率<strong>100</strong>；升压药维持<strong>去甲9 + 多巴胺10 mL/h</strong>（去甲=0.45 mg/h）。过夜尿<strong>50 mL</strong>，有排便。CRRT已设定（血液130 mL/min、脱水300 mL/h）暂未开机；红细胞4U（B型Rh+）尚未开输；已补钾5 mL。</li>
               <li>血常规“PCT”是血小板比积（最新0.06%），与降钙素原不是同一指标。</li>
             </ul>
           </div>
@@ -1321,16 +1321,16 @@
           <summary>
             <div>
               <div class="report-title">血液与电解质</div>
-              <div class="report-meta">至术后114小时</div>
+              <div class="report-meta">至术后123小时48分</div>
             </div>
             <span class="report-badge">随访</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>血常规Hb：85→76→最新<strong>67</strong> g/L（9月20日08:23）；今晨血气Hb 7.1 g/dL、Hct 21%，与血常规HCT 19.7%方向一致。两种方法仍不要逐点等同。</li>
+              <li>血常规Hb：85→76→最新<strong>67</strong> g/L（9月20日08:23）；血气Hb 7.1→最新<strong>7.7</strong> g/dL、Hct 23%（17:48）。两种方法仍不要逐点等同；红细胞4U尚未开输。</li>
               <li>血小板55→<strong>60</strong>×10⁹/L；血小板比积0.06%→0.07%（参考0.17–0.35，不是降钙素原）。</li>
               <li>白细胞13.17→<strong>17.42</strong>，中性粒87.9%→<strong>89.0%</strong>（绝对值15.50），淋巴细胞0.56偏低。</li>
-              <li>最新离子钙仍为 <strong>1.05</strong> mmol/L。09:55生化：K <strong>5.09</strong>，Na <strong>130.77↓</strong>，Cl 96.24。</li>
+              <li>离子钙1.05→最新<strong>1.06</strong> mmol/L。09:55生化：K <strong>5.09</strong>，Na <strong>130.77↓</strong>，Cl 96.24。</li>
               <li>白蛋白已测至少两次。已入库的只有9月19日10:03这一次：<strong>29.3↓</strong> g/L（参考34–48）。更早一次的报告不在当前截图里，趋势图暂时只有这一点。</li>
             </ul>
           </div>
@@ -1598,6 +1598,11 @@
           <div class="event-title">血压125/35、HR100；CRRT已设未开；红细胞未开输</div>
           <div class="event-desc">CRRT设定：血液130 mL/min、脱水300 mL/h。红细胞4U（B型Rh+）尚未开始。已补钾5 mL。有排便。升压药仍去甲9 + 多巴胺10。</div>
         </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后123小时48分 · 9月20日17:48</div>
+          <div class="event-title">P/F回升至188；乳酸1.52仍在参考；血气Hb 7.7</div>
+          <div class="event-desc">FiO₂仍50%、PO₂94。pH7.339↓、HCO₃⁻15.7↓、BE−10.1；PCO₂29.9代偿。Hct 23%、iCa 1.06。188是氧合指数，不是降钙素原。红细胞4U仍未开输。</div>
+        </article>
       </div>
     </section>
 
@@ -1739,7 +1744,8 @@
       { h: 79.78, label: "术后79h47m", sample: "动脉", ph: 7.398, pco2: 33.8, po2: 131.1, hco3: 20.4, be: -4.5, lactate: 1.41, fio2: 50, pf: 262, hb: 9.4, ca: 1.14 },
       { h: 88.74, label: "术后88h44m", sample: "动脉", ph: 7.382, pco2: 32.2, po2: 104.8, hco3: 18.7, be: -6.4, lactate: 2.14, fio2: 50, pf: 210, hb: 9.2, ca: 1.09 },
       { h: 104.61, label: "术后104h36m", sample: "动脉", ph: 7.346, pco2: 32.8, po2: 82.7, hco3: 17.5, be: -8.1, lactate: 1.87, fio2: 50, pf: 165, hb: 10.1, ca: 1.05 },
-      { h: 112.77, label: "术后112h46m", sample: "动脉", ph: 7.366, pco2: 26.5, po2: 73.5, hco3: 14.8, be: -10.5, lactate: 1.33, fio2: 50, pf: 147, hb: 7.1, ca: 1.05 }
+      { h: 112.77, label: "术后112h46m", sample: "动脉", ph: 7.366, pco2: 26.5, po2: 73.5, hco3: 14.8, be: -10.5, lactate: 1.33, fio2: 50, pf: 147, hb: 7.1, ca: 1.05 },
+      { h: 123.81, label: "术后123h48m", sample: "动脉", ph: 7.339, pco2: 29.9, po2: 94.0, hco3: 15.7, be: -10.1, lactate: 1.52, fio2: 50, pf: 188, hb: 7.7, ca: 1.06 }
     ];
 
     const labReadings = [
@@ -1819,7 +1825,7 @@
         id: "bleeding",
         group: "urgent",
         title: "红细胞4U（B型Rh+）还没开输，什么时候开始？",
-        detail: "血常规Hb 67 g/L、血气7.1 g/dL。CRRT已设定暂未开机。请确认开输时间、速度、输后复查，以及与CRRT开机的先后顺序。"
+        detail: "血常规Hb 67 g/L、最新血气Hb 7.7 g/dL（Hct 23%）。CRRT已设定暂未开机。请确认开输时间、速度、输后复查，以及与CRRT开机的先后顺序。"
       },
       {
         id: "hemodynamics",
@@ -1830,8 +1836,8 @@
       {
         id: "lactate",
         group: "urgent",
-        title: "乳酸已回到1.33，能否认为灌注改善？",
-        detail: "参考0.5–1.6。过夜尿仅50 mL，肌酐314。已有排便。哪些休克问题仍未解决？"
+        title: "乳酸1.52仍在参考，能否认为灌注改善？",
+        detail: "1.33→1.52（参考0.5–1.6）。过夜尿仅50 mL，肌酐314。已有排便。哪些休克问题仍未解决？"
       },
       {
         id: "source-control",
@@ -1843,37 +1849,37 @@
         id: "shock-cause",
         group: "urgent",
         title: "目前休克的主要原因判断是什么？",
-        detail: "感染性、失血性、心源性或混合性？血气Hb骤降后，是否还有未控制的出血或感染源？"
+        detail: "感染性、失血性、心源性或混合性？血气Hb仍低且红细胞未开输，是否还有未控制的出血或感染源？"
       },
       {
         id: "oxygenation",
         group: "urgent",
-        title: "P/F从165降到147，PO₂只有73.5，呼吸支持要不要升级？",
-        detail: "仍FiO₂50%。目前通气模式、PEEP，以及升级或减氧的标准是什么？"
+        title: "P/F回升到188，仍远低于400，呼吸支持要不要升级？",
+        detail: "仍FiO₂50%，PO₂94。目前通气模式、PEEP，以及升级或减氧的标准是什么？"
       },
       {
         id: "next-window",
         group: "urgent",
         title: "未来6–12小时最重要的观察目标是什么？",
-        detail: "血压125/35、HR100。CRRT已设未开（血液130、脱水300）。红细胞4U尚未开输；已补钾5 mL。有排便。优先确认何时开机、何时开输，以及开机后钾/钠/酸碱怎么盯。"
+        detail: "血压125/35、HR100。酸碱仍重（pH7.339、BE−10.1）。CRRT已设未开（血液130、脱水300）。红细胞4U尚未开输；已补钾5 mL。优先确认何时开机、何时开输，以及开机后钾/钠/酸碱怎么盯。"
       },
       {
         id: "kidney",
         group: "followup",
         title: "CRRT已设（血液130、脱水300）为何还没开机？",
-        detail: "肌酐314、尿素25.69、过夜尿50 mL。已补钾5 mL。请确认开机时机、抗凝方案，以及与红细胞输注的先后顺序。"
+        detail: "肌酐314、尿素25.69、过夜尿50 mL。代谢酸仍重（HCO₃⁻15.7）。已补钾5 mL。请确认开机时机、抗凝方案，以及与红细胞输注的先后顺序。"
       },
       {
         id: "coagulation",
         group: "followup",
         title: "APTT从67.2降到45.9，抗凝还要不要调？",
-        detail: "08:51为45.9秒（参考23.3–32.5），INR 1.03、PT 11.8、纤维蛋白原4.02已正常。血红蛋白仍在降，请确认抗凝是否已停、有无出血。"
+        detail: "08:51为45.9秒（参考23.3–32.5），INR 1.03、PT 11.8、纤维蛋白原4.02已正常。血红蛋白仍低，请确认抗凝是否已停、有无出血。"
       },
       {
         id: "infection",
         group: "followup",
         title: "降钙素原146→170→102→65，抗感染是否见效？",
-        detail: "9月19日10:03为65.368，仍远高于0.05。今晨白细胞13.17→17.42，中性粒89%。培养和目前抗生素如何？CRRT已停，剂量是否需要调整？"
+        detail: "9月19日10:03为65.368，仍远高于0.05。白细胞13.17→17.42，中性粒89%。培养和目前抗生素如何？CRRT已停，剂量是否需要调整？"
       },
       {
         id: "liver",
@@ -1890,8 +1896,8 @@
       {
         id: "calcium",
         group: "followup",
-        title: "离子钙仍为1.05，碱缺加大后还要不要补钙？",
-        detail: "1.14→1.09→1.05。CRRT已设定暂未开机，若用枸橼酸抗凝，补钙目标与监测频率如何？已补钾5 mL，开机后钾怎么调？"
+        title: "离子钙1.06，碱缺仍大，还要不要补钙？",
+        detail: "1.14→1.09→1.05→1.06。CRRT已设定暂未开机，若用枸橼酸抗凝，补钙目标与监测频率如何？已补钾5 mL，开机后钾怎么调？"
       }
     ];
 

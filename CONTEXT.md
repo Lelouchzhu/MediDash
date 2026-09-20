@@ -73,9 +73,17 @@ Trend: falling since the peak, still far above ref 0–0.05.
 - **Transfusion:** **4 units RBC**, blood type **B Rh-positive** — **not started yet**
 - **K supplement:** **5 mL** given (family)
 
-### Arterial blood gas — latest 2026-09-20 06:46 (postop 112h46m)
+### Arterial blood gas — latest 2026-09-20 17:48 (postop 123h48m)
 
-- pH **7.366** (back in range), PCO₂ **26.5↓**, PO₂ **73.5↓**, HCO₃⁻ **14.8↓**, BE **−10.5** (ABE; SBE −9.5)
+- pH **7.339↓**, PCO₂ **29.9↓**, PO₂ **94.0**, HCO₃⁻ **15.7↓** (cHCO3-(p); tCO₂(B) 16.7), BE **−10.1** (ABE; SBE −9.1)
+- Lactate **1.52** (in ref 0.5–1.6; was 1.33)
+- FiO₂ **50%**, P/F **188** (improved vs morning 147; still far below 400). This 188 is oxygenation index, not PCT.
+- Hb **7.7↓** g/dL (was 7.1), Hct **23%↓**, iCa **1.06↓**
+- Screenshot: `testset/reports/abg/20260920T174824__2EF271A6-AC43-46C4-8B3C-78C2A60EE802_L0_001.jpg`
+
+### Arterial blood gas — 2026-09-20 06:46 (postop 112h46m)
+
+- pH **7.366** (then in range), PCO₂ **26.5↓**, PO₂ **73.5↓**, HCO₃⁻ **14.8↓**, BE **−10.5** (ABE; SBE −9.5)
 - Lactate **1.33** (in ref 0.5–1.6; was 1.87)
 - FiO₂ **50%**, P/F **147** (worse than 165). This 147 is oxygenation index, not PCT.
 - Hb **7.1↓** g/dL (was 10.1 about 8 h earlier), Hct **21%↓**, iCa **1.05↓** unchanged
@@ -229,4 +237,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-20 — BP 125/35 HR 100; CRRT set (blood 130 / UF 300) not on; RBC 4U B Rh+ not started; K 5 mL; bowel movement; overnight urine 50 mL.
+**Last updated:** 2026-09-20 17:48 — ABG lac 1.52 / PF 188 / Hb 7.7 / pH 7.339 / HCO₃⁻ 15.7 / BE −10.1; BP 125/35 HR 100; CRRT set not on; RBC 4U B Rh+ not started.
