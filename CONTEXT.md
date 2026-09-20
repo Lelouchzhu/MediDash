@@ -66,11 +66,12 @@ Trend: falling since the peak, still far above ref 0–0.05.
 
 ### Support / vitals (family-reported)
 
-- **Latest bedside (~postop 116h):** BP last reported **110/36** (MAP≈61), HR/pulse **112**, RR **15–20**
-- **CRRT:** stopped early morning 2026-09-19; family now says **restart is imminent**, along with **transfusion**. Before prior stop: dehydrate ~**250 mL/h**, hemofiltration **120 mL/h**; IV ~**200 mL/h**
-- Urine: … → diuretics **10 mL** → overnight **50 mL** (still oliguric)
-- Vasopressors **maintained**: norepinephrine **9 mL/h = 0.45 mg/h** + dopamine **10 mL/h** (dopamine concentration not verified)
-- **Transfusion:** **4 units**, blood type **B Rh-positive** (family). Product (RBC vs other) not specified. CRRT restart still imminent.
+- **Latest bedside (~postop 122h):** BP **125/35** (MAP≈65), HR **100**, RR **15–20**
+- **CRRT:** settings entered but **not started yet** — blood flow **130 mL/min**, dehydrate/UF **300 mL/h**. Prior stop morning 2026-09-19.
+- Urine overnight **50 mL** (still oliguric). **Bowel movement** reported today.
+- Vasopressors **maintained**: norepinephrine **9 mL/h = 0.45 mg/h** + dopamine **10 mL/h**
+- **Transfusion:** **4 units RBC**, blood type **B Rh-positive** — **not started yet**
+- **K supplement:** **5 mL** given (family)
 
 ### Arterial blood gas — latest 2026-09-20 06:46 (postop 112h46m)
 
@@ -228,4 +229,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-20 — transfusion 4 units B Rh+; Cr 314 / urea 25.69; overnight urine 50 mL; NE 9 + dopamine 10; CRRT restart imminent.
+**Last updated:** 2026-09-20 — BP 125/35 HR 100; CRRT set (blood 130 / UF 300) not on; RBC 4U B Rh+ not started; K 5 mL; bowel movement; overnight urine 50 mL.
