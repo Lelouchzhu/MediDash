@@ -66,10 +66,10 @@ Trend: falling since the peak, still far above ref 0–0.05.
 
 ### Support / vitals (family-reported)
 
-- **Latest bedside (~postop 97h):** BP **110/36** (MAP≈61), HR/pulse **112**, RR **15–20**
-- **CRRT stopped** early morning 2026-09-19 (family). Before stop: dehydrate/replacement ~**250 mL/h**, hemofiltration **120 mL/h**; IV fluids ~**200 mL/h**
-- Urine: 950 → 300 → 70 → morning 20 mL → overnight **0** → after diuretics today **10 mL** (still nearly anuric)
-- Vasopressors (family, confirmed): norepinephrine **9 mL/h = 0.45 mg/h** (= **7.5 μg/min**). At an assumed 50 kg that is ~**0.15 μg/kg/min** — **moderate-low, not a high dose**. Second agent status unknown.
+- **Latest bedside (~postop 116h):** BP last reported **110/36** (MAP≈61), HR/pulse **112**, RR **15–20**
+- **CRRT:** stopped early morning 2026-09-19; family now says **restart is imminent**, along with **transfusion**. Before prior stop: dehydrate ~**250 mL/h**, hemofiltration **120 mL/h**; IV ~**200 mL/h**
+- Urine: … → diuretics **10 mL** → overnight **50 mL** (still oliguric)
+- Vasopressors **maintained**: norepinephrine **9 mL/h = 0.45 mg/h** + dopamine **10 mL/h** (dopamine concentration not verified)
 
 ### Arterial blood gas — latest 2026-09-20 06:46 (postop 112h46m)
 
@@ -128,6 +128,12 @@ Trend: falling since the peak, still far above ref 0–0.05.
 
 - K **4.17** mmol/L (ref 3.5–5.3) — normal single-item report
 - Screenshot: `testset/reports/chemistry/20260918T172250__01a0b451-4f08-76b7-9cd9-0c8d379fafd4.jpg`
+
+### Chemistry — latest 2026-09-20 09:55 (postop 115h55m)
+
+- Cr **314↑** (was 204), urea **25.69↑** (was 13.27)
+- K **5.09**, Na **130.77↓**, Cl **96.24**
+- Screenshot: `testset/reports/chemistry/20260920T095528__87367DCB-4771-429D-9168-98B3CF4CA5C1_L0_001.jpg`
 
 ### Chemistry — 2026-09-19 10:03 (postop 92h03m)
 
@@ -221,4 +227,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-20 — CBC 08:23 Hb 67 / WBC 17.42 / PLT 60; APTT 45.9 / INR 1.03; ABG 06:46 Hb 7.1 / P/F 147 / lac 1.33.
+**Last updated:** 2026-09-20 — chemistry 09:55 Cr 314 / urea 25.69 / Na 130.77; overnight urine 50 mL; NE 9 + dopamine 10 maintained; transfusion and CRRT restart imminent.

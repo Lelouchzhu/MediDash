@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 75,
+  "count": 76,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1015,6 +1015,27 @@
         "pt_pct": 91.4,
         "inr": 1.03,
         "fbg": 4.02
+      }
+    },
+    {
+      "id": "20260920T095528__87367DCB-4771-429D-9168-98B3CF4CA5C1_L0_001.jpg",
+      "path": "reports/chemistry/20260920T095528__87367DCB-4771-429D-9168-98B3CF4CA5C1_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "87367DCB-4771-429D-9168-98B3CF4CA5C1_L0_001.jpg",
+      "sha256_16": "63edea18513e71e2",
+      "bytes": 490270,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-20T09:55:28",
+      "type": "生化",
+      "note": "Cr314 urea25.69 Na130.77 K5.09 Cl96.24; overnight urine 50mL; CRRT restart + transfusion pending",
+      "relative_h": 115.92,
+      "extracted": {
+        "k": 5.09,
+        "na": 130.77,
+        "cl": 96.24,
+        "urea": 25.69,
+        "creatinine": 314
       }
     }
   ]
