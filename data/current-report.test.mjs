@@ -3,14 +3,22 @@ import assert from "node:assert/strict";
 import report from "./current-report.js";
 
 test("current report seed matches the updated live dashboard counts", () => {
-  assert.equal(report.baseReadings.length, 21);
-  assert.equal(report.labReadings.length, 19);
-  assert.equal(report.bedsideReadings.length, 7);
-  assert.equal(report.baseReadings.at(-1).lactate, 2.14);
-  assert.equal(report.baseReadings.at(-1).pf, 210);
-  assert.equal(report.labReadings.at(-1).pct, 65.368);
-  assert.equal(report.labReadings.at(-1).alb, 29.3);
+  assert.equal(report.baseReadings.length, 29);
+  assert.equal(report.labReadings.length, 33);
+  assert.equal(report.bedsideReadings.length, 12);
+  assert.equal(report.baseReadings.at(-1).lactate, 1.54);
+  assert.equal(report.baseReadings.at(-1).pf, 179);
+  const chem = report.labReadings.find(row => row.h === 139.31 && row.pct != null);
+  assert.equal(chem.pct, 36.8855);
+  assert.equal(chem.creatinine, 231);
+  const inflam = report.labReadings.find(row => row.h === 139.31 && row.crp != null);
+  assert.equal(inflam.crp, 97.7);
+  assert.equal(inflam.il6, 68.5);
+  assert.equal(report.labReadings.at(-1).aptt, 51.8);
   assert.equal(report.labReadings.find(row => row.h === 80.22).aptt, 67.2);
+  assert.equal(report.bedsideReadings.at(-1).sbp, 150);
+  assert.equal(report.bedsideReadings.at(-1).ne, 4);
+  assert.equal(report.bedsideReadings.at(-1).da, 7.5);
   assert.equal(report.sampleOral.sbp, 120);
 });
 
@@ -23,7 +31,7 @@ test("every gas and lab seed row is image-backed after the main audit", () => {
   }
   assert.equal(report.seedRowsWithoutScreenshot("gas").length, 0);
   assert.equal(report.seedRowsWithoutScreenshot("lab").length, 0);
-  assert.equal(report.seedRowsWithoutScreenshot("bedside").length, 7);
+  assert.equal(report.seedRowsWithoutScreenshot("bedside").length, 12);
 });
 
 test("perfect replay of seed plus oral fully covers the current report", () => {
@@ -51,9 +59,9 @@ test("labeled-only replay still misses early other/ clocks and all oral", () => 
   });
   assert.equal(coverage.complete, false);
   assert.equal(coverage.labsComplete, false);
-  assert.ok(coverage.gas.fullyCoveredRows >= 8, `gas ${coverage.gas.fullyCoveredRows}`);
-  assert.ok(coverage.lab.fullyCoveredRows >= 12);
-  assert.equal(coverage.bedside.missingRows, 7);
+  assert.ok(coverage.gas.fullyCoveredRows >= 16, `gas ${coverage.gas.fullyCoveredRows}`);
+  assert.ok(coverage.lab.fullyCoveredRows >= 24, `lab ${coverage.lab.fullyCoveredRows}`);
+  assert.equal(coverage.bedside.missingRows, 12);
 });
 
 test("close ABG clocks stay distinct when both are replayed", () => {

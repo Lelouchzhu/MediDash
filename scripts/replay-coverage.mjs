@@ -36,7 +36,13 @@ const EXPECT = {
   "20260918T221305__01a0b731-35d4-7a05-b975-9fac7882eef3.jpg": { hours: 80.22, aptt: 67.2 },
   "20260919T084629__01a0b731-359d-77fe-9689-d52f5b99561b.jpg": { hours: 90.77, wbc: 13.17, hbg: 76, plt: 55 },
   "20260919T100330__01a0b7bc-519d-72d9-9831-8fd5f6dd93c7.jpg": { hours: 92.06, alb: 29.3, k: 4.8, na: 134.78, cl: 100.69, urea: 13.27, creatinine: 204, pct: 65.368 },
-  "20260919T100330__01a0b7bc-51be-7f0b-890a-2cc1f6dfac4f.jpg": { hours: 92.06, alb: 29.3, k: 4.8, na: 134.78, urea: 13.27, creatinine: 204, pct: 65.368 }
+  "20260919T100330__01a0b7bc-51be-7f0b-890a-2cc1f6dfac4f.jpg": { hours: 92.06, alb: 29.3, k: 4.8, na: 134.78, urea: 13.27, creatinine: 204, pct: 65.368 },
+  "20260921T091823__BBB64AB1-8E21-40A1-9564-A95CE7D6E1B0_L0_001.jpg": { hours: 139.31, crp: 97.7, il6: 68.5 },
+  "20260921T091831__01a0c208-0305-78b4-81e2-bc4fffb5f990.jpg": { hours: 139.31, alt: 159, ast: 82, ck: 434, ckmb: 23.7, ldh: 463, alb: 35.8, k: 3.93, na: 138.61, cl: 98.12, urea: 22.09, creatinine: 231, pct: 36.8855 },
+  "20260921T091824__01a0c1af-fc51-7986-99a8-e7def9d0edeb.jpg": { hours: 139.31, aptt: 45.8, inr: 1.11, pt: 12.4 },
+  "20260921T105336__hires__01a0c258-8b2c-7572-b9e7-78adb4263c70.jpg": { hours: 140.89, ph: 7.515, pco2: 33, po2: 89.7, hco3: 26, be: 3.1, lactate: 1.54, fio2: 50, pf: 179, hb: 8.9, ca: 1.07 },
+  "20260921T105336__01a0c208-02ce-7b4d-a949-e4002ba67731.jpg": { hours: 140.89, ph: 7.515, pco2: 33, po2: 89.7, hco3: 26, be: 3.1, lactate: 1.54, fio2: 50, pf: 179, hb: 8.9, ca: 1.07 },
+  "20260921T110725__01a0c208-02ed-7967-8409-0a947755103f.jpg": { hours: 141.12, aptt: 51.8 }
 };
 
 function upsert(list, entry) {

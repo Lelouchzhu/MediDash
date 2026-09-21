@@ -346,6 +346,64 @@ test("merges two OCR passes and prefers the better WBC", () => {
   assert.equal(merged.fields.plt, 73);
 });
 
+test("parses 09:18 chemistry including PCT 36.8855 and CRP 97.7", () => {
+  const chem = parseLabReportText(`
+    报告时间: 2026-09-21 09:18:31
+    谷丙转氨酶 ALT 159.0
+    谷草转氨酶 AST 82.0
+    肌酐测定 SCR 231.0 umol/L
+    尿素测定 UREA 22.09 mmol/L
+    血清白蛋白测定 ALB 35.8 g/L
+    降钙素原测定 PCT 36.8855 ng/ml
+    钾测定 K 3.93 mmol/L
+  `);
+  assert.equal(chem.hours, 139.31);
+  assert.equal(chem.fields.pct, 36.8855);
+  assert.equal(chem.fields.creatinine, 231);
+  assert.equal(chem.fields.alb, 35.8);
+  assert.equal(chem.fields.alt, 159);
+  assert.equal(chem.fields.k, 3.93);
+
+  const inflam = parseLabReportText(`
+    报告时间: 2026-09-21 09:18:23
+    C反应蛋白 CRP 97.70 mg/L
+    白细胞介素-6 IL-6 68.500 pg/ml
+  `);
+  assert.equal(inflam.hours, 139.31);
+  assert.equal(inflam.fields.crp, 97.7);
+  assert.equal(inflam.fields.il6, 68.5);
+  assert.equal(inflam.fields.pct, undefined);
+});
+
+test("parses 10:53 ABG and 11:07 APTT from the updated testset", () => {
+  const abg = parseLabReportText(`
+    报告时间: 2026-09-21 10:53:36
+    酸碱度 pH 7.515
+    二氧化碳分压 pCO2 33.00
+    氧分压 pO2 89.70
+    血浆碳酸氢盐浓度 cHCO3-(P) 26.00
+    标准剩余碱 SBE 3.10
+    乳酸浓度 cLac 1.54
+    吸入氧浓度 FO2(I) 50.00
+    氧合指数 pO2(a)/FO2(I) 179.00
+    实测总血红蛋白 ctHb 8.90
+    钙离子浓度 cCa2+ 1.07
+  `);
+  assert.equal(abg.hours, 140.89);
+  assert.equal(abg.fields.lactate, 1.54);
+  assert.equal(abg.fields.pf, 179);
+  assert.equal(abg.fields.hb, 8.9);
+  assert.equal(abg.fields.ph, 7.515);
+  assert.equal(abg.fields.pct, undefined);
+
+  const coag = parseLabReportText(`
+    报告时间: 2026-09-21 11:07:25
+    活化部分凝血活酶时间测定 (APTT) APTT 51.8 秒
+  `);
+  assert.equal(coag.hours, 141.12);
+  assert.equal(coag.fields.aptt, 51.8);
+});
+
 test("rejects PDFs and oversized files before OCR", () => {
   assert.match(fileRejectionReason({ name: "report.pdf", type: "application/pdf", size: 1000 }), /PDF/);
   assert.match(fileRejectionReason({ name: "shot.png", type: "image/png", size: 20 * 1024 * 1024 }), /15MB/);

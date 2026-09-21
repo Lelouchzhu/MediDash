@@ -11,7 +11,7 @@
   const GAS_KEYS = ["ph", "pco2", "po2", "hco3", "be", "lactate", "fio2", "pf", "hb", "ca"];
   const LAB_KEYS = [
     "aptt", "inr", "pt", "creatinine", "urea", "ck", "ckmb", "ldh", "hbdh",
-    "alt", "ast", "il6", "pct", "wbc", "plt", "hbg", "k", "na", "cl", "alb"
+    "alt", "ast", "il6", "pct", "crp", "wbc", "plt", "hbg", "k", "na", "cl", "alb"
   ];
   const SURGERY_END_HOUR = 14;
   const SURGERY_END_MS = Date.parse("2026-09-15T14:00:00");
@@ -40,6 +40,7 @@
     ast: [5, 15000],
     il6: [1, 200000],
     pct: [0.01, 500],
+    crp: [0.1, 400],
     wbc: [0.5, 80],
     plt: [5, 1000],
     hbg: [30, 220],
@@ -327,6 +328,7 @@
     assign(fields, "alt", recoverDroppedDot(takeNumber(raw.match(/(?:谷丙转氨酶|\bALT\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 2000));
     assign(fields, "ast", recoverDroppedDot(takeNumber(raw.match(/(?:谷草转氨酶|\bAST\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 2000));
     assign(fields, "il6", recoverDroppedDot(takeNumber(raw.match(/(?:白细胞介素-?6|IL?\s*[=-]?\s*6)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 5000));
+    assign(fields, "crp", recoverDroppedDot(takeNumber(raw.match(/(?:(?:超敏)?C\s*反应蛋白|\bhs-?CRP\b|\bCRP\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 400));
     assign(fields, "alb", recoverDroppedDot(takeNumber(raw.match(/(?:血清白蛋白|白蛋白|\bALB\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 60));
     assign(fields, "k", recoverDroppedDot(takeNumber(raw.match(/(?:钾(?:测定)?|(?<![A-Zc])\bK\b(?!\s*-?\s*MB))\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 8));
     assign(fields, "na", recoverDroppedDot(takeNumber(raw.match(/(?:钠(?:测定)?|\bNa\b)\s*[:=]?\s*(-?\d+(?:[.,]\d+)?)/i)), 170));
@@ -353,6 +355,7 @@
     assignScanned(fields, "alt", raw, /谷丙转氨酶|\bALT\b/i, value => recoverDroppedDot(value, 2000));
     assignScanned(fields, "ast", raw, /谷草转氨酶|\bAST\b/i, value => recoverDroppedDot(value, 2000));
     assignScanned(fields, "il6", raw, /白细胞介素|IL?\s*[=-]?\s*6/i, value => recoverDroppedDot(value, 5000));
+    assignScanned(fields, "crp", raw, /C\s*反应蛋白|\bhs-?CRP\b|\bCRP\b/i, value => recoverDroppedDot(value, 400));
     assignScanned(fields, "creatinine", raw, /肌酐|\bSCR\b|Crea(?!tine)|\bCREA\b/i, value => recoverDroppedDot(value, 2000));
     assignScanned(fields, "urea", raw, /尿素|\bUREA\b|\bUrea\b/i, value => recoverDroppedDot(value, 80));
     assignScanned(fields, "alb", raw, /白蛋白|\bALB\b/i, value => recoverDroppedDot(value, 60));

@@ -468,7 +468,16 @@
     .legend-item { display: flex; align-items: center; gap: 5px; }
     .legend-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
     .legend-dot.venous { background: #fff; border: 2px solid var(--blue); }
+    .legend-dot.sbp { background: #bd3b3b; }
+    .legend-dot.dbp { background: #3978a8; }
+    .legend-dot.map { background: #167a5b; }
+    .legend-dot.ne { background: #c76a16; }
+    .legend-dot.da { background: #7257a3; }
     .legend-band { width: 18px; height: 8px; border-radius: 3px; background: var(--green-soft); }
+
+    .vitals-charts { display: grid; gap: 16px; margin-bottom: 12px; }
+    .vitals-charts .chart-wrap { min-height: 240px; }
+    .vitals-charts .chart-heading { margin-top: 0; }
 
     .insights {
       display: grid;
@@ -1201,7 +1210,7 @@
       <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
-        <span class="pill" id="latestTimePill">最新化验：术后92h03m · PCT 65.4</span>
+        <span class="pill" id="latestTimePill">最新化验：术后141h07m · APTT 51.8</span>
         <span class="pill">数据已去标识化</span>
       </div>
     </header>
@@ -1240,77 +1249,78 @@
         </div>
       </div>
       <div class="status-grid" id="statusGrid">
-        <div class="status-card orange">
+        <button class="status-card orange" type="button" data-metric-jump="map">
           <div class="status-top">
             <span class="status-name">循环</span>
-            <span class="level">仍依赖升压</span>
+            <span class="level">再减量后血压升高</span>
           </div>
-          <div class="status-value">120/35</div>
-          <div class="status-note">MAP≈63 · HR 109<br>去甲 9 mL/h=0.45 mg/h · 中等偏低</div>
-        </div>
+          <div class="status-value">150/55</div>
+          <div class="status-note">MAP≈87 · 脉搏106<br>去甲6→<strong>4</strong> · 多巴胺8→<strong>7.5</strong></div>
+        </button>
         <button class="status-card orange" type="button" data-metric-jump="lactate">
           <div class="status-top">
             <span class="status-name">组织灌注</span>
-            <span class="level">乳酸回升</span>
+            <span class="level">已回参考</span>
           </div>
-          <div class="status-value"><span id="latestLactate">2.14</span><span class="status-unit">mmol/L</span></div>
-          <div class="status-note">1.41→2.14 · 再次高于参考<br>过夜尿0</div>
+          <div class="status-value"><span id="latestLactate">1.54</span><span class="status-unit">mmol/L</span></div>
+          <div class="status-note">2.20→1.61→<strong>1.54</strong> · 已回参考<br>CRRT停后仍无尿</div>
         </button>
-        <button class="status-card orange" type="button" data-metric-jump="pf">
+        <button class="status-card red" type="button" data-metric-jump="pf">
           <div class="status-top">
             <span class="status-name">氧合</span>
-            <span class="level">较昨夜下降</span>
+            <span class="level">仍低</span>
           </div>
-          <div class="status-value"><span id="latestPf">210</span><span class="status-unit">P/F</span></div>
-          <div class="status-note">FiO₂ 仍50% · 262→210<br>仍远低于400</div>
+          <div class="status-value"><span id="latestPf">179</span><span class="status-unit">P/F</span></div>
+          <div class="status-note">FiO₂ 仍50% · PO₂ 89.7<br>161→179 · 179是氧合指数不是PCT</div>
         </button>
         <button class="status-card orange" type="button" data-metric-jump="hco3">
           <div class="status-top">
             <span class="status-name">酸碱</span>
-            <span class="level">代谢酸加重</span>
+            <span class="level">更偏碱</span>
           </div>
-          <div class="status-value"><span id="latestPh">7.382</span><span class="status-unit">pH</span></div>
-          <div class="status-note">HCO₃⁻ 18.7↓ · BE −6.4</div>
+          <div class="status-value"><span id="latestPh">7.515</span><span class="status-unit">pH</span></div>
+          <div class="status-note">HCO₃⁻ 26.0 · BE +3.1↑<br>7.485→7.515 · 代谢酸已翻向碱</div>
         </button>
         <div class="status-card red">
           <div class="status-top">
             <span class="status-name">感染 / 炎症</span>
-            <span class="level">下降但仍极高</span>
+            <span class="level">白细胞继续升高</span>
           </div>
-          <div class="status-value">65.4<span class="status-unit">PCT</span></div>
-          <div class="status-note">170→102→65<br>仍远高于0.05</div>
+          <div class="status-value">19.40<span class="status-unit">WBC</span></div>
+          <div class="status-note">17.42→19.40 · 中性93.5%<br>PCT 65.4→<strong>36.9</strong> · CRP 97.7 · 需密观WBC</div>
         </div>
         <div class="status-card orange">
           <div class="status-top">
             <span class="status-name">肾功能</span>
-            <span class="level">CRRT已停</span>
+            <span class="level">已停机仍无尿</span>
           </div>
-          <div class="status-value">204<span class="status-unit">μmol/L</span></div>
-          <div class="status-note">尿素13.27 · 过夜尿0<br>今日已加利尿剂</div>
+          <div class="status-value">231<span class="status-unit">μmol/L</span></div>
+          <div class="status-note">CRRT走了19h48min已停<br>仍无尿 · 钾3.93停后或再升</div>
         </div>
-        <div class="status-card red">
+        <div class="status-card orange">
           <div class="status-top">
             <span class="status-name">肝细胞损伤</span>
-            <span class="level">显著</span>
+            <span class="level">明显回落</span>
           </div>
-          <div class="status-value">891<span class="status-unit">ALT</span></div>
-          <div class="status-note">AST 806<br>需结合休克判断缺血性损伤</div>
+          <div class="status-value">159<span class="status-unit">ALT</span></div>
+          <div class="status-note">891→159 · AST 806→82<br>仍高于参考 · 白蛋白35.8</div>
         </div>
-        <div class="status-card red">
+        <div class="status-card orange">
           <div class="status-top">
             <span class="status-name">凝血</span>
-            <span class="level">再次延长</span>
+            <span class="level">再次升高</span>
           </div>
-          <div class="status-value"><span id="latestAptt">67.2</span><span class="status-unit">APTT</span></div>
-          <div class="status-note">64.0→67.2 · 参考21–45<br>仍明显延长</div>
+          <div class="status-value"><span id="latestAptt">51.8</span><span class="status-unit">APTT</span></div>
+          <div class="status-note">45.8→<strong>51.8</strong> · 本份参考21–45<br>09:18曾45.8 · PLT 60</div>
         </div>
-        <button class="status-card orange" type="button" data-metric-jump="hb">
+        <button class="status-card orange" type="button" data-metric-jump="hbg">
           <div class="status-top">
             <span class="status-name">血红蛋白 / 钙</span>
-            <span class="level">仍低</span>
+            <span class="level">血气回落到8.9</span>
           </div>
-          <div class="status-value"><span id="latestHb">9.2</span><span class="status-unit">g/dL</span></div>
-          <div class="status-note">血气9.2 · 血常规 Hb <strong>76</strong><br>PLT 55 · iCa 1.09</div>
+          <div class="status-value">100<span class="status-unit">g/L</span></div>
+          <span id="latestHb" hidden>8.9</span>
+          <div class="status-note">血常规仍100（09:16）<br>血气10.7→<strong>8.9</strong> · iCa 1.07</div>
         </button>
       </div>
     </section>
@@ -1360,16 +1370,16 @@
         </div>
         <div class="insights" id="insightsRow">
           <div class="insight">
-            <strong>乳酸再次升高至2.14</strong>
-            <p>昨夜1.41已正常，今晨2.14（参考0.5–1.6）。过夜尿0，灌注不能仅看单次乳酸。</p>
+            <strong>CRRT已停，仍无尿</strong>
+            <p>本轮走了<strong>19小时48分</strong>后停机。开CRRT前过夜尿仅50 mL，停后仍没有尿。下次肌酐、钾可能再升。</p>
           </div>
           <div class="insight">
-            <strong>氧合回落</strong>
-            <p>FiO₂仍50%，P/F 262→210，PO₂104.8；昨夜改善未能维持，仍远低于400。</p>
+            <strong>升压药再减：去甲4 + 多巴胺7.5</strong>
+            <p>去甲6→4 mL/h（=0.20 mg/h）。血压口述<strong>150/55</strong>（MAP≈87），脉搏106。需问目标血压，还要不要继续减。</p>
           </div>
           <div class="insight">
-            <strong>CRRT已停，过夜尿0</strong>
-            <p>凌晨停CRRT，今日加利尿剂。肌酐212→204，尿素11.59→13.27。PCT 102→65，仍极高。白蛋白29.3，钠134.8。</p>
+            <strong>仍密观：白细胞19.40、钾3.93</strong>
+            <p>WBC未再复查。钾3.93是开机中的数，停CRRT后反而可能回升。血气Hb仍8.9，APTT 51.8。</p>
           </div>
         </div>
       </div>
@@ -1379,7 +1389,42 @@
       <div class="section-head">
         <div>
           <h2 id="vitalsHeading">循环与支持</h2>
-          <p>家属口述，时间为近似节点</p>
+          <p>家属口述，时间为近似节点。趋势只画有明确读数的点。</p>
+        </div>
+      </div>
+      <div class="panel chart-panel vitals-charts">
+        <div>
+          <div class="chart-heading">
+            <div>
+              <h3 class="chart-title">血压趋势</h3>
+              <p class="chart-subtitle">收缩压 / 舒张压 / MAP · 口述近似时间</p>
+            </div>
+          </div>
+          <div class="chart-wrap">
+            <svg id="bpTrend" viewBox="0 0 760 260" role="img" aria-label="血压趋势"></svg>
+            <div class="chart-tooltip" id="bpTooltip" role="status"></div>
+          </div>
+          <div class="legend">
+            <span class="legend-item"><span class="legend-dot sbp"></span>收缩压</span>
+            <span class="legend-item"><span class="legend-dot dbp"></span>舒张压</span>
+            <span class="legend-item"><span class="legend-dot map"></span>MAP</span>
+          </div>
+        </div>
+        <div>
+          <div class="chart-heading">
+            <div>
+              <h3 class="chart-title">升压药趋势</h3>
+              <p class="chart-subtitle">去甲 / 多巴胺 mL/h · 只画有明确剂量的点 · 去甲浓度 0.05 mg/mL</p>
+            </div>
+          </div>
+          <div class="chart-wrap">
+            <svg id="pressorTrend" viewBox="0 0 760 240" role="img" aria-label="升压药趋势"></svg>
+            <div class="chart-tooltip" id="pressorTooltip" role="status"></div>
+          </div>
+          <div class="legend">
+            <span class="legend-item"><span class="legend-dot ne"></span>去甲肾上腺素</span>
+            <span class="legend-item"><span class="legend-dot da"></span>多巴胺</span>
+          </div>
         </div>
       </div>
       <div class="panel vitals" id="vitalsList">
@@ -1414,19 +1459,39 @@
           <span class="vital-note">MAP≈63 · RR 15–19<br>双升压药 · 各约半量</span>
         </div>
         <div class="vital-row">
-          <span class="vital-time">最新口述 · 约术后92h</span>
+          <span class="vital-time">约术后92h</span>
           <span class="vital-value">去甲 9 mL/h = 0.45 mg/h</span>
           <span class="vital-note">7.5 μg/min · 约0.15 μg/kg/min<br>中等偏低，非大剂量</span>
         </div>
         <div class="vital-row">
-          <span class="vital-time">尿量趋势</span>
-          <span class="vital-value">950 → 300 → 70 → 20 → 过夜0</span>
-          <span class="vital-note">CRRT凌晨已停<br>今日已加利尿剂</span>
+          <span class="vital-time">约术后122h</span>
+          <span class="vital-value">125/35 · HR 100</span>
+          <span class="vital-note">MAP≈65 · RR 15–20<br>其后升压药已再减</span>
         </div>
         <div class="vital-row">
-          <span class="vital-time">CRRT / 利尿</span>
-          <span class="vital-value">凌晨已停止</span>
-          <span class="vital-note">停前脱水250 · 血滤120<br>今日利尿剂已加量</span>
+          <span class="vital-time">最新口述 · 家属更新</span>
+          <span class="vital-value">150/55 · 脉搏 106</span>
+          <span class="vital-note">MAP≈87<br>去甲4 + 多巴胺7.5</span>
+        </div>
+        <div class="vital-row">
+          <span class="vital-time">升压药 · 家属更新</span>
+          <span class="vital-value">去甲 4 mL/h = 0.20 mg/h</span>
+          <span class="vital-note">6→4 · 多巴胺8→7.5<br>浓度仍按0.05 mg/mL</span>
+        </div>
+        <div class="vital-row">
+          <span class="vital-time">尿量 / 粪便</span>
+          <span class="vital-value">CRRT停后仍无尿</span>
+          <span class="vital-note">开CRRT前过夜仅50 mL<br>粪白细胞/红细胞阴性</span>
+        </div>
+        <div class="vital-row">
+          <span class="vital-time">CRRT · 已停机</span>
+          <span class="vital-value">本轮 19小时48分</span>
+          <span class="vital-note">昨16–18点开 · 曾设脱水300<br>累计脱水待问</span>
+        </div>
+        <div class="vital-row">
+          <span class="vital-time">输血 / 补钾</span>
+          <span class="vital-value">红细胞4U · B型Rh+</span>
+          <span class="vital-note">昨16–18点已开输<br>已补钾 5 mL</span>
         </div>
       </div>
     </section>
@@ -1443,16 +1508,16 @@
           <summary>
             <div>
               <div class="report-title">感染与循环</div>
-              <div class="report-meta">9月16日09:44 → 9月19日10:03</div>
+              <div class="report-meta">至术后140h53m · PCT 36.9</div>
             </div>
-            <span class="report-badge red">仍极高</span>
+            <span class="report-badge red">白细胞仍高</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>降钙素原：9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> → 9月19日10:03 <strong>65.368</strong> ng/mL（参考0–0.05）。持续下降，目前仍极高。</li>
-              <li>IL-6 981 pg/mL（术后约45小时）仍提示极强炎症反应。</li>
-              <li>乳酸峰值8.99 → 昨夜1.41 → 今晨<strong>2.14</strong>（再次高于参考）。血压仍为上次口述120/35、HR109。去甲已确认为 <strong>0.45 mg/h</strong>（9 mL/h = 7.5 μg/min），属中等偏低剂量。</li>
-              <li>血常规“PCT”是血小板比积（最新0.06%），与降钙素原不是同一指标。</li>
+              <li>降钙素原：9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> → 9月19日10:03 <strong>65.368</strong> → 9月21日09:18 <strong>36.8855</strong> ng/mL（参考0–0.05）。同时间上一张截图未含此项，已用完整单替换。持续下降，仍极高。</li>
+              <li>IL-6 981 → 最新<strong>68.5</strong> pg/mL（9月21日09:18，参考0–7），较峰值明显回落，仍远高于参考。同窗 CRP <strong>97.70</strong> mg/L（参考0–8）。</li>
+              <li>乳酸峰值8.99 → 夜间<strong>2.20</strong> → 今晨1.61 → 10:53血气<strong>1.54</strong>（已回参考0.5–1.6）。P/F <strong>179</strong>（161→179，是氧合指数不是降钙素原）。最新口述血压<strong>150/55</strong>、脉搏<strong>106</strong>；升压药已再减为<strong>去甲4 + 多巴胺7.5 mL/h</strong>（去甲=0.20 mg/h）。昨16–18点重启的CRRT已走完<strong>19小时48分</strong>后停机。</li>
+              <li>白细胞13.17→17.42→最新<strong>19.40</strong>，中性粒<strong>93.5%</strong>（绝对值18.14），需密观。血常规“PCT 0.08%”是血小板比积，不是降钙素原。粪便白细胞、红细胞阴性。</li>
             </ul>
           </div>
         </details>
@@ -1460,17 +1525,17 @@
           <summary>
             <div>
               <div class="report-title">肾脏与尿检</div>
-              <div class="report-meta">至术后92h03m · 肌酐 / CRRT已停 / 尿量</div>
+              <div class="report-meta">家属更新 · CRRT已停 · 仍无尿</div>
             </div>
-            <span class="report-badge orange">已停 · 无尿</span>
+            <span class="report-badge orange">停机后无尿</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>肌酐121.8→263→363→212→最新<strong>204</strong> μmol/L（结果已复查，参考41–81）；尿素11.59→<strong>13.27</strong> mmol/L（停CRRT后回升，参考3.1–8.8）。</li>
-              <li>尿量950→300→70→曾20 mL→<strong>过夜0</strong>。今日已增加利尿剂。</li>
-              <li>CRRT于9月19日凌晨停止。停前（家属口述）：脱水/置换约250 mL/h，血液滤过120 mL/h；静脉输液约200 mL/h。</li>
-              <li>最新电解质（10:03）：K <strong>4.80</strong>、Na <strong>134.78↓</strong>、Cl 100.69；白蛋白 <strong>29.3↓</strong> g/L。此前17:22 K 4.17。</li>
-              <li>此前尿潜血3+、蛋白2+；CK显著升高需继续结合肌红蛋白评估。</li>
+              <li>肌酐121.8→263→363→212→204→314→最新<strong>231</strong> μmol/L（9月21日09:18，参考41–81）；尿素25.69→最新<strong>22.09</strong> mmol/L。这是开机中的复查，停机后尚未再抽。</li>
+              <li>尿量950→300→70→曾20→过夜0→利尿后10→开CRRT前过夜<strong>50 mL</strong>。本轮CRRT停后<strong>仍无尿</strong>。</li>
+              <li>家属补充：昨天下午<strong>16–18点</strong>重启的CRRT已走完<strong>19小时48分</strong>后停机。开机前设定曾是血液<strong>130 mL/min</strong>、脱水<strong>300 mL/h</strong>。若16点开约今11:48停，若18点开约今13:48停，需床旁核对。累计脱水未口述。</li>
+              <li>最新电解质（09:18）：K <strong>3.93</strong>、Na <strong>138.61</strong>（已从130.8回参考）、Cl 98.12。停CRRT后钾可能回升，需密观。</li>
+              <li>粪便白细胞、红细胞阴性。此前尿潜血3+、蛋白2+。CK已从8280降至434，仍高于参考。</li>
             </ul>
           </div>
         </details>
@@ -1478,18 +1543,19 @@
           <summary>
             <div>
               <div class="report-title">凝血系统</div>
-              <div class="report-meta">危急后一度改善 · 最新术后80h13m</div>
+              <div class="report-meta">至术后141h07m · APTT 51.8</div>
             </div>
-            <span class="report-badge red">再次延长</span>
+            <span class="report-badge orange">再次升高</span>
           </summary>
           <div class="report-body">
             <ul>
               <li>补血浆前：PT 23.0秒、INR 2.11、APTT 57.9秒。</li>
               <li>APTT曾危急：76.1→72.4秒（术后约57–62小时）。</li>
-              <li>9月18日09:44（术后67h44m）：APTT 50.8秒、PT 13.8秒、INR 1.24；危急值曾解除但仍高于参考。</li>
-              <li>9月18日18:01（术后76h01m）：APTT 64.0秒↑（参考23.3–32.5），备注“结果已复查”。</li>
-              <li>最新（术后80h13m · 22:13）：APTT <strong>67.2</strong>秒↑（本份参考21–45），较64.0继续延长。</li>
-              <li>需确认停机前抗凝方案、有无出血，以及APTT 67.2在停CRRT后是否回落。</li>
+              <li>9月18日22:13：APTT 67.2秒↑（参考21–45）。</li>
+              <li>9月20日08:51：APTT 45.9秒↑（参考23.3–32.5），INR 1.03。</li>
+              <li>夜间：49.2→52.4→51.1秒↑（参考21–45）。</li>
+              <li>9月21日09:18：APTT 45.8秒↑（参考23.3–32.5），INR 1.11。</li>
+              <li>最新（9月21日11:07 · 术后141h07m）：APTT <strong>51.8</strong>秒↑（本份参考21–45），较09:18的45.8回升。</li>
             </ul>
           </div>
         </details>
@@ -1497,14 +1563,14 @@
           <summary>
             <div>
               <div class="report-title">组织与肌酶</div>
-              <div class="report-meta">术后约3小时 → 45小时 · CK / CK-MB / LDH</div>
+              <div class="report-meta">至术后139h18m · CK 434</div>
             </div>
-            <span class="report-badge red">显著升高</span>
+            <span class="report-badge orange">已明显回落</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>CK 5657→8280 U/L，继续升高；需警惕持续肌损伤及肌红蛋白相关肾损害。</li>
-              <li>CK-MB 228.5→132.6、LDH 1660→915、HBDH 669→576 U/L，虽下降但仍显著升高。</li>
+              <li>CK 5657→8280→最新<strong>434</strong> U/L（参考33–192），仍高但较峰值大幅下降。</li>
+              <li>CK-MB 228.5→132.6→最新<strong>23.7</strong>（参考0–24，刚回到上限内）。LDH 1660→915→<strong>463</strong>，HBDH 669→576→<strong>401</strong>。</li>
               <li>可来自手术、骨骼肌、缺血再灌注或其他组织损伤，单凭CK-MB不能诊断心肌梗死。</li>
               <li>术前肌钙蛋白I&lt;0.01，术后需结合动态肌钙蛋白、心电图及超声。</li>
             </ul>
@@ -1514,17 +1580,18 @@
           <summary>
             <div>
               <div class="report-title">血液与电解质</div>
-              <div class="report-meta">术前至术后92小时</div>
+              <div class="report-meta">至术后140小时53分</div>
             </div>
-            <span class="report-badge">随访</span>
+            <span class="report-badge orange">血气Hb回落</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>血常规Hb：85→最新<strong>76</strong> g/L（9月19日08:46）；同期血气Hb 9.2 g/dL（不同方法，勿直接等同）。Hct 22.9%。</li>
-              <li>血小板65→<strong>55</strong>×10⁹/L；血小板比积0.08%→0.06%（参考0.17–0.35）。</li>
-              <li>白细胞14.51→13.17，中性粒91.2%→87.9%，仍偏高。</li>
-              <li>最新离子钙 <strong>1.09</strong> mmol/L（较昨夜1.14更低）。10:03生化：K <strong>4.80</strong>（正常），Na <strong>134.78↓</strong>（参考137–147），Cl 100.69。</li>
-              <li>白蛋白 <strong>29.3↓</strong> g/L（参考34–48），为目前唯一一次测定。</li>
+              <li>血常规Hb：85→76→输前67→最新<strong>100</strong> g/L（9月21日09:16），HCT 27.6%。昨16–18点开输红细胞4U。血气Hb 10.7→最新<strong>8.9</strong> g/dL（10:53），Hct 26%。两种方法仍不要逐点等同。</li>
+              <li>血小板仍<strong>60</strong>×10⁹/L；血小板比积0.08%（参考0.17–0.35，不是降钙素原）。</li>
+              <li>白细胞17.42→最新<strong>19.40</strong>，中性粒<strong>93.5%</strong>（绝对值18.14），淋巴2.6% / 0.50。需密观白细胞。</li>
+              <li>钾最新<strong>3.93</strong>，钠<strong>138.61</strong>（已回参考），氯98.12。离子钙血气<strong>1.07</strong>。CRRT已停，钾可能回升，需密观。</li>
+              <li>粪便白细胞、红细胞阴性。同日炎症：CRP <strong>97.70</strong>、IL-6 <strong>68.5</strong>。</li>
+              <li>白蛋白29.3→最新<strong>35.8</strong> g/L（参考34–48，已回参考）。</li>
             </ul>
           </div>
         </details>
@@ -1532,16 +1599,16 @@
           <summary>
             <div>
               <div class="report-title">肝功能</div>
-              <div class="report-meta">9月17日10:52 · ALT / AST</div>
+              <div class="report-meta">至术后139h18m · ALT 159</div>
             </div>
-            <span class="report-badge red">显著升高</span>
+            <span class="report-badge orange">明显回落</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>2026-09-17 10:52：ALT 891、AST 806 U/L，AST/ALT 0.90，提示明显肝细胞损伤。</li>
-              <li>结合此前持续休克，需重点判断缺血缺氧性肝损伤，同时排查药物、感染等其他原因。</li>
-              <li>最新白蛋白 <strong>29.3</strong> g/L↓（9月19日10:03，参考34–48）。转氨酶尚未复查。</li>
-              <li>仍需胆红素、血糖、氨及动态转氨酶；INR还同时受凝血因子消耗和血浆输注影响。</li>
+              <li>2026-09-17 10:52：ALT 891、AST 806。最新（9月21日09:18）：ALT <strong>159</strong>、AST <strong>82</strong>（参考均0–40），AST/ALT 0.52。</li>
+              <li>较峰值大幅下降，仍高于参考。结合此前休克，缺血缺氧性肝损伤仍是主要考虑。</li>
+              <li>白蛋白29.3→<strong>35.8</strong> g/L，已回参考。仍缺胆红素。</li>
+              <li>INR 1.11已正常；勿把血常规血小板比积当成降钙素原。</li>
             </ul>
           </div>
         </details>
@@ -1576,7 +1643,7 @@
           <div class="question-summary-top">
             <div>
               <h3>查房沟通清单</h3>
-              <p>先问危及当前稳定性的6项，再补充7项器官功能和治疗计划。</p>
+              <p>先问危及当前稳定性的7项，再补充6项器官功能和治疗计划。</p>
             </div>
             <span class="question-count" id="questionCount">0 / 13 已确认</span>
           </div>
@@ -1751,6 +1818,141 @@
           <div class="event-title">PCT降至65.4，肌酐204，尿素回升</div>
           <div class="event-desc">PCT 101.563→65.368，仍远高于0.05。肌酐212→204（已复查），尿素11.59→13.27。白蛋白29.3↓，钠134.78↓，钾4.80。</div>
         </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">约术后97小时 · 家属口述</div>
+          <div class="event-title">血压110/36、脉搏112；利尿后尿仅10 mL</div>
+          <div class="event-desc">MAP≈61，RR15–20。脉压仍宽。较此前120/35、HR109略降，心率略升。CRRT已停后利尿反应仍很弱。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后104小时36分 · 9月19日22:36</div>
+          <div class="event-title">P/F降至165，代谢酸加重；乳酸1.87</div>
+          <div class="event-desc">FiO₂仍50%、PO₂82.7；pH7.346、HCO₃⁻17.5↓、BE−8.1；血气Hb10.1、Hct30%、iCa1.05。乳酸2.14→1.87，仍高于参考。氧合指数165不是降钙素原。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后112小时46分 · 9月20日06:46</div>
+          <div class="event-title">血气Hb降至7.1，P/F 147；乳酸1.33已正常</div>
+          <div class="event-desc">FiO₂仍50%、PO₂73.5↓。pH7.366靠PCO₂26.5代偿；HCO₃⁻14.8、BE−10.5。Hct 21%。iCa仍1.05。147是氧合指数，不是降钙素原。需问出血与是否输血。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后114小时23分 · 9月20日08:23</div>
+          <div class="event-title">血常规Hb降至67，白细胞升至17.42</div>
+          <div class="event-desc">Hb 76→67 g/L，HCT 19.7%，与今晨血气7.1方向一致。PLT 55→60。中性粒89%、绝对值15.50。血小板比积0.07%不是降钙素原。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后114小时51分 · 9月20日08:51</div>
+          <div class="event-title">APTT降至45.9，INR已正常</div>
+          <div class="event-desc">67.2→45.9秒，仍高于本份参考23.3–32.5。PT 11.8、INR 1.03、TT 16.6、纤维蛋白原4.02均在参考内。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后115小时55分 · 9月20日09:55</div>
+          <div class="event-title">肌酐回升至314，尿素25.69</div>
+          <div class="event-desc">肌酐204→314，尿素13.27→25.69。钠134.8→130.8↓，钾5.09，氯96.24。停CRRT后肾功能明显恶化。</div>
+        </article>
+        <article class="event" style="--event-color: var(--blue)">
+          <div class="event-time">约术后116小时 · 家属口述</div>
+          <div class="event-title">输血4个单位（B型Rh阳性）；即将重启CRRT</div>
+          <div class="event-desc">过夜尿50 mL。升压药维持：去甲9 mL/h（=0.45 mg/h）+ 多巴胺10 mL/h。血压曾口述110/36、脉搏112。输血成分后来确认为红细胞。</div>
+        </article>
+        <article class="event" style="--event-color: var(--blue)">
+          <div class="event-time">约术后122小时 · 家属口述</div>
+          <div class="event-title">血压125/35、HR100；当时口述CRRT已设、红细胞待输</div>
+          <div class="event-desc">当时设定：血液130 mL/min、脱水300 mL/h。已补钾5 mL。有排便。升压药仍去甲9 + 多巴胺10。家属后补充：约16–18点已开CRRT并开输。</div>
+        </article>
+        <article class="event" style="--event-color: var(--blue)">
+          <div class="event-time">约术后122–124小时 · 9月20日16–18点 · 家属补充</div>
+          <div class="event-title">CRRT与红细胞4U（B型Rh+）均在此时段开始</div>
+          <div class="event-desc">具体整点、实际血流速/脱水量、抗凝方案、4U是否输完尚未核对。17:48血气Hb仍7.7，22:16已升至10.4，与开输时间相符。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后123小时48分 · 9月20日17:48</div>
+          <div class="event-title">P/F回升至188；乳酸1.52仍在参考；血气Hb 7.7</div>
+          <div class="event-desc">FiO₂仍50%、PO₂94。pH7.339↓、HCO₃⁻15.7↓、BE−10.1。Hct 23%、iCa 1.06。188是氧合指数，不是降钙素原。若16–18点已开输，此份Hb提示当时可能刚开始或尚未输完。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后128小时16分 · 9月20日22:16</div>
+          <div class="event-title">血气Hb升至10.4；P/F 172；乳酸1.64略高</div>
+          <div class="event-desc">FiO₂仍50%、PO₂86。pH7.420已回参考，HCO₃⁻17.4↓、BE−7.0。Hct 31%、iCa 1.05。与下午开输红细胞方向一致。172是氧合指数，不是降钙素原。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后128小时31分 · 9月20日22:31</div>
+          <div class="event-title">APTT 49.2；钾 4.50</div>
+          <div class="event-desc">APTT 45.9→49.2秒↑（本份参考21–45）。钾5.09→4.50，已回参考3.5–5.3。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后131小时13分 · 9月21日01:13</div>
+          <div class="event-title">P/F回升至196；乳酸1.92；血气Hb 10.2</div>
+          <div class="event-desc">FiO₂仍50%、PO₂98。pH7.445、HCO₃⁻21.1↓、BE−3.0。Hct 30%、iCa 1.05。196是氧合指数，不是降钙素原。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后131小时25分 · 9月21日01:25</div>
+          <div class="event-title">APTT 52.4；钾 4.24</div>
+          <div class="event-desc">APTT 49.2→52.4秒↑（参考21–45）。钾4.50→4.24，仍在参考内。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后134小时20分 · 9月21日04:20</div>
+          <div class="event-title">乳酸升至2.20；P/F降至151</div>
+          <div class="event-desc">FiO₂仍50%、PO₂76.3↓。pH7.483↑、HCO₃⁻21.0↓、BE−2.5。血气Hb10.3、Hct30%、iCa1.06。151是氧合指数，不是降钙素原。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后134小时31分 · 9月21日04:31</div>
+          <div class="event-title">APTT 51.1；钾 4.20</div>
+          <div class="event-desc">APTT 52.4→51.1秒↑（参考21–45）。钾4.24→4.20。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后136小时52分 · 9月21日06:52</div>
+          <div class="event-title">乳酸回落1.61；P/F 161；pH 7.485偏碱</div>
+          <div class="event-desc">FiO₂仍50%、PO₂80.7。HCO₃⁻21.2↓、BE−2.2。血气Hb10.7、Hct31%、iCa1.08。161是氧合指数，不是降钙素原。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后139小时16分 · 9月21日09:16</div>
+          <div class="event-title">血常规Hb升至100；白细胞升至19.40</div>
+          <div class="event-desc">输前67→100 g/L，HCT 27.6%。PLT仍60。中性粒93.5%、绝对值18.14。血小板比积0.08%不是降钙素原。</div>
+        </article>
+        <article class="event" style="--event-color: var(--blue)">
+          <div class="event-time">术后139小时18分 · 9月21日09:18</div>
+          <div class="event-title">肌酐314→231；ALT 891→159；APTT 45.8</div>
+          <div class="event-desc">尿素25.69→22.09。AST 806→82，CK 8280→434，白蛋白29.3→35.8。APTT 51.1→45.8（参考23.3–32.5），INR 1.11。K 3.93，钠已回138.6。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后139小时18分 · 9月21日09:18</div>
+          <div class="event-title">CRP 97.7；IL-6 981→68.5</div>
+          <div class="event-desc">CRP 97.70 mg/L↑（参考0–8）。IL-6 68.500 pg/mL↑（参考0–7），较术后约45小时的981明显回落，仍远高于参考。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">家属更新 · 升压药减量</div>
+          <div class="event-title">去甲9→6 mL/h；多巴胺10→8 mL/h</div>
+          <div class="event-desc">去甲现6 mL/h = 0.30 mg/h（原0.45 mg/h）。血压口述仍停在125/35、心率100。减量后血压未再口述。</div>
+        </article>
+        <article class="event" style="--event-color: var(--blue)">
+          <div class="event-time">家属更新 · 粪便检测</div>
+          <div class="event-title">粪便白细胞、红细胞阴性</div>
+          <div class="event-desc">镜检未见红白细胞。有排便。不排除其他部位出血或感染。嘱密观钾和血白细胞。</div>
+        </article>
+        <article class="event" style="--event-color: var(--blue)">
+          <div class="event-time">术后139小时18分 · 9月21日09:18 · 替换截图</div>
+          <div class="event-title">降钙素原补全：65.368→36.8855</div>
+          <div class="event-desc">同时间上一张生化单没有降钙素原。完整单 PCT 36.8855 ng/mL↑（参考0–0.05），其余 ALT159、Cr231、K3.93 未改。不是血常规血小板比积，也不是氧合指数。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后140小时53分 · 9月21日10:53</div>
+          <div class="event-title">乳酸1.54回参考；P/F 179；血气Hb降至8.9</div>
+          <div class="event-desc">pH7.515↑、PCO₂33.0↓、PO₂89.7、HCO₃⁻26.0、ABE +3.1↑。FiO₂仍50%。iCa1.07。179是氧合指数，不是降钙素原。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后141小时07分 · 9月21日11:07</div>
+          <div class="event-title">APTT 45.8→51.8</div>
+          <div class="event-desc">本份参考21–45。较今晨09:18的45.8回升。</div>
+        </article>
+        <article class="event" style="--event-color: var(--blue)">
+          <div class="event-time">家属更新 · 升压药再减</div>
+          <div class="event-title">去甲6→4 mL/h；多巴胺8→7.5 mL/h</div>
+          <div class="event-desc">去甲现4 mL/h = 0.20 mg/h。血压口述150/55（MAP≈87），脉搏106。仍双药，剂量继续往下。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">家属更新 · CRRT停机</div>
+          <div class="event-title">本轮走了19小时48分后停机；仍无尿</div>
+          <div class="event-desc">昨16–18点重启。开CRRT前过夜尿仅50 mL，停后仍没有尿。累计脱水未口述。停后肌酐、钾尚未复查。</div>
+        </article>
       </div>
     </section>
 
@@ -1876,9 +2078,17 @@
               <option value="unknown">不详</option>
             </select>
           </div>
+          <div class="field">
+            <label for="ne">去甲肾上腺素 (mL/h)</label>
+            <input id="ne" name="ne" type="number" min="0" max="40" step="0.1" inputmode="decimal" placeholder="例如 4">
+          </div>
+          <div class="field">
+            <label for="da">多巴胺 (mL/h)</label>
+            <input id="da" name="da" type="number" min="0" max="40" step="0.1" inputmode="decimal" placeholder="例如 7.5">
+          </div>
           <div class="field wide">
             <label for="pressorNote">升压药口述（剂量/药名）</label>
-            <input id="pressorNote" name="pressorNote" type="text" placeholder="例如 各约最大允许量½">
+            <input id="pressorNote" name="pressorNote" type="text" placeholder="例如 去甲4 + 多巴胺7.5">
           </div>
           <div class="field">
             <label for="crrt">CRRT</label>
@@ -1998,6 +2208,10 @@
             <input id="pct" name="pct" type="number" step="0.001" inputmode="decimal">
           </div>
           <div class="field">
+            <label for="crp">C反应蛋白 CRP (mg/L)</label>
+            <input id="crp" name="crp" type="number" step="0.1" inputmode="decimal">
+          </div>
+          <div class="field">
             <label for="wbc">白细胞 WBC</label>
             <input id="wbc" name="wbc" type="number" step="0.01" inputmode="decimal">
           </div>
@@ -2081,7 +2295,15 @@
       { h: 71.01, label: "术后71h00m", sample: "动脉", ph: 7.388, pco2: 37.5, po2: 72.6, hco3: 22.1, be: -2.9, lactate: 1.27, fio2: 50, pf: 145, hb: 9.1, ca: 1.12 },
       { h: 75.4, label: "术后75h23m", sample: "动脉", ph: 7.363, pco2: 40.3, po2: 82.4, hco3: 22.4, be: -2.8, fio2: 50, pf: 165, hb: 8.8 },
       { h: 79.78, label: "术后79h47m", sample: "动脉", ph: 7.398, pco2: 33.8, po2: 131.1, hco3: 20.4, be: -4.5, lactate: 1.41, fio2: 50, pf: 262, hb: 9.4, ca: 1.14 },
-      { h: 88.74, label: "术后88h44m", sample: "动脉", ph: 7.382, pco2: 32.2, po2: 104.8, hco3: 18.7, be: -6.4, lactate: 2.14, fio2: 50, pf: 210, hb: 9.2, ca: 1.09 }
+      { h: 88.74, label: "术后88h44m", sample: "动脉", ph: 7.382, pco2: 32.2, po2: 104.8, hco3: 18.7, be: -6.4, lactate: 2.14, fio2: 50, pf: 210, hb: 9.2, ca: 1.09 },
+      { h: 104.61, label: "术后104h36m", sample: "动脉", ph: 7.346, pco2: 32.8, po2: 82.7, hco3: 17.5, be: -8.1, lactate: 1.87, fio2: 50, pf: 165, hb: 10.1, ca: 1.05 },
+      { h: 112.77, label: "术后112h46m", sample: "动脉", ph: 7.366, pco2: 26.5, po2: 73.5, hco3: 14.8, be: -10.5, lactate: 1.33, fio2: 50, pf: 147, hb: 7.1, ca: 1.05 },
+      { h: 123.81, label: "术后123h48m", sample: "动脉", ph: 7.339, pco2: 29.9, po2: 94.0, hco3: 15.7, be: -10.1, lactate: 1.52, fio2: 50, pf: 188, hb: 7.7, ca: 1.06 },
+      { h: 128.27, label: "术后128h16m", sample: "动脉", ph: 7.420, pco2: 27.5, po2: 86.0, hco3: 17.4, be: -7.0, lactate: 1.64, fio2: 50, pf: 172, hb: 10.4, ca: 1.05 },
+      { h: 131.23, label: "术后131h13m", sample: "动脉", ph: 7.445, pco2: 31.4, po2: 98.0, hco3: 21.1, be: -3.0, lactate: 1.92, fio2: 50, pf: 196, hb: 10.2, ca: 1.05 },
+      { h: 134.34, label: "术后134h20m", sample: "动脉", ph: 7.483, pco2: 28.6, po2: 76.3, hco3: 21.0, be: -2.5, lactate: 2.20, fio2: 50, pf: 151, hb: 10.3, ca: 1.06 },
+      { h: 136.88, label: "术后136h52m", sample: "动脉", ph: 7.485, pco2: 28.8, po2: 80.7, hco3: 21.2, be: -2.2, lactate: 1.61, fio2: 50, pf: 161, hb: 10.7, ca: 1.08 },
+      { h: 140.89, label: "术后140h53m", sample: "动脉", ph: 7.515, pco2: 33.0, po2: 89.7, hco3: 26.0, be: 3.1, lactate: 1.54, fio2: 50, pf: 179, hb: 8.9, ca: 1.07 }
     ];
 
     const seededLabReadings = [
@@ -2103,12 +2325,42 @@
       { h: 76.02, label: "术后76h01m", sample: "凝血", aptt: 64.0 },
       { h: 80.22, label: "术后80h13m", sample: "凝血", aptt: 67.2 },
       { h: 90.77, label: "术后90h46m", sample: "血常规", wbc: 13.17, plt: 55, hbg: 76 },
-      { h: 92.06, label: "术后92h03m", sample: "生化", creatinine: 204, urea: 13.27, k: 4.80, na: 134.78, cl: 100.69, pct: 65.368, alb: 29.3 }
+      { h: 92.06, label: "术后92h03m", sample: "生化", creatinine: 204, urea: 13.27, k: 4.80, na: 134.78, cl: 100.69, pct: 65.368, alb: 29.3 },
+      { h: 114.40, label: "术后114h23m", sample: "血常规", wbc: 17.42, plt: 60, hbg: 67 },
+      { h: 114.86, label: "术后114h51m", sample: "凝血", aptt: 45.9, inr: 1.03, pt: 11.8 },
+      { h: 115.92, label: "术后115h55m", sample: "生化", creatinine: 314, urea: 25.69, k: 5.09, na: 130.77, cl: 96.24 },
+      { h: 128.53, label: "术后128h31m", sample: "凝血", aptt: 49.2 },
+      { h: 128.53, label: "术后128h31m", sample: "生化", k: 4.50 },
+      { h: 131.39, label: "术后131h23m", sample: "生化", k: 4.24 },
+      { h: 131.42, label: "术后131h25m", sample: "凝血", aptt: 52.4 },
+      { h: 134.47, label: "术后134h28m", sample: "生化", k: 4.20 },
+      { h: 134.52, label: "术后134h31m", sample: "凝血", aptt: 51.1 },
+      { h: 139.27, label: "术后139h16m", sample: "血常规", wbc: 19.40, plt: 60, hbg: 100 },
+      { h: 139.31, label: "术后139h18m", sample: "凝血", aptt: 45.8, inr: 1.11, pt: 12.4 },
+      { h: 139.31, label: "术后139h18m", sample: "生化", creatinine: 231, urea: 22.09, k: 3.93, na: 138.61, cl: 98.12, alt: 159, ast: 82, ck: 434, ckmb: 23.7, ldh: 463, alb: 35.8, pct: 36.8855 },
+      { h: 139.31, label: "术后139h18m", sample: "炎症", crp: 97.7, il6: 68.5 },
+      { h: 141.12, label: "术后141h07m", sample: "凝血", aptt: 51.8 }
+    ];
+
+    const seededVitalReadings = [
+      { h: 10, label: "术后夜间", sample: "口述", sbp: 101, dbp: 33, map: 56, hr: 160 },
+      { h: 22, label: "术后约22h", sample: "口述", sbp: 90, dbp: 30, map: 50, hr: 130 },
+      { h: 29, label: "术后约29h", sample: "口述", sbp: 100, dbp: 30, map: 53, hr: 140 },
+      { h: 44, label: "术后约44h", sample: "口述", sbp: 110, dbp: 35, map: 60, hr: 110 },
+      { h: 50, label: "术后约50h", sample: "口述", sbp: 140, dbp: 50, map: 80, hr: 100 },
+      { h: 73, label: "术后约73h", sample: "口述", sbp: 120, dbp: 35, map: 63, hr: 109 },
+      { h: 92, label: "术后约92h", sample: "口述", ne: 9 },
+      { h: 97, label: "术后约97h", sample: "口述", sbp: 110, dbp: 36, map: 61, hr: 112 },
+      { h: 116, label: "术后约116h", sample: "口述", ne: 9, da: 10 },
+      { h: 122, label: "术后约122h", sample: "口述", sbp: 125, dbp: 35, map: 65, hr: 100, ne: 9, da: 10 },
+      { h: 140, label: "家属更新 · 减量", sample: "口述", ne: 6, da: 8 },
+      { h: 144, label: "家属更新 · CRRT停后", sample: "口述", sbp: 150, dbp: 55, map: 87, hr: 106, ne: 4, da: 7.5 }
     ];
 
     const baseReadings = TEMPLATE_MODE ? [] : seededBaseReadings;
     const labReadings = TEMPLATE_MODE ? [] : seededLabReadings;
-    const seededBedsideReadings = TEMPLATE_MODE ? [] : (currentReport.bedsideReadings || []);
+    const vitalReadings = TEMPLATE_MODE ? [] : seededVitalReadings;
+    const seededBedsideReadings = TEMPLATE_MODE ? [] : (currentReport.bedsideReadings || seededVitalReadings);
 
     const metricConfig = {
       lactate: { label: "乳酸", unit: "mmol/L", minRef: .5, maxRef: 1.6, color: "#bd3b3b", decimals: 2, better: "down" },
@@ -2121,8 +2373,9 @@
       fio2: { label: "FiO₂", unit: "%", minRef: 21, maxRef: 40, color: "#7257a3", decimals: 0, better: "down", arterialOnly: true },
       hb: { label: "Hb(血气)", unit: "g/dL", minRef: 12, maxRef: 17.5, color: "#c76a16", decimals: 1, better: "range" },
       ca: { label: "离子钙 iCa", unit: "mmol/L", minRef: 1.15, maxRef: 1.29, color: "#7257a3", decimals: 2, better: "range" },
-      pct: { label: "降钙素原", unit: "ng/mL", minRef: 0, maxRef: 0.05, color: "#bd3b3b", decimals: 1, better: "down", source: "lab" },
-      il6: { label: "IL-6", unit: "pg/mL", minRef: 0, maxRef: 7, color: "#bd3b3b", decimals: 0, better: "down", source: "lab" },
+      pct: { label: "降钙素原", unit: "ng/mL", minRef: 0, maxRef: 0.05, color: "#bd3b3b", decimals: 3, better: "down", source: "lab" },
+      crp: { label: "CRP", unit: "mg/L", minRef: 0, maxRef: 8, color: "#bd3b3b", decimals: 1, better: "down", source: "lab" },
+      il6: { label: "IL-6", unit: "pg/mL", minRef: 0, maxRef: 7, color: "#bd3b3b", decimals: 1, better: "down", source: "lab" },
       wbc: { label: "白细胞", unit: "10⁹/L", minRef: 3.5, maxRef: 9.5, color: "#c76a16", decimals: 2, better: "range", source: "lab" },
       creatinine: { label: "肌酐", unit: "μmol/L", minRef: 41, maxRef: 81, color: "#bd3b3b", decimals: 0, better: "down", source: "lab" },
       urea: { label: "尿素", unit: "mmol/L", minRef: 3.1, maxRef: 8.8, color: "#c76a16", decimals: 2, better: "down", source: "lab" },
@@ -2138,13 +2391,20 @@
       alb: { label: "白蛋白", unit: "g/L", minRef: 34, maxRef: 48, color: "#c76a16", decimals: 1, better: "range", source: "lab" },
       k: { label: "钾 K", unit: "mmol/L", minRef: 3.5, maxRef: 5.3, color: "#7257a3", decimals: 2, better: "range", source: "lab" },
       na: { label: "钠 Na", unit: "mmol/L", minRef: 137, maxRef: 147, color: "#3978a8", decimals: 2, better: "range", source: "lab" },
-      cl: { label: "氯 Cl", unit: "mmol/L", minRef: 96, maxRef: 108, color: "#167a5b", decimals: 2, better: "range", source: "lab" }
+      cl: { label: "氯 Cl", unit: "mmol/L", minRef: 96, maxRef: 108, color: "#167a5b", decimals: 2, better: "range", source: "lab" },
+      sbp: { label: "收缩压", unit: "mmHg", minRef: 90, maxRef: 140, color: "#bd3b3b", decimals: 0, better: "range", source: "vital" },
+      dbp: { label: "舒张压", unit: "mmHg", minRef: 60, maxRef: 90, color: "#3978a8", decimals: 0, better: "range", source: "vital" },
+      map: { label: "MAP", unit: "mmHg", minRef: 65, maxRef: 100, color: "#167a5b", decimals: 0, better: "range", source: "vital" },
+      hr: { label: "心率", unit: "次/分", minRef: 60, maxRef: 100, color: "#7257a3", decimals: 0, better: "range", source: "vital" },
+      ne: { label: "去甲", unit: "mL/h", minRef: 0, maxRef: 9, color: "#c76a16", decimals: 1, better: "down", source: "vital", noRef: true, refNote: "口述 mL/h，不是化验参考 · 4 mL/h = 0.20 mg/h" },
+      da: { label: "多巴胺", unit: "mL/h", minRef: 0, maxRef: 10, color: "#7257a3", decimals: 1, better: "down", source: "vital", noRef: true, refNote: "口述 mL/h，不是化验参考 · 未换算 mg/h" }
     };
 
     const metricGroups = [
+      { id: "circulation", label: "循环/支持", metrics: ["map", "sbp", "dbp", "hr", "ne", "da"] },
       { id: "perfusion", label: "灌注/酸碱", metrics: ["lactate", "ph", "hco3", "be", "pco2"] },
       { id: "oxygen", label: "氧合", metrics: ["pf", "po2", "fio2"] },
-      { id: "infection", label: "感染/炎症", metrics: ["pct", "il6", "wbc"] },
+      { id: "infection", label: "感染/炎症", metrics: ["pct", "crp", "il6", "wbc"] },
       { id: "renal", label: "肾脏", metrics: ["creatinine", "urea"] },
       { id: "coag", label: "凝血/血细胞", metrics: ["inr", "aptt", "plt", "hb", "hbg"] },
       { id: "organ", label: "肝/肌酶", metrics: ["alt", "ast", "alb", "ck", "ckmb", "ldh"] },
@@ -2163,15 +2423,16 @@
     const questionKey = `${keyPrefix}-questions-v1`;
     const parser = window.MediDashLabParse || {};
     const GAS_KEYS = parser.GAS_KEYS || ["ph", "pco2", "po2", "hco3", "be", "lactate", "fio2", "pf", "hb", "ca"];
-    const LAB_KEYS = currentReport.LAB_KEYS || parser.LAB_KEYS || ["aptt", "inr", "creatinine", "urea", "ck", "alt", "ast", "il6", "pct", "wbc", "plt", "hbg"];
-    const BEDSIDE_KEYS = currentReport.BEDSIDE_KEYS || ["sbp", "dbp", "hr", "rrLow", "rrHigh", "pressors", "pressorNote", "crrt", "crrtDehydrate", "crrtHf", "ivRate", "urineMl", "urineWindow", "notes"];
+    const LAB_KEYS = currentReport.LAB_KEYS || parser.LAB_KEYS || ["aptt", "inr", "creatinine", "urea", "ck", "alt", "ast", "il6", "pct", "crp", "wbc", "plt", "hbg"];
+    const BEDSIDE_KEYS = currentReport.BEDSIDE_KEYS || ["sbp", "dbp", "hr", "rrLow", "rrHigh", "map", "ne", "da", "pressors", "pressorNote", "crrt", "crrtDehydrate", "crrtHf", "ivRate", "urineMl", "urineWindow", "notes"];
     const FIELD_LABELS = {
       ph: "pH", pco2: "PCO₂", po2: "PO₂", hco3: "HCO₃⁻", be: "BE",
       lactate: "乳酸", fio2: "FiO₂", pf: "P/F", hb: "Hb", ca: "iCa",
       aptt: "APTT", inr: "INR", pt: "PT", creatinine: "肌酐", urea: "尿素",
-      ck: "CK", ckmb: "CK-MB", ldh: "LDH", alt: "ALT", ast: "AST", il6: "IL-6", pct: "降钙素原",
+      ck: "CK", ckmb: "CK-MB", ldh: "LDH", alt: "ALT", ast: "AST", il6: "IL-6", pct: "降钙素原", crp: "CRP",
       wbc: "WBC", plt: "PLT", hbg: "Hb(血常规)", k: "K", na: "Na", cl: "Cl", alb: "白蛋白",
-      sbp: "SBP", dbp: "DBP", hr: "HR", crrtDehydrate: "CRRT脱水", crrtHf: "血滤", ivRate: "输液", urineMl: "尿量"
+      sbp: "SBP", dbp: "DBP", hr: "HR", map: "MAP", ne: "去甲", da: "多巴胺",
+      crrtDehydrate: "CRRT脱水", crrtHf: "血滤", ivRate: "输液", urineMl: "尿量"
     };
     // Merge only near-duplicate clocks (~1 min). 16:58 vs 17:00 (2.97h / 3.00h) must stay distinct.
     const HOUR_MATCH = 0.02;
@@ -2183,19 +2444,25 @@
     };
     const latestNonBloodGasReport = TEMPLATE_MODE
       ? { h: null, label: "尚无数据", type: "生命体征/CRRT" }
-      : { h: 92.06, label: "术后92h03m · PCT 65.4", type: "生化" };
+      : { h: 141.12, label: "术后141h07m · APTT 51.8", type: "凝血" };
     const liveDoctorQuestions = [
+      {
+        id: "bleeding",
+        group: "urgent",
+        title: "血气Hb已从10.7降到8.9，还要不要再输？",
+        detail: "血常规09:16仍是100 g/L。10:53血气Hb 8.9、Hct 26%。两种方法不要逐点等同。4U红细胞是否输完、有无新出血，目标Hb是多少？"
+      },
       {
         id: "hemodynamics",
         group: "urgent",
-        title: "去甲9 mL/h已确认为0.45 mg，另一种升压药还在用吗？",
-        detail: "0.45 mg/h = 7.5 μg/min。按50 kg估算约0.15 μg/kg/min，属中等偏低，不是大剂量。请核对体重和精确μg/kg/min，以及第二种药是否已停。"
+        title: "血压已到150/55，升压药去甲4 + 多巴胺7.5还要不要再减？",
+        detail: "MAP≈87，脉搏106。去甲6→4 mL/h（=0.20 mg/h），多巴胺8→7.5。CRRT刚停。目标血压是多少？脉压仍宽，要不要查心脏？"
       },
       {
         id: "lactate",
         group: "urgent",
-        title: "乳酸从1.41回升至2.14，灌注是否再次不足？",
-        detail: "过夜尿0，血压仍为上次口述120/35、HR109。去甲现为0.45 mg/h。哪些休克问题仍未解决？"
+        title: "乳酸已回1.54，白细胞仍19.40，灌注和感染怎么看？",
+        detail: "10:53乳酸1.54已入参考。降钙素原65.4→36.9仍很高。中性93.5%，CRP 97.7，IL-6 68.5。白细胞或乳酸再升到多少要加干预？"
       },
       {
         id: "source-control",
@@ -2207,61 +2474,55 @@
         id: "shock-cause",
         group: "urgent",
         title: "目前休克的主要原因判断是什么？",
-        detail: "感染性、失血性、心源性或混合性？是否还有未控制的感染源或活动性出血？"
+        detail: "血常规Hb曾回升到100，但10:53血气又到8.9。白细胞仍19.40，PCT 36.9。粪便红白细胞阴性。感染性、残余肠缺血还是混合性？培养结果如何？"
       },
       {
         id: "oxygenation",
         group: "urgent",
-        title: "P/F从262降至210，呼吸支持是否需要重新评估？",
-        detail: "仍FiO₂50%，PO₂104.8。目前通气模式、PEEP和升级/减氧标准是什么？"
+        title: "P/F升到179，呼吸支持要不要减氧或继续等？",
+        detail: "仍FiO₂50%，PO₂89.7。179是氧合指数，不是降钙素原。CRRT已停，氧合有没有按预期改善？升级或减氧的标准是什么？"
       },
       {
         id: "next-window",
         group: "urgent",
-        title: "未来6–12小时最重要的观察目标是什么？",
-        detail: "CRRT已于凌晨停止，过夜尿0，今日已加利尿剂。肌酐204、尿素13.27、钠134.8、白蛋白29.3、PCT 65.4。未来6–12小时重点看尿量、肌酐/钾，以及是否需要重启CRRT。"
+        title: "CRRT已停还是没尿，接下来最要盯什么？",
+        detail: "本轮19小时48分已停，停后仍无尿。优先盯有没有尿、钾会不会从3.93回升、下次肌酐，以及白细胞19.40。血压已150/55，血气Hb仍8.9，APTT 51.8。"
       },
       {
         id: "kidney",
         group: "followup",
-        title: "CRRT已停、过夜尿0，利尿剂后是否需要重启？",
-        detail: "停前脱水250、血滤120、输液约200 mL/h。肌酐212→204，尿素11.59→13.27。请确认重启标准、利尿剂种类剂量，以及无尿时的液体与钾管理。"
+        title: "CRRT走了19小时48分就停，还要不要再开？实际脱了多少？",
+        detail: "停后仍无尿。开机中肌酐曾314→231。若昨16点开约今11:48停，若18点开约今13:48停。请确认累计脱水、停机理由，以及无尿多久必须再上。"
       },
       {
         id: "coagulation",
         group: "followup",
-        title: "APTT从64.0再升至67.2，抗凝是否需要立即调整？",
-        detail: "22:13为67.2秒（参考21–45），18:01为64.0。请确认抗凝方案及有无出血。"
-      },
-      {
-        id: "bleeding",
-        group: "followup",
-        title: "血常规Hb降至76、血小板55，是否需要输血或停抗凝？",
-        detail: "Hb 85→76 g/L，PLT 65→55。血气Hb仍报9.2 g/dL，两种方法不要混用。请结合引流量和APTT67.2判断。"
+        title: "APTT从45.8又升到51.8，抗凝还要不要调？",
+        detail: "11:07这张参考21–45。血小板仍60，血气Hb掉到8.9。用的是肝素、枸橼酸还是无抗凝？有无出血或滤器凝血？"
       },
       {
         id: "infection",
         group: "followup",
-        title: "降钙素原146→170→102→65，抗感染是否见效？",
-        detail: "9月19日10:03为65.368，仍远高于0.05。白细胞13.17、中性粒87.9%。培养和目前抗生素如何？CRRT已停，剂量是否需要调整？"
+        title: "PCT已降到36.9，白细胞仍19.40，抗感染要不要改？",
+        detail: "同时间完整生化单才报出降钙素原36.8855（参考0–0.05）。IL-6 68.5，CRP 97.7。粪便红白细胞阴性。血常规“PCT 0.08%”是血小板比积。培养和目前抗生素如何？"
       },
       {
         id: "liver",
         group: "followup",
-        title: "9月17日10:52的ALT891、AST806主要考虑缺血性肝损伤吗？",
-        detail: "同份报告还有IL-6 981、CK8280、PCT当时170。最新白蛋白29.3 g/L（9月19日）。转氨酶有无复查，胆红素如何？"
+        title: "ALT 891→159、AST 806→82，还要不要查胆红素？",
+        detail: "白蛋白29.3→35.8已回参考。转氨酶仍高于0–40。主要仍考虑缺血性肝损伤恢复中吗？"
       },
       {
         id: "heart",
         group: "followup",
-        title: "CK升至8280是否存在持续肌损伤或横纹肌溶解？",
-        detail: "CK-MB虽降至132.6仍高；尿肌红蛋白、动态肌钙蛋白、心电图及床旁心脏超声如何？"
+        title: "CK从8280降到434，还要不要查肌钙蛋白？",
+        detail: "CK-MB已到23.7（参考0–24）。LDH仍463。心电图及床旁心脏超声如何？"
       },
       {
         id: "calcium",
         group: "followup",
-        title: "离子钙降至1.09，是否需要加快补钙？",
-        detail: "昨夜1.14，今晨血气1.09。CRRT已于凌晨停止，若此前为枸橼酸抗凝，补钙目标和监测频率是否因此改变？"
+        title: "CRRT已停，钾3.93会不会再升、还要不要补？",
+        detail: "3.93是开机中的数。停机后钾和钙怎么盯？离子钙血气仍1.07。下次电解质什么时候抽？"
       }
     ];
     const templateQuestions = [
@@ -2332,6 +2593,33 @@
       return [...seededBedsideReadings, ...getCustomBedsideReadings()].sort((a, b) => a.h - b.h);
     }
 
+    function allVitalReadings() {
+      const extra = allBedsideReadings().map(row => ({
+        h: row.h,
+        label: row.label,
+        sample: row.sample || "口述",
+        sbp: row.sbp,
+        dbp: row.dbp,
+        map: row.map ?? computeMap(row.sbp, row.dbp),
+        hr: row.hr,
+        ne: row.ne,
+        da: row.da
+      }));
+      const merged = [];
+      [...vitalReadings, ...extra].forEach(row => {
+        const idx = merged.findIndex(item => Math.abs(Number(item.h) - Number(row.h)) <= HOUR_MATCH);
+        if (idx === -1) merged.push({ ...row });
+        else {
+          const next = { ...merged[idx] };
+          Object.entries(row).forEach(([key, value]) => {
+            if (value != null && value !== "") next[key] = value;
+          });
+          merged[idx] = next;
+        }
+      });
+      return merged.sort((a, b) => a.h - b.h);
+    }
+
     function lastNumeric(rows, key) {
       return (rows || []).filter(row => row[key] != null).at(-1) || null;
     }
@@ -2356,9 +2644,24 @@
       return `术后${hours.toFixed(1)}h`;
     }
 
+    function metricReadings(metric) {
+      const source = metricConfig[metric]?.source;
+      if (source === "lab") return allLabReadings();
+      if (source === "vital") return allVitalReadings();
+      return allReadings();
+    }
+
+    function latestDataHour() {
+      return Math.max(
+        allReadings().at(-1)?.h ?? 0,
+        allLabReadings().at(-1)?.h ?? 0,
+        allVitalReadings().at(-1)?.h ?? 0
+      );
+    }
+
     function filteredReadings(metric) {
-      const all = metricConfig[metric].source === "lab" ? allLabReadings() : allReadings();
-      const latest = Math.max(allReadings().at(-1)?.h ?? 0, allLabReadings().at(-1)?.h ?? 0);
+      const all = metricReadings(metric);
+      const latest = latestDataHour();
       return all.filter(d => {
         if (d[metric] == null || d.quality === "uncertain") return false;
         if (metricConfig[metric].arterialOnly && d.sample !== "动脉") return false;
@@ -2379,7 +2682,7 @@
     }
 
     function metricSource(metric) {
-      return metricConfig[metric].source === "lab" ? labReadings : allReadings();
+      return metricReadings(metric);
     }
 
     function latestPoint(metric) {
@@ -2484,7 +2787,7 @@
       tooltip.style.display = "none";
 
       document.getElementById("chartTitle").textContent = cfg.label;
-      document.getElementById("chartSubtitle").textContent =
+      document.getElementById("chartSubtitle").textContent = cfg.refNote ||
         `参考范围 ${cfg.minRef}–${cfg.maxRef}${cfg.unit ? ` ${cfg.unit}` : ""}`;
 
       if (data.length < 1) return;
@@ -2497,8 +2800,8 @@
       const xMin = xMinRaw - xGap;
       const xMax = xMaxRaw + xGap;
       const values = data.map(d => d[selectedMetric]);
-      let yMin = Math.min(...values, cfg.minRef);
-      let yMax = Math.max(...values, cfg.maxRef);
+      let yMin = Math.min(...values, cfg.noRef ? Infinity : cfg.minRef);
+      let yMax = Math.max(...values, cfg.noRef ? -Infinity : cfg.maxRef);
       const yGap = Math.max((yMax - yMin) * .15, selectedMetric === "ph" ? .02 : .2);
       yMin -= yGap;
       yMax += yGap;
@@ -2507,12 +2810,14 @@
       const x = val => pad.l + (val - xMin) / (xMax - xMin || 1) * (W - pad.l - pad.r);
       const y = val => H - pad.b - (val - yMin) / (yMax - yMin || 1) * (H - pad.t - pad.b);
 
-      const refTop = y(Math.min(cfg.maxRef, yMax));
-      const refBottom = y(Math.max(cfg.minRef, yMin));
-      svg.appendChild(createSvg("rect", {
-        x: pad.l, y: refTop, width: W - pad.l - pad.r,
-        height: Math.max(0, refBottom - refTop), fill: "#e5f4ed"
-      }));
+      if (!cfg.noRef) {
+        const refTop = y(Math.min(cfg.maxRef, yMax));
+        const refBottom = y(Math.max(cfg.minRef, yMin));
+        svg.appendChild(createSvg("rect", {
+          x: pad.l, y: refTop, width: W - pad.l - pad.r,
+          height: Math.max(0, refBottom - refTop), fill: "#e5f4ed"
+        }));
+      }
 
       if (xMin < 0 && xMax > -4) {
         const surgeryStart = x(-4);
@@ -2924,8 +3229,95 @@
           renderMetricControls();
           renderCategoryOverview();
           renderChart();
-          document.getElementById("trendSection")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          document.getElementById("trendSection")?.scrollIntoView({ behavior: "smooth", block: "start" });        });
+      });
+    }
+
+    function renderMultiSeriesChart(svgId, tooltipId, series, height) {
+      const svg = document.getElementById(svgId);
+      const tooltip = document.getElementById(tooltipId);
+      if (!svg || !tooltip) return;
+      svg.innerHTML = "";
+      tooltip.style.display = "none";
+      const data = allVitalReadings().filter(d => series.some(s => d[s.key] != null));
+      if (!data.length) return;
+
+      const W = 760, H = height;
+      const pad = { l: 46, r: 18, t: 18, b: 42 };
+      const xMinRaw = Math.min(...data.map(d => d.h));
+      const xMaxRaw = Math.max(...data.map(d => d.h));
+      const xGap = Math.max((xMaxRaw - xMinRaw) * .04, 1);
+      const xMin = xMinRaw - xGap;
+      const xMax = xMaxRaw + xGap;
+      const values = data.flatMap(d => series.map(s => d[s.key]).filter(v => v != null));
+      let yMin = Math.min(...values);
+      let yMax = Math.max(...values);
+      const yGap = Math.max((yMax - yMin) * .18, 1);
+      yMin = Math.max(0, yMin - yGap);
+      yMax += yGap;
+      const x = val => pad.l + (val - xMin) / (xMax - xMin || 1) * (W - pad.l - pad.r);
+      const y = val => H - pad.b - (val - yMin) / (yMax - yMin || 1) * (H - pad.t - pad.b);
+
+      for (let i = 0; i <= 4; i++) {
+        const value = yMin + (yMax - yMin) * i / 4;
+        const yy = y(value);
+        svg.appendChild(createSvg("line", {
+          x1: pad.l, x2: W - pad.r, y1: yy, y2: yy,
+          stroke: "#dfe8e3", "stroke-width": "1"
+        }));
+        const text = createSvg("text", {
+          x: pad.l - 8, y: yy + 4, "text-anchor": "end",
+          fill: "#7c8c87", "font-size": "10"
         });
+        text.textContent = formatValue(value, yMax > 20 ? 0 : 1);
+        svg.appendChild(text);
+      }
+
+      const tickCount = Math.min(5, Math.max(2, data.length - 1));
+      for (let i = 0; i <= tickCount; i++) {
+        const hour = xMinRaw + (xMaxRaw - xMinRaw) * i / tickCount;
+        const text = createSvg("text", {
+          x: x(hour), y: H - 16, "text-anchor": "middle",
+          fill: "#7c8c87", "font-size": "10"
+        });
+        text.textContent = hour < 0 ? `术前${Math.abs(Math.round(hour))}h` : `+${Math.round(hour)}h`;
+        svg.appendChild(text);
+      }
+
+      series.forEach(s => {
+        const pts = data.filter(d => d[s.key] != null);
+        if (pts.length > 1) {
+          const pathData = pts.map((d, i) =>
+            `${i ? "L" : "M"} ${x(d.h).toFixed(2)} ${y(d[s.key]).toFixed(2)}`
+          ).join(" ");
+          svg.appendChild(createSvg("path", {
+            d: pathData, fill: "none", stroke: s.color,
+            "stroke-width": "2.8", "stroke-linecap": "round", "stroke-linejoin": "round"
+          }));
+        }
+        pts.forEach(d => {
+          const circle = createSvg("circle", {
+            cx: x(d.h), cy: y(d[s.key]), r: 5,
+            fill: s.color, stroke: "#fff", "stroke-width": 2,
+            tabindex: "0", role: "button",
+            "aria-label": `${d.label} ${s.label} ${d[s.key]}`
+          });
+          const show = () => {
+            const lines = series
+              .filter(item => d[item.key] != null)
+              .map(item => `${item.label}：${item.key === "ne" && d.ne != null ? `${d.ne} mL/h` : item.key === "da" ? `${d.da} mL/h` : d[item.key]}`);
+            tooltip.innerHTML = `<strong>${d.label}</strong><br>${lines.join("<br>")}<br>样本：口述`;
+            tooltip.style.display = "block";
+            const wrap = svg.parentElement.getBoundingClientRect();
+            const scaleX = wrap.width / W;
+            const scaleY = wrap.height / H;
+            tooltip.style.left = `${Math.min(x(d.h) * scaleX + 10, wrap.width - 195)}px`;
+            tooltip.style.top = `${Math.max(8, y(d[s.key]) * scaleY - 50)}px`;
+          };
+          circle.addEventListener("click", show);
+          circle.addEventListener("focus", show);
+          circle.addEventListener("blur", () => { tooltip.style.display = "none"; });
+          svg.appendChild(circle);        });
       });
     }
 
@@ -3104,13 +3496,25 @@
       const sub = document.querySelector(".hero-sub");
       if (eyebrow) eyebrow.textContent = "Empty template";
       if (heading) heading.textContent = "空白监测模版";
-      if (sub) sub.textContent = "不含预置化验。用截图导入 + 口述床旁（血压、脉搏、CRRT、尿量）重建报告，并对照当前数据看覆盖率。";
+      if (sub) sub.textContent = "不含预置化验。用截图导入 + 口述床旁（血压、脉搏、升压药、CRRT、尿量）重建报告，并对照当前数据看覆盖率。";
       const pill = document.getElementById("latestTimePill");
-      if (pill && !allReadings().length && !allLabReadings().length && !allBedsideReadings().length) {
+      if (pill && !allReadings().length && !allLabReadings().length && !allBedsideReadings().length && !allVitalReadings().length) {
         pill.textContent = "最新：尚无数据";
       }
       const questionIntro = document.querySelector(".question-summary p");
       if (questionIntro) questionIntro.textContent = "先问循环、尿量、氧合和灌注，再补凝血与感染。";
+    }
+
+    function renderVitalsCharts() {
+      renderMultiSeriesChart("bpTrend", "bpTooltip", [
+        { key: "sbp", label: "收缩压", color: "#bd3b3b" },
+        { key: "dbp", label: "舒张压", color: "#3978a8" },
+        { key: "map", label: "MAP", color: "#167a5b" }
+      ], 260);
+      renderMultiSeriesChart("pressorTrend", "pressorTooltip", [
+        { key: "ne", label: "去甲", color: "#c76a16" },
+        { key: "da", label: "多巴胺", color: "#7257a3" }
+      ], 240);
     }
 
     function renderAll() {
@@ -3124,6 +3528,7 @@
       renderVitals();
       renderReports();
       renderTimeline();
+      renderVitalsCharts();
       renderRawTable();
       updateLatest();
       renderQuestions();
@@ -3527,6 +3932,8 @@
         hr: number("hr"),
         rrLow: number("rrLow"),
         rrHigh: number("rrHigh"),
+        ne: number("ne"),
+        da: number("da"),
         pressors: text("pressors"),
         pressorNote: text("pressorNote"),
         crrt: text("crrt"),
@@ -3559,7 +3966,7 @@
       document.getElementById("sample").value = "口述";
       const map = {
         sbp: entry.sbp, dbp: entry.dbp, hr: entry.hr, rrLow: entry.rrLow, rrHigh: entry.rrHigh,
-        pressors: entry.pressors, pressorNote: entry.pressorNote, crrt: entry.crrt,
+        ne: entry.ne, da: entry.da, pressors: entry.pressors, pressorNote: entry.pressorNote, crrt: entry.crrt,
         crrtDehydrate: entry.crrtDehydrate, crrtHf: entry.crrtHf, ivRate: entry.ivRate,
         urineMl: entry.urineMl, urineWindow: entry.urineWindow, notes: entry.notes
       };
@@ -3593,7 +4000,7 @@
       }
       const series = currentReport.bedsideReadings || [DEFAULT_SAMPLE_ORAL];
       saveOralSeries(series);
-      showToast(`已写入 ${series.length} 条历史口述（血压/脉搏/CRRT）`);
+      showToast(`已写入 ${series.length} 条历史口述（血压/脉搏/升压药/CRRT）`);
       closeDialog();
     });
 
@@ -3683,7 +4090,10 @@
     };
 
     window.addEventListener("resize", () => {
-      document.getElementById("chartTooltip").style.display = "none";
+      ["chartTooltip", "bpTooltip", "pressorTooltip"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = "none";
+      });
     });
 
     renderAll();
