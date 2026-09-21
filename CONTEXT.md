@@ -290,7 +290,8 @@ Agrees in direction with the 06:46 ABG Hb 7.1 g/dL / Hct 21%. Do not equate the 
 |------|--------|
 | ABG trend points | `baseReadings` (`h`, `ph`, `lactate`, `pf`, `hb`, `ca`, …) |
 | Labs (Cr, INR, APTT, PCT, CBC…) | `labReadings` |
-| Metric catalog + categories | `metricConfig` + `metricGroups` (分类汇总 sparklines + 详细趋势) |
+| Bedside BP / HR / pressors | `vitalReadings` (oral; approximate `h`) |
+| Metric catalog + categories | `metricConfig` + `metricGroups` (分类汇总 sparklines + 详细趋势). First group is **循环/支持** (`map`, `sbp`, `dbp`, `hr`, `ne`, `da`). Dedicated BP + pressor charts sit under 循环与支持. |
 | Status cards / insights / timeline / expandable reports | HTML sections near top/middle |
 | Doctor checklist | `doctorQuestions` |
 | Latest non-ABG clock for hero pill | `latestNonBloodGasReport` |
@@ -300,7 +301,7 @@ Update flow when new reports arrive:
 
 1. **Backup the screenshot** into `testset/reports/<category>/` (or `inbox/`) and register in `manifest.json`.
 2. Read report clock → compute `h` from surgery end.
-3. Append/update `baseReadings` / `labReadings`; ensure new fields exist in `metricConfig` + `metricGroups`.
+3. Append/update `baseReadings` / `labReadings` / `vitalReadings`; ensure new fields exist in `metricConfig` + `metricGroups`.
 4. Refresh status cards, insights, reports, timeline, checklist copy.
 5. Commit message should name the key values (PCT, Cr, APTT, etc.).
 6. Push **MediDash**.
@@ -322,4 +323,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-21 — family: NE 6→**4** mL/h (=0.20 mg/h), DA 8→**7.5**; BP **150/55** pulse **106**; CRRT run **19h48min then stopped**; **still no urine**. Last labs unchanged (PCT 36.8855, lac 1.54, APTT 51.8, Cr 231, K 3.93, WBC 19.40).
+**Last updated:** 2026-09-21 — added BP/pressor trend charts (`vitalReadings`). Latest oral: NE **4** mL/h, DA **7.5**, BP **150/55**, pulse **106**; CRRT **19h48min then stopped**, still no urine.

@@ -468,7 +468,16 @@
     .legend-item { display: flex; align-items: center; gap: 5px; }
     .legend-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
     .legend-dot.venous { background: #fff; border: 2px solid var(--blue); }
+    .legend-dot.sbp { background: #bd3b3b; }
+    .legend-dot.dbp { background: #3978a8; }
+    .legend-dot.map { background: #167a5b; }
+    .legend-dot.ne { background: #c76a16; }
+    .legend-dot.da { background: #7257a3; }
     .legend-band { width: 18px; height: 8px; border-radius: 3px; background: var(--green-soft); }
+
+    .vitals-charts { display: grid; gap: 16px; margin-bottom: 12px; }
+    .vitals-charts .chart-wrap { min-height: 240px; }
+    .vitals-charts .chart-heading { margin-top: 0; }
 
     .insights {
       display: grid;
@@ -1036,14 +1045,14 @@
         </div>
       </div>
       <div class="status-grid">
-        <div class="status-card orange">
+        <button class="status-card orange" type="button" data-metric-jump="map">
           <div class="status-top">
             <span class="status-name">循环</span>
             <span class="level">再减量后血压升高</span>
           </div>
           <div class="status-value">150/55</div>
           <div class="status-note">MAP≈87 · 脉搏106<br>去甲6→<strong>4</strong> · 多巴胺8→<strong>7.5</strong></div>
-        </div>
+        </button>
         <button class="status-card orange" type="button" data-metric-jump="lactate">
           <div class="status-top">
             <span class="status-name">组织灌注</span>
@@ -1176,7 +1185,42 @@
       <div class="section-head">
         <div>
           <h2 id="vitalsHeading">循环与支持</h2>
-          <p>家属口述，时间为近似节点</p>
+          <p>家属口述，时间为近似节点。趋势只画有明确读数的点。</p>
+        </div>
+      </div>
+      <div class="panel chart-panel vitals-charts">
+        <div>
+          <div class="chart-heading">
+            <div>
+              <h3 class="chart-title">血压趋势</h3>
+              <p class="chart-subtitle">收缩压 / 舒张压 / MAP · 口述近似时间</p>
+            </div>
+          </div>
+          <div class="chart-wrap">
+            <svg id="bpTrend" viewBox="0 0 760 260" role="img" aria-label="血压趋势"></svg>
+            <div class="chart-tooltip" id="bpTooltip" role="status"></div>
+          </div>
+          <div class="legend">
+            <span class="legend-item"><span class="legend-dot sbp"></span>收缩压</span>
+            <span class="legend-item"><span class="legend-dot dbp"></span>舒张压</span>
+            <span class="legend-item"><span class="legend-dot map"></span>MAP</span>
+          </div>
+        </div>
+        <div>
+          <div class="chart-heading">
+            <div>
+              <h3 class="chart-title">升压药趋势</h3>
+              <p class="chart-subtitle">去甲 / 多巴胺 mL/h · 只画有明确剂量的点 · 去甲浓度 0.05 mg/mL</p>
+            </div>
+          </div>
+          <div class="chart-wrap">
+            <svg id="pressorTrend" viewBox="0 0 760 240" role="img" aria-label="升压药趋势"></svg>
+            <div class="chart-tooltip" id="pressorTooltip" role="status"></div>
+          </div>
+          <div class="legend">
+            <span class="legend-item"><span class="legend-dot ne"></span>去甲肾上腺素</span>
+            <span class="legend-item"><span class="legend-dot da"></span>多巴胺</span>
+          </div>
         </div>
       </div>
       <div class="panel vitals">
@@ -1891,6 +1935,21 @@
       { h: 141.12, label: "术后141h07m", sample: "凝血", aptt: 51.8 }
     ];
 
+    const vitalReadings = [
+      { h: 10, label: "术后夜间", sample: "口述", sbp: 101, dbp: 33, map: 56, hr: 160 },
+      { h: 22, label: "术后约22h", sample: "口述", sbp: 90, dbp: 30, map: 50, hr: 130 },
+      { h: 29, label: "术后约29h", sample: "口述", sbp: 100, dbp: 30, map: 53, hr: 140 },
+      { h: 44, label: "术后约44h", sample: "口述", sbp: 110, dbp: 35, map: 60, hr: 110 },
+      { h: 50, label: "术后约50h", sample: "口述", sbp: 140, dbp: 50, map: 80, hr: 100 },
+      { h: 73, label: "术后约73h", sample: "口述", sbp: 120, dbp: 35, map: 63, hr: 109 },
+      { h: 92, label: "术后约92h", sample: "口述", ne: 9 },
+      { h: 97, label: "术后约97h", sample: "口述", sbp: 110, dbp: 36, map: 61, hr: 112 },
+      { h: 116, label: "术后约116h", sample: "口述", ne: 9, da: 10 },
+      { h: 122, label: "术后约122h", sample: "口述", sbp: 125, dbp: 35, map: 65, hr: 100, ne: 9, da: 10 },
+      { h: 140, label: "家属更新 · 减量", sample: "口述", ne: 6, da: 8 },
+      { h: 144, label: "家属更新 · CRRT停后", sample: "口述", sbp: 150, dbp: 55, map: 87, hr: 106, ne: 4, da: 7.5 }
+    ];
+
     const metricConfig = {
       lactate: { label: "乳酸", unit: "mmol/L", minRef: .5, maxRef: 1.6, color: "#bd3b3b", decimals: 2, better: "down" },
       ph: { label: "pH", unit: "", minRef: 7.35, maxRef: 7.45, color: "#3978a8", decimals: 3, better: "range" },
@@ -1920,10 +1979,17 @@
       alb: { label: "白蛋白", unit: "g/L", minRef: 34, maxRef: 48, color: "#c76a16", decimals: 1, better: "range", source: "lab" },
       k: { label: "钾 K", unit: "mmol/L", minRef: 3.5, maxRef: 5.3, color: "#7257a3", decimals: 2, better: "range", source: "lab" },
       na: { label: "钠 Na", unit: "mmol/L", minRef: 137, maxRef: 147, color: "#3978a8", decimals: 2, better: "range", source: "lab" },
-      cl: { label: "氯 Cl", unit: "mmol/L", minRef: 96, maxRef: 108, color: "#167a5b", decimals: 2, better: "range", source: "lab" }
+      cl: { label: "氯 Cl", unit: "mmol/L", minRef: 96, maxRef: 108, color: "#167a5b", decimals: 2, better: "range", source: "lab" },
+      sbp: { label: "收缩压", unit: "mmHg", minRef: 90, maxRef: 140, color: "#bd3b3b", decimals: 0, better: "range", source: "vital" },
+      dbp: { label: "舒张压", unit: "mmHg", minRef: 60, maxRef: 90, color: "#3978a8", decimals: 0, better: "range", source: "vital" },
+      map: { label: "MAP", unit: "mmHg", minRef: 65, maxRef: 100, color: "#167a5b", decimals: 0, better: "range", source: "vital" },
+      hr: { label: "心率", unit: "次/分", minRef: 60, maxRef: 100, color: "#7257a3", decimals: 0, better: "range", source: "vital" },
+      ne: { label: "去甲", unit: "mL/h", minRef: 0, maxRef: 9, color: "#c76a16", decimals: 1, better: "down", source: "vital", noRef: true, refNote: "口述 mL/h，不是化验参考 · 4 mL/h = 0.20 mg/h" },
+      da: { label: "多巴胺", unit: "mL/h", minRef: 0, maxRef: 10, color: "#7257a3", decimals: 1, better: "down", source: "vital", noRef: true, refNote: "口述 mL/h，不是化验参考 · 未换算 mg/h" }
     };
 
     const metricGroups = [
+      { id: "circulation", label: "循环/支持", metrics: ["map", "sbp", "dbp", "hr", "ne", "da"] },
       { id: "perfusion", label: "灌注/酸碱", metrics: ["lactate", "ph", "hco3", "be", "pco2"] },
       { id: "oxygen", label: "氧合", metrics: ["pf", "po2", "fio2"] },
       { id: "infection", label: "感染/炎症", metrics: ["pct", "crp", "il6", "wbc"] },
@@ -2038,9 +2104,24 @@
       return `术后${hours.toFixed(1)}h`;
     }
 
+    function metricReadings(metric) {
+      const source = metricConfig[metric]?.source;
+      if (source === "lab") return labReadings;
+      if (source === "vital") return vitalReadings;
+      return allReadings();
+    }
+
+    function latestDataHour() {
+      return Math.max(
+        allReadings().at(-1)?.h ?? 0,
+        labReadings.at(-1)?.h ?? 0,
+        vitalReadings.at(-1)?.h ?? 0
+      );
+    }
+
     function filteredReadings(metric) {
-      const all = metricConfig[metric].source === "lab" ? labReadings : allReadings();
-      const latest = Math.max(allReadings().at(-1)?.h ?? 0, labReadings.at(-1)?.h ?? 0);
+      const all = metricReadings(metric);
+      const latest = latestDataHour();
       return all.filter(d => {
         if (d[metric] == null || d.quality === "uncertain") return false;
         if (metricConfig[metric].arterialOnly && d.sample !== "动脉") return false;
@@ -2061,7 +2142,7 @@
     }
 
     function metricSource(metric) {
-      return metricConfig[metric].source === "lab" ? labReadings : allReadings();
+      return metricReadings(metric);
     }
 
     function latestPoint(metric) {
@@ -2166,7 +2247,7 @@
       tooltip.style.display = "none";
 
       document.getElementById("chartTitle").textContent = cfg.label;
-      document.getElementById("chartSubtitle").textContent =
+      document.getElementById("chartSubtitle").textContent = cfg.refNote ||
         `参考范围 ${cfg.minRef}–${cfg.maxRef}${cfg.unit ? ` ${cfg.unit}` : ""}`;
 
       if (data.length < 1) return;
@@ -2179,8 +2260,8 @@
       const xMin = xMinRaw - xGap;
       const xMax = xMaxRaw + xGap;
       const values = data.map(d => d[selectedMetric]);
-      let yMin = Math.min(...values, cfg.minRef);
-      let yMax = Math.max(...values, cfg.maxRef);
+      let yMin = Math.min(...values, cfg.noRef ? Infinity : cfg.minRef);
+      let yMax = Math.max(...values, cfg.noRef ? -Infinity : cfg.maxRef);
       const yGap = Math.max((yMax - yMin) * .15, selectedMetric === "ph" ? .02 : .2);
       yMin -= yGap;
       yMax += yGap;
@@ -2189,12 +2270,14 @@
       const x = val => pad.l + (val - xMin) / (xMax - xMin || 1) * (W - pad.l - pad.r);
       const y = val => H - pad.b - (val - yMin) / (yMax - yMin || 1) * (H - pad.t - pad.b);
 
-      const refTop = y(Math.min(cfg.maxRef, yMax));
-      const refBottom = y(Math.max(cfg.minRef, yMin));
-      svg.appendChild(createSvg("rect", {
-        x: pad.l, y: refTop, width: W - pad.l - pad.r,
-        height: Math.max(0, refBottom - refTop), fill: "#e5f4ed"
-      }));
+      if (!cfg.noRef) {
+        const refTop = y(Math.min(cfg.maxRef, yMax));
+        const refBottom = y(Math.max(cfg.minRef, yMin));
+        svg.appendChild(createSvg("rect", {
+          x: pad.l, y: refTop, width: W - pad.l - pad.r,
+          height: Math.max(0, refBottom - refTop), fill: "#e5f4ed"
+        }));
+      }
 
       if (xMin < 0 && xMax > -4) {
         const surgeryStart = x(-4);
@@ -2458,11 +2541,113 @@
       setTimeout(() => { button.textContent = original; }, 2600);
     }
 
+    function renderMultiSeriesChart(svgId, tooltipId, series, height) {
+      const svg = document.getElementById(svgId);
+      const tooltip = document.getElementById(tooltipId);
+      if (!svg || !tooltip) return;
+      svg.innerHTML = "";
+      tooltip.style.display = "none";
+      const data = vitalReadings.filter(d => series.some(s => d[s.key] != null));
+      if (!data.length) return;
+
+      const W = 760, H = height;
+      const pad = { l: 46, r: 18, t: 18, b: 42 };
+      const xMinRaw = Math.min(...data.map(d => d.h));
+      const xMaxRaw = Math.max(...data.map(d => d.h));
+      const xGap = Math.max((xMaxRaw - xMinRaw) * .04, 1);
+      const xMin = xMinRaw - xGap;
+      const xMax = xMaxRaw + xGap;
+      const values = data.flatMap(d => series.map(s => d[s.key]).filter(v => v != null));
+      let yMin = Math.min(...values);
+      let yMax = Math.max(...values);
+      const yGap = Math.max((yMax - yMin) * .18, 1);
+      yMin = Math.max(0, yMin - yGap);
+      yMax += yGap;
+      const x = val => pad.l + (val - xMin) / (xMax - xMin || 1) * (W - pad.l - pad.r);
+      const y = val => H - pad.b - (val - yMin) / (yMax - yMin || 1) * (H - pad.t - pad.b);
+
+      for (let i = 0; i <= 4; i++) {
+        const value = yMin + (yMax - yMin) * i / 4;
+        const yy = y(value);
+        svg.appendChild(createSvg("line", {
+          x1: pad.l, x2: W - pad.r, y1: yy, y2: yy,
+          stroke: "#dfe8e3", "stroke-width": "1"
+        }));
+        const text = createSvg("text", {
+          x: pad.l - 8, y: yy + 4, "text-anchor": "end",
+          fill: "#7c8c87", "font-size": "10"
+        });
+        text.textContent = formatValue(value, yMax > 20 ? 0 : 1);
+        svg.appendChild(text);
+      }
+
+      const tickCount = Math.min(5, Math.max(2, data.length - 1));
+      for (let i = 0; i <= tickCount; i++) {
+        const hour = xMinRaw + (xMaxRaw - xMinRaw) * i / tickCount;
+        const text = createSvg("text", {
+          x: x(hour), y: H - 16, "text-anchor": "middle",
+          fill: "#7c8c87", "font-size": "10"
+        });
+        text.textContent = hour < 0 ? `术前${Math.abs(Math.round(hour))}h` : `+${Math.round(hour)}h`;
+        svg.appendChild(text);
+      }
+
+      series.forEach(s => {
+        const pts = data.filter(d => d[s.key] != null);
+        if (pts.length > 1) {
+          const pathData = pts.map((d, i) =>
+            `${i ? "L" : "M"} ${x(d.h).toFixed(2)} ${y(d[s.key]).toFixed(2)}`
+          ).join(" ");
+          svg.appendChild(createSvg("path", {
+            d: pathData, fill: "none", stroke: s.color,
+            "stroke-width": "2.8", "stroke-linecap": "round", "stroke-linejoin": "round"
+          }));
+        }
+        pts.forEach(d => {
+          const circle = createSvg("circle", {
+            cx: x(d.h), cy: y(d[s.key]), r: 5,
+            fill: s.color, stroke: "#fff", "stroke-width": 2,
+            tabindex: "0", role: "button",
+            "aria-label": `${d.label} ${s.label} ${d[s.key]}`
+          });
+          const show = () => {
+            const lines = series
+              .filter(item => d[item.key] != null)
+              .map(item => `${item.label}：${item.key === "ne" && d.ne != null ? `${d.ne} mL/h` : item.key === "da" ? `${d.da} mL/h` : d[item.key]}`);
+            tooltip.innerHTML = `<strong>${d.label}</strong><br>${lines.join("<br>")}<br>样本：口述`;
+            tooltip.style.display = "block";
+            const wrap = svg.parentElement.getBoundingClientRect();
+            const scaleX = wrap.width / W;
+            const scaleY = wrap.height / H;
+            tooltip.style.left = `${Math.min(x(d.h) * scaleX + 10, wrap.width - 195)}px`;
+            tooltip.style.top = `${Math.max(8, y(d[s.key]) * scaleY - 50)}px`;
+          };
+          circle.addEventListener("click", show);
+          circle.addEventListener("focus", show);
+          circle.addEventListener("blur", () => { tooltip.style.display = "none"; });
+          svg.appendChild(circle);
+        });
+      });
+    }
+
+    function renderVitalsCharts() {
+      renderMultiSeriesChart("bpTrend", "bpTooltip", [
+        { key: "sbp", label: "收缩压", color: "#bd3b3b" },
+        { key: "dbp", label: "舒张压", color: "#3978a8" },
+        { key: "map", label: "MAP", color: "#167a5b" }
+      ], 260);
+      renderMultiSeriesChart("pressorTrend", "pressorTooltip", [
+        { key: "ne", label: "去甲", color: "#c76a16" },
+        { key: "da", label: "多巴胺", color: "#7257a3" }
+      ], 240);
+    }
+
     function renderAll() {
       renderGroupControls();
       renderMetricControls();
       renderCategoryOverview();
       renderChart();
+      renderVitalsCharts();
       renderRawTable();
       updateLatest();
       renderQuestions();
@@ -2585,7 +2770,10 @@
     });
 
     window.addEventListener("resize", () => {
-      document.getElementById("chartTooltip").style.display = "none";
+      ["chartTooltip", "bpTooltip", "pressorTooltip"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = "none";
+      });
     });
 
     renderAll();

@@ -33,7 +33,7 @@ Self-contained mobile perioperative monitoring dashboard. **Not medical advice.*
 
 ## Dashboard trends
 
-`index.html` now has **分类汇总** (all metrics by system with sparklines) plus **详细趋势** (pick category → pick metric). Categories: 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝血/血细胞, 肝/肌酶, 电解质.
+`index.html` now has **分类汇总** (all metrics by system with sparklines) plus **详细趋势** (pick category → pick metric). Categories: 循环/支持, 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝血/血细胞, 肝/肌酶, 电解质. BP/pressor oral points live in `vitalReadings` and also draw dedicated charts under 循环与支持.
 
 ## Preview
 
