@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 95,
+  "count": 96,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1439,10 +1439,10 @@
       "sha256_16": "208962fec2a746cc",
       "bytes": 1645058,
       "labeled": true,
-      "preferred": true,
+      "preferred": false,
       "report_time": "2026-09-21T10:53:36",
       "type": "动脉血气",
-      "note": "pH7.515 PCO2 33.00 PO2 89.70 HCO3 26.00 ABE+3.10 lac1.554 FiO2 50 PF179 Hb8.90 iCa1.07; 179 is P/F not PCT",
+      "note": "1080x15826 phone crop. lac OCR 1.554; hires shows 1.54. superseded",
       "relative_h": 140.89,
       "extracted": {
         "ph": 7.515,
@@ -1450,7 +1450,35 @@
         "po2": 89.7,
         "hco3": 26.0,
         "be": 3.1,
-        "lactate": 1.55,
+        "lactate": 1.54,
+        "fio2": 50,
+        "pf": 179,
+        "hb": 8.9,
+        "ca": 1.07
+      },
+      "superseded_by": "reports/abg/20260921T105336__hires__01a0c258-8b2c-7572-b9e7-78adb4263c70.jpg"
+    },
+    {
+      "id": "20260921T105336__hires__01a0c258-8b2c-7572-b9e7-78adb4263c70.jpg",
+      "path": "reports/abg/20260921T105336__hires__01a0c258-8b2c-7572-b9e7-78adb4263c70.jpg",
+      "category": "abg",
+      "source_filename": "01a0c258-8b2c-7572-b9e7-78adb4263c70.jpg",
+      "sha256_16": "22804d0c2c52c48f",
+      "bytes": 1292564,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T10:53:36",
+      "type": "动脉血气",
+      "note": "PREFERRED hires 3520x3772. lac1.54 (phone crop had 1.554) PF179 pH7.515 BE+3.10 Hb8.90; 179 is P/F not PCT",
+      "relative_h": 140.89,
+      "resolution_vs_prior": "3520x3772 vs 1080x15826",
+      "extracted": {
+        "ph": 7.515,
+        "pco2": 33.0,
+        "po2": 89.7,
+        "hco3": 26.0,
+        "be": 3.1,
+        "lactate": 1.54,
         "fio2": 50,
         "pf": 179,
         "hb": 8.9,

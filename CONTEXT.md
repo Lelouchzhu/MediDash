@@ -102,10 +102,10 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 ### Arterial blood gas — latest 2026-09-21 10:53 (postop 140h53m)
 
 - pH **7.515↑**, PCO₂ **33.00↓**, PO₂ **89.70**, HCO₃⁻ **26.00**, BE **+3.10** (ABE = SBE on this sheet)
-- Lactate **1.55** (in ref 0.5–1.6; was 1.61)
+- Lactate **1.54** (in ref 0.5–1.6; was 1.61). Phone-crop OCR had **1.554**; hires table is **1.54**.
 - FiO₂ **50%**, P/F **179** (up from 161). This 179 is oxygenation index, not PCT.
 - Hb **8.9↓** g/dL (was 10.7 at 06:52), Hct **26%↓**, iCa **1.07↓**
-- Screenshot: `testset/reports/abg/20260921T105336__01a0c208-02ce-7b4d-a949-e4002ba67731.jpg`
+- Screenshot (preferred hires 3520×3772): `testset/reports/abg/20260921T105336__hires__01a0c258-8b2c-7572-b9e7-78adb4263c70.jpg`
 
 ### Arterial blood gas — 2026-09-21 06:52 (postop 136h52m)
 
@@ -321,4 +321,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-21 11:07 — PCT 65.368→36.8855 (same-clock chem replacement); ABG 10:53 lac 1.55 / PF 179 / Hb 8.9 / pH 7.515 / BE +3.1; APTT 51.8. Still watch K 3.93 and WBC 19.40; NE 6 + DA 8.
+**Last updated:** 2026-09-21 — 10:53 ABG hires swap (3520×3772); lactate corrected 1.554→**1.54**. Other keys unchanged: PF 179, Hb 8.9, pH 7.515, BE +3.1; PCT 36.8855; APTT 51.8.
