@@ -2004,7 +2004,7 @@
       </div>
       <button class="icon-btn" type="button" id="closeDialog" aria-label="关闭">×</button>
     </div>
-    <form class="result-form" id="resultForm">
+    <form class="result-form" id="resultForm" novalidate>
       <div class="shot-import" id="shotImport">
         <input id="shotFile" type="file" accept="image/*,.heic,.heif,.txt,text/plain" hidden>
         <input id="shotCameraFile" type="file" accept="image/*" capture="environment" hidden>
@@ -2201,11 +2201,11 @@
           </div>
           <div class="field">
             <label for="il6">IL-6</label>
-            <input id="il6" name="il6" type="number" step="1" inputmode="numeric">
+            <input id="il6" name="il6" type="number" step="0.1" inputmode="decimal">
           </div>
           <div class="field">
             <label for="pct">降钙素原 PCT (ng/mL)</label>
-            <input id="pct" name="pct" type="number" step="0.001" inputmode="decimal">
+            <input id="pct" name="pct" type="number" step="0.0001" inputmode="decimal">
           </div>
           <div class="field">
             <label for="crp">C反应蛋白 CRP (mg/L)</label>
