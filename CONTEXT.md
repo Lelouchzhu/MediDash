@@ -85,9 +85,9 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 - Urine overnight **50 mL** was **before** this restart. Family now: **still no urine after CRRT stop**.
 - Vasopressors **weaned again**: norepinephrine **9 → 6 → 4 mL/h = 0.20 mg/h** + dopamine **10 → 8 → 7.5 mL/h**. Concentration remains **0.05 mg/mL** (9 mL/h = 0.45 mg/h; 6 mL/h = 0.30 mg/h). Do not invent dopamine mg/h.
 - **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53**. Evening CBC Hb **101** (19:05; morning was 100). Ask how many units finished.
-- **K:** chemistry **3.93** at 09:18 (on CRRT). After stop, K may rebound up. Latest iCa **1.07** on 10:53 ABG. Evening WBC **18.61** (was 19.40).
+- **K:** chemistry **3.93** at 09:18 (on CRRT) → **4.41** at 22:50 (ref 3.5–5.3, back in range, not high). iCa on ABG **0.99 → 1.02** (still below 1.15). Evening WBC **18.61**. Cr after CRRT stop still not repeated.
 - **Stool:** family-reported microscopy **WBC negative, RBC negative** (oral). Screenshot **2026-09-21 18:32** fecal occult blood (immunoassay) **positive**. Different tests; FOBT+ does not quantify or localize bleeding. Evening CBC Hb held at **101**.
-- **Watch next:** urine after CRRT stop; potassium (may rebound); next Cr; stool color / whether FOBT changes management; WBC still high.
+- **Watch next:** urine after CRRT stop; next Cr; lactate now **2.12** again; P/F **156**; stool color.
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -103,7 +103,7 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 - **FOBT 18:32:** occult blood immunoassay **positive** (abnormal flag A). Not the same as microscopy WBC/RBC.
 - **CBC 19:05:** WBC **18.61↑** (was 19.40), Hb **101↓** g/L (was 100), HCT **28.6↓**, PLT **69↓** (was 60), NEUT% **94.4↑**, NEUT# **17.57↑**, lymph 0.80. Plateletcrit **0.08%** is not PCT.
 - **Coag 19:20:** APTT **48.8↑** sec (ref 21–45; was 51.8). TT **14.4**, PT **11.7**, INR **0.977**, Fbg **4.37** — all in range.
-- **Judgment:** WBC slightly down, still high with neutrophilia. APTT easing toward ref. CBC Hb stable despite FOBT+ — not a large bleed on this snapshot; still ask about stool color. K and Cr after CRRT stop remain unchecked.
+- **Judgment:** WBC slightly down, still high with neutrophilia. APTT easing toward ref. CBC Hb stable despite FOBT+ — not a large bleed on this snapshot; still ask about stool color. K and Cr after CRRT stop were still unchecked at this clock.
 - Screenshots: `testset/reports/other/20260921T183228__0915680A-8202-4C78-B57D-C03CF3C68D68_L0_001.jpg`, `testset/reports/cbc/20260921T190522__F15281AC-0475-4441-BA34-E820C9B4DAD2_L0_001.jpg`, `testset/reports/coag/20260921T192039__E0EEF2FA-427C-4F72-9881-5377D8F49812_L0_001.jpg`
 
 ### Coag — 2026-09-21 11:07 (postop 141h07m)
@@ -111,7 +111,17 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 - APTT **51.8↑** sec (ref 21–45); rebound from **45.8** at 09:18
 - Screenshot: `testset/reports/coag/20260921T110725__01a0c208-02ed-7967-8409-0a947755103f.jpg`
 
-### Arterial blood gas — latest 2026-09-21 10:53 (postop 140h53m)
+### Overnight ABG + potassium — 2026-09-21 22:40 to 2026-09-22 06:41
+
+Built on the other agents' mainland `index.xhtml` pipeline (`5131212`). Clinical numbers below are new.
+
+- **ABG 22:40 (postop 152h40m):** pH **7.463↑**, PCO₂ **31.50↓**, PO₂ **69.50↓**, HCO₃⁻ **22.10**, ABE **−1.70** (SBE −1.00), lactate **1.93↑**, FiO₂ **50%**, P/F **139** (oxygenation index, not PCT), Hb **11.70↓** g/dL, Hct **34%↓**, iCa **0.99↓**
+- **K 22:50 (postop 152h50m):** **4.41** mmol/L (ref 3.5–5.3). Rebound from **3.93** after CRRT stop, still inside the range.
+- **ABG 06:41 (postop 160h41m):** pH **7.449** (back in 7.35–7.45), PCO₂ **32.60↓**, PO₂ **77.80↓**, HCO₃⁻ **22.10**, ABE **−1.90** (SBE −1.40), lactate **2.12↑**, FiO₂ **50%**, P/F **156**, Hb **10.20↓** g/dL, Hct **30%↓**, iCa **1.02↓**
+- **Judgment:** lactate left the reference again (1.54 → 1.93 → 2.12). Oxygenation dipped to 139 then 156, still far below 400. ABG Hb rose to 11.7 then eased to 10.2; do not equate with CBC 101. Potassium rebound stayed in range. No new urine or creatinine.
+- Screenshots: `testset/reports/abg/20260921T224007__01a0c65d-807d-73bf-a7cc-dcccb27e359d.jpg`, `testset/reports/chemistry/20260921T225059__01a0c65d-808f-7496-84de-302c2fae5811.jpg`, `testset/reports/abg/20260922T064140__01a0c65d-8069-7ba0-a4cb-fc6932f7750f.jpg`
+
+### Arterial blood gas — 2026-09-21 10:53 (postop 140h53m)
 
 - pH **7.515↑**, PCO₂ **33.00↓**, PO₂ **89.70**, HCO₃⁻ **26.00**, BE **+3.10** (ABE = SBE on this sheet)
 - Lactate **1.54** (in ref 0.5–1.6; was 1.61). Phone-crop OCR had **1.554**; hires table is **1.54**.
@@ -335,4 +345,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-21 evening — CBC WBC **18.61** / Hb **101** / PLT **69**; APTT **48.8**; FOBT immunoassay **positive**. Oral bedside unchanged (NE 4, DA 7.5, BP 150/55). CRRT still stopped, still no urine.
+**Last updated:** 2026-09-22 morning — ABG lactate **2.12**, P/F **156**, pH **7.449**, ABG Hb **10.2**, iCa **1.02**; overnight K **4.41** (in range). Prior evening labs unchanged (WBC 18.61, CBC Hb 101, APTT 48.8, FOBT+). Oral bedside unchanged. CRRT still stopped. Mainland page is rebuilt `index.xhtml`.

@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 99,
+  "count": 102,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1565,6 +1565,79 @@
         "pt_pct": 98.0,
         "inr": 0.977,
         "fbg": 4.37
+      }
+    },
+    {
+      "id": "20260921T224007__01a0c65d-807d-73bf-a7cc-dcccb27e359d.jpg",
+      "path": "reports/abg/20260921T224007__01a0c65d-807d-73bf-a7cc-dcccb27e359d.jpg",
+      "category": "abg",
+      "source_filename": "01a0c65d-807d-73bf-a7cc-dcccb27e359d.jpg",
+      "sha256_16": "976373c2b2ba8824",
+      "bytes": 1308289,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T22:40:07",
+      "type": "动脉血气",
+      "note": "3520x3772 lac1.93↑ PF139 pH7.463 ABE-1.70 HCO3 22.10 Hb11.70 Hct34 iCa0.99 FiO250; 139 is P/F not PCT",
+      "relative_h": 152.67,
+      "extracted": {
+        "ph": 7.463,
+        "pco2": 31.5,
+        "po2": 69.5,
+        "sbe": -1.0,
+        "be": -1.7,
+        "hco3": 22.1,
+        "lactate": 1.93,
+        "hb": 11.7,
+        "hct": 34.0,
+        "ca": 0.99,
+        "fio2": 50,
+        "pf": 139
+      }
+    },
+    {
+      "id": "20260921T225059__01a0c65d-808f-7496-84de-302c2fae5811.jpg",
+      "path": "reports/chemistry/20260921T225059__01a0c65d-808f-7496-84de-302c2fae5811.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0c65d-808f-7496-84de-302c2fae5811.jpg",
+      "sha256_16": "b81c8212f49c76c5",
+      "bytes": 285699,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T22:50:59",
+      "type": "电解质",
+      "note": "K4.41 in ref 3.5-5.3; rebound from 3.93 after CRRT stop, not high",
+      "relative_h": 152.85,
+      "extracted": {
+        "k": 4.41
+      }
+    },
+    {
+      "id": "20260922T064140__01a0c65d-8069-7ba0-a4cb-fc6932f7750f.jpg",
+      "path": "reports/abg/20260922T064140__01a0c65d-8069-7ba0-a4cb-fc6932f7750f.jpg",
+      "category": "abg",
+      "source_filename": "01a0c65d-8069-7ba0-a4cb-fc6932f7750f.jpg",
+      "sha256_16": "280005237d9c6f45",
+      "bytes": 1300613,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-22T06:41:40",
+      "type": "动脉血气",
+      "note": "3520x3772 lac2.12↑ PF156 pH7.449 ABE-1.90 HCO3 22.10 Hb10.20 Hct30 iCa1.02 FiO250; 156 is P/F not PCT",
+      "relative_h": 160.69,
+      "extracted": {
+        "ph": 7.449,
+        "pco2": 32.6,
+        "po2": 77.8,
+        "sbe": -1.4,
+        "be": -1.9,
+        "hco3": 22.1,
+        "lactate": 2.12,
+        "hb": 10.2,
+        "hct": 30.0,
+        "ca": 1.02,
+        "fio2": 50,
+        "pf": 156
       }
     }
   ]
