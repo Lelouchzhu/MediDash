@@ -4,8 +4,9 @@ This file is the **readable memory** for future Cloud Agents working on `Lelouch
 It summarizes decisions, data conventions, and clinical state from prior agent runs. It is **not** a full chat transcript dump.
 
 **Source of truth repo:** `https://github.com/Lelouchzhu/MediDash` (not the Allmond fork)  
-**Prior agent run (Allmond-bound):** https://cursor.com/agents/bc-01a0a01a-a6eb-72c7-b052-ba5e14ed8b1b  
-**Conversation summary:** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
+**Prior agent run (Allmond-bound, then continued here):** https://cursor.com/agents/bc-01a0a01a-a6eb-72c7-b052-ba5e14ed8b1b  
+**Conversation summary (current):** [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md)  
+**Conversation summary (through 9/18 13:00 ABG):** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
 **Preview:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
 ---
@@ -323,4 +324,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-21 — added BP/pressor trend charts (`vitalReadings`). Latest oral: NE **4** mL/h, DA **7.5**, BP **150/55**, pulse **106**; CRRT **19h48min then stopped**, still no urine.
+**Last updated:** 2026-09-21 — refreshed handoff docs (`CONTEXT.md`, `AGENTS.md`, `README.md`) and added [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md). Clinical HEAD unchanged: BP/pressor charts (`vitalReadings`); latest oral NE **4** mL/h, DA **7.5**, BP **150/55**, pulse **106**; CRRT **19h48min then stopped**, still no urine; PCT **36.8855**, lac **1.54**, APTT **51.8**.

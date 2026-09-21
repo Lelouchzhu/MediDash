@@ -8,11 +8,12 @@ Do **not** update `Lelouchzhu/Allmond` for clinical dashboard work.
 
 ## Read first
 
-1. **[`CONTEXT.md`](CONTEXT.md)** — clinical timeline, PCT naming traps, latest labs  
-2. **[`testset/README.md`](testset/README.md)** — **mandatory screenshot backup + extraction testset**  
-3. **[`docs/transcripts/`](docs/transcripts/)** — prior agent conversation summaries  
-4. This file — short operating rules  
+1. **[`CONTEXT.md`](CONTEXT.md)** — clinical timeline, PCT naming traps, latest labs
+2. **[`testset/README.md`](testset/README.md)** — **mandatory screenshot backup + extraction testset**
+3. **[`docs/transcripts/`](docs/transcripts/)** — prior agent conversation summaries (start with the newest dated file)
+4. This file — short operating rules
 5. **`index.html`** — live dashboard (categorized trends for all metrics)
+6. **[`README.md`](README.md)** — product overview for humans starting the repo
 
 ## Purpose
 
@@ -21,19 +22,64 @@ Self-contained mobile perioperative monitoring dashboard. **Not medical advice.*
 ## Clinical zero point
 
 - Surgery end: **2026-09-15 14:00** (D0 10:00–14:00)
-- Relative hours from surgery end
+- Relative hours from surgery end: `h = (report_datetime − 2026-09-15 14:00)`
+
+## Naming traps (do not confuse)
+
+| Label | Meaning | Do not treat as |
+|-------|---------|-----------------|
+| 降钙素原 / PCT (chem) | Procalcitonin ng/mL | Plateletcrit or P/F |
+| 血小板比积 / PCT (CBC) | Plateletcrit % | Procalcitonin |
+| 氧合指数 pO2(a)/FO2(I) | PaO₂/FiO₂ | Procalcitonin |
+
+`be` on ABG sheets is **ABE** (this machine also prints SBE — store ABE).
+
+## Norepinephrine concentration
+
+Family-confirmed **0.05 mg/mL**. Convert only NE. **Do not invent dopamine mg/h.** **Do not invent weight.**
+
+| mL/h | mg/h |
+|------|------|
+| 9 | 0.45 |
+| 6 | 0.30 |
+| 4 | 0.20 |
+
+If the family only said “high / about half”, leave mL blank rather than guessing.
 
 ## Mandatory on every new report image
 
-1. Copy screenshot → `testset/reports/<category>/` (or `inbox/`)
-2. Register in `testset/manifest.json`
-3. Extract values into `index.html` (`baseReadings` / `labReadings` + cards/timeline)
-4. Update `CONTEXT.md` if the clinical story changed
-5. Commit + push **MediDash**
+1. Copy screenshot → `testset/reports/<category>/` (or `inbox/`). Name `{YYYYMMDDTHHMMSS}__{original}` when the clock is known. Hires copies use `__hires__` in the filename (typical 3520×3772).
+2. Register in `testset/manifest.json` (`count++`, `labeled`, `extracted`, `relative_h`).
+3. Extract values into `index.html`:
+   - `baseReadings` — ABG
+   - `labReadings` — chem / CBC / coag / inflammation
+   - `vitalReadings` — oral BP / HR / pressors (approximate `h`)
+   - cards, insights, timeline, `doctorQuestions`
+   - `latestNonBloodGasReport` when a non-ABG clock is newer than the last arterial
+   - new fields also go in `metricConfig` + `metricGroups`
+4. Update `CONTEXT.md` if the clinical story changed.
+5. Syntax-check the dashboard script: extract the `<script>` body to `/tmp/medidash-check.js` and run `node --check /tmp/medidash-check.js`.
+6. Commit + push **MediDash `main`**. Do not print tokens.
+
+### Same-clock replace and hires
+
+- **Keep the old file.** Never delete a superseded screenshot.
+- Old entry: `preferred: false` and `superseded_by` (or a SUPERSEDED note).
+- New entry: `preferred: true`. For a sharper copy of the same sheet, prefix `__hires__`.
+- Prefer the **hires printed table** over phone-crop OCR (example: 10:53 lactate OCR 1.554 → hires **1.54**).
+- OCR from video/computer-use often garbles Chinese (e.g. 36.9 → 96.39). Trust the code + the sheet.
+- Do **not** infinitely slice tall phone crops (a 1080×15826 ABG once filled the disk). Use a finite slice loop.
 
 ## Dashboard trends
 
-`index.html` now has **分类汇总** (all metrics by system with sparklines) plus **详细趋势** (pick category → pick metric). Categories: 循环/支持, 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝血/血细胞, 肝/肌酶, 电解质. BP/pressor oral points live in `vitalReadings` and also draw dedicated charts under 循环与支持.
+`index.html` has **分类汇总** (all metrics by system with sparklines) plus **详细趋势** (pick category → pick metric).
+
+Categories: **循环/支持**, 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝血/血细胞, 肝/肌酶, 电解质.
+
+- First `metricGroups` entry is **循环/支持**: `map`, `sbp`, `dbp`, `hr`, `ne`, `da`.
+- BP/pressor oral points live in `vitalReadings` and also draw dedicated `#bpTrend` / `#pressorTrend` via `renderMultiSeriesChart`.
+- `ne` / `da` use `noRef` (oral mL/h, not a lab reference).
+- Infection group: `pct`, `crp`, `il6`, `wbc`.
 
 ## Preview
 

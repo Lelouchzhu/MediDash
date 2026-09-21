@@ -1,10 +1,33 @@
 # MediDash
 
-Mobile-friendly perioperative monitoring dashboard for family-side trend tracking (blood gas, coagulation, organ labs, vitals, and a doctor discussion checklist).
+Mobile-friendly perioperative monitoring dashboard for family-side trend tracking. **This repository is the source of truth.** New lab results, report screenshots (`testset/`), and dashboard updates go here (`Lelouchzhu/MediDash` on `main`), not to the old Allmond fork.
 
 > For caregiving coordination only — does **not** replace ICU judgment or formal medical records.
 
-**This repository is the source of truth.** New lab results, **report screenshots** (`testset/`), and dashboard updates should be pushed here (`Lelouchzhu/MediDash`), not to the old Allmond fork.
+## What the dashboard shows
+
+Single-file [`index.html`](index.html):
+
+- **Status cards** for circulation/support, kidney, infection, coagulation, and oxygenation
+- **分类汇总** — sparklines for every metric, grouped by system
+- **循环与支持** — dedicated blood-pressure and vasopressor charts from oral `vitalReadings` (plus MAP / HR / NE / DA in the category picker)
+- **详细趋势** — pick a category, then a metric
+- **Doctor discussion checklist** (`doctorQuestions`) for rounds
+- Timeline, expandable report notes, and a hero pill driven by the newer of the last arterial vs `latestNonBloodGasReport`
+
+Categories: 循环/支持, 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝血/血细胞, 肝/肌酶, 电解质.
+
+## Naming traps
+
+Do **not** mix these three “PCT-looking” numbers:
+
+| Label on the sheet | Meaning |
+|--------------------|---------|
+| **降钙素原 / PCT** (chemistry) | Procalcitonin ng/mL |
+| **血小板比积 / PCT** (CBC) | Plateletcrit % |
+| **氧合指数 pO2(a)/FO2(I)** | PaO₂/FiO₂ |
+
+Norepinephrine concentration is **0.05 mg/mL** (9 mL/h = 0.45 mg/h; 6 = 0.30; 4 = 0.20). Do not invent dopamine mg/h or body weight.
 
 ## Open locally
 
@@ -14,13 +37,21 @@ python3 -m http.server 8080
 
 Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
-## Cloud Agent
-
-- Config: [`.cursor/environment.json`](.cursor/environment.json) starts a dashboard server on port **8080**.
-- Handoff: [`AGENTS.md`](AGENTS.md) · clinical context: [`CONTEXT.md`](CONTEXT.md) · transcript summary: [`docs/transcripts/`](docs/transcripts/)
-- Screenshot backup / extraction testset: [`testset/`](testset/)
-- Start Cloud Agents on **this** repository and ask them to read those files first.
-
 ## Preview
 
 https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
+
+## Cloud Agent / handoff
+
+Start Cloud Agents on **this** repository and read these first:
+
+| File | Role |
+|------|------|
+| [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
+| [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
+| [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 96 reports) |
+
+Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
+
+Clinical zero: surgery end **2026-09-15 14:00**. Every new screenshot is copied into `testset/reports/<category>/`, registered in `manifest.json`, then extracted into `index.html`.
