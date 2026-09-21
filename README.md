@@ -66,10 +66,11 @@ https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/
 
 Feature-branch standalone pages (识图版 + 空白版), not on `main`:
 
+- **大陆入口**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cn/hub.xhtml
+- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@cn/hub.xhtml
 - Hub: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/previews.html
 - 识图版: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/live.html
 - 空白版: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/template.html
-- Backup (raw.githack): [识图版](https://raw.githack.com/Lelouchzhu/MediDash/cursor/empty-template-replay-b98e/live.html) · [空白版](https://raw.githack.com/Lelouchzhu/MediDash/cursor/empty-template-replay-b98e/template.html)
 
 ## Cloud Agent / handoff
 

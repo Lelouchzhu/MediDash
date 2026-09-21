@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" width="100%" height="100%" viewBox="0 0 420 720">
+  <foreignObject x="0" y="0" width="420" height="720">
+    <xhtml:div xmlns="http://www.w3.org/1999/xhtml" style="margin:0;min-height:100vh;font-family:ui-sans-serif,system-ui,sans-serif;background:#f2f5f2;color:#17342f;padding:28px 18px 48px;box-sizing:border-box;">
+      <xhtml:h1 style="font-size:1.35rem;margin:0 0 8px;">MediDash „È</xhtml:h1>
+      <xhtml:p style="color:#62746f;line-height:1.55;">'Feãý… CDN	Ÿý/ub†Ö main</xhtml:p>
+      <xhtml:p id="status" style="min-height:1.4em;color:#21634f;font-size:.9rem;"></xhtml:p>
+      <xhtml:button id="openLive" type="button" style="display:block;width:100%;margin:14px 0;padding:18px 16px;border:0;border-radius:18px;background:#fff;text-align:left;font:inherit;box-shadow:0 12px 38px rgba(26,56,48,.08);">
+        <xhtml:strong style="display:block;font-size:1.05rem;margin-bottom:6px;">ÆþH</xhtml:strong>
+        ò	ŒÍP + Î*þ/‡WÆ+û Óœ
+      </xhtml:button>
+      <xhtml:button id="openTemplate" type="button" style="display:block;width:100%;margin:14px 0;padding:18px 16px;border:0;border-radius:18px;background:#fff;text-align:left;font:inherit;box-shadow:0 12px 38px rgba(26,56,48,.08);">
+        <xhtml:strong style="display:block;font-size:1.05rem;margin-bottom:6px;">z}H</xhtml:strong>
+        +„nŒùgSM¥J†Ö‡
+      </xhtml:button>
+    </xhtml:div>
+  </foreignObject>
+  <script type="text/javascript"><![CDATA[
+    function openPage(file) {
+      var status = document.getElementById("status");
+      if (status) status.textContent = "c(Îý…\Ï }&";
+      fetch(file, { cache: "reload" }).then(function (res) {
+        if (!res.ok) throw new Error(String(res.status));
+        return res.text();
+      }).then(function (html) {
+        var blob = new Blob([html], { type: "text/html;charset=utf-8" });
+        location.assign(URL.createObjectURL(blob));
+      }).catch(function () {
+        if (status) status.textContent = " }1%÷(ûßOÈhÍÕ";
+      });
+    }
+    document.getElementById("openLive").addEventListener("click", function () { openPage("live.html"); });
+    document.getElementById("openTemplate").addEventListener("click", function () { openPage("template.html"); });
+  ]]></script>
+</svg>

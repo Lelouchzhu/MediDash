@@ -28,23 +28,31 @@
     }
     a.card strong { display: block; font-size: 1.05rem; margin-bottom: 6px; }
     .note { font-size: .85rem; }
+    .badge { display: inline-block; margin-bottom: 8px; padding: 2px 8px; border-radius: 999px; background: #e7f4ec; color: #21634f; font-size: 12px; font-weight: 700; }
   </style>
 </head>
 <body>
   <main>
     <h1>MediDash 预览</h1>
-    <p>这两页在功能分支上，<strong>不会覆盖 main</strong>。识图版带当前报告和截图识别；空白版从零录入。</p>
-    <a class="card" href="https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/live.html">
-      <strong>识图版</strong>
+    <p>这两页在功能分支上，<strong>不会覆盖 main</strong>。大陆请走国内 CDN 入口（微信里若只看到源码，用系统浏览器打开）。</p>
+    <a class="card" href="https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cn/hub.xhtml">
+      <span class="badge">大陆可打开</span>
+      <strong>国内入口</strong>
+      微软中国 CDN 镜像，再选识图版 / 空白版
+    </a>
+    <a class="card" href="live.html">
+      <strong>识图版（相对链接）</strong>
       已有化验种子 + 从截图/文字识别添加结果
     </a>
-    <a class="card" href="https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/template.html">
-      <strong>空白版</strong>
+    <a class="card" href="template.html">
+      <strong>空白版（相对链接）</strong>
       不含预置化验，对照当前报告看覆盖率
     </a>
-    <p class="note">备用（相对资源更稳）：<br>
-      <a href="https://raw.githack.com/Lelouchzhu/MediDash/cursor/empty-template-replay-b98e/live.html">识图版 raw.githack</a><br>
-      <a href="https://raw.githack.com/Lelouchzhu/MediDash/cursor/empty-template-replay-b98e/template.html">空白版 raw.githack</a>
+    <p class="note">
+      备用国内镜像：<a href="https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@cn/hub.xhtml">jsdmirror hub</a>
+      · <a href="https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cn/hub.svg">SVG 入口</a><br>
+      海外：<a href="https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/live.html">htmlpreview 识图版</a>
+      · <a href="https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/template.html">空白版</a>
     </p>
   </main>
 </body>

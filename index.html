@@ -3640,10 +3640,28 @@
       if (tesseractLoader) return tesseractLoader;
       tesseractLoader = new Promise((resolve, reject) => {
         const script = document.createElement("script");
-        script.src = "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js";
-        script.onload = () => resolve(window.Tesseract);
-        script.onerror = () => reject(new Error("OCR 脚本加载失败"));
+        const onCnCdn = /onmicrosoft\.cn|jsdmirror|testingcf\.jsdelivr/.test(location.hostname);
+        const sources = onCnCdn
+          ? [
+              "https://jsd.onmicrosoft.cn/npm/tesseract.js@5/dist/tesseract.min.js",
+              "https://cdn.jsdmirror.com/npm/tesseract.js@5/dist/tesseract.min.js",
+              "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"
+            ]
+          : [
+              "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js",
+              "https://jsd.onmicrosoft.cn/npm/tesseract.js@5/dist/tesseract.min.js"
+            ];
+        const tryLoad = (index) => {
+          if (index >= sources.length) {
+            reject(new Error("OCR 脚本加载失败"));
+            return;
+          }
+          script.src = sources[index];
+          script.onload = () => resolve(window.Tesseract);
+          script.onerror = () => tryLoad(index + 1);
+        };
         document.head.appendChild(script);
+        tryLoad(0);
       });
       return tesseractLoader;
     }

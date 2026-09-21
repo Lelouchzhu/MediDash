@@ -133,7 +133,8 @@ https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/
 
 Feature-branch web pages (`cursor/empty-template-replay-b98e`, not `main`):
 
+- **大陆入口**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cn/hub.xhtml
+- 备用: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@cn/hub.xhtml · https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cn/hub.svg
 - Hub: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/previews.html
 - 识图版: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/live.html
 - 空白版: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/empty-template-replay-b98e/template.html
-- Backup: https://raw.githack.com/Lelouchzhu/MediDash/cursor/empty-template-replay-b98e/live.html · https://raw.githack.com/Lelouchzhu/MediDash/cursor/empty-template-replay-b98e/template.html
