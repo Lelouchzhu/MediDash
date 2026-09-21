@@ -2190,8 +2190,9 @@
         return;
       }
       clearNode(el);
-      const root = parsed.documentElement;
-      while (root.firstChild) el.appendChild(document.importNode(root.firstChild, true));
+      Array.from(parsed.documentElement.childNodes).forEach(node => {
+        el.appendChild(document.importNode(node, true));
+      });
     }
 
     function formatValue(value, decimals) {
