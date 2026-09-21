@@ -67,10 +67,10 @@ Trend: falling since the peak, still far above ref 0–0.05.
 ### Support / vitals (family-reported)
 
 - **Latest bedside (~postop 122h):** BP **125/35** (MAP≈65), HR **100**, RR **15–20**
-- **CRRT:** settings entered but **not started yet** — blood flow **130 mL/min**, dehydrate/UF **300 mL/h**. Prior stop morning 2026-09-19.
-- Urine overnight **50 mL** (still oliguric). **Bowel movement** reported today.
+- **CRRT:** family later clarified **started 2026-09-20 ~16:00–18:00** (postop ~122–124h). Pre-start settings were blood **130 mL/min**, UF **300 mL/h**. Prior stop morning 2026-09-19. Actual on-machine parameters / cumulative UF not confirmed.
+- Urine overnight **50 mL** was **before** this restart. No post-start urine oral update.
 - Vasopressors **maintained**: norepinephrine **9 mL/h = 0.45 mg/h** + dopamine **10 mL/h**
-- **Transfusion:** **4 units RBC**, blood type **B Rh-positive** — ABG Hb later rose **7.7→10.4** and stayed **10.2–10.7** (ask whether units completed)
+- **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7**. Ask how many units finished; no post-transfusion CBC yet.
 - **K:** dry-chem **4.20** at 04:28 (was 4.24 at 01:23, 4.50 at 22:31)
 
 ### Arterial blood gas — latest 2026-09-21 06:52 (postop 136h52m)
@@ -286,4 +286,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-21 06:52 — ABG lac 1.61 / PF 161 / Hb 10.7 / pH 7.485 / HCO₃⁻ 21.2 / BE −2.2; night lac peak 2.20; APTT 51.1; K 4.20.
+**Last updated:** 2026-09-21 — family: CRRT + RBC 4U both started 2026-09-20 ~16–18:00; doctor questions rewritten for running CRRT / post-transfusion follow-up.
