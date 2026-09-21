@@ -83,4 +83,16 @@ Categories: **循环/支持**, 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝
 
 ## Preview
 
-https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
+大陆入口（国内 CDN → `hub.xhtml` 拉取同目录 `index.html`，用 Blob 当网页打开）：
+
+- **大陆入口**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@main/hub.xhtml
+- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@main/hub.xhtml
+- SVG 入口: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@main/hub.svg
+- 海外备用: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
+
+微信若停在源码页，改用系统浏览器。推送 `index.html` / `hub.xhtml` 后镜像可能缓存约 12 小时；刷新：
+
+`https://purge.jsdelivr.net/gh/Lelouchzhu/MediDash@main/hub.xhtml`  
+`https://purge.jsdelivr.net/gh/Lelouchzhu/MediDash@main/index.html`
+
+不要把功能分支上的识图版 / 空白版（`live.html` / `template.html`，tag `cn`）写进这条 main 入口。

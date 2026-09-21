@@ -39,7 +39,18 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 ## Preview
 
-https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
+大陆入口（国内 CDN，打开后自动进入当前 `main` 监测页）：
+
+- **大陆入口**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@main/hub.xhtml
+- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@main/hub.xhtml
+- SVG 入口: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@main/hub.svg
+
+微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。推送 `hub.xhtml` / `index.html` 后若镜像仍是旧页，刷新：
+
+https://purge.jsdelivr.net/gh/Lelouchzhu/MediDash@main/hub.xhtml  
+https://purge.jsdelivr.net/gh/Lelouchzhu/MediDash@main/index.html
+
+海外备用：https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
 ## Cloud Agent / handoff
 
