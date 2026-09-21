@@ -1156,7 +1156,7 @@
           <div class="chart-delta" id="chartDelta"></div>
         </div>
         <div class="chart-wrap" id="chartWrap">
-          <svg id="trendChart" viewBox="0 0 760 320" role="img" aria-labelledby="chartTitle chartSubtitle"></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" id="trendChart" viewBox="0 0 760 320" role="img" aria-labelledby="chartTitle chartSubtitle"></svg>
           <div class="chart-tooltip" id="chartTooltip" role="status"></div>
         </div>
         <div class="legend">
@@ -1197,7 +1197,7 @@
             </div>
           </div>
           <div class="chart-wrap">
-            <svg id="bpTrend" viewBox="0 0 760 260" role="img" aria-label="血压趋势"></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" id="bpTrend" viewBox="0 0 760 260" role="img" aria-label="血压趋势"></svg>
             <div class="chart-tooltip" id="bpTooltip" role="status"></div>
           </div>
           <div class="legend">
@@ -1214,7 +1214,7 @@
             </div>
           </div>
           <div class="chart-wrap">
-            <svg id="pressorTrend" viewBox="0 0 760 240" role="img" aria-label="升压药趋势"></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" id="pressorTrend" viewBox="0 0 760 240" role="img" aria-label="升压药趋势"></svg>
             <div class="chart-tooltip" id="pressorTooltip" role="status"></div>
           </div>
           <div class="legend">
@@ -2150,10 +2150,46 @@
       });
     }
 
+    const SVG_NS = "http://www.w3.org/2000/svg";
+    const XHTML_NS = "http://www.w3.org/1999/xhtml";
+
     function createSvg(tag, attrs = {}) {
-      const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+      const el = document.createElementNS(SVG_NS, tag);
       Object.entries(attrs).forEach(([key, value]) => el.setAttribute(key, value));
       return el;
+    }
+
+    function ensureSvg(el) {
+      if (!el) return null;
+      if (el.namespaceURI === SVG_NS) return el;
+      const svg = document.createElementNS(SVG_NS, "svg");
+      Array.from(el.attributes).forEach(attr => svg.setAttribute(attr.name, attr.value));
+      el.replaceWith(svg);
+      return svg;
+    }
+
+    function clearNode(el) {
+      if (!el) return;
+      while (el.firstChild) el.removeChild(el.firstChild);
+    }
+
+    function setMarkup(el, html) {
+      if (!el) return;
+      if (document.contentType !== "application/xhtml+xml") {
+        el.innerHTML = html;
+        return;
+      }
+      const parsed = new DOMParser().parseFromString(
+        `<div xmlns="${XHTML_NS}">${html}</div>`,
+        "application/xhtml+xml"
+      );
+      if (parsed.querySelector("parsererror")) {
+        clearNode(el);
+        return;
+      }
+      clearNode(el);
+      const root = parsed.documentElement;
+      while (root.firstChild) el.appendChild(document.importNode(root.firstChild, true));
     }
 
     function formatValue(value, decimals) {
@@ -2187,7 +2223,7 @@
     function renderCategoryOverview() {
       const root = document.getElementById("categoryOverview");
       if (!root) return;
-      root.innerHTML = metricGroups.map(group => {
+      setMarkup(root, metricGroups.map(group => {
         const cards = group.metrics.map(key => {
           const cfg = metricConfig[key];
           const latest = latestPoint(key);
@@ -2198,11 +2234,11 @@
           return `<button type="button" class="spark-card" data-jump-group="${group.id}" data-jump-metric="${key}">
             <div class="spark-top"><span class="spark-name">${cfg.label}</span><span class="spark-value">${value}<span class="spark-unit">${cfg.unit}</span></span></div>
             <div class="spark-meta">${when} · ${n}点</div>
-            <svg viewBox="0 0 120 36" aria-hidden="true">${path ? `<path d="${path}" fill="none" stroke="${cfg.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>` : ""}</svg>
+            <svg xmlns="${SVG_NS}" viewBox="0 0 120 36" aria-hidden="true">${path ? `<path d="${path}" fill="none" stroke="${cfg.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>` : ""}</svg>
           </button>`;
         }).join("");
         return `<article class="cat-block"><h3>${group.label}</h3><div class="spark-grid">${cards}</div></article>`;
-      }).join("");
+      }).join(""));
       root.querySelectorAll("[data-jump-metric]").forEach(btn => {
         btn.addEventListener("click", () => {
           selectedGroup = btn.dataset.jumpGroup;
@@ -2218,7 +2254,7 @@
     function renderGroupControls() {
       const container = document.getElementById("groupControls");
       if (!container) return;
-      container.innerHTML = "";
+      clearNode(container);
       metricGroups.forEach(group => {
         const button = document.createElement("button");
         button.type = "button";
@@ -2238,7 +2274,7 @@
 
     function renderMetricControls() {
       const container = document.getElementById("metricControls");
-      container.innerHTML = "";
+      clearNode(container);
       const group = metricGroups.find(g => g.id === selectedGroup) || metricGroups[0];
       group.metrics.forEach(key => {
         const cfg = metricConfig[key];
@@ -2258,11 +2294,11 @@
     }
 
     function renderChart() {
-      const svg = document.getElementById("trendChart");
+      const svg = ensureSvg(document.getElementById("trendChart"));
       const tooltip = document.getElementById("chartTooltip");
       const cfg = metricConfig[selectedMetric];
       const data = filteredReadings(selectedMetric);
-      svg.innerHTML = "";
+      clearNode(svg);
       tooltip.style.display = "none";
 
       document.getElementById("chartTitle").textContent = cfg.label;
@@ -2376,7 +2412,7 @@
         });
 
         const showTooltip = () => {
-          tooltip.innerHTML = `<strong>${d.label}</strong><br>${cfg.label}：${formatValue(d[selectedMetric], cfg.decimals)} ${cfg.unit}<br>样本：${d.sample}`;
+          setMarkup(tooltip, `<strong>${d.label}</strong><br/>${cfg.label}：${formatValue(d[selectedMetric], cfg.decimals)} ${cfg.unit}<br/>样本：${d.sample}`);
           tooltip.style.display = "block";
           const wrapRect = document.getElementById("chartWrap").getBoundingClientRect();
           const scaleX = wrapRect.width / W;
@@ -2400,13 +2436,13 @@
         (cfg.better === "up" && rawDelta > 0) ||
         (cfg.better === "range" && last >= cfg.minRef && last <= cfg.maxRef);
       const deltaEl = document.getElementById("chartDelta");
-      deltaEl.innerHTML = `<strong style="color:${directionGood ? "var(--green)" : "var(--orange)"}">${delta}</strong>区间变化`;
+      setMarkup(deltaEl, `<strong style="color:${directionGood ? "var(--green)" : "var(--orange)"}">${delta}</strong>区间变化`);
     }
 
     function renderRawTable() {
       const body = document.getElementById("rawTableBody");
       const readings = allReadings();
-      body.innerHTML = readings.map((d, index) => {
+      setMarkup(body, readings.map((d, index) => {
         const classes = [
           index === readings.length - 1 ? "latest" : "",
           d.sample === "静脉" ? "venous" : "",
@@ -2426,7 +2462,7 @@
           <td>${cell(d.hb)}</td>
           <td>${cell(d.ca, 2)}</td>
         </tr>`;
-      }).join("");
+      }).join(""));
     }
 
     function updateLatest() {
@@ -2468,11 +2504,11 @@
         { id: "urgent", label: "优先确认 · 7项", className: "" },
         { id: "followup", label: "器官功能与治疗计划 · 6项", className: "followup" }
       ];
-      container.innerHTML = groups.map(group => {
+      setMarkup(container, groups.map(group => {
         const items = doctorQuestions.filter(question => question.group === group.id).map(question => `
           <li class="question-item${state[question.id] ? " answered" : ""}" data-question-id="${question.id}">
             <label class="question-label">
-              <input type="checkbox" ${state[question.id] ? "checked" : ""} aria-label="标记已向医生确认">
+              <input type="checkbox" ${state[question.id] ? 'checked="checked"' : ""} aria-label="标记已向医生确认"/>
               <span class="question-text">
                 <strong>${question.title}</strong>
                 <span>${question.detail}</span>
@@ -2488,7 +2524,7 @@
             <ul class="question-list">${items}</ul>
           </div>
         `;
-      }).join("");
+      }).join(""));
 
       container.querySelectorAll(".question-item").forEach(item => {
         const checkbox = item.querySelector("input");
@@ -2561,10 +2597,10 @@
     }
 
     function renderMultiSeriesChart(svgId, tooltipId, series, height) {
-      const svg = document.getElementById(svgId);
+      const svg = ensureSvg(document.getElementById(svgId));
       const tooltip = document.getElementById(tooltipId);
       if (!svg || !tooltip) return;
-      svg.innerHTML = "";
+      clearNode(svg);
       tooltip.style.display = "none";
       const data = vitalReadings.filter(d => series.some(s => d[s.key] != null));
       if (!data.length) return;
@@ -2633,7 +2669,7 @@
             const lines = series
               .filter(item => d[item.key] != null)
               .map(item => `${item.label}：${item.key === "ne" && d.ne != null ? `${d.ne} mL/h` : item.key === "da" ? `${d.da} mL/h` : d[item.key]}`);
-            tooltip.innerHTML = `<strong>${d.label}</strong><br>${lines.join("<br>")}<br>样本：口述`;
+            setMarkup(tooltip, `<strong>${d.label}</strong><br/>${lines.join("<br/>")}<br/>样本：口述`);
             tooltip.style.display = "block";
             const wrap = svg.parentElement.getBoundingClientRect();
             const scaleX = wrap.width / W;

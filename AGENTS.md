@@ -84,7 +84,7 @@ Categories: **循环/支持**, 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝
 
 ## Preview
 
-大陆入口只有 `index.xhtml`（国内 CDN 按 `application/xhtml+xml` 打开；`index.html` 在镜像上是 `text/plain`，浏览器会显示源码）。不要再放 `hub.xhtml`。
+大陆入口只有 `index.xhtml`（国内 CDN 按 `application/xhtml+xml` 打开；`index.html` 在镜像上是 `text/plain`，浏览器会显示源码）。不要再放 `hub.xhtml`。动态 HTML 必须走 `setMarkup` / `createSvg`；不要对 SVG 用 `innerHTML`，也不要插入未闭合的 `<br>` / `<input>`，否则趋势图在大陆入口会空白。
 
 - **大陆入口**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@main/index.xhtml
 - 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@main/index.xhtml
