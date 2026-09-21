@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 92,
+  "count": 95,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1364,10 +1364,10 @@
       "sha256_16": "d0fa513102f00039",
       "bytes": 155685,
       "labeled": true,
-      "preferred": true,
+      "preferred": false,
       "report_time": "2026-09-21T09:18:31",
       "type": "生化",
-      "note": "ALT159 AST82 Cr231 urea22.09 CK434 CKMB23.7 LDH463 ALB35.8 K3.93 Na138.61; ALT not 15.0",
+      "note": "SUPERSEDED by 01a0c208-0305 (same clock, no PCT on this crop). ALT159 AST82 Cr231 urea22.09 CK434 CKMB23.7 LDH463 ALB35.8 K3.93 Na138.61; ALT not 15.0",
       "relative_h": 139.31,
       "extracted": {
         "alt": 159,
@@ -1400,6 +1400,78 @@
       "extracted": {
         "crp": 97.7,
         "il6": 68.5
+      }
+    },
+    {
+      "id": "20260921T091831__01a0c208-0305-78b4-81e2-bc4fffb5f990.jpg",
+      "path": "reports/chemistry/20260921T091831__01a0c208-0305-78b4-81e2-bc4fffb5f990.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0c208-0305-78b4-81e2-bc4fffb5f990.jpg",
+      "sha256_16": "a33a58ba345711b9",
+      "bytes": 936152,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T09:18:31",
+      "type": "生化/PCT",
+      "note": "REPLACES same-clock crop. PCT36.8855 ALT159 AST82 Cr231 urea22.09 K3.93; ALT not 15.0",
+      "relative_h": 139.31,
+      "extracted": {
+        "alt": 159,
+        "ast": 82,
+        "ck": 434,
+        "ckmb": 23.7,
+        "ldh": 463,
+        "hbdh": 401,
+        "alb": 35.8,
+        "k": 3.93,
+        "na": 138.61,
+        "cl": 98.12,
+        "urea": 22.09,
+        "creatinine": 231,
+        "pct": 36.8855
+      }
+    },
+    {
+      "id": "20260921T105336__01a0c208-02ce-7b4d-a949-e4002ba67731.jpg",
+      "path": "reports/abg/20260921T105336__01a0c208-02ce-7b4d-a949-e4002ba67731.jpg",
+      "category": "abg",
+      "source_filename": "01a0c208-02ce-7b4d-a949-e4002ba67731.jpg",
+      "sha256_16": "208962fec2a746cc",
+      "bytes": 1645058,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T10:53:36",
+      "type": "动脉血气",
+      "note": "pH7.515 PCO2 33.00 PO2 89.70 HCO3 26.00 ABE+3.10 lac1.554 FiO2 50 PF179 Hb8.90 iCa1.07; 179 is P/F not PCT",
+      "relative_h": 140.89,
+      "extracted": {
+        "ph": 7.515,
+        "pco2": 33.0,
+        "po2": 89.7,
+        "hco3": 26.0,
+        "be": 3.1,
+        "lactate": 1.55,
+        "fio2": 50,
+        "pf": 179,
+        "hb": 8.9,
+        "ca": 1.07
+      }
+    },
+    {
+      "id": "20260921T110725__01a0c208-02ed-7967-8409-0a947755103f.jpg",
+      "path": "reports/coag/20260921T110725__01a0c208-02ed-7967-8409-0a947755103f.jpg",
+      "category": "coag",
+      "source_filename": "01a0c208-02ed-7967-8409-0a947755103f.jpg",
+      "sha256_16": "2108372ac8e703bb",
+      "bytes": 364484,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T11:07:25",
+      "type": "凝血",
+      "note": "APTT51.8 ref 21-45; rebound from 45.8 at 09:18",
+      "relative_h": 141.12,
+      "extracted": {
+        "aptt": 51.8
       }
     }
   ]

@@ -41,7 +41,7 @@ Formula: `relative_h = (report_datetime − 2026-09-15 14:00)` in hours.
 
 | Label in Chinese reports | Meaning | Example |
 |--------------------------|---------|---------|
-| **降钙素原 / PCT** (biochem) | **Procalcitonin** ng/mL | 146 → 170 → 102 → **65** |
+| **降钙素原 / PCT** (biochem) | **Procalcitonin** ng/mL | 146 → 170 → 102 → 65 → **36.9** |
 | **血小板比积 / PCT** (CBC) | **Plateletcrit** % | 0.08% |
 | **氧合指数 pO2(a)/FO2(I)** | PaO₂/FiO₂ | morning ABG **169** |
 
@@ -57,8 +57,9 @@ A low-resolution ABG once caused “PCT 170” confusion with oxygenation index 
 | 2026-09-17 10:52 | postop 44h52m | **170.297** |
 | 2026-09-18 08:58 | postop 66h58m | **101.563** |
 | 2026-09-19 10:03 | postop 92h03m | **65.368** |
+| 2026-09-21 09:18 | postop 139h18m | **36.8855** |
 
-Trend: falling since the peak, still far above ref 0–0.05.
+Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 chemistry crop omitted PCT; the replacement screenshot of the **same clock** has it.
 
 ## Inflammation series (confirmed)
 
@@ -79,8 +80,8 @@ Trend: falling since the peak, still far above ref 0–0.05.
 - **CRRT:** family later clarified **started 2026-09-20 ~16:00–18:00** (postop ~122–124h). Pre-start settings were blood **130 mL/min**, UF **300 mL/h**. Prior stop morning 2026-09-19. Actual on-machine parameters / cumulative UF not confirmed.
 - Urine overnight **50 mL** was **before** this restart. No post-start urine oral update.
 - Vasopressors **weaned** (family oral, after morning labs): norepinephrine **9 → 6 mL/h = 0.30 mg/h** + dopamine **10 → 8 mL/h**. Bedside BP still last oral **125/35**; no new BP after wean. Concentration remains **0.05 mg/mL** (9 mL/h = 0.45 mg/h). Do not invent dopamine mg/h.
-- **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7**. Morning CBC Hb **100**. Ask how many units finished.
-- **K:** chemistry **3.93** at 09:18 (was dry-chem 4.20 at 04:28). Family asks to watch K closely on CRRT.
+- **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53**. Morning CBC Hb **100** (09:16). Ask how many units finished and why ABG Hb fell.
+- **K:** chemistry **3.93** at 09:18 (was dry-chem 4.20 at 04:28). Family asks to watch K closely on CRRT. Latest iCa **1.07** on 10:53 ABG.
 - **Stool:** family-reported **WBC negative, RBC negative** (oral; no screenshot). Does not rule out bleeding or infection elsewhere.
 - **Watch next:** potassium and blood WBC (family instruction).
 
@@ -90,9 +91,23 @@ Trend: falling since the peak, still far above ref 0–0.05.
 - Chemistry: Cr **231↑** (was 314), urea **22.09↑** (was 25.69), ALT **159↑** (was 891; not 15.0), AST **82↑** (was 806), CK **434↑** (was 8280), CK-MB **23.7** (in ref 0–24), LDH **463↑**, ALB **35.8** (was 29.3), K **3.93**, Na **138.61** (was 130.8)
 - Coag: APTT **45.8↑** (ref 23.3–32.5 on this sheet; was 51.1), INR **1.11**, PT 12.4, TT 15.3, Fbg 3.16
 - Inflammation (same 09:18 window): CRP **97.70↑** mg/L (ref 0–8); IL-6 **68.500↑** pg/mL (ref 0–7; was **981** at postop 44h52m)
-- Screenshots: `testset/reports/cbc/20260921T091627__01a0c1af-fc25-7dec-870a-ad821a3a57b7.jpg`, `testset/reports/chemistry/20260921T091831__01a0c1af-fc3b-7315-aadf-70e67871c38f.jpg`, `testset/reports/coag/20260921T091824__01a0c1af-fc51-7986-99a8-e7def9d0edeb.jpg`, `testset/reports/chemistry/20260921T091823__BBB64AB1-8E21-40A1-9564-A95CE7D6E1B0_L0_001.jpg`
+- **PCT (same 09:18 clock, replacement screenshot):** **36.8855↑** ng/mL (ref 0–0.05; was **65.368**). First crop `20260921T091831__01a0c1af-fc3b-7315-aadf-70e67871c38f.jpg` had no PCT row — superseded by `20260921T091831__01a0c208-0305-78b4-81e2-bc4fffb5f990.jpg`. ALT is **159.0**, not 15.0.
+- Screenshots: `testset/reports/cbc/20260921T091627__01a0c1af-fc25-7dec-870a-ad821a3a57b7.jpg`, `testset/reports/chemistry/20260921T091831__01a0c208-0305-78b4-81e2-bc4fffb5f990.jpg` (preferred), `testset/reports/coag/20260921T091824__01a0c1af-fc51-7986-99a8-e7def9d0edeb.jpg`, `testset/reports/chemistry/20260921T091823__BBB64AB1-8E21-40A1-9564-A95CE7D6E1B0_L0_001.jpg`
 
-### Arterial blood gas — latest 2026-09-21 06:52 (postop 136h52m)
+### Coag — 2026-09-21 11:07 (postop 141h07m)
+
+- APTT **51.8↑** sec (ref 21–45); rebound from **45.8** at 09:18
+- Screenshot: `testset/reports/coag/20260921T110725__01a0c208-02ed-7967-8409-0a947755103f.jpg`
+
+### Arterial blood gas — latest 2026-09-21 10:53 (postop 140h53m)
+
+- pH **7.515↑**, PCO₂ **33.00↓**, PO₂ **89.70**, HCO₃⁻ **26.00**, BE **+3.10** (ABE = SBE on this sheet)
+- Lactate **1.55** (in ref 0.5–1.6; was 1.61)
+- FiO₂ **50%**, P/F **179** (up from 161). This 179 is oxygenation index, not PCT.
+- Hb **8.9↓** g/dL (was 10.7 at 06:52), Hct **26%↓**, iCa **1.07↓**
+- Screenshot: `testset/reports/abg/20260921T105336__01a0c208-02ce-7b4d-a949-e4002ba67731.jpg`
+
+### Arterial blood gas — 2026-09-21 06:52 (postop 136h52m)
 
 - pH **7.485↑**, PCO₂ **28.8↓**, PO₂ **80.7**, HCO₃⁻ **21.2↓**, BE **−2.2** (ABE; SBE −1.4)
 - Lactate **1.61↑** (down from 04:20’s 2.20; still just above 0.5–1.6)
@@ -306,4 +321,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-21 — CRP 97.7 / IL-6 68.5; NE 9→6 mL/h (=0.30 mg/h) + DA 10→8; stool WBC/RBC negative; watch K 3.93 and WBC 19.40. Morning CBC Hb 100 / PLT 60; Cr 231; ALT 159; APTT 45.8.
+**Last updated:** 2026-09-21 11:07 — PCT 65.368→36.8855 (same-clock chem replacement); ABG 10:53 lac 1.55 / PF 179 / Hb 8.9 / pH 7.515 / BE +3.1; APTT 51.8. Still watch K 3.93 and WBC 19.40; NE 6 + DA 8.
