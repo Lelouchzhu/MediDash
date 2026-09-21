@@ -76,14 +76,15 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 
 ### Support / vitals (family-reported)
 
-- **Latest bedside (~postop 122h):** BP **125/35** (MAP≈65), HR **100**, RR **15–20**
-- **CRRT:** family later clarified **started 2026-09-20 ~16:00–18:00** (postop ~122–124h). Pre-start settings were blood **130 mL/min**, UF **300 mL/h**. Prior stop morning 2026-09-19. Actual on-machine parameters / cumulative UF not confirmed.
-- Urine overnight **50 mL** was **before** this restart. No post-start urine oral update.
-- Vasopressors **weaned** (family oral, after morning labs): norepinephrine **9 → 6 mL/h = 0.30 mg/h** + dopamine **10 → 8 mL/h**. Bedside BP still last oral **125/35**; no new BP after wean. Concentration remains **0.05 mg/mL** (9 mL/h = 0.45 mg/h). Do not invent dopamine mg/h.
+- **Latest bedside (family oral after midday labs):** BP **150/55** (MAP≈87), pulse **106**
+- Prior bedside (~postop 122h): BP 125/35 (MAP≈65), HR 100, RR 15–20
+- **CRRT:** started 2026-09-20 ~16:00–18:00; family now says this run lasted **19 h 48 min** and **has stopped**. Pre-start settings were blood **130 mL/min**, UF **300 mL/h**. If start was 16:00, stop ≈ 11:48; if 18:00, stop ≈ 13:48 (confirm at bedside). Cumulative UF not confirmed. Prior stop was morning 2026-09-19.
+- Urine overnight **50 mL** was **before** this restart. Family now: **still no urine after CRRT stop**.
+- Vasopressors **weaned again**: norepinephrine **9 → 6 → 4 mL/h = 0.20 mg/h** + dopamine **10 → 8 → 7.5 mL/h**. Concentration remains **0.05 mg/mL** (9 mL/h = 0.45 mg/h; 6 mL/h = 0.30 mg/h). Do not invent dopamine mg/h.
 - **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53**. Morning CBC Hb **100** (09:16). Ask how many units finished and why ABG Hb fell.
-- **K:** chemistry **3.93** at 09:18 (was dry-chem 4.20 at 04:28). Family asks to watch K closely on CRRT. Latest iCa **1.07** on 10:53 ABG.
+- **K:** chemistry **3.93** at 09:18 (on CRRT). After stop, K may rebound up. Latest iCa **1.07** on 10:53 ABG. Family still wants WBC watched (last **19.40**).
 - **Stool:** family-reported **WBC negative, RBC negative** (oral; no screenshot). Does not rule out bleeding or infection elsewhere.
-- **Watch next:** potassium and blood WBC (family instruction).
+- **Watch next:** urine after CRRT stop; potassium (may rebound); blood WBC (last 19.40).
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -321,4 +322,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-21 — 10:53 ABG hires swap (3520×3772); lactate corrected 1.554→**1.54**. Other keys unchanged: PF 179, Hb 8.9, pH 7.515, BE +3.1; PCT 36.8855; APTT 51.8.
+**Last updated:** 2026-09-21 — family: NE 6→**4** mL/h (=0.20 mg/h), DA 8→**7.5**; BP **150/55** pulse **106**; CRRT run **19h48min then stopped**; **still no urine**. Last labs unchanged (PCT 36.8855, lac 1.54, APTT 51.8, Cr 231, K 3.93, WBC 19.40).
