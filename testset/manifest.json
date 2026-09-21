@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 96,
+  "count": 99,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1500,6 +1500,71 @@
       "relative_h": 141.12,
       "extracted": {
         "aptt": 51.8
+      }
+    },
+    {
+      "id": "20260921T183228__0915680A-8202-4C78-B57D-C03CF3C68D68_L0_001.jpg",
+      "path": "reports/other/20260921T183228__0915680A-8202-4C78-B57D-C03CF3C68D68_L0_001.jpg",
+      "category": "other",
+      "source_filename": "0915680A-8202-4C78-B57D-C03CF3C68D68_L0_001.jpg",
+      "sha256_16": "af1e1863f8e88b72",
+      "bytes": 281037,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T18:32:28",
+      "type": "粪便隐血",
+      "note": "FOBT immunoassay POSITIVE. Different from oral stool WBC/RBC microscopy negative. Does not quantify bleed.",
+      "relative_h": 148.54,
+      "extracted": {
+        "fobt": "positive"
+      }
+    },
+    {
+      "id": "20260921T190522__F15281AC-0475-4441-BA34-E820C9B4DAD2_L0_001.jpg",
+      "path": "reports/cbc/20260921T190522__F15281AC-0475-4441-BA34-E820C9B4DAD2_L0_001.jpg",
+      "category": "cbc",
+      "source_filename": "F15281AC-0475-4441-BA34-E820C9B4DAD2_L0_001.jpg",
+      "sha256_16": "fcc8246e05de735d",
+      "bytes": 897839,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T19:05:22",
+      "type": "血常规",
+      "note": "WBC18.61 Hb101 PLT69 HCT28.6 NEUT%94.4 NEUT17.57 plateletcrit0.08 not PCT",
+      "relative_h": 149.09,
+      "extracted": {
+        "wbc": 18.61,
+        "rbc": 3.2,
+        "hbg": 101,
+        "hct": 28.6,
+        "plt": 69,
+        "neut_pct": 94.4,
+        "neut": 17.57,
+        "lymph": 0.8,
+        "lymph_pct": 4.3,
+        "plateletcrit": 0.08
+      }
+    },
+    {
+      "id": "20260921T192039__E0EEF2FA-427C-4F72-9881-5377D8F49812_L0_001.jpg",
+      "path": "reports/coag/20260921T192039__E0EEF2FA-427C-4F72-9881-5377D8F49812_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "E0EEF2FA-427C-4F72-9881-5377D8F49812_L0_001.jpg",
+      "sha256_16": "d5ff62614842a0a7",
+      "bytes": 401130,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T19:20:39",
+      "type": "凝血",
+      "note": "APTT48.8↑ ref 21-45; down from 51.8. TT14.4 PT11.7 INR0.977 Fbg4.37 in range",
+      "relative_h": 149.34,
+      "extracted": {
+        "aptt": 48.8,
+        "tt": 14.4,
+        "pt": 11.7,
+        "pt_pct": 98.0,
+        "inr": 0.977,
+        "fbg": 4.37
       }
     }
   ]

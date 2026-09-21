@@ -82,10 +82,10 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 - **CRRT:** started 2026-09-20 ~16:00–18:00; family now says this run lasted **19 h 48 min** and **has stopped**. Pre-start settings were blood **130 mL/min**, UF **300 mL/h**. If start was 16:00, stop ≈ 11:48; if 18:00, stop ≈ 13:48 (confirm at bedside). Cumulative UF not confirmed. Prior stop was morning 2026-09-19.
 - Urine overnight **50 mL** was **before** this restart. Family now: **still no urine after CRRT stop**.
 - Vasopressors **weaned again**: norepinephrine **9 → 6 → 4 mL/h = 0.20 mg/h** + dopamine **10 → 8 → 7.5 mL/h**. Concentration remains **0.05 mg/mL** (9 mL/h = 0.45 mg/h; 6 mL/h = 0.30 mg/h). Do not invent dopamine mg/h.
-- **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53**. Morning CBC Hb **100** (09:16). Ask how many units finished and why ABG Hb fell.
-- **K:** chemistry **3.93** at 09:18 (on CRRT). After stop, K may rebound up. Latest iCa **1.07** on 10:53 ABG. Family still wants WBC watched (last **19.40**).
-- **Stool:** family-reported **WBC negative, RBC negative** (oral; no screenshot). Does not rule out bleeding or infection elsewhere.
-- **Watch next:** urine after CRRT stop; potassium (may rebound); blood WBC (last 19.40).
+- **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53**. Evening CBC Hb **101** (19:05; morning was 100). Ask how many units finished.
+- **K:** chemistry **3.93** at 09:18 (on CRRT). After stop, K may rebound up. Latest iCa **1.07** on 10:53 ABG. Evening WBC **18.61** (was 19.40).
+- **Stool:** family-reported microscopy **WBC negative, RBC negative** (oral). Screenshot **2026-09-21 18:32** fecal occult blood (immunoassay) **positive**. Different tests; FOBT+ does not quantify or localize bleeding. Evening CBC Hb held at **101**.
+- **Watch next:** urine after CRRT stop; potassium (may rebound); next Cr; stool color / whether FOBT changes management; WBC still high.
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -95,6 +95,14 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 - Inflammation (same 09:18 window): CRP **97.70↑** mg/L (ref 0–8); IL-6 **68.500↑** pg/mL (ref 0–7; was **981** at postop 44h52m)
 - **PCT (same 09:18 clock, replacement screenshot):** **36.8855↑** ng/mL (ref 0–0.05; was **65.368**). First crop `20260921T091831__01a0c1af-fc3b-7315-aadf-70e67871c38f.jpg` had no PCT row — superseded by `20260921T091831__01a0c208-0305-78b4-81e2-bc4fffb5f990.jpg`. ALT is **159.0**, not 15.0.
 - Screenshots: `testset/reports/cbc/20260921T091627__01a0c1af-fc25-7dec-870a-ad821a3a57b7.jpg`, `testset/reports/chemistry/20260921T091831__01a0c208-0305-78b4-81e2-bc4fffb5f990.jpg` (preferred), `testset/reports/coag/20260921T091824__01a0c1af-fc51-7986-99a8-e7def9d0edeb.jpg`, `testset/reports/chemistry/20260921T091823__BBB64AB1-8E21-40A1-9564-A95CE7D6E1B0_L0_001.jpg`
+
+### Evening labs — 2026-09-21 18:32–19:20 (postop 148h32m–149h20m)
+
+- **FOBT 18:32:** occult blood immunoassay **positive** (abnormal flag A). Not the same as microscopy WBC/RBC.
+- **CBC 19:05:** WBC **18.61↑** (was 19.40), Hb **101↓** g/L (was 100), HCT **28.6↓**, PLT **69↓** (was 60), NEUT% **94.4↑**, NEUT# **17.57↑**, lymph 0.80. Plateletcrit **0.08%** is not PCT.
+- **Coag 19:20:** APTT **48.8↑** sec (ref 21–45; was 51.8). TT **14.4**, PT **11.7**, INR **0.977**, Fbg **4.37** — all in range.
+- **Judgment:** WBC slightly down, still high with neutrophilia. APTT easing toward ref. CBC Hb stable despite FOBT+ — not a large bleed on this snapshot; still ask about stool color. K and Cr after CRRT stop remain unchecked.
+- Screenshots: `testset/reports/other/20260921T183228__0915680A-8202-4C78-B57D-C03CF3C68D68_L0_001.jpg`, `testset/reports/cbc/20260921T190522__F15281AC-0475-4441-BA34-E820C9B4DAD2_L0_001.jpg`, `testset/reports/coag/20260921T192039__E0EEF2FA-427C-4F72-9881-5377D8F49812_L0_001.jpg`
 
 ### Coag — 2026-09-21 11:07 (postop 141h07m)
 
@@ -241,7 +249,7 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 
 - PCT **101.563**, Cr **212**, urea **11.59**, K 4.35, Na 137.91, Cl 97.56
 
-### CBC — latest 2026-09-20 08:23 (postop 114h23m)
+### CBC series
 
 | Time | WBC | Hb g/L | PLT | Notes |
 |------|-----|--------|-----|-------|
@@ -250,12 +258,13 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 | 2026-09-19 08:46 | 13.17 | 76 | 55 | neut% 87.9; plateletcrit 0.06% |
 | 2026-09-20 08:23 | **17.42** | **67** | **60** | HCT 19.7; neut% **89.0** / neut 15.50; lymph 0.56; plateletcrit **0.07%** (not procalcitonin) |
 | 2026-09-21 09:16 | **19.40** | **100** | **60** | HCT 27.6; neut% **93.5** / neut 18.14; lymph 0.50; plateletcrit **0.08%** (not procalcitonin) |
+| 2026-09-21 19:05 | **18.61** | **101** | **69** | HCT 28.6; neut% **94.4** / neut 17.57; lymph 0.80; plateletcrit **0.08%** (not procalcitonin) |
 
 Screenshot: `testset/reports/cbc/20260920T082350__AB9B583D-80E7-4A01-8AB1-2BC6564410ED_L0_001.jpg`
 
 Agrees in direction with the 06:46 ABG Hb 7.1 g/dL / Hct 21%. Do not equate the two methods point for point.
 
-### Coagulation — latest 2026-09-20 08:51 (postop 114h51m)
+### Coagulation — 2026-09-20 08:51 (postop 114h51m)
 
 - APTT **45.9↑** (this sheet’s ref **23.3–32.5**), down from 67.2
 - PT **11.8**, INR **1.03**, TT **16.6**, fibrinogen **4.02** — all in range
@@ -324,4 +333,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-21 — refreshed handoff docs (`CONTEXT.md`, `AGENTS.md`, `README.md`) and added [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md). Clinical HEAD unchanged: BP/pressor charts (`vitalReadings`); latest oral NE **4** mL/h, DA **7.5**, BP **150/55**, pulse **106**; CRRT **19h48min then stopped**, still no urine; PCT **36.8855**, lac **1.54**, APTT **51.8**.
+**Last updated:** 2026-09-21 evening — CBC WBC **18.61** / Hb **101** / PLT **69**; APTT **48.8**; FOBT immunoassay **positive**. Oral bedside unchanged (NE 4, DA 7.5, BP 150/55). CRRT still stopped, still no urine.
