@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 88,
+  "count": 91,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1307,6 +1307,81 @@
         "ca": 1.08,
         "fio2": 50,
         "pf": 161
+      }
+    },
+    {
+      "id": "20260921T091627__01a0c1af-fc25-7dec-870a-ad821a3a57b7.jpg",
+      "path": "reports/cbc/20260921T091627__01a0c1af-fc25-7dec-870a-ad821a3a57b7.jpg",
+      "category": "cbc",
+      "source_filename": "01a0c1af-fc25-7dec-870a-ad821a3a57b7.jpg",
+      "sha256_16": "16da489f1e8d4ac3",
+      "bytes": 181851,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T09:16:27",
+      "type": "血常规",
+      "note": "WBC19.40 Hb100 PLT60 HCT27.6 NEUT%93.5 NEUT18.14 plateletcrit0.08 not PCT",
+      "relative_h": 139.27,
+      "extracted": {
+        "wbc": 19.4,
+        "rbc": 3.22,
+        "hbg": 100,
+        "hct": 27.6,
+        "plt": 60,
+        "neut_pct": 93.5,
+        "neut": 18.14,
+        "lymph": 0.5,
+        "plateletcrit": 0.08
+      }
+    },
+    {
+      "id": "20260921T091824__01a0c1af-fc51-7986-99a8-e7def9d0edeb.jpg",
+      "path": "reports/coag/20260921T091824__01a0c1af-fc51-7986-99a8-e7def9d0edeb.jpg",
+      "category": "coag",
+      "source_filename": "01a0c1af-fc51-7986-99a8-e7def9d0edeb.jpg",
+      "sha256_16": "125bf49ee2f81fe9",
+      "bytes": 256758,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T09:18:24",
+      "type": "凝血",
+      "note": "APTT45.8↑ ref 23.3-32.5 INR1.11 PT12.4 TT15.3 Fbg3.16",
+      "relative_h": 139.31,
+      "extracted": {
+        "aptt": 45.8,
+        "tt": 15.3,
+        "pt": 12.4,
+        "pt_pct": 84.5,
+        "inr": 1.11,
+        "fbg": 3.16
+      }
+    },
+    {
+      "id": "20260921T091831__01a0c1af-fc3b-7315-aadf-70e67871c38f.jpg",
+      "path": "reports/chemistry/20260921T091831__01a0c1af-fc3b-7315-aadf-70e67871c38f.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0c1af-fc3b-7315-aadf-70e67871c38f.jpg",
+      "sha256_16": "d0fa513102f00039",
+      "bytes": 155685,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T09:18:31",
+      "type": "生化",
+      "note": "ALT159 AST82 Cr231 urea22.09 CK434 CKMB23.7 LDH463 ALB35.8 K3.93 Na138.61; ALT not 15.0",
+      "relative_h": 139.31,
+      "extracted": {
+        "alt": 159,
+        "ast": 82,
+        "ck": 434,
+        "ckmb": 23.7,
+        "ldh": 463,
+        "hbdh": 401,
+        "alb": 35.8,
+        "k": 3.93,
+        "na": 138.61,
+        "cl": 98.12,
+        "urea": 22.09,
+        "creatinine": 231
       }
     }
   ]

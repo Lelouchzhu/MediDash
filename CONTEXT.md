@@ -71,7 +71,14 @@ Trend: falling since the peak, still far above ref 0–0.05.
 - Urine overnight **50 mL** was **before** this restart. No post-start urine oral update.
 - Vasopressors **maintained**: norepinephrine **9 mL/h = 0.45 mg/h** + dopamine **10 mL/h**
 - **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7**. Ask how many units finished; no post-transfusion CBC yet.
-- **K:** dry-chem **4.20** at 04:28 (was 4.24 at 01:23, 4.50 at 22:31)
+- **K:** chemistry **3.93** at 09:18 (was dry-chem 4.20 at 04:28)
+
+### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
+
+- CBC: WBC **19.40↑**, Hb **100↓** g/L (was 67), HCT **27.6↓**, PLT **60↓**, NEUT% **93.5↑**, NEUT# **18.14↑**. Plateletcrit **0.08%** is not PCT.
+- Chemistry: Cr **231↑** (was 314), urea **22.09↑** (was 25.69), ALT **159↑** (was 891; not 15.0), AST **82↑** (was 806), CK **434↑** (was 8280), CK-MB **23.7** (in ref 0–24), LDH **463↑**, ALB **35.8** (was 29.3), K **3.93**, Na **138.61** (was 130.8)
+- Coag: APTT **45.8↑** (ref 23.3–32.5 on this sheet; was 51.1), INR **1.11**, PT 12.4, TT 15.3, Fbg 3.16
+- Screenshots: `testset/reports/cbc/20260921T091627__01a0c1af-fc25-7dec-870a-ad821a3a57b7.jpg`, `testset/reports/chemistry/20260921T091831__01a0c1af-fc3b-7315-aadf-70e67871c38f.jpg`, `testset/reports/coag/20260921T091824__01a0c1af-fc51-7986-99a8-e7def9d0edeb.jpg`
 
 ### Arterial blood gas — latest 2026-09-21 06:52 (postop 136h52m)
 
@@ -286,4 +293,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-21 — family: CRRT + RBC 4U both started 2026-09-20 ~16–18:00; doctor questions rewritten for running CRRT / post-transfusion follow-up.
+**Last updated:** 2026-09-21 09:18 — CBC Hb 100 / WBC 19.40 / PLT 60; Cr 231; ALT 159 AST 82; APTT 45.8 INR 1.11; K 3.93 Na 138.61.
