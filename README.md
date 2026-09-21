@@ -50,6 +50,12 @@ https://purge.jsdelivr.net/gh/Lelouchzhu/MediDash@main/index.xhtml
 
 海外备用：https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
+**上传化验**只在功能分支 `cursor/mainland-lab-upload-b98e`，和识图版 / 空白版一样，**先不覆盖 main**。大陆预览：
+
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@upload/index.xhtml
+
+网页不保存 Cursor 密钥。中转程序是 [`scripts/agent-upload-relay.py`](scripts/agent-upload-relay.py)：在医院网络能访问的机器上设置 `CURSOR_API_KEY` 和 `UPLOAD_TOKEN` 后运行，再把地址和口令填进手机。agent 只更新这一支的数据、解读和查房问题。
+
 ## Cloud Agent / handoff
 
 Start Cloud Agents on **this** repository and read these first:

@@ -809,7 +809,7 @@
       transform: translateX(-50%);
       bottom: calc(12px + env(safe-area-inset-bottom));
       display: grid;
-      grid-template-columns: 1fr auto auto;
+      grid-template-columns: 1.35fr auto auto auto;
       gap: 8px;
       width: min(560px, calc(100% - 28px));
       padding: 8px;
@@ -898,7 +898,7 @@
       font-weight: 700;
     }
 
-    .field input, .field select {
+    .field input, .field select, .field textarea {
       width: 100%;
       min-height: 44px;
       padding: 9px 11px;
@@ -907,11 +907,45 @@
       outline: none;
       background: #fbfdfc;
       color: var(--ink);
+      font: inherit;
     }
 
-    .field input:focus, .field select:focus {
+    .field textarea { min-height: 76px; resize: vertical; }
+
+    .field input:focus, .field select:focus, .field textarea:focus {
       border-color: var(--green);
       box-shadow: 0 0 0 3px rgba(22, 122, 91, .1);
+    }
+
+    .agent-setup {
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: #f4f7f5;
+    }
+
+    .agent-setup summary { cursor: pointer; font-weight: 750; }
+
+    .shot-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      margin-top: 8px;
+    }
+
+    .shot-row img {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+    }
+
+    .agent-status {
+      min-height: 1.3em;
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
     }
 
     .form-actions {
@@ -1804,7 +1838,8 @@
   </main>
 
   <div class="action-bar" aria-label="页面操作">
-    <button class="primary" type="button" id="openDialog">＋ 添加最新结果</button>
+    <button class="primary" type="button" id="openAgentUpload">上传化验</button>
+    <button class="secondary" type="button" id="openDialog">手填</button>
     <button class="secondary" type="button" id="jumpQuestions">清单</button>
     <button class="secondary" type="button" id="scrollTop" aria-label="回到顶部">↑</button>
   </div>
@@ -1878,6 +1913,77 @@
       <button class="text-btn" type="button" id="exportData">导出自定义数据</button>
       <button class="text-btn danger" type="button" id="clearData">清除自定义数据</button>
     </div>
+  </dialog>
+
+  <dialog id="agentDialog">
+    <div class="dialog-head">
+      <div>
+        <h2>上传化验</h2>
+        <div class="report-meta">功能分支预览。交给当前监测 agent 更新这一支的数据、解读和查房问题，不覆盖 main</div>
+      </div>
+      <button class="icon-btn" type="button" id="closeAgentDialog" aria-label="关闭">×</button>
+    </div>
+    <form class="result-form" id="agentForm">
+      <div class="field wide">
+        <details class="agent-setup" id="agentSetup">
+          <summary>连接中转（Cursor 密钥不放在网页里）</summary>
+          <div class="field" style="margin-top:10px">
+            <label for="relayUrl">中转地址</label>
+            <input id="relayUrl" name="relayUrl" type="url" inputmode="url" placeholder="https://你的中转/upload" autocomplete="off">
+          </div>
+          <div class="field" style="margin-top:8px">
+            <label for="uploadToken">上传口令</label>
+            <input id="uploadToken" name="uploadToken" type="password" autocomplete="current-password">
+          </div>
+        </details>
+      </div>
+      <div class="field wide">
+        <label for="shotInput">化验截图（最多 5 张，jpg/png）</label>
+        <input id="shotInput" name="shots" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple>
+        <div class="shot-row" id="shotRow"></div>
+      </div>
+      <div class="field">
+        <label for="reportClock">报告时间</label>
+        <input id="reportClock" name="clock" type="datetime-local">
+      </div>
+      <div class="field">
+        <label for="reportKind">单子类型</label>
+        <input id="reportKind" name="kind" type="text" placeholder="血气 / 凝血 / 生化 / 血常规">
+      </div>
+      <div class="field">
+        <label for="sbpInput">收缩压</label>
+        <input id="sbpInput" name="sbp" type="number" inputmode="numeric" step="1">
+      </div>
+      <div class="field">
+        <label for="dbpInput">舒张压</label>
+        <input id="dbpInput" name="dbp" type="number" inputmode="numeric" step="1">
+      </div>
+      <div class="field">
+        <label for="hrInput">脉搏</label>
+        <input id="hrInput" name="hr" type="number" inputmode="numeric" step="1">
+      </div>
+      <div class="field">
+        <label for="neInput">去甲 mL/h</label>
+        <input id="neInput" name="ne" type="number" inputmode="decimal" step="0.1">
+      </div>
+      <div class="field">
+        <label for="daInput">多巴胺 mL/h</label>
+        <input id="daInput" name="da" type="number" inputmode="decimal" step="0.1">
+      </div>
+      <div class="field wide">
+        <label for="crrtInput">CRRT / 尿量</label>
+        <input id="crrtInput" name="crrt" type="text" placeholder="例如已停，停后仍无尿">
+      </div>
+      <div class="field wide">
+        <label for="oralInput">其他口述</label>
+        <textarea id="oralInput" name="notes" rows="3" placeholder="只写看到或听到的事实"></textarea>
+      </div>
+      <p class="field wide agent-status" id="agentStatus" role="status"></p>
+      <div class="form-actions">
+        <button class="secondary" type="button" id="cancelAgent">取消</button>
+        <button class="primary" type="submit" id="agentSubmit">交给 agent</button>
+      </div>
+    </form>
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -2746,6 +2852,7 @@
     const closeDialog = () => dialog.close();
 
     document.getElementById("openDialog").addEventListener("click", openDialog);
+    document.getElementById("openAgentUpload").addEventListener("click", openAgentDialog);
     document.getElementById("closeDialog").addEventListener("click", closeDialog);
     document.getElementById("cancelForm").addEventListener("click", closeDialog);
     document.getElementById("scrollTop").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
@@ -2830,6 +2937,165 @@
         const el = document.getElementById(id);
         if (el) el.style.display = "none";
       });
+    });
+
+    const relayUrlKey = "medidash-relay-url";
+    const uploadTokenKey = "medidash-upload-token";
+    const agentDialog = document.getElementById("agentDialog");
+    const agentStatus = document.getElementById("agentStatus");
+    const shotRow = document.getElementById("shotRow");
+
+    function setAgentStatus(text) {
+      agentStatus.textContent = text || "";
+    }
+
+    function openAgentDialog() {
+      document.getElementById("relayUrl").value = localStorage.getItem(relayUrlKey) || "";
+      document.getElementById("uploadToken").value = localStorage.getItem(uploadTokenKey) || "";
+      const setup = document.getElementById("agentSetup");
+      setup.open = !localStorage.getItem(relayUrlKey) || !localStorage.getItem(uploadTokenKey);
+      setAgentStatus("");
+      agentDialog.showModal();
+    }
+
+    function closeAgentDialog() {
+      agentDialog.close();
+    }
+
+    document.getElementById("closeAgentDialog").addEventListener("click", closeAgentDialog);
+    document.getElementById("cancelAgent").addEventListener("click", closeAgentDialog);
+
+    document.getElementById("shotInput").addEventListener("change", () => {
+      while (shotRow.firstChild) shotRow.removeChild(shotRow.firstChild);
+      const files = Array.from(document.getElementById("shotInput").files || []).slice(0, 5);
+      files.forEach(file => {
+        const img = document.createElement("img");
+        img.alt = "";
+        img.src = URL.createObjectURL(file);
+        shotRow.appendChild(img);
+      });
+      const extra = (document.getElementById("shotInput").files || []).length;
+      setAgentStatus(extra > 5 ? "只提交前 5 张。" : "");
+    });
+
+    function blobToBase64(blob) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const text = String(reader.result || "");
+          const comma = text.indexOf(",");
+          resolve(comma >= 0 ? text.slice(comma + 1) : text);
+        };
+        reader.onerror = () => reject(new Error("read"));
+        reader.readAsDataURL(blob);
+      });
+    }
+
+    function compressShot(file) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        const url = URL.createObjectURL(file);
+        img.onload = () => {
+          const maxEdge = 1800;
+          const scale = Math.min(1, maxEdge / Math.max(img.naturalWidth, img.naturalHeight));
+          const canvas = document.createElement("canvas");
+          canvas.width = Math.max(1, Math.round(img.naturalWidth * scale));
+          canvas.height = Math.max(1, Math.round(img.naturalHeight * scale));
+          canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
+          URL.revokeObjectURL(url);
+          canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error("compress")), "image/jpeg", 0.82);
+        };
+        img.onerror = () => {
+          URL.revokeObjectURL(url);
+          reject(new Error("image"));
+        };
+        img.src = url;
+      });
+    }
+
+    function relayEndpoint(raw) {
+      const trimmed = raw.trim().replace(/\/$/, "");
+      if (!trimmed) return "";
+      return /\/upload$/.test(trimmed) ? trimmed : `${trimmed}/upload`;
+    }
+
+    function agentErrorText(error) {
+      const known = {
+        token: "上传口令不对。",
+        empty: "请至少上传一张截图，或写一句口述。",
+        too_many_images: "最多 5 张截图。",
+        image_size: "有一张图太大，请换近一点的截图。",
+        mime: "只接受 jpg、png、webp、gif。",
+        agent_busy: "监测 agent 正在处理上一条，等它结束后再传。",
+        cursor_key_missing: "中转还没有配置 Cursor 密钥。",
+        relay_not_configured: "中转还没有配置上传口令。",
+        cursor_unreachable: "中转连不上 Cursor。",
+        cursor_rejected: "Cursor 没有收下这次上传。"
+      };
+      return known[error] || "没有交出去，请稍后再试。";
+    }
+
+    document.getElementById("agentForm").addEventListener("submit", async event => {
+      event.preventDefault();
+      const submit = document.getElementById("agentSubmit");
+      const relayUrl = relayEndpoint(document.getElementById("relayUrl").value);
+      const token = document.getElementById("uploadToken").value.trim();
+      if (!relayUrl || !token) {
+        document.getElementById("agentSetup").open = true;
+        setAgentStatus("先填写中转地址和上传口令。口令只存在这台设备。");
+        return;
+      }
+      localStorage.setItem(relayUrlKey, relayUrl);
+      localStorage.setItem(uploadTokenKey, token);
+      const files = Array.from(document.getElementById("shotInput").files || []).slice(0, 5);
+      const value = id => document.getElementById(id).value.trim();
+      const payload = {
+        token,
+        clock: value("reportClock"),
+        kind: value("reportKind"),
+        sbp: value("sbpInput"),
+        dbp: value("dbpInput"),
+        hr: value("hrInput"),
+        ne: value("neInput"),
+        da: value("daInput"),
+        crrt: value("crrtInput"),
+        notes: value("oralInput")
+      };
+      if (!files.length && !Object.entries(payload).some(([key, item]) => key !== "token" && item)) {
+        setAgentStatus("请至少上传一张截图，或写一句口述。");
+        return;
+      }
+      submit.disabled = true;
+      try {
+        setAgentStatus(files.length ? "正在压缩截图…" : "正在交给监测 agent…");
+        const images = [];
+        for (const file of files) {
+          const blob = await compressShot(file);
+          images.push({ mimeType: "image/jpeg", data: await blobToBase64(blob) });
+        }
+        payload.images = images;
+        setAgentStatus("正在交给监测 agent…");
+        const response = await fetch(relayUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        let body = {};
+        try { body = await response.json(); } catch { body = {}; }
+        if (!response.ok || !body.ok) {
+          setAgentStatus(agentErrorText(body.error));
+          return;
+        }
+        setAgentStatus(body.dryRun
+          ? "试运行已送到中转，还没有真正调用 agent。"
+          : "已交给监测 agent。它会更新这一支的数据、解读和查房问题，不会改 main。");
+        document.getElementById("shotInput").value = "";
+        while (shotRow.firstChild) shotRow.removeChild(shotRow.firstChild);
+      } catch {
+        setAgentStatus("连不上中转。医院网络要能访问你填的中转地址。");
+      } finally {
+        submit.disabled = false;
+      }
     });
 
     renderAll();
