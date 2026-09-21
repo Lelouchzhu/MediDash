@@ -59,7 +59,8 @@ If the family only said “high / about half”, leave mL blank rather than gues
    - new fields also go in `metricConfig` + `metricGroups`
 4. Update `CONTEXT.md` if the clinical story changed.
 5. Syntax-check the dashboard script: extract the `<script>` body to `/tmp/medidash-check.js` and run `node --check /tmp/medidash-check.js`.
-6. Commit + push **MediDash `main`**. Do not print tokens.
+6. Rebuild the mainland page: `python3 scripts/build-index-xhtml.py` (overwrites `index.xhtml`).
+7. Commit + push **MediDash `main`**. Do not print tokens. Purge `index.xhtml` if the China CDN is stale.
 
 ### Same-clock replace and hires
 
@@ -83,16 +84,14 @@ Categories: **循环/支持**, 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝
 
 ## Preview
 
-大陆入口（国内 CDN → `hub.xhtml` 拉取同目录 `index.html`，用 Blob 当网页打开）：
+大陆入口只有 `index.xhtml`（国内 CDN 按 `application/xhtml+xml` 打开；`index.html` 在镜像上是 `text/plain`，浏览器会显示源码）。不要再放 `hub.xhtml`。
 
-- **大陆入口**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@main/hub.xhtml
-- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@main/hub.xhtml
-- SVG 入口: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@main/hub.svg
+- **大陆入口**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@main/index.xhtml
+- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@main/index.xhtml
 - 海外备用: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
-微信若停在源码页，改用系统浏览器。推送 `index.html` / `hub.xhtml` 后镜像可能缓存约 12 小时；刷新：
+微信若停在源码页，改用系统浏览器。推送后镜像可能缓存约 12 小时；刷新：
 
-`https://purge.jsdelivr.net/gh/Lelouchzhu/MediDash@main/hub.xhtml`  
-`https://purge.jsdelivr.net/gh/Lelouchzhu/MediDash@main/index.html`
+`https://purge.jsdelivr.net/gh/Lelouchzhu/MediDash@main/index.xhtml`
 
 不要把功能分支上的识图版 / 空白版（`live.html` / `template.html`，tag `cn`）写进这条 main 入口。

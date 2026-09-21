@@ -39,16 +39,14 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 ## Preview
 
-大陆入口（国内 CDN，打开后自动进入当前 `main` 监测页）：
+大陆入口只有 [`index.xhtml`](index.xhtml)（国内 CDN 可当网页打开）。不要用 `hub.xhtml`。`index.html` 在镜像上是纯文本，不能直接开。
 
-- **大陆入口**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@main/hub.xhtml
-- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@main/hub.xhtml
-- SVG 入口: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@main/hub.svg
+- **大陆入口**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@main/index.xhtml
+- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@main/index.xhtml
 
-微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。推送 `hub.xhtml` / `index.html` 后若镜像仍是旧页，刷新：
+微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。推送后若镜像仍是旧页，刷新：
 
-https://purge.jsdelivr.net/gh/Lelouchzhu/MediDash@main/hub.xhtml  
-https://purge.jsdelivr.net/gh/Lelouchzhu/MediDash@main/index.html
+https://purge.jsdelivr.net/gh/Lelouchzhu/MediDash@main/index.xhtml
 
 海外备用：https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
