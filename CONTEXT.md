@@ -60,6 +60,15 @@ A low-resolution ABG once caused “PCT 170” confusion with oxygenation index 
 
 Trend: falling since the peak, still far above ref 0–0.05.
 
+## Inflammation series (confirmed)
+
+| Report time | Relative | CRP (mg/L) | IL-6 (pg/mL) |
+|-------------|----------|------------|--------------|
+| 2026-09-17 10:52 | postop 44h52m | — | **981** |
+| 2026-09-21 09:18 | postop 139h18m | **97.70** (ref 0–8) | **68.500** (ref 0–7) |
+
+`metricConfig` now includes `crp`. Infection group metrics: `pct`, `crp`, `il6`, `wbc`.
+
 ---
 
 ## Latest clinical snapshot (as of last MediDash update)
@@ -69,16 +78,19 @@ Trend: falling since the peak, still far above ref 0–0.05.
 - **Latest bedside (~postop 122h):** BP **125/35** (MAP≈65), HR **100**, RR **15–20**
 - **CRRT:** family later clarified **started 2026-09-20 ~16:00–18:00** (postop ~122–124h). Pre-start settings were blood **130 mL/min**, UF **300 mL/h**. Prior stop morning 2026-09-19. Actual on-machine parameters / cumulative UF not confirmed.
 - Urine overnight **50 mL** was **before** this restart. No post-start urine oral update.
-- Vasopressors **maintained**: norepinephrine **9 mL/h = 0.45 mg/h** + dopamine **10 mL/h**
-- **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7**. Ask how many units finished; no post-transfusion CBC yet.
-- **K:** chemistry **3.93** at 09:18 (was dry-chem 4.20 at 04:28)
+- Vasopressors **weaned** (family oral, after morning labs): norepinephrine **9 → 6 mL/h = 0.30 mg/h** + dopamine **10 → 8 mL/h**. Bedside BP still last oral **125/35**; no new BP after wean. Concentration remains **0.05 mg/mL** (9 mL/h = 0.45 mg/h). Do not invent dopamine mg/h.
+- **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7**. Morning CBC Hb **100**. Ask how many units finished.
+- **K:** chemistry **3.93** at 09:18 (was dry-chem 4.20 at 04:28). Family asks to watch K closely on CRRT.
+- **Stool:** family-reported **WBC negative, RBC negative** (oral; no screenshot). Does not rule out bleeding or infection elsewhere.
+- **Watch next:** potassium and blood WBC (family instruction).
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
 - CBC: WBC **19.40↑**, Hb **100↓** g/L (was 67), HCT **27.6↓**, PLT **60↓**, NEUT% **93.5↑**, NEUT# **18.14↑**. Plateletcrit **0.08%** is not PCT.
 - Chemistry: Cr **231↑** (was 314), urea **22.09↑** (was 25.69), ALT **159↑** (was 891; not 15.0), AST **82↑** (was 806), CK **434↑** (was 8280), CK-MB **23.7** (in ref 0–24), LDH **463↑**, ALB **35.8** (was 29.3), K **3.93**, Na **138.61** (was 130.8)
 - Coag: APTT **45.8↑** (ref 23.3–32.5 on this sheet; was 51.1), INR **1.11**, PT 12.4, TT 15.3, Fbg 3.16
-- Screenshots: `testset/reports/cbc/20260921T091627__01a0c1af-fc25-7dec-870a-ad821a3a57b7.jpg`, `testset/reports/chemistry/20260921T091831__01a0c1af-fc3b-7315-aadf-70e67871c38f.jpg`, `testset/reports/coag/20260921T091824__01a0c1af-fc51-7986-99a8-e7def9d0edeb.jpg`
+- Inflammation (same 09:18 window): CRP **97.70↑** mg/L (ref 0–8); IL-6 **68.500↑** pg/mL (ref 0–7; was **981** at postop 44h52m)
+- Screenshots: `testset/reports/cbc/20260921T091627__01a0c1af-fc25-7dec-870a-ad821a3a57b7.jpg`, `testset/reports/chemistry/20260921T091831__01a0c1af-fc3b-7315-aadf-70e67871c38f.jpg`, `testset/reports/coag/20260921T091824__01a0c1af-fc51-7986-99a8-e7def9d0edeb.jpg`, `testset/reports/chemistry/20260921T091823__BBB64AB1-8E21-40A1-9564-A95CE7D6E1B0_L0_001.jpg`
 
 ### Arterial blood gas — latest 2026-09-21 06:52 (postop 136h52m)
 
@@ -220,6 +232,7 @@ Trend: falling since the peak, still far above ref 0–0.05.
 | 2026-09-18 08:34 | 14.51 | 85 | 65 | neut% ~91; plateletcrit 0.08% |
 | 2026-09-19 08:46 | 13.17 | 76 | 55 | neut% 87.9; plateletcrit 0.06% |
 | 2026-09-20 08:23 | **17.42** | **67** | **60** | HCT 19.7; neut% **89.0** / neut 15.50; lymph 0.56; plateletcrit **0.07%** (not procalcitonin) |
+| 2026-09-21 09:16 | **19.40** | **100** | **60** | HCT 27.6; neut% **93.5** / neut 18.14; lymph 0.50; plateletcrit **0.08%** (not procalcitonin) |
 
 Screenshot: `testset/reports/cbc/20260920T082350__AB9B583D-80E7-4A01-8AB1-2BC6564410ED_L0_001.jpg`
 
@@ -293,4 +306,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-21 09:18 — CBC Hb 100 / WBC 19.40 / PLT 60; Cr 231; ALT 159 AST 82; APTT 45.8 INR 1.11; K 3.93 Na 138.61.
+**Last updated:** 2026-09-21 — CRP 97.7 / IL-6 68.5; NE 9→6 mL/h (=0.30 mg/h) + DA 10→8; stool WBC/RBC negative; watch K 3.93 and WBC 19.40. Morning CBC Hb 100 / PLT 60; Cr 231; ALT 159; APTT 45.8.

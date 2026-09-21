@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 91,
+  "count": 92,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1382,6 +1382,24 @@
         "cl": 98.12,
         "urea": 22.09,
         "creatinine": 231
+      }
+    },
+    {
+      "id": "20260921T091823__BBB64AB1-8E21-40A1-9564-A95CE7D6E1B0_L0_001.jpg",
+      "path": "reports/chemistry/20260921T091823__BBB64AB1-8E21-40A1-9564-A95CE7D6E1B0_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "BBB64AB1-8E21-40A1-9564-A95CE7D6E1B0_L0_001.jpg",
+      "sha256_16": "a89bb70906cb5372",
+      "bytes": 350908,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-21T09:18:23",
+      "type": "炎症",
+      "note": "CRP97.70 IL-6 68.5; stool WBC/RBC neg oral; NE 6 DA 8",
+      "relative_h": 139.31,
+      "extracted": {
+        "crp": 97.7,
+        "il6": 68.5
       }
     }
   ]
