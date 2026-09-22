@@ -21,6 +21,7 @@ resources:
         UPLOAD_TOKEN: ${env('UPLOAD_TOKEN')}
         CURSOR_API_KEY: ${env('CURSOR_API_KEY')}
         MEDIDASH_AGENT_ID: ${env('MEDIDASH_AGENT_ID', 'bc-f66f1668-9237-4998-b08a-816b026db98e')}
+        RELAY_DRY_RUN: ${env('RELAY_DRY_RUN', '1')}
       customRuntimeConfig:
         command:
           - python3
