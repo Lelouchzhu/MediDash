@@ -3,3 +3,5 @@ __pycache__/
 deploy/aliyun-fc/.fc-code/
 deploy/aliyun-fc/medidash-upload-relay.zip
 deploy/aliyun-fc/.env
+.medidash-relay.env
+.medidash-relay-token

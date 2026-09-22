@@ -2949,11 +2949,18 @@
       agentStatus.textContent = text || "";
     }
 
+    function defaultRelayUrl() {
+      const cdnHost = /(?:^|\.)jsd\.onmicrosoft\.cn$|(?:^|\.)cdn\.jsdmirror\.com$/;
+      return cdnHost.test(location.hostname) ? "" : `${location.origin}/upload`;
+    }
+
     function openAgentDialog() {
-      document.getElementById("relayUrl").value = localStorage.getItem(relayUrlKey) || "";
+      document.getElementById("relayUrl").value =
+        localStorage.getItem(relayUrlKey) || defaultRelayUrl();
       document.getElementById("uploadToken").value = localStorage.getItem(uploadTokenKey) || "";
       const setup = document.getElementById("agentSetup");
-      setup.open = !localStorage.getItem(relayUrlKey) || !localStorage.getItem(uploadTokenKey);
+      setup.open = !document.getElementById("relayUrl").value ||
+        !localStorage.getItem(uploadTokenKey);
       setAgentStatus("");
       agentDialog.showModal();
     }

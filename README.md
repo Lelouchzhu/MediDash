@@ -60,6 +60,10 @@ https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@upload/index.xhtml
 [`deploy/aliyun-fc/README.md`](deploy/aliyun-fc/README.md)。部署密钥只通过 FC
 环境变量注入，不进入仓库或网页。
 
+暂不使用云中转时，可在 `LelouchzhuPC2` 同一局域网内运行：
+[`deploy/local/README.md`](deploy/local/README.md)。本地地址同时提供 dashboard
+和 `/upload`，避免浏览器 Mixed Content 拦截。
+
 ## Cloud Agent / handoff
 
 Start Cloud Agents on **this** repository and read these first:

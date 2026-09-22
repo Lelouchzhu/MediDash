@@ -17,6 +17,7 @@ import json
 import os
 import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
 from urllib import error, request
 
 AGENT_ID = os.environ.get(
@@ -29,6 +30,10 @@ MAX_BODY = 12_000_000
 MAX_IMAGES = 5
 MAX_IMAGE_BYTES = 8_000_000
 ALLOWED_MIME = {"image/jpeg", "image/png", "image/webp", "image/gif"}
+REPO_DASHBOARD = Path(__file__).resolve().parent.parent / "index.xhtml"
+DASHBOARD_PATH = Path(
+    os.environ.get("DASHBOARD_PATH", str(REPO_DASHBOARD))
+).expanduser()
 
 
 def clip(value, limit: int) -> str:
@@ -118,6 +123,20 @@ class UploadHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def _dashboard(self) -> None:
+        try:
+            body = DASHBOARD_PATH.read_bytes()
+        except OSError:
+            self._json(404, {"ok": False, "error": "dashboard_not_found"})
+            return
+        self.send_response(200)
+        self._cors()
+        self.send_header("Content-Type", "application/xhtml+xml; charset=utf-8")
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
     def do_OPTIONS(self) -> None:
         self.send_response(204)
         self._cors()
@@ -126,6 +145,9 @@ class UploadHandler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:
         path = self.path.split("?", 1)[0]
+        if path == "/" and DASHBOARD_PATH.is_file():
+            self._dashboard()
+            return
         if path not in {"/", "/health"}:
             self._json(404, {"ok": False, "error": "not_found"})
             return
