@@ -62,6 +62,7 @@ A low-resolution ABG once caused “PCT 170” confusion with oxygenation index 
 | 2026-09-18 08:58 | postop 66h58m | **101.563** |
 | 2026-09-19 10:03 | postop 92h03m | **65.368** |
 | 2026-09-21 09:18 | postop 139h18m | **36.8855** |
+| 2026-09-22 09:54 | postop 163h54m | **28.783** |
 
 Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 chemistry crop omitted PCT; the replacement screenshot of the **same clock** has it.
 
@@ -86,9 +87,10 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 - Urine overnight **50 mL** was **before** this restart. Family now: **still no urine after CRRT stop**.
 - Vasopressors **weaned again**: norepinephrine **9 → 6 → 4 mL/h = 0.20 mg/h** + dopamine **10 → 8 → 7.5 mL/h**. Concentration remains **0.05 mg/mL** (9 mL/h = 0.45 mg/h; 6 mL/h = 0.30 mg/h). Do not invent dopamine mg/h.
 - **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53**. Evening CBC Hb **101** (19:05; morning was 100). Ask how many units finished.
-- **K:** chemistry **3.93** at 09:18 (on CRRT) → **4.41** at 22:50 (ref 3.5–5.3, back in range, not high). iCa on ABG **0.99 → 1.02** (still below 1.15). Evening WBC **18.61**. Cr after CRRT stop still not repeated.
-- **Stool:** family-reported microscopy **WBC negative, RBC negative** (oral). Screenshot **2026-09-21 18:32** fecal occult blood (immunoassay) **positive**. Different tests; FOBT+ does not quantify or localize bleeding. Evening CBC Hb held at **101**.
-- **Watch next:** urine after CRRT stop; next Cr; lactate now **2.12** again; P/F **156**; stool color.
+- **K:** 3.93 (09:18, on CRRT) → **4.41** (22:50) → **4.49** (09:54 9/22, ref 3.5–5.3, still in range). Na **138.61 → 135.77↓** (ref 137–147). Cl **96.68**. iCa on 06:41 ABG still **1.02**.
+- **Kidney after CRRT stop:** Cr **231 → 320**, urea **22.09 → 31.32** (critical, rechecked). Overnight urine still **0**. Family: CRRT remains on standby and **will be started later**. Not running yet.
+- **Stool:** microscopy WBC/RBC negative (oral). FOBT immunoassay **positive** 18:32 9/21. Family 9/22: **3 stools yesterday, dark brown / 黑褐色**. They will keep watching and testing for GI bleeding. Color plus FOBT does not quantify or localize.
+- **Watch next:** CRRT restart settings; urine; Na; dark stool / repeat occult blood; lactate 2.12 and P/F 156 not repeated this morning.
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -111,6 +113,14 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 
 - APTT **51.8↑** sec (ref 21–45); rebound from **45.8** at 09:18
 - Screenshot: `testset/reports/coag/20260921T110725__01a0c208-02ed-7967-8409-0a947755103f.jpg`
+
+### Morning labs — 2026-09-22 09:15–09:54 (postop 163h15m–163h54m)
+
+- **Coag 09:15:** APTT **40.2↑** sec. This sheet’s ref is **23.3–32.5**, not 21–45, so 40.2 is still high here (it would have sat inside the wider range). TT **16.5**, PT **12.7**, INR **1.13**, Fbg **3.22** — in range on this sheet.
+- **Chemistry 09:54:** Cr **320.0↑** (was 231), urea **31.32** critical and rechecked (ref 3.1–8.8; was 22.09), PCT **28.783↑** (was 36.8855; procalcitonin, not plateletcrit), K **4.49**, Na **135.77↓**, Cl **96.68**.
+- **Bedside:** overnight urine still **0**. CRRT on standby, family says it will be started later. Yesterday **3** stools, **黑褐色**.
+- **Judgment:** creatinine and urea rebounded after the stop, with no urine, so the planned restart matches the labs. Potassium did not overshoot. PCT is still falling and still very high. Dark stool plus yesterday’s FOBT+ is the GI-bleed question; it does not by itself prove how much blood was lost. APTT improved numerically but remains above this lab’s tighter range.
+- Screenshots: `testset/reports/coag/20260922T091531__01a0c727-d230-7f6a-9621-60f8797bf7e5.jpg`, `testset/reports/chemistry/20260922T095424__01a0c727-d24e-7b54-9c84-775bad64cb94.jpg`
 
 ### Overnight ABG + potassium — 2026-09-21 22:40 to 2026-09-22 06:41
 
@@ -346,4 +356,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-22 morning — ABG lactate **2.12**, P/F **156**, pH **7.449**, ABG Hb **10.2**, iCa **1.02**; overnight K **4.41** (in range). Prior evening labs unchanged (WBC 18.61, CBC Hb 101, APTT 48.8, FOBT+). Oral bedside unchanged. CRRT still stopped. Mainland page is rebuilt `index.xhtml`.
+**Last updated:** 2026-09-22 09:54 — Cr **320**, urea **31.32** critical, PCT **28.783**, K **4.49**, Na **135.77**, APTT **40.2** (ref 23.3–32.5). Overnight urine **0**. CRRT standby, restart planned. Yesterday 3 dark-brown stools.

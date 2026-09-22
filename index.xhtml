@@ -1025,7 +1025,7 @@
       <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
-        <span class="pill" id="latestTimePill">最新：术后160h41m</span>
+        <span class="pill" id="latestTimePill">最新化验：术后163h54m · 肌酐 320</span>
         <span class="pill">数据已去标识化</span>
       </div>
     </header>
@@ -1081,18 +1081,18 @@
         <div class="status-card orange">
           <div class="status-top">
             <span class="status-name">感染 / 炎症</span>
-            <span class="level">白细胞略降仍高</span>
+            <span class="level">降钙素原仍在降</span>
           </div>
-          <div class="status-value">18.61<span class="status-unit">WBC</span></div>
-          <div class="status-note">19.40→<strong>18.61</strong> · 中性94.4%<br/>PCT 36.9 · CRP 97.7 · 隐血阳性</div>
+          <div class="status-value">28.8<span class="status-unit">PCT</span></div>
+          <div class="status-note">36.9→<strong>28.783</strong> · 仍远高于0.05<br/>白细胞未再查 · 仍18.61</div>
         </div>
-        <div class="status-card orange">
+        <div class="status-card red">
           <div class="status-top">
             <span class="status-name">肾功能</span>
-            <span class="level">已停机仍无尿</span>
+            <span class="level">肌酐回升 · 尿素危急</span>
           </div>
-          <div class="status-value">231<span class="status-unit">μmol/L</span></div>
-          <div class="status-note">CRRT已停 · 仍无新尿量<br/>钾3.93→<strong>4.41</strong>已回参考</div>
+          <div class="status-value">320<span class="status-unit">μmol/L</span></div>
+          <div class="status-note">231→<strong>320</strong> · 尿素22.1→<strong>31.32</strong><br/>过夜尿0 · CRRT待命将开机</div>
         </div>
         <div class="status-card orange">
           <div class="status-top">
@@ -1105,10 +1105,10 @@
         <div class="status-card orange">
           <div class="status-top">
             <span class="status-name">凝血</span>
-            <span class="level">回落仍高</span>
+            <span class="level">这张参考仍高</span>
           </div>
-          <div class="status-value">48.8<span class="status-unit">APTT</span></div>
-          <div class="status-note">51.8→<strong>48.8</strong> · 本份参考21–45<br/>INR 0.98 · PLT 60→69</div>
+          <div class="status-value">40.2<span class="status-unit">APTT</span></div>
+          <div class="status-note">48.8→<strong>40.2</strong> · 本份参考23.3–32.5<br/>INR 1.13 · 不是21–45那张</div>
         </div>
         <button class="status-card orange" type="button" data-metric-jump="hbg">
           <div class="status-top">
@@ -1167,16 +1167,16 @@
         </div>
         <div class="insights">
           <div class="insight">
-            <strong>CRRT已停，仍无尿</strong>
-            <p>本轮走了<strong>19小时48分</strong>后停机。开CRRT前过夜尿仅50 mL，停后仍没有新尿量。钾已回到4.41。下次肌酐仍缺。</p>
+            <strong>肌酐231→320，过夜尿仍为0</strong>
+            <p>尿素22.09→<strong>31.32</strong>（危急值，已复查）。CRRT停机后继续待命，家属说后续会开机。钾4.41→<strong>4.49</strong>仍在参考内，钠降到<strong>135.77</strong>。</p>
           </div>
           <div class="insight">
             <strong>升压药再减：去甲4 + 多巴胺7.5</strong>
             <p>去甲6→4 mL/h（=0.20 mg/h）。血压口述<strong>150/55</strong>（MAP≈87），脉搏106。需问目标血压，还要不要继续减。</p>
           </div>
           <div class="insight">
-            <strong>乳酸再升到2.12，钾已回到4.41</strong>
-            <p>停CRRT后钾3.93→<strong>4.41</strong>，在参考内，没有冲高。乳酸1.54→1.93→<strong>2.12</strong>又高出参考。P/F 179→139→<strong>156</strong>。血气Hb 11.7→<strong>10.2</strong>。肌酐和尿量还没有新数。</p>
+            <strong>昨天排便3次，黑褐色</strong>
+            <p>此前隐血免疫法阳性、镜检红白细胞阴性。黑褐色不能定量，但和隐血放在一起要当消化道出血来问。降钙素原36.9→<strong>28.783</strong>仍在降，白细胞尚未再查。</p>
           </div>
         </div>
       </div>
@@ -1277,13 +1277,13 @@
         </div>
         <div class="vital-row">
           <span class="vital-time">尿量 / 粪便</span>
-          <span class="vital-value">CRRT停后仍无尿</span>
-          <span class="vital-note">开CRRT前过夜仅50 mL<br/>镜检红白细胞阴 · 隐血阳</span>
+          <span class="vital-value">过夜尿量仍为 0</span>
+          <span class="vital-note">昨天排便3次 · 黑褐色<br/>隐血阳 · 继续观察出血</span>
         </div>
         <div class="vital-row">
-          <span class="vital-time">CRRT · 已停机</span>
-          <span class="vital-value">本轮 19小时48分</span>
-          <span class="vital-note">昨16–18点开 · 曾设脱水300<br/>累计脱水待问</span>
+          <span class="vital-time">CRRT · 待命</span>
+          <span class="vital-value">上一轮 19小时48分已停</span>
+          <span class="vital-note">家属：继续待命，后续会开机<br/>累计脱水仍待问</span>
         </div>
         <div class="vital-row">
           <span class="vital-time">输血 / 补钾</span>
@@ -1305,17 +1305,17 @@
           <summary>
             <div>
               <div class="report-title">感染与循环</div>
-              <div class="report-meta">至术后149h05m · WBC 18.61</div>
+              <div class="report-meta">至术后163h54m · PCT 28.783</div>
             </div>
-            <span class="report-badge orange">白细胞略降仍高</span>
+            <span class="report-badge orange">降钙素原仍高</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>降钙素原：9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> → 9月19日10:03 <strong>65.368</strong> → 9月21日09:18 <strong>36.8855</strong> ng/mL（参考0–0.05）。同时间上一张截图未含此项，已用完整单替换。持续下降，仍极高。</li>
+              <li>降钙素原：9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> → 9月19日10:03 <strong>65.368</strong> → 9月21日09:18 <strong>36.8855</strong> → 9月22日09:54 <strong>28.783</strong> ng/mL（参考0–0.05）。持续下降，仍极高。这是降钙素原，不是血常规血小板比积。</li>
               <li>IL-6 981 → 最新<strong>68.5</strong> pg/mL（9月21日09:18，参考0–7），较峰值明显回落，仍远高于参考。同窗 CRP <strong>97.70</strong> mg/L（参考0–8）。</li>
-              <li>乳酸峰值8.99 → 10:53曾<strong>1.54</strong>（入参考）→ 22:40 <strong>1.93</strong> → 9月22日06:41 <strong>2.12</strong>（又高出0.5–1.6）。P/F 179→139→最新<strong>156</strong>（FiO₂仍50%，是氧合指数不是降钙素原）。最新口述血压<strong>150/55</strong>、脉搏<strong>106</strong>；升压药仍是<strong>去甲4 + 多巴胺7.5 mL/h</strong>（去甲=0.20 mg/h）。CRRT已停，尚无新尿量。</li>
+              <li>乳酸峰值8.99 → 10:53曾<strong>1.54</strong>（入参考）→ 22:40 <strong>1.93</strong> → 9月22日06:41 <strong>2.12</strong>（又高出0.5–1.6）。P/F 179→139→最新<strong>156</strong>（FiO₂仍50%，是氧合指数不是降钙素原）。最新口述血压<strong>150/55</strong>、脉搏<strong>106</strong>；升压药仍是<strong>去甲4 + 多巴胺7.5 mL/h</strong>（去甲=0.20 mg/h）。过夜尿量仍为0，CRRT待命、后续会开机。</li>
               <li>白细胞13.17→17.42→19.40→最新<strong>18.61</strong>（9月21日19:05），中性粒<strong>94.4%</strong>（绝对值17.57，晨间18.14）。略降但仍很高。血常规“PCT 0.08%”是血小板比积，不是降钙素原。</li>
-              <li>粪便：家属曾口述镜检白细胞、红细胞阴性。9月21日18:32隐血试验（免疫法）<strong>阳性</strong>。两项不是同一检查；隐血阳性只说明有血红蛋白痕迹，不能定量，也不能定位。</li>
+              <li>粪便：镜检红白细胞曾阴性；18:32隐血免疫法<strong>阳性</strong>。家属：昨天排便<strong>3次</strong>，颜色<strong>黑褐色</strong>，后续继续观察并检验是否消化道出血。颜色加隐血不能定量，也不能定位。</li>
             </ul>
           </div>
         </details>
@@ -1323,17 +1323,17 @@
           <summary>
             <div>
               <div class="report-title">肾脏与尿检</div>
-              <div class="report-meta">家属更新 · CRRT已停 · 仍无尿</div>
+              <div class="report-meta">至术后163h54m · 肌酐 320 · 过夜尿 0</div>
             </div>
-            <span class="report-badge orange">停机后无尿</span>
+            <span class="report-badge red">尿素危急</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>肌酐121.8→263→363→212→204→314→最新<strong>231</strong> μmol/L（9月21日09:18，参考41–81）；尿素25.69→最新<strong>22.09</strong> mmol/L。这是开机中的复查，停机后尚未再抽。</li>
-              <li>尿量950→300→70→曾20→过夜0→利尿后10→开CRRT前过夜<strong>50 mL</strong>。本轮CRRT停后<strong>仍无尿</strong>。</li>
-              <li>家属补充：昨天下午<strong>16–18点</strong>重启的CRRT已走完<strong>19小时48分</strong>后停机。开机前设定曾是血液<strong>130 mL/min</strong>、脱水<strong>300 mL/h</strong>。若16点开约今11:48停，若18点开约今13:48停，需床旁核对。累计脱水未口述。</li>
-              <li>电解质：09:18开机中 K <strong>3.93</strong>。停机后22:50钾<strong>4.41</strong>（参考3.5–5.3，已回参考，没有冲高）。钠仍是09:18的138.61。肌酐停机后尚未再抽。</li>
-              <li>粪便镜检白细胞、红细胞曾阴性；18:32隐血免疫法<strong>阳性</strong>。此前尿潜血3+、蛋白2+。CK已从8280降至434，仍高于参考。</li>
+              <li>肌酐121.8→263→363→212→204→314→231→最新<strong>320.0</strong> μmol/L（9月22日09:54，参考41–81）。尿素22.09→<strong>31.32</strong> mmol/L（参考3.1–8.8，<strong>危急值，结果已复查</strong>）。这是停机后的回升。</li>
+              <li>尿量950→300→70→曾20→过夜0→利尿后10→开CRRT前过夜50 mL。上一轮停机后<strong>过夜尿量仍为0</strong>。</li>
+              <li>上一轮CRRT走了<strong>19小时48分</strong>后停机。家属现在说：<strong>继续待命，后续会开机</strong>。开机时间和设定尚未更新。累计脱水仍未口述。</li>
+              <li>钾4.41→最新<strong>4.49</strong>（参考3.5–5.3，仍在范围内）。钠138.61→<strong>135.77</strong>↓（参考137–147）。氯<strong>96.68</strong>（参考96–108，贴下限）。</li>
+              <li>昨天排便3次，黑褐色。此前隐血阳性、镜检红白细胞阴性。尿潜血曾3+、蛋白2+。CK已从8280降至434，仍高于参考。</li>
             </ul>
           </div>
         </details>
@@ -1341,9 +1341,9 @@
           <summary>
             <div>
               <div class="report-title">凝血系统</div>
-              <div class="report-meta">至术后149h20m · APTT 48.8</div>
+              <div class="report-meta">至术后163h15m · APTT 40.2</div>
             </div>
-            <span class="report-badge orange">回落仍高</span>
+            <span class="report-badge orange">本份参考仍高</span>
           </summary>
           <div class="report-body">
             <ul>
@@ -1354,7 +1354,8 @@
               <li>夜间：49.2→52.4→51.1秒↑（参考21–45）。</li>
               <li>9月21日09:18：APTT 45.8秒↑（参考23.3–32.5），INR 1.11。</li>
               <li>9月21日11:07：APTT <strong>51.8</strong>秒↑（参考21–45）。</li>
-              <li>最新（9月21日19:20 · 术后149h20m）：APTT <strong>48.8</strong>秒↑（参考21–45），较11:07回落。TT 14.4、PT 11.7、INR <strong>0.977</strong>、纤维蛋白原 4.37，均在参考内。</li>
+              <li>9月21日19:20：APTT <strong>48.8</strong>秒↑（那张参考21–45）。TT 14.4、PT 11.7、INR 0.977、纤维蛋白原 4.37。</li>
+              <li>最新（9月22日09:15 · 术后163h15m）：APTT <strong>40.2</strong>秒↑。这张参考是<strong>23.3–32.5</strong>，不是21–45，所以40.2仍被标高。TT 16.5、PT 12.7、INR <strong>1.13</strong>、纤维蛋白原 3.22，均在本份参考内。</li>
             </ul>
           </div>
         </details>
@@ -1379,17 +1380,17 @@
           <summary>
             <div>
               <div class="report-title">血液与电解质</div>
-              <div class="report-meta">至术后160小时41分</div>
+              <div class="report-meta">至术后163小时54分</div>
             </div>
-            <span class="report-badge orange">钾已回参考</span>
+            <span class="report-badge orange">钠偏低</span>
           </summary>
           <div class="report-body">
             <ul>
               <li>血常规Hb：85→76→输前67→100→<strong>101</strong> g/L（9月21日19:05），HCT 28.6%。血气Hb 8.9→22:40 <strong>11.7</strong>→06:41 <strong>10.2</strong> g/dL，Hct 34%→30%。两种方法仍不要逐点等同。</li>
               <li>血小板60→最新<strong>69</strong>×10⁹/L；血小板比积0.08%（参考0.17–0.35，不是降钙素原）。</li>
               <li>白细胞17.42→19.40→最新<strong>18.61</strong>，中性粒<strong>94.4%</strong>（绝对值17.57），淋巴4.3% / 0.80。略降仍高。</li>
-              <li>钾3.93→最新<strong>4.41</strong>（9月21日22:50，参考3.5–5.3，已回参考）。钠仍138.61，氯98.12。离子钙血气0.99→最新<strong>1.02</strong>，仍低于1.15–1.29。</li>
-              <li>粪便镜检红白细胞曾阴性；18:32隐血免疫法<strong>阳性</strong>。同日炎症：CRP <strong>97.70</strong>、IL-6 <strong>68.5</strong>。</li>
+              <li>钾3.93→4.41→最新<strong>4.49</strong>（9月22日09:54，参考3.5–5.3，仍在范围内）。钠138.61→<strong>135.77</strong>↓。氯98.12→<strong>96.68</strong>。离子钙血气仍是今晨<strong>1.02</strong>。</li>
+              <li>昨天排便3次，黑褐色。18:32隐血免疫法阳性，镜检红白细胞曾阴性。同日炎症未再查：CRP 97.70、IL-6 68.5。</li>
               <li>白蛋白29.3→最新<strong>35.8</strong> g/L（参考34–48，已回参考）。</li>
             </ul>
           </div>
@@ -1782,6 +1783,21 @@
           <div class="event-title">乳酸升至2.12；P/F 156；血气Hb降至10.2</div>
           <div class="event-desc">pH7.449已回参考、PCO₂32.6↓、PO₂77.8↓、HCO₃⁻22.1、ABE −1.9。FiO₂仍50%。iCa 1.02↓。156是氧合指数，不是降钙素原。</div>
         </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">家属更新 · 9月22日晨</div>
+          <div class="event-title">过夜尿量仍为0；CRRT待命，后续会开机</div>
+          <div class="event-desc">昨天排便3次，黑褐色。此前隐血阳性。家属将继续观察并检验是否消化道出血。</div>
+        </article>
+        <article class="event" style="--event-color: var(--blue)">
+          <div class="event-time">术后163小时15分 · 9月22日09:15</div>
+          <div class="event-title">APTT 48.8→40.2（本份参考23.3–32.5）</div>
+          <div class="event-desc">这张参考不是21–45，40.2仍标高。INR 1.13、PT 12.7、TT 16.5、纤维蛋白原3.22在本份参考内。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后163小时54分 · 9月22日09:54</div>
+          <div class="event-title">肌酐231→320；尿素31.32危急；PCT 28.783</div>
+          <div class="event-desc">尿素危急值已复查。钾4.49仍在参考内，钠135.77偏低。降钙素原36.8855→28.783，仍远高于0.05。不是血小板比积。</div>
+        </article>
       </div>
     </section>
 
@@ -1971,7 +1987,9 @@
       { h: 141.12, label: "术后141h07m", sample: "凝血", aptt: 51.8 },
       { h: 149.09, label: "术后149h05m", sample: "血常规", wbc: 18.61, plt: 69, hbg: 101 },
       { h: 149.34, label: "术后149h20m", sample: "凝血", aptt: 48.8, inr: 0.977, pt: 11.7 },
-      { h: 152.85, label: "术后152h50m", sample: "生化", k: 4.41 }
+      { h: 152.85, label: "术后152h50m", sample: "生化", k: 4.41 },
+      { h: 163.26, label: "术后163h15m", sample: "凝血", aptt: 40.2, inr: 1.13, pt: 12.7 },
+      { h: 163.91, label: "术后163h54m", sample: "生化", creatinine: 320, urea: 31.32, k: 4.49, na: 135.77, cl: 96.68, pct: 28.783 }
     ];
 
     const vitalReadings = [
@@ -2043,13 +2061,13 @@
     let selectedRange = "all";
     const customKey = "perioperative-dashboard-custom-v1";
     const questionKey = "perioperative-dashboard-questions-v1";
-    const latestNonBloodGasReport = { h: 152.85, label: "术后152h50m · 钾 4.41", type: "电解质" };
+    const latestNonBloodGasReport = { h: 163.91, label: "术后163h54m · 肌酐 320", type: "生化" };
     const doctorQuestions = [
       {
         id: "bleeding",
         group: "urgent",
-        title: "血气Hb从11.7又降到10.2，隐血阳性还要不要再输？",
-        detail: "22:40血气Hb曾到11.7，06:41降到10.2。血常规19:05仍是101。隐血免疫法阳性。4U是否输完、大便什么颜色、目标Hb是多少？"
+        title: "昨天排便3次、黑褐色，还要不要再查出血、再输血？",
+        detail: "隐血免疫法已阳性，镜检红白细胞曾阴性。血气Hb今晨10.2，血常规昨晚101。黑褐色不能定量。还要不要再做隐血或胃液、目标Hb是多少？"
       },
       {
         id: "hemodynamics",
@@ -2061,7 +2079,7 @@
         id: "lactate",
         group: "urgent",
         title: "乳酸又升到2.12，白细胞仍18.61，灌注和感染怎么看？",
-        detail: "1.54回参考后又到1.93、2.12。降钙素原仍36.9。白细胞18.61，中性94.4%。CRP 97.7，IL-6 68.5。乳酸再升到多少要加干预？"
+        detail: "1.54回参考后又到1.93、2.12。降钙素原36.9→28.8，仍很高。白细胞昨晚18.61尚未再查。CRP 97.7，IL-6 68.5。乳酸再升到多少要加干预？"
       },
       {
         id: "source-control",
@@ -2073,7 +2091,7 @@
         id: "shock-cause",
         group: "urgent",
         title: "目前休克的主要原因判断是什么？",
-        detail: "血常规Hb 101，血气Hb 11.7后又到10.2。乳酸再升到2.12，白细胞18.61，PCT 36.9。粪便隐血阳性。感染性、残余肠缺血、渗血还是混合性？培养结果如何？"
+        detail: "血常规Hb 101，血气Hb 10.2。乳酸2.12，白细胞18.61，PCT 28.8。昨天黑褐色便3次，隐血阳性。感染性、残余肠缺血、消化道出血还是混合性？培养结果如何？"
       },
       {
         id: "oxygenation",
@@ -2084,26 +2102,26 @@
       {
         id: "next-window",
         group: "urgent",
-        title: "CRRT已停还是没尿，接下来最要盯什么？",
-        detail: "本轮19小时48分已停，停后仍无新尿量。钾已从3.93回到4.41，在参考内。优先盯有没有尿、下次肌酐。乳酸又到2.12，P/F 156，血气Hb 10.2。"
+        title: "肌酐已到320、尿素危急，CRRT什么时候开？",
+        detail: "过夜尿量仍为0。231→320，尿素22.09→31.32（危急值已复查）。家属说CRRT继续待命、后续会开机。钾4.49仍正常，钠135.77偏低。黑褐色便还要同时盯出血。"
       },
       {
         id: "kidney",
         group: "followup",
-        title: "CRRT走了19小时48分就停，还要不要再开？实际脱了多少？",
-        detail: "停后仍无尿。开机中肌酐曾314→231。若昨16点开约今11:48停，若18点开约今13:48停。请确认累计脱水、停机理由，以及无尿多久必须再上。"
+        title: "CRRT待命后这次怎么设？上一轮实际脱了多少？",
+        detail: "停机后肌酐231→320，尿素31.32危急，过夜尿0。上一轮走了19小时48分。请确认开机时间、血流速、脱水速度，以及无尿期间为什么先待命。"
       },
       {
         id: "coagulation",
         group: "followup",
-        title: "APTT从51.8降到48.8，抗凝还要不要调？",
-        detail: "19:20这张参考21–45，仍高。INR 0.977、纤维蛋白原4.37正常。血小板60→69。隐血已阳性。用的是肝素、枸橼酸还是无抗凝？有无肉眼血便或滤器凝血？"
+        title: "APTT降到40.2，但这张参考仍标高，抗凝怎么调？",
+        detail: "09:15这张参考23.3–32.5，不是昨晚的21–45。INR 1.13、纤维蛋白原3.22正常。昨天黑褐色便3次，隐血已阳性。用的是肝素、枸橼酸还是无抗凝？"
       },
       {
         id: "infection",
         group: "followup",
-        title: "PCT已降到36.9，白细胞18.61略降，抗感染要不要改？",
-        detail: "降钙素原36.8855（参考0–0.05）。IL-6 68.5，CRP 97.7。白细胞19.40→18.61，中性仍94.4%。血常规“PCT 0.08%”是血小板比积。培养和目前抗生素如何？"
+        title: "PCT已降到28.8，白细胞还是昨晚的18.61，抗感染要不要改？",
+        detail: "降钙素原36.8855→28.783（参考0–0.05），仍在下降，仍然很高。IL-6 68.5，CRP 97.7未再查。血常规“PCT 0.08%”是血小板比积。培养和目前抗生素如何？"
       },
       {
         id: "liver",
@@ -2120,8 +2138,8 @@
       {
         id: "calcium",
         group: "followup",
-        title: "钾已回到4.41，离子钙1.02还要不要补钙？",
-        detail: "停CRRT后钾3.93→4.41，在3.5–5.3，没有冲高。血气离子钙0.99→1.02，仍低于1.15。下次肌酐和全套电解质什么时候抽？"
+        title: "钾4.49仍正常，钠降到135.77，还要不要补钠、补钙？",
+        detail: "钾3.93→4.41→4.49，都在3.5–5.3。钠138.61→135.77，低于137。血气离子钙今晨1.02，仍低于1.15。CRRT即将再开时电解质怎么盯？"
       }
     ];
 

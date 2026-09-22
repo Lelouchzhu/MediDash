@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 102,
+  "count": 104,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1638,6 +1638,51 @@
         "ca": 1.02,
         "fio2": 50,
         "pf": 156
+      }
+    },
+    {
+      "id": "20260922T091531__01a0c727-d230-7f6a-9621-60f8797bf7e5.jpg",
+      "path": "reports/coag/20260922T091531__01a0c727-d230-7f6a-9621-60f8797bf7e5.jpg",
+      "category": "coag",
+      "source_filename": "01a0c727-d230-7f6a-9621-60f8797bf7e5.jpg",
+      "sha256_16": "b43a3f3b90dbd2d5",
+      "bytes": 431061,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-22T09:15:31",
+      "type": "凝血",
+      "note": "APTT40.2↑ ref 23.3-32.5 (not 21-45). TT16.5 PT12.7 INR1.13 Fbg3.22 in range",
+      "relative_h": 163.26,
+      "extracted": {
+        "aptt": 40.2,
+        "tt": 16.5,
+        "pt": 12.7,
+        "pt_pct": 81.1,
+        "inr": 1.13,
+        "fbg": 3.22
+      }
+    },
+    {
+      "id": "20260922T095424__01a0c727-d24e-7b54-9c84-775bad64cb94.jpg",
+      "path": "reports/chemistry/20260922T095424__01a0c727-d24e-7b54-9c84-775bad64cb94.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0c727-d24e-7b54-9c84-775bad64cb94.jpg",
+      "sha256_16": "b359b2b6585fd97c",
+      "bytes": 452701,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-22T09:54:24",
+      "type": "生化",
+      "note": "Cr320 urea31.32 critical rechecked PCT28.783 K4.49 Na135.77 Cl96.68. PCT is procalcitonin not plateletcrit",
+      "relative_h": 163.91,
+      "extracted": {
+        "k": 4.49,
+        "na": 135.77,
+        "cl": 96.68,
+        "urea": 31.32,
+        "urea_critical": true,
+        "creatinine": 320,
+        "pct": 28.783
       }
     }
   ]
