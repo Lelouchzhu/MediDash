@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 113,
+  "count": 115,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1925,6 +1925,52 @@
         "fio2": 45,
         "pf": 169,
         "so2": 94.1
+      }
+    },
+    {
+      "id": "20260922T210306__01a0c965-14e7-7260-b2fd-0a363b44f52e.jpg",
+      "path": "reports/abg/20260922T210306__01a0c965-14e7-7260-b2fd-0a363b44f52e.jpg",
+      "category": "abg",
+      "source_filename": "01a0c965-14e7-7260-b2fd-0a363b44f52e.jpg",
+      "sha256_16": "e55a6c8d0a826caa",
+      "bytes": 1299486,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-22T21:03:06",
+      "type": "动脉血气",
+      "note": "3520x3772 lac1.59 PF159 pH7.402 ABE-4.90 HCO3 19.90 Hb10.20 Hct30 iCa0.99 FiO250; 159 is P/F not PCT. FiO2 back from 45",
+      "relative_h": 175.05,
+      "extracted": {
+        "ph": 7.402,
+        "pco2": 32.7,
+        "po2": 79.3,
+        "sbe": -4.2,
+        "be": -4.9,
+        "hco3": 19.9,
+        "lactate": 1.59,
+        "hb": 10.2,
+        "hct": 30.0,
+        "ca": 0.99,
+        "fio2": 50,
+        "pf": 159,
+        "so2": 95.1
+      }
+    },
+    {
+      "id": "20260922T211325__01a0c965-1506-7475-98f8-9f84d61dd42c.jpg",
+      "path": "reports/chemistry/20260922T211325__01a0c965-1506-7475-98f8-9f84d61dd42c.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0c965-1506-7475-98f8-9f84d61dd42c.jpg",
+      "sha256_16": "319639d13cbfc2fa",
+      "bytes": 285553,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-22T21:13:25",
+      "type": "电解质",
+      "note": "K4.85 dry chem ref 3.5-5.3; up from 4.49, still in range",
+      "relative_h": 175.22,
+      "extracted": {
+        "k": 4.85
       }
     }
   ]
