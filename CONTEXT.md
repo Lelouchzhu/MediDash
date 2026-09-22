@@ -90,11 +90,11 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 - **CRRT:** started 2026-09-20 ~16:00–18:00; family now says this run lasted **19 h 48 min** and **has stopped**. Pre-start settings were blood **130 mL/min**, UF **300 mL/h**. If start was 16:00, stop ≈ 11:48; if 18:00, stop ≈ 13:48 (confirm at bedside). Cumulative UF not confirmed. Prior stop was morning 2026-09-19.
 - Urine overnight **50 mL** was **before** this restart. Family now: **still no urine after CRRT stop**.
 - Vasopressor series: norepinephrine **9 → 6 → 4 → 2 mL/h** (0.45 → 0.30 → 0.20 → **0.10 mg/h**) + dopamine **10 → 8 → 7.5 → 5 mL/h**. Concentration **0.05 mg/mL**. Do not invent dopamine mg/h.
-- **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53**. Evening CBC Hb **101** (19:05) → morning 9/22 **97**. Ask how many units finished.
-- **K:** 3.93 (09:18, on CRRT) → **4.41** (22:50) → **4.49** (09:54 9/22, ref 3.5–5.3, still in range). Na **138.61 → 135.77↓** (ref 137–147). Cl **96.68**. iCa on 06:41 ABG still **1.02**.
+- **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53 → 10.2 at 06:41 → 9.9 at 18:30**. Evening CBC Hb **101** (19:05) → morning 9/22 **97**. Ask how many units finished.
+- **K:** 3.93 (09:18, on CRRT) → **4.41** (22:50) → **4.49** (09:54 9/22, ref 3.5–5.3, still in range). Na **138.61 → 135.77↓** (ref 137–147). Cl **96.68**. iCa on 18:30 ABG **1.00** (was 1.02 at 06:41).
 - **Kidney after CRRT stop:** Cr **231 → 320**, urea **22.09 → 31.32** (critical, rechecked). Overnight urine still **0**. Family: CRRT remains on standby and **will be started later**. Not running yet.
 - **Stool:** microscopy WBC/RBC negative (oral). FOBT immunoassay **positive** 18:32 9/21. Family 9/22: **3 stools yesterday, dark brown / 黑褐色**. They will keep watching and testing for GI bleeding. Color plus FOBT does not quantify or localize.
-- **Watch next:** whether pressors and the ventilator can actually be weaned; CRRT vs a move to dialysis; urine; Na; dark stool; WBC **20.86** rising while PCT still falling; lactate 2.12 and P/F 156 not repeated this afternoon.
+- **Watch next:** whether pressors and the ventilator can actually be weaned; CRRT vs a move to dialysis; urine; Na; dark stool; WBC **20.86**; evening ABG lactate now **1.46** in range but BE **−4.1** and HCO₃⁻ **20.6** worse; FiO₂ **45%**, P/F **169**.
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -129,7 +129,7 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 ### Morning CBC — 2026-09-22 08:28 (postop 162h28m)
 
 - WBC **20.86↑** (was 18.61), Hb **97↓** g/L (was 101), HCT **26.2↓**, PLT **70↓** (was 69), NEUT% **94.6↑**, NEUT# **19.73↑**, lymph 0.65↓ / 3.1%↓, MONO% 2.2↓, MCHC **370↑**. Plateletcrit **0.08%** is not PCT.
-- **Judgment:** WBC rose again after last night’s slight dip. CBC Hb eased 101→97; do not equate with ABG 10.2. PLT essentially flat at 70. Hero stays **术后163h54m · 肌酐 320** because the 09:54 chemistry is newer.
+- **Judgment:** WBC rose again after last night’s slight dip. CBC Hb eased 101→97; do not equate with later ABG 9.9. PLT essentially flat at 70. After the 18:30 ABG, the hero follows the arterial clock (**术后172h31m**), because 172.51 > chemistry 163.91.
 - Screenshot: `testset/reports/cbc/20260922T082854__01a0c89f-7a78-754d-9252-980e1cf30e11.jpg`
 
 ### Peri-op archive — 2026-09-14 / 2026-09-15 (hires / missing early sheets)
@@ -144,6 +144,15 @@ None of these clocks existed in the labeled testset before this batch.
 - **Chemistry 9/15 16:44 (postop 2h44m):** ALT **719↑**, AST **1142↑**, AST/ALT **1.52**, TBIL **7.0**, ALB **23.1↓**, Cr **206↑**, urea **16.30↑**, K **4.775**, Na **140.855**, Cl **108.133↑**, PCT **63.3677↑** (rechecked). Keep separate from the **2.87** CK-only panel (CK 5657). Duplicate upload `01a0c89f-7a65` is identical sha/bytes; `preferred: false`, `superseded_by` the `79ef` file.
 - Albumin series is now **37.71 → 23.1 → 29.3 → 35.8**. Liver **23/49 → 719/1142 → 891/806 → 159/82**.
 - Screenshots: `testset/reports/cbc/20260914T152116__01a0c89f-7a1b-7fcb-82fa-afe627c9729a.jpg`, `testset/reports/cbc/20260915T060530__01a0c89f-7a09-78c0-bc0f-9d527d418b19.jpg`, `testset/reports/chemistry/20260915T094954__01a0c89f-7a2e-7658-8eb2-e5f88d112dfd.jpg`, `testset/reports/other/20260915T112144__01a0c89f-7a43-7464-9aa1-2bb185e6541f.jpg`, `testset/reports/cbc/20260915T154907__01a0c89f-7a54-743c-9851-ef39870f4fc5.jpg`, `testset/reports/chemistry/20260915T164416__01a0c89f-79ef-7e7a-8dc4-54586c128826.jpg` (preferred)
+
+### Evening ABG — 2026-09-22 18:30 (postop 172h31m)
+
+- pH **7.402** (in 7.35–7.45), PCO₂ **33.90↓**, PO₂ **76.00↓**, HCO₃⁻ **20.60↓**, ABE **−4.10** (SBE −3.60)
+- Lactate **1.46** (in ref 0.5–1.6; was **2.12** at 06:41)
+- FiO₂ **45%** (was 50%), P/F **169** (76 / 0.45). This 169 is oxygenation index, not PCT.
+- Hb **9.90↓** g/dL (was 10.2), Hct **29%↓**, iCa **1.00↓**, sO₂ 94.1%
+- **Judgment:** lactate is back in range. They lowered FiO₂ a step; P/F only moved 156→169 and is still far below 400. pH stayed in range while HCO₃⁻/ABE went more negative than this morning. Do not equate ABG 9.9 with CBC 97. No new urine, creatinine, pressors, or WBC on this sheet.
+- Screenshot (3520×3772): `testset/reports/abg/20260922T183052__01a0c8f4-1777-768d-bbe2-c96ee2e66856.jpg`
 
 ### Overnight ABG + potassium — 2026-09-21 22:40 to 2026-09-22 06:41
 
@@ -383,4 +392,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-22 — archived peri-op sheets + morning CBC. WBC **20.86**, Hb **97**, PLT **70**. PCT series now starts **41.1266 → 63.3677**. Albumin **37.71 → 23.1 → 29.3 → 35.8**. Liver **23/49 → 719/1142 → 891/806 → 159/82**. Hero still **术后163h54m · 肌酐 320**. Bedside unchanged: NE **2 mL/h**, DA **5 mL/h**, BP **113/35**.
+**Last updated:** 2026-09-22 evening ABG 18:30 — lactate **2.12 → 1.46** (back in range), FiO₂ **50 → 45%**, P/F **169**, ABE **−4.1**, Hb **9.9**, iCa **1.00**. Hero follows this arterial clock (**术后172h31m**). Morning labs unchanged (WBC 20.86, Cr 320). Bedside last oral: NE **2**, DA **5**, BP **113/35**.

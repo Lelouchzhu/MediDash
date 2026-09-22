@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 112,
+  "count": 113,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1895,6 +1895,36 @@
         "neut": 19.73,
         "mchc": 370,
         "plateletcrit": 0.08
+      }
+    },
+    {
+      "id": "20260922T183052__01a0c8f4-1777-768d-bbe2-c96ee2e66856.jpg",
+      "path": "reports/abg/20260922T183052__01a0c8f4-1777-768d-bbe2-c96ee2e66856.jpg",
+      "category": "abg",
+      "source_filename": "01a0c8f4-1777-768d-bbe2-c96ee2e66856.jpg",
+      "sha256_16": "f5697b0246b96537",
+      "bytes": 1303703,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-22T18:30:52",
+      "type": "动脉血气",
+      "note": "3520x3772 lac1.46 PF169 pH7.402 ABE-4.10 HCO3 20.60 Hb9.90 Hct29 iCa1.00 FiO245; 169 is P/F not PCT",
+      "relative_h": 172.51,
+      "resolution_vs_prior": "3520x3772 first copy",
+      "extracted": {
+        "ph": 7.402,
+        "pco2": 33.9,
+        "po2": 76.0,
+        "sbe": -3.6,
+        "be": -4.1,
+        "hco3": 20.6,
+        "lactate": 1.46,
+        "hb": 9.9,
+        "hct": 29.0,
+        "ca": 1.0,
+        "fio2": 45,
+        "pf": 169,
+        "so2": 94.1
       }
     }
   ]
