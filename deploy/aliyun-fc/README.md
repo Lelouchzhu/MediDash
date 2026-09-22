@@ -3,7 +3,9 @@
 只用于功能分支 `cursor/mainland-lab-upload-b98e`，**不改、不合并
 `main`**。上传版页面：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@upload/index.xhtml
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@66f48c1/index.xhtml
+
+这是带后台轮询能力的固定启动页。不要用可变 `@upload` 作为首次入口。
 
 本分支已经同步到 main 的 2026-09-22 夜间数据。打开后应看到：
 
@@ -205,9 +207,9 @@ Invoke-RestMethod `
 
 ## 9. 连接上传版网页
 
-打开：
+第一次打开固定启动页：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@upload/index.xhtml
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@66f48c1/index.xhtml
 
 点击 **上传化验**，填写：
 

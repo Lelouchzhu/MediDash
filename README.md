@@ -54,6 +54,12 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 **上传化验**只在功能分支 `cursor/mainland-lab-upload-b98e`，和识图版 / 空白版一样，**先不覆盖 main**。大陆预览：
 
+固定启动页（带后台轮询，不依赖 tag 缓存）：
+
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@66f48c1/index.xhtml
+
+`@upload` 只作备用入口，可能更新较慢：
+
 https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@upload/index.xhtml
 
 网页不保存 Cursor 密钥。中转程序是 [`scripts/agent-upload-relay.py`](scripts/agent-upload-relay.py)：在医院网络能访问的机器上设置 `CURSOR_API_KEY` 和 `UPLOAD_TOKEN` 后运行，再把地址和口令填进手机。agent 只更新这一支的数据、解读和查房问题。
