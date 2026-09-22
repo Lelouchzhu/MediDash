@@ -43,10 +43,10 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 国内镜像把 `@main` 收成一份旧快照，`purge.jsdelivr.net` 和网址后面的 `?v=` 都换不掉。2026-09-22 实测 `jsd.onmicrosoft.cn` 与 `cdn.jsdmirror.com` 的 `@main` 仍停在术后149h20m（没有乳酸 2.12）。**带提交号的地址会立刻取到那一版。**
 
-- **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@4135ee9/index.xhtml
-- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@4135ee9/index.xhtml
+- **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@e78eac8/index.xhtml
+- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@e78eac8/index.xhtml
 
-循环卡应是血压 **113/35**、去甲 **2**、多巴胺 **5**。若仍是 150/55 或肌酐页没有这句话，打开的还是旧镜像。下次更新后把 `4135ee9` 换成新提交号，不要改回 `@main`。
+感染卡应是白细胞 **20.86**，血常规血红蛋白 **97**。循环卡仍是血压 **113/35**、去甲 **2**、多巴胺 **5**。若白细胞还是 18.61，打开的还是旧镜像。下次更新后把 `e78eac8` 换成新提交号，不要改回 `@main`。
 
 微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。
 
