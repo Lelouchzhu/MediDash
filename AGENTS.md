@@ -60,7 +60,11 @@ If the family only said “high / about half”, leave mL blank rather than gues
 4. Update `CONTEXT.md` if the clinical story changed.
 5. Syntax-check the dashboard script: extract the `<script>` body to `/tmp/medidash-check.js` and run `node --check /tmp/medidash-check.js`.
 6. Rebuild the mainland page: `python3 scripts/build-index-xhtml.py` (overwrites `index.xhtml`).
-7. Commit + push **MediDash `main`**. Do not print tokens. Purge `index.xhtml` if the China CDN is stale.
+7. Commit + push **MediDash `main`**. Do not print tokens.
+8. Mainland entry is the **commit SHA**, never `@main`. After push, confirm both China mirrors return the new marker:
+   `https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@<sha>/index.xhtml`
+   `https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@<sha>/index.xhtml`
+   Then replace the pinned SHA in `README.md` and `CONTEXT.md`. `@main` on those mirrors stays on an old snapshot; `purge.jsdelivr.net` and `?v=` do not move it.
 
 ### Same-clock replace and hires
 
@@ -110,12 +114,10 @@ origin and avoids HTTPS-to-HTTP Mixed Content. Never commit
 
 大陆入口只有 `index.xhtml`（国内 CDN 按 `application/xhtml+xml` 打开；`index.html` 在镜像上是 `text/plain`，浏览器会显示源码）。不要再放 `hub.xhtml`。动态 HTML 必须走 `setMarkup` / `createSvg`；不要对 SVG 用 `innerHTML`，也不要插入未闭合的 `<br>` / `<input>`，否则趋势图在大陆入口会空白。
 
-- **大陆入口**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@main/index.xhtml
-- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@main/index.xhtml
+- **大陆入口（提交号，不要用 @main）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@8121b90/index.xhtml
+- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@8121b90/index.xhtml
 - 海外备用: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
-微信若停在源码页，改用系统浏览器。推送后镜像可能缓存约 12 小时；刷新：
-
-`https://purge.jsdelivr.net/gh/Lelouchzhu/MediDash@main/index.xhtml`
+微信若停在源码页，改用系统浏览器。国内 `@main` 快照会滞后（2026-09-22 实测仍是术后149h20m）。给家属的链接必须带提交号。
 
 不要把功能分支上的识图版 / 空白版（`live.html` / `template.html`，tag `cn`）写进这条 main 入口。

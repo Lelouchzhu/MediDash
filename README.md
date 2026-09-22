@@ -39,14 +39,16 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 ## Preview
 
-大陆入口只有 [`index.xhtml`](index.xhtml)（国内 CDN 可当网页打开）。不要用 `hub.xhtml`。`index.html` 在镜像上是纯文本，不能直接开。
+大陆入口是 [`index.xhtml`](index.xhtml)（`application/xhtml+xml`）。`index.html` 在镜像上是纯文本，不能直接开。不要用 `hub.xhtml`。
 
-- **大陆入口**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@main/index.xhtml
-- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@main/index.xhtml
+国内镜像把 `@main` 收成一份旧快照，`purge.jsdelivr.net` 和网址后面的 `?v=` 都换不掉。2026-09-22 实测 `jsd.onmicrosoft.cn` 与 `cdn.jsdmirror.com` 的 `@main` 仍停在术后149h20m（没有乳酸 2.12）。**带提交号的地址会立刻取到那一版。**
 
-微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。推送后若镜像仍是旧页，刷新：
+- **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@8121b90/index.xhtml
+- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@8121b90/index.xhtml
 
-https://purge.jsdelivr.net/gh/Lelouchzhu/MediDash@main/index.xhtml
+灌注卡应是乳酸 **1.59**，氧合卡 **P/F 159**、FiO₂ **50%**。标题应是钾 **4.85**。若乳酸还是 1.46 或吸氧仍写 45%，打开的还是旧镜像。下次更新后把 `8121b90` 换成新提交号，不要改回 `@main`。
+
+微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。
 
 海外备用：https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
@@ -73,7 +75,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 96 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 115 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 
