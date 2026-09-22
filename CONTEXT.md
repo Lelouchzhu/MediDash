@@ -81,16 +81,17 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 
 ### Support / vitals (family-reported)
 
-- **Latest bedside (family oral after midday labs):** BP **150/55** (MAP≈87), pulse **106**
-- Prior bedside (~postop 122h): BP 125/35 (MAP≈65), HR 100, RR 15–20
+- **Latest bedside (family oral, ~2026-09-22 16:00, postop ~170h):** BP **113/35**, parenthetical MAP **55**, heart rate **88**. Morning BP had reached **150**. Norepinephrine **4 → 2 mL/h = 0.10 mg/h** (0.05 mg/mL). Dopamine **7.5 → 5 mL/h**. Do not convert dopamine to mg/h. Ventilator still on; family said **呼吸正压 15–18**. Leave that phrase as spoken.
+- **Dr. Zhao:** current BP is acceptable, circulation is okay, and the BP course looks stable. ICU focus now is blood pressure and the lungs, both relatively stable. If pressors can be stopped completely and the ventilator removed, and only the kidney problem remains, ICU is no longer required and care may shift to dialysis.
+- Prior bedside (~postop 144h): BP 150/55 (MAP≈87), pulse 106, NE 4 + DA 7.5. Earlier ~122h: BP 125/35.
 - **CRRT:** started 2026-09-20 ~16:00–18:00; family now says this run lasted **19 h 48 min** and **has stopped**. Pre-start settings were blood **130 mL/min**, UF **300 mL/h**. If start was 16:00, stop ≈ 11:48; if 18:00, stop ≈ 13:48 (confirm at bedside). Cumulative UF not confirmed. Prior stop was morning 2026-09-19.
 - Urine overnight **50 mL** was **before** this restart. Family now: **still no urine after CRRT stop**.
-- Vasopressors **weaned again**: norepinephrine **9 → 6 → 4 mL/h = 0.20 mg/h** + dopamine **10 → 8 → 7.5 mL/h**. Concentration remains **0.05 mg/mL** (9 mL/h = 0.45 mg/h; 6 mL/h = 0.30 mg/h). Do not invent dopamine mg/h.
+- Vasopressor series: norepinephrine **9 → 6 → 4 → 2 mL/h** (0.45 → 0.30 → 0.20 → **0.10 mg/h**) + dopamine **10 → 8 → 7.5 → 5 mL/h**. Concentration **0.05 mg/mL**. Do not invent dopamine mg/h.
 - **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53**. Evening CBC Hb **101** (19:05; morning was 100). Ask how many units finished.
 - **K:** 3.93 (09:18, on CRRT) → **4.41** (22:50) → **4.49** (09:54 9/22, ref 3.5–5.3, still in range). Na **138.61 → 135.77↓** (ref 137–147). Cl **96.68**. iCa on 06:41 ABG still **1.02**.
 - **Kidney after CRRT stop:** Cr **231 → 320**, urea **22.09 → 31.32** (critical, rechecked). Overnight urine still **0**. Family: CRRT remains on standby and **will be started later**. Not running yet.
 - **Stool:** microscopy WBC/RBC negative (oral). FOBT immunoassay **positive** 18:32 9/21. Family 9/22: **3 stools yesterday, dark brown / 黑褐色**. They will keep watching and testing for GI bleeding. Color plus FOBT does not quantify or localize.
-- **Watch next:** CRRT restart settings; urine; Na; dark stool / repeat occult blood; lactate 2.12 and P/F 156 not repeated this morning.
+- **Watch next:** whether pressors and the ventilator can actually be weaned; CRRT vs a move to dialysis; urine; Na; dark stool; lactate 2.12 and P/F 156 not repeated this afternoon.
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -356,4 +357,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-22 09:54 — Cr **320**, urea **31.32** critical, PCT **28.783**, K **4.49**, Na **135.77**, APTT **40.2** (ref 23.3–32.5). Overnight urine **0**. CRRT standby, restart planned. Yesterday 3 dark-brown stools.
+**Last updated:** 2026-09-22 afternoon — NE **2 mL/h** (0.10 mg/h), DA **5 mL/h**, BP **113/35** (oral MAP 55), HR **88**, ventilator positive pressure **15–18**. Dr. Zhao: circulation acceptable; off pressors and off the ventilator with only kidney failure left could mean leaving ICU for dialysis. Morning labs unchanged (Cr 320, urea 31.32, PCT 28.783).
