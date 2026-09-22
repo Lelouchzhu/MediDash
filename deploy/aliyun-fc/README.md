@@ -25,6 +25,21 @@ https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@upload/index.xhtml
 - 密钥：只放 FC 环境变量，不进入 Git 或网页
 - 初次部署：`RELAY_DRY_RUN=1`，先验证但不调用 Agent
 
+### 为什么不再等国内镜像缓存
+
+`@upload` 是可变 tag，国内 CDN 可能长时间停在旧快照。正式流程不把它当
+“最新页”：
+
+1. `/upload` 创建 Cursor 后台任务并返回 `runId`；
+2. 浏览器每 6 秒调用 `/status`；
+3. Agent 完成并 push 后，中转读取功能分支的新 commit SHA；
+4. 中转从 GitHub 拉取该 SHA 的 `index.xhtml`，由
+   `/page/<40位SHA>` 以 `application/xhtml+xml` 返回；
+5. 浏览器自动跳到这个不可变页面。
+
+同一个提交 URL 永远对应同一份数据，不需要 purge。`/latest` 每次查询分支
+HEAD，再跳转到当前 `/page/<SHA>`。
+
 ## 2. 在 PC 上准备代码包
 
 ```bash
@@ -148,10 +163,18 @@ curl 'https://你的地址/health'
 预期：
 
 ```json
-{"ok":true,"dryRun":true,"agentId":"bc-f66f1668-9237-4998-b08a-816b026db98e"}
+{"ok":true,"dryRun":true,"agentId":"bc-f66f1668-9237-4998-b08a-816b026db98e","branch":"cursor/mainland-lab-upload-b98e","latestUrl":"https://你的地址/latest"}
 ```
 
 如果访问超时，先检查出网、端口 9000、启动命令和公网 URL 是否开启。
+
+另测最新页面代理：
+
+```bash
+curl -I 'https://你的地址/latest'
+```
+
+应 302 到 `/page/<40位SHA>`；浏览器打开 `/latest` 应直接看到 dashboard。
 
 ## 8. 试运行上传
 
@@ -225,6 +248,23 @@ RELAY_DRY_RUN=0
 
 一个 Agent 同时只能跑一个任务；返回 `agent_busy` 时，等上一条结束再传。
 
+正式上传后页面会依次显示：
+
+```text
+正在识图、更新数据和查房问题…
+数据已更新，正在生成不可变的新网页…
+更新完成，正在打开新网页。
+```
+
+随后自动打开：
+
+```text
+https://你的地址/page/<新提交SHA>
+```
+
+以后建议把 `https://你的地址/latest` 加入收藏。它由阿里云实时读取功能分支
+HEAD，不依赖 `@upload` 镜像。`@upload` 只保留为没有中转时的启动入口。
+
 ## 11. Serverless Devs 自动部署（可选）
 
 配置阿里云 AccessKey 后：
@@ -251,6 +291,9 @@ s deploy -y
 | `cursor_key_missing` | 未配置 `CURSOR_API_KEY` |
 | `agent_busy` | Agent 正在处理上一条，稍后重试 |
 | `cursor_unreachable` | FC 未开启公网出网，或访问 `api.cursor.com` 失败 |
+| `branch_unreachable` | 中转暂时读不到 GitHub 功能分支 HEAD |
+| `page_unreachable` | 新提交已产生，但 GitHub 原始 XHTML 尚未拉取成功；页面会继续重试 |
+| `/latest` 返回 502 | FC 到 GitHub API 不通，或公开 API 临时限流 |
 | 浏览器“连不上中转” | HTTPS 地址、HTTP 触发器公网 URL 或 CORS 配置错误 |
 | 413 / `image_size` | 单张压缩后仍超过 8 MB |
 | `dashboard_not_found` | 只会出现在本地同源模式；FC 根路径本来只做健康响应 |

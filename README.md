@@ -58,6 +58,10 @@ https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@upload/index.xhtml
 
 网页不保存 Cursor 密钥。中转程序是 [`scripts/agent-upload-relay.py`](scripts/agent-upload-relay.py)：在医院网络能访问的机器上设置 `CURSOR_API_KEY` 和 `UPLOAD_TOKEN` 后运行，再把地址和口令填进手机。agent 只更新这一支的数据、解读和查房问题。
 
+正式上传后，网页轮询中转的 `/status`。Agent push 完成时，中转读取新 commit
+SHA，并把浏览器带到 `/page/<SHA>`；这是实时、不可变的新页面，不依赖
+`@upload` 的国内 CDN 缓存。中转的 `/latest` 永远跳到功能分支当前页面。
+
 阿里云函数计算部署包及控制台步骤见
 [`deploy/aliyun-fc/README.md`](deploy/aliyun-fc/README.md)。部署密钥只通过 FC
 环境变量注入，不进入仓库或网页。

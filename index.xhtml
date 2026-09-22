@@ -3069,9 +3069,11 @@
 
     const relayUrlKey = "medidash-relay-url";
     const uploadTokenKey = "medidash-upload-token";
+    const pendingRunKey = "medidash-pending-agent-run";
     const agentDialog = document.getElementById("agentDialog");
     const agentStatus = document.getElementById("agentStatus");
     const shotRow = document.getElementById("shotRow");
+    let watchedRunId = "";
 
     function setAgentStatus(text) {
       agentStatus.textContent = text || "";
@@ -3082,15 +3084,86 @@
       return cdnHost.test(location.hostname) ? "" : `${location.origin}/upload`;
     }
 
+    function pendingRun() {
+      try {
+        const value = JSON.parse(localStorage.getItem(pendingRunKey) || "null");
+        return value && value.runId && value.relayUrl ? value : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function statusEndpoint(relayUrl) {
+      return relayUrl.replace(/\/upload\/?$/, "/status");
+    }
+
+    function showGeneratedPage(body) {
+      localStorage.removeItem(pendingRunKey);
+      setAgentStatus("");
+      const text = document.createTextNode("更新完成，正在打开新网页。");
+      const link = document.createElementNS(XHTML_NS, "a");
+      link.href = body.pageUrl;
+      link.textContent = "立即打开";
+      link.style.marginLeft = "8px";
+      link.style.fontWeight = "800";
+      agentStatus.append(text, link);
+      window.setTimeout(() => location.assign(body.pageUrl), 1800);
+    }
+
+    async function watchAgentRun(relayUrl, token, runId) {
+      if (!runId || watchedRunId === runId) return;
+      watchedRunId = runId;
+      const terminal = new Set(["ERROR", "CANCELLED", "EXPIRED"]);
+      for (let attempt = 0; attempt < 300; attempt++) {
+        try {
+          const response = await fetch(statusEndpoint(relayUrl), {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ token, runId })
+          });
+          let body = {};
+          try { body = await response.json(); } catch { body = {}; }
+          if (!response.ok || !body.ok) {
+            if (response.status === 401) {
+              localStorage.removeItem(pendingRunKey);
+              setAgentStatus("上传口令已变化，请重新填写后再查进度。");
+              break;
+            }
+            setAgentStatus(`后台任务已提交，暂时查不到进度（${agentErrorText(body.error)}）`);
+          } else if (body.status === "FINISHED" && body.pageUrl) {
+            showGeneratedPage(body);
+            watchedRunId = "";
+            return;
+          } else if (body.status === "PUBLISHING") {
+            setAgentStatus("数据已更新，正在生成不可变的新网页…");
+          } else if (terminal.has(body.status)) {
+            localStorage.removeItem(pendingRunKey);
+            setAgentStatus(`后台更新没有完成（${body.status}），请打开 Agent 查看。`);
+            break;
+          } else {
+            const label = body.status === "CREATING" ? "正在启动" : "正在识图、更新数据和查房问题";
+            setAgentStatus(`${label}… 可以关闭本窗口，稍后回来会继续查询。`);
+          }
+        } catch {
+          setAgentStatus("后台任务已提交，网络暂时中断；恢复后会继续查询。");
+        }
+        await new Promise(resolve => window.setTimeout(resolve, 6000));
+      }
+      watchedRunId = "";
+    }
+
     function openAgentDialog() {
-      document.getElementById("relayUrl").value =
-        localStorage.getItem(relayUrlKey) || defaultRelayUrl();
-      document.getElementById("uploadToken").value = localStorage.getItem(uploadTokenKey) || "";
+      const relayUrl = localStorage.getItem(relayUrlKey) || defaultRelayUrl();
+      const token = localStorage.getItem(uploadTokenKey) || "";
+      document.getElementById("relayUrl").value = relayUrl;
+      document.getElementById("uploadToken").value = token;
       const setup = document.getElementById("agentSetup");
       setup.open = !document.getElementById("relayUrl").value ||
         !localStorage.getItem(uploadTokenKey);
       setAgentStatus("");
       agentDialog.showModal();
+      const pending = pendingRun();
+      if (pending && token) watchAgentRun(pending.relayUrl, token, pending.runId);
     }
 
     function closeAgentDialog() {
@@ -3165,7 +3238,11 @@
         cursor_key_missing: "中转还没有配置 Cursor 密钥。",
         relay_not_configured: "中转还没有配置上传口令。",
         cursor_unreachable: "中转连不上 Cursor。",
-        cursor_rejected: "Cursor 没有收下这次上传。"
+        cursor_rejected: "Cursor 没有收下这次上传。",
+        cursor_response: "Cursor 返回的数据不完整。",
+        run_not_found: "找不到这次后台任务。",
+        branch_unreachable: "暂时读不到功能分支的新提交。",
+        page_unreachable: "新网页还没有生成完成。"
       };
       return known[error] || "没有交出去，请稍后再试。";
     }
@@ -3221,9 +3298,17 @@
           setAgentStatus(agentErrorText(body.error));
           return;
         }
-        setAgentStatus(body.dryRun
-          ? "试运行已送到中转，还没有真正调用 agent。"
-          : "已交给监测 agent。它会更新这一支的数据、解读和查房问题，不会改 main。");
+        if (body.dryRun) {
+          setAgentStatus("试运行已送到中转，还没有真正调用 agent。");
+        } else {
+          localStorage.setItem(pendingRunKey, JSON.stringify({
+            runId: body.runId,
+            relayUrl,
+            startedAt: Date.now()
+          }));
+          setAgentStatus("已交给监测 agent，正在后台更新，不会改 main。");
+          watchAgentRun(relayUrl, token, body.runId);
+        }
         document.getElementById("shotInput").value = "";
         while (shotRow.firstChild) shotRow.removeChild(shotRow.firstChild);
       } catch {
@@ -3234,6 +3319,11 @@
     });
 
     renderAll();
+    const resumedRun = pendingRun();
+    const resumedToken = localStorage.getItem(uploadTokenKey) || "";
+    if (resumedRun && resumedToken) {
+      watchAgentRun(resumedRun.relayUrl, resumedToken, resumedRun.runId);
+    }
   //]]>
   </script>
 </body>
