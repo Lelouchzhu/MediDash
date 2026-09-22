@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 115,
+  "count": 116,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1971,6 +1971,35 @@
       "relative_h": 175.22,
       "extracted": {
         "k": 4.85
+      }
+    },
+    {
+      "id": "20260923T063825__95415F20-A766-4C47-A73D-FE4CD95D5808_L0_001.jpg",
+      "path": "reports/abg/20260923T063825__95415F20-A766-4C47-A73D-FE4CD95D5808_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "95415F20-A766-4C47-A73D-FE4CD95D5808_L0_001.jpg",
+      "sha256_16": "913c1e4006e51d91",
+      "bytes": 1350369,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-23T06:38:25",
+      "type": "动脉血气",
+      "note": "3520x3772 lac2.02↑ PF167 pH7.327↓ ABE-8.10 HCO3 17.90 Hb9.80 Hct29 iCa0.98 FiO250; 167 is P/F not PCT",
+      "relative_h": 184.64,
+      "extracted": {
+        "ph": 7.327,
+        "pco2": 34.9,
+        "po2": 83.5,
+        "sbe": -7.4,
+        "be": -8.1,
+        "hco3": 17.9,
+        "lactate": 2.02,
+        "hb": 9.8,
+        "hct": 29.0,
+        "ca": 0.98,
+        "fio2": 50,
+        "pf": 167,
+        "so2": 94.9
       }
     }
   ]

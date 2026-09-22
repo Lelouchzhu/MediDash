@@ -1053,29 +1053,29 @@
           <div class="status-value">113/35</div>
           <div class="status-note">口述 MAP 55 · 心跳88<br>去甲4→<strong>2</strong> · 多巴胺7.5→<strong>5</strong></div>
         </button>
-        <button class="status-card orange" type="button" data-metric-jump="lactate">
+        <button class="status-card red" type="button" data-metric-jump="lactate">
           <div class="status-top">
             <span class="status-name">组织灌注</span>
-            <span class="level">仍在参考，贴上限</span>
+            <span class="level">再次高出参考</span>
           </div>
-          <div class="status-value"><span id="latestLactate">1.59</span><span class="status-unit">mmol/L</span></div>
-          <div class="status-note">1.46→<strong>1.59</strong> · 仍在0.5–1.6，贴上限<br>BE更负：−4.1→−4.9</div>
+          <div class="status-value"><span id="latestLactate">2.02</span><span class="status-unit">mmol/L</span></div>
+          <div class="status-note">1.59→<strong>2.02</strong> · 又高出0.5–1.6<br>BE更负：−4.9→−8.1</div>
         </button>
         <button class="status-card red" type="button" data-metric-jump="pf">
           <div class="status-top">
             <span class="status-name">氧合</span>
             <span class="level">仍低</span>
           </div>
-          <div class="status-value"><span id="latestPf">169</span><span class="status-unit">P/F</span></div>
-          <div class="status-note">FiO₂ 45→<strong>50%</strong> · PO₂ 79.3<br>169→159 · 159是氧合指数不是PCT</div>
+          <div class="status-value"><span id="latestPf">167</span><span class="status-unit">P/F</span></div>
+          <div class="status-note">FiO₂ 仍<strong>50%</strong> · PO₂ 83.5<br>159→167 · 167是氧合指数不是PCT</div>
         </button>
-        <button class="status-card orange" type="button" data-metric-jump="hco3">
+        <button class="status-card red" type="button" data-metric-jump="hco3">
           <div class="status-top">
             <span class="status-name">酸碱</span>
-            <span class="level">回到参考</span>
+            <span class="level">低于参考</span>
           </div>
-          <div class="status-value"><span id="latestPh">7.402</span><span class="status-unit">pH</span></div>
-          <div class="status-note">HCO₃⁻ 20.6→<strong>19.9</strong> · BE −4.9<br>pH仍是7.402，在参考内</div>
+          <div class="status-value"><span id="latestPh">7.327</span><span class="status-unit">pH</span></div>
+          <div class="status-note">HCO₃⁻ 19.9→<strong>17.9</strong> · BE −8.1<br>7.402→7.327，已低于7.35</div>
         </button>
         <div class="status-card orange">
           <div class="status-top">
@@ -1112,11 +1112,11 @@
         <button class="status-card orange" type="button" data-metric-jump="hbg">
           <div class="status-top">
             <span class="status-name">血红蛋白 / 钙</span>
-            <span class="level">血气10.2</span>
+            <span class="level">血气9.8</span>
           </div>
-          <div class="status-value">10.2<span class="status-unit">g/dL</span></div>
-          <span id="latestHb" hidden>10.2</span>
-          <div class="status-note">血气9.9→<strong>10.2</strong> · Hct 30%<br>血常规仍97 · iCa 0.99 · 钾4.85</div>
+          <div class="status-value">9.8<span class="status-unit">g/dL</span></div>
+          <span id="latestHb" hidden>9.8</span>
+          <div class="status-note">血气10.2→<strong>9.8</strong> · Hct 29%<br>血常规仍97 · iCa 0.98 · 钾4.85</div>
         </button>
       </div>
     </section>
@@ -1170,8 +1170,8 @@
             <p>尿素22.09→<strong>31.32</strong>（危急值，已复查）。CRRT仍待命。赵医生说：若升压药和呼吸机能撤掉、只剩肾脏问题，就不必留在ICU，可能会转向透析。</p>
           </div>
           <div class="insight">
-            <strong>乳酸1.46→1.59，吸氧浓度回到50%</strong>
-            <p>乳酸仍在0.5–1.6，已贴上限。FiO₂ 45→<strong>50%</strong>，P/F 169→<strong>159</strong>（氧合指数，不是降钙素原）。pH仍是7.402。HCO₃⁻ 19.9、ABE −4.9比傍晚更负。钾4.49→<strong>4.85</strong>（参考3.5–5.3，仍在范围内）。血气Hb 9.9→10.2，iCa 0.99。</p>
+            <strong>乳酸1.59→2.02，pH降到7.327</strong>
+            <p>乳酸又高出0.5–1.6。pH 7.402→<strong>7.327</strong>，已低于7.35。HCO₃⁻ 17.9、ABE −8.1比昨夜更负。FiO₂仍<strong>50%</strong>，P/F 159→<strong>167</strong>（氧合指数，不是降钙素原）。血气Hb 10.2→9.8，iCa 0.98。钾仍是昨夜<strong>4.85</strong>。</p>
           </div>
           <div class="insight">
             <strong>昨天排便3次，黑褐色</strong>
@@ -1327,7 +1327,7 @@
             <ul>
               <li>降钙素原：术前4h10m <strong>41.1266</strong> → 术后2h44m <strong>63.3677</strong> → 9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> → 9月19日10:03 <strong>65.368</strong> → 9月21日09:18 <strong>36.8855</strong> → 9月22日09:54 <strong>28.783</strong> ng/mL（参考0–0.05）。从峰值回落，仍极高。这是降钙素原，不是血常规血小板比积。</li>
               <li>IL-6 981 → 最新<strong>68.5</strong> pg/mL（9月21日09:18，参考0–7），较峰值明显回落，仍远高于参考。CRP 术前<strong>86.80</strong> → 9月21日09:18 <strong>97.70</strong> mg/L（参考0–8）。</li>
-              <li>乳酸峰值8.99 → 今晨06:41 <strong>2.12</strong> → 18:30 <strong>1.46</strong> → 21:03 <strong>1.59</strong>（仍在0.5–1.6，贴上限）。P/F 169→最新<strong>159</strong>（FiO₂ 45→<strong>50%</strong>，是氧合指数不是降钙素原）。pH 7.402在参考，HCO₃⁻ 19.9↓、ABE −4.9。最新口述血压<strong>113/35</strong>（MAP 55）、心跳<strong>88</strong>。升压药<strong>去甲2 + 多巴胺5 mL/h</strong>（去甲=0.10 mg/h）。呼吸正压15–18。过夜尿量仍为0，CRRT待命、后续会开机。</li>
+              <li>乳酸峰值8.99 → 9月22日21:03 <strong>1.59</strong> → 9月23日06:38 <strong>2.02</strong>（又高出0.5–1.6）。P/F 159→最新<strong>167</strong>（FiO₂仍<strong>50%</strong>，是氧合指数不是降钙素原）。pH 7.402→<strong>7.327</strong>↓，HCO₃⁻ 17.9↓、ABE −8.1。最新口述血压<strong>113/35</strong>（MAP 55）、心跳<strong>88</strong>。升压药<strong>去甲2 + 多巴胺5 mL/h</strong>（去甲=0.10 mg/h）。呼吸正压15–18。过夜尿量仍为0，CRRT待命、后续会开机。</li>
               <li>白细胞术前11.67→术后1h 6.97→13.17→17.42→19.40→18.61→最新<strong>20.86</strong>（9月22日08:28），中性粒<strong>94.6%</strong>（绝对值19.73）。回升，仍很高。血常规“PCT 0.08%”是血小板比积，不是降钙素原。</li>
               <li>粪便：镜检红白细胞曾阴性；18:32隐血免疫法<strong>阳性</strong>。家属：昨天排便<strong>3次</strong>，颜色<strong>黑褐色</strong>，后续继续观察并检验是否消化道出血。颜色加隐血不能定量，也不能定位。</li>
             </ul>
@@ -1400,10 +1400,10 @@
           </summary>
           <div class="report-body">
             <ul>
-              <li>血常规Hb：术前130→术后1h 122→85→76→输前67→100→101→最新<strong>97</strong> g/L（9月22日08:28），HCT 26.2%。血气Hb 18:30 <strong>9.9</strong>→21:03 <strong>10.2</strong> g/dL，Hct 30%。两种方法仍不要逐点等同。</li>
+              <li>血常规Hb：术前130→术后1h 122→85→76→输前67→100→101→最新<strong>97</strong> g/L（9月22日08:28），HCT 26.2%。血气Hb 21:03 <strong>10.2</strong>→06:38 <strong>9.8</strong> g/dL，Hct 29%。两种方法仍不要逐点等同。</li>
               <li>血小板术前255→术后1h 249→60→69→最新<strong>70</strong>×10⁹/L；血小板比积0.08%（参考0.17–0.35，不是降钙素原）。</li>
               <li>白细胞17.42→19.40→18.61→最新<strong>20.86</strong>，中性粒<strong>94.6%</strong>（绝对值19.73），淋巴3.1% / 0.65。回升仍高。</li>
-              <li>钾3.93→4.41→4.49→最新<strong>4.85</strong>（9月22日21:13，参考3.5–5.3，仍在范围内）。钠138.61→<strong>135.77</strong>↓。氯98.12→<strong>96.68</strong>。离子钙血气21:03 <strong>0.99</strong>（傍晚1.00）。</li>
+              <li>钾3.93→4.41→4.49→最新<strong>4.85</strong>（9月22日21:13，参考3.5–5.3，仍在范围内）。钠138.61→<strong>135.77</strong>↓。氯98.12→<strong>96.68</strong>。离子钙血气06:38 <strong>0.98</strong>（昨夜0.99）。</li>
               <li>昨天排便3次，黑褐色。18:32隐血免疫法阳性，镜检红白细胞曾阴性。炎症：CRP 术前86.80→97.70，IL-6 68.5。</li>
               <li>白蛋白术前<strong>37.71</strong>→术后2h44m <strong>23.1</strong>↓→29.3→最新<strong>35.8</strong> g/L（参考34–48，已回参考）。</li>
             </ul>
@@ -1876,6 +1876,11 @@
           <div class="event-title">钾 4.49→4.85，仍在参考</div>
           <div class="event-desc">干化学，参考3.5–5.3。比今晨4.49高，还没有出范围。钠、肌酐没有同抽。</div>
         </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后184小时38分 · 9月23日06:38</div>
+          <div class="event-title">乳酸1.59→2.02再高出参考；pH降至7.327</div>
+          <div class="event-desc">PCO₂34.9↓、PO₂83.5、HCO₃⁻17.9↓、ABE −8.1。FiO₂仍50%，P/F 167。血气Hb 10.2→9.8，Hct 29%，iCa 0.98。167是氧合指数，不是降钙素原。</div>
+        </article>
       </div>
     </section>
 
@@ -2027,7 +2032,8 @@
       { h: 152.67, label: "术后152h40m", sample: "动脉", ph: 7.463, pco2: 31.5, po2: 69.5, hco3: 22.1, be: -1.7, lactate: 1.93, fio2: 50, pf: 139, hb: 11.7, ca: 0.99 },
       { h: 160.69, label: "术后160h41m", sample: "动脉", ph: 7.449, pco2: 32.6, po2: 77.8, hco3: 22.1, be: -1.9, lactate: 2.12, fio2: 50, pf: 156, hb: 10.2, ca: 1.02 },
       { h: 172.51, label: "术后172h31m", sample: "动脉", ph: 7.402, pco2: 33.9, po2: 76.0, hco3: 20.6, be: -4.1, lactate: 1.46, fio2: 45, pf: 169, hb: 9.9, ca: 1.00 },
-      { h: 175.05, label: "术后175h03m", sample: "动脉", ph: 7.402, pco2: 32.7, po2: 79.3, hco3: 19.9, be: -4.9, lactate: 1.59, fio2: 50, pf: 159, hb: 10.2, ca: 0.99 }
+      { h: 175.05, label: "术后175h03m", sample: "动脉", ph: 7.402, pco2: 32.7, po2: 79.3, hco3: 19.9, be: -4.9, lactate: 1.59, fio2: 50, pf: 159, hb: 10.2, ca: 0.99 },
+      { h: 184.64, label: "术后184h38m", sample: "动脉", ph: 7.327, pco2: 34.9, po2: 83.5, hco3: 17.9, be: -8.1, lactate: 2.02, fio2: 50, pf: 167, hb: 9.8, ca: 0.98 }
     ];
 
     const labReadings = [
@@ -2155,7 +2161,7 @@
         id: "bleeding",
         group: "urgent",
         title: "昨天排便3次、黑褐色，还要不要再查出血、再输血？",
-        detail: "隐血免疫法已阳性，镜检红白细胞曾阴性。血气Hb 9.9→10.2，血常规今晨97。黑褐色不能定量。还要不要再做隐血或胃液、目标Hb是多少？"
+        detail: "隐血免疫法已阳性，镜检红白细胞曾阴性。血气Hb 10.2→9.8，血常规仍是昨天的97。黑褐色不能定量。还要不要再做隐血或胃液、目标Hb是多少？"
       },
       {
         id: "hemodynamics",
@@ -2166,8 +2172,8 @@
       {
         id: "lactate",
         group: "urgent",
-        title: "乳酸1.46→1.59，仍在参考但贴上限，怎么看？",
-        detail: "21:03 乳酸1.59，参考上限1.6。HCO₃⁻ 19.9、ABE −4.9比傍晚更负。白细胞仍是今晨20.86，降钙素原28.8。贴着上限还要不要加干预？"
+        title: "乳酸又升到2.02，pH降到7.327，要不要加干预？",
+        detail: "1.59→2.02，已高出0.5–1.6。pH 7.402→7.327，HCO₃⁻ 17.9、ABE −8.1。白细胞仍是昨天20.86，降钙素原28.8未再查。乳酸和pH同时变差到什么程度要加干预？"
       },
       {
         id: "source-control",
@@ -2179,13 +2185,13 @@
         id: "shock-cause",
         group: "urgent",
         title: "目前休克的主要原因判断是什么？",
-        detail: "血常规Hb 97，血气Hb 10.2。乳酸1.59贴上限，白细胞仍20.86，PCT 28.8。昨天黑褐色便3次，隐血阳性。感染性、残余肠缺血、消化道出血还是混合性？培养结果如何？"
+        detail: "血常规Hb 97，血气Hb 9.8。乳酸2.02，pH 7.327，白细胞仍20.86，PCT 28.8。黑褐色便和隐血阳性仍在。感染性、残余肠缺血、消化道出血还是混合性？培养结果如何？"
       },
       {
         id: "oxygenation",
         group: "urgent",
         title: "呼吸正压15–18，呼吸机什么时候能撤？",
-        detail: "仍在呼吸机上，家属口述呼吸正压15–18。傍晚FiO₂曾到45%，21:03又回到50%，P/F 159、PO₂79.3。159是氧合指数。赵医生说肺这边比较稳，撤掉呼吸机是离开ICU的条件之一。"
+        detail: "仍在呼吸机上，家属口述呼吸正压15–18。今晨FiO₂仍50%，P/F 167、PO₂83.5。167是氧合指数。赵医生说肺这边比较稳，撤掉呼吸机是离开ICU的条件之一。"
       },
       {
         id: "next-window",
@@ -2227,7 +2233,7 @@
         id: "calcium",
         group: "followup",
         title: "钾升到4.85仍在参考，钠135.77，还要不要补钠、补钙？",
-        detail: "钾3.93→4.41→4.49→4.85，都在3.5–5.3。钠仍是今晨135.77，低于137。血气离子钙1.00→0.99，仍低于1.15。CRRT再开时电解质怎么盯？"
+        detail: "钾3.93→4.41→4.49→4.85，都在3.5–5.3，昨夜之后没有新钾。钠仍是135.77，低于137。血气离子钙0.99→0.98，仍低于1.15。CRRT再开时电解质怎么盯？"
       }
     ];
 
