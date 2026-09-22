@@ -1,0 +1,58 @@
+edition: 3.0.0
+name: medidash-upload-relay
+access: default
+
+resources:
+  relay:
+    component: fc3
+    props:
+      region: cn-hangzhou
+      functionName: medidash-upload-relay
+      description: MediDash lab upload relay to Cursor agent
+      runtime: custom
+      code: ./.fc-code
+      memorySize: 256
+      timeout: 90
+      instanceConcurrency: 8
+      internetAccess: true
+      environmentVariables:
+        HOST: 0.0.0.0
+        PORT: "9000"
+        UPLOAD_TOKEN: ${env('UPLOAD_TOKEN')}
+        CURSOR_API_KEY: ${env('CURSOR_API_KEY')}
+        MEDIDASH_AGENT_ID: ${env('MEDIDASH_AGENT_ID', 'bc-f66f1668-9237-4998-b08a-816b026db98e')}
+      customRuntimeConfig:
+        command:
+          - python3
+        args:
+          - server.py
+        port: 9000
+        healthCheckConfig:
+          initialDelaySeconds: 1
+          periodSeconds: 3
+          timeoutSeconds: 2
+          failureThreshold: 3
+          successThreshold: 1
+          httpGetUrl: /health
+      triggers:
+        - triggerName: http-trigger
+          triggerType: http
+          qualifier: LATEST
+          triggerConfig:
+            authType: anonymous
+            disableURLInternet: false
+            methods:
+              - GET
+              - POST
+            corsConfig:
+              allowOrigins:
+                - https://jsd.onmicrosoft.cn
+                - https://cdn.jsdmirror.com
+              allowMethods:
+                - GET
+                - POST
+              allowHeaders:
+                - Content-Type
+              exposeHeaders: []
+              allowCredentials: false
+              maxAge: 86400

@@ -98,6 +98,7 @@ def parse_images(raw) -> list[dict]:
 
 class UploadHandler(BaseHTTPRequestHandler):
     server_version = "MediDashRelay/1.0"
+    protocol_version = "HTTP/1.1"
 
     def log_message(self, fmt: str, *args) -> None:
         sys.stderr.write("%s %s\n" % (self.address_string(), fmt % args))
@@ -125,14 +126,14 @@ class UploadHandler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:
         path = self.path.split("?", 1)[0]
-        if path != "/health":
+        if path not in {"/", "/health"}:
             self._json(404, {"ok": False, "error": "not_found"})
             return
         self._json(200, {"ok": True, "dryRun": DRY_RUN, "agentId": AGENT_ID})
 
     def do_POST(self) -> None:
         path = self.path.split("?", 1)[0]
-        if path != "/upload":
+        if path not in {"/", "/upload"}:
             self._json(404, {"ok": False, "error": "not_found"})
             return
         if not UPLOAD_TOKEN:

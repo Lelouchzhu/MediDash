@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+deploy/aliyun-fc/.fc-code/
+deploy/aliyun-fc/medidash-upload-relay.zip
+deploy/aliyun-fc/.env

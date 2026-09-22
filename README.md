@@ -56,6 +56,10 @@ https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@upload/index.xhtml
 
 网页不保存 Cursor 密钥。中转程序是 [`scripts/agent-upload-relay.py`](scripts/agent-upload-relay.py)：在医院网络能访问的机器上设置 `CURSOR_API_KEY` 和 `UPLOAD_TOKEN` 后运行，再把地址和口令填进手机。agent 只更新这一支的数据、解读和查房问题。
 
+阿里云函数计算部署包及控制台步骤见
+[`deploy/aliyun-fc/README.md`](deploy/aliyun-fc/README.md)。部署密钥只通过 FC
+环境变量注入，不进入仓库或网页。
+
 ## Cloud Agent / handoff
 
 Start Cloud Agents on **this** repository and read these first:
