@@ -46,7 +46,7 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 - **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@07750a1/index.xhtml
 - 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@07750a1/index.xhtml
 
-灌注卡应是乳酸 **2.02**，酸碱卡 pH **7.327**，氧合卡 **P/F 167**。若乳酸还是 1.59 或 pH 仍是 7.402，打开的还是旧镜像。下次更新后把 `07750a1` 换成新提交号，不要改回 `@main`。
+灌注卡应是乳酸 **2.02**，酸碱卡 pH **7.327**，氧合卡 **P/F 167**。肾功能卡应是肌酐 **423**，感染卡白细胞 **24.97**，凝血卡 APTT **33.0**。若肌酐还是 320 或白细胞还是 20.86，打开的还是旧镜像。下次更新后把 `07750a1` 换成新提交号，不要改回 `@main`。
 
 微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。
 
@@ -61,7 +61,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 116 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 119 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 
