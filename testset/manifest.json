@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 115,
+  "count": 120,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -1971,6 +1971,138 @@
       "relative_h": 175.22,
       "extracted": {
         "k": 4.85
+      }
+    },
+    {
+      "id": "20260923T063825__95415F20-A766-4C47-A73D-FE4CD95D5808_L0_001.jpg",
+      "path": "reports/abg/20260923T063825__95415F20-A766-4C47-A73D-FE4CD95D5808_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "95415F20-A766-4C47-A73D-FE4CD95D5808_L0_001.jpg",
+      "sha256_16": "913c1e4006e51d91",
+      "bytes": 1350369,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-23T06:38:25",
+      "type": "动脉血气",
+      "note": "3520x3772 lac2.02↑ PF167 pH7.327↓ ABE-8.10 HCO3 17.90 Hb9.80 Hct29 iCa0.98 FiO250; 167 is P/F not PCT",
+      "relative_h": 184.64,
+      "extracted": {
+        "ph": 7.327,
+        "pco2": 34.9,
+        "po2": 83.5,
+        "sbe": -7.4,
+        "be": -8.1,
+        "hco3": 17.9,
+        "lactate": 2.02,
+        "hb": 9.8,
+        "hct": 29.0,
+        "ca": 0.98,
+        "fio2": 50,
+        "pf": 167,
+        "so2": 94.9
+      }
+    },
+    {
+      "id": "20260923T090633__A7C6CB55-580E-4D0F-9970-67133DFB6429_L0_001.jpg",
+      "path": "reports/cbc/20260923T090633__A7C6CB55-580E-4D0F-9970-67133DFB6429_L0_001.jpg",
+      "category": "cbc",
+      "source_filename": "A7C6CB55-580E-4D0F-9970-67133DFB6429_L0_001.jpg",
+      "sha256_16": "26fe65e3226e10c4",
+      "bytes": 895546,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-23T09:06:33",
+      "type": "血常规",
+      "note": "WBC24.97↑ Hb94 HCT26.6 PLT94 neut%94.7 neut23.65 lymph0.65 plateletcrit0.12 not PCT",
+      "relative_h": 187.11,
+      "extracted": {
+        "wbc": 24.97,
+        "rbc": 2.94,
+        "hbg": 94.0,
+        "hct": 26.6,
+        "plt": 94.0,
+        "lymph_pct": 2.6,
+        "lymph": 0.65,
+        "mono_pct": 2.6,
+        "mono": 0.65,
+        "neut_pct": 94.7,
+        "neut": 23.65,
+        "eos_pct": 0.0,
+        "plateletcrit": 0.12
+      }
+    },
+    {
+      "id": "20260923T092110__B95B724A-68C8-4F31-A6C6-8B453F6710C4_L0_001.jpg",
+      "path": "reports/chemistry/20260923T092110__B95B724A-68C8-4F31-A6C6-8B453F6710C4_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "B95B724A-68C8-4F31-A6C6-8B453F6710C4_L0_001.jpg",
+      "sha256_16": "6d0239f20a2c9a31",
+      "bytes": 411891,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-23T09:21:10",
+      "type": "生化",
+      "note": "Cr423 urea41.03 critical rechecked PCT18.701 K5.09 in range Na130.76 Cl94.37 below ref. PCT is procalcitonin not plateletcrit",
+      "relative_h": 187.35,
+      "extracted": {
+        "k": 5.09,
+        "na": 130.76,
+        "cl": 94.37,
+        "urea": 41.03,
+        "urea_critical": true,
+        "creatinine": 423.0,
+        "pct": 18.701
+      }
+    },
+    {
+      "id": "20260923T092632__79733D1D-DCFB-4502-B0A8-67B838117C8D_L0_001.jpg",
+      "path": "reports/coag/20260923T092632__79733D1D-DCFB-4502-B0A8-67B838117C8D_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "79733D1D-DCFB-4502-B0A8-67B838117C8D_L0_001.jpg",
+      "sha256_16": "69f0ccd81a2cc7f2",
+      "bytes": 551050,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-23T09:26:32",
+      "type": "凝血",
+      "note": "APTT33.0↑ ref 23.3-32.5 (not 21-45). TT16.9 PT12.4 PT%84.5 INR1.10 Fbg3.44 in range",
+      "relative_h": 187.44,
+      "extracted": {
+        "aptt": 33.0,
+        "tt": 16.9,
+        "pt": 12.4,
+        "pt_pct": 84.5,
+        "inr": 1.1,
+        "fbg": 3.44
+      }
+    },
+    {
+      "id": "20260923T101955__AA4638F0-E1EE-4DA9-A6B2-0D0D16BD5962_L0_001.jpg",
+      "path": "reports/imaging/20260923T101955__AA4638F0-E1EE-4DA9-A6B2-0D0D16BD5962_L0_001.jpg",
+      "category": "imaging",
+      "source_filename": "AA4638F0-E1EE-4DA9-A6B2-0D0D16BD5962_L0_001.jpg",
+      "sha256_16": "2b909b11f0fa9911",
+      "bytes": 420732,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-23T10:19:55",
+      "type": "下肢动静脉彩超",
+      "note": "Atherosclerosis with plaques. CFA larger plaques R 1.1x0.2 cm L 1.4x0.4 cm. Possible incomplete occlusion of bilateral PTA. Deep and displayed superficial veins: satisfactory fill, no abnormal echo; report does not write thrombus. Subcutaneous edema thigh R 2.1 cm L 2.3 cm",
+      "relative_h": 188.33,
+      "extracted": {
+        "plaque_cfa_right_cm": [
+          1.1,
+          0.2
+        ],
+        "plaque_cfa_left_cm": [
+          1.4,
+          0.4
+        ],
+        "edema_thigh_right_cm": 2.1,
+        "edema_thigh_left_cm": 2.3,
+        "deep_vein_abnormal_echo": false,
+        "superficial_vein_abnormal_echo": false,
+        "pta_incomplete_occlusion_possible": true
       }
     }
   ]

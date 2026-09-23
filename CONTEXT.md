@@ -7,10 +7,10 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **Prior agent run (Allmond-bound, then continued here):** https://cursor.com/agents/bc-01a0a01a-a6eb-72c7-b052-ba5e14ed8b1b  
 **Conversation summary (current):** [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md)  
 **Conversation summary (through 9/18 13:00 ABG):** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
-**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@8121b90/index.xhtml  
-**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@8121b90/index.xhtml  
+**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@4389a15/index.xhtml  
+**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@4389a15/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
-国内 `@main` 镜像不会跟着 main 走。`8121b90` 才是夜间血气乳酸 1.59、FiO₂ 50%、钾 4.85。
+国内 `@main` 镜像不会跟着 main 走。`4389a15` 才是 10:19 下肢彩超。顶栏是术后188h19m · 下肢彩超。肌酐仍是 423，血气仍是乳酸 2.02、pH 7.327、P/F 167。
 
 ---
 
@@ -45,8 +45,8 @@ Formula: `relative_h = (report_datetime − 2026-09-15 14:00)` in hours.
 
 | Label in Chinese reports | Meaning | Example |
 |--------------------------|---------|---------|
-| **降钙素原 / PCT** (biochem) | **Procalcitonin** ng/mL | 41.1 → 63.4 → 146 → 170 → 102 → 65 → 36.9 → **28.8** |
-| **血小板比积 / PCT** (CBC) | **Plateletcrit** % | 0.08% |
+| **降钙素原 / PCT** (biochem) | **Procalcitonin** ng/mL | 41.1 → 63.4 → 146 → 170 → 102 → 65 → 36.9 → 28.8 → **18.701** |
+| **血小板比积 / PCT** (CBC) | **Plateletcrit** % | latest **0.12%** (was 0.08%) |
 | **氧合指数 pO2(a)/FO2(I)** | PaO₂/FiO₂ | morning ABG **169** |
 
 A low-resolution ABG once caused “PCT 170” confusion with oxygenation index **169**. The **real** procalcitonin 170.297 is on the **2026-09-17 10:52** chemistry panel (same sheet as ALT/AST).
@@ -65,6 +65,7 @@ A low-resolution ABG once caused “PCT 170” confusion with oxygenation index 
 | 2026-09-19 10:03 | postop 92h03m | **65.368** |
 | 2026-09-21 09:18 | postop 139h18m | **36.8855** |
 | 2026-09-22 09:54 | postop 163h54m | **28.783** |
+| 2026-09-23 09:21 | postop 187h21m | **18.701** |
 
 Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 chemistry crop omitted PCT; the replacement screenshot of the **same clock** has it.
 
@@ -91,10 +92,11 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 - Urine overnight **50 mL** was **before** this restart. Family now: **still no urine after CRRT stop**.
 - Vasopressor series: norepinephrine **9 → 6 → 4 → 2 mL/h** (0.45 → 0.30 → 0.20 → **0.10 mg/h**) + dopamine **10 → 8 → 7.5 → 5 mL/h**. Concentration **0.05 mg/mL**. Do not invent dopamine mg/h.
 - **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53 → 10.2 at 06:41 → 9.9 at 18:30**. Evening CBC Hb **101** (19:05) → morning 9/22 **97**. Ask how many units finished.
-- **K:** 3.93 (09:18, on CRRT) → **4.41** (22:50) → **4.49** (09:54 9/22) → **4.85** (21:13 9/22, dry chemistry, ref 3.5–5.3, still in range). Na still **135.77↓** (ref 137–147, not repeated tonight). Cl **96.68**. iCa on 21:03 ABG **0.99** (was 1.00 at 18:30).
-- **Kidney after CRRT stop:** Cr **231 → 320**, urea **22.09 → 31.32** (critical, rechecked). Overnight urine still **0**. Family: CRRT remains on standby and **will be started later**. Not running yet.
+- **K:** 3.93 (09:18, on CRRT) → **4.41** (22:50) → **4.49** (09:54 9/22) → **4.85** (21:13 9/22) → **5.09** (09:21 9/23, ref 3.5–5.3, still in range, near the ceiling). Na **135.77 → 130.76↓** (ref 137–147). Cl **96.68 → 94.37↓** (now below 96–108). iCa on 06:38 ABG still **0.98**.
+- **Kidney after CRRT stop:** Cr **320 → 423**, urea **31.32 → 41.03** (critical, rechecked). Overnight urine still **0**. Family: CRRT remains on standby and **will be started later**. Not running yet. No new urine with the 9/23 morning labs.
+- **Ultrasound 2026-09-23 10:19 (postop 188h19m):** bilateral lower-extremity arterial and venous color Doppler. Impression, in the report’s words: atherosclerosis with multiple plaques; **possible incomplete occlusion of both posterior tibial arteries**; subcutaneous edema. Larger plaques at the common femoral arteries, low/weak echo, about **1.1×0.2 cm (right)** and **1.4×0.4 cm (left)**. Left PTA and the distal right PTA show only intermittent punctate flow; other arteries fill well. PTA spectra are biphasic with reduced velocity; the other spectra are triphasic and within the stated normal velocity range. Accompanying deep veins and superficial veins in the scanned field: flow fills satisfactorily, **no abnormal echo**. The report does not write thrombus. Thigh subcutaneous thickness about **2.1 cm (right)** and **2.3 cm (left)**. This replaces the same-morning oral “ultrasound in progress.”
 - **Stool:** microscopy WBC/RBC negative (oral). FOBT immunoassay **positive** 18:32 9/21. Family 9/22: **3 stools yesterday, dark brown / 黑褐色**. They will keep watching and testing for GI bleeding. Color plus FOBT does not quantify or localize.
-- **Watch next:** whether pressors and the ventilator can actually be weaned (FiO₂ went **45 → 50%** tonight); CRRT vs dialysis; urine; Na; dark stool; WBC **20.86**; lactate **1.59** still in range but against the 1.6 ceiling; BE **−4.9**; K **4.85**.
+- **Watch next:** posterior tibial flow and anticoagulation versus dark stool; Cr **423** and urea **41.03** critical with anuria; lactate **2.02** and pH **7.327**; K **5.09** near the ceiling; Na **130.76** and Cl **94.37**; WBC **24.97** up while PCT **18.701** still falling; FiO₂ still **50%**, P/F **167**.
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -144,6 +146,35 @@ None of these clocks existed in the labeled testset before this batch.
 - **Chemistry 9/15 16:44 (postop 2h44m):** ALT **719↑**, AST **1142↑**, AST/ALT **1.52**, TBIL **7.0**, ALB **23.1↓**, Cr **206↑**, urea **16.30↑**, K **4.775**, Na **140.855**, Cl **108.133↑**, PCT **63.3677↑** (rechecked). Keep separate from the **2.87** CK-only panel (CK 5657). Duplicate upload `01a0c89f-7a65` is identical sha/bytes; `preferred: false`, `superseded_by` the `79ef` file.
 - Albumin series is now **37.71 → 23.1 → 29.3 → 35.8**. Liver **23/49 → 719/1142 → 891/806 → 159/82**.
 - Screenshots: `testset/reports/cbc/20260914T152116__01a0c89f-7a1b-7fcb-82fa-afe627c9729a.jpg`, `testset/reports/cbc/20260915T060530__01a0c89f-7a09-78c0-bc0f-9d527d418b19.jpg`, `testset/reports/chemistry/20260915T094954__01a0c89f-7a2e-7658-8eb2-e5f88d112dfd.jpg`, `testset/reports/other/20260915T112144__01a0c89f-7a43-7464-9aa1-2bb185e6541f.jpg`, `testset/reports/cbc/20260915T154907__01a0c89f-7a54-743c-9851-ef39870f4fc5.jpg`, `testset/reports/chemistry/20260915T164416__01a0c89f-79ef-7e7a-8dc4-54586c128826.jpg` (preferred)
+
+### Morning labs — 2026-09-23 09:06–09:26 (postop 187h06m–187h26m)
+
+- **CBC 09:06:** WBC **24.97↑** (was 20.86), RBC **2.94↓**, Hb **94.0↓** g/L (was 97), HCT **26.6↓**, PLT **94.00↓** (was 70, still low), LYMPH% **2.6↓**, MONO% **2.6↓**, NEUT% **94.7↑**, NEUT# **23.65↑**, LYMPH# **0.65↓**, EOS% **0.0↓**. Plateletcrit **0.12%↓** (ref 0.17–0.35) is not procalcitonin.
+- **Chemistry 09:21:** K **5.09** (ref 3.5–5.3, in range, not flagged; was 4.85), Na **130.76↓** (was 135.77), Cl **94.37↓** (was 96.68, now below 96–108), urea **41.03** critical and rechecked (was 31.32; ref 3.1–8.8), Cr **423.0↑** (was 320; ref 41–81), PCT **18.701↑** ng/mL (was 28.783; procalcitonin, ref 0–0.05).
+- **Coag 09:26:** APTT **33.0↑** sec. This sheet’s ref is **23.3–32.5**, not 21–45, so 33.0 is still high (was 40.2). TT **16.9**, PT **12.4**, PT% **84.5**, INR **1.10**, Fbg **3.44** — in range on this sheet.
+- **Oral, same morning, before the report:** ultrasound was in progress for lower-extremity veins. The formal study is the 10:19 Doppler below. No new urine on these sheets.
+- **Judgment:** creatinine and urea rose further after CRRT remained on standby with no urine. Potassium did not leave 3.5–5.3. Sodium and chloride are both below range. WBC rose again while procalcitonin kept falling. CBC Hb eased 97→94; do not equate with ABG Hb 9.8. PLT rose 70→94 and is still low. APTT improved numerically and remains above this lab’s tighter range. The chemistry clock was the hero until the 10:19 Doppler.
+- Screenshots: `testset/reports/cbc/20260923T090633__A7C6CB55-580E-4D0F-9970-67133DFB6429_L0_001.jpg`, `testset/reports/chemistry/20260923T092110__B95B724A-68C8-4F31-A6C6-8B453F6710C4_L0_001.jpg`, `testset/reports/coag/20260923T092632__79733D1D-DCFB-4502-B0A8-67B838117C8D_L0_001.jpg`
+
+### Lower-extremity Doppler — 2026-09-23 10:19 (postop 188h19m)
+
+- Study: bilateral lower-extremity arterial and venous color Doppler.
+- **Impression:** atherosclerosis with multiple plaques; possible incomplete occlusion of both posterior tibial arteries; subcutaneous tissue thickened by edema. Keep the word **可能**.
+- Plaques: several along the visualized arteries. The larger ones are in the common femoral arteries, low/weak echo, about **1.1 cm × 0.2 cm (right)** and **1.4 cm × 0.4 cm (left)**.
+- Flow: left posterior tibial artery and the distal right posterior tibial artery show only intermittent punctate signals. Other arteries fill well. PTA waveforms are biphasic with reduced velocity. Remaining waveforms are triphasic, velocities described as within normal range from proximal to distal.
+- Veins: accompanying deep veins and superficial veins in the displayed field fill satisfactorily and have **no abnormal echo**. The report does not write thrombus. Do not widen that into a whole-body exclusion.
+- Edema: thicker at the thighs, about **2.1 cm (right)** and **2.3 cm (left)**.
+- **Judgment:** this is the formal result of the morning ultrasound. Hero pill follows this clock (**术后188h19m · 下肢彩超**, h 188.33), newer than chemistry 187.35. Creatinine 423 stays on the kidney card. No new labs, urine, or pressor dose on this sheet.
+- Screenshot: `testset/reports/imaging/20260923T101955__AA4638F0-E1EE-4DA9-A6B2-0D0D16BD5962_L0_001.jpg`
+
+### Morning ABG — 2026-09-23 06:38 (postop 184h38m)
+
+- pH **7.327↓** (was 7.402), PCO₂ **34.90↓**, PO₂ **83.50**, HCO₃⁻ **17.90↓**, ABE **−8.10** (SBE −7.40)
+- Lactate **2.02↑** (was **1.59**; ref 0.5–1.6)
+- FiO₂ still **50%**. P/F **167** (printed pO2(a,T)/FO2(I); was 159). This 167 is oxygenation index, not PCT.
+- Hb **9.80↓** g/dL (was 10.20), Hct **29%**, iCa **0.98↓**, sO₂ 94.9%
+- **Judgment:** lactate left the reference again. pH left 7.35–7.45 and the base deficit roughly doubled versus last night (−4.9 → −8.1). PO₂ itself is inside 80–100, but P/F 167 on 50% oxygen is still far below 400. Do not equate ABG 9.8 with later CBC Hb 94. No potassium, creatinine, WBC, urine, or pressor dose on this sheet. This arterial clock was the hero until the 09:21 chemistry (Cr 423) replaced it.
+- Screenshot (3520×3772): `testset/reports/abg/20260923T063825__95415F20-A766-4C47-A73D-FE4CD95D5808_L0_001.jpg`
 
 ### Night ABG + potassium — 2026-09-22 21:03 / 21:13 (postop 175h03m / 175h13m)
 
@@ -328,6 +359,7 @@ Built on the other agents' mainland `index.xhtml` pipeline (`5131212`). Clinical
 | 2026-09-21 09:16 | **19.40** | **100** | **60** | HCT 27.6; neut% **93.5** / neut 18.14; lymph 0.50; plateletcrit **0.08%** (not procalcitonin) |
 | 2026-09-21 19:05 | **18.61** | **101** | **69** | HCT 28.6; neut% **94.4** / neut 17.57; lymph 0.80; plateletcrit **0.08%** (not procalcitonin) |
 | 2026-09-22 08:28 | **20.86** | **97** | **70** | HCT 26.2; neut% **94.6** / neut 19.73; lymph 0.65; plateletcrit **0.08%** (not procalcitonin) |
+| 2026-09-23 09:06 | **24.97** | **94** | **94** | HCT 26.6; neut% **94.7** / neut 23.65; lymph 0.65; plateletcrit **0.12%** (not procalcitonin) |
 
 Screenshot: `testset/reports/cbc/20260920T082350__AB9B583D-80E7-4A01-8AB1-2BC6564410ED_L0_001.jpg`
 
@@ -402,4 +434,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-22 night — ABG 21:03 lactate **1.59** (still in range), FiO₂ back to **50%**, P/F **159**, ABE **−4.9**, Hb **10.2**, iCa **0.99**. K 21:13 **4.85** (in range). Hero follows the potassium clock (**术后175h13m · 钾 4.85**). Morning WBC 20.86 and Cr 320 unchanged. Bedside last oral: NE **2**, DA **5**, BP **113/35**.
+**Last updated:** 2026-09-23 10:19 lower-extremity Doppler — deep and scanned superficial veins: satisfactory fill, no abnormal echo; report does not write thrombus. Common-femoral plaques about **1.1×0.2 cm right** and **1.4×0.4 cm left**. Impression includes possible incomplete occlusion of both posterior tibial arteries, and thigh edema about **2.1 / 2.3 cm**. Hero pill **术后188h19m · 下肢彩超**. Morning labs unchanged: Cr **423**, urea **41.03**, WBC **24.97**, PCT **18.701**, APTT **33.0**. ABG still lactate **2.02**, pH **7.327**, P/F **167**.
