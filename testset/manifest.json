@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 119,
+  "count": 120,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2074,6 +2074,35 @@
         "pt_pct": 84.5,
         "inr": 1.1,
         "fbg": 3.44
+      }
+    },
+    {
+      "id": "20260923T101955__AA4638F0-E1EE-4DA9-A6B2-0D0D16BD5962_L0_001.jpg",
+      "path": "reports/imaging/20260923T101955__AA4638F0-E1EE-4DA9-A6B2-0D0D16BD5962_L0_001.jpg",
+      "category": "imaging",
+      "source_filename": "AA4638F0-E1EE-4DA9-A6B2-0D0D16BD5962_L0_001.jpg",
+      "sha256_16": "2b909b11f0fa9911",
+      "bytes": 420732,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-23T10:19:55",
+      "type": "下肢动静脉彩超",
+      "note": "Atherosclerosis with plaques. CFA larger plaques R 1.1x0.2 cm L 1.4x0.4 cm. Possible incomplete occlusion of bilateral PTA. Deep and displayed superficial veins: satisfactory fill, no abnormal echo; report does not write thrombus. Subcutaneous edema thigh R 2.1 cm L 2.3 cm",
+      "relative_h": 188.33,
+      "extracted": {
+        "plaque_cfa_right_cm": [
+          1.1,
+          0.2
+        ],
+        "plaque_cfa_left_cm": [
+          1.4,
+          0.4
+        ],
+        "edema_thigh_right_cm": 2.1,
+        "edema_thigh_left_cm": 2.3,
+        "deep_vein_abnormal_echo": false,
+        "superficial_vein_abnormal_echo": false,
+        "pta_incomplete_occlusion_possible": true
       }
     }
   ]

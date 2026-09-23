@@ -1025,7 +1025,7 @@
       <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
-        <span class="pill" id="latestTimePill">最新化验：术后187h21m · 肌酐 423</span>
+        <span class="pill" id="latestTimePill">最新检查：术后188h19m · 下肢彩超</span>
         <span class="pill">数据已去标识化</span>
       </div>
     </header>
@@ -1108,7 +1108,7 @@
             <span class="level">这张参考仍高</span>
           </div>
           <div class="status-value">33.0<span class="status-unit">APTT</span></div>
-          <div class="status-note">40.2→<strong>33.0</strong> · 本份参考23.3–32.5<br/>INR 1.10 · 下肢静脉B超进行中</div>
+          <div class="status-note">40.2→<strong>33.0</strong> · 本份参考23.3–32.5<br/>INR 1.10 · 下肢彩超已出</div>
         </div>
         <button class="status-card orange" type="button" data-metric-jump="hbg">
           <div class="status-top">
@@ -1167,16 +1167,16 @@
         </div>
         <div class="insights">
           <div class="insight">
+            <strong>下肢彩超：深浅静脉未见异常回声</strong>
+            <p>10:19双侧下肢动静脉彩超。伴行深静脉和显示范围内浅静脉血流充盈满意，报告没有写血栓。股总动脉较大斑块约右<strong>1.1×0.2 cm</strong>、左<strong>1.4×0.4 cm</strong>。结论写了动脉粥样硬化伴多发斑块，双侧胫后动脉不完全闭塞可能。大腿皮下水肿约右2.1 cm、左2.3 cm。</p>
+          </div>
+          <div class="insight">
             <strong>肌酐320→423，尿素升到41.03危急</strong>
-            <p>尿素危急值已复查。钾4.85→<strong>5.09</strong>，仍在3.5–5.3。钠<strong>130.76</strong>、氯<strong>94.37</strong>都低于参考。过夜尿仍为0，CRRT仍待命。正在做下肢静脉B超，看有没有血栓；动脉有些斑块，还没有正式报告。</p>
+            <p>尿素危急值已复查。钾4.85→<strong>5.09</strong>，仍在3.5–5.3。钠<strong>130.76</strong>、氯<strong>94.37</strong>都低于参考。过夜尿仍为0，CRRT仍待命。</p>
           </div>
           <div class="insight">
-            <strong>白细胞20.86→24.97，降钙素原仍在降</strong>
-            <p>中性粒<strong>94.7%</strong>，绝对值23.65。降钙素原28.783→<strong>18.701</strong>（参考0–0.05），继续下降，仍然很高。血常规血小板比积0.12%不是降钙素原。血常规Hb 97→<strong>94</strong>，血小板70→<strong>94</strong>仍低。</p>
-          </div>
-          <div class="insight">
-            <strong>乳酸今晨仍是2.02，pH 7.327</strong>
-            <p>没有更新的血气。pH已低于7.35，HCO₃⁻ 17.9、ABE −8.1。FiO₂仍<strong>50%</strong>，P/F <strong>167</strong>（氧合指数，不是降钙素原）。血气Hb仍9.8，iCa 0.98。APTT 40.2→<strong>33.0</strong>，这张参考23.3–32.5，仍标高。</p>
+            <strong>白细胞20.86→24.97，乳酸今晨仍是2.02</strong>
+            <p>中性粒<strong>94.7%</strong>。降钙素原28.783→<strong>18.701</strong>仍在降，仍然很高。血小板比积0.12%不是降钙素原。没有更新的血气：pH <strong>7.327</strong>，P/F <strong>167</strong>（氧合指数）。APTT <strong>33.0</strong>，这张参考23.3–32.5，仍标高。</p>
           </div>
         </div>
       </div>
@@ -1301,9 +1301,9 @@
           <span class="vital-note">仍待命。赵医生：只剩肾脏时<br/>可能转透析并离开ICU</span>
         </div>
         <div class="vital-row">
-          <span class="vital-time">下肢B超 · 进行中</span>
-          <span class="vital-value">看静脉有没有血栓</span>
-          <span class="vital-note">动脉有些斑块<br/>还没有正式报告</span>
+          <span class="vital-time">下肢彩超 · 10:19</span>
+          <span class="vital-value">深浅静脉未见异常回声</span>
+          <span class="vital-note">股总斑块 右1.1×0.2 左1.4×0.4 cm<br/>胫后动脉不完全闭塞可能</span>
         </div>
         <div class="vital-row">
           <span class="vital-time">输血 / 补钾</span>
@@ -1321,6 +1321,24 @@
         </div>
       </div>
       <div class="report-grid">
+        <details class="report" open="open">
+          <summary>
+            <div>
+              <div class="report-title">下肢动静脉彩超</div>
+              <div class="report-meta">术后188h19m · 9月23日10:19</div>
+            </div>
+            <span class="report-badge orange">动脉斑块</span>
+          </summary>
+          <div class="report-body">
+            <ul>
+              <li>项目：双侧下肢动静脉彩超。检查结果原文：<strong>双下肢动脉粥样硬化伴多发斑块形成</strong>；<strong>双侧胫后动脉不完全闭塞可能</strong>；<strong>双侧下肢皮下组织水肿增厚</strong>。</li>
+              <li>动脉：股总、股浅、股深、腘、胫前、胫后、腓及足背动脉显示清晰。内壁数个斑块样回声，较大位于股总动脉，低弱回声，约 <strong>1.1×0.2 cm（右）</strong>、<strong>1.4×0.4 cm（左）</strong>。</li>
+              <li>血流：左侧胫后动脉，以及右侧胫后动脉下段，仅见断续点状血流。其余动脉充盈良好。双侧胫后动脉频谱为双相波、流速减低；其余为三相波，流速在正常范围。</li>
+              <li>静脉：各伴行深静脉血流充盈满意，未见异常回声。显示范围内浅静脉血流充盈满意，内未见异常回声。报告没有写血栓。这是本次扫查范围里的描述。</li>
+              <li>皮下组织水肿增厚，较厚在大腿段，约 <strong>2.1 cm（右）</strong>、<strong>2.3 cm（左）</strong>。</li>
+            </ul>
+          </div>
+        </details>
         <details class="report" open="open">
           <summary>
             <div>
@@ -1376,7 +1394,7 @@
               <li>9月21日11:07：APTT <strong>51.8</strong>秒↑（参考21–45）。</li>
               <li>9月21日19:20：APTT <strong>48.8</strong>秒↑（那张参考21–45）。TT 14.4、PT 11.7、INR 0.977、纤维蛋白原 4.37。</li>
               <li>9月22日09:15：APTT <strong>40.2</strong>秒↑。这张参考是<strong>23.3–32.5</strong>，不是21–45。TT 16.5、PT 12.7、INR 1.13、纤维蛋白原 3.22，均在本份参考内。</li>
-              <li>最新（9月23日09:26 · 术后187h26m）：APTT <strong>33.0</strong>秒↑。这张参考仍是<strong>23.3–32.5</strong>，所以33.0仍被标高。TT 16.9、PT 12.4、PT% 84.5、INR <strong>1.10</strong>、纤维蛋白原 3.44，均在本份参考内。正在做下肢静脉B超，看有没有血栓；动脉有些斑块。还没有正式报告。</li>
+              <li>最新（9月23日09:26 · 术后187h26m）：APTT <strong>33.0</strong>秒↑。这张参考仍是<strong>23.3–32.5</strong>，所以33.0仍被标高。TT 16.9、PT 12.4、PT% 84.5、INR <strong>1.10</strong>、纤维蛋白原 3.44，均在本份参考内。同日10:19下肢彩超已出，见影像汇总。</li>
             </ul>
           </div>
         </details>
@@ -1906,7 +1924,12 @@
         <article class="event" style="--event-color: var(--blue)">
           <div class="event-time">家属更新 · 约术后187小时 · 9月23日上午</div>
           <div class="event-title">正在做下肢静脉B超，看有没有血栓</div>
-          <div class="event-desc">动脉有些斑块。还没有正式报告，不能写成有或没有血栓，斑块位置和程度也没有。尿量没有新口述。</div>
+          <div class="event-desc">动脉有些斑块。当时还没有正式报告。尿量没有新口述。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后188小时19分 · 9月23日10:19</div>
+          <div class="event-title">下肢彩超：深浅静脉未见异常回声；胫后动脉不完全闭塞可能</div>
+          <div class="event-desc">股总动脉较大斑块约右1.1×0.2 cm、左1.4×0.4 cm。结论：动脉粥样硬化伴多发斑块，双侧胫后动脉不完全闭塞可能，皮下水肿增厚（大腿约右2.1 cm、左2.3 cm）。报告没有写血栓。</div>
         </article>
       </div>
     </section>
@@ -2186,7 +2209,7 @@
     let selectedRange = "all";
     const customKey = "perioperative-dashboard-custom-v1";
     const questionKey = "perioperative-dashboard-questions-v1";
-    const latestNonBloodGasReport = { h: 187.35, label: "术后187h21m · 肌酐 423", type: "生化" };
+    const latestNonBloodGasReport = { h: 188.33, label: "术后188h19m · 下肢彩超", type: "影像" };
     const doctorQuestions = [
       {
         id: "bleeding",
@@ -2228,7 +2251,7 @@
         id: "next-window",
         group: "urgent",
         title: "肌酐已到423、尿素危急，CRRT什么时候开？",
-        detail: "过夜尿量仍为0。320→423，尿素41.03危急。CRRT仍待命。赵医生说若升压药和呼吸机都能撤、只剩肾脏，可能离开ICU并转向透析。钾5.09仍在3.5–5.3。钠130.76、氯94.37都低于参考。正在做下肢静脉B超，结果还没有。黑褐色便还要同时盯出血。"
+        detail: "过夜尿量仍为0。320→423，尿素41.03危急。CRRT仍待命。赵医生说若升压药和呼吸机都能撤、只剩肾脏，可能离开ICU并转向透析。钾5.09仍在3.5–5.3。钠130.76、氯94.37都低于参考。黑褐色便还要同时盯出血。"
       },
       {
         id: "kidney",
@@ -2239,8 +2262,8 @@
       {
         id: "coagulation",
         group: "followup",
-        title: "APTT降到33.0，但这张参考仍标高；下肢静脉B超在查血栓，抗凝怎么调？",
-        detail: "09:26这张参考23.3–32.5，不是21–45。40.2→33.0仍标高。INR 1.10、纤维蛋白原3.44在参考内。正在做下肢静脉B超，看有没有血栓；动脉有些斑块，位置和程度还没有报告。昨天黑褐色便3次，隐血已阳性。用的是肝素、枸橼酸还是无抗凝？"
+        title: "下肢彩超已出，胫后动脉有不完全闭塞可能，抗凝怎么调？",
+        detail: "10:19双侧下肢动静脉彩超。伴行深静脉和显示范围内浅静脉血流充盈满意、未见异常回声，报告没有写血栓。股总动脉较大斑块约右1.1×0.2 cm、左1.4×0.4 cm。结论还有动脉粥样硬化伴多发斑块、双侧胫后动脉不完全闭塞可能、皮下水肿右2.1 cm左2.3 cm。APTT 33.0这张参考仍标高，INR 1.10。黑褐色便和隐血阳性还在。抗凝用什么、要不要因胫后动脉或出血调整？"
       },
       {
         id: "infection",
@@ -2634,9 +2657,10 @@
       const latest = arterial.at(-1);
       if (!latest) return;
       const bloodGasIsNewer = latest.h > latestNonBloodGasReport.h;
+      const nonAbgPrefix = latestNonBloodGasReport.type === "影像" ? "最新检查" : "最新化验";
       document.getElementById("latestTimePill").textContent = bloodGasIsNewer
         ? `最新：${latest.label || relativeLabel(latest.h)}`
-        : `最新化验：${latestNonBloodGasReport.label}`;
+        : `${nonAbgPrefix}：${latestNonBloodGasReport.label}`;
       const lastLac = [...arterial].reverse().find(d => d.lactate != null);
       if (lastLac) document.getElementById("latestLactate").textContent = Number(lastLac.lactate).toFixed(2);
       if (latest.pf != null) document.getElementById("latestPf").textContent = Math.round(latest.pf);
