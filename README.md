@@ -46,7 +46,7 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 - **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@4389a15/index.xhtml
 - 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@4389a15/index.xhtml
 
-灌注卡应是乳酸 **2.02**，酸碱卡 pH **7.327**，氧合卡 **P/F 167**。肾功能卡应是肌酐 **423**。顶栏应是 **最新检查：术后188h19m · 下肢彩超**。若顶栏还是肌酐 423，打开的还是旧镜像。下次更新后把 `4389a15` 换成新提交号，不要改回 `@main`。
+灌注卡应是乳酸 **2.02**，酸碱卡 pH **7.327**，氧合卡 **P/F 167**。肾功能卡应是肌酐 **423**，备注血滤约14:00已开。循环卡应是 **96/36**。顶栏应是 **最新口述：术后193h45m · 血压 96/36**。若顶栏还是下肢彩超或肌酐 423，打开的还是旧镜像。下次更新后把 `4389a15` 换成新提交号，不要改回 `@main`。
 
 微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。
 
