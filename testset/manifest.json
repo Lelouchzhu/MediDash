@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 124,
+  "count": 126,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2216,6 +2216,40 @@
         "so2": 95.2,
         "temp": 36.6,
         "pf_ratio_row": 0.21
+      }
+    },
+    {
+      "id": "20260923T210238__3EFC5D57-59E1-4D64-8C7C-1C958D14D8D8_L0_001.jpg",
+      "path": "reports/chemistry/20260923T210238__3EFC5D57-59E1-4D64-8C7C-1C958D14D8D8_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "3EFC5D57-59E1-4D64-8C7C-1C958D14D8D8_L0_001.jpg",
+      "sha256_16": "036b104ae3ffbe7d",
+      "bytes": 323191,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-23T21:02:38",
+      "type": "生化",
+      "note": "Dry chemistry K 4.65 mmol/L, ref 3.5-5.3, no abnormal flag. Phone status bar 10:02 is not the report clock",
+      "relative_h": 199.04,
+      "extracted": {
+        "k": 4.65
+      }
+    },
+    {
+      "id": "20260923T210612__F0B5E2F9-231B-4896-8347-D48C02FFD46B_L0_001.jpg",
+      "path": "reports/coag/20260923T210612__F0B5E2F9-231B-4896-8347-D48C02FFD46B_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "F0B5E2F9-231B-4896-8347-D48C02FFD46B_L0_001.jpg",
+      "sha256_16": "bb7ac171daa5f4e6",
+      "bytes": 329560,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-23T21:06:12",
+      "type": "凝血",
+      "note": "APTT 41.1 sec, this sheet ref 21-45, no abnormal flag. Not the morning sheet ref 23.3-32.5. Phone status bar 10:03 is not the report clock. Only APTT on this sheet",
+      "relative_h": 199.1,
+      "extracted": {
+        "aptt": 41.1
       }
     }
   ]
