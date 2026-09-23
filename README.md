@@ -56,7 +56,7 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 固定启动页（带后台轮询，不依赖 tag 缓存）：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@66f48c1/index.xhtml
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@978380d/index.xhtml
 
 `@upload` 只作备用入口，可能更新较慢：
 

@@ -3,18 +3,20 @@
 只用于功能分支 `cursor/mainland-lab-upload-b98e`，**不改、不合并
 `main`**。上传版页面：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@66f48c1/index.xhtml
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@978380d/index.xhtml
 
 这是带后台轮询能力的固定启动页。不要用可变 `@upload` 作为首次入口。
 
-本分支已经同步到 main 的 2026-09-22 夜间数据。打开后应看到：
+本分支已经同步到 main 的 2026-09-23 10:19 下肢彩超。打开后应看到：
 
-- 最新：术后 175h13m，钾 **4.85**
-- 夜间血气：乳酸 **1.59**，FiO₂ **50%**，P/F **159**
-- WBC **20.86**，肌酐 **320**，PCT **28.783**
-- 床旁：BP **113/35**，去甲 **2 mL/h**，多巴胺 **5 mL/h**
+- 最新检查：术后 188h19m，**下肢彩超**
+- 晨间血气：乳酸 **2.02**，pH **7.327**，FiO₂ **50%**，P/F **167**
+- WBC **24.97**，肌酐 **423**，PCT **18.701**，APTT **33.0**
+- K **5.09**，Na **130.76**，Cl **94.37**
+- 彩超：报告未写血栓；双侧胫后动脉不完全闭塞可能
+- 最近床旁仍为 BP **113/35**、去甲 **2 mL/h**、多巴胺 **5 mL/h**
 
-若仍是 APTT 48.8 / WBC 18.61，打开的是旧缓存。
+若顶栏仍是钾 4.85 或肌酐 423、没有下肢彩超，打开的是旧页面。
 
 ## 1. 资源设计
 
@@ -209,7 +211,7 @@ Invoke-RestMethod `
 
 第一次打开固定启动页：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@66f48c1/index.xhtml
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@978380d/index.xhtml
 
 点击 **上传化验**，填写：
 
