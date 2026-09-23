@@ -10,7 +10,7 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@1226786/index.xhtml  
 **备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@1226786/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
-国内 `@main` 镜像不会跟着 main 走。`1226786` 才是 9月23日20:50血气。顶栏是最新：术后198h50m。乳酸 1.18，pH 7.345，P/F 139，钾 4.71。肌酐仍是 423。
+国内 `@main` 镜像不会跟着 main 走。`1226786` 是 main 上 9月23日21:06 凝血页。顶栏是最新化验：术后199h06m · APTT 41.1（本份参考 21–45，没有标异常）。乳酸 1.18，pH 7.345，P/F 139，钾 4.65。肌酐仍是 423。血压仍是 15:45 的 96/36。
 
 ---
 
