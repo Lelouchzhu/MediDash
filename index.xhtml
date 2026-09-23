@@ -1025,7 +1025,7 @@
       <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
-        <span class="pill" id="latestTimePill">最新口述：术后193h45m · 血压 96/36</span>
+        <span class="pill" id="latestTimePill">最新：术后198h50m</span>
         <span class="pill">数据已去标识化</span>
       </div>
     </header>
@@ -1054,29 +1054,29 @@
           <div class="status-value">96/36</div>
           <div class="status-note">脉搏<strong>86</strong> · 呼吸<strong>13</strong><br/>去甲仍<strong>2</strong> · 多巴胺仍<strong>5</strong></div>
         </button>
-        <button class="status-card red" type="button" data-metric-jump="lactate">
+        <button class="status-card orange" type="button" data-metric-jump="lactate">
           <div class="status-top">
             <span class="status-name">组织灌注</span>
-            <span class="level">再次高出参考</span>
+            <span class="level">回到参考</span>
           </div>
-          <div class="status-value"><span id="latestLactate">2.02</span><span class="status-unit">mmol/L</span></div>
-          <div class="status-note">1.59→<strong>2.02</strong> · 又高出0.5–1.6<br/>BE更负：−4.9→−8.1</div>
+          <div class="status-value"><span id="latestLactate">1.18</span><span class="status-unit">mmol/L</span></div>
+          <div class="status-note">2.02→1.16→1.29→<strong>1.18</strong><br/>已回到0.5–1.6 · BE −4.7</div>
         </button>
         <button class="status-card red" type="button" data-metric-jump="pf">
           <div class="status-top">
             <span class="status-name">氧合</span>
             <span class="level">仍低</span>
           </div>
-          <div class="status-value"><span id="latestPf">167</span><span class="status-unit">P/F</span></div>
-          <div class="status-note">FiO₂ 仍<strong>50%</strong> · PO₂ 83.5<br/>159→167 · 167是氧合指数不是PCT</div>
+          <div class="status-value"><span id="latestPf">139</span><span class="status-unit">P/F</span></div>
+          <div class="status-note">FiO₂ <strong>50→60%</strong> · PO₂ 83.6<br/>167→155→140→<strong>139</strong> · 139是氧合指数</div>
         </button>
         <button class="status-card red" type="button" data-metric-jump="hco3">
           <div class="status-top">
             <span class="status-name">酸碱</span>
-            <span class="level">低于参考</span>
+            <span class="level">仍低于7.35</span>
           </div>
-          <div class="status-value"><span id="latestPh">7.327</span><span class="status-unit">pH</span></div>
-          <div class="status-note">HCO₃⁻ 19.9→<strong>17.9</strong> · BE −8.1<br/>7.402→7.327，已低于7.35</div>
+          <div class="status-value"><span id="latestPh">7.345</span><span class="status-unit">pH</span></div>
+          <div class="status-note">7.298→7.301→<strong>7.345</strong><br/>HCO₃⁻ <strong>21.0</strong> · BE −4.7</div>
         </button>
         <div class="status-card orange">
           <div class="status-top">
@@ -1113,11 +1113,11 @@
         <button class="status-card orange" type="button" data-metric-jump="hbg">
           <div class="status-top">
             <span class="status-name">血红蛋白 / 钙</span>
-            <span class="level">血气9.8</span>
+            <span class="level">血气10.2</span>
           </div>
-          <div class="status-value">9.8<span class="status-unit">g/dL</span></div>
-          <span id="latestHb" hidden="hidden">9.8</span>
-          <div class="status-note">血气仍<strong>9.8</strong> · 血常规97→<strong>94</strong><br/>iCa 0.98 · 钾4.85→<strong>5.09</strong></div>
+          <div class="status-value">10.2<span class="status-unit">g/dL</span></div>
+          <span id="latestHb" hidden="hidden">10.2</span>
+          <div class="status-note">血气9.7→9.8→<strong>10.2</strong> · 血常规<strong>94</strong><br/>iCa <strong>1.04</strong> · 钾5.09→<strong>4.71</strong></div>
         </button>
       </div>
     </section>
@@ -1172,11 +1172,11 @@
           </div>
           <div class="insight">
             <strong>肌酐320→423，尿素升到41.03危急</strong>
-            <p>尿素危急值已复查。钾4.85→<strong>5.09</strong>，仍在3.5–5.3。钠<strong>130.76</strong>、氯<strong>94.37</strong>都低于参考。15:45仍无尿。血滤约<strong>14:00</strong>已开，流速和脱水量没有说。</p>
+            <p>尿素危急值已复查。16:47钾5.09→<strong>4.71</strong>，仍在3.5–5.3，没有标异常。钠<strong>130.76</strong>、氯<strong>94.37</strong>还是今晨的数。15:45仍无尿。血滤约<strong>14:00</strong>已开，流速和脱水量没有说。肌酐没有重抽。</p>
           </div>
           <div class="insight">
-            <strong>白细胞20.86→24.97，乳酸今晨仍是2.02</strong>
-            <p>中性粒<strong>94.7%</strong>。降钙素原28.783→<strong>18.701</strong>仍在降，仍然很高。血小板比积0.12%不是降钙素原。没有更新的血气：pH <strong>7.327</strong>，P/F <strong>167</strong>（氧合指数）。APTT <strong>33.0</strong>，这张参考23.3–32.5，仍标高。</p>
+            <strong>乳酸回到1.18，P/F降到139</strong>
+            <p>中性粒<strong>94.7%</strong>。降钙素原28.783→<strong>18.701</strong>仍在降，仍然很高。血小板比积0.12%不是降钙素原。20:50乳酸<strong>1.18</strong>已回到0.5–1.6。pH <strong>7.345</strong>仍低于7.35。FiO₂ <strong>60%</strong>，P/F <strong>139</strong>（氧合指数，不是单子上0.21那一行，也不是降钙素原）。APTT <strong>33.0</strong>仍是今晨那张。</p>
           </div>
         </div>
       </div>
@@ -1367,7 +1367,7 @@
             <ul>
               <li>降钙素原：术前4h10m <strong>41.1266</strong> → 术后2h44m <strong>63.3677</strong> → 9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> → 9月19日10:03 <strong>65.368</strong> → 9月21日09:18 <strong>36.8855</strong> → 9月22日09:54 <strong>28.783</strong> → 9月23日09:21 <strong>18.701</strong> ng/mL（参考0–0.05）。从峰值继续回落，仍极高。这是降钙素原，不是血常规血小板比积。</li>
               <li>IL-6 981 → 最新<strong>68.5</strong> pg/mL（9月21日09:18，参考0–7），较峰值明显回落，仍远高于参考。CRP 术前<strong>86.80</strong> → 9月21日09:18 <strong>97.70</strong> mg/L（参考0–8）。</li>
-              <li>乳酸峰值8.99 → 9月22日21:03 <strong>1.59</strong> → 9月23日06:38 <strong>2.02</strong>（又高出0.5–1.6）。P/F 159→<strong>167</strong>（FiO₂仍<strong>50%</strong>，是氧合指数不是降钙素原）。pH 7.402→<strong>7.327</strong>↓，HCO₃⁻ 17.9↓、ABE −8.1。15:45口述血压<strong>96/36</strong>、脉搏<strong>86</strong>、呼吸<strong>13</strong>。升压药仍是<strong>去甲2 + 多巴胺5 mL/h</strong>（去甲=0.10 mg/h）。呼吸正压15–18是9月22日16:11那句，今天下午没有新的呼吸机数字。</li>
+              <li>乳酸峰值8.99 → 9月23日06:38 <strong>2.02</strong> → 16:27 <strong>1.16</strong> → 17:43 <strong>1.29</strong> → 20:50 <strong>1.18</strong>（回到0.5–1.6）。P/F 167→155→140→<strong>139</strong>（FiO₂ <strong>50%→60%</strong>，139是氧合指数，不是降钙素原，也不是单子上0.21那一行）。pH 7.327→7.298→<strong>7.345</strong>↓，HCO₃⁻ 21.0↓、ABE −4.7。15:45口述血压<strong>96/36</strong>、脉搏<strong>86</strong>、呼吸<strong>13</strong>，傍晚没有新的血压。升压药仍是当时的<strong>去甲2 + 多巴胺5 mL/h</strong>。呼吸正压15–18仍是9月22日16:11那句。</li>
               <li>白细胞术前11.67→术后1h 6.97→13.17→17.42→19.40→18.61→20.86→最新<strong>24.97</strong>（9月23日09:06），中性粒<strong>94.7%</strong>（绝对值23.65）。再升，仍很高。血常规“PCT 0.12%”是血小板比积，不是降钙素原。</li>
               <li>粪便：镜检红白细胞曾阴性；18:32隐血免疫法<strong>阳性</strong>。9月22日11:35：昨天排便<strong>3次</strong>，黑褐色。9月23日15:45：今日便<strong>1次</strong>，颜色<strong>黑色</strong>，无尿。颜色加隐血不能定量，也不能定位。</li>
             </ul>
@@ -1377,7 +1377,7 @@
           <summary>
             <div>
               <div class="report-title">肾脏与尿检</div>
-              <div class="report-meta">至术后187h21m · 肌酐 423 · 过夜尿 0</div>
+              <div class="report-meta">至术后194h47m · 肌酐 423 · 钾 4.71</div>
             </div>
             <span class="report-badge red">尿素危急</span>
           </summary>
@@ -1386,7 +1386,7 @@
               <li>肌酐121.8→术后2h44m <strong>206</strong>→263→363→212→204→314→231→320→最新<strong>423.0</strong> μmol/L（9月23日09:21，参考41–81）。尿素术后2h已16.30，现31.32→<strong>41.03</strong> mmol/L（参考3.1–8.8，<strong>危急值，结果已复查</strong>）。停机后继续回升，过夜尿仍为0。</li>
               <li>尿量950→300→70→曾20→过夜0→利尿后10→开上一轮前过夜50 mL。9月23日15:45仍是<strong>无尿</strong>。</li>
               <li>上一轮CRRT走了<strong>19小时48分</strong>后停机。9月23日约<strong>14:00</strong>血滤又开始。两点左右是家属说的，流速、脱水量和抗凝没有说。累计脱水仍未口述。</li>
-              <li>钾4.41→4.49→4.85→最新<strong>5.09</strong>（9月23日09:21，参考3.5–5.3，仍在范围内，靠近上限）。钠<strong>130.76</strong>↓（参考137–147）。氯<strong>94.37</strong>↓（参考96–108，已低于下限）。</li>
+              <li>钾4.41→4.49→4.85→09:21 <strong>5.09</strong>→16:47 <strong>4.71</strong>（干化学，参考3.5–5.3，没有标异常）。钠<strong>130.76</strong>↓、氯<strong>94.37</strong>↓还是今晨的数，这次没有重抽。离子钙血气0.98→20:50 <strong>1.04</strong>，仍低于1.15。</li>
               <li>昨天排便3次，黑褐色。此前隐血阳性、镜检红白细胞阴性。尿潜血曾3+、蛋白2+。CK已从8280降至434，仍高于参考。</li>
             </ul>
           </div>
@@ -1957,6 +1957,26 @@
           <div class="event-title">血压96/36，脉搏86，呼吸13；今日黑色便1次，无尿</div>
           <div class="event-desc">去甲仍2 mL/h（0.10 mg/h），多巴胺仍5 mL/h。下午反抗增多，镇静剂加大，药名和速度没说，全程无睁眼。家属口头把彩超说成正常、无血栓、老年人常见粥样硬化；报告原文仍保留斑块和胫后动脉不完全闭塞可能。</div>
         </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后194小时27分 · 9月23日16:27</div>
+          <div class="event-title">乳酸2.02→1.16回到参考；pH降到7.298</div>
+          <div class="event-desc">PCO₂37.8、PO₂93.0、HCO₃⁻18.1↓、ABE −8.4。FiO₂ 50%→60%，氧合指数155。血气Hb 9.8→9.7，Hct 29%，iCa 1.03。155是氧合指数。单子上0.24那一行不是氧合指数，也不是降钙素原。</div>
+        </article>
+        <article class="event" style="--event-color: var(--blue)">
+          <div class="event-time">术后194小时47分 · 9月23日16:47</div>
+          <div class="event-title">钾 5.09→4.71，仍在参考</div>
+          <div class="event-desc">干化学，参考3.5–5.3，没有标异常。比今晨5.09低，还在范围内。钠、氯、肌酐没有同抽。血滤约14:00已开，这张单没有写脱水量。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后195小时43分 · 9月23日17:43</div>
+          <div class="event-title">乳酸1.29仍在参考；pH 7.301；P/F 140</div>
+          <div class="event-desc">PCO₂43.5、PO₂84.1、HCO₃⁻21.0↓、ABE −5.4。FiO₂仍60%。血气Hb 9.8，Hct 29%，iCa 1.02。140是氧合指数。单子上0.22那一行不是氧合指数。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后198小时50分 · 9月23日20:50</div>
+          <div class="event-title">乳酸1.18仍在参考；pH 7.345仍低于7.35；P/F 139</div>
+          <div class="event-desc">PCO₂39.4、PO₂83.6、HCO₃⁻21.0↓、ABE −4.7。FiO₂仍60%。血气Hb 10.2，Hct 30%，iCa 1.04。139是氧合指数。单子上0.21那一行不是氧合指数。体温纠正后的pH是7.351，落在7.35–7.45里；图上画的是未纠正的7.345，单子仍标低。</div>
+        </article>
       </div>
     </section>
 
@@ -2110,7 +2130,10 @@
       { h: 160.69, label: "术后160h41m", sample: "动脉", ph: 7.449, pco2: 32.6, po2: 77.8, hco3: 22.1, be: -1.9, lactate: 2.12, fio2: 50, pf: 156, hb: 10.2, ca: 1.02 },
       { h: 172.51, label: "术后172h31m", sample: "动脉", ph: 7.402, pco2: 33.9, po2: 76.0, hco3: 20.6, be: -4.1, lactate: 1.46, fio2: 45, pf: 169, hb: 9.9, ca: 1.00 },
       { h: 175.05, label: "术后175h03m", sample: "动脉", ph: 7.402, pco2: 32.7, po2: 79.3, hco3: 19.9, be: -4.9, lactate: 1.59, fio2: 50, pf: 159, hb: 10.2, ca: 0.99 },
-      { h: 184.64, label: "术后184h38m", sample: "动脉", ph: 7.327, pco2: 34.9, po2: 83.5, hco3: 17.9, be: -8.1, lactate: 2.02, fio2: 50, pf: 167, hb: 9.8, ca: 0.98 }
+      { h: 184.64, label: "术后184h38m", sample: "动脉", ph: 7.327, pco2: 34.9, po2: 83.5, hco3: 17.9, be: -8.1, lactate: 2.02, fio2: 50, pf: 167, hb: 9.8, ca: 0.98 },
+      { h: 194.47, label: "术后194h27m", sample: "动脉", ph: 7.298, pco2: 37.8, po2: 93.0, hco3: 18.1, be: -8.4, lactate: 1.16, fio2: 60, pf: 155, hb: 9.7, ca: 1.03 },
+      { h: 195.72, label: "术后195h43m", sample: "动脉", ph: 7.301, pco2: 43.5, po2: 84.1, hco3: 21.0, be: -5.4, lactate: 1.29, fio2: 60, pf: 140, hb: 9.8, ca: 1.02 },
+      { h: 198.85, label: "术后198h50m", sample: "动脉", ph: 7.345, pco2: 39.4, po2: 83.6, hco3: 21.0, be: -4.7, lactate: 1.18, fio2: 60, pf: 139, hb: 10.2, ca: 1.04 }
     ];
 
     const labReadings = [
@@ -2161,7 +2184,8 @@
       { h: 175.22, label: "术后175h13m", sample: "生化", k: 4.85 },
       { h: 187.11, label: "术后187h06m", sample: "血常规", wbc: 24.97, plt: 94, hbg: 94 },
       { h: 187.35, label: "术后187h21m", sample: "生化", creatinine: 423, urea: 41.03, k: 5.09, na: 130.76, cl: 94.37, pct: 18.701 },
-      { h: 187.44, label: "术后187h26m", sample: "凝血", aptt: 33.0, inr: 1.10, pt: 12.4 }
+      { h: 187.44, label: "术后187h26m", sample: "凝血", aptt: 33.0, inr: 1.10, pt: 12.4 },
+      { h: 194.80, label: "术后194h47m", sample: "生化", k: 4.71 }
     ];
 
     const vitalReadings = [
@@ -2237,7 +2261,7 @@
     let selectedRange = "all";
     const customKey = "perioperative-dashboard-custom-v1";
     const questionKey = "perioperative-dashboard-questions-v1";
-    const latestNonBloodGasReport = { h: 193.75, label: "术后193h45m · 血压 96/36", type: "口述" };
+    const latestNonBloodGasReport = { h: 194.80, label: "术后194h47m · 钾 4.71", type: "化验" };
     const doctorQuestions = [
       {
         id: "bleeding",
@@ -2254,8 +2278,8 @@
       {
         id: "lactate",
         group: "urgent",
-        title: "乳酸又升到2.02，pH降到7.327，要不要加干预？",
-        detail: "1.59→2.02，已高出0.5–1.6。pH 7.402→7.327，HCO₃⁻ 17.9、ABE −8.1。今晨白细胞升到24.97，降钙素原28.783→18.701仍在降。乳酸和pH同时变差到什么程度要加干预？"
+        title: "乳酸回到1.18，pH仍是7.345，16:27曾到7.298，还要不要处理？",
+        detail: "06:38乳酸2.02、pH 7.327。16:27乳酸1.16回到0.5–1.6，pH降到7.298，HCO₃⁻ 18.1、ABE −8.4。17:43乳酸1.29、pH 7.301、ABE −5.4。20:50乳酸1.18、pH 7.345，单子仍标低于7.35。体温纠正后的pH是7.351，落在7.35–7.45里。HCO₃⁻ 21.0仍低于22，ABE −4.7。FiO₂已是60%。"
       },
       {
         id: "source-control",
@@ -2267,25 +2291,25 @@
         id: "shock-cause",
         group: "urgent",
         title: "目前休克的主要原因判断是什么？",
-        detail: "血常规Hb 94，血气Hb 9.8。乳酸2.02，pH 7.327，白细胞24.97，肌酐423，PCT 18.701。今日黑色便1次，此前隐血阳性。15:45血压96/36。下午反抗增多、镇静加大、全程无睁眼。感染性、残余肠缺血、消化道出血还是混合性？培养结果如何？"
+        detail: "血常规Hb 94，20:50血气Hb 10.2。乳酸1.18已回参考，pH 7.345仍低于7.35。白细胞24.97，肌酐423还是今晨的数，PCT 18.701。今日黑色便1次，此前隐血阳性。15:45血压96/36，傍晚没有新的血压。下午反抗增多、镇静加大、全程无睁眼。感染性、残余肠缺血、消化道出血还是混合性？培养结果如何？"
       },
       {
         id: "oxygenation",
         group: "urgent",
-        title: "呼吸正压15–18，呼吸机什么时候能撤？",
-        detail: "呼吸正压15–18是9月22日16:11的口述，今天下午没有新的呼吸机数字。15:45呼吸次数是13。今晨FiO₂仍50%，P/F 167、PO₂83.5。167是氧合指数。下午镇静剂加大、全程无睁眼。赵医生昨天说肺这边比较稳。现在还能谈撤机吗？"
+        title: "FiO₂加到60%，P/F降到139，呼吸机什么时候能撤？",
+        detail: "呼吸正压15–18仍是9月22日16:11的口述，傍晚没有新的呼吸机数字。15:45呼吸次数是13。FiO₂从50%加到60%。P/F 167→155→140→139，PO₂ 83.6。139是氧合指数。单子上0.21那一行不是氧合指数。下午镇静剂加大、全程无睁眼。现在还能谈撤机吗？"
       },
       {
         id: "next-window",
         group: "urgent",
         title: "血滤约14点已开，这次怎么设？仍无尿",
-        detail: "9月23日两点左右开始，流速和脱水量没说。15:45仍无尿。肌酐423，尿素41.03危急。钾5.09仍在3.5–5.3。钠130.76、氯94.37都低于参考。今日黑色便1次，还要同时盯出血。"
+        detail: "9月23日两点左右开始，流速和脱水量没说。15:45仍无尿，傍晚没有新的尿量。肌酐423、尿素41.03还是今晨的数，没有重抽。16:47钾5.09→4.71，仍在3.5–5.3。钠130.76、氯94.37都低于参考。今日黑色便1次，还要同时盯出血。"
       },
       {
         id: "kidney",
         group: "followup",
         title: "14点左右开的血滤怎么设？上一轮实际脱了多少？",
-        detail: "停机后肌酐320→423，尿素41.03危急。15:45仍无尿。上一轮走了19小时48分。这一轮约14:00开始，血液速度、脱水速度和抗凝都没说。请确认是床旁血滤还是转到透析。"
+        detail: "停机后肌酐320→423，尿素41.03危急，这两项傍晚没有重抽。15:45仍无尿。上一轮走了19小时48分。这一轮约14:00开始，血液速度、脱水速度和抗凝都没说。16:47钾降到4.71，仍在参考内。请确认是床旁血滤还是转到透析。"
       },
       {
         id: "coagulation",
@@ -2314,8 +2338,8 @@
       {
         id: "calcium",
         group: "followup",
-        title: "钾升到5.09仍在参考，钠130.76、氯94.37，还要不要补钠、补钙？",
-        detail: "钾4.85→5.09，仍在3.5–5.3，靠近上限。钠135.77→130.76，低于137。氯96.68→94.37，低于96。血气离子钙仍是今晨0.98，低于1.15。血滤约14:00已开，开机后电解质怎么盯？"
+        title: "钾降到4.71仍在参考，离子钙1.04，钠氯还要不要补？",
+        detail: "16:47干化学钾5.09→4.71，参考3.5–5.3，没有标异常。钠130.76、氯94.37还是今晨的数，这次没有重抽，都低于参考。血气离子钙0.98→1.03→1.02→1.04，仍低于1.15。血滤约14:00已开。开机后电解质怎么盯？"
       }
     ];
 

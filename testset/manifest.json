@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 120,
+  "count": 124,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2103,6 +2103,119 @@
         "deep_vein_abnormal_echo": false,
         "superficial_vein_abnormal_echo": false,
         "pta_incomplete_occlusion_possible": true
+      }
+    },
+    {
+      "id": "20260923T162754__01a0ce89-bcf2-7183-a5fb-27af268d514c.jpg",
+      "path": "reports/abg/20260923T162754__01a0ce89-bcf2-7183-a5fb-27af268d514c.jpg",
+      "category": "abg",
+      "source_filename": "01a0ce89-bcf2-7183-a5fb-27af268d514c.jpg",
+      "sha256_16": "71001e4b2b0f6a9a",
+      "bytes": 1298347,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-23T16:27:54",
+      "type": "动脉血气",
+      "note": "lac1.16 in range pH7.298↓ ABE-8.40 SBE-7.70 HCO3 18.10 Hb9.70 Hct29 iCa1.03 FiO2 60 PO2 93.0. Printed 氧合指数 155. The 0.24 row is pO2(a)/FO2(I) ratio, not P/F. 155 is P/F not PCT",
+      "relative_h": 194.47,
+      "extracted": {
+        "ph": 7.298,
+        "ph_t": 7.298,
+        "pco2": 37.8,
+        "po2": 93.0,
+        "sbe": -7.7,
+        "be": -8.4,
+        "hco3": 18.1,
+        "lactate": 1.16,
+        "hb": 9.7,
+        "hct": 29.0,
+        "ca": 1.03,
+        "fio2": 60,
+        "pf": 155,
+        "so2": 96.1,
+        "temp": 37.0,
+        "pf_ratio_row": 0.24
+      }
+    },
+    {
+      "id": "20260923T164753__01a0ce89-bcde-701e-9850-a91824e69425.jpg",
+      "path": "reports/chemistry/20260923T164753__01a0ce89-bcde-701e-9850-a91824e69425.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0ce89-bcde-701e-9850-a91824e69425.jpg",
+      "sha256_16": "bdbe41443e775e2a",
+      "bytes": 296093,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-23T16:47:53",
+      "type": "生化",
+      "note": "Dry chemistry K 4.71 mmol/L, ref 3.5-5.3, no abnormal flag. Phone status bar 4:58 is not the report clock",
+      "relative_h": 194.8,
+      "extracted": {
+        "k": 4.71
+      }
+    },
+    {
+      "id": "20260923T174330__01a0ce89-bd05-7b8b-99ba-5174bb7e2532.jpg",
+      "path": "reports/abg/20260923T174330__01a0ce89-bd05-7b8b-99ba-5174bb7e2532.jpg",
+      "category": "abg",
+      "source_filename": "01a0ce89-bd05-7b8b-99ba-5174bb7e2532.jpg",
+      "sha256_16": "a8ab0606b8672dac",
+      "bytes": 1303029,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-23T17:43:30",
+      "type": "动脉血气",
+      "note": "lac1.29 in range pH7.301↓ PH(T)7.304↓ ABE-5.40 SBE-5.20 HCO3 21.00 Hb9.80 Hct29 iCa1.02 FiO2 60 PO2 84.1. Printed 氧合指数 140. The 0.22 row is not P/F",
+      "relative_h": 195.72,
+      "extracted": {
+        "ph": 7.301,
+        "ph_t": 7.304,
+        "pco2": 43.5,
+        "po2": 84.1,
+        "sbe": -5.2,
+        "be": -5.4,
+        "hco3": 21.0,
+        "lactate": 1.29,
+        "hb": 9.8,
+        "hct": 29.0,
+        "ca": 1.02,
+        "fio2": 60,
+        "pf": 140,
+        "so2": 94.9,
+        "temp": 36.8,
+        "pf_ratio_row": 0.22
+      }
+    },
+    {
+      "id": "20260923T205050__01a0ce89-bd1b-7219-9adc-0f57e8e26ab4.jpg",
+      "path": "reports/abg/20260923T205050__01a0ce89-bd1b-7219-9adc-0f57e8e26ab4.jpg",
+      "category": "abg",
+      "source_filename": "01a0ce89-bd1b-7219-9adc-0f57e8e26ab4.jpg",
+      "sha256_16": "e7b44cf71060ce2e",
+      "bytes": 1297977,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-23T20:50:50",
+      "type": "动脉血气",
+      "note": "lac1.18 in range pH7.345↓ PH(T)7.351 in 7.35-7.45 ABE-4.70 SBE-4.30 HCO3 21.00 Hb10.20 Hct30 iCa1.04 FiO2 60 PO2 83.6. Printed 氧合指数 139. The 0.21 row is not P/F. Dashboard plots uncorrected pH 7.345",
+      "relative_h": 198.85,
+      "extracted": {
+        "ph": 7.345,
+        "ph_t": 7.351,
+        "pco2": 39.4,
+        "po2": 83.6,
+        "sbe": -4.3,
+        "be": -4.7,
+        "hco3": 21.0,
+        "lactate": 1.18,
+        "hb": 10.2,
+        "hct": 30.0,
+        "ca": 1.04,
+        "fio2": 60,
+        "pf": 139,
+        "so2": 95.2,
+        "temp": 36.6,
+        "pf_ratio_row": 0.21
       }
     }
   ]
