@@ -229,7 +229,7 @@ class UploadHandler(BaseHTTPRequestHandler):
             return
         self._send_dashboard(body)
 
-    def _remote_dashboard(self, sha: str) -> None:
+    def _remote_dashboard(self, sha: str, *, immutable: bool = True) -> None:
         try:
             body = dashboard_at_sha(sha)
         except error.HTTPError as exc:
@@ -238,15 +238,7 @@ class UploadHandler(BaseHTTPRequestHandler):
         except Exception:
             self._json(502, {"ok": False, "error": "page_unreachable"})
             return
-        self._send_dashboard(body, immutable=True)
-
-    def _redirect(self, location: str) -> None:
-        self.send_response(302)
-        self._cors()
-        self.send_header("Location", location)
-        self.send_header("Cache-Control", "no-store")
-        self.send_header("Content-Length", "0")
-        self.end_headers()
+        self._send_dashboard(body, immutable=immutable)
 
     def _read_payload(self) -> dict | None:
         length = int(self.headers.get("Content-Length") or "0")
@@ -284,7 +276,7 @@ class UploadHandler(BaseHTTPRequestHandler):
             except Exception:
                 self._json(502, {"ok": False, "error": "branch_unreachable"})
                 return
-            self._redirect(f"/page/{sha}")
+            self._remote_dashboard(sha, immutable=False)
             return
         if path == "/" and DASHBOARD_PATH.is_file():
             self._dashboard()

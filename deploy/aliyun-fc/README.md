@@ -175,10 +175,17 @@ curl 'https://你的地址/health'
 另测最新页面代理：
 
 ```bash
-curl -I 'https://你的地址/latest'
+curl -i 'https://你的地址/latest'
 ```
 
-应 302 到 `/page/<40位SHA>`；浏览器打开 `/latest` 应直接看到 dashboard。
+应 **200** 且 `Content-Type: application/xhtml+xml`，直接返回当前分支 HEAD 的
+dashboard；浏览器打开 `/latest` 或 `/` 都直接看到页面。
+
+> **注意：`/latest` 与 `/` 不再用 302 跳转。** 阿里云 FC 默认域名
+> `*.fcapp.run` 禁止函数返回 3xx 跳转，只对**自定义域名**放开（`curl` 会看到
+> `400 ExternalRedirectForbidden / please use custom domain endpoint`）。所以中转
+> 直接把当前 HEAD 的 `index.xhtml` 代理成 200 返回，无需备案自定义域名。实时上传
+> 结果页 `/page/<40位SHA>` 本来就是 200，由浏览器前端跳转打开，不受此限制。
 
 ## 8. 试运行上传
 
@@ -298,6 +305,8 @@ s deploy -y
 | `branch_unreachable` | 中转暂时读不到 GitHub 功能分支 HEAD |
 | `page_unreachable` | 新提交已产生，但 GitHub 原始 XHTML 尚未拉取成功；页面会继续重试 |
 | `/latest` 返回 502 | FC 到 GitHub API 不通，或公开 API 临时限流 |
+| `400 ExternalRedirectForbidden` | 默认 `fcapp.run` 域名禁止 3xx 跳转。已改为直接代理 200，重新用最新 `build-package.sh` 打包并部署即可；无需自定义域名 |
+| `403 FCCommonError` | HTTP 触发器认证方式仍是「签名认证」，改为「无需认证」并保存 |
 | 浏览器“连不上中转” | HTTPS 地址、HTTP 触发器公网 URL 或 CORS 配置错误 |
 | 413 / `image_size` | 单张压缩后仍超过 8 MB |
 | `dashboard_not_found` | 只会出现在本地同源模式；FC 根路径本来只做健康响应 |
