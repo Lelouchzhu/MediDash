@@ -43,10 +43,10 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 国内镜像把 `@main` 收成一份旧快照，`purge.jsdelivr.net` 和网址后面的 `?v=` 都换不掉。2026-09-22 实测 `jsd.onmicrosoft.cn` 与 `cdn.jsdmirror.com` 的 `@main` 仍停在术后149h20m（没有乳酸 2.12）。**带提交号的地址会立刻取到那一版。**
 
-- **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@2b92beb/index.xhtml
-- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@2b92beb/index.xhtml
+- **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@3527733/index.xhtml
+- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@3527733/index.xhtml
 
-灌注卡应是乳酸 **2.24**，酸碱卡 pH **7.360**，氧合卡 **P/F 140**。感染卡白细胞 **26.44**，降钙素原 **8.206**。肾功能卡应是肌酐 **185**，尿素 **20.52**。血红蛋白卡血气仍是 **10.8**，血常规 **100**。循环卡仍是 **96/36**。顶栏应是 **最新化验：术后211h31m · 肌酐 185**。若顶栏还是术后209h47m，打开的还是旧镜像。下次更新后把 `2b92beb` 换成新提交号，不要改回 `@main`。
+灌注卡应是乳酸 **2.24**，酸碱卡 pH **7.360**，氧合卡 **P/F 140**。感染卡白细胞 **26.44**，降钙素原 **8.206**。肾功能卡应是肌酐 **185**，尿素 **20.52**，并写 **16:18血滤已停**。血红蛋白卡血气仍是 **10.8**，血常规 **100**。循环卡仍是 **130/30**，心跳 **77**，去甲 **3**，多巴胺 **6**。顶栏应是 **最新口述：术后218h18m · 血滤已停**。查房清单里有芬太尼和氧合指数的问题，页面没有芬太尼剂量。若循环卡还是去甲6、多巴胺3，打开的还是旧镜像。下次更新后把 `3527733` 换成新提交号，不要改回 `@main`。
 
 微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。
 
