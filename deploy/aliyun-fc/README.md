@@ -3,7 +3,7 @@
 只用于功能分支 `cursor/mainland-lab-upload-b98e`，**不改、不合并
 `main`**。上传版页面：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@a0fdbcd/index.xhtml
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cf96515/index.xhtml
 
 这是带后台轮询能力的固定启动页。不要用可变 `@upload` 作为首次入口。
 
@@ -254,7 +254,7 @@ Invoke-RestMethod `
 
 第一次打开固定启动页：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@a0fdbcd/index.xhtml
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cf96515/index.xhtml
 
 点击 **上传化验**，填写：
 
