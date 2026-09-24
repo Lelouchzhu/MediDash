@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 130,
+  "count": 132,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2350,6 +2350,55 @@
         "so2": 92.2,
         "temp": 36.5,
         "pf_ratio_row": 0.22
+      }
+    },
+    {
+      "id": "20260924T083851__17234742-4428-4614-9A47-1A94C36454CD_L0_001.jpg",
+      "path": "reports/cbc/20260924T083851__17234742-4428-4614-9A47-1A94C36454CD_L0_001.jpg",
+      "category": "cbc",
+      "source_filename": "17234742-4428-4614-9A47-1A94C36454CD_L0_001.jpg",
+      "sha256_16": "98bd9d727b9f4505",
+      "bytes": 896844,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-24T08:38:51",
+      "type": "血常规",
+      "note": "WBC26.44↑ RBC3.10↓ Hb100.0↓ g/L HCT27.7↓ PLT98↓ NEUT%97.1 NEUT#25.67 LYMPH#0.26↓ MCHC361↑. Plateletcrit PCT 0.12% is not procalcitonin",
+      "relative_h": 210.65,
+      "extracted": {
+        "wbc": 26.44,
+        "rbc": 3.1,
+        "hbg": 100.0,
+        "hct": 27.7,
+        "plt": 98,
+        "neut_pct": 97.1,
+        "neut_abs": 25.67,
+        "lymph_abs": 0.26,
+        "mchc": 361.0,
+        "plateletcrit": 0.12
+      }
+    },
+    {
+      "id": "20260924T093143__6A32A092-8883-4D68-B6A3-E513F5520B90_L0_001.jpg",
+      "path": "reports/chemistry/20260924T093143__6A32A092-8883-4D68-B6A3-E513F5520B90_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "6A32A092-8883-4D68-B6A3-E513F5520B90_L0_001.jpg",
+      "sha256_16": "bbd36fb2eb12aa87",
+      "bytes": 517421,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-24T09:31:43",
+      "type": "生化",
+      "note": "Cr185.0↑ urea20.52↑ not marked critical. K4.51 Na137.03 Cl98.84 all in range. ALB27.8↓. PCT 8.206 ng/mL is procalcitonin, not the CBC plateletcrit 0.12%. GLB and A/G blank",
+      "relative_h": 211.53,
+      "extracted": {
+        "albumin": 27.8,
+        "k": 4.51,
+        "na": 137.03,
+        "cl": 98.84,
+        "urea": 20.52,
+        "creatinine": 185.0,
+        "pct": 8.206
       }
     }
   ]
