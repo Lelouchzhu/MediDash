@@ -147,8 +147,44 @@ RELAY_DRY_RUN=1
 ```
 
 网关会自行响应 OPTIONS，不要把 OPTIONS 加进 CORS `allowMethods`。
-如果控制台没有 API CORS 面板，则在触发器方法中再允许 `OPTIONS`；
-代码会返回 CORS 响应。
+
+### 控制台没有跨域/CORS 面板时（很常见）
+
+新版 FC 3.0 控制台的「编辑触发器 http-trigger」里往往只有 **请求方法 / 认证方式 /
+禁用公网访问 URL**，**没有**「跨域 / CORS」这一项。这时不用找网关 CORS，直接走
+**代码层 CORS**（`scripts/agent-upload-relay.py` 里的 `_cors()` 和 `do_OPTIONS`
+已内置，会返回 `Access-Control-Allow-Origin: *`）：
+
+1. 在「编辑触发器」的 **请求方法** 里，把 `OPTIONS` 也加上，变成 `GET、POST、OPTIONS`。
+2. 点「确定」保存。
+3. 浏览器的预检 `OPTIONS` 会打到函数，由代码回 CORS 头，覆盖
+   `jsd.onmicrosoft.cn` 与 `cdn.jsdmirror.com`。页面只在请求体带 `token`、不带
+   Cookie，所以 `*` + 不带凭据是安全可用的。
+
+注意方向别搞反：
+
+- **有**网关 CORS 面板 → 用白名单 `allowOrigins`，方法只放 `GET、POST`，**不要**加 `OPTIONS`（网关自己回预检）。
+- **没有**网关 CORS 面板 → 方法里**必须**加 `OPTIONS`，让代码回预检。
+
+两种方式二选一，别让网关和代码同时输出 `Access-Control-Allow-Origin`，否则浏览器
+会因为收到两个不同值而报 “multiple values” 错误。
+
+保存后验证跨域是否通（把地址换成你的公网地址）：
+
+```bash
+curl -i -X OPTIONS 'https://你的地址/upload' \
+  -H 'Origin: https://jsd.onmicrosoft.cn' \
+  -H 'Access-Control-Request-Method: POST' \
+  -H 'Access-Control-Request-Headers: Content-Type'
+```
+
+响应头出现下面几行即为通过：
+
+```text
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type
+```
 
 ## 7. 获取 HTTPS 地址并做健康检查
 
