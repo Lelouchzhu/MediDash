@@ -7,10 +7,10 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **Prior agent run (Allmond-bound, then continued here):** https://cursor.com/agents/bc-01a0a01a-a6eb-72c7-b052-ba5e14ed8b1b  
 **Conversation summary (current):** [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md)  
 **Conversation summary (through 9/18 13:00 ABG):** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
-**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@1226786/index.xhtml  
-**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@1226786/index.xhtml  
+**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@2b92beb/index.xhtml  
+**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@2b92beb/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
-国内 `@main` 镜像不会跟着 main 走。`1226786` 是 main 上 9月23日21:06 凝血页。顶栏是最新化验：术后199h06m · APTT 41.1（本份参考 21–45，没有标异常）。乳酸 1.18，pH 7.345，P/F 139，钾 4.65。肌酐仍是 423。血压仍是 15:45 的 96/36。
+国内 `@main` 镜像不会跟着 main 走。`2b92beb` 才是 9月24日09:31生化。顶栏是最新化验：术后211h31m · 肌酐 185。白细胞 26.44，降钙素原 8.206，尿素 20.52，白蛋白 27.8。乳酸仍是 2.24，pH 7.360，P/F 140。
 
 ---
 
@@ -66,6 +66,7 @@ A low-resolution ABG once caused “PCT 170” confusion with oxygenation index 
 | 2026-09-21 09:18 | postop 139h18m | **36.8855** |
 | 2026-09-22 09:54 | postop 163h54m | **28.783** |
 | 2026-09-23 09:21 | postop 187h21m | **18.701** |
+| 2026-09-24 09:31 | postop 211h31m | **8.206** |
 
 Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 chemistry crop omitted PCT; the replacement screenshot of the **same clock** has it.
 
@@ -93,12 +94,12 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 - **New run:** family said 血滤 started **约2026-09-23 14:00** (两点左右, postop **192h**). Blood flow, ultrafiltration, and anticoagulation were not stated. Still **anuric** at the 15:45 oral.
 - Vasopressor series: norepinephrine **9 → 6 → 4 → 2 mL/h** (0.45 → 0.30 → 0.20 → **0.10 mg/h**) + dopamine **10 → 8 → 7.5 → 5 mL/h**. Concentration **0.05 mg/mL**. Do not invent dopamine mg/h.
 - **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53 → 10.2 at 06:41 → 9.9 at 18:30**. Evening CBC Hb **101** (19:05) → morning 9/22 **97**. Ask how many units finished.
-- **K:** 3.93 (09:18, on CRRT) → **4.41** (22:50) → **4.49** (09:54 9/22) → **4.85** (21:13 9/22) → **5.09** (09:21 9/23) → **4.71** (16:47 9/23) → **4.65** (21:02 9/23, dry chemistry, ref 3.5–5.3, no abnormal flag). Na **130.76↓** and Cl **94.37↓** were not redrawn. iCa on the 20:50 ABG is **1.04** (still below 1.15).
-- **Kidney:** Cr **320 → 423**, urea **31.32 → 41.03** (critical, rechecked). Still **anuric** at 15:45. Blood filtration restarted about **14:00**; settings unknown.
+- **K:** … → **4.50** (01:03 9/24, dry chemistry) → **4.51** (09:31 9/24 serum, ref 3.5–5.3, no abnormal flag). Na **130.76 → 137.03** (back inside 137–147). Cl **94.37 → 98.84** (back inside 96–108). iCa on the 07:47 ABG is still **1.12**. Albumin **35.8 → 27.8↓** (ref 34–48).
+- **Kidney:** Cr **423 → 185** (09:31 9/24, still above 41–81). Urea **41.03 critical → 20.52↑**; this sheet does not mark a critical value. No new urine oral since the 15:45 anuria. Blood filtration restarted about **14:00**; settings unknown.
 - **Ultrasound 2026-09-23 10:19 (postop 188h19m):** bilateral lower-extremity arterial and venous color Doppler. Impression, in the report’s words: atherosclerosis with multiple plaques; **possible incomplete occlusion of both posterior tibial arteries**; subcutaneous edema. Larger plaques at the common femoral arteries, low/weak echo, about **1.1×0.2 cm (right)** and **1.4×0.4 cm (left)**. Left PTA and the distal right PTA show only intermittent punctate flow; other arteries fill well. PTA spectra are biphasic with reduced velocity; the other spectra are triphasic and within the stated normal velocity range. Accompanying deep veins and superficial veins in the scanned field: flow fills satisfactorily, **no abnormal echo**. The report does not write thrombus. Thigh subcutaneous thickness about **2.1 cm (right)** and **2.3 cm (left)**. This replaces the same-morning oral “ultrasound in progress.”
 - **Stool:** microscopy WBC/RBC negative (oral). FOBT immunoassay **positive** 18:32 9/21. Family oral received 9/22 11:35: **3 stools yesterday, dark brown / 黑褐色**. Family oral received 9/23 15:45: **one stool today, black / 黑色**, still anuric. Color plus FOBT does not quantify or localize. Today’s 黑色 is a new stool, not a rename of the earlier 黑褐色.
 - **Ultrasound oral gloss (received 15:45):** family said the lower-extremity study was normal, no thrombus, ordinary atherosclerosis in the elderly. This does **not** replace the 10:19 report (plaques, possible incomplete PTA occlusion, no abnormal venous echo).
-- **Watch next:** BP **96/36** is still the 15:45 oral; one black stool; CRRT settings since ~14:00 and anuria, with Cr **423** / urea **41.03** not redrawn; pH **7.345** still below 7.35; lactate **1.18**; FiO₂ **60%**, P/F **139**; K **4.65** in range; APTT **41.1** in this sheet’s 21–45 (morning 33.0 was high only on ref 23.3–32.5); Na **130.76** and Cl **94.37** not redrawn; iCa **1.04**; WBC **24.97** while PCT **18.701** still falling.
+- **Watch next:** Cr **185** and urea **20.52** still high after the fall from 423 / 41.03, with no new urine number; albumin **27.8**; WBC **26.44** up while PCT **8.206** still falling; 07:47 lactate **2.24**, PO₂ **70.1**, P/F **140**, PCO₂ **49.6**; APTT **44.8**; iCa **1.12**; BP **96/36** still the 15:45 oral; CRRT settings unknown.
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -197,8 +198,26 @@ No new urine, creatinine, pressor dose, or ventilator number on these sheets. �
 
 - **K 21:02:** **4.65** mmol/L, dry chemistry, ref 3.5–5.3, no abnormal flag. Was **4.71** at 16:47. Na, Cl, and creatinine were not on this sheet. Phone status-bar time is not the report clock.
 - **APTT 21:06:** **41.1** sec. This sheet’s ref is **21–45**, and the abnormal column is empty. The 09:26 sheet was **33.0** against ref **23.3–32.5**, so that one was flagged high. Do not judge 41.1 by the tighter morning range. INR and PT were not repeated. `metricConfig` aptt band stays 21–45, so 41.1 sits inside it.
-- **Judgment:** both clocks are newer than the 20:50 arterial gas, and APTT is the newer of the two. Hero pill is **最新化验：术后199h06m · APTT 41.1**. Lactate 1.18, pH 7.345, and P/F 139 stay on their cards.
+- **Judgment:** both clocks were newer than the 20:50 arterial gas at the time. The hero later moved to the 9/24 07:47 arterial gas.
 - Screenshots: `testset/reports/chemistry/20260923T210238__3EFC5D57-59E1-4D64-8C7C-1C958D14D8D8_L0_001.jpg`, `testset/reports/coag/20260923T210612__F0B5E2F9-231B-4896-8347-D48C02FFD46B_L0_001.jpg`
+
+### Overnight ABG, potassium, APTT, morning ABG — 2026-09-24 00:54 to 07:47
+
+No new urine, creatinine, pressor dose, blood pressure, or ventilator oral on these sheets. FiO₂ on the gas sheets went from 60% back to 50%.
+
+- **ABG 00:54 (postop 202h54m):** pH **7.369** (in 7.35–7.45; PH(T) **7.375**). PCO₂ **41.50**, PO₂ **81.40**, HCO₃⁻ **23.40**, ABE **−1.90** (SBE −1.80). All of those are inside their ranges. Lactate **1.32** (still in 0.5–1.6). FiO₂ **50%**. Printed 氧合指数 **163**. The 0.25 row is not P/F. Temperature-corrected PO₂ **79.30** is flagged low; the chart uses uncorrected **81.40**. Hb **10.30**, Hct **30%**, iCa **1.07↓**.
+- **K 01:03 (postop 203h03m):** **4.50**, dry chemistry, ref 3.5–5.3, no abnormal flag. Was **4.65**. Phone status-bar time is not this clock.
+- **APTT 01:14 (postop 203h14m):** **44.8** sec, this sheet’s ref **21–45**, no abnormal flag, near the top of the range. Was **41.1** on the same style of range. INR and PT were not repeated.
+- **ABG 07:47 (postop 209h47m):** pH **7.360** (in range; PH(T) **7.367**). PCO₂ **49.60↑**, PO₂ **70.10↓**, HCO₃⁻ **27.40↑**, ABE **+1.90** (SBE +1.40, both inside −3 to 3). Lactate **2.24↑**. FiO₂ **50%**. Printed 氧合指数 **140** (70.1 / 0.50). The 0.22 row is not P/F and not PCT. Hb **10.80**, Hct **32%**, iCa **1.12↓**, sO₂ **92.20↓**.
+- **Judgment:** pH crossed back into range overnight and stayed there. Lactate left the reference again at 07:47. Oxygenation eased at 00:54 (P/F 163, PO₂ 81.4) and then PO₂ fell below 80 with P/F 140 on 50% oxygen. Carbon dioxide and bicarbonate are both flagged high on the morning sheet while the base excess is inside range. APTT 44.8 is still inside 21–45. Do not equate ABG Hb 10.8 with later CBC Hb 100. The hero later moved to the 09:31 chemistry.
+- Screenshots: `testset/reports/abg/20260924T005404__815CBD13-2E85-4B1F-8421-C8969ADDD68A_L0_001.jpg`, `testset/reports/chemistry/20260924T010331__22835A47-C1E6-404A-8EFF-4C902512DDAE_L0_001.jpg`, `testset/reports/coag/20260924T011416__FA642617-D162-4E47-9A35-7A24C52217D6_L0_001.jpg`, `testset/reports/abg/20260924T074719__E047EBDC-4104-4C57-AEA6-09E2BCB0CDE3_L0_001.jpg`
+
+### Morning CBC + chemistry — 2026-09-24 08:38 / 09:31 (postop 210h38m / 211h31m)
+
+- **CBC 08:38:** WBC **26.44↑** (was 24.97), RBC **3.10↓**, Hb **100.0↓** g/L (was 94), HCT **27.7↓**, PLT **98↓** (was 94), NEUT% **97.1↑**, NEUT# **25.67↑**, LYMPH# **0.26↓**, MCHC **361↑**. Plateletcrit **0.12%** is not procalcitonin.
+- **Chemistry 09:31:** Cr **185.0↑** (was 423; ref 41–81), urea **20.52↑** (was 41.03 critical; this sheet only flags high, ref 3.1–8.8), K **4.51** (in 3.5–5.3), Na **137.03** (in 137–147; was 130.76), Cl **98.84** (in 96–108; was 94.37), albumin **27.8↓** (was 35.8; ref 34–48), PCT **8.206↑** ng/mL (was 18.701; procalcitonin). Globulin and A/G are blank.
+- **Judgment:** creatinine and urea fell after filtration had been running since about 14:00, and both remain above range. No urine volume is on these sheets. Sodium and chloride are back inside their ranges. Albumin left the range again. WBC rose while procalcitonin kept falling. Do not equate CBC Hb 100 g/L with ABG Hb 10.8 g/dL. Hero pill follows this chemistry clock: **最新化验：术后211h31m · 肌酐 185**. Lactate 2.24, pH 7.360, and P/F 140 stay on their cards.
+- Screenshots: `testset/reports/cbc/20260924T083851__17234742-4428-4614-9A47-1A94C36454CD_L0_001.jpg`, `testset/reports/chemistry/20260924T093143__6A32A092-8883-4D68-B6A3-E513F5520B90_L0_001.jpg`
 
 ### Morning ABG — 2026-09-23 06:38 (postop 184h38m)
 
@@ -467,4 +486,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-23 21:06 APTT **41.1** sec (postop **199h06m**). This sheet’s ref is **21–45**, no abnormal flag. Morning APTT **33.0** was high only against that sheet’s **23.3–32.5**. Dry-chemistry K **4.65** at 21:02, still in 3.5–5.3. Hero pill **最新化验：术后199h06m · APTT 41.1**. Evening ABG unchanged: lactate **1.18**, pH **7.345**, P/F **139**, FiO₂ **60%**, ABG Hb **10.2**, iCa **1.04**. Cr **423**, urea **41.03**, WBC **24.97**, PCT **18.701** not redrawn. Bedside oral still BP **96/36** at 15:45.
+**Last updated:** 2026-09-24 09:31 chemistry (postop **211h31m**). Creatinine **423 → 185**, urea **41.03 → 20.52** (still high; this sheet does not mark a critical value). K **4.51**, Na **137.03**, Cl **98.84**, all in range. Albumin **27.8↓**. Procalcitonin **8.206**. CBC 08:38: WBC **26.44**, Hb **100** g/L, PLT **98**, plateletcrit **0.12%** is not PCT. Hero pill **最新化验：术后211h31m · 肌酐 185**. 07:47 ABG unchanged: lactate **2.24**, pH **7.360**, P/F **140**, PO₂ **70.1**. No new urine or blood pressure.
