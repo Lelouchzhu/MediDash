@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 132,
+  "count": 133,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2399,6 +2399,25 @@
         "urea": 20.52,
         "creatinine": 185.0,
         "pct": 8.206
+      }
+    },
+    {
+      "id": "20260924T162743__stool-routine.jpg",
+      "path": "reports/other/20260924T162743__stool-routine.jpg",
+      "category": "other",
+      "source_filename": "image-1790269613965-0.jpg",
+      "sha256_16": "e36d6d187552c54a",
+      "bytes": 202868,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-24T16:27:43",
+      "type": "便常规",
+      "note": "Color 黑褐色, consistency 稀便, microscopy 未见异常. Stool WBC and RBC result cells blank, unit 个/高倍, do not store 0. No occult blood row. Phone status bar 17:30 is not the report clock. No patient name in the dashboard.",
+      "relative_h": 218.46,
+      "extracted": {
+        "color": "黑褐色",
+        "consistency": "稀便",
+        "microscopy": "未见异常"
       }
     }
   ]
