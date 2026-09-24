@@ -123,9 +123,12 @@ class RelayFlowTest(unittest.TestCase):
                              "application/xhtml+xml")
             self.assertIn(b"generated", response.read())
 
-        opener = request.build_opener(request.HTTPRedirectHandler())
-        with opener.open(f"{self.base}/latest", timeout=5) as response:
-            self.assertEqual(response.url, finished["pageUrl"])
+        with request.urlopen(f"{self.base}/latest", timeout=5) as response:
+            self.assertEqual(response.status, 200)
+            self.assertEqual(response.url, f"{self.base}/latest")
+            self.assertEqual(response.headers["Content-Type"].split(";")[0],
+                             "application/xhtml+xml")
+            self.assertIn(b"generated", response.read())
 
     def test_status_requires_token(self):
         with self.assertRaises(error.HTTPError) as raised:
