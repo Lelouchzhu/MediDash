@@ -10,7 +10,7 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cfc7e21/index.xhtml  
 **备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@cfc7e21/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
-国内 `@main` 镜像不会跟着 main 走。`cfc7e21` 才是 9月24日15:50口述。顶栏是最新口述：术后217h50m · 血压 130/30。去甲 6 mL/h，多巴胺 3 mL/h，尿量 0。肌酐仍是 185，乳酸仍是 2.24。
+国内 `@main` 镜像不会跟着 main 走。链接里的 `cfc7e21` 仍是上一版 9月24日15:50口述。这一版顶栏是最新口述：术后218h18m · 血滤已停。血压仍是 130/30。氧合指数最新仍是 140。芬太尼只作为查房问题，没有剂量。
 
 ---
 
@@ -91,15 +91,15 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 - **Dr. Zhao:** current BP is acceptable, circulation is okay, and the BP course looks stable. ICU focus now is blood pressure and the lungs, both relatively stable. If pressors can be stopped completely and the ventilator removed, and only the kidney problem remains, ICU is no longer required and care may shift to dialysis.
 - Prior bedside (~postop 144h): BP 150/55 (MAP≈87), pulse 106, NE 4 + DA 7.5. Earlier ~122h: BP 125/35.
 - **CRRT:** the 2026-09-20 ~16:00–18:00 run lasted **19 h 48 min** and then stopped. Pre-start settings on that run were blood **130 mL/min**, UF **300 mL/h**. Do not copy those settings onto the new run. Cumulative UF of the stopped run was not confirmed. Prior stop was morning 2026-09-19 (family said 凌晨; the oral was received 9/19 11:48 — keep both).
-- **New run:** family said 血滤 started **约2026-09-23 14:00** (两点左右, postop **192h**). Blood flow, ultrafiltration, and anticoagulation were not stated. Urine was **0** again at the 9/24 15:50 oral. That does not reveal the new run’s settings.
+- **New run:** family said 血滤 started **约2026-09-23 14:00** (两点左右, postop **192h**). At the **2026-09-24 16:18** oral they said it has **stopped**. The stop clock was not stated, so do not turn the receipt time into a run length. Blood flow, ultrafiltration, and anticoagulation were never stated. Urine was **0** at 15:50 and was not restated at 16:18.
 - Vasopressor series: norepinephrine **9 → 6 → 4 → 2 → 6 mL/h** (0.45 → 0.30 → 0.20 → 0.10 → **0.30 mg/h**) + dopamine **10 → 8 → 7.5 → 5 → 3 mL/h**. Concentration **0.05 mg/mL**. Do not invent dopamine mg/h.
 - **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53 → 10.2 at 06:41 → 9.9 at 18:30**. Evening CBC Hb **101** (19:05) → morning 9/22 **97**. Ask how many units finished.
 - **K:** … → **4.50** (01:03 9/24, dry chemistry) → **4.51** (09:31 9/24 serum, ref 3.5–5.3, no abnormal flag). Na **130.76 → 137.03** (back inside 137–147). Cl **94.37 → 98.84** (back inside 96–108). iCa on the 07:47 ABG is still **1.12**. Albumin **35.8 → 27.8↓** (ref 34–48).
-- **Kidney:** Cr **423 → 185** (09:31 9/24, still above 41–81). Urea **41.03 critical → 20.52↑**; this sheet does not mark a critical value. Urine oral at 15:50 on 9/24 is **0**. Blood filtration restarted about **14:00**; settings unknown.
+- **Kidney:** Cr **423 → 185** (09:31 9/24, still above 41–81). Urea **41.03 critical → 20.52↑**; this sheet does not mark a critical value. Urine oral at 15:50 on 9/24 is **0**. Filtration was reported stopped at the 16:18 oral; settings and stop clock unknown.
 - **Ultrasound 2026-09-23 10:19 (postop 188h19m):** bilateral lower-extremity arterial and venous color Doppler. Impression, in the report’s words: atherosclerosis with multiple plaques; **possible incomplete occlusion of both posterior tibial arteries**; subcutaneous edema. Larger plaques at the common femoral arteries, low/weak echo, about **1.1×0.2 cm (right)** and **1.4×0.4 cm (left)**. Left PTA and the distal right PTA show only intermittent punctate flow; other arteries fill well. PTA spectra are biphasic with reduced velocity; the other spectra are triphasic and within the stated normal velocity range. Accompanying deep veins and superficial veins in the scanned field: flow fills satisfactorily, **no abnormal echo**. The report does not write thrombus. Thigh subcutaneous thickness about **2.1 cm (right)** and **2.3 cm (left)**. This replaces the same-morning oral “ultrasound in progress.”
 - **Stool:** microscopy WBC/RBC negative (oral). FOBT immunoassay **positive** 18:32 9/21. Family oral received 9/22 11:35: **3 stools yesterday, dark brown / 黑褐色**. Family oral received 9/23 15:45: **one stool today, black / 黑色**, still anuric. Color plus FOBT does not quantify or localize. Today’s 黑色 is a new stool, not a rename of the earlier 黑褐色.
 - **Ultrasound oral gloss (received 15:45):** family said the lower-extremity study was normal, no thrombus, ordinary atherosclerosis in the elderly. This does **not** replace the 10:19 report (plaques, possible incomplete PTA occlusion, no abnormal venous echo).
-- **Watch next:** BP **130/30** with diastolic 30, NE back up to **6 mL/h** and dopamine down to **3**, urine still **0**, and no MAP. Cr **185** and urea **20.52** still high; albumin **27.8**; WBC **26.44** up while PCT **8.206** still falling; 07:47 lactate **2.24**, PO₂ **70.1**, P/F **140**, PCO₂ **49.6**; APTT **44.8**; iCa **1.12**; CRRT settings unknown.
+- **Watch next:** filtration reported stopped, with no stop clock, UF, or new urine. BP **130/30**, NE **6 mL/h**, dopamine **3**, urine **0** remain the 15:50 oral. Cr **185** and urea **20.52** still high; albumin **27.8**; WBC **26.44**; PCT **8.206**; 07:47 lactate **2.24**, PO₂ **70.1**, P/F **140** (course 139→163→140, not a straight fall). Family asked whether fentanyl explains the oxygenation; no dose was stated. APTT **44.8**; iCa **1.12**.
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -227,7 +227,17 @@ No new screenshot. Manifest stays **132**. The clock is the chat receipt (07:50 
 - No MAP. No respiratory rate. Do not plot the old RR 13 or the old MAP 55 on this point.
 - Norepinephrine **2 → 6 mL/h = 0.30 mg/h**. Dopamine **5 → 3 mL/h**. Do not convert dopamine to mg/h.
 - No new stool color, ventilator setting, sedative name, or eye-opening note. 血滤 settings still unknown. Urine 0 does not prove a filtration rate.
-- **Judgment:** systolic pressure is higher and diastolic pressure is 30. Norepinephrine went back up while dopamine went down. Anuria is restated. Hero pill follows this oral: **最新口述：术后217h50m · 血压 130/30**. Creatinine 185, lactate 2.24, and P/F 140 stay on their cards.
+- **Judgment:** systolic pressure is higher and diastolic pressure is 30. Norepinephrine went back up while dopamine went down. Anuria is restated. The hero later moved to the 16:18 oral (filtration stopped). Creatinine 185, lactate 2.24, and P/F 140 stay on their cards.
+
+### Bedside oral — received 2026-09-24 16:18 (postop 218h18m)
+
+No new screenshot. Manifest stays **132**. The clock is the chat receipt (08:18 UTC = 16:18 CST), not the machine stop time.
+
+- Family said CRRT / 血滤 **has stopped**. No stop clock, blood flow, ultrafiltration, anticoagulation, or new urine. Do not compute a run length from 14:00 to 16:18.
+- No new BP, heart rate, pressor dose, respiratory rate, stool, or ventilator number. The 15:50 oral stays on the circulation card.
+- Family asked whether **fentanyl** is why the oxygenation index keeps falling. No dose, and no confirmation that an infusion rate was stated. The 9/23 sedative note still has no drug name. Do not write fentanyl into `vitalReadings`.
+- Printed P/F is **139** (9/23 20:50) → **163** (9/24 00:54) → **140** (07:47). Latest remains **140** with PO₂ **70.1** and FiO₂ **50%**. The 0.22 row is not P/F.
+- **Judgment:** record the stop and the question. The page does not assign the P/F change to fentanyl. Hero pill: **最新口述：术后218h18m · 血滤已停**.
 
 ### Morning ABG — 2026-09-23 06:38 (postop 184h38m)
 
@@ -496,4 +506,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-24 15:50 oral (postop **217h50m**, message receipt, not a monitor clock). BP **96/36 → 130/30**, heart rate **77**, urine **0**. No MAP and no new respiratory rate. Norepinephrine **2 → 6 mL/h = 0.30 mg/h**. Dopamine **5 → 3 mL/h** (not converted to mg/h). Hero pill **最新口述：术后217h50m · 血压 130/30**. Labs unchanged: creatinine **185**, urea **20.52**, PCT **8.206**, WBC **26.44**, lactate **2.24**, pH **7.360**, P/F **140**.
+**Last updated:** 2026-09-24 16:18 oral (postop **218h18m**, message receipt, not a monitor clock). Family said blood filtration has **stopped**. Stop clock, flow, ultrafiltration, and anticoagulation were not stated, so no run length is recorded. No new BP, heart rate, pressor, urine, or ventilator number; 15:50 remains BP **130/30**, heart rate **77**, NE **6**, dopamine **3**, urine **0**. Family asked whether fentanyl explains a falling oxygenation index. The printed P/F course is **139 → 163 → 140**; latest is still the 07:47 value **140**. No fentanyl dose was stated. Hero pill **最新口述：术后218h18m · 血滤已停**.
