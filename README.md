@@ -56,9 +56,9 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 固定启动页（带后台轮询，不依赖 tag 缓存）：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@237bb52/index.xhtml
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@43f67aa/index.xhtml
 
-这一页应有 **上传化验**，顶栏是 **最新化验：术后199h06m · APTT 41.1**。若仍是术后188h19m或198h50m，打开的是旧启动页。
+这一页应有 **上传化验**，顶栏是 **最新化验：术后211h31m · 肌酐 185**。若仍是术后199h06m或209h47m，打开的是旧启动页。
 
 `@upload` 只作备用入口，可能更新较慢：
 
