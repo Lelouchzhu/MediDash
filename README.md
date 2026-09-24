@@ -56,7 +56,9 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 固定启动页（带后台轮询，不依赖 tag 缓存）：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cf96515/index.xhtml
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cf96515c080564dd9c386da097c78ff900dacfba/index.xhtml
+
+短提交号 `cf96515` 会被镜像当成整包，超过 50 MB 后打不开。固定入口用上面的完整提交号。
 
 这一页应有 **上传化验**，顶栏是 **最新口述：术后226h22m · 尿量仍为0**。16:27 便常规是 **黑褐色稀便**，镜检未见异常。循环卡仍是 **130/30**，去甲 **3**、多巴胺 **6**。若顶栏还是血滤已停，打开的是旧启动页。
 

@@ -3,9 +3,9 @@
 只用于功能分支 `cursor/mainland-lab-upload-b98e`，**不改、不合并
 `main`**。上传版页面：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cf96515/index.xhtml
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cf96515c080564dd9c386da097c78ff900dacfba/index.xhtml
 
-这是带后台轮询能力的固定启动页。不要用可变 `@upload` 作为首次入口。
+这是带后台轮询能力的固定启动页。不要用可变 `@upload` 作为首次入口。短提交号会被镜像当成整包并超过 50 MB，所以这里用完整提交号。
 
 本分支已经记入 2026-09-24 16:27 便常规，以及 2026-09-25 00:22 尿量口述。打开后应看到：
 
@@ -254,7 +254,7 @@ Invoke-RestMethod `
 
 第一次打开固定启动页：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cf96515/index.xhtml
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cf96515c080564dd9c386da097c78ff900dacfba/index.xhtml
 
 点击 **上传化验**，填写：
 
