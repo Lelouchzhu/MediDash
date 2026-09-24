@@ -90,7 +90,7 @@ Categories: **循环/支持**, 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝
 
 This upload UI lives only on `cursor/mainland-lab-upload-b98e`. **Do not merge or push it to `main`.** `main` stays the canonical dashboard. Use the immutable upload-client bootstrap below; tag `upload` is only a cache-prone fallback:
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@43f67aa/index.xhtml
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@9bc4fd6/index.xhtml
 
 The page cannot call `api.cursor.com` (no CORS, and the Cursor key must not be in the public HTML). **上传化验** POSTs screenshots plus oral notes to `scripts/agent-upload-relay.py`, which follows up this agent:
 
