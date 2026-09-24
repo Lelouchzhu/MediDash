@@ -3310,14 +3310,18 @@
     function showGeneratedPage(body) {
       localStorage.removeItem(pendingRunKey);
       setAgentStatus("");
+      // Prefer the commit-pinned CDN page: Aliyun FC's default *.fcapp.run domain
+      // forces content-disposition: attachment on every response, so opening the
+      // relay's own /page/<sha> in a browser downloads instead of rendering.
+      const viewUrl = body.cdnUrl || body.pageUrl;
       const text = document.createTextNode("更新完成，正在打开新网页。");
       const link = document.createElementNS(XHTML_NS, "a");
-      link.href = body.pageUrl;
+      link.href = viewUrl;
       link.textContent = "立即打开";
       link.style.marginLeft = "8px";
       link.style.fontWeight = "800";
       agentStatus.append(text, link);
-      window.setTimeout(() => location.assign(body.pageUrl), 1800);
+      window.setTimeout(() => location.assign(viewUrl), 1800);
     }
 
     async function watchAgentRun(relayUrl, token, runId) {
