@@ -46,7 +46,7 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 - **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@1226786/index.xhtml
 - 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@1226786/index.xhtml
 
-灌注卡应是乳酸 **1.18**，酸碱卡 pH **7.345**，氧合卡 **P/F 139**（FiO₂ 60%）。凝血卡应是 APTT **41.1**（这张参考 21–45）。血红蛋白卡血气 **10.2**，钾 **4.65**。肾功能卡仍是肌酐 **423**。循环卡仍是 **96/36**。顶栏应是 **最新化验：术后199h06m · APTT 41.1**。若顶栏还是术后198h50m，打开的还是旧镜像。下次更新后把 `1226786` 换成新提交号，不要改回 `@main`。
+灌注卡应是乳酸 **2.24**，酸碱卡 pH **7.360**，氧合卡 **P/F 140**（FiO₂ 50%，PO₂ 70.1）。凝血卡应是 APTT **44.8**（这张参考 21–45）。血红蛋白卡血气 **10.8**，钾 **4.50**。肾功能卡仍是肌酐 **423**。循环卡仍是 **96/36**。顶栏应是 **最新：术后209h47m**。若顶栏还是 APTT 41.1，打开的还是旧镜像。下次更新后把 `1226786` 换成新提交号，不要改回 `@main`。
 
 微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。
 
@@ -61,7 +61,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 126 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 130 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 

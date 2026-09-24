@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 126,
+  "count": 130,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2250,6 +2250,106 @@
       "relative_h": 199.1,
       "extracted": {
         "aptt": 41.1
+      }
+    },
+    {
+      "id": "20260924T005404__815CBD13-2E85-4B1F-8421-C8969ADDD68A_L0_001.jpg",
+      "path": "reports/abg/20260924T005404__815CBD13-2E85-4B1F-8421-C8969ADDD68A_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "815CBD13-2E85-4B1F-8421-C8969ADDD68A_L0_001.jpg",
+      "sha256_16": "01d2ee4c3553999a",
+      "bytes": 1295043,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-24T00:54:04",
+      "type": "动脉血气",
+      "note": "pH7.369 in range lac1.32 in range ABE-1.90 SBE-1.80 HCO3 23.40 in range PO2 81.40 FiO2 50. Printed 氧合指数 163. The 0.25 row is not P/F. pO2(T) 79.30 is flagged low; chart uses uncorrected PO2 81.40. Hb10.30 iCa1.07",
+      "relative_h": 202.9,
+      "extracted": {
+        "ph": 7.369,
+        "ph_t": 7.375,
+        "pco2": 41.5,
+        "po2": 81.4,
+        "po2_t": 79.3,
+        "sbe": -1.8,
+        "be": -1.9,
+        "hco3": 23.4,
+        "lactate": 1.32,
+        "hb": 10.3,
+        "hct": 30.0,
+        "ca": 1.07,
+        "fio2": 50,
+        "pf": 163,
+        "so2": 95.5,
+        "temp": 36.6,
+        "pf_ratio_row": 0.25
+      }
+    },
+    {
+      "id": "20260924T010331__22835A47-C1E6-404A-8EFF-4C902512DDAE_L0_001.jpg",
+      "path": "reports/chemistry/20260924T010331__22835A47-C1E6-404A-8EFF-4C902512DDAE_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "22835A47-C1E6-404A-8EFF-4C902512DDAE_L0_001.jpg",
+      "sha256_16": "0950c054fd45b937",
+      "bytes": 322159,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-24T01:03:31",
+      "type": "生化",
+      "note": "Dry chemistry K 4.50 mmol/L, ref 3.5-5.3, no abnormal flag. Phone status bar 3:02 is not the report clock",
+      "relative_h": 203.06,
+      "extracted": {
+        "k": 4.5
+      }
+    },
+    {
+      "id": "20260924T011416__FA642617-D162-4E47-9A35-7A24C52217D6_L0_001.jpg",
+      "path": "reports/coag/20260924T011416__FA642617-D162-4E47-9A35-7A24C52217D6_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "FA642617-D162-4E47-9A35-7A24C52217D6_L0_001.jpg",
+      "sha256_16": "a05eb973b6946acf",
+      "bytes": 328934,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-24T01:14:16",
+      "type": "凝血",
+      "note": "APTT 44.8 sec, this sheet ref 21-45, no abnormal flag, near the top of the range. Phone status bar 3:02 is not the report clock. Only APTT on this sheet",
+      "relative_h": 203.24,
+      "extracted": {
+        "aptt": 44.8
+      }
+    },
+    {
+      "id": "20260924T074719__E047EBDC-4104-4C57-AEA6-09E2BCB0CDE3_L0_001.jpg",
+      "path": "reports/abg/20260924T074719__E047EBDC-4104-4C57-AEA6-09E2BCB0CDE3_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "E047EBDC-4104-4C57-AEA6-09E2BCB0CDE3_L0_001.jpg",
+      "sha256_16": "0dcf90fc4fd530c2",
+      "bytes": 1349588,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-24T07:47:19",
+      "type": "动脉血气",
+      "note": "lac2.24↑ pH7.360 in range PCO2 49.60↑ PO2 70.10↓ HCO3 27.40↑ ABE+1.90 SBE+1.40 both in range FiO2 50. Printed 氧合指数 140. The 0.22 row is not P/F. Hb10.80 iCa1.12 sO2 92.20↓",
+      "relative_h": 209.79,
+      "extracted": {
+        "ph": 7.36,
+        "ph_t": 7.367,
+        "pco2": 49.6,
+        "po2": 70.1,
+        "po2_t": 67.8,
+        "sbe": 1.4,
+        "be": 1.9,
+        "hco3": 27.4,
+        "lactate": 2.24,
+        "hb": 10.8,
+        "hct": 32.0,
+        "ca": 1.12,
+        "fio2": 50,
+        "pf": 140,
+        "so2": 92.2,
+        "temp": 36.5,
+        "pf_ratio_row": 0.22
       }
     }
   ]
