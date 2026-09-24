@@ -56,7 +56,7 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 固定启动页（带后台轮询，不依赖 tag 缓存）：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@9bc4fd6/index.xhtml
+https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@b0eda8f3075c76974c6cc3c7bfc2fa10a50d1916/index.xhtml
 
 这一页应有 **上传化验**，顶栏是 **最新口述：术后218h18m · 血滤已停**。循环卡应是 **130/30**，去甲 **3**、多巴胺 **6**。若仍是肌酐 185 的顶栏，或去甲 6、多巴胺 3，打开的是旧启动页。
 
