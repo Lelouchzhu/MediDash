@@ -5,12 +5,21 @@
       "name": "dashboard",
       "command": "python3 -m http.server 8080",
       "description": "Serves MediDash at http://localhost:8080/index.html"
+    },
+    {
+      "name": "upload-relay",
+      "command": "RELAY_DRY_RUN=1 UPLOAD_TOKEN=devtoken HOST=0.0.0.0 PORT=8090 python3 scripts/agent-upload-relay.py",
+      "description": "Dry-run mainland upload relay (no Cursor calls, no secrets). Serves index.xhtml at http://localhost:8090/ and accepts POST /upload with token 'devtoken'."
     }
   ],
   "ports": [
     {
       "name": "dashboard",
       "port": 8080
+    },
+    {
+      "name": "upload-relay",
+      "port": 8090
     }
   ]
 }
