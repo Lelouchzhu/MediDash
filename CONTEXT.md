@@ -7,10 +7,10 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **Prior agent run (Allmond-bound, then continued here):** https://cursor.com/agents/bc-01a0a01a-a6eb-72c7-b052-ba5e14ed8b1b  
 **Conversation summary (current):** [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md)  
 **Conversation summary (through 9/18 13:00 ABG):** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
-**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@49d155b/index.xhtml  
-**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@49d155b/index.xhtml  
+**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@2b92beb/index.xhtml  
+**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@2b92beb/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
-国内 `@main` 镜像不会跟着 main 走。`49d155b` 才是 9月24日09:31生化。顶栏是最新化验：术后211h31m · 肌酐 185。白细胞 26.44，降钙素原 8.206，尿素 20.52，白蛋白 27.8。乳酸仍是 2.24，pH 7.360，P/F 140。
+国内 `@main` 镜像不会跟着 main 走。`2b92beb` 才是 9月24日09:31生化。顶栏是最新化验：术后211h31m · 肌酐 185。白细胞 26.44，降钙素原 8.206，尿素 20.52，白蛋白 27.8。乳酸仍是 2.24，pH 7.360，P/F 140。
 
 ---
 
