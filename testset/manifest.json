@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 143,
+  "count": 145,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2644,6 +2644,40 @@
         "hb": 8.9,
         "ca": 1.1
       }
+    },
+    {
+      "id": "20260925T175710__aptt.jpg",
+      "path": "reports/coag/20260925T175710__aptt.jpg",
+      "category": "coag",
+      "source_filename": "9AFBE2CA-6E21-40D2-A687-C45492496456_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T17:57:10",
+      "type": "凝血",
+      "note": "Standalone APTT. 63.9 sec high, ref 21-45. Not marked critical. INR PT TT fibrinogen not on this sheet. 63.9 is APTT seconds, not P/F. Phone status bar 6:24 is not the report clock. No oral with this batch.",
+      "relative_h": 243.95,
+      "extracted": {
+        "aptt": 63.9
+      },
+      "sha256_16": "3c2f0fb9da7d4fc6",
+      "bytes": 327806
+    },
+    {
+      "id": "20260925T180703__k.jpg",
+      "path": "reports/chemistry/20260925T180703__k.jpg",
+      "category": "chemistry",
+      "source_filename": "90DD023B-CFE2-45B2-B8AF-4FE5587897E1_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T18:07:03",
+      "type": "生化",
+      "note": "Standalone dry-chemistry potassium. K 3.933 mmol/L, ref 3.5-5.3, no abnormal flag. Phone status bar 6:24 is not the report clock. No oral with this batch.",
+      "relative_h": 244.12,
+      "extracted": {
+        "k": 3.933
+      },
+      "sha256_16": "e98e100a6c9ff255",
+      "bytes": 321858
     }
   ]
 }
