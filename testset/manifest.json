@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 137,
+  "count": 138,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2512,6 +2512,23 @@
         "neut_abs": 23.37,
         "lymph_abs": 0.48,
         "plateletcrit": 0.13
+      }
+    },
+    {
+      "id": "20260925T100443__pct.jpg",
+      "path": "reports/chemistry/20260925T100443__pct.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790305930913-0.jpg",
+      "sha256_16": "feacb99f1541d829",
+      "bytes": 188065,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T10:04:43",
+      "type": "生化",
+      "note": "Standalone procalcitonin crop. Chinese name 降钙素原测定, abbreviation PCCT. Result 9.893 ng/ml high, ref 0-0.05. This is procalcitonin, not CBC plateletcrit 0.13% and not ABG P/F 107. Only this analyte is visible. Phone status bar 11:09 is not the report clock. Form clock 11:11 is the CRRT oral receipt time.",
+      "relative_h": 236.08,
+      "extracted": {
+        "pct": 9.893
       }
     }
   ]
