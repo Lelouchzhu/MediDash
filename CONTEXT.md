@@ -10,6 +10,7 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@3527733/index.xhtml  
 **备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@3527733/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
+**上传分支预览（只用 GitHub 网页，不再钉大陆 CDN）:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/mainland-lab-upload-b98e/index.html  
 国内 `@main` 镜像不会跟着 main 走。`3527733` 是 main 上更正后的升压药页。上传分支顶栏现是最新化验：术后233h52m · APTT 48.5。9月25日07:52干化学肌酐 **227.10**、尿素 **25.80**、钠 **135**。15:50血压仍是 130/30，去甲 **3** mL/h、多巴胺 **6** mL/h。
 
 ---
@@ -551,4 +552,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-25 07:52 labs (postop **233h52m**). Dry chemistry 07:52:10: Cr **227.10↑** (this sheet ref 57–111), urea **25.80↑** (this sheet ref 3.6–9.5, not marked critical), K **4.52**, Na **135↓**, Cl **97**. Coag 07:52:24: APTT **48.5↑** (ref 21–45), TT **13.2↓**, PT **11.6**, PT% **98.6**, INR **0.97**, fibrinogen **4.86↑**. Hero **最新化验：术后233h52m · APTT 48.5**. Oral on this upload left BP, pulse, pressors, urine, and CRRT blank. Urine **0** remains the 00:22 oral. Filtration last stated stopped at the 16:18 oral and was not restated. BP **130/30**, norepinephrine **3 mL/h = 0.15 mg/h**, dopamine **6 mL/h**. P/F still **140**. No fentanyl dose.
+**Last updated:** Upload branch now opens GitHub htmlpreview only; China CDN pins and tag `upload` are no longer part of this path. Clinical snapshot unchanged from 2026-09-25 07:52 labs (postop **233h52m**): Cr **227.10↑**, urea **25.80↑**, Na **135↓**, APTT **48.5↑**, TT **13.2↓**, fibrinogen **4.86↑**. Hero **最新化验：术后233h52m · APTT 48.5**. Urine **0** remains the 00:22 oral. BP **130/30**, norepinephrine **3 mL/h = 0.15 mg/h**, dopamine **6 mL/h**. P/F still **140**.

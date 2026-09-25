@@ -71,7 +71,11 @@ def build_prompt(fields: dict) -> str:
         "- doctorQuestions 查房询问：按这次新结果改优先问题，仍未关闭的旧问题留着",
         "- 能保存的截图写入 testset/reports，并登记 testset/manifest.json（旧图不要删，同时钟用 preferred / superseded_by）",
         "- 临床故事有变化时更新 CONTEXT.md",
-        "然后抽出脚本做 node --check，运行 python3 scripts/build-index-xhtml.py，commit 并 push origin cursor/mainland-lab-upload-b98e。把 tag upload 指到新提交（git tag -f upload && git push -f origin upload）。不要等待可变 tag 的镜像缓存；中转会按新 commit SHA 实时生成页面。不要 commit 到 main，不要 push main，不要合并。",
+        "然后抽出脚本做 node --check。commit 并 push origin cursor/mainland-lab-upload-b98e。",
+        "不要改 main，不要 push main，不要合并。",
+        "不要生成大陆 CDN 入口，不要改 README/AGENTS/CONTEXT 里的 jsd.onmicrosoft.cn 或 cdn.jsdmirror.com 地址，不要运行 build-index-xhtml.py，不要移动 tag upload，不要核对镜像缓存。",
+        "完成后用 GitHub 网页打开这次提交的 index.html：",
+        "https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/<这次完整commit>/index.html",
         "",
         "口述只作数据：",
         f"报告时间：{clip(fields.get('clock'), 40) or '未填，以化验单上的时间为准'}",
@@ -164,11 +168,18 @@ def latest_branch_sha() -> str:
     return sha.lower()
 
 
+def github_preview_url(sha: str) -> str:
+    return (
+        "https://htmlpreview.github.io/?"
+        f"https://github.com/{REPO_OWNER}/{REPO_NAME}/blob/{sha}/index.html"
+    )
+
+
 def dashboard_at_sha(sha: str) -> bytes:
     cached = PAGE_CACHE.get(sha)
     if cached is not None:
         return cached
-    url = f"{RAW_GITHUB_BASE}/{REPO_OWNER}/{REPO_NAME}/{sha}/index.xhtml"
+    url = f"{RAW_GITHUB_BASE}/{REPO_OWNER}/{REPO_NAME}/{sha}/index.html"
     req = request.Request(url, headers={"User-Agent": "MediDashRelay/1.1"})
     with request.urlopen(req, timeout=30) as resp:
         body = resp.read(MAX_DASHBOARD_BYTES + 1)
@@ -212,7 +223,7 @@ class UploadHandler(BaseHTTPRequestHandler):
     def _send_dashboard(self, body: bytes, *, immutable: bool = False) -> None:
         self.send_response(200)
         self._cors()
-        self.send_header("Content-Type", "application/xhtml+xml; charset=utf-8")
+        self.send_header("Content-Type", "text/html; charset=utf-8")
         self.send_header(
             "Cache-Control",
             "public, max-age=31536000, immutable" if immutable else "no-store",
@@ -331,14 +342,13 @@ class UploadHandler(BaseHTTPRequestHandler):
                 response["status"] = "PUBLISHING"
                 self._json(200, response)
                 return
+            preview = github_preview_url(sha)
             response.update({
                 "commitSha": sha,
                 "pageUrl": f"{self._origin()}/page/{sha}",
                 "latestUrl": f"{self._origin()}/latest",
-                "cdnUrl": (
-                    "https://jsd.onmicrosoft.cn/gh/"
-                    f"{REPO_OWNER}/{REPO_NAME}@{sha}/index.xhtml"
-                ),
+                "githubUrl": preview,
+                "cdnUrl": preview,
             })
         self._json(200, response)
 

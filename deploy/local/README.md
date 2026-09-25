@@ -7,8 +7,8 @@
 - `/`：上传版 dashboard
 - `/upload`：截图上传接口
 - `/status`：Cursor 后台任务状态
-- `/latest`：功能分支最新提交（302 到不可变页面）
-- `/page/<SHA>`：由 PC 中转的指定提交 XHTML
+- `/latest`：功能分支最新提交的 GitHub `index.html`
+- `/page/<SHA>`：指定提交的 GitHub `index.html`
 - `/health`：健康检查
 
 因此手机直接打开 PC 的本地页面，不会遇到 HTTPS 页面调用 HTTP 接口的
@@ -52,14 +52,8 @@ bash deploy/local/run-relay.sh
 4. 中转地址会自动填为当前地址的 `/upload`。
 5. 填脚本显示的上传口令，上传截图和口述。
 
-Agent 完成后，页面会自动跳到本机中转的 `/page/<新SHA>`，不等待
-`@upload` 国内镜像更新。以后也可直接打开：
-
-```text
-http://<PC-IP>:8787/latest
-```
-
-该地址每次读取功能分支 HEAD，并跳到对应的不可变页面。
+Agent 完成后，页面会自动打开这次提交的 GitHub 预览页，不再等国内 CDN。
+本机中转的 `/latest` 仍可读当前分支 HEAD，但手机日常入口用 GitHub 网页。
 
 如果手机在医院、PC 在家里，局域网地址不可达。此时还需要 VPN
 （例如两端都登录同一个 Tailscale 网络）或公网 HTTPS 隧道；仅启动本地中转不够。

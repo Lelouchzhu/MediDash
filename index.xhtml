@@ -3309,8 +3309,11 @@
     }
 
     function defaultRelayUrl() {
-      const cdnHost = /(?:^|\.)jsd\.onmicrosoft\.cn$|(?:^|\.)cdn\.jsdmirror\.com$/;
-      return cdnHost.test(location.hostname) ? "" : `${location.origin}/upload`;
+      const host = location.hostname;
+      if (/(?:^|\.)fcapp\.run$/.test(host) || host === "localhost" || host === "127.0.0.1") {
+        return `${location.origin}/upload`;
+      }
+      return "";
     }
 
     function pendingRun() {
@@ -3329,10 +3332,10 @@
     function showGeneratedPage(body) {
       localStorage.removeItem(pendingRunKey);
       setAgentStatus("");
-      // Prefer the commit-pinned CDN page: Aliyun FC's default *.fcapp.run domain
-      // forces content-disposition: attachment on every response, so opening the
-      // relay's own /page/<sha> in a browser downloads instead of rendering.
-      const viewUrl = body.cdnUrl || body.pageUrl;
+      // Prefer the GitHub htmlpreview of this commit. Aliyun FC's default
+      // *.fcapp.run domain forces content-disposition: attachment, so the
+      // relay's own /page/<sha> downloads instead of rendering.
+      const viewUrl = body.githubUrl || body.cdnUrl || body.pageUrl;
       const text = document.createTextNode("更新完成，正在打开新网页。");
       const link = document.createElementNS(XHTML_NS, "a");
       link.href = viewUrl;

@@ -47,8 +47,7 @@ resources:
               - POST
             corsConfig:
               allowOrigins:
-                - https://jsd.onmicrosoft.cn
-                - https://cdn.jsdmirror.com
+                - https://htmlpreview.github.io
               allowMethods:
                 - GET
                 - POST

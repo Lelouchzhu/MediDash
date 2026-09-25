@@ -40,10 +40,10 @@ class MockExternalHandler(BaseHTTPRequestHandler):
         if "/commits/" in self.path:
             self.send_json({"sha": SHA})
             return
-        if self.path.endswith(f"/{SHA}/index.xhtml"):
-            body = b'<html xmlns="http://www.w3.org/1999/xhtml"><body>generated</body></html>'
+        if self.path.endswith(f"/{SHA}/index.html"):
+            body = b"<html><body>generated</body></html>"
             self.send_response(200)
-            self.send_header("Content-Type", "application/xhtml+xml")
+            self.send_header("Content-Type", "text/html")
             self.send_header("Content-Length", str(len(body)))
             self.end_headers()
             self.wfile.write(body)
@@ -116,19 +116,31 @@ class RelayFlowTest(unittest.TestCase):
         self.assertEqual(finished["status"], "FINISHED")
         self.assertEqual(finished["commitSha"], SHA)
         self.assertEqual(finished["pageUrl"], f"{self.base}/page/{SHA}")
-        self.assertIn(f"@{SHA}/index.xhtml", finished["cdnUrl"])
+        preview = (
+            "https://htmlpreview.github.io/?"
+            f"https://github.com/Lelouchzhu/MediDash/blob/{SHA}/index.html"
+        )
+        self.assertEqual(finished["githubUrl"], preview)
+        self.assertEqual(finished["cdnUrl"], preview)
 
         with request.urlopen(finished["pageUrl"], timeout=5) as response:
             self.assertEqual(response.headers["Content-Type"].split(";")[0],
-                             "application/xhtml+xml")
+                             "text/html")
             self.assertIn(b"generated", response.read())
 
         with request.urlopen(f"{self.base}/latest", timeout=5) as response:
             self.assertEqual(response.status, 200)
             self.assertEqual(response.url, f"{self.base}/latest")
             self.assertEqual(response.headers["Content-Type"].split(";")[0],
-                             "application/xhtml+xml")
+                             "text/html")
             self.assertIn(b"generated", response.read())
+
+    def test_prompt_skips_cdn_and_tag(self):
+        prompt = self.relay_module.build_prompt({"notes": "x"})
+        self.assertIn("htmlpreview.github.io", prompt)
+        self.assertIn("不要运行 build-index-xhtml.py", prompt)
+        self.assertIn("不要移动 tag upload", prompt)
+        self.assertNotIn("jsd.onmicrosoft.cn/gh/", prompt)
 
     def test_status_requires_token(self):
         with self.assertRaises(error.HTTPError) as raised:

@@ -3,9 +3,9 @@
 只用于功能分支 `cursor/mainland-lab-upload-b98e`，**不改、不合并
 `main`**。上传版页面：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@99a0a23697663052181647e88d4662f1464e51c6/index.xhtml
+https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/mainland-lab-upload-b98e/index.html
 
-这是带后台轮询能力的固定启动页。不要用可变 `@upload` 作为首次入口。短提交号会被镜像当成整包并超过 50 MB，所以这里用完整提交号。
+这是 GitHub 网页预览，不再走 `jsd.onmicrosoft.cn` / `cdn.jsdmirror.com`。上传完成后中转会打开这次提交的 htmlpreview，不要再钉大陆 CDN 提交号。
 
 本分支已经记入 2026-09-25 07:52 干化学和凝血。打开后应看到：
 
@@ -38,12 +38,11 @@ https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@99a0a23697663052181647e88d4662
 1. `/upload` 创建 Cursor 后台任务并返回 `runId`；
 2. 浏览器每 6 秒调用 `/status`；
 3. Agent 完成并 push 后，中转读取功能分支的新 commit SHA；
-4. 中转从 GitHub 拉取该 SHA 的 `index.xhtml`，由
-   `/page/<40位SHA>` 以 `application/xhtml+xml` 返回；
-5. 浏览器自动跳到这个不可变页面。
+4. 中转读取功能分支的新 commit SHA，并返回这次提交的 GitHub 预览地址：
+   `https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/<SHA>/index.html`
+5. 浏览器自动打开这份 GitHub 网页。不要再等大陆 CDN。
 
-同一个提交 URL 永远对应同一份数据，不需要 purge。`/latest` 每次查询分支
-HEAD，再跳转到当前 `/page/<SHA>`。
+`*.fcapp.run` 会强制下载，所以结果页不要用中转自己的 `/page/<SHA>`。
 
 ## 2. 在 PC 上准备代码包
 
@@ -139,8 +138,7 @@ RELAY_DRY_RUN=1
 
 ```text
 允许来源：
-  https://jsd.onmicrosoft.cn
-  https://cdn.jsdmirror.com
+  https://htmlpreview.github.io
 允许方法：GET、POST
 允许请求头：Content-Type
 允许凭据：false
@@ -159,7 +157,7 @@ RELAY_DRY_RUN=1
 1. 在「编辑触发器」的 **请求方法** 里，把 `OPTIONS` 也加上，变成 `GET、POST、OPTIONS`。
 2. 点「确定」保存。
 3. 浏览器的预检 `OPTIONS` 会打到函数，由代码回 CORS 头，覆盖
-   `jsd.onmicrosoft.cn` 与 `cdn.jsdmirror.com`。页面只在请求体带 `token`、不带
+   `htmlpreview.github.io`。页面只在请求体带 `token`、不带
    Cookie，所以 `*` + 不带凭据是安全可用的。
 
 注意方向别搞反：
@@ -174,7 +172,7 @@ RELAY_DRY_RUN=1
 
 ```bash
 curl -i -X OPTIONS 'https://你的地址/upload' \
-  -H 'Origin: https://jsd.onmicrosoft.cn' \
+  -H 'Origin: https://htmlpreview.github.io' \
   -H 'Access-Control-Request-Method: POST' \
   -H 'Access-Control-Request-Headers: Content-Type'
 ```
@@ -215,14 +213,9 @@ curl 'https://你的地址/health'
 curl -i 'https://你的地址/latest'
 ```
 
-应 **200** 且 `Content-Type: application/xhtml+xml`，直接返回当前分支 HEAD 的
-dashboard；浏览器打开 `/latest` 或 `/` 都直接看到页面。
-
-> **注意：`/latest` 与 `/` 不再用 302 跳转。** 阿里云 FC 默认域名
-> `*.fcapp.run` 禁止函数返回 3xx 跳转，只对**自定义域名**放开（`curl` 会看到
-> `400 ExternalRedirectForbidden / please use custom domain endpoint`）。所以中转
-> 直接把当前 HEAD 的 `index.xhtml` 代理成 200 返回，无需备案自定义域名。实时上传
-> 结果页 `/page/<40位SHA>` 本来就是 200，由浏览器前端跳转打开，不受此限制。
+应 **200** 且 `Content-Type: text/html`，直接返回当前分支 HEAD 的
+`index.html`。手机日常入口仍用 GitHub 预览页；`*.fcapp.run` 会强制下载，不要把
+中转自己的 `/page/<SHA>` 当结果页。
 
 ## 8. 试运行上传
 
@@ -255,7 +248,7 @@ Invoke-RestMethod `
 
 第一次打开固定启动页：
 
-https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@99a0a23697663052181647e88d4662f1464e51c6/index.xhtml
+https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/mainland-lab-upload-b98e/index.html
 
 点击 **上传化验**，填写：
 
@@ -290,8 +283,8 @@ RELAY_DRY_RUN=0
 
 - 只更新 `cursor/mainland-lab-upload-b98e`
 - 更新 dashboard 数据、interpretation、`doctorQuestions`
-- 重建 `index.xhtml`
-- 推送本分支并移动 tag `upload`
+- 推送本分支
+- 不重建 `index.xhtml`，不移动 tag `upload`，不钉大陆 CDN
 - 不 push / merge `main`
 
 一个 Agent 同时只能跑一个任务；返回 `agent_busy` 时，等上一条结束再传。
@@ -304,14 +297,13 @@ RELAY_DRY_RUN=0
 更新完成，正在打开新网页。
 ```
 
-随后自动打开：
+随后自动打开这次提交的 GitHub 预览页：
 
 ```text
-https://你的地址/page/<新提交SHA>
+https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/<新提交SHA>/index.html
 ```
 
-以后建议把 `https://你的地址/latest` 加入收藏。它由阿里云实时读取功能分支
-HEAD，不依赖 `@upload` 镜像。`@upload` 只保留为没有中转时的启动入口。
+日常入口用功能分支的 GitHub 网页，不要收藏大陆 CDN。
 
 ## 11. Serverless Devs 自动部署（可选）
 
