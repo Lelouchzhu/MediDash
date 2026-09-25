@@ -324,7 +324,7 @@ Screenshot: `testset/reports/chemistry/20260925T100443__pct.jpg`. Manifest **138
 
 ### Arterial ABG — 2026-09-25 13:58:56 (postop 239h58m)
 
-Screenshot: `testset/reports/abg/20260925T135856__abg.jpg`. Manifest **139**. The form clock 14:00 has no seconds; the sheet clock is **13:58:56**. Oral fields were all 未填, notes 无.
+Screenshot (preferred): `testset/reports/abg/20260925T135856__hires__abg.jpg`. Earlier same-clock file `20260925T135856__abg.jpg` is kept, `preferred: false`, `superseded_by` the larger JPEG. Manifest **140**. Same 1680×1800; bytes 423304 vs 240809. Key values match. The later oral left all fields 未填. The sheet clock is **13:58:56**.
 
 - pH **7.393** (in 7.35–7.45; was 7.407). PCO₂ **40.40**. HCO₃⁻ **24.10**. ABE **−0.80**. SBE **−0.80**.
 - Lactate **1.30** (was 2.26; ref 0.5–1.6). No high flag.
@@ -600,4 +600,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-25 13:58 ABG (postop **239h58m**). Lactate **2.26 → 1.30** (back in 0.5–1.6). P/F **107 → 111** on FiO₂ **60%**. ABG Hb **9.5**, iCa **1.06**. The 0.17% row is not P/F. Hero **最新：术后239h58m**. Oral 14:00 left BP, pressors, urine, and CRRT blank. PCT **9.893**, CBC Hb **87**, Cr **227.10**, APTT **48.5** stay on earlier sheets. BP **130/30**, norepinephrine **3 mL/h = 0.15 mg/h**, dopamine **6 mL/h**.
+**Last updated:** same-clock replacement of the 13:58 ABG. Preferred file `20260925T135856__hires__abg.jpg` (423304 B). Old `20260925T135856__abg.jpg` kept. Values unchanged: lactate **1.30**, P/F **111**, pH **7.393**, Hb **9.5**. Oral this turn all 未填. Hero still **最新：术后239h58m**. Manifest **140**.
