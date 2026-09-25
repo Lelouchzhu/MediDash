@@ -114,8 +114,8 @@ origin and avoids HTTPS-to-HTTP Mixed Content. Never commit
 
 大陆入口只有 `index.xhtml`（国内 CDN 按 `application/xhtml+xml` 打开；`index.html` 在镜像上是 `text/plain`，浏览器会显示源码）。不要再放 `hub.xhtml`。动态 HTML 必须走 `setMarkup` / `createSvg`；不要对 SVG 用 `innerHTML`，也不要插入未闭合的 `<br>` / `<input>`，否则趋势图在大陆入口会空白。
 
-- **大陆入口（提交号，不要用 @main）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@a9ef1d24d46678bf3d5e33369e13bcd6cde37184/index.xhtml
-- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@a9ef1d24d46678bf3d5e33369e13bcd6cde37184/index.xhtml
+- **大陆入口（提交号，不要用 @main）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@ca21eace3803379e56239e68828313141415ebf1/index.xhtml
+- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@ca21eace3803379e56239e68828313141415ebf1/index.xhtml
 - 海外备用: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
 微信若停在源码页，改用系统浏览器。国内 `@main` 快照会滞后（2026-09-22 实测仍是术后149h20m）。给家属的链接必须带提交号。
