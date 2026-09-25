@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 133,
+  "count": 135,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2418,6 +2418,49 @@
         "color": "黑褐色",
         "consistency": "稀便",
         "microscopy": "未见异常"
+      }
+    },
+    {
+      "id": "20260925T075210__dry-chemistry.jpg",
+      "path": "reports/chemistry/20260925T075210__dry-chemistry.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790295421470-1.jpg",
+      "sha256_16": "55655082d09d45dd",
+      "bytes": 94314,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T07:52:10",
+      "type": "生化",
+      "note": "Dry chemistry. K4.52 in 3.5-5.3. Na135 low, ref 137-147. Cl97 in 96-108. UREA 25.80 high, this sheet ref 3.6-9.5, not critical. CREA 227.10 high, this sheet ref 57-111, not critical. No albumin, no procalcitonin. Not the CBC plateletcrit and not P/F.",
+      "relative_h": 233.87,
+      "extracted": {
+        "k": 4.52,
+        "na": 135,
+        "cl": 97,
+        "urea": 25.8,
+        "creatinine": 227.1
+      }
+    },
+    {
+      "id": "20260925T075224__coag.jpg",
+      "path": "reports/coag/20260925T075224__coag.jpg",
+      "category": "coag",
+      "source_filename": "image-1790295421467-0.jpg",
+      "sha256_16": "f48354a71eae6ac9",
+      "bytes": 98568,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T07:52:24",
+      "type": "凝血",
+      "note": "APTT 48.5 high, ref 21-45. TT 13.2 low, ref 14-21. PT 11.6 in 11-14.3. PT% 98.6 in 80-120. INR 0.97 in 0.94-1.2. Fbg 4.86 high, ref 2-4.5. Not marked critical. 48.5 is APTT seconds, not P/F. 14 seconds after the dry chemistry.",
+      "relative_h": 233.87,
+      "extracted": {
+        "aptt": 48.5,
+        "tt": 13.2,
+        "pt": 11.6,
+        "pt_pct": 98.6,
+        "inr": 0.97,
+        "fbg": 4.86
       }
     }
   ]

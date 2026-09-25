@@ -10,7 +10,7 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@3527733/index.xhtml  
 **备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@3527733/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
-国内 `@main` 镜像不会跟着 main 走。`3527733` 是 main 上更正后的升压药页。上传分支顶栏现是最新口述：术后226h22m · 尿量仍为0。9月24日16:27便常规是黑褐色稀便，镜检未见异常。15:50血压仍是 130/30，去甲 **3** mL/h、多巴胺 **6** mL/h。
+国内 `@main` 镜像不会跟着 main 走。`3527733` 是 main 上更正后的升压药页。上传分支顶栏现是最新化验：术后233h52m · APTT 48.5。9月25日07:52干化学肌酐 **227.10**、尿素 **25.80**、钠 **135**。15:50血压仍是 130/30，去甲 **3** mL/h、多巴胺 **6** mL/h。
 
 ---
 
@@ -94,12 +94,13 @@ Trend: falling since the peak, still far above ref 0–0.05. The first 09:18 che
 - **New run:** family said 血滤 started **约2026-09-23 14:00** (两点左右, postop **192h**). At the **2026-09-24 16:18** oral they said it has **stopped**. The stop clock was not stated, so do not turn the receipt time into a run length. Blood flow, ultrafiltration, and anticoagulation were never stated. Urine was **0** at 15:50. The **2026-09-25 00:22** oral said urine is still **0** and did not say whether filtration restarted.
 - Vasopressor series: norepinephrine **9 → 6 → 4 → 2 → 3 mL/h** (0.45 → 0.30 → 0.20 → 0.10 → **0.15 mg/h**) + dopamine **10 → 8 → 7.5 → 5 → 6 mL/h**. Concentration **0.05 mg/mL**. The 9/21 step at 6 mL/h remains 0.30 mg/h. The 15:50 step is 3 mL/h after the 17:34 correction. Do not invent dopamine mg/h.
 - **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53 → 10.2 at 06:41 → 9.9 at 18:30**. Evening CBC Hb **101** (19:05) → morning 9/22 **97**. Ask how many units finished.
-- **K:** … → **4.50** (01:03 9/24, dry chemistry) → **4.51** (09:31 9/24 serum, ref 3.5–5.3, no abnormal flag). Na **130.76 → 137.03** (back inside 137–147). Cl **94.37 → 98.84** (back inside 96–108). iCa on the 07:47 ABG is still **1.12**. Albumin **35.8 → 27.8↓** (ref 34–48).
-- **Kidney:** Cr **423 → 185** (09:31 9/24, still above 41–81). Urea **41.03 critical → 20.52↑**; this sheet does not mark a critical value. Urine oral at 00:22 on 9/25 is still **0**. Filtration was reported stopped at the 16:18 oral and was not restated; settings and stop clock unknown.
+- **K:** … → **4.50** (01:03 9/24, dry chemistry) → **4.51** (09:31 9/24 serum) → **4.52** (07:52 9/25 dry chemistry, ref 3.5–5.3, no abnormal flag). Na **137.03 → 135↓** on the 07:52 sheet (ref 137–147). Cl **98.84 → 97** (still inside 96–108). iCa on the 07:47 ABG is still **1.12**. Albumin stays **27.8↓**; the 07:52 sheet did not repeat it.
+- **Kidney:** Cr **185 → 227.10** (07:52 9/25 dry chemistry). This sheet’s creatinine ref is **57–111**, flagged high, not the older 41–81. Urea **20.52 → 25.80↑**; this sheet’s urea ref is **3.6–9.5**, flagged high, not marked critical, and not the older 3.1–8.8. Urine oral at 00:22 on 9/25 is still **0**. The 07:52 oral left urine blank. Filtration was reported stopped at the 16:18 oral and was not restated; settings and stop clock unknown.
 - **Ultrasound 2026-09-23 10:19 (postop 188h19m):** bilateral lower-extremity arterial and venous color Doppler. Impression, in the report’s words: atherosclerosis with multiple plaques; **possible incomplete occlusion of both posterior tibial arteries**; subcutaneous edema. Larger plaques at the common femoral arteries, low/weak echo, about **1.1×0.2 cm (right)** and **1.4×0.4 cm (left)**. Left PTA and the distal right PTA show only intermittent punctate flow; other arteries fill well. PTA spectra are biphasic with reduced velocity; the other spectra are triphasic and within the stated normal velocity range. Accompanying deep veins and superficial veins in the scanned field: flow fills satisfactorily, **no abnormal echo**. The report does not write thrombus. Thigh subcutaneous thickness about **2.1 cm (right)** and **2.3 cm (left)**. This replaces the same-morning oral “ultrasound in progress.”
 - **Stool:** 2026-09-24 16:27:43 sheet: color **黑褐色**, consistency **稀便**, microscopy **未见异常**. Stool WBC and RBC results are blank, not 0. No occult blood on this sheet. Older FOBT immunoassay **positive** 18:32 9/21 stays on that older sheet only. Family oral 9/22 11:35: **3 stools yesterday, 黑褐色**. Family oral 9/23 15:45: **one stool, 黑色**. Color does not quantify or localize.
 - **Ultrasound oral gloss (received 15:45):** family said the lower-extremity study was normal, no thrombus, ordinary atherosclerosis in the elderly. This does **not** replace the 10:19 report (plaques, possible incomplete PTA occlusion, no abnormal venous echo).
-- **Watch next:** 16:27 stool is 黑褐色 loose stool, microscopy unremarkable, WBC/RBC blank, no occult blood on that sheet. Urine still **0** at 00:22 on 9/25. Filtration was last said stopped at 16:18, with no stop clock or UF, and was not restated. BP **130/30**, NE **3 mL/h = 0.15 mg/h**, dopamine **6 mL/h** remain the corrected 15:50 oral. Cr **185** and urea **20.52** still high; albumin **27.8**; WBC **26.44**; PCT **8.206**; 07:47 lactate **2.24**, PO₂ **70.1**, P/F **140**. No fentanyl dose. APTT **44.8**; iCa **1.12**.
+- **Coag 2026-09-25 07:52:24 (postop 233h52m):** APTT **48.5↑** sec (ref 21–45; was 44.8). TT **13.2↓** sec (ref 14–21). PT **11.6** (ref 11–14.3, no flag). PT% **98.6** (ref 80–120). INR **0.97** (ref 0.94–1.2). Fibrinogen **4.86↑** g/L (ref 2–4.5). Not marked critical. 48.5 is APTT seconds, not P/F.
+- **Watch next:** 07:52 APTT **48.5** and fibrinogen **4.86** with the still-open 16:27 **黑褐色** loose stool (microscopy unremarkable, WBC/RBC blank, no occult blood on that sheet). Cr **227.10** and urea **25.80** are higher than 09:31. Na **135** is low on this sheet. Urine still **0** only as the 00:22 oral; 07:52 did not restate it. Filtration was last said stopped at 16:18 and was not restated. BP **130/30**, NE **3 mL/h = 0.15 mg/h**, dopamine **6 mL/h** remain the corrected 15:50 oral. Albumin **27.8**; WBC **26.44**; PCT **8.206**; 07:47 lactate **2.24**, PO₂ **70.1**, P/F **140**. No fentanyl dose. K **4.52**; iCa **1.12**.
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -263,7 +264,25 @@ No new screenshot. The form clock is the receipt time. Urine **仍为0**. SBP, D
 
 - Do not add a `vitalReadings` point. There is no new pressure or pump rate to plot.
 - Do not change the 16:18 filtration sentence into “still stopped” or “restarted”. This oral did not say.
-- Hero pill follows this oral because it is later than the 16:27 stool sheet: **最新口述：术后226h22m · 尿量仍为0**. BP **130/30**, norepinephrine **3 mL/h = 0.15 mg/h**, dopamine **6 mL/h** stay the 15:50 values.
+- At the time of that oral the hero was **最新口述：术后226h22m · 尿量仍为0**. The 07:52 labs are later, so the hero moved. BP **130/30**, norepinephrine **3 mL/h = 0.15 mg/h**, dopamine **6 mL/h** stay the 15:50 values.
+
+### Dry chemistry — 2026-09-25 07:52:10 (postop 233h52m)
+
+Screenshot: `testset/reports/chemistry/20260925T075210__dry-chemistry.jpg`. Manifest **135**. The form clock 07:52 has no seconds; the sheet clock is **07:52:10**. Oral fields on the same upload were all 未填, notes 无. No new BP, pulse, norepinephrine, dopamine, urine, or filtration sentence.
+
+- K **4.52** mmol/L (ref 3.5–5.3, no flag). Na **135↓** mmol/L (ref 137–147). Cl **97** mmol/L (ref 96–108, no flag).
+- Urea **25.80↑** mmol/L. This sheet’s ref is **3.6–9.5**, not 3.1–8.8. Flagged high. Not marked 危急.
+- Creatinine **227.10↑** μmol/L. This sheet’s ref is **57–111**, not 41–81. Flagged high. Not marked 危急.
+- No albumin and no procalcitonin on this sheet. Do not carry 27.8 or 8.206 forward as if they were redrawn.
+- Relative hour **233.87** (233h 52m 10s). Label **术后233h52m**.
+
+### Coag — 2026-09-25 07:52:24 (postop 233h52m)
+
+Screenshot: `testset/reports/coag/20260925T075224__coag.jpg`. Same manifest update. Sheet clock is **14 seconds** after the chemistry, so this is the newer non-ABG report. Both hours round to **233.87**; chemistry is appended first and coag last so `labReadings.at(-1)` is coag.
+
+- APTT **48.5↑** sec (ref 21–45). TT **13.2↓** sec (ref 14–21). PT **11.6** sec (ref 11–14.3, no flag). PT% **98.6** (ref 80–120, no flag). INR **0.97** (ref 0.94–1.2, no flag). Fibrinogen **4.86↑** g/L (ref 2–4.5).
+- Not marked 危急. No patient name in the UI.
+- **Judgment:** record the printed flags only. Hero pill is **最新化验：术后233h52m · APTT 48.5**. Do not add a `vitalReadings` point. Do not restate urine, BP, norepinephrine, dopamine, or filtration as newly confirmed.
 
 ### Morning ABG — 2026-09-23 06:38 (postop 184h38m)
 
@@ -532,4 +551,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-25 00:22 oral (postop **226h22m**): urine still **0**. No new BP or pressors. 2026-09-24 16:27:43 stool routine (postop **218h27m**): **黑褐色**, **稀便**, microscopy **未见异常**; WBC and RBC results blank, not zero; no occult blood on this sheet. Hero **最新口述：术后226h22m · 尿量仍为0**. Filtration last stated stopped at the 16:18 oral and was not restated. BP **130/30**, norepinephrine **3 mL/h = 0.15 mg/h**, dopamine **6 mL/h**. P/F still **140**. No fentanyl dose.
+**Last updated:** 2026-09-25 07:52 labs (postop **233h52m**). Dry chemistry 07:52:10: Cr **227.10↑** (this sheet ref 57–111), urea **25.80↑** (this sheet ref 3.6–9.5, not marked critical), K **4.52**, Na **135↓**, Cl **97**. Coag 07:52:24: APTT **48.5↑** (ref 21–45), TT **13.2↓**, PT **11.6**, PT% **98.6**, INR **0.97**, fibrinogen **4.86↑**. Hero **最新化验：术后233h52m · APTT 48.5**. Oral on this upload left BP, pulse, pressors, urine, and CRRT blank. Urine **0** remains the 00:22 oral. Filtration last stated stopped at the 16:18 oral and was not restated. BP **130/30**, norepinephrine **3 mL/h = 0.15 mg/h**, dopamine **6 mL/h**. P/F still **140**. No fentanyl dose.
