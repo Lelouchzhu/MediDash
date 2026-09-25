@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 140,
+  "count": 143,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2583,6 +2583,66 @@
         "pf": 111,
         "hb": 9.5,
         "ca": 1.06
+      }
+    },
+    {
+      "id": "20260925T141306__k.jpg",
+      "path": "reports/chemistry/20260925T141306__k.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790329352452-1.jpg",
+      "sha256_16": "6d6fe2e1e56e7180",
+      "bytes": 185882,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T14:13:06",
+      "type": "生化",
+      "note": "Standalone dry-chemistry potassium. K 3.99 mmol/L, ref 3.5-5.3, no abnormal flag. Phone status bar 4:08 is not the report clock. Oral fields blank.",
+      "relative_h": 240.22,
+      "extracted": {
+        "k": 3.99
+      }
+    },
+    {
+      "id": "20260925T142137__aptt.jpg",
+      "path": "reports/coag/20260925T142137__aptt.jpg",
+      "category": "coag",
+      "source_filename": "image-1790329352526-0.jpg",
+      "sha256_16": "f3c8e38f4717979f",
+      "bytes": 187086,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T14:21:37",
+      "type": "凝血",
+      "note": "Standalone APTT. 56.9 sec high, ref 21-45. Not marked critical. INR PT TT fibrinogen not on this sheet. 56.9 is APTT seconds, not P/F. Phone status bar 4:08 is not the report clock. Oral fields blank.",
+      "relative_h": 240.36,
+      "extracted": {
+        "aptt": 56.9
+      }
+    },
+    {
+      "id": "20260925T172857__abg.jpg",
+      "path": "reports/abg/20260925T172857__abg.jpg",
+      "category": "abg",
+      "source_filename": "image-1790329352449-2.jpg",
+      "sha256_16": "449caea01f857787",
+      "bytes": 420195,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T17:28:57",
+      "type": "血气",
+      "note": "Arterial. pH7.385 PCO2 39.70 PO2 64.20 low. HCO3 23.20 ABE -1.80 SBE -1.60. Store ABE. Lactate 1.56 in 0.5-1.6, no high flag. FiO2 60%. Printed P/F 107 low. 64.20/0.60=107. The 0.17% pO2(a)/FO2(I) row is not P/F and not procalcitonin. Hb 8.90 Hct 26 iCa 1.10 sO2 91.00. Oral fields blank.",
+      "relative_h": 243.48,
+      "extracted": {
+        "ph": 7.385,
+        "pco2": 39.7,
+        "po2": 64.2,
+        "hco3": 23.2,
+        "be": -1.8,
+        "lactate": 1.56,
+        "fio2": 60,
+        "pf": 107,
+        "hb": 8.9,
+        "ca": 1.1
       }
     }
   ]
