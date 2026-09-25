@@ -10,7 +10,7 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@a9ef1d24d46678bf3d5e33369e13bcd6cde37184/index.xhtml  
 **备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@a9ef1d24d46678bf3d5e33369e13bcd6cde37184/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
-国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是最新化验：术后247h33m · APTT **67.1**。21:33 钾 **4.077**。21:10 血气乳酸 **1.57**，P/F **120**，血气Hb **9.3**。15:07口述血压仍是 **122/33**，心跳 **83**，呼吸 **14**，去甲仍 **3** mL/h，多巴胺 **6→5** mL/h。CRRT在运行，没有流速、脱水或尿量。10:04 降钙素原仍是 **9.893**。08:05 血常规白细胞 **24.15**、Hb **87**。这次口述字段都空着。
+国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是最新化验：术后251h30m · APTT **67.2**。01:29 钾 **4.333**。01:04 血气乳酸 **1.338**，P/F **116**，血气Hb **8.6**，pH **7.348**↓。15:07口述血压仍是 **122/33**，心跳 **83**，呼吸 **14**，去甲仍 **3** mL/h，多巴胺 **6→5** mL/h。CRRT在运行，没有流速、脱水或尿量。10:04 降钙素原仍是 **9.893**。08:05 血常规白细胞 **24.15**、Hb **87**。这次口述字段都空着。
 
 ---
 
@@ -47,7 +47,7 @@ Formula: `relative_h = (report_datetime − 2026-09-15 14:00)` in hours.
 |--------------------------|---------|---------|
 | **降钙素原 / PCT** (biochem) | **Procalcitonin** ng/mL | … → 18.701 → 8.206 → **9.893** |
 | **血小板比积 / PCT** (CBC) | **Plateletcrit** % | latest **0.13%** (was 0.12%) |
-| **氧合指数 pO2(a)/FO2(I)** | PaO₂/FiO₂ | latest printed **120** (FiO₂ 60%) |
+| **氧合指数 pO2(a)/FO2(I)** | PaO₂/FiO₂ | latest printed **116** (FiO₂ 60%) |
 
 A low-resolution ABG once caused “PCT 170” confusion with oxygenation index **169**. The **real** procalcitonin 170.297 is on the **2026-09-17 10:52** chemistry panel (same sheet as ALT/AST).
 
@@ -95,13 +95,13 @@ Trend: falling from the 170 peak through **8.206**, then **rose** to **9.893**. 
 - **New run:** family said 血滤 started **约2026-09-23 14:00** (两点左右, postop **192h**). At the **2026-09-24 16:18** oral they said it has **stopped**. The stop clock was not stated, so do not turn the receipt time into a run length. Blood flow, ultrafiltration, and anticoagulation were never stated. Urine was **0** at 15:50. The **2026-09-25 00:22** oral said urine is still **0** and did not say whether filtration restarted. The **2026-09-25 11:11** oral said **crrt早上会重新开机**. 11:11 is the receipt time, not a start clock. The **2026-09-25 15:07** oral said **CRRT在运行**. 15:07 is the receipt time, not a start clock. Do not invent flow, UF, anticoagulation, or a run length from “morning” to 15:07. Do not copy 130 mL/min or UF 300 onto this run. Urine was blank on the 15:07 oral.
 - Vasopressor series: norepinephrine **9 → 6 → 4 → 2 → 3 mL/h** (0.45 → 0.30 → 0.20 → 0.10 → **0.15 mg/h**) + dopamine **10 → 8 → 7.5 → 5 → 6 → 5 mL/h**. Concentration **0.05 mg/mL**. The 9/21 step at 6 mL/h remains 0.30 mg/h. The 15:50 step is 3 mL/h after the 17:34 correction. The 15:07 step keeps norepinephrine at 3 and lowers dopamine to 5. Do not invent dopamine mg/h.
 - **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53 → 10.2 at 06:41 → 9.9 at 18:30**. Evening CBC Hb **101** (19:05) → morning 9/22 **97**. Ask how many units finished.
-- **K:** … → **4.52** (07:52 9/25 dry chemistry) → **3.99** (14:13) → **3.933** (18:07) → **4.077** (21:33 9/25 dry chemistry, ref 3.5–5.3, no abnormal flag). Na still **135↓**. Cl still **97**. iCa on the 21:10 ABG is **1.12↓**. Albumin stays **27.8↓**; the 21:33 sheet did not repeat it.
-- **Kidney:** Cr **185 → 227.10** (07:52 9/25 dry chemistry). This sheet’s creatinine ref is **57–111**, flagged high, not the older 41–81. Urea **20.52 → 25.80↑**; this sheet’s urea ref is **3.6–9.5**, flagged high, not marked critical, and not the older 3.1–8.8. Urine oral at 00:22 on 9/25 is still **0**. The 15:07 oral left urine blank and said **CRRT在运行**. The later 14:13 / 17:28 / 21:10 / 21:33 sheets and the blank oral did not add urine or CRRT settings.
+- **K:** … → **4.52** (07:52 9/25 dry chemistry) → **3.99** (14:13) → **3.933** (18:07) → **4.077** (21:33) → **4.333** (01:29 9/26 dry chemistry, ref 3.5–5.3, no abnormal flag). Na still **135↓**. Cl still **97**. iCa on the 01:04 ABG is **1.14↓**. Albumin stays **27.8↓**; the 01:29 sheet did not repeat it.
+- **Kidney:** Cr **185 → 227.10** (07:52 9/25 dry chemistry). This sheet’s creatinine ref is **57–111**, flagged high, not the older 41–81. Urea **20.52 → 25.80↑**; this sheet’s urea ref is **3.6–9.5**, flagged high, not marked critical, and not the older 3.1–8.8. Urine oral at 00:22 on 9/25 is still **0**. The 15:07 oral left urine blank and said **CRRT在运行**. The later 14:13 / 17:28 / 21:10 / 21:33 / 01:04 / 01:29 sheets and the blank oral did not add urine or CRRT settings.
 - **Ultrasound 2026-09-23 10:19 (postop 188h19m):** bilateral lower-extremity arterial and venous color Doppler. Impression, in the report’s words: atherosclerosis with multiple plaques; **possible incomplete occlusion of both posterior tibial arteries**; subcutaneous edema. Larger plaques at the common femoral arteries, low/weak echo, about **1.1×0.2 cm (right)** and **1.4×0.4 cm (left)**. Left PTA and the distal right PTA show only intermittent punctate flow; other arteries fill well. PTA spectra are biphasic with reduced velocity; the other spectra are triphasic and within the stated normal velocity range. Accompanying deep veins and superficial veins in the scanned field: flow fills satisfactorily, **no abnormal echo**. The report does not write thrombus. Thigh subcutaneous thickness about **2.1 cm (right)** and **2.3 cm (left)**. This replaces the same-morning oral “ultrasound in progress.”
 - **Stool:** 2026-09-24 16:27:43 sheet: color **黑褐色**, consistency **稀便**, microscopy **未见异常**. Stool WBC and RBC results are blank, not 0. No occult blood on this sheet. Older FOBT immunoassay **positive** 18:32 9/21 stays on that older sheet only. Family oral 9/22 11:35: **3 stools yesterday, 黑褐色**. Family oral 9/23 15:45: **one stool, 黑色**. Color does not quantify or localize.
 - **Ultrasound oral gloss (received 15:45):** family said the lower-extremity study was normal, no thrombus, ordinary atherosclerosis in the elderly. This does **not** replace the 10:19 report (plaques, possible incomplete PTA occlusion, no abnormal venous echo).
-- **Coag 2026-09-25 21:33:36 (postop 247h33m):** APTT **67.1↑** sec (ref 21–45; was 63.9). Not marked critical. INR, PT, TT, and fibrinogen are not on this sheet — do not carry 07:52 INR **0.97** or Fbg **4.86** as redrawn. 67.1 is APTT seconds, not P/F.
-- **Watch next:** APTT **67.1** with CRRT still only known as **在运行**. P/F **120** on FiO₂ **60%**. ABG Hb **9.3**; CBC Hb still **87** with the still-open 16:27 **黑褐色** loose stool. 15:07 BP **122/33**, HR **83**, RR **14**, NE still **3 mL/h = 0.15 mg/h**, dopamine **6 → 5 mL/h**. Lactate **1.57**, inside 0.5–1.6 near the top, no high flag. PCT **9.893** was not redrawn. Cr **227.10** and urea **25.80** were not redrawn. Urine still **0** only as the 00:22 oral. K **4.077**; iCa **1.12**. No fentanyl dose. The 0.19% ABG row is not P/F. The CBC **PCT 0.13%** is plateletcrit. Trend-direction only, not a survival estimate. Shock-peak markers have eased; pressors, FiO₂ 60%, rising APTT, pH at the 7.35 floor, and anuric CRRT are still open. This batch’s oral fields were all blank.
+- **Coag 2026-09-26 01:30:04 (postop 251h30m):** APTT **67.2↑** sec (ref 21–45; was 67.1). Not marked critical. INR, PT, TT, and fibrinogen are not on this sheet — do not carry 07:52 INR **0.97** or Fbg **4.86** as redrawn. 67.2 is APTT seconds, not P/F.
+- **Watch next:** APTT **67.2** with CRRT still only known as **在运行**. P/F **116** on FiO₂ **60%**. ABG Hb **8.6**; CBC Hb still **87** with the still-open 16:27 **黑褐色** loose stool. 15:07 BP **122/33**, HR **83**, RR **14**, NE still **3 mL/h = 0.15 mg/h**, dopamine **6 → 5 mL/h**. Lactate **1.338**, inside 0.5–1.6, no high flag. pH **7.348↓**, just below 7.35. ABE **−3.1↓**. PCT **9.893** was not redrawn. Cr **227.10** and urea **25.80** were not redrawn. Urine still **0** only as the 00:22 oral. K **4.333**; iCa **1.14**. No fentanyl dose. The 0.18% ABG row is not P/F. The CBC **PCT 0.13%** is plateletcrit. Trend-direction only, not a survival estimate. Shock-peak markers have eased; pressors, FiO₂ 60%, APTT still high, pH below the floor, falling ABG Hb, and anuric CRRT are still open. This batch’s oral fields were all blank.
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -425,8 +425,39 @@ Screenshot: `testset/reports/coag/20260925T213336__aptt.jpg`. Manifest **148**. 
 - INR, PT, TT, and fibrinogen are not on this sheet.
 - 67.1 is APTT seconds, not P/F.
 - Relative hour **247.56**. Label **术后247h33m**.
-- `latestNonBloodGasReport` is `{ h: 247.56, label: "术后247h33m · APTT 67.1", type: "凝血" }`. Hero **最新化验：术后247h33m · APTT 67.1**.
-- **Judgment:** APTT rose **63.9 → 67.1**. Do not carry 07:52 INR **0.97** or Fbg **4.86** as redrawn. This clock is newer than the 21:10 ABG, so the hero follows APTT. Do not add a `vitalReadings` point. Circulation stays on the 15:07 122/33 oral.
+- `latestNonBloodGasReport` was `{ h: 247.56, label: "术后247h33m · APTT 67.1", type: "凝血" }` until the 01:30 labs.
+- **Judgment:** APTT rose **63.9 → 67.1**. Do not carry 07:52 INR **0.97** or Fbg **4.86** as redrawn. This clock was newer than the 21:10 ABG, so the hero followed APTT until 01:30. Do not add a `vitalReadings` point. Circulation stays on the 15:07 122/33 oral.
+
+### Arterial ABG — 2026-09-26 01:04:37 (postop 251h4m)
+
+Screenshot: `testset/reports/abg/20260926T010437__abg.jpg`. Manifest later **151** with the 01:29 / 01:30 sheets. Sheet clock is **01:04:37**. The phone status bar 01:49 on the later crops is not this report clock. Oral fields were all 未填.
+
+- pH **7.348↓** (below 7.35–7.45; was 7.350). PCO₂ **41.90**. HCO₃⁻ **22.50**. ABE **−3.10↓** (ref −3 to 3). SBE **−2.90**. Store ABE.
+- Lactate **1.338** (was 1.57; ref 0.5–1.6). No high flag.
+- PO₂ **69.50↓** (was 72.00). FiO₂ still **60%**. Printed P/F **116↓** (pO2(a)/FO2(I), ref 400–500). 69.50 / 0.60 = 116. The **0.18%** row is not P/F and not procalcitonin.
+- Hb **8.60↓** g/dL (was 9.30). Hct **25%**. iCa **1.14↓** (was 1.12). sO₂ **92.20↓**.
+- Relative hour **251.08**. Label **术后251h4m**.
+- **Judgment:** lactate moved down inside the reference. P/F eased 120 → 116 and is still far below 400. pH left the floor. Do not add a `vitalReadings` point. Circulation stays on the 15:07 122/33 oral.
+
+### Potassium — 2026-09-26 01:29:52 (postop 251h29m)
+
+Screenshot: `testset/reports/chemistry/20260926T012952__k.jpg`. Manifest **151**. Sheet clock is **01:29:52**. The phone status bar 01:49 is not the report clock.
+
+- Standalone dry-chemistry potassium. K **4.333** mmol/L (ref 3.5–5.3). No abnormal flag.
+- Creatinine, urea, and sodium are not on this sheet.
+- Relative hour **251.50**. Label **术后251h29m**.
+- **Judgment:** potassium stayed inside the reference. This is not procalcitonin and not P/F.
+
+### Coag — 2026-09-26 01:30:04 (postop 251h30m)
+
+Screenshot: `testset/reports/coag/20260926T013004__aptt.jpg`. Manifest **151**. Sheet clock is **01:30:04**. The phone status bar 01:49 is not the report clock.
+
+- Standalone APTT **67.2↑** sec (ref 21–45). Not marked critical.
+- INR, PT, TT, and fibrinogen are not on this sheet.
+- 67.2 is APTT seconds, not P/F.
+- Relative hour **251.50**. Label **术后251h30m**.
+- `latestNonBloodGasReport` is `{ h: 251.50, label: "术后251h30m · APTT 67.2", type: "凝血" }`. Hero **最新化验：术后251h30m · APTT 67.2**.
+- **Judgment:** APTT moved **67.1 → 67.2**. Do not carry 07:52 INR **0.97** or Fbg **4.86** as redrawn. This clock is newer than the 01:04 ABG, so the hero follows APTT. Do not add a `vitalReadings` point. Circulation stays on the 15:07 122/33 oral.
 
 ### Morning ABG — 2026-09-23 06:38 (postop 184h38m)
 
@@ -695,4 +726,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 21:10 ABG lactate **1.57** / P/F **120** / Hb **9.3**, 21:33 K **4.077**, 21:33 APTT **67.1**. Hero **最新化验：术后247h33m · APTT 67.1**. Circulation still the 15:07 oral. Manifest **148**. Oral fields blank. Trend-direction only, not a survival estimate.
+**Last updated:** 01:04 ABG lactate **1.338** / P/F **116** / Hb **8.6** / pH **7.348**, 01:29 K **4.333**, 01:30 APTT **67.2**. Hero **最新化验：术后251h30m · APTT 67.2**. Circulation still the 15:07 oral. Manifest **151**. Oral fields blank. Trend-direction only, not a survival estimate.

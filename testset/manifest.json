@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 148,
+  "count": 151,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2738,6 +2738,66 @@
       },
       "sha256_16": "cca76af4b61a924d",
       "bytes": 191851
+    },
+    {
+      "id": "20260926T010437__abg.jpg",
+      "path": "reports/abg/20260926T010437__abg.jpg",
+      "category": "abg",
+      "source_filename": "image-1790376816988-2.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-26T01:04:37",
+      "type": "血气",
+      "note": "Arterial. pH7.348 low. PCO2 41.90 PO2 69.50 low. HCO3 22.50 ABE -3.10 low SBE -2.90. Store ABE. Lactate 1.338 in 0.5-1.6, no high flag. FiO2 60%. Printed P/F 116 low. 69.50/0.60=116. The 0.18% pO2(a)/FO2(I) row is not P/F and not procalcitonin. Hb 8.60 Hct 25 iCa 1.14 sO2 92.20. Oral fields blank.",
+      "relative_h": 251.08,
+      "extracted": {
+        "ph": 7.348,
+        "pco2": 41.9,
+        "po2": 69.5,
+        "hco3": 22.5,
+        "be": -3.1,
+        "lactate": 1.338,
+        "fio2": 60,
+        "pf": 116,
+        "hb": 8.6,
+        "ca": 1.14
+      },
+      "sha256_16": "abb584f979e3f16a",
+      "bytes": 427044
+    },
+    {
+      "id": "20260926T012952__k.jpg",
+      "path": "reports/chemistry/20260926T012952__k.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790376816979-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-26T01:29:52",
+      "type": "生化",
+      "note": "Standalone dry-chemistry potassium. K 4.333 mmol/L, ref 3.5-5.3, no abnormal flag. Phone status bar 01:49 is not the report clock. Oral fields blank.",
+      "relative_h": 251.5,
+      "extracted": {
+        "k": 4.333
+      },
+      "sha256_16": "a26c73f79ef1f494",
+      "bytes": 185263
+    },
+    {
+      "id": "20260926T013004__aptt.jpg",
+      "path": "reports/coag/20260926T013004__aptt.jpg",
+      "category": "coag",
+      "source_filename": "image-1790376816977-1.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-26T01:30:04",
+      "type": "凝血",
+      "note": "Standalone APTT. 67.2 sec high, ref 21-45. Not marked critical. INR PT TT fibrinogen not on this sheet. 67.2 is APTT seconds, not P/F. Phone status bar 01:49 is not the report clock. Oral fields blank.",
+      "relative_h": 251.5,
+      "extracted": {
+        "aptt": 67.2
+      },
+      "sha256_16": "77c5673b03895361",
+      "bytes": 192069
     }
   ]
 }
