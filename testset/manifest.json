@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 132,
+  "count": 140,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2399,6 +2399,190 @@
         "urea": 20.52,
         "creatinine": 185.0,
         "pct": 8.206
+      }
+    },
+    {
+      "id": "20260924T162743__stool-routine.jpg",
+      "path": "reports/other/20260924T162743__stool-routine.jpg",
+      "category": "other",
+      "source_filename": "image-1790269613965-0.jpg",
+      "sha256_16": "e36d6d187552c54a",
+      "bytes": 202868,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-24T16:27:43",
+      "type": "便常规",
+      "note": "Color 黑褐色, consistency 稀便, microscopy 未见异常. Stool WBC and RBC result cells blank, unit 个/高倍, do not store 0. No occult blood row. Phone status bar 17:30 is not the report clock. No patient name in the dashboard.",
+      "relative_h": 218.46,
+      "extracted": {
+        "color": "黑褐色",
+        "consistency": "稀便",
+        "microscopy": "未见异常"
+      }
+    },
+    {
+      "id": "20260925T075210__dry-chemistry.jpg",
+      "path": "reports/chemistry/20260925T075210__dry-chemistry.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790295421470-1.jpg",
+      "sha256_16": "55655082d09d45dd",
+      "bytes": 94314,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T07:52:10",
+      "type": "生化",
+      "note": "Dry chemistry. K4.52 in 3.5-5.3. Na135 low, ref 137-147. Cl97 in 96-108. UREA 25.80 high, this sheet ref 3.6-9.5, not critical. CREA 227.10 high, this sheet ref 57-111, not critical. No albumin, no procalcitonin. Not the CBC plateletcrit and not P/F.",
+      "relative_h": 233.87,
+      "extracted": {
+        "k": 4.52,
+        "na": 135,
+        "cl": 97,
+        "urea": 25.8,
+        "creatinine": 227.1
+      }
+    },
+    {
+      "id": "20260925T075224__coag.jpg",
+      "path": "reports/coag/20260925T075224__coag.jpg",
+      "category": "coag",
+      "source_filename": "image-1790295421467-0.jpg",
+      "sha256_16": "f48354a71eae6ac9",
+      "bytes": 98568,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T07:52:24",
+      "type": "凝血",
+      "note": "APTT 48.5 high, ref 21-45. TT 13.2 low, ref 14-21. PT 11.6 in 11-14.3. PT% 98.6 in 80-120. INR 0.97 in 0.94-1.2. Fbg 4.86 high, ref 2-4.5. Not marked critical. 48.5 is APTT seconds, not P/F. 14 seconds after the dry chemistry.",
+      "relative_h": 233.87,
+      "extracted": {
+        "aptt": 48.5,
+        "tt": 13.2,
+        "pt": 11.6,
+        "pt_pct": 98.6,
+        "inr": 0.97,
+        "fbg": 4.86
+      }
+    },
+    {
+      "id": "20260925T075906__abg.jpg",
+      "path": "reports/abg/20260925T075906__abg.jpg",
+      "category": "abg",
+      "source_filename": "image-1790302819183-1.jpg",
+      "sha256_16": "56aaed66ac0df3ff",
+      "bytes": 238537,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T07:59:06",
+      "type": "血气",
+      "note": "Arterial. pH7.407 PCO2 39.50 PO2 64.40 low. HCO3 24.30 ABE -0.40 SBE -0.30. Lactate 2.26 high. FiO2 60%. Printed P/F 107 low, ref 400-500. The 0.17% pO2(a,T)/FO2(I) row is not P/F and not procalcitonin. Hb 9.80 Hct 29 iCa 1.04 sO2 90.70. Form clock 08:00 has no seconds.",
+      "relative_h": 233.99,
+      "extracted": {
+        "ph": 7.407,
+        "pco2": 39.5,
+        "po2": 64.4,
+        "hco3": 24.3,
+        "be": -0.4,
+        "lactate": 2.26,
+        "fio2": 60,
+        "pf": 107,
+        "hb": 9.8,
+        "ca": 1.04
+      }
+    },
+    {
+      "id": "20260925T080517__cbc.jpg",
+      "path": "reports/cbc/20260925T080517__cbc.jpg",
+      "category": "cbc",
+      "source_filename": "image-1790302819187-0.jpg",
+      "sha256_16": "05cb1588899ebd51",
+      "bytes": 194399,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T08:05:17",
+      "type": "血常规",
+      "note": "WBC24.15 high. Hb87.0 low g/L. HCT25.1. RBC2.67. PLT104 low. NEUT%96.8 NEUT#23.37 LYMPH#0.48. Plateletcrit PCT 0.13% is not procalcitonin.",
+      "relative_h": 234.09,
+      "extracted": {
+        "wbc": 24.15,
+        "hbg": 87.0,
+        "hct": 25.1,
+        "rbc": 2.67,
+        "plt": 104,
+        "neut_pct": 96.8,
+        "neut_abs": 23.37,
+        "lymph_abs": 0.48,
+        "plateletcrit": 0.13
+      }
+    },
+    {
+      "id": "20260925T100443__pct.jpg",
+      "path": "reports/chemistry/20260925T100443__pct.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790305930913-0.jpg",
+      "sha256_16": "feacb99f1541d829",
+      "bytes": 188065,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T10:04:43",
+      "type": "生化",
+      "note": "Standalone procalcitonin crop. Chinese name 降钙素原测定, abbreviation PCCT. Result 9.893 ng/ml high, ref 0-0.05. This is procalcitonin, not CBC plateletcrit 0.13% and not ABG P/F 107. Only this analyte is visible. Phone status bar 11:09 is not the report clock. Form clock 11:11 is the CRRT oral receipt time.",
+      "relative_h": 236.08,
+      "extracted": {
+        "pct": 9.893
+      }
+    },
+    {
+      "id": "20260925T135856__abg.jpg",
+      "path": "reports/abg/20260925T135856__abg.jpg",
+      "category": "abg",
+      "source_filename": "image-1790317066446-0.jpg",
+      "sha256_16": "65f3b5dc32b08788",
+      "bytes": 240809,
+      "labeled": true,
+      "preferred": false,
+      "superseded_by": "reports/abg/20260925T135856__hires__abg.jpg",
+      "report_time": "2026-09-25T13:58:56",
+      "type": "血气",
+      "note": "Arterial. pH7.393 PCO2 40.40 PO2 66.80 low. HCO3 24.10 ABE -0.80. Lactate 1.30 in 0.5-1.6. FiO2 60%. Printed P/F 111. Superseded by larger same-clock JPEG; values unchanged.",
+      "relative_h": 239.98,
+      "extracted": {
+        "ph": 7.393,
+        "pco2": 40.4,
+        "po2": 66.8,
+        "hco3": 24.1,
+        "be": -0.8,
+        "lactate": 1.3,
+        "fio2": 60,
+        "pf": 111,
+        "hb": 9.5,
+        "ca": 1.06
+      }
+    },
+    {
+      "id": "20260925T135856__hires__abg.jpg",
+      "path": "reports/abg/20260925T135856__hires__abg.jpg",
+      "category": "abg",
+      "source_filename": "image-1790319409604-0.jpg",
+      "sha256_16": "580586c1a60e9560",
+      "bytes": 423304,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T13:58:56",
+      "type": "血气",
+      "note": "PREFERRED same-clock copy of 13:58:56 ABG. Same 1680x1800 pixels, larger JPEG 423304 vs 240809. Values match: pH7.393 PCO2 40.40 PO2 66.80 HCO3 24.10 ABE -0.80 lactate 1.30 FiO2 60% printed P/F 111. The 0.17% row is not P/F. Oral fields blank.",
+      "relative_h": 239.98,
+      "resolution_vs_prior": "1680x1800 423304B vs 1680x1800 240809B",
+      "extracted": {
+        "ph": 7.393,
+        "pco2": 40.4,
+        "po2": 66.8,
+        "hco3": 24.1,
+        "be": -0.8,
+        "lactate": 1.3,
+        "fio2": 60,
+        "pf": 111,
+        "hb": 9.5,
+        "ca": 1.06
       }
     }
   ]

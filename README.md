@@ -52,6 +52,24 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 海外备用：https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
+**上传化验**只在功能分支 `cursor/mainland-lab-upload-b98e`，和识图版 / 空白版一样，**先不覆盖 main**。这一支只开 GitHub 网页，不再钉大陆 CDN：
+
+https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/mainland-lab-upload-b98e/index.html
+
+这一页应有 **上传化验**，顶栏是 **最新化验：术后233h52m · APTT 48.5**。肾功能卡肌酐 **227.10**、尿素 **25.80**。钠 **135**，钾 **4.52**。凝血卡 APTT **48.5**，INR **0.97**，纤维蛋白原 **4.86**，TT **13.2**。循环卡仍是 **130/30**，去甲 **3**、多巴胺 **6**。00:22 尿量仍为 **0** 还在时间线里，07:52 没有新的尿量。
+
+网页不保存 Cursor 密钥。中转程序是 [`scripts/agent-upload-relay.py`](scripts/agent-upload-relay.py)：在医院网络能访问的机器上设置 `CURSOR_API_KEY` 和 `UPLOAD_TOKEN` 后运行，再把地址和口令填进手机。agent 只更新这一支的数据、解读和查房问题。
+
+正式上传后，网页轮询中转的 `/status`。Agent push 完成时，中转读取新 commit SHA，并把浏览器带到这次提交的 GitHub 预览页，不再等 `jsd.onmicrosoft.cn` / `cdn.jsdmirror.com`。
+
+阿里云函数计算部署包及控制台步骤见
+[`deploy/aliyun-fc/README.md`](deploy/aliyun-fc/README.md)。部署密钥只通过 FC
+环境变量注入，不进入仓库或网页。
+
+暂不使用云中转时，可在 `LelouchzhuPC2` 同一局域网内运行：
+[`deploy/local/README.md`](deploy/local/README.md)。本地地址同时提供 dashboard
+和 `/upload`，避免浏览器 Mixed Content 拦截。
+
 ## Cloud Agent / handoff
 
 Start Cloud Agents on **this** repository and read these first:

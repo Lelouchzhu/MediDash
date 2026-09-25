@@ -809,7 +809,7 @@
       transform: translateX(-50%);
       bottom: calc(12px + env(safe-area-inset-bottom));
       display: grid;
-      grid-template-columns: 1fr auto auto;
+      grid-template-columns: 1.35fr auto auto auto;
       gap: 8px;
       width: min(560px, calc(100% - 28px));
       padding: 8px;
@@ -898,7 +898,7 @@
       font-weight: 700;
     }
 
-    .field input, .field select {
+    .field input, .field select, .field textarea {
       width: 100%;
       min-height: 44px;
       padding: 9px 11px;
@@ -907,11 +907,45 @@
       outline: none;
       background: #fbfdfc;
       color: var(--ink);
+      font: inherit;
     }
 
-    .field input:focus, .field select:focus {
+    .field textarea { min-height: 76px; resize: vertical; }
+
+    .field input:focus, .field select:focus, .field textarea:focus {
       border-color: var(--green);
       box-shadow: 0 0 0 3px rgba(22, 122, 91, .1);
+    }
+
+    .agent-setup {
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: #f4f7f5;
+    }
+
+    .agent-setup summary { cursor: pointer; font-weight: 750; }
+
+    .shot-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      margin-top: 8px;
+    }
+
+    .shot-row img {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+    }
+
+    .agent-status {
+      min-height: 1.3em;
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
     }
 
     .form-actions {
@@ -1024,7 +1058,7 @@
       <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
-        <span class="pill" id="latestTimePill">最新口述：术后218h18m · 血滤已停</span>
+        <span class="pill" id="latestTimePill">最新：术后239h58m</span>
         <span class="pill">数据已去标识化</span>
       </div>
     </header>
@@ -1041,7 +1075,7 @@
       <div class="section-head">
         <div>
           <h2 id="overviewHeading">当前概况</h2>
-          <p>最新口述与最近一次化验</p>
+          <p>最新化验与仍有效的口述</p>
         </div>
       </div>
       <div class="status-grid">
@@ -1051,47 +1085,47 @@
             <span class="level">15:50口述</span>
           </div>
           <div class="status-value">130/30</div>
-          <div class="status-note">心跳<strong>77</strong> · 尿量<strong>0</strong><br>去甲2→<strong>3</strong> · 多巴胺5→<strong>6</strong></div>
+          <div class="status-note">心跳<strong>77</strong> · 00:22尿量仍<strong>0</strong><br>去甲2→<strong>3</strong> · 多巴胺5→<strong>6</strong></div>
         </button>
-        <button class="status-card red" type="button" data-metric-jump="lactate">
+        <button class="status-card orange" type="button" data-metric-jump="lactate">
           <div class="status-top">
             <span class="status-name">组织灌注</span>
-            <span class="level">再次高出参考</span>
+            <span class="level">已回参考</span>
           </div>
-          <div class="status-value"><span id="latestLactate">2.24</span><span class="status-unit">mmol/L</span></div>
-          <div class="status-note">1.18→1.32→<strong>2.24</strong><br>又高出0.5–1.6 · BE +1.9</div>
+          <div class="status-value"><span id="latestLactate">1.30</span><span class="status-unit">mmol/L</span></div>
+          <div class="status-note">2.26→<strong>1.30</strong><br>0.5–1.6内 · BE −0.8</div>
         </button>
         <button class="status-card red" type="button" data-metric-jump="pf">
           <div class="status-top">
             <span class="status-name">氧合</span>
             <span class="level">仍低</span>
           </div>
-          <div class="status-value"><span id="latestPf">140</span><span class="status-unit">P/F</span></div>
-          <div class="status-note">FiO₂ <strong>60→50%</strong> · PO₂ <strong>70.1</strong>↓<br>139→163→<strong>140</strong> · 140是氧合指数</div>
+          <div class="status-value"><span id="latestPf">111</span><span class="status-unit">P/F</span></div>
+          <div class="status-note">FiO₂仍<strong>60%</strong> · PO₂ <strong>66.8</strong>↓<br>107→<strong>111</strong> · 111是氧合指数</div>
         </button>
         <button class="status-card orange" type="button" data-metric-jump="hco3">
           <div class="status-top">
             <span class="status-name">酸碱</span>
-            <span class="level">pH回到参考</span>
+            <span class="level">pH仍在参考</span>
           </div>
-          <div class="status-value"><span id="latestPh">7.360</span><span class="status-unit">pH</span></div>
-          <div class="status-note">7.345→7.369→<strong>7.360</strong><br>PCO₂ <strong>49.6</strong>↑ · HCO₃⁻ <strong>27.4</strong>↑</div>
+          <div class="status-value"><span id="latestPh">7.393</span><span class="status-unit">pH</span></div>
+          <div class="status-note">7.407→<strong>7.393</strong><br>PCO₂ <strong>40.4</strong> · HCO₃⁻ <strong>24.1</strong></div>
         </button>
-        <div class="status-card orange">
+        <div class="status-card red">
           <div class="status-top">
             <span class="status-name">感染 / 炎症</span>
-            <span class="level">白细胞再升</span>
+            <span class="level">降钙素原再升</span>
           </div>
-          <div class="status-value">26.44<span class="status-unit">WBC</span></div>
-          <div class="status-note">24.97→<strong>26.44</strong> · 中性粒97.1%<br>PCT 18.701→<strong>8.206</strong> 仍在降</div>
+          <div class="status-value">9.893<span class="status-unit">ng/mL</span></div>
+          <div class="status-note">8.206→<strong>9.893</strong>↑ · 参考0–0.05<br>白细胞仍是08:05的<strong>24.15</strong></div>
         </div>
         <div class="status-card red">
           <div class="status-top">
             <span class="status-name">肾功能</span>
-            <span class="level">下降，仍高</span>
+            <span class="level">再升，仍高</span>
           </div>
-          <div class="status-value">185<span class="status-unit">μmol/L</span></div>
-          <div class="status-note">423→<strong>185</strong> · 尿素41.03→<strong>20.52</strong><br>16:18血滤已停 · 15:50尿量0</div>
+          <div class="status-value">227.10<span class="status-unit">μmol/L</span></div>
+          <div class="status-note">185→<strong>227.10</strong> · 尿素20.52→<strong>25.80</strong><br>00:22尿量仍0 · 11:11说早上会重开</div>
         </div>
         <div class="status-card orange">
           <div class="status-top">
@@ -1104,19 +1138,19 @@
         <div class="status-card orange">
           <div class="status-top">
             <span class="status-name">凝血</span>
-            <span class="level">本份参考内</span>
+            <span class="level">本份参考仍高</span>
           </div>
-          <div class="status-value">44.8<span class="status-unit">APTT</span></div>
-          <div class="status-note">41.1→<strong>44.8</strong> · 本份参考21–45<br>没有标异常 · 靠近上限</div>
+          <div class="status-value">48.5<span class="status-unit">APTT</span></div>
+          <div class="status-note">44.8→<strong>48.5</strong>↑ · 本份参考21–45<br>INR <strong>0.97</strong> · 纤维蛋白原 <strong>4.86</strong>↑</div>
         </div>
         <button class="status-card orange" type="button" data-metric-jump="hbg">
           <div class="status-top">
             <span class="status-name">血红蛋白 / 钙</span>
-            <span class="level">血气10.8</span>
+            <span class="level">血气9.5</span>
           </div>
-          <div class="status-value">10.8<span class="status-unit">g/dL</span></div>
-          <span id="latestHb" hidden>10.8</span>
-          <div class="status-note">血气07:47仍<strong>10.8</strong> · 血常规94→<strong>100</strong><br>iCa <strong>1.12</strong> · 钾4.50→<strong>4.51</strong></div>
+          <div class="status-value">9.5<span class="status-unit">g/dL</span></div>
+          <span id="latestHb" hidden>9.5</span>
+          <div class="status-note">血气9.8→<strong>9.5</strong> · 血常规仍<strong>87</strong><br>iCa 1.04→<strong>1.06</strong> · 钠仍<strong>135</strong>↓</div>
         </button>
       </div>
     </section>
@@ -1170,12 +1204,28 @@
             <p>10:19报告：伴行深静脉和扫到的浅静脉血流充盈满意，没有写血栓。股总动脉较大斑块约右<strong>1.1×0.2 cm</strong>、左<strong>1.4×0.4 cm</strong>，并写了双侧胫后动脉不完全闭塞可能。15:45家属口头说「正常、无血栓，老年人常见粥样硬化」。口头说法不替换报告原文。</p>
           </div>
           <div class="insight">
-            <strong>肌酐423→185，尿素41.03→20.52</strong>
-            <p>两项都还高于参考。这张尿素标高，没有写危急值。钾<strong>4.51</strong>、钠<strong>137.03</strong>、氯<strong>98.84</strong>都在参考里。白蛋白35.8→<strong>27.8</strong>↓。16:18口述血滤<strong>已停</strong>。停机钟点、这一轮流速、脱水量和抗凝都没说。15:50尿量仍是<strong>0</strong>，这次没有新的尿量。血压仍是15:50的<strong>130/30</strong>，心跳<strong>77</strong>，去甲<strong>3</strong>、多巴胺<strong>6</strong>。17:34更正：先前两种药写反了。</p>
+            <strong>肌酐185→227.10，尿素20.52→25.80</strong>
+            <p>9月25日07:52干化学。这张参考肌酐57–111、尿素3.6–9.5，两项都标高，没有写危急值。钾<strong>4.52</strong>仍在3.5–5.3。钠137.03→<strong>135</strong>↓（参考137–147）。氯<strong>97</strong>仍在96–108。白蛋白仍是09:31的<strong>27.8</strong>，这张没抽。16:18口述血滤<strong>已停</strong>。11:11口述「crrt早上会重新开机」，没有说已经开了，也没有流速、脱水量或抗凝。00:22尿量仍是<strong>0</strong>，11:11没有新的尿量。血压仍是15:50的<strong>130/30</strong>，去甲<strong>3</strong>、多巴胺<strong>6</strong>。</p>
           </div>
           <div class="insight">
-            <strong>白细胞24.97→26.44，降钙素原降到8.206</strong>
-            <p>中性粒<strong>97.1%</strong>。降钙素原18.701→<strong>8.206</strong>仍在降，仍然很高。血常规“PCT 0.12%”是血小板比积，不是这个降钙素原。氧合指数最近是<strong>139→163→140</strong>，最新仍是07:47的140。家属问芬太尼是不是下降的原因。剂量、是否在输、呼吸机模式都没说，页面不把原因定下来。</p>
+            <strong>APTT 44.8→48.5，纤维蛋白原4.86</strong>
+            <p>9月25日07:52:24。APTT <strong>48.5</strong> 秒↑，这张参考<strong>21–45</strong>。TT <strong>13.2</strong> 秒↓（参考14–21）。PT <strong>11.6</strong>、PT% <strong>98.6</strong>、INR <strong>0.97</strong>都在这张参考内。纤维蛋白原 <strong>4.86</strong> g/L↑（参考2–4.5）。16:27便常规仍是黑褐色稀便，这张没有隐血。这是凝血时间，不是氧合指数。</p>
+          </div>
+          <div class="insight">
+            <strong>P/F 140→107，FiO₂ 50→60%</strong>
+            <p>9月25日07:59血气。氧合指数印在单子上是<strong>107</strong>，参考400–500，标低。PO₂ <strong>64.4</strong>↓。单子上0.17%那一行不是氧合指数，也不是降钙素原。pH <strong>7.407</strong>、PCO₂ <strong>39.5</strong>、HCO₃⁻ <strong>24.3</strong>、ABE −0.4都在参考内。乳酸2.24→<strong>2.26</strong>仍高。家属问过芬太尼，剂量这次仍没说。</p>
+          </div>
+          <div class="insight">
+            <strong>血常规Hb 100→87，白细胞26.44→24.15</strong>
+            <p>9月25日08:05。血红蛋白<strong>87</strong> g/L↓，红细胞2.67↓，压积25.1↓。白细胞<strong>24.15</strong>仍高，中性粒96.8%、绝对值23.37。血小板98→<strong>104</strong>，仍低于125。血常规“PCT 0.13%”是血小板比积，不是降钙素原。降钙素原这张没抽，10:04才重抽。</p>
+          </div>
+          <div class="insight">
+            <strong>降钙素原8.206→9.893</strong>
+            <p>9月25日10:04:43。单子中文是降钙素原测定，缩写PCCT，<strong>9.893</strong> ng/ml↑，参考0–0.05。这是降钙素原，不是血常规血小板比积0.13%，也不是氧合指数。这张只看到这一项，肌酐、白细胞都没同抽。11:11口述「crrt早上会重新开机」，没有新的血压或尿量。</p>
+          </div>
+          <div class="insight">
+            <strong>乳酸2.26→1.30，P/F 107→111</strong>
+            <p>9月25日13:58:56血气。乳酸<strong>1.30</strong>，参考0.5–1.6，这张没有标高。氧合指数印在单子上是<strong>111</strong>，参考400–500，仍标低。PO₂ 64.4→<strong>66.8</strong>↓。FiO₂仍60%。单子上0.17%那一行不是氧合指数，也不是降钙素原。pH <strong>7.393</strong>、PCO₂ <strong>40.4</strong>、HCO₃⁻ <strong>24.1</strong>、ABE −0.8都在参考内。血气Hb 9.8→<strong>9.5</strong>，iCa 1.04→<strong>1.06</strong>↓。14:00口述没有新的血压、升压药、尿量或血滤。</p>
           </div>
         </div>
       </div>
@@ -1335,9 +1385,24 @@
           <span class="vital-note">停机钟点未说<br>芬太尼与氧合待问</span>
         </div>
         <div class="vital-row">
+          <span class="vital-time">9月24日16:27 · 便常规</span>
+          <span class="vital-value">黑褐色 · 稀便</span>
+          <span class="vital-note">镜检未见异常<br>白细胞、红细胞结果空着</span>
+        </div>
+        <div class="vital-row">
           <span class="vital-time">9月24日17:34 · 更正</span>
           <span class="vital-value">去甲3 · 多巴胺6</span>
           <span class="vital-note">更正15:50写反的剂量<br>不是新的一次调量</span>
+        </div>
+        <div class="vital-row">
+          <span class="vital-time">9月25日00:22</span>
+          <span class="vital-value">尿量仍为0</span>
+          <span class="vital-note">血压和升压药未再说<br>血滤是否重开未说</span>
+        </div>
+        <div class="vital-row">
+          <span class="vital-time">9月25日11:11</span>
+          <span class="vital-value">血滤早上会重新开机</span>
+          <span class="vital-note">11:11是收到这句的时间<br>没有说已经开了，尿量未再说</span>
         </div>
       </div>
     </section>
@@ -1373,17 +1438,17 @@
           <summary>
             <div>
               <div class="report-title">感染与循环</div>
-              <div class="report-meta">至术后211h31m · PCT 8.206 · WBC 26.44</div>
+              <div class="report-meta">至术后239h58m · P/F 111 · PCT 9.893</div>
             </div>
-            <span class="report-badge orange">白细胞再升</span>
+            <span class="report-badge red">降钙素原再升</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>降钙素原：术前4h10m <strong>41.1266</strong> → 术后2h44m <strong>63.3677</strong> → 9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> → 9月19日10:03 <strong>65.368</strong> → 9月21日09:18 <strong>36.8855</strong> → 9月22日09:54 <strong>28.783</strong> → 9月23日09:21 <strong>18.701</strong> → 9月24日09:31 <strong>8.206</strong> ng/mL（参考0–0.05）。从峰值继续回落，仍极高。这是降钙素原，不是血常规血小板比积。</li>
+              <li>降钙素原：术前4h10m <strong>41.1266</strong> → 术后2h44m <strong>63.3677</strong> → 9月16日09:44 <strong>146.421</strong> → 9月17日10:52 <strong>170.297</strong> → 9月18日08:58 <strong>101.563</strong> → 9月19日10:03 <strong>65.368</strong> → 9月21日09:18 <strong>36.8855</strong> → 9月22日09:54 <strong>28.783</strong> → 9月23日09:21 <strong>18.701</strong> → 9月24日09:31 <strong>8.206</strong> → 9月25日10:04 <strong>9.893</strong> ng/mL（参考0–0.05，标↑）。此前从峰值回落，这次再升。这是降钙素原，不是血常规血小板比积，也不是氧合指数。</li>
               <li>IL-6 981 → 最新<strong>68.5</strong> pg/mL（9月21日09:18，参考0–7），较峰值明显回落，仍远高于参考。CRP 术前<strong>86.80</strong> → 9月21日09:18 <strong>97.70</strong> mg/L（参考0–8）。</li>
-              <li>乳酸峰值8.99 → 9月23日20:50 <strong>1.18</strong> → 9月24日00:54 <strong>1.32</strong> → 07:47 <strong>2.24</strong>（又高出0.5–1.6）。P/F 139→163→<strong>140</strong>（FiO₂ <strong>60%→50%</strong>，140是氧合指数，不是降钙素原，也不是单子上0.22那一行）。07:47 PO₂ <strong>70.1</strong>↓。pH 7.345→7.369→<strong>7.360</strong>，已回到7.35–7.45。PCO₂ <strong>49.6</strong>↑、HCO₃⁻ <strong>27.4</strong>↑、ABE +1.9。15:50口述血压<strong>130/30</strong>，心跳<strong>77</strong>。去甲2→<strong>3</strong> mL/h（0.15 mg/h），多巴胺5→<strong>6</strong> mL/h。17:34更正了写反的两种药。没有新的呼吸次数。呼吸正压15–18仍是9月22日16:11那句。</li>
-              <li>白细胞术前11.67→术后1h 6.97→13.17→17.42→19.40→18.61→20.86→24.97→最新<strong>26.44</strong>（9月24日08:38），中性粒<strong>97.1%</strong>（绝对值25.67），淋巴绝对值<strong>0.26</strong>。再升，仍很高。血常规“PCT 0.12%”是血小板比积，不是降钙素原。</li>
-              <li>粪便：镜检红白细胞曾阴性；18:32隐血免疫法<strong>阳性</strong>。9月22日11:35：昨天排便<strong>3次</strong>，黑褐色。9月23日15:45：今日便<strong>1次</strong>，颜色<strong>黑色</strong>，无尿。颜色加隐血不能定量，也不能定位。</li>
+              <li>乳酸峰值8.99 → 9月23日20:50 <strong>1.18</strong> → 9月24日00:54 <strong>1.32</strong> → 07:47 <strong>2.24</strong> → 07:59 <strong>2.26</strong> → 13:58 <strong>1.30</strong>（回到0.5–1.6，这张没有标高）。P/F 139→163→140→107→<strong>111</strong>（FiO₂仍<strong>60%</strong>，111是氧合指数，不是降钙素原，也不是单子上0.17%那一行）。13:58 PO₂ <strong>66.8</strong>↓。pH 7.407→<strong>7.393</strong>，仍在7.35–7.45。PCO₂ <strong>40.4</strong>、HCO₃⁻ <strong>24.1</strong>、ABE −0.8都在参考内。15:50口述血压<strong>130/30</strong>，心跳<strong>77</strong>。去甲2→<strong>3</strong> mL/h（0.15 mg/h），多巴胺5→<strong>6</strong> mL/h。14:00口述没有新的血压或升压药。呼吸正压15–18仍是9月22日16:11那句。</li>
+              <li>白细胞术前11.67→术后1h 6.97→13.17→17.42→19.40→18.61→20.86→24.97→26.44→最新<strong>24.15</strong>（9月25日08:05），中性粒<strong>96.8%</strong>（绝对值23.37），淋巴绝对值<strong>0.48</strong>。略回，仍很高。血常规“PCT 0.13%”是血小板比积，不是降钙素原。降钙素原10:04已重抽到<strong>9.893</strong>。</li>
+              <li>粪便：镜检红白细胞曾阴性；18:32隐血免疫法<strong>阳性</strong>。9月22日11:35：昨天排便<strong>3次</strong>，黑褐色。9月23日15:45：今日便<strong>1次</strong>，颜色<strong>黑色</strong>。9月24日16:27便常规：颜色<strong>黑褐色</strong>，性状<strong>稀便</strong>，镜检<strong>未见异常</strong>。白细胞、红细胞两格结果是空的，没有写成0。这张没有隐血。颜色不能定量，也不能定位。</li>
             </ul>
           </div>
         </details>
@@ -1391,17 +1456,17 @@
           <summary>
             <div>
               <div class="report-title">肾脏与尿检</div>
-              <div class="report-meta">至术后211h31m · 肌酐 185 · 尿素 20.52</div>
+              <div class="report-meta">至术后233h52m · 肌酐 227.10 · 尿素 25.80</div>
             </div>
             <span class="report-badge red">仍高于参考</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>肌酐121.8→术后2h44m <strong>206</strong>→263→363→212→204→314→231→320→423→最新<strong>185.0</strong> μmol/L（9月24日09:31，参考41–81，仍高）。尿素曾到<strong>41.03</strong>危急并已复查，现<strong>20.52</strong> mmol/L（参考3.1–8.8，这张只标高，没有写危急值）。</li>
-              <li>尿量950→300→70→曾20→过夜0→利尿后10→开上一轮前过夜50 mL。9月23日15:45无尿。9月24日15:50口述尿量仍为<strong>0</strong>。</li>
-              <li>上一轮CRRT走了<strong>19小时48分</strong>后停机。9月23日约<strong>14:00</strong>血滤又开始。两点左右是家属说的，流速、脱水量和抗凝没有说。9月24日16:18口述这一轮<strong>已停</strong>。停机钟点没说，所以不写成多少小时。累计脱水仍未口述。15:50尿量仍是0，这次没有新的尿量。</li>
-              <li>钾01:03干化学 <strong>4.50</strong>→09:31血清 <strong>4.51</strong>（参考3.5–5.3，没有标异常）。钠130.76→<strong>137.03</strong>，回到137–147。氯94.37→<strong>98.84</strong>，回到96–108。离子钙仍是07:47血气的 <strong>1.12</strong>，低于1.15。白蛋白35.8→<strong>27.8</strong>↓。</li>
-              <li>昨天排便3次，黑褐色。此前隐血阳性、镜检红白细胞阴性。尿潜血曾3+、蛋白2+。CK已从8280降至434，仍高于参考。</li>
+              <li>肌酐121.8→术后2h44m <strong>206</strong>→263→363→212→204→314→231→320→423→185.0→最新<strong>227.10</strong> μmol/L（9月25日07:52，这张参考<strong>57–111</strong>，标高）。尿素曾到<strong>41.03</strong>危急，09:31是20.52，现<strong>25.80</strong> mmol/L（这张参考<strong>3.6–9.5</strong>，标高，没有写危急值）。</li>
+              <li>尿量950→300→70→曾20→过夜0→利尿后10→开上一轮前过夜50 mL。9月23日15:45无尿。9月24日15:50口述尿量仍为<strong>0</strong>。9月25日00:22口述仍为<strong>0</strong>。11:11没有新的尿量。</li>
+              <li>上一轮CRRT走了<strong>19小时48分</strong>后停机。9月23日约<strong>14:00</strong>血滤又开始。两点左右是家属说的，流速、脱水量和抗凝没有说。9月24日16:18口述这一轮<strong>已停</strong>。停机钟点没说，所以不写成多少小时。累计脱水仍未口述。9月25日00:22又说尿量仍为0，当时没说血滤是否重新开始。9月25日11:11口述「crrt早上会重新开机」。11:11是收到这句的时间，不是开机钟点，也没有说已经开了。</li>
+              <li>钾01:03干化学 <strong>4.50</strong>→09:31血清 <strong>4.51</strong>→07:52干化学 <strong>4.52</strong>（参考3.5–5.3，没有标异常）。钠137.03→<strong>135</strong>↓（这张参考137–147）。氯98.84→<strong>97</strong>，仍在96–108。离子钙07:47是1.12，07:59是1.04，13:58血气 <strong>1.06</strong>↓，低于1.15。白蛋白仍是09:31的 <strong>27.8</strong>↓。13:58血气没有新的肌酐。14:00口述没有新的尿量或血滤。</li>
+              <li>昨天排便3次，黑褐色。此前隐血阳性、镜检红白细胞阴性。9月24日16:27便常规仍是黑褐色稀便，镜检未见异常，白细胞和红细胞结果空着，没有隐血。尿潜血曾3+、蛋白2+。CK已从8280降至434，仍高于参考。</li>
             </ul>
           </div>
         </details>
@@ -1409,9 +1474,9 @@
           <summary>
             <div>
               <div class="report-title">凝血系统</div>
-              <div class="report-meta">至术后203h14m · APTT 44.8</div>
+              <div class="report-meta">至术后233h52m · APTT 48.5</div>
             </div>
-            <span class="report-badge orange">本份参考内</span>
+            <span class="report-badge orange">本份参考仍高</span>
           </summary>
           <div class="report-body">
             <ul>
@@ -1426,7 +1491,8 @@
               <li>9月22日09:15：APTT <strong>40.2</strong>秒↑。这张参考是<strong>23.3–32.5</strong>，不是21–45。TT 16.5、PT 12.7、INR 1.13、纤维蛋白原 3.22，均在本份参考内。</li>
               <li>9月23日09:26：APTT <strong>33.0</strong>秒↑。那张参考是<strong>23.3–32.5</strong>，所以33.0被标高。TT 16.9、PT 12.4、PT% 84.5、INR <strong>1.10</strong>、纤维蛋白原 3.44，均在那份参考内。</li>
               <li>9月23日21:06：只有 APTT <strong>41.1</strong> 秒。这张参考是<strong>21–45</strong>，没有标异常。</li>
-              <li>最新（9月24日01:14 · 术后203h14m）：只有 APTT <strong>44.8</strong> 秒。这张参考仍是<strong>21–45</strong>，没有标异常，靠近上限。INR、PT 没有同抽。</li>
+              <li>9月24日01:14：只有 APTT <strong>44.8</strong> 秒。那张参考是<strong>21–45</strong>，没有标异常，靠近上限。</li>
+              <li>最新（9月25日07:52:24 · 术后233h52m）：APTT <strong>48.5</strong> 秒↑，这张参考<strong>21–45</strong>。TT <strong>13.2</strong> 秒↓（参考14–21）。PT <strong>11.6</strong> 秒（参考11–14.3，没有标异常），PT% <strong>98.6</strong>（参考80–120），INR <strong>0.97</strong>（参考0.94–1.2）。纤维蛋白原 <strong>4.86</strong> g/L↑（参考2–4.5）。</li>
             </ul>
           </div>
         </details>
@@ -1451,17 +1517,17 @@
           <summary>
             <div>
               <div class="report-title">血液与电解质</div>
-              <div class="report-meta">至术后211h31m · 钠 137.03 · 白蛋白 27.8</div>
+              <div class="report-meta">至术后234h05m · Hb 87 · 钠 135</div>
             </div>
             <span class="report-badge orange">白蛋白偏低</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>血常规Hb：术前130→术后1h 122→85→76→输前67→100→101→97→94→最新<strong>100</strong> g/L（9月24日08:38），HCT 27.7%。血气Hb 07:47是 <strong>10.8</strong> g/dL。两种方法不要逐点等同。</li>
-              <li>血小板术前255→术后1h 249→60→69→70→94→最新<strong>98</strong>×10⁹/L，仍低；血小板比积0.12%（参考0.17–0.35，不是降钙素原）。</li>
-              <li>白细胞17.42→19.40→18.61→20.86→24.97→最新<strong>26.44</strong>，中性粒<strong>97.1%</strong>（绝对值25.67），淋巴绝对值0.26。再升仍高。</li>
-              <li>钾01:03干化学4.50→09:31血清<strong>4.51</strong>（参考3.5–5.3，没有标异常）。钠130.76→<strong>137.03</strong>，回到137–147。氯94.37→<strong>98.84</strong>，回到96–108。离子钙仍是07:47血气的 <strong>1.12</strong>。</li>
-              <li>昨天排便3次，黑褐色。18:32隐血免疫法阳性，镜检红白细胞曾阴性。炎症：CRP 术前86.80→97.70，IL-6 68.5。</li>
+              <li>血常规Hb：术前130→术后1h 122→85→76→输前67→100→101→97→94→100→最新<strong>87</strong> g/L（9月25日08:05），HCT 25.1%。血气Hb 07:59是9.8，13:58是 <strong>9.5</strong> g/dL。两种方法不要逐点等同。</li>
+              <li>血小板术前255→术后1h 249→60→69→70→94→98→最新<strong>104</strong>×10⁹/L，仍低；血小板比积0.13%（参考0.17–0.35，不是降钙素原）。</li>
+              <li>白细胞17.42→19.40→18.61→20.86→24.97→26.44→最新<strong>24.15</strong>，中性粒<strong>96.8%</strong>（绝对值23.37），淋巴绝对值0.48。略回仍高。</li>
+              <li>钾仍是07:52干化学<strong>4.52</strong>（参考3.5–5.3，没有标异常）。钠仍是<strong>135</strong>↓。氯仍是<strong>97</strong>。离子钙07:59是1.04，13:58血气 <strong>1.06</strong>↓。</li>
+              <li>昨天排便3次，黑褐色。18:32隐血免疫法阳性，镜检红白细胞曾阴性。9月24日16:27便常规：黑褐色、稀便、镜检未见异常；白细胞和红细胞结果空着；这张没有隐血。炎症：CRP 术前86.80→97.70，IL-6 68.5。</li>
               <li>白蛋白术前<strong>37.71</strong>→术后2h44m <strong>23.1</strong>↓→29.3→35.8→最新<strong>27.8</strong>↓ g/L（9月24日09:31，参考34–48，又低于参考）。</li>
             </ul>
           </div>
@@ -1480,7 +1546,7 @@
               <li>2026-09-17 10:52：ALT <strong>891</strong>、AST <strong>806</strong>（峰值）。最新（9月21日09:18）：ALT <strong>159</strong>、AST <strong>82</strong>（参考均0–40），AST/ALT 0.52。</li>
               <li>较峰值大幅下降，仍高于参考。结合此前休克，缺血缺氧性肝损伤仍是主要考虑。</li>
               <li>白蛋白37.71→23.1→29.3→35.8→<strong>27.8</strong>↓ g/L（9月24日09:31，参考34–48）。ALT、AST 这张没有重抽，仍是9月21日的159/82。早期胆红素：术前16.5、术后2h 7.0，之后未再报。</li>
-              <li>INR 0.977已正常；勿把血常规血小板比积当成降钙素原。</li>
+              <li>INR 最新是9月25日07:52的 <strong>0.97</strong>（参考0.94–1.2）。勿把血常规血小板比积当成降钙素原。</li>
             </ul>
           </div>
         </details>
@@ -2043,10 +2109,55 @@
           <div class="event-title">血滤已停；家属问芬太尼和氧合指数</div>
           <div class="event-desc">停机钟点、流速、脱水量和抗凝都没说。16:18是收到「已停机」的时间。15:50的血压130/30、心跳77、去甲3、多巴胺6、尿量0没有更新。氧合指数最近是139、163、再回到140，最新仍是07:47的140。芬太尼的剂量没有说，这个问题留在查房清单里。</div>
         </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后218小时27分 · 9月24日16:27</div>
+          <div class="event-title">便常规：黑褐色稀便，镜检未见异常</div>
+          <div class="event-desc">报告时间16:27:43。颜色黑褐色，性状稀便，镜检未见异常。白细胞、红细胞的结果格是空的，单位写着个/高倍，不要当成0。备注和异常栏也是空的。这张没有隐血。手机状态栏17:30不是报告时间。</div>
+        </article>
         <article class="event" style="--event-color: var(--blue)">
           <div class="event-time">9月24日17:34 口述 · 术后219小时34分</div>
           <div class="event-title">更正15:50升压药：去甲3，多巴胺6</div>
           <div class="event-desc">先前把两种药写反了。15:50那一条现为去甲2→3 mL/h（0.15 mg/h），多巴胺5→6 mL/h。血压130/30、心跳77、尿量0不变。17:34是收到更正的时间，不是新的一次调量，也不是新的血压。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">9月25日00:22 口述 · 术后226小时22分</div>
+          <div class="event-title">尿量仍为0</div>
+          <div class="event-desc">00:22是收到这句口述的时间。没有新的血压、心跳、去甲或多巴胺。血滤是否重新开始没说，所以16:18「已停」仍是上一句，不把它写成仍停或已再开。没有新的化验单。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后233小时52分 · 9月25日07:52</div>
+          <div class="event-title">肌酐185→227.10；尿素20.52→25.80；钠135</div>
+          <div class="event-desc">干化学，报告07:52:10。这张参考肌酐57–111、尿素3.6–9.5，两项都标高，没有写危急值。钾4.52仍在3.5–5.3。钠137.03→135↓（参考137–147）。氯97仍在96–108。白蛋白、降钙素原这张没抽。07:52口述没有新的尿量、血压或升压药。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后233小时52分 · 9月25日07:52</div>
+          <div class="event-title">APTT 44.8→48.5；纤维蛋白原4.86；TT 13.2</div>
+          <div class="event-desc">报告07:52:24，比上面那张生化晚14秒。APTT 48.5秒↑，这张参考21–45。TT 13.2秒↓（参考14–21）。PT 11.6、PT% 98.6、INR 0.97都在参考内。纤维蛋白原4.86 g/L↑（参考2–4.5）。48.5是APTT秒数，不是氧合指数。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后233小时59分 · 9月25日07:59</div>
+          <div class="event-title">乳酸2.24→2.26；PO₂ 64.4；P/F 107</div>
+          <div class="event-desc">报告07:59:06。pH 7.407、PCO₂ 39.5、HCO₃⁻ 24.3、ABE −0.4都在参考内。FiO₂ 50%→60%。血气Hb 10.8→9.8，Hct 29%，iCa 1.12→1.04，氧饱和度90.7。107是氧合指数。单子上0.17%那一行不是氧合指数。08:00口述没有新的血压、升压药或尿量。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后234小时05分 · 9月25日08:05</div>
+          <div class="event-title">血常规Hb 100→87；白细胞26.44→24.15</div>
+          <div class="event-desc">报告08:05:17。红细胞2.67↓，压积25.1↓。PLT 98→104，仍低。中性粒96.8%、绝对值23.37。淋巴绝对值0.48。血小板比积0.13%不是降钙素原。降钙素原这张没抽。</div>
+        </article>
+        <article class="event" style="--event-color: var(--red)">
+          <div class="event-time">术后236小时04分 · 9月25日10:04</div>
+          <div class="event-title">降钙素原8.206→9.893</div>
+          <div class="event-desc">报告10:04:43。单子中文是降钙素原测定，缩写PCCT，9.893 ng/ml↑，参考0–0.05。这是降钙素原，不是血常规血小板比积，也不是氧合指数。这张只看到这一项。手机状态栏11:09不是报告时间。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">9月25日11:11 口述 · 术后237小时11分</div>
+          <div class="event-title">血滤早上会重新开机</div>
+          <div class="event-desc">11:11是收到「crrt早上会重新开机」的时间，不是开机钟点。没有说已经开了，也没有流速、脱水量或抗凝。16:18上一句仍是已停。00:22尿量仍为0，这句没有新的尿量、血压或升压药。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后239小时58分 · 9月25日13:58</div>
+          <div class="event-title">乳酸2.26→1.30；PO₂ 66.8；P/F 111</div>
+          <div class="event-desc">报告13:58:56。乳酸1.30，参考0.5–1.6，这张没有标高。pH 7.393、PCO₂ 40.4、HCO₃⁻ 24.1、ABE −0.8都在参考内。FiO₂仍60%。血气Hb 9.8→9.5，Hct 28%，iCa 1.04→1.06，氧饱和度91.4。111是氧合指数。单子上0.17%那一行不是氧合指数。14:00口述没有新的血压、升压药、尿量或血滤。</div>
         </article>
       </div>
     </section>
@@ -2086,7 +2197,8 @@
   </main>
 
   <div class="action-bar" aria-label="页面操作">
-    <button class="primary" type="button" id="openDialog">＋ 添加最新结果</button>
+    <button class="primary" type="button" id="openAgentUpload">上传化验</button>
+    <button class="secondary" type="button" id="openDialog">手填</button>
     <button class="secondary" type="button" id="jumpQuestions">清单</button>
     <button class="secondary" type="button" id="scrollTop" aria-label="回到顶部">↑</button>
   </div>
@@ -2162,6 +2274,77 @@
     </div>
   </dialog>
 
+  <dialog id="agentDialog">
+    <div class="dialog-head">
+      <div>
+        <h2>上传化验</h2>
+        <div class="report-meta">功能分支预览。交给当前监测 agent 更新这一支的数据、解读和查房问题，不覆盖 main</div>
+      </div>
+      <button class="icon-btn" type="button" id="closeAgentDialog" aria-label="关闭">×</button>
+    </div>
+    <form class="result-form" id="agentForm">
+      <div class="field wide">
+        <details class="agent-setup" id="agentSetup">
+          <summary>连接中转（Cursor 密钥不放在网页里）</summary>
+          <div class="field" style="margin-top:10px">
+            <label for="relayUrl">中转地址</label>
+            <input id="relayUrl" name="relayUrl" type="url" inputmode="url" placeholder="https://你的中转/upload" autocomplete="off">
+          </div>
+          <div class="field" style="margin-top:8px">
+            <label for="uploadToken">上传口令</label>
+            <input id="uploadToken" name="uploadToken" type="password" autocomplete="current-password">
+          </div>
+        </details>
+      </div>
+      <div class="field wide">
+        <label for="shotInput">化验截图（最多 5 张，jpg/png）</label>
+        <input id="shotInput" name="shots" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple>
+        <div class="shot-row" id="shotRow"></div>
+      </div>
+      <div class="field">
+        <label for="reportClock">报告时间</label>
+        <input id="reportClock" name="clock" type="datetime-local">
+      </div>
+      <div class="field">
+        <label for="reportKind">单子类型</label>
+        <input id="reportKind" name="kind" type="text" placeholder="血气 / 凝血 / 生化 / 血常规">
+      </div>
+      <div class="field">
+        <label for="sbpInput">收缩压</label>
+        <input id="sbpInput" name="sbp" type="number" inputmode="numeric" step="1">
+      </div>
+      <div class="field">
+        <label for="dbpInput">舒张压</label>
+        <input id="dbpInput" name="dbp" type="number" inputmode="numeric" step="1">
+      </div>
+      <div class="field">
+        <label for="hrInput">脉搏</label>
+        <input id="hrInput" name="hr" type="number" inputmode="numeric" step="1">
+      </div>
+      <div class="field">
+        <label for="neInput">去甲 mL/h</label>
+        <input id="neInput" name="ne" type="number" inputmode="decimal" step="0.1">
+      </div>
+      <div class="field">
+        <label for="daInput">多巴胺 mL/h</label>
+        <input id="daInput" name="da" type="number" inputmode="decimal" step="0.1">
+      </div>
+      <div class="field wide">
+        <label for="crrtInput">CRRT / 尿量</label>
+        <input id="crrtInput" name="crrt" type="text" placeholder="例如已停，停后仍无尿">
+      </div>
+      <div class="field wide">
+        <label for="oralInput">其他口述</label>
+        <textarea id="oralInput" name="notes" rows="3" placeholder="只写看到或听到的事实"></textarea>
+      </div>
+      <p class="field wide agent-status" id="agentStatus" role="status"></p>
+      <div class="form-actions">
+        <button class="secondary" type="button" id="cancelAgent">取消</button>
+        <button class="primary" type="submit" id="agentSubmit">交给 agent</button>
+      </div>
+    </form>
+  </dialog>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <div class="sr-only" aria-live="polite" id="liveRegion"></div>
 
@@ -2205,7 +2388,9 @@
       { h: 195.72, label: "术后195h43m", sample: "动脉", ph: 7.301, pco2: 43.5, po2: 84.1, hco3: 21.0, be: -5.4, lactate: 1.29, fio2: 60, pf: 140, hb: 9.8, ca: 1.02 },
       { h: 198.85, label: "术后198h50m", sample: "动脉", ph: 7.345, pco2: 39.4, po2: 83.6, hco3: 21.0, be: -4.7, lactate: 1.18, fio2: 60, pf: 139, hb: 10.2, ca: 1.04 },
       { h: 202.90, label: "术后202h54m", sample: "动脉", ph: 7.369, pco2: 41.5, po2: 81.4, hco3: 23.4, be: -1.9, lactate: 1.32, fio2: 50, pf: 163, hb: 10.3, ca: 1.07 },
-      { h: 209.79, label: "术后209h47m", sample: "动脉", ph: 7.360, pco2: 49.6, po2: 70.1, hco3: 27.4, be: 1.9, lactate: 2.24, fio2: 50, pf: 140, hb: 10.8, ca: 1.12 }
+      { h: 209.79, label: "术后209h47m", sample: "动脉", ph: 7.360, pco2: 49.6, po2: 70.1, hco3: 27.4, be: 1.9, lactate: 2.24, fio2: 50, pf: 140, hb: 10.8, ca: 1.12 },
+      { h: 233.99, label: "术后233h59m", sample: "动脉", ph: 7.407, pco2: 39.5, po2: 64.4, hco3: 24.3, be: -0.4, lactate: 2.26, fio2: 60, pf: 107, hb: 9.8, ca: 1.04 },
+      { h: 239.98, label: "术后239h58m", sample: "动脉", ph: 7.393, pco2: 40.4, po2: 66.8, hco3: 24.1, be: -0.8, lactate: 1.30, fio2: 60, pf: 111, hb: 9.5, ca: 1.06 }
     ];
 
     const labReadings = [
@@ -2263,7 +2448,11 @@
       { h: 203.06, label: "术后203h03m", sample: "生化", k: 4.50 },
       { h: 203.24, label: "术后203h14m", sample: "凝血", aptt: 44.8 },
       { h: 210.65, label: "术后210h38m", sample: "血常规", wbc: 26.44, plt: 98, hbg: 100 },
-      { h: 211.53, label: "术后211h31m", sample: "生化", creatinine: 185, urea: 20.52, k: 4.51, na: 137.03, cl: 98.84, alb: 27.8, pct: 8.206 }
+      { h: 211.53, label: "术后211h31m", sample: "生化", creatinine: 185, urea: 20.52, k: 4.51, na: 137.03, cl: 98.84, alb: 27.8, pct: 8.206 },
+      { h: 233.87, label: "术后233h52m", sample: "生化", creatinine: 227.10, urea: 25.80, k: 4.52, na: 135, cl: 97 },
+      { h: 233.87, label: "术后233h52m", sample: "凝血", aptt: 48.5, inr: 0.97, pt: 11.6, tt: 13.2, fbg: 4.86 },
+      { h: 234.09, label: "术后234h05m", sample: "血常规", wbc: 24.15, plt: 104, hbg: 87 },
+      { h: 236.08, label: "术后236h04m", sample: "生化", pct: 9.893 }
     ];
 
     const vitalReadings = [
@@ -2340,25 +2529,43 @@
     let selectedRange = "all";
     const customKey = "perioperative-dashboard-custom-v1";
     const questionKey = "perioperative-dashboard-questions-v1";
-    const latestNonBloodGasReport = { h: 218.30, label: "术后218h18m · 血滤已停", type: "口述" };
+    const latestNonBloodGasReport = { h: 236.08, label: "术后236h04m · PCT 9.893", type: "化验" };
     const doctorQuestions = [
+      {
+        id: "oxygenation",
+        group: "urgent",
+        title: "P/F仍是111，FiO₂还是60%，芬太尼还要不要动？",
+        detail: "9月25日13:58:56血气：氧合指数107→111，印在单子上是111，参考400–500，仍标低。FiO₂仍60%。PO₂ 64.4→66.8。氧饱和度91.4。111是氧合指数。单子上0.17%那一行不是氧合指数，也不是降钙素原。家属16:18问过芬太尼。剂量、是否正在输、呼吸机是完全控制还是有自主呼吸，都没说。呼吸正压15–18仍是9月22日16:11那句。14:00口述没有新的呼吸数字。"
+      },
+      {
+        id: "infection",
+        group: "urgent",
+        title: "降钙素原8.206→9.893，抗感染要不要改？",
+        detail: "9月25日10:04:43单子：降钙素原8.206→9.893 ng/ml↑，参考0–0.05。单子缩写PCCT，中文是降钙素原测定。这是降钙素原，不是血常规血小板比积0.13%，也不是氧合指数111。13:58血气没有重抽降钙素原。白细胞仍是08:05的24.15，中性粒96.8%。IL-6仍是68.5，CRP仍是97.7。培养和目前抗生素如何？"
+      },
+      {
+        id: "next-window",
+        group: "urgent",
+        title: "11:11说血滤早上会重新开机，现在开了没有？",
+        detail: "9月25日11:11口述：「crrt早上会重新开机」。11:11是收到这句的时间，不是开机钟点。14:00口述没有再说血滤。没有说已经开了，也没有说流速、脱水量、抗凝。16:18上一句仍是已停。00:22尿量仍为0，14:00没有新的尿量。肌酐仍是07:52的227.10，尿素25.80。去甲仍是15:50的3 mL/h，多巴胺6 mL/h。"
+      },
       {
         id: "bleeding",
         group: "urgent",
-        title: "今天又有一次黑色便，还要不要再查出血、再输血？",
-        detail: "9月22日说昨天便3次、黑褐色。9月23日15:45：今日便1次，黑色，无尿。此后没有新的便色。9月24日15:50尿量仍为0。隐血免疫法曾阳性，镜检红白细胞曾阴性。07:47血气Hb是10.8，08:38血常规Hb是100 g/L，两种方法不要等同。黑色不能定量。还要不要再做隐血或胃液、目标Hb是多少？"
+        title: "血常规Hb仍是87，血气9.8→9.5，黑褐色稀便还要不要再查隐血？",
+        detail: "9月25日08:05血常规Hb 100→87 g/L↓，红细胞2.67，压积25.1。13:58血气Hb 9.8→9.5。两种方法不要等同。9月24日16:27:43便常规仍是黑褐色稀便，镜检未见异常，这张没有隐血。更早隐血免疫法曾阳性。07:52 APTT 48.5、纤维蛋白原4.86。14:00口述没有新的便色。颜色不能定量。还要不要再做隐血、目标Hb是多少？"
       },
       {
         id: "hemodynamics",
         group: "urgent",
         title: "血压130/30，去甲3、多巴胺6，还要不要动？",
-        detail: "9月24日15:50口述，17:34更正了写反的升压药。血压96/36→130/30，心跳86→77。没有说MAP。去甲2→3 mL/h（0.15 mg/h），多巴胺5→6 mL/h。呼吸次数仍停在9月23日15:45的13，这次没说。镇静剂和睁眼也没有新口述。赵医生之前说过113/35可以接受。130/30、舒张压30，还算可以接受吗？"
+        detail: "9月24日15:50口述，17:34更正了写反的升压药。血压96/36→130/30，心跳86→77。没有说MAP。去甲2→3 mL/h（0.15 mg/h），多巴胺5→6 mL/h。9月25日07:52、08:00、11:11和14:00的口述里血压、脉搏和两种药都空着，所以循环卡仍停在15:50。赵医生之前说过113/35可以接受。130/30、舒张压30，还算可以接受吗？"
       },
       {
-        id: "lactate",
+        id: "shock-cause",
         group: "urgent",
-        title: "乳酸又升到2.24，pH已回到7.360，还要不要处理？",
-        detail: "9月23日20:50乳酸1.18、pH 7.345。9月24日00:54乳酸1.32仍在0.5–1.6，pH 7.369回到参考，HCO₃⁻ 23.4、ABE −1.9。07:47乳酸2.24又高出参考。pH 7.360仍在7.35–7.45。PCO₂ 49.6、HCO₃⁻ 27.4都标高，ABE +1.9仍在−3到3。FiO₂回到50%。"
+        title: "目前休克的主要原因判断是什么？",
+        detail: "降钙素原仍是10:04的9.893。血常规Hb仍是87，13:58血气Hb 9.5，两种方法不要等同。乳酸2.26→1.30，已回0.5–1.6。pH 7.393，PO₂ 66.8，P/F 111。白细胞仍是24.15。肌酐仍是07:52的227.10，尿素25.80。APTT 48.5，纤维蛋白原4.86。16:27便常规是黑褐色稀便，没有隐血。15:50血压130/30，去甲3、多巴胺6。00:22尿量仍为0。11:11说血滤早上会重新开机，14:00没有新的血压。感染性、残余肠缺血、消化道出血还是混合性？培养结果如何？"
       },
       {
         id: "source-control",
@@ -2367,58 +2574,40 @@
         detail: "切除多长肠段、是否造口、是否仍有活力可疑的肠管、需不需要二次探查？"
       },
       {
-        id: "shock-cause",
-        group: "urgent",
-        title: "目前休克的主要原因判断是什么？",
-        detail: "血常规Hb 94→100，07:47血气Hb 10.8，两种方法不要等同。乳酸2.24，pH 7.360，PCO₂ 49.6、PO₂ 70.1。白细胞24.97→26.44，肌酐423→185，尿素41.03→20.52，PCT 18.701→8.206。9月23日黑色便1次，此后没有新的便色。15:50血压130/30，心跳77，去甲3、多巴胺6，尿量0。17:34更正了写反的两种药。感染性、残余肠缺血、消化道出血还是混合性？培养结果如何？"
-      },
-      {
-        id: "oxygenation",
-        group: "urgent",
-        title: "芬太尼是不是氧合变差的原因？最新P/F仍是140",
-        detail: "家属16:18问芬太尼是否造成氧合指数一直下降。图上最近是9月23日20:50的139，9月24日00:54回到163，07:47又到140。FiO₂从60%回到50%，PO₂ 70.1，氧饱和度92.2。140是氧合指数。单子上0.22那一行不是氧合指数。芬太尼的剂量、是否正在输、呼吸机是完全控制还是有自主呼吸，都没说。9月23日只说过镇静剂加大，当时药名没说。呼吸正压15–18仍是9月22日16:11那句。请医生看芬太尼和这次140的关系。"
-      },
-      {
-        id: "next-window",
-        group: "urgent",
-        title: "血滤16:18口述已停，这一轮脱了多少？还开不开？",
-        detail: "9月23日两点左右开始，流速、脱水量和抗凝一直没说。9月24日16:18口述已停。停机钟点没说，所以不写成多少小时。15:50尿量仍为0，这次没有新的尿量。肌酐423→185，尿素41.03→20.52，都还高于参考。这张尿素没有写危急值。钾4.51、钠137.03、氯98.84都在参考内。白蛋白降到27.8。去甲仍是15:50的3 mL/h，多巴胺6 mL/h。17:34更正了写反的两种药。"
+        id: "lactate",
+        group: "followup",
+        title: "乳酸2.26→1.30已回参考，还要不要再盯？",
+        detail: "13:58:56血气乳酸1.30，参考0.5–1.6，这张没有标高。pH 7.393、PCO₂ 40.4、HCO₃⁻ 24.1、ABE −0.8都在参考内。FiO₂仍60%。14:00没有新的血压。"
       },
       {
         id: "kidney",
         group: "followup",
-        title: "血滤已停，肌酐185、尿素20.52，这一轮脱了多少？",
-        detail: "上一轮走了19小时48分，停后肌酐升到423、尿素41.03危急。这一轮约9月23日14:00开始，9月24日16:18口述已停。停机钟点、血液速度、脱水速度和抗凝都没说。09:31肌酐185、尿素20.52，仍高于参考，这张尿素没有写危急值。15:50尿量仍为0，这次没有新的尿量。钾4.51仍在参考内。01:14 APTT 44.8，这张参考21–45，没有标异常。请确认是床旁血滤还是转到透析，以及停后什么时候再查肌酐。"
+        title: "肌酐227.10、尿素25.80，这一轮脱了多少？",
+        detail: "上一轮走了19小时48分，停后肌酐升到423、尿素41.03危急。这一轮约9月23日14:00开始，9月24日16:18口述已停。停机钟点、血液速度、脱水速度和抗凝都没说。9月25日11:11口述早上会重新开机，没有说已经开了。14:00口述没有再说。07:52肌酐227.10、尿素25.80，这张参考分别是57–111和3.6–9.5，都标高，尿素没有写危急值。10:04和13:58都没有重抽肌酐。00:22尿量仍为0，14:00没有新的尿量。钾4.52仍在参考内。钠135偏低。请确认是床旁血滤还是转到透析，以及什么时候再查肌酐。"
       },
       {
         id: "coagulation",
         group: "followup",
-        title: "下肢彩超已出，胫后动脉有不完全闭塞可能，抗凝怎么调？",
-        detail: "10:19报告：深浅静脉未见异常回声，没有写血栓；股总动脉斑块约右1.1×0.2 cm、左1.4×0.4 cm；双侧胫后动脉不完全闭塞可能。15:45家属口头说正常、无血栓、老年人常见粥样硬化。口头说法不替换报告。9月24日01:14 APTT 44.8，这张参考21–45，没有标异常，靠近45。昨天21:06是41.1，同一条参考。09:26的33.0是另一张更窄的参考，当时标高。INR 1.10还是9月23日上午的数。黑色便1次，隐血曾阳性。16:18口述血滤已停。抗凝用什么、停机后要不要调整？"
+        title: "APTT 48.5、TT 13.2、纤维蛋白原4.86，抗凝怎么调？",
+        detail: "10:19报告：深浅静脉未见异常回声，没有写血栓；股总动脉斑块约右1.1×0.2 cm、左1.4×0.4 cm；双侧胫后动脉不完全闭塞可能。15:45家属口头说正常、无血栓、老年人常见粥样硬化。口头说法不替换报告。APTT仍是07:52的48.5↑。08:05血常规Hb仍是87，13:58血气Hb 9.5。16:27便常规是黑褐色稀便，这张没有隐血。16:18口述血滤已停，11:11说早上会重新开机，14:00没再说。抗凝用什么、还要不要调整？"
       },
       {
-        id: "infection",
+        id: "calcium",
         group: "followup",
-        title: "PCT已降到8.2，白细胞却升到26.44，抗感染要不要改？",
-        detail: "降钙素原18.701→8.206（参考0–0.05），仍在下降，仍然很高。白细胞24.97→26.44，中性粒97.1%，绝对值25.67，淋巴绝对值0.26。IL-6 68.5，CRP 术前86.8→97.7。血常规“PCT 0.12%”是血小板比积。培养和目前抗生素如何？"
+        title: "钠仍是135，离子钙1.04→1.06，还要不要补？",
+        detail: "07:52干化学钾4.52，参考3.5–5.3，没有标异常。钠仍是135↓，氯仍是97。13:58血气离子钙1.04→1.06，仍低于1.15。白蛋白仍是09:31的27.8。16:18口述血滤已停，11:11说早上会重新开机，14:00没说已经开了。停机后电解质怎么盯？"
       },
       {
         id: "liver",
         group: "followup",
         title: "白蛋白又降到27.8，ALT还要不要再查？",
-        detail: "术后2h44m已有ALT 719、AST 1142、总胆红素7.0、白蛋白23.1。峰值在9月17日891/806。9月21日ALT 159、AST 82。白蛋白曾回到35.8，9月24日09:31又到27.8，低于34。这张没有重抽ALT、AST和胆红素。主要仍考虑缺血性肝损伤，还是白蛋白另有原因？"
+        detail: "术后2h44m已有ALT 719、AST 1142、总胆红素7.0、白蛋白23.1。峰值在9月17日891/806。9月21日ALT 159、AST 82。白蛋白曾回到35.8，9月24日09:31又到27.8，低于34。9月25日07:52、10:04和13:58都没有重抽白蛋白、ALT、AST和胆红素。主要仍考虑缺血性肝损伤，还是白蛋白另有原因？"
       },
       {
         id: "heart",
         group: "followup",
         title: "CK从8280降到434，还要不要查肌钙蛋白？",
         detail: "CK-MB已到23.7（参考0–24）。LDH仍463。心电图及床旁心脏超声如何？"
-      },
-      {
-        id: "calcium",
-        group: "followup",
-        title: "钠137.03、氯98.84已回参考，离子钙1.12，还要不要补？",
-        detail: "09:31血清钾4.51，参考3.5–5.3，没有标异常。钠130.76→137.03，回到137–147的下限附近。氯94.37→98.84，回到96–108。血气离子钙仍是07:47的1.12，低于1.15。白蛋白降到27.8。16:18口述血滤已停。停机后电解质怎么盯？"
       }
     ];
 
@@ -3064,6 +3253,7 @@
     const closeDialog = () => dialog.close();
 
     document.getElementById("openDialog").addEventListener("click", openDialog);
+    document.getElementById("openAgentUpload").addEventListener("click", openAgentDialog);
     document.getElementById("closeDialog").addEventListener("click", closeDialog);
     document.getElementById("cancelForm").addEventListener("click", closeDialog);
     document.getElementById("scrollTop").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
@@ -3150,7 +3340,270 @@
       });
     });
 
+    const relayUrlKey = "medidash-relay-url";
+    const uploadTokenKey = "medidash-upload-token";
+    const pendingRunKey = "medidash-pending-agent-run";
+    const agentDialog = document.getElementById("agentDialog");
+    const agentStatus = document.getElementById("agentStatus");
+    const shotRow = document.getElementById("shotRow");
+    let watchedRunId = "";
+
+    function setAgentStatus(text) {
+      agentStatus.textContent = text || "";
+    }
+
+    function defaultRelayUrl() {
+      const host = location.hostname;
+      if (/(?:^|\.)fcapp\.run$/.test(host) || host === "localhost" || host === "127.0.0.1") {
+        return `${location.origin}/upload`;
+      }
+      return "";
+    }
+
+    function pendingRun() {
+      try {
+        const value = JSON.parse(localStorage.getItem(pendingRunKey) || "null");
+        return value && value.runId && value.relayUrl ? value : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function statusEndpoint(relayUrl) {
+      return relayUrl.replace(/\/upload\/?$/, "/status");
+    }
+
+    function showGeneratedPage(body) {
+      localStorage.removeItem(pendingRunKey);
+      setAgentStatus("");
+      // Prefer the GitHub htmlpreview of this commit. Aliyun FC's default
+      // *.fcapp.run domain forces content-disposition: attachment, so the
+      // relay's own /page/<sha> downloads instead of rendering.
+      const viewUrl = body.githubUrl || body.cdnUrl || body.pageUrl;
+      const text = document.createTextNode("更新完成，正在打开新网页。");
+      const link = document.createElementNS(XHTML_NS, "a");
+      link.href = viewUrl;
+      link.textContent = "立即打开";
+      link.style.marginLeft = "8px";
+      link.style.fontWeight = "800";
+      agentStatus.append(text, link);
+      window.setTimeout(() => location.assign(viewUrl), 1800);
+    }
+
+    async function watchAgentRun(relayUrl, token, runId) {
+      if (!runId || watchedRunId === runId) return;
+      watchedRunId = runId;
+      const terminal = new Set(["ERROR", "CANCELLED", "EXPIRED"]);
+      for (let attempt = 0; attempt < 300; attempt++) {
+        try {
+          const response = await fetch(statusEndpoint(relayUrl), {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ token, runId })
+          });
+          let body = {};
+          try { body = await response.json(); } catch { body = {}; }
+          if (!response.ok || !body.ok) {
+            if (response.status === 401) {
+              localStorage.removeItem(pendingRunKey);
+              setAgentStatus("上传口令已变化，请重新填写后再查进度。");
+              break;
+            }
+            setAgentStatus(`后台任务已提交，暂时查不到进度（${agentErrorText(body.error)}）`);
+          } else if (body.status === "FINISHED" && body.pageUrl) {
+            showGeneratedPage(body);
+            watchedRunId = "";
+            return;
+          } else if (body.status === "PUBLISHING") {
+            setAgentStatus("数据已更新，正在生成不可变的新网页…");
+          } else if (terminal.has(body.status)) {
+            localStorage.removeItem(pendingRunKey);
+            setAgentStatus(`后台更新没有完成（${body.status}），请打开 Agent 查看。`);
+            break;
+          } else {
+            const label = body.status === "CREATING" ? "正在启动" : "正在识图、更新数据和查房问题";
+            setAgentStatus(`${label}… 可以关闭本窗口，稍后回来会继续查询。`);
+          }
+        } catch {
+          setAgentStatus("后台任务已提交，网络暂时中断；恢复后会继续查询。");
+        }
+        await new Promise(resolve => window.setTimeout(resolve, 6000));
+      }
+      watchedRunId = "";
+    }
+
+    function openAgentDialog() {
+      const relayUrl = localStorage.getItem(relayUrlKey) || defaultRelayUrl();
+      const token = localStorage.getItem(uploadTokenKey) || "";
+      document.getElementById("relayUrl").value = relayUrl;
+      document.getElementById("uploadToken").value = token;
+      const setup = document.getElementById("agentSetup");
+      setup.open = !document.getElementById("relayUrl").value ||
+        !localStorage.getItem(uploadTokenKey);
+      setAgentStatus("");
+      agentDialog.showModal();
+      const pending = pendingRun();
+      if (pending && token) watchAgentRun(pending.relayUrl, token, pending.runId);
+    }
+
+    function closeAgentDialog() {
+      agentDialog.close();
+    }
+
+    document.getElementById("closeAgentDialog").addEventListener("click", closeAgentDialog);
+    document.getElementById("cancelAgent").addEventListener("click", closeAgentDialog);
+
+    document.getElementById("shotInput").addEventListener("change", () => {
+      while (shotRow.firstChild) shotRow.removeChild(shotRow.firstChild);
+      const files = Array.from(document.getElementById("shotInput").files || []).slice(0, 5);
+      files.forEach(file => {
+        const img = document.createElement("img");
+        img.alt = "";
+        img.src = URL.createObjectURL(file);
+        shotRow.appendChild(img);
+      });
+      const extra = (document.getElementById("shotInput").files || []).length;
+      setAgentStatus(extra > 5 ? "只提交前 5 张。" : "");
+    });
+
+    function blobToBase64(blob) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const text = String(reader.result || "");
+          const comma = text.indexOf(",");
+          resolve(comma >= 0 ? text.slice(comma + 1) : text);
+        };
+        reader.onerror = () => reject(new Error("read"));
+        reader.readAsDataURL(blob);
+      });
+    }
+
+    function compressShot(file) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        const url = URL.createObjectURL(file);
+        img.onload = () => {
+          const maxEdge = 1800;
+          const scale = Math.min(1, maxEdge / Math.max(img.naturalWidth, img.naturalHeight));
+          const canvas = document.createElement("canvas");
+          canvas.width = Math.max(1, Math.round(img.naturalWidth * scale));
+          canvas.height = Math.max(1, Math.round(img.naturalHeight * scale));
+          canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
+          URL.revokeObjectURL(url);
+          canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error("compress")), "image/jpeg", 0.82);
+        };
+        img.onerror = () => {
+          URL.revokeObjectURL(url);
+          reject(new Error("image"));
+        };
+        img.src = url;
+      });
+    }
+
+    function relayEndpoint(raw) {
+      const trimmed = raw.trim().replace(/\/$/, "");
+      if (!trimmed) return "";
+      return /\/upload$/.test(trimmed) ? trimmed : `${trimmed}/upload`;
+    }
+
+    function agentErrorText(error) {
+      const known = {
+        token: "上传口令不对。",
+        empty: "请至少上传一张截图，或写一句口述。",
+        too_many_images: "最多 5 张截图。",
+        image_size: "有一张图太大，请换近一点的截图。",
+        mime: "只接受 jpg、png、webp、gif。",
+        agent_busy: "监测 agent 正在处理上一条，等它结束后再传。",
+        cursor_key_missing: "中转还没有配置 Cursor 密钥。",
+        relay_not_configured: "中转还没有配置上传口令。",
+        cursor_unreachable: "中转连不上 Cursor。",
+        cursor_rejected: "Cursor 没有收下这次上传。",
+        cursor_response: "Cursor 返回的数据不完整。",
+        run_not_found: "找不到这次后台任务。",
+        branch_unreachable: "暂时读不到功能分支的新提交。",
+        page_unreachable: "新网页还没有生成完成。"
+      };
+      return known[error] || "没有交出去，请稍后再试。";
+    }
+
+    document.getElementById("agentForm").addEventListener("submit", async event => {
+      event.preventDefault();
+      const submit = document.getElementById("agentSubmit");
+      const relayUrl = relayEndpoint(document.getElementById("relayUrl").value);
+      const token = document.getElementById("uploadToken").value.trim();
+      if (!relayUrl || !token) {
+        document.getElementById("agentSetup").open = true;
+        setAgentStatus("先填写中转地址和上传口令。口令只存在这台设备。");
+        return;
+      }
+      localStorage.setItem(relayUrlKey, relayUrl);
+      localStorage.setItem(uploadTokenKey, token);
+      const files = Array.from(document.getElementById("shotInput").files || []).slice(0, 5);
+      const value = id => document.getElementById(id).value.trim();
+      const payload = {
+        token,
+        clock: value("reportClock"),
+        kind: value("reportKind"),
+        sbp: value("sbpInput"),
+        dbp: value("dbpInput"),
+        hr: value("hrInput"),
+        ne: value("neInput"),
+        da: value("daInput"),
+        crrt: value("crrtInput"),
+        notes: value("oralInput")
+      };
+      if (!files.length && !Object.entries(payload).some(([key, item]) => key !== "token" && item)) {
+        setAgentStatus("请至少上传一张截图，或写一句口述。");
+        return;
+      }
+      submit.disabled = true;
+      try {
+        setAgentStatus(files.length ? "正在压缩截图…" : "正在交给监测 agent…");
+        const images = [];
+        for (const file of files) {
+          const blob = await compressShot(file);
+          images.push({ mimeType: "image/jpeg", data: await blobToBase64(blob) });
+        }
+        payload.images = images;
+        setAgentStatus("正在交给监测 agent…");
+        const response = await fetch(relayUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        let body = {};
+        try { body = await response.json(); } catch { body = {}; }
+        if (!response.ok || !body.ok) {
+          setAgentStatus(agentErrorText(body.error));
+          return;
+        }
+        if (body.dryRun) {
+          setAgentStatus("试运行已送到中转，还没有真正调用 agent。");
+        } else {
+          localStorage.setItem(pendingRunKey, JSON.stringify({
+            runId: body.runId,
+            relayUrl,
+            startedAt: Date.now()
+          }));
+          setAgentStatus("已交给监测 agent，正在后台更新，不会改 main。");
+          watchAgentRun(relayUrl, token, body.runId);
+        }
+        document.getElementById("shotInput").value = "";
+        while (shotRow.firstChild) shotRow.removeChild(shotRow.firstChild);
+      } catch {
+        setAgentStatus("连不上中转。医院网络要能访问你填的中转地址。");
+      } finally {
+        submit.disabled = false;
+      }
+    });
+
     renderAll();
+    const resumedRun = pendingRun();
+    const resumedToken = localStorage.getItem(uploadTokenKey) || "";
+    if (resumedRun && resumedToken) {
+      watchAgentRun(resumedRun.relayUrl, resumedToken, resumedRun.runId);
+    }
   </script>
 </body>
 </html>
