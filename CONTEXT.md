@@ -10,7 +10,7 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@bfd154bd5eef12e606bf783949dfa7415ce0b3fd/index.xhtml  
 **备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@bfd154bd5eef12e606bf783949dfa7415ce0b3fd/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
-国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是最新口述：术后241h07m · CRRT在运行。15:07口述血压 **122/33**，心跳 **83**，去甲仍 **3** mL/h，多巴胺 **6→5** mL/h。CRRT在运行，没有流速、脱水或尿量。13:58 血气乳酸仍是 **1.30**，P/F **111**。10:04 降钙素原仍是 **9.893**。08:05 血常规白细胞 **24.15**、Hb **87**。
+国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是最新口述：术后241h07m · CRRT在运行。15:07口述血压 **122/33**，心跳 **83**，呼吸 **14**，去甲仍 **3** mL/h，多巴胺 **6→5** mL/h。CRRT在运行，没有流速、脱水或尿量。13:58 血气乳酸仍是 **1.30**，P/F **111**。10:04 降钙素原仍是 **9.893**。08:05 血常规白细胞 **24.15**、Hb **87**。
 
 ---
 
@@ -87,7 +87,7 @@ Trend: falling from the 170 peak through **8.206**, then **rose** to **9.893**. 
 
 ### Support / vitals (family-reported)
 
-- **Latest bedside (family oral received 2026-09-25 15:07, postop 241h07m):** BP **122/33**, heart rate **83**. No MAP and no respiratory rate — do not invent either, and do not carry forward the 9/23 RR **13** or the 9/22 MAP **55**. Norepinephrine still **3 mL/h = 0.15 mg/h** (concentration 0.05 mg/mL). Dopamine **6 → 5 mL/h**. Do not convert dopamine to mg/h. Urine was blank. No new stool color, ventilator number, sedative name, or eye-opening update. **呼吸正压 15–18** is still the **9/22 16:11** phrase. The prior 15:50 oral (130/30, HR 77, NE 3, DA 6, urine 0) stays as the previous chart point.
+- **Latest bedside (family oral received 2026-09-25 15:07, postop 241h07m):** BP **122/33**, heart rate **83**, respiratory rate **14**. A later message added RR 14 onto this same clock; do not add a second `vitalReadings` point. No MAP — do not invent one, and do not carry forward the 9/22 MAP **55**. Do not keep the 9/23 RR **13** on this point. Norepinephrine still **3 mL/h = 0.15 mg/h** (concentration 0.05 mg/mL). Dopamine **6 → 5 mL/h**. Do not convert dopamine to mg/h. Urine was blank. No new stool color, ventilator number, sedative name, or eye-opening update. **呼吸正压 15–18** is still the **9/22 16:11** phrase. The prior 15:50 oral (130/30, HR 77, NE 3, DA 6, urine 0) stays as the previous chart point.
 - **Oral clocks** are message-receipt times (git commit UTC+8, or the chat timestamp), labeled 口述收到时间. They are not monitor sample clocks. The earliest five orals only had approximate postop hours, so their clocks stay approximate: 约9月16日00:00 / 12:00 / 19:00, 约9月17日10:00 / 16:00.
 - **Dr. Zhao:** current BP is acceptable, circulation is okay, and the BP course looks stable. ICU focus now is blood pressure and the lungs, both relatively stable. If pressors can be stopped completely and the ventilator removed, and only the kidney problem remains, ICU is no longer required and care may shift to dialysis.
 - Prior bedside (~postop 144h): BP 150/55 (MAP≈87), pulse 106, NE 4 + DA 7.5. Earlier ~122h: BP 125/35.
@@ -101,7 +101,7 @@ Trend: falling from the 170 peak through **8.206**, then **rose** to **9.893**. 
 - **Stool:** 2026-09-24 16:27:43 sheet: color **黑褐色**, consistency **稀便**, microscopy **未见异常**. Stool WBC and RBC results are blank, not 0. No occult blood on this sheet. Older FOBT immunoassay **positive** 18:32 9/21 stays on that older sheet only. Family oral 9/22 11:35: **3 stools yesterday, 黑褐色**. Family oral 9/23 15:45: **one stool, 黑色**. Color does not quantify or localize.
 - **Ultrasound oral gloss (received 15:45):** family said the lower-extremity study was normal, no thrombus, ordinary atherosclerosis in the elderly. This does **not** replace the 10:19 report (plaques, possible incomplete PTA occlusion, no abnormal venous echo).
 - **Coag 2026-09-25 07:52:24 (postop 233h52m):** APTT **48.5↑** sec (ref 21–45; was 44.8). TT **13.2↓** sec (ref 14–21). PT **11.6** (ref 11–14.3, no flag). PT% **98.6** (ref 80–120). INR **0.97** (ref 0.94–1.2). Fibrinogen **4.86↑** g/L (ref 2–4.5). Not marked critical. 48.5 is APTT seconds, not P/F.
-- **Watch next:** 15:07 said **CRRT在运行**, with no flow, UF, or anticoagulation. BP **122/33**, HR **83**, NE still **3 mL/h = 0.15 mg/h**, dopamine **6 → 5 mL/h**. P/F **111** on FiO₂ **60%**. Lactate **1.30**, inside 0.5–1.6. PCT **9.893** was not redrawn. CBC Hb **87** with the still-open 16:27 **黑褐色** loose stool; ABG Hb **9.5**. Cr **227.10** and urea **25.80** were not redrawn. Urine still **0** only as the 00:22 oral; 15:07 left it blank. APTT **48.5**; WBC **24.15**; iCa **1.06**. No fentanyl dose. The 0.17% ABG row is not P/F. The CBC **PCT 0.13%** is plateletcrit.
+- **Watch next:** 15:07 said **CRRT在运行**, with no flow, UF, or anticoagulation. BP **122/33**, HR **83**, RR **14**, NE still **3 mL/h = 0.15 mg/h**, dopamine **6 → 5 mL/h**. P/F **111** on FiO₂ **60%**. Lactate **1.30**, inside 0.5–1.6. PCT **9.893** was not redrawn. CBC Hb **87** with the still-open 16:27 **黑褐色** loose stool; ABG Hb **9.5**. Cr **227.10** and urea **25.80** were not redrawn. Urine still **0** only as the 00:22 oral; 15:07 left it blank. APTT **48.5**; WBC **24.15**; iCa **1.06**. No fentanyl dose. The 0.17% ABG row is not P/F. The CBC **PCT 0.13%** is plateletcrit.
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -336,10 +336,10 @@ Screenshot (preferred): `testset/reports/abg/20260925T135856__hires__abg.jpg`. E
 
 No screenshot. Manifest stays **140**. The form clock is **2026-09-25T15:07**. 单子类型未填. Notes 无.
 
-- BP **122/33**. Heart rate **83**. Norepinephrine **3** mL/h. Dopamine **5** mL/h. CRRT / 尿量: **CRRT在运行**.
+- BP **122/33**. Heart rate **83**. Respiratory rate **14**. Norepinephrine **3** mL/h. Dopamine **5** mL/h. CRRT / 尿量: **CRRT在运行**.
 - 15:07 is the receipt time, not a monitor clock and not a CRRT start clock.
-- No MAP. No respiratory rate. Do not plot the old RR 13 or the old MAP 55 on this point.
-- Add a `vitalReadings` point at h **241.12**, label **9月25日15:07**, with `sbp: 122`, `dbp: 33`, `hr: 83`, `ne: 3`, `da: 5`. No `map`.
+- RR **14** was added later onto this same clock. Do not add a second `vitalReadings` point. Do not keep the 9/23 RR **13** on this point. No MAP. Do not plot the old MAP 55.
+- The `vitalReadings` point stays at h **241.12**, label **9月25日15:07**, with `sbp: 122`, `dbp: 33`, `hr: 83`, `rr: 14`, `ne: 3`, `da: 5`. No `map`.
 - Dopamine **6 → 5**. Norepinephrine stays **3 mL/h = 0.15 mg/h**. Do not convert dopamine to mg/h.
 - CRRT is now recorded as running. Do not invent flow, UF, anticoagulation, or a run length. Do not copy 130 mL/min or UF 300.
 - Urine was blank. The 00:22 urine **0** stays on that older oral.
@@ -613,4 +613,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-25 15:07 oral on `main`. BP **122/33**, HR **83**, NE still **3**, dopamine **6→5**, **CRRT在运行**. No screenshot. Hero **最新口述：术后241h07m · CRRT在运行**. Manifest still **140**.
+**Last updated:** same 15:07 oral now includes RR **14**. Still one `vitalReadings` point at h **241.12**. BP **122/33**, HR **83**, NE still **3**, dopamine **5**, **CRRT在运行**. Hero unchanged. Manifest still **140**.
