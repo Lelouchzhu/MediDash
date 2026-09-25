@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 138,
+  "count": 139,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2529,6 +2529,32 @@
       "relative_h": 236.08,
       "extracted": {
         "pct": 9.893
+      }
+    },
+    {
+      "id": "20260925T135856__abg.jpg",
+      "path": "reports/abg/20260925T135856__abg.jpg",
+      "category": "abg",
+      "source_filename": "image-1790317066446-0.jpg",
+      "sha256_16": "65f3b5dc32b08788",
+      "bytes": 240809,
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-25T13:58:56",
+      "type": "血气",
+      "note": "Arterial. pH7.393 in 7.35-7.45. PCO2 40.40. PO2 66.80 low. HCO3 24.10 ABE -0.80 SBE -0.80. Lactate 1.30 in 0.5-1.6, no high flag. FiO2 60%. Printed P/F 111 low, ref 400-500. 66.80/0.60 is 111. The 0.17% row is not P/F and not procalcitonin. Hb 9.50 Hct 28 iCa 1.06 sO2 91.40. Form clock 14:00 has no seconds.",
+      "relative_h": 239.98,
+      "extracted": {
+        "ph": 7.393,
+        "pco2": 40.4,
+        "po2": 66.8,
+        "hco3": 24.1,
+        "be": -0.8,
+        "lactate": 1.3,
+        "fio2": 60,
+        "pf": 111,
+        "hb": 9.5,
+        "ca": 1.06
       }
     }
   ]
