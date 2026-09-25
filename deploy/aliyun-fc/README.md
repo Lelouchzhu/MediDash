@@ -1,23 +1,27 @@
 # 阿里云 Function Compute 中转：完整配置教程
 
-只用于功能分支 `cursor/mainland-lab-upload-b98e`，**不改、不合并
-`main`**。上传版页面：
+正式入口是 `main`。默认 `MEDIDASH_UPDATE_BRANCH=main`。旧函数若仍指向
+`cursor/mainland-lab-upload-b98e`，需要重新打包部署。
 
-https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/mainland-lab-upload-b98e/index.html
+家属大陆入口是带完整 40 位 SHA 的 `index.xhtml`（见 `README.md`）。
+上传完成后的手机结果页仍用这次提交的 GitHub 预览，避免干等国内镜像：
 
-这是 GitHub 网页预览，不再走 `jsd.onmicrosoft.cn` / `cdn.jsdmirror.com`。上传完成后中转会打开这次提交的 htmlpreview，不要再钉大陆 CDN 提交号。
+https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
-本分支已经记入 2026-09-25 07:52 干化学和凝血。打开后应看到：
+`main` 已经记入 2026-09-25 13:58 血气。打开后应看到：
 
-- 顶栏：**最新化验：术后233h52m · APTT 48.5**
-- 肾功能：肌酐 **227.10**，尿素 **25.80**。这张参考分别是 57–111 和 3.6–9.5，都标高，尿素没有写危急值
-- 电解质：钾 **4.52**，钠 **135** 偏低，氯 **97**
-- 凝血：APTT **48.5**，TT **13.2**，PT **11.6**，PT% **98.6**，INR **0.97**，纤维蛋白原 **4.86**
-- 07:52 口述没有新的血压、脉搏、升压药或尿量。循环卡仍是 15:50 的 **130/30**，心跳 **77**，去甲 **3**，多巴胺 **6**
-- 00:22 尿量仍为 **0** 留在时间线。血滤最后一句仍是 16:18 已停，这次没说是否重开
-- 更早的化验卡仍是乳酸 **2.24**，pH **7.360**，P/F **140**
+- 顶栏：**最新：术后239h58m**，并且有 **上传化验**
+- 灌注：乳酸 **1.30**（已回参考）
+- 酸碱：pH **7.393**，PCO₂ **40.4**，HCO₃⁻ **24.1**，BE **−0.8**
+- 氧合：P/F **111**，FiO₂ **60%**，PO₂ **66.8**
+- 感染：降钙素原 **9.893**，白细胞 **24.15**
+- 肾功能：肌酐 **227.10**，尿素 **25.80**。11:11 口述血滤早上会重新开机
+- 血红蛋白：血气 **9.5**，血常规 **87**，iCa **1.06**
+- 凝血：APTT **48.5**，INR **0.97**，纤维蛋白原 **4.86**
+- 循环卡仍是 15:50 的 **130/30**，心跳 **77**，去甲 **3**，多巴胺 **6**
+- 00:22 尿量仍为 **0** 留在时间线
 
-若顶栏仍是术后226h22m · 尿量仍为0，打开的是旧页面。
+若顶栏仍是术后218h 或乳酸还是 2.24，打开的是旧页面。
 
 ## 1. 资源设计
 
@@ -37,10 +41,10 @@ https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/curso
 
 1. `/upload` 创建 Cursor 后台任务并返回 `runId`；
 2. 浏览器每 6 秒调用 `/status`；
-3. Agent 完成并 push 后，中转读取功能分支的新 commit SHA；
-4. 中转读取功能分支的新 commit SHA，并返回这次提交的 GitHub 预览地址：
+3. Agent 完成并 push 后，中转读取 `main` 的新 commit SHA；
+4. 中转返回这次提交的 GitHub 预览地址：
    `https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/<SHA>/index.html`
-5. 浏览器自动打开这份 GitHub 网页。不要再等大陆 CDN。
+5. 浏览器自动打开这份 GitHub 网页。家属大陆入口另钉完整 SHA 的 `index.xhtml`。
 
 `*.fcapp.run` 会强制下载，所以结果页不要用中转自己的 `/page/<SHA>`。
 
@@ -49,8 +53,8 @@ https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/curso
 ```bash
 cd /mnt/d/Data/MediDash
 git fetch origin
-git switch cursor/mainland-lab-upload-b98e
-git pull origin cursor/mainland-lab-upload-b98e
+git switch main
+git pull origin main
 bash deploy/aliyun-fc/build-package.sh
 ```
 
@@ -202,7 +206,7 @@ curl 'https://你的地址/health'
 预期：
 
 ```json
-{"ok":true,"dryRun":true,"agentId":"bc-f66f1668-9237-4998-b08a-816b026db98e","branch":"cursor/mainland-lab-upload-b98e","latestUrl":"https://你的地址/latest"}
+{"ok":true,"dryRun":true,"agentId":"bc-f66f1668-9237-4998-b08a-816b026db98e","branch":"main","latestUrl":"https://你的地址/latest"}
 ```
 
 如果访问超时，先检查出网、端口 9000、启动命令和公网 URL 是否开启。
@@ -213,8 +217,8 @@ curl 'https://你的地址/health'
 curl -i 'https://你的地址/latest'
 ```
 
-应 **200** 且 `Content-Type: text/html`，直接返回当前分支 HEAD 的
-`index.html`。手机日常入口仍用 GitHub 预览页；`*.fcapp.run` 会强制下载，不要把
+应 **200** 且 `Content-Type: text/html`，直接返回 `main` HEAD 的
+`index.html`。上传结果页用 GitHub 预览；`*.fcapp.run` 会强制下载，不要把
 中转自己的 `/page/<SHA>` 当结果页。
 
 ## 8. 试运行上传
@@ -248,7 +252,7 @@ Invoke-RestMethod `
 
 第一次打开固定启动页：
 
-https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/mainland-lab-upload-b98e/index.html
+https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
 点击 **上传化验**，填写：
 
@@ -281,11 +285,11 @@ RELAY_DRY_RUN=0
 
 保存并部署。之后上传会调用当前监测 Agent。Agent 被明确要求：
 
-- 只更新 `cursor/mainland-lab-upload-b98e`
-- 更新 dashboard 数据、interpretation、`doctorQuestions`
-- 推送本分支
-- 不重建 `index.xhtml`，不移动 tag `upload`，不钉大陆 CDN
-- 不 push / merge `main`
+- 更新 `main` 的 dashboard 数据、interpretation、`doctorQuestions`
+- 重建 `index.xhtml` 并推送 `origin main`
+- 把 README / AGENTS / CONTEXT 的大陆入口换成这次完整 40 位 SHA
+- 不移动 tag `upload`
+- 手机结果页仍打开这次提交的 GitHub 预览
 
 一个 Agent 同时只能跑一个任务；返回 `agent_busy` 时，等上一条结束再传。
 
@@ -303,7 +307,7 @@ RELAY_DRY_RUN=0
 https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/<新提交SHA>/index.html
 ```
 
-日常入口用功能分支的 GitHub 网页，不要收藏大陆 CDN。
+家属日常大陆入口收藏带完整 SHA 的 `index.xhtml`，不要收藏 `@main`。
 
 ## 11. Serverless Devs 自动部署（可选）
 
@@ -331,7 +335,7 @@ s deploy -y
 | `cursor_key_missing` | 未配置 `CURSOR_API_KEY` |
 | `agent_busy` | Agent 正在处理上一条，稍后重试 |
 | `cursor_unreachable` | FC 未开启公网出网，或访问 `api.cursor.com` 失败 |
-| `branch_unreachable` | 中转暂时读不到 GitHub 功能分支 HEAD |
+| `branch_unreachable` | 中转暂时读不到 GitHub `main` HEAD |
 | `page_unreachable` | 新提交已产生，但 GitHub 原始 XHTML 尚未拉取成功；页面会继续重试 |
 | `/latest` 返回 502 | FC 到 GitHub API 不通，或公开 API 临时限流 |
 | `400 ExternalRedirectForbidden` | 默认 `fcapp.run` 域名禁止 3xx 跳转。已改为直接代理 200，重新用最新 `build-package.sh` 打包并部署即可；无需自定义域名 |

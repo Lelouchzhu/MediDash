@@ -10,15 +10,14 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@3527733/index.xhtml  
 **备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@3527733/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
-**上传分支预览（只用 GitHub 网页，不再钉大陆 CDN）:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/mainland-lab-upload-b98e/index.html  
-国内 `@main` 镜像不会跟着 main 走。`3527733` 是 main 上更正后的升压药页。上传分支顶栏现是最新：术后239h58m。13:58 血气乳酸 **2.26→1.30**（已回参考），P/F **107→111**，FiO₂仍 **60%**。10:04 降钙素原仍是 **9.893**。08:05 血常规白细胞 **24.15**、Hb **87**。11:11口述血滤早上会重新开机，14:00没再说。15:50血压仍是 130/30，去甲 **3** mL/h、多巴胺 **6** mL/h。
+国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是最新：术后239h58m。13:58 血气乳酸 **2.26→1.30**（已回参考），P/F **107→111**，FiO₂仍 **60%**。10:04 降钙素原仍是 **9.893**。08:05 血常规白细胞 **24.15**、Hb **87**。11:11口述血滤早上会重新开机，14:00没再说。15:50血压仍是 130/30，去甲 **3** mL/h、多巴胺 **6** mL/h。
 
 ---
 
 ## What future agents must do
 
-1. Edit **`index.html`** only for clinical dashboard updates (single-file app).
-2. Commit and **push to `Lelouchzhu/MediDash`** (`main` or `cursor/...` feature branch).
+1. Edit **`index.html`** for clinical dashboard updates (single-file app). New lab uploads go to **`main`**.
+2. Rebuild **`index.xhtml`** with `python3 scripts/build-index-xhtml.py`, then commit and **push to `Lelouchzhu/MediDash` `main`**. Pin the mainland CDN to that commit’s full 40-hex SHA.
 3. Do **not** push clinical updates to `Lelouchzhu/Allmond` (that repo is a fork of unrelated bioinformatics code).
 4. Serve locally via `.cursor/environment.json` → `python3 -m http.server 8080`.
 5. Keep UI de-identified: prefer relative postop hours; clock times may be stored in notes when the family confirms them.
@@ -600,4 +599,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** same-clock replacement of the 13:58 ABG. Preferred file `20260925T135856__hires__abg.jpg` (423304 B). Old `20260925T135856__abg.jpg` kept. Values unchanged: lactate **1.30**, P/F **111**, pH **7.393**, Hb **9.5**. Oral this turn all 未填. Hero still **最新：术后239h58m**. Manifest **140**.
+**Last updated:** 2026-09-25 formal merge of lab uploads and **上传化验** onto `main`. Values unchanged from the 13:58 ABG: lactate **1.30**, P/F **111**, pH **7.393**, Hb **9.5**. Hero **最新：术后239h58m**. Manifest **140**. Subsequent uploads update `main` and rebuild `index.xhtml`.

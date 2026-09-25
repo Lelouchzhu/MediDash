@@ -1,13 +1,14 @@
 # 在 LelouchzhuPC2 本地运行中转
 
-只用于功能分支 `cursor/mainland-lab-upload-b98e`，不改 `main`。
+正式入口是 `main`。默认 `MEDIDASH_UPDATE_BRANCH=main`。旧中转若仍指向
+`cursor/mainland-lab-upload-b98e`，需要重新部署。
 
 本地中转会在同一个地址提供：
 
 - `/`：上传版 dashboard
 - `/upload`：截图上传接口
 - `/status`：Cursor 后台任务状态
-- `/latest`：功能分支最新提交的 GitHub `index.html`
+- `/latest`：`main` 最新提交的 GitHub `index.html`
 - `/page/<SHA>`：指定提交的 GitHub `index.html`
 - `/health`：健康检查
 
@@ -52,8 +53,9 @@ bash deploy/local/run-relay.sh
 4. 中转地址会自动填为当前地址的 `/upload`。
 5. 填脚本显示的上传口令，上传截图和口述。
 
-Agent 完成后，页面会自动打开这次提交的 GitHub 预览页，不再等国内 CDN。
-本机中转的 `/latest` 仍可读当前分支 HEAD，但手机日常入口用 GitHub 网页。
+Agent 完成后，页面会自动打开这次提交的 GitHub 预览页，避免干等国内 CDN。
+本机中转的 `/latest` 仍可读 `main` HEAD。家属日常大陆入口仍是带完整 SHA
+的 `index.xhtml`。
 
 如果手机在医院、PC 在家里，局域网地址不可达。此时还需要 VPN
 （例如两端都登录同一个 Tailscale 网络）或公网 HTTPS 隧道；仅启动本地中转不够。

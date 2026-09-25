@@ -135,12 +135,16 @@ class RelayFlowTest(unittest.TestCase):
                              "text/html")
             self.assertIn(b"generated", response.read())
 
-    def test_prompt_skips_cdn_and_tag(self):
+    def test_prompt_targets_main(self):
+        self.assertEqual(self.relay_module.UPDATE_BRANCH, "main")
         prompt = self.relay_module.build_prompt({"notes": "x"})
         self.assertIn("htmlpreview.github.io", prompt)
-        self.assertIn("不要运行 build-index-xhtml.py", prompt)
+        self.assertIn("python3 scripts/build-index-xhtml.py", prompt)
+        self.assertIn("push origin main", prompt)
         self.assertIn("不要移动 tag upload", prompt)
-        self.assertNotIn("jsd.onmicrosoft.cn/gh/", prompt)
+        self.assertIn("完整 40 位 SHA", prompt)
+        self.assertNotIn("cursor/mainland-lab-upload-b98e", prompt)
+        self.assertNotIn("不要改 main", prompt)
 
     def test_status_requires_token(self):
         with self.assertRaises(error.HTTPError) as raised:

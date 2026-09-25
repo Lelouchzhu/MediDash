@@ -46,21 +46,17 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 - **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@3527733/index.xhtml
 - 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@3527733/index.xhtml
 
-灌注卡应是乳酸 **2.24**，酸碱卡 pH **7.360**，氧合卡 **P/F 140**。感染卡白细胞 **26.44**，降钙素原 **8.206**。肾功能卡应是肌酐 **185**，尿素 **20.52**，并写 **16:18血滤已停**。血红蛋白卡血气仍是 **10.8**，血常规 **100**。循环卡仍是 **130/30**，心跳 **77**，去甲 **3**，多巴胺 **6**。顶栏应是 **最新口述：术后218h18m · 血滤已停**。查房清单里有芬太尼和氧合指数的问题，页面没有芬太尼剂量。若循环卡还是去甲6、多巴胺3，打开的还是旧镜像。下次更新后把 `3527733` 换成新提交号，不要改回 `@main`。
+灌注卡应是乳酸 **1.30**（已回参考）。酸碱卡 pH **7.393**，PCO₂ **40.4**，HCO₃⁻ **24.1**，BE **−0.8**。氧合卡 **P/F 111**，FiO₂ **60%**，PO₂ **66.8**。感染卡降钙素原 **9.893**，白细胞 **24.15**。肾功能卡肌酐 **227.10**，尿素 **25.80**，并写 **11:11 血滤早上会重新开机**。血红蛋白卡血气 **9.5**，血常规 **87**，iCa **1.06**。凝血卡 APTT **48.5**。循环卡仍是 **130/30**，心跳 **77**，去甲 **3**，多巴胺 **6**。顶栏应是 **最新：术后239h58m**，并且有 **上传化验**。若顶栏还是术后218h、乳酸还是 2.24，或循环卡还是去甲6、多巴胺3，打开的还是旧镜像。下次更新后把钉住的提交号换成新的完整 40 位 SHA，不要改回 `@main`，也不要用短 SHA。
 
 微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。
 
 海外备用：https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
-**上传化验**只在功能分支 `cursor/mainland-lab-upload-b98e`，和识图版 / 空白版一样，**先不覆盖 main**。这一支只开 GitHub 网页，不再钉大陆 CDN：
+**上传化验**已正式并入 `main`。家属大陆入口仍是上面带提交号的 `index.xhtml`。上传完成后的手机结果页用这次提交的 GitHub 预览，避免干等国内镜像缓存。
 
-https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cursor/mainland-lab-upload-b98e/index.html
+网页不保存 Cursor 密钥。中转程序是 [`scripts/agent-upload-relay.py`](scripts/agent-upload-relay.py)：在医院网络能访问的机器上设置 `CURSOR_API_KEY` 和 `UPLOAD_TOKEN` 后运行，再把地址和口令填进手机。默认更新 `main`。旧中转若仍指向 `cursor/mainland-lab-upload-b98e`，需要重新部署。agent 会改数据、解读、查房问题，重建 `index.xhtml`，并钉大陆入口提交号。
 
-这一页应有 **上传化验**，顶栏是 **最新化验：术后233h52m · APTT 48.5**。肾功能卡肌酐 **227.10**、尿素 **25.80**。钠 **135**，钾 **4.52**。凝血卡 APTT **48.5**，INR **0.97**，纤维蛋白原 **4.86**，TT **13.2**。循环卡仍是 **130/30**，去甲 **3**、多巴胺 **6**。00:22 尿量仍为 **0** 还在时间线里，07:52 没有新的尿量。
-
-网页不保存 Cursor 密钥。中转程序是 [`scripts/agent-upload-relay.py`](scripts/agent-upload-relay.py)：在医院网络能访问的机器上设置 `CURSOR_API_KEY` 和 `UPLOAD_TOKEN` 后运行，再把地址和口令填进手机。agent 只更新这一支的数据、解读和查房问题。
-
-正式上传后，网页轮询中转的 `/status`。Agent push 完成时，中转读取新 commit SHA，并把浏览器带到这次提交的 GitHub 预览页，不再等 `jsd.onmicrosoft.cn` / `cdn.jsdmirror.com`。
+正式上传后，网页轮询中转的 `/status`。Agent push 完成时，中转读取新 commit SHA，并把浏览器带到这次提交的 GitHub 预览页。
 
 阿里云函数计算部署包及控制台步骤见
 [`deploy/aliyun-fc/README.md`](deploy/aliyun-fc/README.md)。部署密钥只通过 FC
@@ -79,7 +75,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 132 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 140 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 
