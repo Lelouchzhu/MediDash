@@ -1048,6 +1048,133 @@
       .panel, .status-card { box-shadow: none; break-inside: avoid; }
       details.report:not([open]) .report-body { display: block; }
     }
+
+    /* Daily care / billing analysis */
+    .care-disclaimer {
+      margin: 0 0 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #fff8f0;
+      border: 1px solid #f0dcc4;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+    .care-disclaimer strong { color: var(--ink); }
+    .care-summary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    @media (min-width: 720px) {
+      .care-summary { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+    .care-stat {
+      padding: 12px 13px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #fbfdfc;
+    }
+    .care-stat .k { display: block; font-size: 10px; color: var(--muted); margin-bottom: 4px; }
+    .care-stat .v { display: block; font-size: 18px; font-weight: 650; color: var(--ink); line-height: 1.2; }
+    .care-stat .s { display: block; margin-top: 4px; font-size: 10px; color: var(--muted); }
+    .care-day-chips {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 2px 2px 10px;
+      margin-bottom: 8px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .care-day-chip {
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .care-day-chip[aria-pressed="true"] {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+    .care-day-chip .chip-sub {
+      display: block;
+      font-size: 10px;
+      opacity: 0.75;
+      margin-top: 1px;
+    }
+    .care-panel { padding: 14px 15px 16px; }
+    .care-day-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .care-day-head h3 { margin: 0; font-size: 16px; }
+    .care-day-head p { margin: 3px 0 0; font-size: 11px; color: var(--muted); }
+    .care-badge {
+      flex: 0 0 auto;
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+    }
+    .care-badge.warn { background: #fff1e8; color: #b85b16; }
+    .care-grid {
+      display: grid;
+      gap: 10px;
+    }
+    @media (min-width: 720px) {
+      .care-grid { grid-template-columns: 1.1fr 1fr; }
+    }
+    .care-block {
+      padding: 12px 13px;
+      border-radius: 14px;
+      background: #f7faf8;
+      border: 1px solid var(--line);
+    }
+    .care-block h4 {
+      margin: 0 0 8px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .care-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .care-tag {
+      font-size: 11px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+    .care-tag.on { background: #e8f6ef; border-color: #cfe8db; }
+    .care-tag.off { color: var(--muted); background: #f3f3f3; }
+    .care-tag.hot { background: #fff1e8; border-color: #f0d2b8; color: #9a4b10; }
+    .care-list { margin: 0; padding-left: 16px; color: var(--muted); font-size: 11px; line-height: 1.55; }
+    .care-list li { margin: 0 0 4px; }
+    .care-lab-link {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #eef5ff;
+      border: 1px solid #d5e4f7;
+      color: #27486b;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+    .care-trend-wrap { margin-bottom: 12px; }
+    .care-trend-wrap .chart-wrap { min-height: 200px; }
+    #careSupportTrend { display: block; width: 100%; height: auto; min-height: 200px; }
+
   </style>
 </head>
 <body>
@@ -1055,7 +1182,7 @@
     <header class="hero">
       <p class="eyebrow">Perioperative monitoring</p>
       <h1>围手术期连续监测</h1>
-      <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能与影像变化。点击状态卡可切换对应趋势。</p>
+      <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能、用药治疗与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
         <span class="pill" id="latestTimePill">最新：术后267h25m</span>
@@ -1199,6 +1326,10 @@
           <span class="legend-item"><span class="legend-band"></span>参考范围</span>
         </div>
         <div class="insights">
+          <div class="insight">
+            <strong>住院清单：美罗培南贯穿 · CRRT 小时随停机起伏</strong>
+            <p>9月15–26日每日住院清单已录入「每日用药与治疗」。抗感染从哌拉西林/他唑巴坦转为<strong>美罗培南</strong>（9/17起），9/25可见联用头孢哌酮/舒巴坦。CRRT 计费：9/17起出现 → 9/18近全日 → 9/22空窗 → 9/23再开 → 9/26降至约<strong>672.60</strong>元（与口述七点多停机相符）。镇静常见丙泊酚/瑞芬太尼；白蛋白多次计费。清单支数≠口述泵速。详见该节，并结合培养肺炎克雷伯菌问药敏。</p>
+          </div>
           <div class="insight">
             <strong>下肢彩超：深浅静脉未见异常回声</strong>
             <p>10:19报告：伴行深静脉和扫到的浅静脉血流充盈满意，没有写血栓。股总动脉较大斑块约右<strong>1.1×0.2 cm</strong>、左<strong>1.4×0.4 cm</strong>，并写了双侧胫后动脉不完全闭塞可能。15:45家属口头说「正常、无血栓，老年人常见粥样硬化」。口头说法不替换报告原文。</p>
@@ -1510,6 +1641,36 @@
       </div>
     </section>
 
+
+    <section class="section" id="dailyCareSection" aria-labelledby="dailyCareHeading">
+      <div class="section-head">
+        <div>
+          <h2 id="dailyCareHeading">每日用药与治疗</h2>
+          <p>根据住院日清单整理生命支持、抗感染、镇静与营养，方便对照化验和查房提问。不是医嘱原文。</p>
+        </div>
+      </div>
+      <p class="care-disclaimer"><strong>怎么读：</strong>清单是当天<strong>计费发出量</strong>，不是泵上实时 mL/h。升压药请对照「循环与支持」里的口述剂量。截图偏窄，支数/小时多为中等把握；CRRT 金额较清楚的优先采用。</p>
+      <div class="care-summary" id="careSummary"></div>
+      <div class="panel chart-panel care-trend-wrap">
+        <div class="chart-heading">
+          <div>
+            <h3 class="chart-title">生命支持强度</h3>
+            <p class="chart-subtitle">CRRT 计费小时（有数才画）· 呼吸机是否全日计费</p>
+          </div>
+        </div>
+        <div class="chart-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" id="careSupportTrend" viewBox="0 0 760 220" role="img" aria-label="生命支持强度趋势"></svg>
+          <div class="chart-tooltip" id="careTooltip" role="status"></div>
+        </div>
+        <div class="legend">
+          <span class="legend-item"><span class="legend-dot" style="background:#2a7a9b"></span>CRRT 小时</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#167a5b"></span>呼吸机计费日</span>
+        </div>
+      </div>
+      <div class="care-day-chips" id="careDayChips" role="tablist" aria-label="选择清单日期"></div>
+      <div class="panel care-panel" id="careDayPanel"></div>
+    </section>
+
     <section class="section" aria-labelledby="reportsHeading">
       <div class="section-head">
         <div>
@@ -1692,9 +1853,9 @@
           <div class="question-summary-top">
             <div>
               <h3>查房沟通清单</h3>
-              <p>先问危及当前稳定性的7项，再补充6项器官功能和治疗计划。</p>
+              <p>先问危及当前稳定性的8项，再补充7项器官功能和治疗计划。</p>
             </div>
-            <span class="question-count" id="questionCount">0 / 13 已确认</span>
+            <span class="question-count" id="questionCount">0 / 15 已确认</span>
           </div>
           <div class="progress-track" aria-hidden="true">
             <div class="progress-value" id="questionProgress"></div>
@@ -2357,6 +2518,22 @@
           <div class="event-title">CRRT七点多停了；尿量0；有自主呼吸</div>
           <div class="event-desc">13:00是这批口述的收到时间，不是监护仪钟点。没有尿，记成尿量0。CRRT今天早上七点多停了，七点多不是07:00整，不要写成停了多久。没有流速、脱水、抗凝，也没有新的血压。家属说有自主呼吸，不完全依赖呼吸机。吕大夫说细菌感染仍重，现用广谱消炎药主要针对杆菌，已开始培养球菌。没有发烧的两种可能是大夫口述，不是诊断，也没有体温数字。</div>
         </article>
+
+        <article class="event" style="--event-color: var(--blue)">
+          <div class="event-time">术后约46小时 · 9月17日清单</div>
+          <div class="event-title">抗感染升级美罗培南+替加环素；首次CRRT计费</div>
+          <div class="event-desc">住院清单见美罗培南、替加环素，以及约10.8小时连续性肾脏替代治疗。镇静见丙泊酚/瑞芬太尼/咪达唑仑。支数为计费发出量。</div>
+        </article>
+        <article class="event" style="--event-color: var(--orange)">
+          <div class="event-time">术后约166小时 · 9月22日清单</div>
+          <div class="event-title">当日未见CRRT计费；呼吸机仍全日</div>
+          <div class="event-desc">与口述血滤待机、肌酐尿素反跳同窗。美罗培南仍在。9月23日清单CRRT再出现，对应约14:00再开。</div>
+        </article>
+        <article class="event" style="--event-color: var(--green)">
+          <div class="event-time">术后约262小时 · 9月26日清单</div>
+          <div class="event-title">CRRT计费约672.60元；美罗培南仍在</div>
+          <div class="event-desc">短于整日的血滤计费与口述七点多停机相符。心电监测约9.44小时。仍有气管插管护理与吸痰。对照同日培养肺炎克雷伯菌与PCT 7.209。</div>
+        </article>
         <article class="event" style="--event-color: var(--red)">
           <div class="event-time">9月26日15:00 口述 · 术后265小时</div>
           <div class="event-title">血压122/33→110/30；心跳83→100；去甲3→5</div>
@@ -2405,8 +2582,9 @@
   </main>
 
   <div class="action-bar" aria-label="页面操作">
-    <button class="primary" type="button" id="openAgentUpload">上传化验</button>
+    <button class="primary" type="button" id="openAgentUpload">上传</button>
     <button class="secondary" type="button" id="openDialog">手填</button>
+    <button class="secondary" type="button" id="jumpCare">用药</button>
     <button class="secondary" type="button" id="jumpQuestions">清单</button>
     <button class="secondary" type="button" id="scrollTop" aria-label="回到顶部">↑</button>
   </div>
@@ -2485,8 +2663,8 @@
   <dialog id="agentDialog">
     <div class="dialog-head">
       <div>
-        <h2>上传化验</h2>
-        <div class="report-meta">功能分支预览。交给当前监测 agent 更新这一支的数据、解读和查房问题，不覆盖 main</div>
+        <h2>上传化验 / 清单</h2>
+        <div class="report-meta">交给监测 agent 更新 main：化验、每日住院清单、口述、解读和查房问题</div>
       </div>
       <button class="icon-btn" type="button" id="closeAgentDialog" aria-label="关闭">×</button>
     </div>
@@ -2505,17 +2683,26 @@
         </details>
       </div>
       <div class="field wide">
-        <label for="shotInput">化验截图（最多 5 张，jpg/png）</label>
+        <label for="shotInput">截图（化验或每日住院清单，最多 5 张）</label>
         <input id="shotInput" name="shots" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple>
         <div class="shot-row" id="shotRow"></div>
       </div>
       <div class="field">
-        <label for="reportClock">报告时间</label>
+        <label for="reportClock">报告时间 / 清单日期</label>
         <input id="reportClock" name="clock" type="datetime-local">
       </div>
       <div class="field">
         <label for="reportKind">单子类型</label>
-        <input id="reportKind" name="kind" type="text" placeholder="血气 / 凝血 / 生化 / 血常规">
+        <select id="reportKind" name="kind">
+          <option value="">未选</option>
+          <option value="血气">血气</option>
+          <option value="凝血">凝血</option>
+          <option value="生化">生化</option>
+          <option value="血常规">血常规</option>
+          <option value="住院清单">每日住院清单</option>
+          <option value="影像">影像</option>
+          <option value="其他">其他</option>
+        </select>
       </div>
       <div class="field">
         <label for="sbpInput">收缩压</label>
@@ -2755,8 +2942,12 @@
     let selectedRange = "all";
     const customKey = "perioperative-dashboard-custom-v1";
     const questionKey = "perioperative-dashboard-questions-v1";
-    const latestNonBloodGasReport = { h: 265.00, label: "术后265h · 110/30", type: "口述" };
+const latestNonBloodGasReport = { h: 265.00, label: "术后265h · 110/30", type: "口述" };
+    const dailyCareData = {"version": 1, "disclaimer": "来自每日住院清单的计费发出量，不是泵上实时剂量。升压药请对照口述 mL/h。截图在 agent 侧偏窄，支数/小时标 medium confidence；有明确费用可核对的 CRRT 金额优先采用。", "account_snapshot": {"prepaid": 51000, "total_cost": 101531.44, "balance": -50531.44, "note": "截图时账户快照，不是单日费用。"}, "days": [{"date": "2026-09-15", "h": -2, "label": "9月15日 · 手术日", "postop_day": 0, "confidence": "low", "source": "testset/reports/billing/20260915T120000__01a0dce6-2d34-7253-a601-938c54f53431.jpg", "support": {"ventilator": true, "ventilator_h": null, "crrt": false, "crrt_h": null, "crrt_cost": null, "invasive_hemo": true, "surgery": true}, "antibiotics": [], "vasopressors": [], "sedatives": [], "nutrition": [{"name": "人血白蛋白", "cost": 1236}], "other_key": ["全麻", "剖腹探查相关手术费", "腔镜直线切割吻合器"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["入院/手术当日：手术与吻合器等高额耗材入账", "已有人血白蛋白计费", "当日未见明确 CRRT 计费"], "lab_link": "同日：术前 PCT 41.13 · 术后 PCT 63.37 · ALT/AST 已升"}, {"date": "2026-09-16", "h": 22, "label": "9月16日 · 术后D1", "postop_day": 1, "confidence": "medium", "source": "testset/reports/billing/20260916T120000__01a0dce6-2d1d-7505-8a8b-3e8532b72cc3.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": false, "crrt_h": null, "crrt_cost": null, "invasive_hemo": true, "surgery": false}, "antibiotics": [{"name": "哌拉西林钠他唑巴坦钠"}], "vasopressors": [], "sedatives": [], "nutrition": [{"name": "人血白蛋白", "cost": 1236}], "other_key": ["艾司洛尔", "胺碘酮", "有创血流动力学监测"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["呼吸机辅助呼吸计费在列", "抗感染先是哌拉西林/他唑巴坦", "有艾司洛尔、胺碘酮，提示当日心律/心率管理", "仍未见 CRRT 计费"], "lab_link": "同日：PCT 146 · 乳酸峰值后回落中"}, {"date": "2026-09-17", "h": 46, "label": "9月17日 · 术后D2", "postop_day": 2, "confidence": "medium", "source": "testset/reports/billing/20260917T120000__01a0dce6-2d05-7ee8-9c26-47d76c90aeba.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": true, "crrt_h": 10.78, "crrt_cost": 1024.1, "invasive_hemo": true, "surgery": false}, "antibiotics": [{"name": "美罗培南"}, {"name": "替加环素"}], "vasopressors": [{"name": "去甲肾上腺素"}, {"name": "多巴胺/多巴酚丁胺", "note": "清单名与口述对照，勿直接换算 mg/h"}], "sedatives": [{"name": "丙泊酚"}, {"name": "瑞芬太尼"}, {"name": "咪达唑仑"}], "nutrition": [{"name": "人血白蛋白", "cost": 1236}], "other_key": ["乌司他丁", "微量泵"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["抗感染升级：美罗培南 + 替加环素", "首次出现明确 CRRT 计费（约 10.8 小时）", "镇静镇痛三联可见：丙泊酚 / 瑞芬太尼 / 咪达唑仑", "升压药与口述双升压阶段相符"], "lab_link": "同日：PCT 峰值 170 · IL-6 981 · ALT/AST 高峰"}, {"date": "2026-09-18", "h": 70, "label": "9月18日 · 术后D3", "postop_day": 3, "confidence": "medium", "source": "testset/reports/billing/20260918T120000__01a0dce6-2cef-77d4-b134-dfa9138dbba1.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": true, "crrt_h": 24, "crrt_cost": 2280, "invasive_hemo": true, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [{"name": "去甲肾上腺素"}, {"name": "多巴酚丁胺"}], "sedatives": [{"name": "丙泊酚"}], "nutrition": [{"name": "人血白蛋白", "cost": 1236}], "other_key": ["乌司他丁", "甲泼尼龙", "血滤器/透析管路耗材"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["CRRT 接近全日（约 24h / 2280 元）——支持强度最高的一天之一", "呼吸机仍 24 小时计费", "继续美罗培南；可见激素与乌司他丁"], "lab_link": "同日：PCT 101.6 · 灌注与酸碱逐步改善中"}, {"date": "2026-09-19", "h": 94, "label": "9月19日 · 术后D4", "postop_day": 4, "confidence": "medium", "source": "testset/reports/billing/20260919T120000__01a0dce6-2cd8-7853-b22a-bc07d32bb096.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": true, "crrt_h": null, "crrt_cost": null, "invasive_hemo": true, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [{"name": "去甲肾上腺素"}, {"name": "多巴胺/多巴酚丁胺"}], "sedatives": [{"name": "丙泊酚"}, {"name": "瑞芬太尼"}, {"name": "罗库溴铵", "note": "肌松，提示仍深度镇静/通气需求"}], "nutrition": [{"name": "人血白蛋白"}, {"name": "脂肪乳氨基酸葡萄糖"}], "other_key": ["有创血流动力学监测约744元"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["仍有呼吸机与 CRRT 相关计费", "口述：凌晨附近 CRRT 曾停；清单仍可能含停机前小时数", "出现肌松药罗库溴铵"], "lab_link": "同日：PCT 65.4 · 口述去甲 9 mL/h"}, {"date": "2026-09-20", "h": 118, "label": "9月20日 · 术后D5", "postop_day": 5, "confidence": "medium", "source": "testset/reports/billing/20260920T120000__01a0dce6-2cc2-7d76-86ef-f15bf0c48544.jpg", "support": {"ventilator": true, "ventilator_h": null, "crrt": true, "crrt_h": null, "crrt_cost": 764.75, "invasive_hemo": true, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [], "sedatives": [], "nutrition": [{"name": "人血白蛋白"}], "other_key": ["甲泼尼龙", "肝素", "悬浮红细胞/血费", "有创血流动力学监测"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["血费入账：与口述 4U 红细胞同窗", "CRRT 计费约 764.75 元（非整日）——与傍晚再开血滤相符", "继续美罗培南"], "lab_link": "同日：输血后 ABG Hb 回升 · 口述去甲9+多巴胺10"}, {"date": "2026-09-21", "h": 142, "label": "9月21日 · 术后D6", "postop_day": 6, "confidence": "medium", "source": "testset/reports/billing/20260921T120000__01a0dce6-2cad-7e7c-9243-ca89fa724aab.jpg", "support": {"ventilator": true, "ventilator_h": null, "crrt": true, "crrt_h": null, "crrt_cost": 1112.45, "invasive_hemo": false, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [{"name": "去甲肾上腺素"}, {"name": "多巴酚丁胺"}], "sedatives": [{"name": "丙泊酚"}, {"name": "瑞芬太尼"}], "nutrition": [{"name": "脂肪乳氨基酸葡萄糖"}], "other_key": ["生长抑素", "氢化可的松", "呋塞米", "血滤器耗材"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["CRRT 计费约 1112 元，支持仍强", "生长抑素入账——可问消化道相关适应证", "升压药与镇静仍在清单"], "lab_link": "同日：PCT 36.9 · CRP 97.7 · IL-6 68.5 · Cr 231"}, {"date": "2026-09-22", "h": 166, "label": "9月22日 · 术后D7", "postop_day": 7, "confidence": "medium", "source": "testset/reports/billing/20260922T120000__01a0dce6-2c95-79ac-aacd-dfbf3d17dde9.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": false, "crrt_h": null, "crrt_cost": null, "invasive_hemo": false, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [], "sedatives": [{"name": "丙泊酚"}, {"name": "瑞芬太尼"}], "nutrition": [{"name": "脂肪乳氨基酸葡萄糖"}], "other_key": ["乌司他丁", "低分子肝素", "床旁胸片/彩超"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["关键转折：当日未见 CRRT 计费（口述血滤待机、肌酐反跳）", "呼吸机仍 24 小时", "继续美罗培南；影像检查增多"], "lab_link": "同日：PCT 28.8 · Cr 320 · 尿素危急 · 尿量0"}, {"date": "2026-09-23", "h": 190, "label": "9月23日 · 术后D8", "postop_day": 8, "confidence": "medium", "source": "testset/reports/billing/20260923T120000__01a0dce6-2c7d-7239-9950-f2642bbf0b73.jpg", "support": {"ventilator": true, "ventilator_h": null, "crrt": true, "crrt_h": null, "crrt_cost": null, "invasive_hemo": false, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [], "sedatives": [{"name": "咪达唑仑"}, {"name": "舒芬太尼"}, {"name": "右美托咪定"}], "nutrition": [{"name": "脂肪乳/氨基酸类"}], "other_key": ["下肢血管彩超"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["CRRT 计费再现——与口述约 14:00 再开血滤相符", "镇静方案见咪达唑仑 / 舒芬太尼 / 右美托咪定", "下肢彩超当日完成"], "lab_link": "同日：PCT 18.7 · 下肢彩超：静脉未见异常回声"}, {"date": "2026-09-24", "h": 214, "label": "9月24日 · 术后D9", "postop_day": 9, "confidence": "medium", "source": "testset/reports/billing/20260924T120000__01a0dce6-2c64-7778-ace3-7678fff486e1.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": true, "crrt_h": 11.63, "crrt_cost": 1104.85, "invasive_hemo": false, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [], "sedatives": [{"name": "丙泊酚"}, {"name": "瑞芬太尼"}, {"name": "咪达唑仑"}], "nutrition": [{"name": "人血白蛋白", "qty": 3, "cost": 1260}], "other_key": ["微量泵合计约164.5小时（多泵并行）"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["CRRT 约 11.6 小时 / 1104.85 元；口述傍晚已停", "人血白蛋白 3 瓶约 1260 元", "呼吸机仍全日"], "lab_link": "同日：PCT 8.206 · 白蛋白 27.8 · 便黑褐色稀便"}, {"date": "2026-09-25", "h": 238, "label": "9月25日 · 术后D10", "postop_day": 10, "confidence": "medium", "source": "testset/reports/billing/20260925T120000__01a0dce6-2c14-7870-9ae1-c19bfa28a503.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": true, "crrt_h": 12.82, "crrt_cost": 1217.9, "invasive_hemo": false, "surgery": false}, "antibiotics": [{"name": "美罗培南", "qty": 6}, {"name": "头孢哌酮钠舒巴坦钠", "qty": 2}], "vasopressors": [{"name": "多巴酚丁胺", "qty": 6}, {"name": "肾上腺素相关", "qty": 18, "note": "清单支数；口述升压药是去甲3+多巴胺5/6，勿把支数当成泵速"}], "sedatives": [{"name": "丙泊酚", "qty": 5}, {"name": "瑞芬太尼", "qty": 3}], "nutrition": [{"name": "人血白蛋白(进口)", "qty": 3, "cost": 1260}, {"name": "卡文/脂肪乳氨基酸葡萄糖"}], "other_key": ["呋塞米", "泮托拉唑", "布地奈德雾化", "血气分析多次", "心电监测24h"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": 5}, "highlights": ["抗感染：美罗培南 + 头孢哌酮/舒巴坦（双药）", "CRRT 约 12.8 小时 / 1217.90 元；口述上午拟再开、15:07 说在运行", "白蛋白与卡文继续；镇静仍偏重（丙泊酚×5）"], "lab_link": "同日：PCT 9.893↑ · WBC 24.15 · 血压口述122/33"}, {"date": "2026-09-26", "h": 262, "label": "9月26日 · 术后D11", "postop_day": 11, "confidence": "medium", "source": "testset/reports/billing/20260926T120000__01a0dce6-2c4c-79d5-95ea-8247c6eb3b9f.jpg", "support": {"ventilator": true, "ventilator_h": null, "crrt": true, "crrt_h": null, "crrt_cost": 672.6, "invasive_hemo": false, "surgery": false, "ecg_h": 9.44}, "antibiotics": [{"name": "美罗培南", "qty": 6}], "vasopressors": [{"name": "多巴酚丁胺"}, {"name": "肾上腺素相关", "note": "对照口述去甲+多巴胺"}], "sedatives": [{"name": "丙泊酚"}, {"name": "瑞芬太尼", "qty": 3}], "nutrition": [{"name": "人血白蛋白", "qty": 3, "cost": 1260}], "other_key": ["布地奈德", "微量泵合计小时数很高（多泵）", "细菌培养相关化验"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": 5}, "highlights": ["CRRT 计费降至约 672.60 元——与口述早上七点多停机相符", "心电监测约 9.44 小时，短于整日", "美罗培南仍在；培养回报肺炎克雷伯菌可对照问药敏", "仍有气管插管护理与吸痰×5"], "lab_link": "同日：PCT 7.209 · Cr 159 · WBC 29.72 · 肺炎克雷伯菌 · CRRT已停·尿0"}]};
+    let selectedCareDate = dailyCareData.days[dailyCareData.days.length - 1].date;
+
     const doctorQuestions = [
+
       {
         id: "oxygenation",
         group: "urgent",
@@ -2774,6 +2965,12 @@
         group: "urgent",
         title: "发烧37.4，培养见肺炎克雷伯菌，明天要不要换抗生素？",
         detail: "15:00口述发烧37.4度。不要把17:25血气单上的37.33当成发烧。吕大夫说细菌感染还是很严重。现用消炎药是广谱、很强、主要针对杆菌的一种，药名没说。已经开始培养球菌。10:30:59培养细菌1写了肺炎克雷伯菌。痰培养、分泌物培养和菌量都空着，不要把空行写成阴性，药敏那张没看到，不要编MIC。15:00口述说药敏检测出一种新的杆菌（肺炎克雷伯菌），待明日医生评估后决定是否需要更换抗生素。08:59降钙素原9.893→7.209 ng/ml↑，参考0–0.05，这是降钙素原，不是血小板比积。白细胞仍是08:32的29.72↑，中性粒97.5%。医生认为小肠剩余少，暂时不能进食，并说到可能腹部细菌易位造成二次感染。这是医生认为，不是诊断。球菌培养和完整药敏出来没有？消炎药具体是哪一种？"
+      },
+      {
+        id: "bill-antibiotics",
+        group: "urgent",
+        title: "清单上美罗培南还在用，针对肺炎克雷伯菌要不要加药或换药？",
+        detail: "9月17日起住院清单持续见美罗培南；9月25日还见头孢哌酮/舒巴坦。吕大夫说现用广谱消炎药主要针对杆菌，药名没说。10:30培养细菌1写了肺炎克雷伯菌，药敏没看到。降钙素原7.209，白细胞29.72。清单是计费发出量。现用的是不是美罗培南？药敏出来没有？要不要调整？"
       },
       {
         id: "next-window",
@@ -2830,12 +3027,19 @@
         detail: "术后2h44m已有ALT 719、AST 1142、总胆红素7.0、白蛋白23.1。峰值在9月17日891/806。9月21日ALT 159、AST 82。08:59 ALT 19.0、AST 26.0已回0–40，AST/ALT 1.377。总胆红素21.8↑，直接胆红素8.8↑。白蛋白曾回到35.8，9月24日09:31又到27.8，08:59没有重抽。09:36 INR 1.19在这张0.94–1.2里，PT% 68.0↓。数字回落不是诊断。白蛋白还要不要再查？"
       },
       {
+        id: "bill-sedation",
+        group: "followup",
+        title: "清单上仍有丙泊酚/瑞芬太尼，撤机和镇静计划是什么？",
+        detail: "近日住院清单常见丙泊酚、瑞芬太尼，有的日子还有咪达唑仑或右美托咪定。家属说已有自主呼吸、不完全依赖呼吸机。P/F仍是118，FiO₂ 60%。芬太尼剂量口述里没说清。清单支数不是泵速。现在镇静目标是什么？能不能往下减？"
+      },
+      {
         id: "heart",
         group: "followup",
         title: "CK从8280降到106，还要不要查肌钙蛋白？",
         detail: "08:59 CK 434→106（参考33–192，已回参考）。CK-MB 23.7→19.30（参考0–24）。LDH仍是463，这张没抽。心电图及床旁心脏超声如何？"
       }
     ];
+
 
     function getCustomReadings() {
       try {
@@ -3235,8 +3439,8 @@
       const state = getQuestionState();
       const container = document.getElementById("questionGroups");
       const groups = [
-        { id: "urgent", label: "优先确认 · 7项", className: "" },
-        { id: "followup", label: "器官功能与治疗计划 · 6项", className: "followup" }
+        { id: "urgent", label: "优先确认 · 8项", className: "" },
+        { id: "followup", label: "器官功能与治疗计划 · 7项", className: "followup" }
       ];
       setMarkup(container, groups.map(group => {
         const items = doctorQuestions.filter(question => question.group === group.id).map(question => `
@@ -3431,6 +3635,211 @@
       ], 240);
     }
 
+
+    function careDayByDate(date) {
+      return dailyCareData.days.find(d => d.date === date) || dailyCareData.days.at(-1);
+    }
+
+    function careTagList(items, hotNames = []) {
+      if (!items || !items.length) return '<span class="care-tag off">当日清单未见明确项</span>';
+      return items.map(item => {
+        const name = typeof item === "string" ? item : item.name;
+        const bits = [name];
+        if (item && item.qty != null) bits.push(`×${item.qty}${item.unit || ""}`);
+        if (item && item.cost != null) bits.push(`${item.cost}元`);
+        const hot = hotNames.some(h => name.includes(h));
+        return `<span class="care-tag${hot ? " hot" : " on"}">${bits.join(" ")}</span>`;
+      }).join("");
+    }
+
+    function renderCareSummary() {
+      const root = document.getElementById("careSummary");
+      if (!root) return;
+      const days = dailyCareData.days;
+      const withCrrt = days.filter(d => d.support.crrt);
+      const last = days.at(-1);
+      const abx = [...new Set(days.flatMap(d => (d.antibiotics || []).map(a => a.name)))];
+      const crrtHours = days.map(d => d.support.crrt_h).filter(v => v != null);
+      setMarkup(root, `
+        <div class="care-stat">
+          <span class="k">已整理清单</span>
+          <span class="v">${days.length} 天</span>
+          <span class="s">9月15日–26日</span>
+        </div>
+        <div class="care-stat">
+          <span class="k">最新抗感染</span>
+          <span class="v">${(last.antibiotics[0] && last.antibiotics[0].name) || "—"}</span>
+          <span class="s">${last.antibiotics.length > 1 ? "含联合用药日" : "为主力药"}</span>
+        </div>
+        <div class="care-stat">
+          <span class="k">CRRT 有计费天数</span>
+          <span class="v">${withCrrt.length}</span>
+          <span class="s">最近计费 ${last.support.crrt_cost != null ? last.support.crrt_cost + " 元" : "—"}</span>
+        </div>
+        <div class="care-stat">
+          <span class="k">有明确小时的 CRRT</span>
+          <span class="v">${crrtHours.length} 点</span>
+          <span class="s">最近 ${crrtHours.length ? crrtHours.at(-1) + " h" : "—"}（写入趋势）</span>
+        </div>
+      `);
+    }
+
+    function renderCareDayChips() {
+      const root = document.getElementById("careDayChips");
+      if (!root) return;
+      setMarkup(root, dailyCareData.days.map(day => {
+        const md = day.date.slice(5).replace("-", "/");
+        const flags = [];
+        if (day.support.crrt) flags.push("血滤");
+        if (day.support.ventilator) flags.push("呼吸机");
+        if ((day.antibiotics || []).length) flags.push("抗感染");
+        return `<button type="button" class="care-day-chip" role="tab" data-care-date="${day.date}" aria-pressed="${day.date === selectedCareDate ? "true" : "false"}">${md}<span class="chip-sub">${flags.slice(0, 2).join(" · ") || "整理中"}</span></button>`;
+      }).join(""));
+      root.querySelectorAll("[data-care-date]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          selectedCareDate = btn.getAttribute("data-care-date");
+          renderCareDayChips();
+          renderCareDayPanel();
+        });
+      });
+    }
+
+    function renderCareDayPanel() {
+      const root = document.getElementById("careDayPanel");
+      if (!root) return;
+      const day = careDayByDate(selectedCareDate);
+      const s = day.support;
+      const supportTags = [
+        s.ventilator ? `<span class="care-tag on">呼吸机${s.ventilator_h != null ? " " + s.ventilator_h + "h" : ""}</span>` : `<span class="care-tag off">未见呼吸机计费</span>`,
+        s.crrt ? `<span class="care-tag hot">CRRT${s.crrt_h != null ? " " + s.crrt_h + "h" : ""}${s.crrt_cost != null ? " · " + s.crrt_cost + "元" : ""}</span>` : `<span class="care-tag off">未见 CRRT 计费</span>`,
+        s.invasive_hemo ? `<span class="care-tag on">有创血流动力学</span>` : "",
+        s.surgery ? `<span class="care-tag hot">手术日相关费用</span>` : "",
+        s.ecg_h != null ? `<span class="care-tag on">心电监测 ${s.ecg_h}h</span>` : ""
+      ].filter(Boolean).join("");
+      const nursingBits = [];
+      if (day.nursing?.icu) nursingBits.push("重症护理");
+      if (day.nursing?.tracheal) nursingBits.push("气管插管护理");
+      if (day.nursing?.tube_care) nursingBits.push("置管/引流护理");
+      if (day.nursing?.suction != null) nursingBits.push(`吸痰×${day.nursing.suction}`);
+      const badgeClass = day.confidence === "low" ? "care-badge warn" : "care-badge";
+      const badgeText = day.confidence === "low" ? "把握偏低" : "中等把握";
+      setMarkup(root, `
+        <div class="care-day-head">
+          <div>
+            <h3>${day.label}</h3>
+            <p>术后约 ${day.h < 0 ? "术前" : day.h + "h"} · 相对手术结束 · 来源住院清单</p>
+          </div>
+          <span class="${badgeClass}">${badgeText}</span>
+        </div>
+        <div class="care-grid">
+          <div class="care-block">
+            <h4>生命支持</h4>
+            <div class="care-tags">${supportTags}</div>
+          </div>
+          <div class="care-block">
+            <h4>抗感染</h4>
+            <div class="care-tags">${careTagList(day.antibiotics, ["美罗培南", "替加环素"])}</div>
+          </div>
+          <div class="care-block">
+            <h4>循环相关药（清单）</h4>
+            <div class="care-tags">${careTagList(day.vasopressors, ["去甲", "多巴", "肾上腺素"])}</div>
+          </div>
+          <div class="care-block">
+            <h4>镇静镇痛</h4>
+            <div class="care-tags">${careTagList(day.sedatives, ["丙泊酚", "瑞芬", "咪达唑仑"])}</div>
+          </div>
+          <div class="care-block">
+            <h4>营养 / 白蛋白</h4>
+            <div class="care-tags">${careTagList(day.nutrition, ["白蛋白"])}</div>
+          </div>
+          <div class="care-block">
+            <h4>护理信号</h4>
+            <div class="care-tags">${nursingBits.length ? nursingBits.map(n => `<span class="care-tag on">${n}</span>`).join("") : '<span class="care-tag off">未标</span>'}</div>
+          </div>
+        </div>
+        <div class="care-block" style="margin-top:10px">
+          <h4>这一天怎么读</h4>
+          <ul class="care-list">${(day.highlights || []).map(h => `<li>${h}</li>`).join("")}</ul>
+          ${(day.other_key || []).length ? `<p style="margin:8px 0 0;font-size:11px;color:var(--muted)">其他要点：${day.other_key.join(" · ")}</p>` : ""}
+        </div>
+        ${day.lab_link ? `<div class="care-lab-link"><strong>对照主数据：</strong>${day.lab_link}</div>` : ""}
+      `);
+    }
+
+    function renderCareSupportTrend() {
+      const raw = document.getElementById("careSupportTrend");
+      const tooltip = document.getElementById("careTooltip");
+      const svg = ensureSvg(raw);
+      if (!svg || !tooltip) return;
+      clearNode(svg);
+      const width = 760, height = 220;
+      const pad = { top: 18, right: 18, bottom: 36, left: 44 };
+      const days = dailyCareData.days;
+      const xs = days.map(d => d.h);
+      const minX = Math.min(...xs) - 4;
+      const maxX = Math.max(...xs) + 4;
+      const crrtVals = days.map(d => d.support.crrt_h).filter(v => v != null);
+      const maxY = Math.max(24, ...(crrtVals.length ? crrtVals : [12])) * 1.15;
+      const xScale = h => pad.left + ((h - minX) / (maxX - minX)) * (width - pad.left - pad.right);
+      const yScale = v => pad.top + (1 - v / maxY) * (height - pad.top - pad.bottom);
+      svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      // grid
+      [0, 6, 12, 18, 24].forEach(v => {
+        const y = yScale(v);
+        const line = createSvg("line", { x1: pad.left, x2: width - pad.right, y1: y, y2: y, stroke: "#e6ece8", "stroke-width": "1" });
+        svg.appendChild(line);
+        const label = createSvg("text", { x: pad.left - 8, y: y + 3, "text-anchor": "end", fill: "#7a8780", "font-size": "10" });
+        label.textContent = String(v);
+        svg.appendChild(label);
+      });
+      // ventilator bars (binary)
+      days.forEach(day => {
+        if (!day.support.ventilator) return;
+        const x = xScale(day.h);
+        const bar = createSvg("rect", {
+          x: x - 6, y: yScale(day.support.ventilator_h != null ? day.support.ventilator_h : 20),
+          width: 12,
+          height: Math.max(2, yScale(0) - yScale(day.support.ventilator_h != null ? day.support.ventilator_h : 20)),
+          rx: 3, fill: "rgba(22,122,91,0.18)", stroke: "#167a5b", "stroke-width": "1"
+        });
+        svg.appendChild(bar);
+      });
+      // CRRT line + points
+      const crrtPts = days.filter(d => d.support.crrt_h != null);
+      if (crrtPts.length >= 2) {
+        const d = crrtPts.map((p, i) => `${i ? "L" : "M"}${xScale(p.h).toFixed(1)} ${yScale(p.support.crrt_h).toFixed(1)}`).join(" ");
+        svg.appendChild(createSvg("path", { d, fill: "none", stroke: "#2a7a9b", "stroke-width": "2.5", "stroke-linejoin": "round" }));
+      }
+      crrtPts.forEach(p => {
+        const cx = xScale(p.h), cy = yScale(p.support.crrt_h);
+        const circle = createSvg("circle", { cx, cy, r: 5, fill: "#2a7a9b", tabindex: "0", role: "button" });
+        const show = () => {
+          tooltip.style.display = "block";
+          tooltip.style.left = `${Math.min(cx + 8, width - 160)}px`;
+          tooltip.style.top = `${Math.max(8, cy - 40)}px`;
+          setMarkup(tooltip, `<strong>${p.label}</strong><br/>CRRT ${p.support.crrt_h} h${p.support.crrt_cost != null ? "<br/>计费 " + p.support.crrt_cost + " 元" : ""}`);
+        };
+        circle.addEventListener("click", show);
+        circle.addEventListener("focus", show);
+        circle.addEventListener("blur", () => { tooltip.style.display = "none"; });
+        svg.appendChild(circle);
+      });
+      // x labels
+      days.filter((_, i) => i % 2 === 0 || i === days.length - 1).forEach(day => {
+        const t = createSvg("text", { x: xScale(day.h), y: height - 12, "text-anchor": "middle", fill: "#7a8780", "font-size": "10" });
+        t.textContent = day.date.slice(8) + "日";
+        svg.appendChild(t);
+      });
+    }
+
+    function renderDailyCare() {
+      renderCareSummary();
+      renderCareDayChips();
+      renderCareDayPanel();
+      renderCareSupportTrend();
+    }
+
+
     function renderAll() {
       renderGroupControls();
       renderMetricControls();
@@ -3440,6 +3849,7 @@
       renderRawTable();
       updateLatest();
       renderQuestions();
+      renderDailyCare();
     }
 
     document.querySelectorAll(".range-btn").forEach(button => {
@@ -3483,6 +3893,8 @@
     document.getElementById("closeDialog").addEventListener("click", closeDialog);
     document.getElementById("cancelForm").addEventListener("click", closeDialog);
     document.getElementById("scrollTop").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    document.getElementById("jumpCare").addEventListener("click", () =>
+      document.getElementById("dailyCareSection").scrollIntoView({ behavior: "smooth", block: "start" }));
     document.getElementById("jumpQuestions").addEventListener("click", () =>
       document.getElementById("questionsSection").scrollIntoView({ behavior: "smooth" })
     );

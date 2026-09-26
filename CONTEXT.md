@@ -104,6 +104,13 @@ Trend: falling from the 170 peak through **8.206**, then **rose** to **9.893**, 
 - **Coag 2026-09-26 09:36:42 (postop 259h36m):** APTT **43.7↑** sec (was 67.2). This sheet ref is **23.3–32.5**, not 21–45, so 43.7 is still flagged high and is not marked critical. Do not treat 43.7 as back inside 21–45. TT **14.4** (14–21), PT **13.5** (11–14.3), INR **1.19** (0.94–1.2) are in this sheet’s range. PT% **68.0↓** (80–120). Fbg **5.033↑** g/L (2–4.5). 43.7 is APTT seconds, not P/F.
 - **Watch next:** 17:25 lactate **2.19↑**, P/F **112** on FiO₂ **60%**, ABE **−3.2↓**, iCa **1.10↓**, ABG Hb **8.7**. 15:00 BP still **110/30**, HR **100**, NE **5**, DA **4**, fever **37.4**, CRRT paused **上午七点**, **仍无尿**. Culture bacterium 1 **肺炎克雷伯菌** (no CFU). Oral says susceptibility found Klebsiella; wait until tomorrow for an antibiotic-change decision. Do not invent MIC. PCT **7.209**. WBC **29.72↑**. APTT **43.7** on 23.3–32.5. The 17:25 oral is clock-only — do not add a `vitalReadings` point. Trend-direction only, not a survival estimate.
 
+### Daily inpatient bills → 每日用药与治疗
+
+- Screenshots for **2026-09-15 … 2026-09-26** live under `testset/reports/billing/`. Structured summary is `data/daily-care.json` (also embedded as `dailyCareData` in `index.html`).
+- **How to read:** bill lines are **issued / charged** amounts, not pump mL/h. Cross-check pressors with `vitalReadings` oral doses. Agent-received copies are narrow (~100–230 px); treat vial counts as medium confidence until hires re-upload.
+- **Care arc from bills:** piperacillin/tazobactam (9/16) → **meropenem** from 9/17 (plus tigecycline that day; cefoperazone/sulbactam co-billed 9/25). CRRT billing appears 9/17 → near-full day 9/18 → gap 9/22 → restart 9/23 → **~672.60 ¥ on 9/26** (fits oral stop ~07xx). Ventilator billed most days. Sedation often propofol/remifentanil; albumin billed repeatedly.
+- UI: section **每日用药与治疗** / `dailyCareSection` (chip picker + CRRT-hour chart + lab cross-links). New doctor questions `bill-antibiotics` and `bill-sedation`.
+
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
 - CBC: WBC **19.40↑**, Hb **100↓** g/L (was 67), HCT **27.6↓**, PLT **60↓**, NEUT% **93.5↑**, NEUT# **18.14↑**. Plateletcrit **0.08%** is not PCT.
@@ -516,7 +523,7 @@ Screenshot: `testset/reports/chemistry/20260926T085945__5DF7436C-4570-4915-9A0A-
 
 ### Culture — 2026-09-26 10:30:59 (postop 260h30m)
 
-Screenshot: `testset/reports/other/20260926T103059__597226F4-0BC5-4A42-9820-D4495744ABEC_L0_001.jpg`. Manifest **158**. Sheet clock **10:30:59**. Phone status bar 11:18 is not the report clock.
+Screenshot: `testset/reports/other/20260926T103059__597226F4-0BC5-4A42-9820-D4495744ABEC_L0_001.jpg`. Manifest **172**. Sheet clock **10:30:59**. Phone status bar 11:18 is not the report clock.
 
 - Bacterium 1: **肺炎克雷伯菌**. Sputum culture, secretion culture, bacteria 2/3, tips, and both CFU rows are blank. Do not treat blanks as negative. No CFU number. No susceptibility results on this crop.
 - Relative hour **260.52**. Label **术后260h30m**.
@@ -549,7 +556,7 @@ No new screenshot. Structured oral clock **2026-09-26T15:00**. Relative hour **2
 
 ### Arterial ABG — 2026-09-26 17:25:15 (postop 267h25m)
 
-Screenshot: `testset/reports/abg/20260926T172515__abg.jpg`. Manifest **159**. Sheet clock is **17:25:15**. Oral clock **2026-09-26T17:25**; 单子类型 / BP / HR / NE / DA / CRRT / 尿量 / 其他 were all 未填 or 无.
+Screenshot: `testset/reports/abg/20260926T172515__abg.jpg`. Manifest **172**. Sheet clock is **17:25:15**. Oral clock **2026-09-26T17:25**; 单子类型 / BP / HR / NE / DA / CRRT / 尿量 / 其他 were all 未填 or 无.
 
 - pH **7.374** (was 7.383; in 7.35–7.45). PCO₂ **38.60**. PO₂ **67.20↓**. HCO₃⁻ **22.00**. ABE **−3.20↓** (SBE −2.90). Store ABE.
 - Lactate **2.19↑** (was **1.76**; ref 0.5–1.6).
@@ -827,4 +834,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 17:25 ABG lactate **2.19↑**, P/F **112**, pH **7.374**, ABE **−3.2↓**, Hb **8.7**, iCa **1.10↓**. Hero **最新：术后267h25m**. Circulation still the 15:00 oral **110/30**. Fever still **37.4**. Manifest **159**. Trend-direction only, not a survival estimate.
+**Last updated:** 17:25 ABG lactate **2.19↑**, P/F **112**, pH **7.374**, ABE **−3.2↓**, Hb **8.7**, iCa **1.10↓**. Hero **最新：术后267h25m**. Circulation still the 15:00 oral **110/30**. Fever still **37.4**. Manifest **172**. Trend-direction only, not a survival estimate.

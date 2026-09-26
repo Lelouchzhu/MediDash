@@ -15,6 +15,7 @@ testset/
     coag/                # coagulation
     cbc/                 # complete blood count (note: CBC "PCT" = plateletcrit)
     imaging/             # CT/X-ray/ultrasound screenshots
+    billing/             # daily inpatient bills (每日住院清单) → daily care analysis
     other/               # unlabeled historical uploads
     inbox/               # drop new unlabeled shots here first
 ```
