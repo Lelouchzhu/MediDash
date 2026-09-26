@@ -46,7 +46,7 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 - **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@ca21eace3803379e56239e68828313141415ebf1/index.xhtml
 - 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@ca21eace3803379e56239e68828313141415ebf1/index.xhtml
 
-灌注卡应是乳酸 **1.338**（0.5–1.6内；卡片数值会显示 **1.34**）。酸碱卡 pH **7.348**↓，PCO₂ **41.9**，HCO₃⁻ **22.5**，BE **−3.1**↓。氧合卡 **P/F 116**，FiO₂ **60%**，PO₂ **69.5**。感染卡降钙素原 **9.893**，白细胞 **24.15**。肾功能卡肌酐 **227.10**，尿素 **25.80**，并写 **15:07 CRRT在运行**。血红蛋白卡血气 **8.6**，血常规 **87**，iCa **1.14**，钾 **4.333**。凝血卡 APTT **67.2**。循环卡应是 **122/33**，心跳 **83**，呼吸 **14**，去甲 **3**，多巴胺 **5**。顶栏应是 **最新化验：术后251h30m · APTT 67.2**，并且有 **上传化验**。若顶栏还是术后247h、凝血卡还是67.1，打开的还是旧镜像。下次更新后把钉住的提交号换成新的完整 40 位 SHA，不要改回 `@main`，也不要用短 SHA。
+灌注卡应是乳酸 **1.76**↑（0.5–1.6外；卡片数值会显示 **1.76**）。酸碱卡 pH **7.383**，PCO₂ **39.2**，HCO₃⁻ **22.8**，BE **−2.2**。氧合卡 **P/F 118**，FiO₂ **60%**，PO₂ **71.1**。感染卡降钙素原 **9.893**，白细胞 **24.15**。肾功能卡肌酐 **227.10**，尿素 **25.80**，并写 **15:07 CRRT在运行**。血红蛋白卡血气 **9.6**，血常规 **87**，iCa **1.16**，钾 **4.333**。凝血卡 APTT **67.2**。循环卡应是 **122/33**，心跳 **83**，呼吸 **14**，去甲 **3**，多巴胺 **5**。顶栏应是 **最新：术后257h14m**，并且有 **上传化验**。若顶栏还是术后251h、灌注还是1.338，打开的还是旧镜像。下次更新后把钉住的提交号换成新的完整 40 位 SHA，不要改回 `@main`，也不要用短 SHA。
 
 微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。
 
@@ -75,7 +75,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 151 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 152 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 
