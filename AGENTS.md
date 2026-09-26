@@ -42,7 +42,9 @@ Family-confirmed **0.05 mg/mL**. Convert only NE. **Do not invent dopamine mg/h.
 |------|------|
 | 9 | 0.45 |
 | 6 | 0.30 |
+| 5 | 0.25 |
 | 4 | 0.20 |
+| 3 | 0.15 |
 
 If the family only said “high / about half”, leave mL blank rather than guessing.
 
