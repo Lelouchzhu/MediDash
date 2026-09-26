@@ -47,7 +47,7 @@ Formula: `relative_h = (report_datetime − 2026-09-15 14:00)` in hours.
 |--------------------------|---------|---------|
 | **降钙素原 / PCT** (biochem) | **Procalcitonin** ng/mL | … → 18.701 → 8.206 → **9.893** |
 | **血小板比积 / PCT** (CBC) | **Plateletcrit** % | latest **0.13%** (was 0.12%) |
-| **氧合指数 pO2(a)/FO2(I)** | PaO₂/FiO₂ | latest printed **118** (FiO₂ 60%) |
+| **氧合指数 pO2(a)/FO2(I)** | PaO₂/FiO₂ | latest printed **112** (FiO₂ 60%) |
 
 A low-resolution ABG once caused “PCT 170” confusion with oxygenation index **169**. The **real** procalcitonin 170.297 is on the **2026-09-17 10:52** chemistry panel (same sheet as ALT/AST).
 
