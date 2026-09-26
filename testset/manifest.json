@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 154,
+  "count": 155,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2866,6 +2866,27 @@
       },
       "sha256_16": "a7d6ffb1bea02e48",
       "bytes": 200356
+    },
+    {
+      "id": "20260926T093642__coag.jpg",
+      "path": "reports/coag/20260926T093642__coag.jpg",
+      "category": "coag",
+      "source_filename": "image-1790389588349-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-26T09:36:42",
+      "type": "凝血",
+      "note": "Full coag panel. APTT 43.7 sec high on this sheet ref 23.3-32.5, not 21-45. Not marked critical. TT 14.4 in 14-21. PT 13.5 in 11-14.3. PT% 68.0 low (80-120). INR 1.19 in 0.94-1.2. Fbg 5.033 g/L high (2-4.5). 43.7 is APTT seconds, not P/F. Phone status bar 9:59 is not the report clock. Oral clock 09:36 with all vital fields blank.",
+      "relative_h": 259.61,
+      "extracted": {
+        "aptt": 43.7,
+        "tt": 14.4,
+        "pt": 13.5,
+        "inr": 1.19,
+        "fbg": 5.033
+      },
+      "sha256_16": "47ea1896e5c56874",
+      "bytes": 158004
     }
   ]
 }
