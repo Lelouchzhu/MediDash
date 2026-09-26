@@ -88,9 +88,9 @@ Categories: **循环/支持**, 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝
 
 ## Mainland lab upload
 
-**上传化验** now lives on `main` (merged 2026-09-25). New screenshots and oral notes update `main`, not a parallel feature branch.
+**上传**（化验或每日住院清单）now lives on `main` (merged 2026-09-25). New screenshots and oral notes update `main`, not a parallel feature branch. Kind `住院清单` goes to `testset/reports/billing/` + `data/daily-care.json` / `dailyCareData`.
 
-The page cannot call `api.cursor.com` (no CORS, and the Cursor key must not be in the public HTML). **上传化验** POSTs screenshots plus oral notes to `scripts/agent-upload-relay.py`, which follows up this agent:
+The page cannot call `api.cursor.com` (no CORS, and the Cursor key must not be in the public HTML). **上传** POSTs screenshots plus oral notes to `scripts/agent-upload-relay.py`, which follows up this agent:
 
 `POST https://api.cursor.com/v1/agents/bc-f66f1668-9237-4998-b08a-816b026db98e/runs`
 

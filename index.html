@@ -2560,7 +2560,7 @@
   </main>
 
   <div class="action-bar" aria-label="页面操作">
-    <button class="primary" type="button" id="openAgentUpload">上传化验</button>
+    <button class="primary" type="button" id="openAgentUpload">上传</button>
     <button class="secondary" type="button" id="openDialog">手填</button>
     <button class="secondary" type="button" id="jumpCare">用药</button>
     <button class="secondary" type="button" id="jumpQuestions">清单</button>
@@ -2641,8 +2641,8 @@
   <dialog id="agentDialog">
     <div class="dialog-head">
       <div>
-        <h2>上传化验</h2>
-        <div class="report-meta">功能分支预览。交给当前监测 agent 更新这一支的数据、解读和查房问题，不覆盖 main</div>
+        <h2>上传化验 / 清单</h2>
+        <div class="report-meta">交给监测 agent 更新 main：化验、每日住院清单、口述、解读和查房问题</div>
       </div>
       <button class="icon-btn" type="button" id="closeAgentDialog" aria-label="关闭">×</button>
     </div>
@@ -2661,17 +2661,26 @@
         </details>
       </div>
       <div class="field wide">
-        <label for="shotInput">化验截图（最多 5 张，jpg/png）</label>
+        <label for="shotInput">截图（化验或每日住院清单，最多 5 张）</label>
         <input id="shotInput" name="shots" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple>
         <div class="shot-row" id="shotRow"></div>
       </div>
       <div class="field">
-        <label for="reportClock">报告时间</label>
+        <label for="reportClock">报告时间 / 清单日期</label>
         <input id="reportClock" name="clock" type="datetime-local">
       </div>
       <div class="field">
         <label for="reportKind">单子类型</label>
-        <input id="reportKind" name="kind" type="text" placeholder="血气 / 凝血 / 生化 / 血常规">
+        <select id="reportKind" name="kind">
+          <option value="">未选</option>
+          <option value="血气">血气</option>
+          <option value="凝血">凝血</option>
+          <option value="生化">生化</option>
+          <option value="血常规">血常规</option>
+          <option value="住院清单">每日住院清单</option>
+          <option value="影像">影像</option>
+          <option value="其他">其他</option>
+        </select>
       </div>
       <div class="field">
         <label for="sbpInput">收缩压</label>
