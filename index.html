@@ -3642,9 +3642,9 @@
           <span class="s">最近计费 ${last.support.crrt_cost != null ? last.support.crrt_cost + " 元" : "—"}</span>
         </div>
         <div class="care-stat">
-          <span class="k">已知 CRRT 小时点</span>
-          <span class="v">${crrtHours.length ? crrtHours.at(-1) + " h" : "—"}</span>
-          <span class="s">有明确小时才写入趋势</span>
+          <span class="k">有明确小时的 CRRT</span>
+          <span class="v">${crrtHours.length} 点</span>
+          <span class="s">最近 ${crrtHours.length ? crrtHours.at(-1) + " h" : "—"}（写入趋势）</span>
         </div>
       `);
     }
