@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 158,
+  "count": 159,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2950,6 +2950,32 @@
       },
       "sha256_16": "e3157d4e463c61b3",
       "bytes": 434194
+    },
+    {
+      "id": "20260926T172515__abg.jpg",
+      "path": "reports/abg/20260926T172515__abg.jpg",
+      "category": "abg",
+      "source_filename": "image-1790417581407-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-26T17:25:15",
+      "type": "血气",
+      "note": "Arterial. pH 7.374 in 7.35-7.45. PCO2 38.60 in 35-45. PO2 67.20 low. HCO3 22.00 in 22-26. ABE -3.20 low on -3 to 3. SBE -2.90 in range. Store ABE. Lactate 2.19 high, ref 0.5-1.6. FiO2 60%. Printed P/F 112 low. 67.20/0.60=112. The 0.18% pO2(a)/FO2(I) row is not P/F and not procalcitonin. Hb 8.70 Hct 26.00 iCa 1.10 low (1.15-1.29) sO2 91.90. Temp-corrected pH 7.370 PCO2 39.10. Oral clock 17:25 with all vital fields blank.",
+      "relative_h": 267.42,
+      "extracted": {
+        "ph": 7.374,
+        "pco2": 38.6,
+        "po2": 67.2,
+        "hco3": 22.0,
+        "be": -3.2,
+        "lactate": 2.19,
+        "fio2": 60,
+        "pf": 112,
+        "hb": 8.7,
+        "ca": 1.1
+      },
+      "sha256_16": "f607b94c9d5a9b84",
+      "bytes": 238248
     }
   ]
 }
