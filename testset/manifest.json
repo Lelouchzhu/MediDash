@@ -12,7 +12,7 @@
     "other",
     "inbox"
   ],
-  "count": 155,
+  "count": 158,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -2850,10 +2850,10 @@
       "category": "chemistry",
       "source_filename": "image-1790386696749-1.jpg",
       "labeled": true,
-      "preferred": true,
+      "preferred": false,
       "report_time": "2026-09-26T08:59:45",
       "type": "生化",
-      "note": "Chemistry. ALT 19.0 in 0-40. AST 26.0 in 0-40. AST/ALT 1.377. TBIL 21.8 high (3.4-17.1). DBIL 8.8 high (0-6.8). IBIL 13.00. CK 106.0 in 33-192. CK-MB 19.30 in 0-24. Urea 16.055 high (3.1-8.8). Cr 159.0 high (41-81). No PCT, K, Na, Cl, or albumin on this sheet. Phone status bar 09:23 is not the report clock. Oral clock 08:30 with all vital fields blank.",
+      "note": "Chemistry. ALT 19.0 in 0-40. AST 26.0 in 0-40. AST/ALT 1.377. TBIL 21.8 high (3.4-17.1). DBIL 8.8 high (0-6.8). IBIL 13.00. CK 106.0 in 33-192. CK-MB 19.30 in 0-24. Urea 16.055 high (3.1-8.8). Cr 159.0 high (41-81). No PCT, K, Na, Cl, or albumin on this sheet. Phone status bar 09:23 is not the report clock. Oral clock 08:30 with all vital fields blank. Superseded by same-clock crop that also shows PCT 7.209.",
       "relative_h": 259.0,
       "extracted": {
         "alt": 19.0,
@@ -2865,7 +2865,8 @@
         "creatinine": 159.0
       },
       "sha256_16": "a7d6ffb1bea02e48",
-      "bytes": 200356
+      "bytes": 200356,
+      "superseded_by": "reports/chemistry/20260926T085945__5DF7436C-4570-4915-9A0A-34B616E804D1_L0_001.jpg"
     },
     {
       "id": "20260926T093642__coag.jpg",
@@ -2887,6 +2888,68 @@
       },
       "sha256_16": "47ea1896e5c56874",
       "bytes": 158004
+    },
+    {
+      "id": "20260926T085945__5DF7436C-4570-4915-9A0A-34B616E804D1_L0_001.jpg",
+      "path": "reports/chemistry/20260926T085945__5DF7436C-4570-4915-9A0A-34B616E804D1_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "5DF7436C-4570-4915-9A0A-34B616E804D1_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-26T08:59:45",
+      "type": "生化",
+      "note": "Same 08:59:45 chemistry clock as the earlier crop, plus PCT. ALT 19.0, AST 26.0, printed AST/ALT 1.37, TBIL 21.8 high, CK 106.0, DBIL 8.8 high, IBIL 13.00, urea 16.055 high (3.1-8.8), Cr 159.0 high (41-81), CK-MB 19.30, PCT/PCCT 7.209 ng/ml high (0-0.05). This is procalcitonin, not plateletcrit or P/F. Phone status bar 9:59 is not the report clock.",
+      "relative_h": 259.0,
+      "extracted": {
+        "alt": 19.0,
+        "ast": 26.0,
+        "tbil": 21.8,
+        "ck": 106.0,
+        "ckmb": 19.3,
+        "urea": 16.055,
+        "creatinine": 159.0,
+        "pct": 7.209
+      },
+      "sha256_16": "0248ada5d254cf32",
+      "bytes": 752588
+    },
+    {
+      "id": "20260926T093642__9277E27A-EF7F-48B6-907C-4DEB32516929_L0_001.jpg",
+      "path": "reports/coag/20260926T093642__9277E27A-EF7F-48B6-907C-4DEB32516929_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "9277E27A-EF7F-48B6-907C-4DEB32516929_L0_001.jpg",
+      "labeled": true,
+      "preferred": false,
+      "report_time": "2026-09-26T09:36:42",
+      "type": "凝血",
+      "note": "Same 09:36:42 coag sheet already preferred as 20260926T093642__coag.jpg. No new numbers. APTT 43.7, TT 14.4, PT 13.5, PT% 68.0, INR 1.19, Fbg 5.033. Phone status bar 9:59 is not the report clock. Old file kept preferred.",
+      "relative_h": 259.61,
+      "extracted": {
+        "aptt": 43.7,
+        "tt": 14.4,
+        "pt": 13.5,
+        "inr": 1.19,
+        "fbg": 5.033
+      },
+      "sha256_16": "6348bb6ad6a6e3da",
+      "bytes": 563810
+    },
+    {
+      "id": "20260926T103059__597226F4-0BC5-4A42-9820-D4495744ABEC_L0_001.jpg",
+      "path": "reports/other/20260926T103059__597226F4-0BC5-4A42-9820-D4495744ABEC_L0_001.jpg",
+      "category": "other",
+      "source_filename": "597226F4-0BC5-4A42-9820-D4495744ABEC_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-26T10:30:59",
+      "type": "培养",
+      "note": "Culture + susceptibility header. Bacterium 1 printed 肺炎克雷伯菌. Sputum culture, secretion culture, bacteria 2/3, tips, and both colony-count rows are blank. Do not treat blank rows as negative. No CFU number. Phone status bar 11:18 is not the report clock.",
+      "relative_h": 260.52,
+      "extracted": {
+        "organism": "肺炎克雷伯菌"
+      },
+      "sha256_16": "e3157d4e463c61b3",
+      "bytes": 434194
     }
   ]
 }

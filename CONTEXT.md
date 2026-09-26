@@ -10,7 +10,7 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@d0fe83d07333d76204cf10857b31c4d5fe6bb9c4/index.xhtml  
 **备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@d0fe83d07333d76204cf10857b31c4d5fe6bb9c4/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
-国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是最新化验：术后259h36m · APTT **43.7**。09:36 APTT **67.2→43.7**，这张参考 **23.3–32.5**，INR **1.19**，PT% **68.0**↓，纤维蛋白原 **5.033**↑。08:59 肌酐仍是 **159**，尿素 **16.055**，ALT **19**，AST **26**，总胆红素 **21.8**↑，CK **106**。08:32 白细胞 **29.72**，血常规Hb **88**。07:14 血气乳酸仍是 **1.76**↑，P/F **118**，血气Hb **9.6**，pH **7.383**。01:29 钾仍是 **4.333**。15:07口述血压仍是 **122/33**。降钙素原仍是 **9.893**。这次口述只有09:36时钟。
+国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是最新口述：术后263h · CRRT已停 · 尿量 **0**。10:30 培养细菌1 **肺炎克雷伯菌**，菌量空着。08:59 同一时钟更完整一截看到降钙素原 **7.209**。09:36 APTT 仍是 **43.7**。08:59 肌酐仍是 **159**。08:32 白细胞 **29.72**。07:14 血气乳酸仍是 **1.76**↑，P/F **118**。15:07口述血压仍是 **122/33**。CRRT 七点多停了。家属说有自主呼吸。吕大夫说细菌感染仍重，现用广谱消炎药主要针对杆菌，已开始培养球菌。
 
 ---
 
@@ -92,16 +92,16 @@ Trend: falling from the 170 peak through **8.206**, then **rose** to **9.893**. 
 - **Dr. Zhao:** current BP is acceptable, circulation is okay, and the BP course looks stable. ICU focus now is blood pressure and the lungs, both relatively stable. If pressors can be stopped completely and the ventilator removed, and only the kidney problem remains, ICU is no longer required and care may shift to dialysis.
 - Prior bedside (~postop 144h): BP 150/55 (MAP≈87), pulse 106, NE 4 + DA 7.5. Earlier ~122h: BP 125/35.
 - **CRRT:** the 2026-09-20 ~16:00–18:00 run lasted **19 h 48 min** and then stopped. Pre-start settings on that run were blood **130 mL/min**, UF **300 mL/h**. Do not copy those settings onto the new run. Cumulative UF of the stopped run was not confirmed. Prior stop was morning 2026-09-19 (family said 凌晨; the oral was received 9/19 11:48 — keep both).
-- **New run:** family said 血滤 started **约2026-09-23 14:00** (两点左右, postop **192h**). At the **2026-09-24 16:18** oral they said it has **stopped**. The stop clock was not stated, so do not turn the receipt time into a run length. Blood flow, ultrafiltration, and anticoagulation were never stated. Urine was **0** at 15:50. The **2026-09-25 00:22** oral said urine is still **0** and did not say whether filtration restarted. The **2026-09-25 11:11** oral said **crrt早上会重新开机**. 11:11 is the receipt time, not a start clock. The **2026-09-25 15:07** oral said **CRRT在运行**. 15:07 is the receipt time, not a start clock. Do not invent flow, UF, anticoagulation, or a run length from “morning” to 15:07. Do not copy 130 mL/min or UF 300 onto this run. Urine was blank on the 15:07 oral.
+- **New run:** family said 血滤 started **约2026-09-23 14:00** (两点左右, postop **192h**). At the **2026-09-24 16:18** oral they said it has **stopped**. The **2026-09-25 11:11** oral said **crrt早上会重新开机**. The **2026-09-25 15:07** oral said **CRRT在运行**. The **2026-09-26 13:00** oral (receipt time) said CRRT **今天早上七点多停了**. 七点多 is not exactly 07:00 and is not a monitor clock. Do not invent a run length, flow, UF, or anticoagulation. Do not copy 130 mL/min or UF 300 onto this run. The same 13:00 oral said **没有尿** (record as urine **0**). Do not add a `vitalReadings` point: no new BP / HR / NE / DA.
 - Vasopressor series: norepinephrine **9 → 6 → 4 → 2 → 3 mL/h** (0.45 → 0.30 → 0.20 → 0.10 → **0.15 mg/h**) + dopamine **10 → 8 → 7.5 → 5 → 6 → 5 mL/h**. Concentration **0.05 mg/mL**. The 9/21 step at 6 mL/h remains 0.30 mg/h. The 15:50 step is 3 mL/h after the 17:34 correction. The 15:07 step keeps norepinephrine at 3 and lowers dopamine to 5. Do not invent dopamine mg/h.
 - **Transfusion:** **4 units RBC**, B Rh-positive, family says **started same 16:00–18:00 window**. ABG Hb **7.7 at 17:48 → 10.4 at 22:16 → 10.7 at 06:52 → 8.9 at 10:53 → 10.2 at 06:41 → 9.9 at 18:30**. Evening CBC Hb **101** (19:05) → morning 9/22 **97**. Ask how many units finished.
 - **K:** … → **4.52** (07:52 9/25 dry chemistry) → **3.99** (14:13) → **3.933** (18:07) → **4.077** (21:33) → **4.333** (01:29 9/26 dry chemistry, ref 3.5–5.3, no abnormal flag). The 08:59 chemistry did not repeat K, Na, Cl, or albumin. Na still **135↓**. Cl still **97**. iCa on the 07:14 ABG is **1.16**. Albumin stays **27.8↓**.
-- **Kidney:** Cr **227.10 → 159.0** (08:59 9/26 chemistry). This sheet’s creatinine ref is **41–81**, flagged high. Urea **25.80 → 16.055↑**; this sheet’s urea ref is **3.1–8.8**, flagged high, not marked critical. Do not copy the 07:52 refs 57–111 / 3.6–9.5 onto this sheet. Urine oral at 00:22 on 9/25 is still **0**. The 15:07 oral left urine blank and said **CRRT在运行**. The 08:32 / 08:59 sheets and the clock-only 08:30 oral did not add urine or CRRT settings.
+- **Kidney:** Cr **227.10 → 159.0** (08:59 9/26 chemistry). This sheet’s creatinine ref is **41–81**, flagged high. Urea **25.80 → 16.055↑**; this sheet’s urea ref is **3.1–8.8**, flagged high, not marked critical. The **2026-09-26 13:00** oral said urine is **0** and CRRT stopped **七点多**.
 - **Ultrasound 2026-09-23 10:19 (postop 188h19m):** bilateral lower-extremity arterial and venous color Doppler. Impression, in the report’s words: atherosclerosis with multiple plaques; **possible incomplete occlusion of both posterior tibial arteries**; subcutaneous edema. Larger plaques at the common femoral arteries, low/weak echo, about **1.1×0.2 cm (right)** and **1.4×0.4 cm (left)**. Left PTA and the distal right PTA show only intermittent punctate flow; other arteries fill well. PTA spectra are biphasic with reduced velocity; the other spectra are triphasic and within the stated normal velocity range. Accompanying deep veins and superficial veins in the scanned field: flow fills satisfactorily, **no abnormal echo**. The report does not write thrombus. Thigh subcutaneous thickness about **2.1 cm (right)** and **2.3 cm (left)**. This replaces the same-morning oral “ultrasound in progress.”
 - **Stool:** 2026-09-24 16:27:43 sheet: color **黑褐色**, consistency **稀便**, microscopy **未见异常**. Stool WBC and RBC results are blank, not 0. No occult blood on this sheet. Older FOBT immunoassay **positive** 18:32 9/21 stays on that older sheet only. Family oral 9/22 11:35: **3 stools yesterday, 黑褐色**. Family oral 9/23 15:45: **one stool, 黑色**. Color does not quantify or localize.
 - **Ultrasound oral gloss (received 15:45):** family said the lower-extremity study was normal, no thrombus, ordinary atherosclerosis in the elderly. This does **not** replace the 10:19 report (plaques, possible incomplete PTA occlusion, no abnormal venous echo).
 - **Coag 2026-09-26 09:36:42 (postop 259h36m):** APTT **43.7↑** sec (was 67.2). This sheet ref is **23.3–32.5**, not 21–45, so 43.7 is still flagged high and is not marked critical. Do not treat 43.7 as back inside 21–45. TT **14.4** (14–21), PT **13.5** (11–14.3), INR **1.19** (0.94–1.2) are in this sheet’s range. PT% **68.0↓** (80–120). Fbg **5.033↑** g/L (2–4.5). 43.7 is APTT seconds, not P/F.
-- **Watch next:** APTT **43.7** on this sheet’s 23.3–32.5, with CRRT still only known as **在运行**. P/F **118** on FiO₂ **60%**. ABG Hb **9.6**; CBC Hb **88** with the still-open 16:27 **黑褐色** loose stool. 15:07 BP **122/33**, HR **83**, RR **14**, NE still **3 mL/h = 0.15 mg/h**, dopamine **6 → 5 mL/h**. Lactate **1.76↑**. pH **7.383**. PCT **9.893** was not redrawn. WBC **29.72↑**. Cr **159.0** and urea **16.055** are still high on the 08:59 41–81 / 3.1–8.8 refs. ALT **19** and CK **106** are back in range; TBIL **21.8↑**. Urine still **0** only as the 00:22 oral. K **4.333**; iCa **1.16**. The CBC **PCT 0.13%** is plateletcrit, not procalcitonin. Trend-direction only, not a survival estimate. This batch’s oral had only the 09:36 clock.
+- **Watch next:** Culture bacterium 1 **肺炎克雷伯菌** (no CFU). PCT **7.209**. WBC **29.72↑**. CRRT stopped **七点多**; urine **0**. APTT **43.7** on 23.3–32.5. P/F **118** on FiO₂ **60%**; family said spontaneous breathing, not fully ventilator-dependent. 15:07 BP still **122/33**. Lactate **1.76↑**. Dr. Lu: infection still severe; current antibiotic is broad-spectrum and mainly against bacilli; cocci culture started. Two no-fever explanations are the doctor’s oral, not a diagnosis and not a temperature. Trend-direction only, not a survival estimate.
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -489,10 +489,10 @@ Screenshot: `testset/reports/chemistry/20260926T085945__chem.jpg`. Manifest **15
 - ALT **19.0** (was 159; ref 0–40). AST **26.0** (was 82; ref 0–40). AST/ALT **1.377**.
 - TBIL **21.8↑** (ref 3.4–17.1). DBIL **8.8↑** (ref 0–6.8). IBIL **13.00**.
 - CK **106.0** (was 434; ref 33–192, now in range). CK-MB **19.30** (was 23.7; ref 0–24).
-- No PCT, K, Na, Cl, or albumin on this sheet.
+- A later same-clock crop also shows PCT/PCCT **7.209↑** ng/mL (ref 0–0.05). Still no K, Na, Cl, or albumin.
 - Relative hour **259.00**. Label **术后258h59m**.
 - `latestNonBloodGasReport` was `{ h: 259.00, label: "术后258h59m · 肌酐 159", type: "生化" }` until the 09:36 coag.
-- **Judgment:** creatinine and urea moved down and remain high on this sheet’s refs. Transaminases and CK returned inside the reference; bilirubin is newly high here. Do not invent a PCT from the CBC plateletcrit. Do not add a `vitalReadings` point. Circulation stays on the 15:07 122/33 oral.
+- **Judgment:** creatinine and urea moved down and remain high on this sheet’s refs. Transaminases and CK returned inside the reference; bilirubin is newly high here. PCT **7.209** is procalcitonin on this chemistry clock, not plateletcrit. Do not add a `vitalReadings` point. Circulation stays on the 15:07 122/33 oral.
 
 ### Coag — 2026-09-26 09:36:42 (postop 259h36m)
 
@@ -502,8 +502,35 @@ Screenshot: `testset/reports/coag/20260926T093642__coag.jpg`. Manifest **155**. 
 - TT **14.4** (14–21). PT **13.5** (11–14.3). PT% **68.0↓** (80–120). INR **1.19** (0.94–1.2). Fbg **5.033↑** g/L (2–4.5).
 - 43.7 is APTT seconds, not P/F.
 - Relative hour **259.61**. Label **术后259h36m**.
-- `latestNonBloodGasReport` is `{ h: 259.61, label: "术后259h36m · APTT 43.7", type: "凝血" }`. Hero **最新化验：术后259h36m · APTT 43.7**.
-- **Judgment:** APTT moved down and is still flagged high on this tighter range. Full panel is back (unlike the 01:30 APTT-only sheet). Do not add a `vitalReadings` point. Circulation stays on the 15:07 122/33 oral.
+- `latestNonBloodGasReport` was `{ h: 259.61, label: "术后259h36m · APTT 43.7", type: "凝血" }` until the 13:00 oral.
+- **Judgment:** APTT moved down and is still flagged high on this tighter range. A later same-clock copy adds no new numbers. Do not add a `vitalReadings` point. Circulation stays on the 15:07 122/33 oral.
+
+### Chemistry PCT crop — 2026-09-26 08:59:45 (same clock)
+
+Screenshot: `testset/reports/chemistry/20260926T085945__5DF7436C-4570-4915-9A0A-34B616E804D1_L0_001.jpg`. Preferred. Old `20260926T085945__chem.jpg` kept, `preferred: false`, `superseded_by` this file. Manifest later **158**.
+
+- Same values as the first 08:59 crop, plus PCT/PCCT **7.209↑** ng/mL (ref 0–0.05). Printed AST/ALT **1.37**.
+- This is procalcitonin, not plateletcrit 0.13% and not P/F 118.
+- Phone status bar 9:59 is not the report clock.
+
+### Culture — 2026-09-26 10:30:59 (postop 260h30m)
+
+Screenshot: `testset/reports/other/20260926T103059__597226F4-0BC5-4A42-9820-D4495744ABEC_L0_001.jpg`. Manifest **158**. Sheet clock **10:30:59**. Phone status bar 11:18 is not the report clock.
+
+- Bacterium 1: **肺炎克雷伯菌**. Sputum culture, secretion culture, bacteria 2/3, tips, and both CFU rows are blank. Do not treat blanks as negative. No CFU number. No susceptibility results on this crop.
+- Relative hour **260.52**. Label **术后260h30m**.
+
+### Oral — 2026-09-26 13:00 receipt (postop 263h)
+
+No new screenshot. Receipt clock is the chat timestamp 2026-09-26 05:00 UTC = 13:00 CST.
+
+- CRRT **今天早上七点多停了**. Not exactly 07:00. No flow / UF / anticoagulation / run length.
+- Urine **没有尿** → **0**.
+- Spontaneous breathing; not completely ventilator-dependent. No new ventilator numbers.
+- Dr. Lu: bacterial infection still severe. Current antibiotic is broad-spectrum, strong, mainly against bacilli; name not given. Cocci culture started.
+- No fever. Doctor offered two possibilities (drug suppression vs immune cells giving up). Record as the doctor’s oral, not a diagnosis, and do not invent a temperature.
+- No new BP / HR / NE / DA. Do not add a `vitalReadings` point.
+- `latestNonBloodGasReport` is `{ h: 263.00, label: "术后263h · CRRT已停 · 尿量0", type: "口述" }`. Hero **最新口述：术后263h · CRRT已停 · 尿量0**.
 
 ### Morning ABG — 2026-09-23 06:38 (postop 184h38m)
 
@@ -772,4 +799,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 09:36 coag APTT **43.7** / INR **1.19** / Fbg **5.033** / PT% **68.0**. Hero **最新化验：术后259h36m · APTT 43.7**. Cr still **159**, WBC still **29.72**, lactate still **1.76**, P/F **118**. Circulation still the 15:07 oral. Manifest **155**. Oral clock only. Trend-direction only, not a survival estimate.
+**Last updated:** 13:00 oral CRRT **七点多已停** / urine **0** / spontaneous breathing. 10:30 culture **肺炎克雷伯菌**. 08:59 PCT **7.209**. Hero **最新口述：术后263h · CRRT已停 · 尿量0**. APTT still **43.7**, Cr **159**, WBC **29.72**, lactate **1.76**. Circulation still the 15:07 oral. Manifest **158**. Trend-direction only, not a survival estimate.
