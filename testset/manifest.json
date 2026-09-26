@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 172,
+  "count": 175,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3158,8 +3158,66 @@
       "extracted": true,
       "report_time": "2026-09-26T12:00:00",
       "relative_h": 262.0,
+      "preferred": false,
+      "note": "Daily inpatient bill (每日住院清单). Agent-received copy is narrow (~100–230px wide); quantities marked medium confidence. Prefer presence / CRRT hours / key drug classes over exact vial counts until hires re-upload. Superseded by a later same-day crop that shows CRRT 7.08 h / 672.60 and ECG 24 h.",
+      "superseded_by": "20260926T120000__image-1790463872454-0.jpg"
+    },
+    {
+      "id": "20260926T215035__abg.jpg",
+      "path": "reports/abg/20260926T215035__abg.jpg",
+      "category": "abg",
+      "source_filename": "image-1790463872463-1.jpg",
+      "labeled": true,
       "preferred": true,
-      "note": "Daily inpatient bill (每日住院清单). Agent-received copy is narrow (~100–230px wide); quantities marked medium confidence. Prefer presence / CRRT hours / key drug classes over exact vial counts until hires re-upload."
+      "report_time": "2026-09-26T21:50:35",
+      "type": "血气",
+      "note": "Arterial. Clock 21:50:35. pH 7.395 in 7.35-7.45. PCO2 32.30 low. PO2 69.70 low. HCO3 18.330 low. ABE -5.50 low. SBE -4.90 low. Store ABE. Lactate 1.377 in 0.5-1.6, no high flag. FiO2 60%. Printed P/F 116.00 low. 69.70/0.60=116. The 0.18% pO2(a)/FO2(I) row is not P/F. Hb 8.330 Hct 24.00 iCa 1.111 low sO2 93.30. Temp 36.99 is not the 15:00 fever 37.4. Oral fields all blank.",
+      "relative_h": 271.84,
+      "extracted": {
+        "ph": 7.395,
+        "pco2": 32.3,
+        "po2": 69.7,
+        "hco3": 18.3,
+        "be": -5.5,
+        "lactate": 1.377,
+        "fio2": 60,
+        "pf": 116,
+        "hb": 8.3,
+        "ca": 1.11
+      },
+      "sha256_16": "23c0238e70e01bf6",
+      "bytes": 418202
+    },
+    {
+      "id": "20260926T221108__k.jpg",
+      "path": "reports/chemistry/20260926T221108__k.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790463872455-2.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-26T22:11:08",
+      "type": "生化",
+      "note": "Standalone dry-chemistry potassium. K 5.233 mmol/L, ref 3.5-5.3, no abnormal flag. Phone status bar 3:08 is not the report clock. Oral fields all blank. Not procalcitonin and not P/F.",
+      "relative_h": 272.19,
+      "extracted": {
+        "k": 5.233
+      },
+      "sha256_16": "77c4f30b53c12f5d",
+      "bytes": 185508
+    },
+    {
+      "id": "20260926T120000__image-1790463872454-0.jpg",
+      "path": "reports/billing/20260926T120000__image-1790463872454-0.jpg",
+      "category": "billing",
+      "source_filename": "image-1790463872454-0.jpg",
+      "sha256_16": "0153cba3410e4fb1",
+      "bytes": 137753,
+      "labeled": true,
+      "extracted": true,
+      "report_time": "2026-09-26T12:00:00",
+      "relative_h": 262.0,
+      "preferred": true,
+      "note": "Fuller same-day 9/26 inpatient bill (372px wide). CRRT 7.08 h / 672.60 (95/h). Ventilator 24 h. ECG 24 h / 192. Meropenem 0.5 g x6. Remifentanil x3. Propofol x2. Albumin import 10 g x3 / 1260. NE and dobutamine billed vials, not pump mL/h. Account snapshot prepaid 51000, total 103142.72, balance -52142.72. Kind was blank; image is a daily bill."
     }
   ]
 }

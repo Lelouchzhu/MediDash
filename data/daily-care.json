@@ -3,8 +3,8 @@
   "disclaimer": "来自每日住院清单的计费发出量，不是泵上实时剂量。升压药请对照口述 mL/h。截图在 agent 侧偏窄，支数/小时标 medium confidence；有明确费用可核对的 CRRT 金额优先采用。",
   "account_snapshot": {
     "prepaid": 51000,
-    "total_cost": 101531.44,
-    "balance": -50531.44,
+    "total_cost": 103142.72,
+    "balance": -52142.72,
     "note": "截图时账户快照，不是单日费用。"
   },
   "days": [
@@ -387,36 +387,39 @@
       "label": "9月26日 · 术后D11",
       "postop_day": 11,
       "confidence": "medium",
-      "source": "testset/reports/billing/20260926T120000__01a0dce6-2c4c-79d5-95ea-8247c6eb3b9f.jpg",
+      "source": "testset/reports/billing/20260926T120000__image-1790463872454-0.jpg",
       "support": {
         "ventilator": true,
-        "ventilator_h": null,
+        "ventilator_h": 24,
         "crrt": true,
-        "crrt_h": null,
+        "crrt_h": 7.08,
         "crrt_cost": 672.6,
         "invasive_hemo": false,
         "surgery": false,
-        "ecg_h": 9.44
+        "ecg_h": 24
       },
       "antibiotics": [{ "name": "美罗培南", "qty": 6 }],
       "vasopressors": [
-        { "name": "多巴酚丁胺" },
-        { "name": "肾上腺素相关", "note": "对照口述去甲+多巴胺" }
+        { "name": "去甲肾上腺素", "note": "清单支数；口述仍是去甲5+多巴胺4，勿把支数当成泵速" },
+        { "name": "多巴酚丁胺" }
       ],
       "sedatives": [
-        { "name": "丙泊酚" },
+        { "name": "丙泊酚", "qty": 2 },
         { "name": "瑞芬太尼", "qty": 3 }
       ],
-      "nutrition": [{ "name": "人血白蛋白", "qty": 3, "cost": 1260 }],
-      "other_key": ["布地奈德", "微量泵合计小时数很高（多泵）", "细菌培养相关化验"],
+      "nutrition": [
+        { "name": "人血白蛋白(进口)", "qty": 3, "cost": 1260 },
+        { "name": "脂肪乳氨基酸葡萄糖" }
+      ],
+      "other_key": ["泮托拉唑", "布地奈德", "微量泵约248.5小时（多泵）", "细菌涂片/培养"],
       "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": 5 },
       "highlights": [
-        "CRRT 计费降至约 672.60 元——与口述早上七点多停机相符",
-        "心电监测约 9.44 小时，短于整日",
-        "美罗培南仍在；培养回报肺炎克雷伯菌可对照问药敏",
-        "仍有气管插管护理与吸痰×5"
+        "更完整一截：CRRT 约 7.08 小时 / 672.60 元（95元/时）——与口述上午七点暂停相符",
+        "呼吸机全日 24 小时；心电监测也是 24 小时 / 192 元（旧截图曾读成 9.44 小时）",
+        "美罗培南×6；丙泊酚×2、瑞芬太尼×3；白蛋白×3 / 1260",
+        "去甲与多巴酚丁胺有计费支数，对照口述泵速，不要把支数当 mL/h"
       ],
-      "lab_link": "同日：PCT 7.209 · Cr 159 · WBC 29.72 · 肺炎克雷伯菌 · CRRT已停·尿0"
+      "lab_link": "同日：PCT 7.209 · Cr 159 · WBC 29.72 · 肺炎克雷伯菌 · 21:50乳酸1.377 · P/F 116 · 钾5.233 · CRRT已停·尿0"
     }
   ]
 }
