@@ -103,6 +103,13 @@ Trend: falling from the 170 peak through **8.206**, then **rose** to **9.893**. 
 - **Coag 2026-09-26 09:36:42 (postop 259h36m):** APTT **43.7↑** sec (was 67.2). This sheet ref is **23.3–32.5**, not 21–45, so 43.7 is still flagged high and is not marked critical. Do not treat 43.7 as back inside 21–45. TT **14.4** (14–21), PT **13.5** (11–14.3), INR **1.19** (0.94–1.2) are in this sheet’s range. PT% **68.0↓** (80–120). Fbg **5.033↑** g/L (2–4.5). 43.7 is APTT seconds, not P/F.
 - **Watch next:** Culture bacterium 1 **肺炎克雷伯菌** (no CFU). PCT **7.209**. WBC **29.72↑**. CRRT stopped **七点多**; urine **0**. APTT **43.7** on 23.3–32.5. P/F **118** on FiO₂ **60%**; family said spontaneous breathing, not fully ventilator-dependent. 15:07 BP still **122/33**. Lactate **1.76↑**. Dr. Lu: infection still severe; current antibiotic is broad-spectrum and mainly against bacilli; cocci culture started. Two no-fever explanations are the doctor’s oral, not a diagnosis and not a temperature. Trend-direction only, not a survival estimate.
 
+### Daily inpatient bills → 每日用药与治疗 (feature branch)
+
+- Screenshots for **2026-09-15 … 2026-09-26** live under `testset/reports/billing/`. Structured summary is `data/daily-care.json` (also embedded as `dailyCareData` in `index.html`).
+- **How to read:** bill lines are **issued / charged** amounts, not pump mL/h. Cross-check pressors with `vitalReadings` oral doses. Agent-received copies are narrow (~100–230 px); treat vial counts as medium confidence until hires re-upload.
+- **Care arc from bills:** piperacillin/tazobactam (9/16) → **meropenem** from 9/17 (plus tigecycline that day; cefoperazone/sulbactam co-billed 9/25). CRRT billing appears 9/17 → near-full day 9/18 → gap 9/22 → restart 9/23 → **~672.60 ¥ on 9/26** (fits oral stop ~07xx). Ventilator billed most days. Sedation often propofol/remifentanil; albumin billed repeatedly.
+- UI: section **每日用药与治疗** / `dailyCareSection` (chip picker + CRRT-hour chart + lab cross-links). New doctor questions `bill-antibiotics` and `bill-sedation`.
+
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
 - CBC: WBC **19.40↑**, Hb **100↓** g/L (was 67), HCT **27.6↓**, PLT **60↓**, NEUT% **93.5↑**, NEUT# **18.14↑**. Plateletcrit **0.08%** is not PCT.

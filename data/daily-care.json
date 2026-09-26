@@ -1,0 +1,422 @@
+{
+  "version": 1,
+  "disclaimer": "来自每日住院清单的计费发出量，不是泵上实时剂量。升压药请对照口述 mL/h。截图在 agent 侧偏窄，支数/小时标 medium confidence；有明确费用可核对的 CRRT 金额优先采用。",
+  "account_snapshot": {
+    "prepaid": 51000,
+    "total_cost": 101531.44,
+    "balance": -50531.44,
+    "note": "截图时账户快照，不是单日费用。"
+  },
+  "days": [
+    {
+      "date": "2026-09-15",
+      "h": -2,
+      "label": "9月15日 · 手术日",
+      "postop_day": 0,
+      "confidence": "low",
+      "source": "testset/reports/billing/20260915T120000__01a0dce6-2d34-7253-a601-938c54f53431.jpg",
+      "support": {
+        "ventilator": true,
+        "ventilator_h": null,
+        "crrt": false,
+        "crrt_h": null,
+        "crrt_cost": null,
+        "invasive_hemo": true,
+        "surgery": true
+      },
+      "antibiotics": [],
+      "vasopressors": [],
+      "sedatives": [],
+      "nutrition": [{ "name": "人血白蛋白", "cost": 1236 }],
+      "other_key": ["全麻", "剖腹探查相关手术费", "腔镜直线切割吻合器"],
+      "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": null },
+      "highlights": [
+        "入院/手术当日：手术与吻合器等高额耗材入账",
+        "已有人血白蛋白计费",
+        "当日未见明确 CRRT 计费"
+      ],
+      "lab_link": "同日：术前 PCT 41.13 · 术后 PCT 63.37 · ALT/AST 已升"
+    },
+    {
+      "date": "2026-09-16",
+      "h": 22,
+      "label": "9月16日 · 术后D1",
+      "postop_day": 1,
+      "confidence": "medium",
+      "source": "testset/reports/billing/20260916T120000__01a0dce6-2d1d-7505-8a8b-3e8532b72cc3.jpg",
+      "support": {
+        "ventilator": true,
+        "ventilator_h": 24,
+        "crrt": false,
+        "crrt_h": null,
+        "crrt_cost": null,
+        "invasive_hemo": true,
+        "surgery": false
+      },
+      "antibiotics": [{ "name": "哌拉西林钠他唑巴坦钠" }],
+      "vasopressors": [],
+      "sedatives": [],
+      "nutrition": [{ "name": "人血白蛋白", "cost": 1236 }],
+      "other_key": ["艾司洛尔", "胺碘酮", "有创血流动力学监测"],
+      "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": null },
+      "highlights": [
+        "呼吸机辅助呼吸计费在列",
+        "抗感染先是哌拉西林/他唑巴坦",
+        "有艾司洛尔、胺碘酮，提示当日心律/心率管理",
+        "仍未见 CRRT 计费"
+      ],
+      "lab_link": "同日：PCT 146 · 乳酸峰值后回落中"
+    },
+    {
+      "date": "2026-09-17",
+      "h": 46,
+      "label": "9月17日 · 术后D2",
+      "postop_day": 2,
+      "confidence": "medium",
+      "source": "testset/reports/billing/20260917T120000__01a0dce6-2d05-7ee8-9c26-47d76c90aeba.jpg",
+      "support": {
+        "ventilator": true,
+        "ventilator_h": 24,
+        "crrt": true,
+        "crrt_h": 10.78,
+        "crrt_cost": 1024.1,
+        "invasive_hemo": true,
+        "surgery": false
+      },
+      "antibiotics": [
+        { "name": "美罗培南" },
+        { "name": "替加环素" }
+      ],
+      "vasopressors": [
+        { "name": "去甲肾上腺素" },
+        { "name": "多巴胺/多巴酚丁胺", "note": "清单名与口述对照，勿直接换算 mg/h" }
+      ],
+      "sedatives": [
+        { "name": "丙泊酚" },
+        { "name": "瑞芬太尼" },
+        { "name": "咪达唑仑" }
+      ],
+      "nutrition": [{ "name": "人血白蛋白", "cost": 1236 }],
+      "other_key": ["乌司他丁", "微量泵"],
+      "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": null },
+      "highlights": [
+        "抗感染升级：美罗培南 + 替加环素",
+        "首次出现明确 CRRT 计费（约 10.8 小时）",
+        "镇静镇痛三联可见：丙泊酚 / 瑞芬太尼 / 咪达唑仑",
+        "升压药与口述双升压阶段相符"
+      ],
+      "lab_link": "同日：PCT 峰值 170 · IL-6 981 · ALT/AST 高峰"
+    },
+    {
+      "date": "2026-09-18",
+      "h": 70,
+      "label": "9月18日 · 术后D3",
+      "postop_day": 3,
+      "confidence": "medium",
+      "source": "testset/reports/billing/20260918T120000__01a0dce6-2cef-77d4-b134-dfa9138dbba1.jpg",
+      "support": {
+        "ventilator": true,
+        "ventilator_h": 24,
+        "crrt": true,
+        "crrt_h": 24,
+        "crrt_cost": 2280,
+        "invasive_hemo": true,
+        "surgery": false
+      },
+      "antibiotics": [{ "name": "美罗培南" }],
+      "vasopressors": [
+        { "name": "去甲肾上腺素" },
+        { "name": "多巴酚丁胺" }
+      ],
+      "sedatives": [{ "name": "丙泊酚" }],
+      "nutrition": [{ "name": "人血白蛋白", "cost": 1236 }],
+      "other_key": ["乌司他丁", "甲泼尼龙", "血滤器/透析管路耗材"],
+      "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": null },
+      "highlights": [
+        "CRRT 接近全日（约 24h / 2280 元）——支持强度最高的一天之一",
+        "呼吸机仍 24 小时计费",
+        "继续美罗培南；可见激素与乌司他丁"
+      ],
+      "lab_link": "同日：PCT 101.6 · 灌注与酸碱逐步改善中"
+    },
+    {
+      "date": "2026-09-19",
+      "h": 94,
+      "label": "9月19日 · 术后D4",
+      "postop_day": 4,
+      "confidence": "medium",
+      "source": "testset/reports/billing/20260919T120000__01a0dce6-2cd8-7853-b22a-bc07d32bb096.jpg",
+      "support": {
+        "ventilator": true,
+        "ventilator_h": 24,
+        "crrt": true,
+        "crrt_h": null,
+        "crrt_cost": null,
+        "invasive_hemo": true,
+        "surgery": false
+      },
+      "antibiotics": [{ "name": "美罗培南" }],
+      "vasopressors": [
+        { "name": "去甲肾上腺素" },
+        { "name": "多巴胺/多巴酚丁胺" }
+      ],
+      "sedatives": [
+        { "name": "丙泊酚" },
+        { "name": "瑞芬太尼" },
+        { "name": "罗库溴铵", "note": "肌松，提示仍深度镇静/通气需求" }
+      ],
+      "nutrition": [
+        { "name": "人血白蛋白" },
+        { "name": "脂肪乳氨基酸葡萄糖" }
+      ],
+      "other_key": ["有创血流动力学监测约744元"],
+      "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": null },
+      "highlights": [
+        "仍有呼吸机与 CRRT 相关计费",
+        "口述：凌晨附近 CRRT 曾停；清单仍可能含停机前小时数",
+        "出现肌松药罗库溴铵"
+      ],
+      "lab_link": "同日：PCT 65.4 · 口述去甲 9 mL/h"
+    },
+    {
+      "date": "2026-09-20",
+      "h": 118,
+      "label": "9月20日 · 术后D5",
+      "postop_day": 5,
+      "confidence": "medium",
+      "source": "testset/reports/billing/20260920T120000__01a0dce6-2cc2-7d76-86ef-f15bf0c48544.jpg",
+      "support": {
+        "ventilator": true,
+        "ventilator_h": null,
+        "crrt": true,
+        "crrt_h": null,
+        "crrt_cost": 764.75,
+        "invasive_hemo": true,
+        "surgery": false
+      },
+      "antibiotics": [{ "name": "美罗培南" }],
+      "vasopressors": [],
+      "sedatives": [],
+      "nutrition": [{ "name": "人血白蛋白" }],
+      "other_key": ["甲泼尼龙", "肝素", "悬浮红细胞/血费", "有创血流动力学监测"],
+      "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": null },
+      "highlights": [
+        "血费入账：与口述 4U 红细胞同窗",
+        "CRRT 计费约 764.75 元（非整日）——与傍晚再开血滤相符",
+        "继续美罗培南"
+      ],
+      "lab_link": "同日：输血后 ABG Hb 回升 · 口述去甲9+多巴胺10"
+    },
+    {
+      "date": "2026-09-21",
+      "h": 142,
+      "label": "9月21日 · 术后D6",
+      "postop_day": 6,
+      "confidence": "medium",
+      "source": "testset/reports/billing/20260921T120000__01a0dce6-2cad-7e7c-9243-ca89fa724aab.jpg",
+      "support": {
+        "ventilator": true,
+        "ventilator_h": null,
+        "crrt": true,
+        "crrt_h": null,
+        "crrt_cost": 1112.45,
+        "invasive_hemo": false,
+        "surgery": false
+      },
+      "antibiotics": [{ "name": "美罗培南" }],
+      "vasopressors": [
+        { "name": "去甲肾上腺素" },
+        { "name": "多巴酚丁胺" }
+      ],
+      "sedatives": [
+        { "name": "丙泊酚" },
+        { "name": "瑞芬太尼" }
+      ],
+      "nutrition": [{ "name": "脂肪乳氨基酸葡萄糖" }],
+      "other_key": ["生长抑素", "氢化可的松", "呋塞米", "血滤器耗材"],
+      "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": null },
+      "highlights": [
+        "CRRT 计费约 1112 元，支持仍强",
+        "生长抑素入账——可问消化道相关适应证",
+        "升压药与镇静仍在清单"
+      ],
+      "lab_link": "同日：PCT 36.9 · CRP 97.7 · IL-6 68.5 · Cr 231"
+    },
+    {
+      "date": "2026-09-22",
+      "h": 166,
+      "label": "9月22日 · 术后D7",
+      "postop_day": 7,
+      "confidence": "medium",
+      "source": "testset/reports/billing/20260922T120000__01a0dce6-2c95-79ac-aacd-dfbf3d17dde9.jpg",
+      "support": {
+        "ventilator": true,
+        "ventilator_h": 24,
+        "crrt": false,
+        "crrt_h": null,
+        "crrt_cost": null,
+        "invasive_hemo": false,
+        "surgery": false
+      },
+      "antibiotics": [{ "name": "美罗培南" }],
+      "vasopressors": [],
+      "sedatives": [
+        { "name": "丙泊酚" },
+        { "name": "瑞芬太尼" }
+      ],
+      "nutrition": [{ "name": "脂肪乳氨基酸葡萄糖" }],
+      "other_key": ["乌司他丁", "低分子肝素", "床旁胸片/彩超"],
+      "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": null },
+      "highlights": [
+        "关键转折：当日未见 CRRT 计费（口述血滤待机、肌酐反跳）",
+        "呼吸机仍 24 小时",
+        "继续美罗培南；影像检查增多"
+      ],
+      "lab_link": "同日：PCT 28.8 · Cr 320 · 尿素危急 · 尿量0"
+    },
+    {
+      "date": "2026-09-23",
+      "h": 190,
+      "label": "9月23日 · 术后D8",
+      "postop_day": 8,
+      "confidence": "medium",
+      "source": "testset/reports/billing/20260923T120000__01a0dce6-2c7d-7239-9950-f2642bbf0b73.jpg",
+      "support": {
+        "ventilator": true,
+        "ventilator_h": null,
+        "crrt": true,
+        "crrt_h": null,
+        "crrt_cost": null,
+        "invasive_hemo": false,
+        "surgery": false
+      },
+      "antibiotics": [{ "name": "美罗培南" }],
+      "vasopressors": [],
+      "sedatives": [
+        { "name": "咪达唑仑" },
+        { "name": "舒芬太尼" },
+        { "name": "右美托咪定" }
+      ],
+      "nutrition": [{ "name": "脂肪乳/氨基酸类" }],
+      "other_key": ["下肢血管彩超"],
+      "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": null },
+      "highlights": [
+        "CRRT 计费再现——与口述约 14:00 再开血滤相符",
+        "镇静方案见咪达唑仑 / 舒芬太尼 / 右美托咪定",
+        "下肢彩超当日完成"
+      ],
+      "lab_link": "同日：PCT 18.7 · 下肢彩超：静脉未见异常回声"
+    },
+    {
+      "date": "2026-09-24",
+      "h": 214,
+      "label": "9月24日 · 术后D9",
+      "postop_day": 9,
+      "confidence": "medium",
+      "source": "testset/reports/billing/20260924T120000__01a0dce6-2c64-7778-ace3-7678fff486e1.jpg",
+      "support": {
+        "ventilator": true,
+        "ventilator_h": 24,
+        "crrt": true,
+        "crrt_h": 11.63,
+        "crrt_cost": 1104.85,
+        "invasive_hemo": false,
+        "surgery": false
+      },
+      "antibiotics": [{ "name": "美罗培南" }],
+      "vasopressors": [],
+      "sedatives": [
+        { "name": "丙泊酚" },
+        { "name": "瑞芬太尼" },
+        { "name": "咪达唑仑" }
+      ],
+      "nutrition": [{ "name": "人血白蛋白", "qty": 3, "cost": 1260 }],
+      "other_key": ["微量泵合计约164.5小时（多泵并行）"],
+      "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": null },
+      "highlights": [
+        "CRRT 约 11.6 小时 / 1104.85 元；口述傍晚已停",
+        "人血白蛋白 3 瓶约 1260 元",
+        "呼吸机仍全日"
+      ],
+      "lab_link": "同日：PCT 8.206 · 白蛋白 27.8 · 便黑褐色稀便"
+    },
+    {
+      "date": "2026-09-25",
+      "h": 238,
+      "label": "9月25日 · 术后D10",
+      "postop_day": 10,
+      "confidence": "medium",
+      "source": "testset/reports/billing/20260925T120000__01a0dce6-2c14-7870-9ae1-c19bfa28a503.jpg",
+      "support": {
+        "ventilator": true,
+        "ventilator_h": 24,
+        "crrt": true,
+        "crrt_h": 12.82,
+        "crrt_cost": 1217.9,
+        "invasive_hemo": false,
+        "surgery": false
+      },
+      "antibiotics": [
+        { "name": "美罗培南", "qty": 6 },
+        { "name": "头孢哌酮钠舒巴坦钠", "qty": 2 }
+      ],
+      "vasopressors": [
+        { "name": "多巴酚丁胺", "qty": 6 },
+        { "name": "肾上腺素相关", "qty": 18, "note": "清单支数；口述升压药是去甲3+多巴胺5/6，勿把支数当成泵速" }
+      ],
+      "sedatives": [
+        { "name": "丙泊酚", "qty": 5 },
+        { "name": "瑞芬太尼", "qty": 3 }
+      ],
+      "nutrition": [
+        { "name": "人血白蛋白(进口)", "qty": 3, "cost": 1260 },
+        { "name": "卡文/脂肪乳氨基酸葡萄糖" }
+      ],
+      "other_key": ["呋塞米", "泮托拉唑", "布地奈德雾化", "血气分析多次", "心电监测24h"],
+      "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": 5 },
+      "highlights": [
+        "抗感染：美罗培南 + 头孢哌酮/舒巴坦（双药）",
+        "CRRT 约 12.8 小时 / 1217.90 元；口述上午拟再开、15:07 说在运行",
+        "白蛋白与卡文继续；镇静仍偏重（丙泊酚×5）"
+      ],
+      "lab_link": "同日：PCT 9.893↑ · WBC 24.15 · 血压口述122/33"
+    },
+    {
+      "date": "2026-09-26",
+      "h": 262,
+      "label": "9月26日 · 术后D11",
+      "postop_day": 11,
+      "confidence": "medium",
+      "source": "testset/reports/billing/20260926T120000__01a0dce6-2c4c-79d5-95ea-8247c6eb3b9f.jpg",
+      "support": {
+        "ventilator": true,
+        "ventilator_h": null,
+        "crrt": true,
+        "crrt_h": null,
+        "crrt_cost": 672.6,
+        "invasive_hemo": false,
+        "surgery": false,
+        "ecg_h": 9.44
+      },
+      "antibiotics": [{ "name": "美罗培南", "qty": 6 }],
+      "vasopressors": [
+        { "name": "多巴酚丁胺" },
+        { "name": "肾上腺素相关", "note": "对照口述去甲+多巴胺" }
+      ],
+      "sedatives": [
+        { "name": "丙泊酚" },
+        { "name": "瑞芬太尼", "qty": 3 }
+      ],
+      "nutrition": [{ "name": "人血白蛋白", "qty": 3, "cost": 1260 }],
+      "other_key": ["布地奈德", "微量泵合计小时数很高（多泵）", "细菌培养相关化验"],
+      "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": 5 },
+      "highlights": [
+        "CRRT 计费降至约 672.60 元——与口述早上七点多停机相符",
+        "心电监测约 9.44 小时，短于整日",
+        "美罗培南仍在；培养回报肺炎克雷伯菌可对照问药敏",
+        "仍有气管插管护理与吸痰×5"
+      ],
+      "lab_link": "同日：PCT 7.209 · Cr 159 · WBC 29.72 · 肺炎克雷伯菌 · CRRT已停·尿0"
+    }
+  ]
+}
