@@ -7,8 +7,8 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **Prior agent run (Allmond-bound, then continued here):** https://cursor.com/agents/bc-01a0a01a-a6eb-72c7-b052-ba5e14ed8b1b  
 **Conversation summary (current):** [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md)  
 **Conversation summary (through 9/18 13:00 ABG):** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
-**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@ca21eace3803379e56239e68828313141415ebf1/index.xhtml  
-**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@ca21eace3803379e56239e68828313141415ebf1/index.xhtml  
+**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@b35948e61c2a615d092fb14b9896039d0df19514/index.xhtml  
+**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@b35948e61c2a615d092fb14b9896039d0df19514/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
 国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是最新：术后257h14m。07:14 血气乳酸 **1.76**↑，P/F **118**，血气Hb **9.6**，pH **7.383**，iCa **1.16**。01:30 APTT仍是 **67.2**。01:29 钾仍是 **4.333**。15:07口述血压仍是 **122/33**，心跳 **83**，呼吸 **14**，去甲仍 **3** mL/h，多巴胺 **6→5** mL/h。CRRT在运行，没有流速、脱水或尿量。10:04 降钙素原仍是 **9.893**。08:05 血常规白细胞 **24.15**、Hb **87**。这次口述只有07:14时钟。
 
