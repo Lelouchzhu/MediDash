@@ -46,7 +46,7 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 - **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@b35948e61c2a615d092fb14b9896039d0df19514/index.xhtml
 - 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@b35948e61c2a615d092fb14b9896039d0df19514/index.xhtml
 
-灌注卡应是乳酸 **1.76**↑（0.5–1.6外；卡片数值会显示 **1.76**）。酸碱卡 pH **7.383**，PCO₂ **39.2**，HCO₃⁻ **22.8**，BE **−2.2**。氧合卡 **P/F 118**，FiO₂ **60%**，PO₂ **71.1**。感染卡降钙素原 **9.893**，白细胞 **24.15**。肾功能卡肌酐 **227.10**，尿素 **25.80**，并写 **15:07 CRRT在运行**。血红蛋白卡血气 **9.6**，血常规 **87**，iCa **1.16**，钾 **4.333**。凝血卡 APTT **67.2**。循环卡应是 **122/33**，心跳 **83**，呼吸 **14**，去甲 **3**，多巴胺 **5**。顶栏应是 **最新：术后257h14m**，并且有 **上传化验**。若顶栏还是术后251h、灌注还是1.338，打开的还是旧镜像。下次更新后把钉住的提交号换成新的完整 40 位 SHA，不要改回 `@main`，也不要用短 SHA。
+灌注卡应是乳酸 **1.76**↑（0.5–1.6外；卡片数值会显示 **1.76**）。酸碱卡 pH **7.383**，PCO₂ **39.2**，HCO₃⁻ **22.8**，BE **−2.2**。氧合卡 **P/F 118**，FiO₂ **60%**，PO₂ **71.1**。感染卡白细胞 **29.72**，降钙素原仍 **9.893**。肾功能卡肌酐 **159**，尿素 **16.055**，并写 **15:07 CRRT在运行**。肝卡 ALT **19**，总胆红素 **21.8**。血红蛋白卡血常规 **88**，血气 **9.6**，iCa **1.16**，钾 **4.333**。凝血卡 APTT **67.2**。循环卡应是 **122/33**，心跳 **83**，呼吸 **14**，去甲 **3**，多巴胺 **5**。顶栏应是 **最新化验：术后258h59m · 肌酐 159**，并且有 **上传化验**。若顶栏还是术后257h、肌酐还是227.10，打开的还是旧镜像。下次更新后把钉住的提交号换成新的完整 40 位 SHA，不要改回 `@main`，也不要用短 SHA。
 
 微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。
 
@@ -75,7 +75,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 152 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 154 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 
