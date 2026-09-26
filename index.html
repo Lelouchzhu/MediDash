@@ -3432,7 +3432,7 @@ const latestNonBloodGasReport = { h: 272.19, label: "术后272h11m · 钾 5.233"
         ? `最新：${latest.label || relativeLabel(latest.h)}`
         : `${nonAbgPrefix}：${latestNonBloodGasReport.label}`;
       const lastLac = [...arterial].reverse().find(d => d.lactate != null);
-      if (lastLac) document.getElementById("latestLactate").textContent = Number(lastLac.lactate).toFixed(2);
+      if (lastLac) document.getElementById("latestLactate").textContent = String(lastLac.lactate);
       if (latest.pf != null) document.getElementById("latestPf").textContent = Math.round(latest.pf);
       if (latest.ph != null) document.getElementById("latestPh").textContent = Number(latest.ph).toFixed(3);
       if (latest.hb != null) document.getElementById("latestHb").textContent = Number(latest.hb).toFixed(1);
