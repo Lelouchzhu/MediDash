@@ -3780,7 +3780,7 @@
         <div class="care-stat">
           <span class="k">已整理清单</span>
           <span class="v">${days.length} 天</span>
-          <span class="s">9月15日–26日</span>
+          <span class="s">${Number(days[0].date.slice(5, 7))}月${Number(days[0].date.slice(8, 10))}日–${Number(days.at(-1).date.slice(5, 7))}月${Number(days.at(-1).date.slice(8, 10))}日</span>
         </div>
         <div class="care-stat">
           <span class="k">最新抗感染</span>
