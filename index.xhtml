@@ -1906,7 +1906,7 @@
       <div class="section-head">
         <div>
           <h2 id="questionsHeading">现在需要询问医生</h2>
-          <p>按优先级逐项确认，勾选进度仅保存在当前浏览器</p>
+          <p>只问大事。勾选进度仅保存在当前浏览器</p>
         </div>
       </div>
       <div class="panel question-panel">
@@ -1914,9 +1914,9 @@
           <div class="question-summary-top">
             <div>
               <h3>查房沟通清单</h3>
-              <p>先问危及当前稳定性的9项，再补充7项器官功能和治疗计划。</p>
+              <p>只留4件大事：呼吸循环、感染、肾脏、肚子和血。单点化验波动记在卡上，不拆成一堆问题。</p>
             </div>
-            <span class="question-count" id="questionCount">0 / 16 已确认</span>
+            <span class="question-count" id="questionCount">0 / 4 已确认</span>
           </div>
           <div class="progress-track" aria-hidden="true">
             <div class="progress-value" id="questionProgress"></div>
@@ -3080,108 +3080,35 @@
     let selectedMetric = "lactate";
     let selectedRange = "all";
     const customKey = "perioperative-dashboard-custom-v1";
-    const questionKey = "perioperative-dashboard-questions-v1";
+    const questionKey = "perioperative-dashboard-questions-v2";
 const latestNonBloodGasReport = { h: 296.17, label: "术后296h10m · APTT 54.4", type: "凝血" };
     const dailyCareData = {"version": 1, "disclaimer": "来自每日住院清单的计费发出量，不是泵上实时剂量。升压药请对照口述 mL/h。截图在 agent 侧偏窄，支数/小时标 medium confidence；有明确费用可核对的 CRRT 金额优先采用。", "account_snapshot": {"prepaid": 51000, "total_cost": 103142.72, "balance": -52142.72, "note": "截图时账户快照，不是单日费用。"}, "days": [{"date": "2026-09-15", "h": -2, "label": "9月15日 · 手术日", "postop_day": 0, "confidence": "low", "source": "testset/reports/billing/20260915T120000__01a0dce6-2d34-7253-a601-938c54f53431.jpg", "support": {"ventilator": true, "ventilator_h": null, "crrt": false, "crrt_h": null, "crrt_cost": null, "invasive_hemo": true, "surgery": true}, "antibiotics": [], "vasopressors": [], "sedatives": [], "nutrition": [{"name": "人血白蛋白", "cost": 1236}], "other_key": ["全麻", "剖腹探查相关手术费", "腔镜直线切割吻合器"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["入院/手术当日：手术与吻合器等高额耗材入账", "已有人血白蛋白计费", "当日未见明确 CRRT 计费"], "lab_link": "同日：术前 PCT 41.13 · 术后 PCT 63.37 · ALT/AST 已升"}, {"date": "2026-09-16", "h": 22, "label": "9月16日 · 术后D1", "postop_day": 1, "confidence": "medium", "source": "testset/reports/billing/20260916T120000__01a0dce6-2d1d-7505-8a8b-3e8532b72cc3.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": false, "crrt_h": null, "crrt_cost": null, "invasive_hemo": true, "surgery": false}, "antibiotics": [{"name": "哌拉西林钠他唑巴坦钠"}], "vasopressors": [], "sedatives": [], "nutrition": [{"name": "人血白蛋白", "cost": 1236}], "other_key": ["艾司洛尔", "胺碘酮", "有创血流动力学监测"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["呼吸机辅助呼吸计费在列", "抗感染先是哌拉西林/他唑巴坦", "有艾司洛尔、胺碘酮，提示当日心律/心率管理", "仍未见 CRRT 计费"], "lab_link": "同日：PCT 146 · 乳酸峰值后回落中"}, {"date": "2026-09-17", "h": 46, "label": "9月17日 · 术后D2", "postop_day": 2, "confidence": "medium", "source": "testset/reports/billing/20260917T120000__01a0dce6-2d05-7ee8-9c26-47d76c90aeba.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": true, "crrt_h": 10.78, "crrt_cost": 1024.1, "invasive_hemo": true, "surgery": false}, "antibiotics": [{"name": "美罗培南"}, {"name": "替加环素"}], "vasopressors": [{"name": "去甲肾上腺素"}, {"name": "多巴胺/多巴酚丁胺", "note": "清单名与口述对照，勿直接换算 mg/h"}], "sedatives": [{"name": "丙泊酚"}, {"name": "瑞芬太尼"}, {"name": "咪达唑仑"}], "nutrition": [{"name": "人血白蛋白", "cost": 1236}], "other_key": ["乌司他丁", "微量泵"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["抗感染升级：美罗培南 + 替加环素", "首次出现明确 CRRT 计费（约 10.8 小时）", "镇静镇痛三联可见：丙泊酚 / 瑞芬太尼 / 咪达唑仑", "升压药与口述双升压阶段相符"], "lab_link": "同日：PCT 峰值 170 · IL-6 981 · ALT/AST 高峰"}, {"date": "2026-09-18", "h": 70, "label": "9月18日 · 术后D3", "postop_day": 3, "confidence": "medium", "source": "testset/reports/billing/20260918T120000__01a0dce6-2cef-77d4-b134-dfa9138dbba1.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": true, "crrt_h": 24, "crrt_cost": 2280, "invasive_hemo": true, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [{"name": "去甲肾上腺素"}, {"name": "多巴酚丁胺"}], "sedatives": [{"name": "丙泊酚"}], "nutrition": [{"name": "人血白蛋白", "cost": 1236}], "other_key": ["乌司他丁", "甲泼尼龙", "血滤器/透析管路耗材"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["CRRT 接近全日（约 24h / 2280 元）——支持强度最高的一天之一", "呼吸机仍 24 小时计费", "继续美罗培南；可见激素与乌司他丁"], "lab_link": "同日：PCT 101.6 · 灌注与酸碱逐步改善中"}, {"date": "2026-09-19", "h": 94, "label": "9月19日 · 术后D4", "postop_day": 4, "confidence": "medium", "source": "testset/reports/billing/20260919T120000__01a0dce6-2cd8-7853-b22a-bc07d32bb096.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": true, "crrt_h": null, "crrt_cost": null, "invasive_hemo": true, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [{"name": "去甲肾上腺素"}, {"name": "多巴胺/多巴酚丁胺"}], "sedatives": [{"name": "丙泊酚"}, {"name": "瑞芬太尼"}, {"name": "罗库溴铵", "note": "肌松，提示仍深度镇静/通气需求"}], "nutrition": [{"name": "人血白蛋白"}, {"name": "脂肪乳氨基酸葡萄糖"}], "other_key": ["有创血流动力学监测约744元"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["仍有呼吸机与 CRRT 相关计费", "口述：凌晨附近 CRRT 曾停；清单仍可能含停机前小时数", "出现肌松药罗库溴铵"], "lab_link": "同日：PCT 65.4 · 口述去甲 9 mL/h"}, {"date": "2026-09-20", "h": 118, "label": "9月20日 · 术后D5", "postop_day": 5, "confidence": "medium", "source": "testset/reports/billing/20260920T120000__01a0dce6-2cc2-7d76-86ef-f15bf0c48544.jpg", "support": {"ventilator": true, "ventilator_h": null, "crrt": true, "crrt_h": null, "crrt_cost": 764.75, "invasive_hemo": true, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [], "sedatives": [], "nutrition": [{"name": "人血白蛋白"}], "other_key": ["甲泼尼龙", "肝素", "悬浮红细胞/血费", "有创血流动力学监测"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["血费入账：与口述 4U 红细胞同窗", "CRRT 计费约 764.75 元（非整日）——与傍晚再开血滤相符", "继续美罗培南"], "lab_link": "同日：输血后 ABG Hb 回升 · 口述去甲9+多巴胺10"}, {"date": "2026-09-21", "h": 142, "label": "9月21日 · 术后D6", "postop_day": 6, "confidence": "medium", "source": "testset/reports/billing/20260921T120000__01a0dce6-2cad-7e7c-9243-ca89fa724aab.jpg", "support": {"ventilator": true, "ventilator_h": null, "crrt": true, "crrt_h": null, "crrt_cost": 1112.45, "invasive_hemo": false, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [{"name": "去甲肾上腺素"}, {"name": "多巴酚丁胺"}], "sedatives": [{"name": "丙泊酚"}, {"name": "瑞芬太尼"}], "nutrition": [{"name": "脂肪乳氨基酸葡萄糖"}], "other_key": ["生长抑素", "氢化可的松", "呋塞米", "血滤器耗材"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["CRRT 计费约 1112 元，支持仍强", "生长抑素入账——可问消化道相关适应证", "升压药与镇静仍在清单"], "lab_link": "同日：PCT 36.9 · CRP 97.7 · IL-6 68.5 · Cr 231"}, {"date": "2026-09-22", "h": 166, "label": "9月22日 · 术后D7", "postop_day": 7, "confidence": "medium", "source": "testset/reports/billing/20260922T120000__01a0dce6-2c95-79ac-aacd-dfbf3d17dde9.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": false, "crrt_h": null, "crrt_cost": null, "invasive_hemo": false, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [], "sedatives": [{"name": "丙泊酚"}, {"name": "瑞芬太尼"}], "nutrition": [{"name": "脂肪乳氨基酸葡萄糖"}], "other_key": ["乌司他丁", "低分子肝素", "床旁胸片/彩超"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["关键转折：当日未见 CRRT 计费（口述血滤待机、肌酐反跳）", "呼吸机仍 24 小时", "继续美罗培南；影像检查增多"], "lab_link": "同日：PCT 28.8 · Cr 320 · 尿素危急 · 尿量0"}, {"date": "2026-09-23", "h": 190, "label": "9月23日 · 术后D8", "postop_day": 8, "confidence": "medium", "source": "testset/reports/billing/20260923T120000__01a0dce6-2c7d-7239-9950-f2642bbf0b73.jpg", "support": {"ventilator": true, "ventilator_h": null, "crrt": true, "crrt_h": null, "crrt_cost": null, "invasive_hemo": false, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [], "sedatives": [{"name": "咪达唑仑"}, {"name": "舒芬太尼"}, {"name": "右美托咪定"}], "nutrition": [{"name": "脂肪乳/氨基酸类"}], "other_key": ["下肢血管彩超"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["CRRT 计费再现——与口述约 14:00 再开血滤相符", "镇静方案见咪达唑仑 / 舒芬太尼 / 右美托咪定", "下肢彩超当日完成"], "lab_link": "同日：PCT 18.7 · 下肢彩超：静脉未见异常回声"}, {"date": "2026-09-24", "h": 214, "label": "9月24日 · 术后D9", "postop_day": 9, "confidence": "medium", "source": "testset/reports/billing/20260924T120000__01a0dce6-2c64-7778-ace3-7678fff486e1.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": true, "crrt_h": 11.63, "crrt_cost": 1104.85, "invasive_hemo": false, "surgery": false}, "antibiotics": [{"name": "美罗培南"}], "vasopressors": [], "sedatives": [{"name": "丙泊酚"}, {"name": "瑞芬太尼"}, {"name": "咪达唑仑"}], "nutrition": [{"name": "人血白蛋白", "qty": 3, "cost": 1260}], "other_key": ["微量泵合计约164.5小时（多泵并行）"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": null}, "highlights": ["CRRT 约 11.6 小时 / 1104.85 元；口述傍晚已停", "人血白蛋白 3 瓶约 1260 元", "呼吸机仍全日"], "lab_link": "同日：PCT 8.206 · 白蛋白 27.8 · 便黑褐色稀便"}, {"date": "2026-09-25", "h": 238, "label": "9月25日 · 术后D10", "postop_day": 10, "confidence": "medium", "source": "testset/reports/billing/20260925T120000__01a0dce6-2c14-7870-9ae1-c19bfa28a503.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": true, "crrt_h": 12.82, "crrt_cost": 1217.9, "invasive_hemo": false, "surgery": false}, "antibiotics": [{"name": "美罗培南", "qty": 6}, {"name": "头孢哌酮钠舒巴坦钠", "qty": 2}], "vasopressors": [{"name": "多巴酚丁胺", "qty": 6}, {"name": "肾上腺素相关", "qty": 18, "note": "清单支数；口述升压药是去甲3+多巴胺5/6，勿把支数当成泵速"}], "sedatives": [{"name": "丙泊酚", "qty": 5}, {"name": "瑞芬太尼", "qty": 3}], "nutrition": [{"name": "人血白蛋白(进口)", "qty": 3, "cost": 1260}, {"name": "卡文/脂肪乳氨基酸葡萄糖"}], "other_key": ["呋塞米", "泮托拉唑", "布地奈德雾化", "血气分析多次", "心电监测24h"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": 5}, "highlights": ["抗感染：美罗培南 + 头孢哌酮/舒巴坦（双药）", "CRRT 约 12.8 小时 / 1217.90 元；口述上午拟再开、15:07 说在运行", "白蛋白与卡文继续；镇静仍偏重（丙泊酚×5）"], "lab_link": "同日：PCT 9.893↑ · WBC 24.15 · 血压口述122/33"}, {"date": "2026-09-26", "h": 262, "label": "9月26日 · 术后D11", "postop_day": 11, "confidence": "medium", "source": "testset/reports/billing/20260926T120000__image-1790463872454-0.jpg", "support": {"ventilator": true, "ventilator_h": 24, "crrt": true, "crrt_h": 7.08, "crrt_cost": 672.6, "invasive_hemo": false, "surgery": false, "ecg_h": 24}, "antibiotics": [{"name": "美罗培南", "qty": 6}], "vasopressors": [{"name": "去甲肾上腺素", "note": "清单支数；口述仍是去甲4+多巴胺5，勿把支数当成泵速"}, {"name": "多巴酚丁胺"}], "sedatives": [{"name": "丙泊酚", "qty": 2}, {"name": "瑞芬太尼", "qty": 3}], "nutrition": [{"name": "人血白蛋白(进口)", "qty": 3, "cost": 1260}, {"name": "脂肪乳氨基酸葡萄糖"}], "other_key": ["泮托拉唑", "布地奈德", "微量泵约248.5小时（多泵）", "细菌涂片/培养"], "nursing": {"icu": true, "tracheal": true, "tube_care": true, "suction": 5}, "highlights": ["更完整一截：CRRT 约 7.08 小时 / 672.60 元（95元/时）——与口述上午七点暂停相符", "呼吸机全日 24 小时；心电监测也是 24 小时 / 192 元（旧截图曾读成 9.44 小时）", "美罗培南×6；丙泊酚×2、瑞芬太尼×3；白蛋白×3 / 1260", "去甲与多巴酚丁胺有计费支数，对照口述泵速，不要把支数当 mL/h"], "lab_link": "同日：PCT 7.209 · Cr 159 · WBC 29.72 · 肺炎克雷伯菌 · 21:50乳酸1.377 · P/F 116 · 钾5.233 · CRRT已停·尿0"}]};
     let selectedCareDate = dailyCareData.days[dailyCareData.days.length - 1].date;
 
     const doctorQuestions = [
-
       {
-        id: "oxygenation",
+        id: "icu-support",
         group: "urgent",
-        title: "P/F 130→126，pH 7.323，呼吸19，呼吸机还要不要动？",
-        detail: "9月27日16:34:39血气。氧合指数130→126，参考400–500，仍标低。PO₂ 78.1→75.7↓。FiO₂仍60%。75.70÷0.60≈126。126是氧合指数。单子上0.20%那一行不是氧合指数，也不是降钙素原。乳酸1.64→1.558，参考0.5–1.6，这张没有标高。pH 7.310→7.323↓，印出来是7.3233，低于7.35。PCO₂ 43.50在35–45。HCO₃⁻ 20.7→22.1。ABE −5.5→−4.0↓。家属说有自主呼吸，不完全依赖呼吸机。9月27日15:00后来补了呼吸19，不要把15:07的14搬过来。呼吸正压15–18仍是9月22日16:11那句。自主呼吸之后，呼吸机和镇静要不要调？"
-      },
-      {
-        id: "hemodynamics",
-        group: "urgent",
-        title: "血压126/36，MAP 56，呼吸19，去甲仍4、多巴胺仍5，还要不要动？",
-        detail: "9月27日15:00口述。血压110/30→126/36，心跳100→89。后来补了MAP 56、呼吸19。126/36按常规算法是66，不要用算的去改口述56。不要把15:07的14搬过来。去甲仍4 mL/h（0.20 mg/h，按0.05 mg/mL换算）。多巴胺仍5 mL/h，不换算毫克，也不要编体重。泵速没变，这不是新的一次调量。赵医生之前说过113/35可以接受。126/36、舒张压36、MAP 56、心跳89，还算可以接受吗？"
+        title: "呼吸机和升压药都还在，下一步还要不要留在ICU？",
+        detail: "9月27日15:00口述血压126/36，心跳89，后来补了MAP 56、呼吸19。去甲仍4 mL/h（0.20 mg/h），多巴胺仍5 mL/h。16:34血气P/F 126（FiO₂ 60%），pH 7.323，乳酸1.558。家属说有自主呼吸，不完全依赖呼吸机。清单近日仍有丙泊酚/瑞芬太尼。赵医生说过：升压药能停、呼吸机能撤、只剩肾脏，才可能转到透析。现在还做不到那一步。呼吸机和镇静要不要减？升压药还要不要动？下一步还要不要留在ICU？"
       },
       {
         id: "infection",
         group: "urgent",
-        title: "抗生素仍评估、今早查房未换，针对肺炎克雷伯菌还要不要动？",
-        detail: "9月27日15:00口述：抗生素仍评估中，截至今早查房未换。9月26日15:00曾说待明日评估是否换抗生素。这次没有新的发烧数字，37.4仍停在昨天那句。不要把07:37血气单上的37.2当成发烧。吕大夫说细菌感染还是很严重。现用消炎药是广谱、很强、主要针对杆菌的一种，药名没说。已经开始培养球菌。10:30:59培养细菌1写了肺炎克雷伯菌。痰培养、分泌物培养和菌量都空着，不要把空行写成阴性，药敏那张没看到，不要编MIC。08:59降钙素原仍是7.209 ng/ml↑，参考0–0.05，这是降钙素原，不是血小板比积0.14%。白细胞29.72→23.42↑，中性粒96.5%。医生认为小肠剩余少，暂时不能进食，并说到可能腹部细菌易位造成二次感染。这是医生认为，不是诊断。球菌培养和完整药敏出来没有？消炎药具体是哪一种？"
+        title: "感染仍重、抗生素还在评估，下一步怎么走？",
+        detail: "10:30培养细菌1写了肺炎克雷伯菌，菌量空着，药敏没看到，不要编MIC。9月27日15:00口述：抗生素仍评估中，截至今早查房未换。现用广谱消炎药主要针对杆菌，药名没说。清单近日多见美罗培南。降钙素原仍是7.209，白细胞23.42。吕大夫说细菌感染仍重，已开始培养球菌。医生认为小肠剩余少、暂时不能进食，并说到可能细菌易位。这是医生认为，不是诊断。现用的是哪一种？药敏出来没有？要不要加药或换药？是否考虑做病原体核酸检测并看抗药性？这是家属要问的，不是医嘱，也不要写成已经做了。"
       },
       {
-        id: "bill-antibiotics",
+        id: "crrt",
         group: "urgent",
-        title: "清单上美罗培南还在用，针对肺炎克雷伯菌要不要加药或换药？",
-        detail: "9月17日起住院清单持续见美罗培南；9月25日还见头孢哌酮/舒巴坦。9/26更完整一截仍见美罗培南×6，这截没有头孢哌酮/舒巴坦。9月27日15:00口述：抗生素仍评估中，截至今早查房未换。吕大夫说现用广谱消炎药主要针对杆菌，药名没说。10:30培养细菌1写了肺炎克雷伯菌，药敏没看到。降钙素原7.209，白细胞29.72→23.42。清单是计费发出量。现用的是不是美罗培南？药敏出来没有？要不要调整？"
+        title: "CRRT下午再开了，肾脏接下来怎么安排？",
+        detail: "9月27日15:00口述CRRT下午一点开始，脱水量755 ml，后来补了速率120 ml/h、脱水320 mL/h。下午一点不是13:00整，不要写成开了多久。120按口述写ml/h，不要改成120 mL/min。抗凝没说。尿量字段空着。07:36肌酐248.90、尿素23.31。22:05钾4.444在3.5–5.3里。22:10 APTT 54.4，这张参考21–45仍标高；这是单点复查，不要当成抗凝已经调好。这一轮目标脱多少？会不会转到透析？再开之后抗凝怎么用？"
       },
       {
-        id: "pathogen-naat",
+        id: "gut-bleeding",
         group: "urgent",
-        title: "关于抗生素，是否考虑核酸检测病原体和抗药性？",
-        detail: "10:30培养细菌1写了肺炎克雷伯菌，菌量空着，药敏那张没看到，不要编MIC。9月27日15:00口述：抗生素仍评估中，截至今早查房未换。现用消炎药是广谱、很强、主要针对杆菌的一种，药名没说。已经开始培养球菌。培养出结果慢，完整药敏还没见到。是否考虑做病原体核酸检测，并看抗药性／耐药基因？这是家属要问的，不是医嘱，也不要写成已经做了或已经有结果。"
-      },
-      {
-        id: "next-window",
-        group: "urgent",
-        title: "CRRT速率120，脱水320 mL/h，已经脱了755，接下来怎么盯？",
-        detail: "9月27日15:00口述「下午一点开始，脱水量755ml」。后来补了CRRT速率120 ml/h、脱水速率320 mL/h。下午一点不是13:00整，也不要写成开了多久。120按口述写ml/h，不要改成120 mL/min，也不要用上一轮的130 mL/min。抗凝没说。CRRT / 尿量字段空着，不要把9月26日的「仍无尿」搬过来。07:36肌酐仍是248.90↑，尿素23.31↑，钠129.9↓。22:05钾4.444，这张没有标异常。9/26清单CRRT约7.08小时 / 672.60元。这一轮目标脱多少、会不会转到透析？"
-      },
-      {
-        id: "coagulation",
-        group: "urgent",
-        title: "CRRT再开，APTT 67.7→54.4，抗凝怎么用？",
-        detail: "9月27日15:00口述CRRT下午一点开始，后来补了速率120 ml/h、脱水320 mL/h，没有说抗凝。22:10:07只看到APTT 67.7→54.4秒↑。这张参考是21–45，没有写危急值。INR、PT、TT、纤维蛋白原这张没抽，不要把07:42的1.11或5.59当成重抽。54.4是APTT秒数，不是氧合指数。这是单点复查，不要当成抗凝已经调好。10:19报告深浅静脉未见异常回声，没有写血栓。血常规Hb现是70，血气Hb 8.0→7.8。再开之后抗凝怎么用？"
-      },
-      {
-        id: "bleeding",
-        group: "urgent",
-        title: "血常规Hb 88→70，还要不要再查隐血、要不要输血？",
-        detail: "9月27日07:44:07血常规Hb 88→70 g/L↓，红细胞2.14，压积20.6。16:34血气Hb 8.0→7.8，Hct 23%。两种方法不要等同。22:10 APTT现是54.4，这张参考21–45仍标高。14:58:56不规则抗体筛查I / II / III和结果都是阴性，不要写成已经输血。9月24日16:27:43便常规仍是黑褐色稀便，镜检未见异常，这张没有隐血。更早隐血免疫法曾阳性。15:00口述：基本每日有便，探视期间便两次，护士医生未反馈颜色异常，明日待确认。不要把黑褐色或隐血写进这一条。颜色不能定量。还要不要再做隐血、目标Hb是多少、要不要输血？"
-      },
-      {
-        id: "shock-cause",
-        group: "urgent",
-        title: "目前休克的主要原因判断是什么？下一步还要不要留在ICU？",
-        detail: "这不是预后结论。乳酸1.64→1.558，降钙素原仍7.209，培养细菌1写了肺炎克雷伯菌，ALT 159→19、CK 434→106已回参考，肌酐仍是248.90，P/F 130→126，pH 7.323↓。9月27日15:00口述血压126/36，心跳89，后来补了MAP 56、呼吸19，去甲仍4、多巴胺仍5。CRRT下午一点开始，脱水量755 ml，后来补了速率120 ml/h、脱水320 mL/h。尿量字段空着。还没关上的是：肌酐仍高、钠129.9↓、P/F仍远低于400、pH低于7.35、ABE −4.0↓、离子钙1.11↓、血常规Hb 70、血气Hb 7.8、APTT 54.4在这张21–45里仍标高、白细胞23.42↑、总胆红素21.8↑、升压药还在用。22:05钾4.444，这张没有标异常。钾和APTT是单点复查，不要当成整盘好转。这次口述字段都空着，没有新的血压。吕大夫说细菌感染仍重。15:00口述：抗生素仍评估中，截至今早查房未换。医生认为小肠剩余少、暂时不能进食，并说到可能细菌易位。这是医生认为，不是诊断。赵医生说过，如果升压药能停、呼吸机能撤、只剩肾脏，才可能转到透析。家属说已有自主呼吸。现在还做不到只剩肾脏那一步。感染性、残余肠缺血、消化道出血还是混合性？"
-      },
-      {
-        id: "source-control",
-        group: "followup",
-        title: "手术中实际发现和处理了什么？",
-        detail: "切除多长肠段、是否造口、是否仍有活力可疑的肠管、需不需要二次探查？"
-      },
-      {
-        id: "lactate",
-        group: "followup",
-        title: "乳酸1.64→1.558，还要不要再盯？",
-        detail: "16:34:39血气乳酸1.64→1.558，参考0.5–1.6，这张没有标高。pH 7.323↓、PCO₂ 43.5、HCO₃⁻ 22.1。ABE −4.0↓。FiO₂仍60%。9月27日15:00血压现是126/36，MAP 56，呼吸19。"
-      },
-      {
-        id: "kidney",
-        group: "followup",
-        title: "这一轮已经脱了755，目标还要脱多少？",
-        detail: "上一轮走了19小时48分，停后肌酐升到423、尿素41.03危急。9月26日上午七点暂停后，9月27日15:00口述下午一点再开，脱水量755 ml。后来补了CRRT速率120 ml/h、脱水速率320 mL/h。下午一点不是13:00整，不要写成开了多久。120按口述写ml/h，不要改成120 mL/min。抗凝没说。尿量字段空着。07:36肌酐248.90、尿素23.31，这张参考分别是57–111和3.6–9.5。22:05钾4.444，这张没有标异常。9/26清单CRRT约7.08小时 / 672.60元。请确认这一轮目标脱多少，还是会转到透析。"
-      },
-      {
-        id: "calcium",
-        group: "followup",
-        title: "钾5.133→4.444，钠仍129.9，离子钙1.11，还要不要补？",
-        detail: "22:05干化学钾5.133→4.444，参考3.5–5.3，这张没有标异常。钠仍是07:36的129.9↓，这张参考137–147，22:05没重抽。氯98.0。16:34血气离子钙1.10→1.11↓，参考1.15–1.29。白蛋白仍是09:31的27.8。9月27日15:00口述CRRT下午一点再开，脱水量755 ml，后来补了速率120 ml/h、脱水320 mL/h。再开之后钾、钠、钙怎么盯？"
-      },
-      {
-        id: "liver",
-        group: "followup",
-        title: "ALT已回19，总胆红素21.8，白蛋白还要不要再查？",
-        detail: "术后2h44m已有ALT 719、AST 1142、总胆红素7.0、白蛋白23.1。峰值在9月17日891/806。9月21日ALT 159、AST 82。08:59 ALT 19.0、AST 26.0已回0–40，AST/ALT 1.377。总胆红素21.8↑，直接胆红素8.8↑。白蛋白曾回到35.8，9月24日09:31又到27.8，08:59没有重抽。07:42 INR 1.11在这张0.94–1.2里，PT% 80.4。09:36曾是 INR 1.19、PT% 68.0↓。数字回落不是诊断。白蛋白还要不要再查？"
-      },
-      {
-        id: "bill-sedation",
-        group: "followup",
-        title: "清单上仍有丙泊酚/瑞芬太尼，撤机和镇静计划是什么？",
-        detail: "近日住院清单常见丙泊酚、瑞芬太尼，有的日子还有咪达唑仑或右美托咪定。9/26更完整一截见丙泊酚×2、瑞芬太尼×3，呼吸机仍24小时。家属说已有自主呼吸、不完全依赖呼吸机。P/F现是126，FiO₂ 60%，pH现是7.323↓。9月27日15:00后来补了呼吸19，没有新的镇静。芬太尼剂量口述里没说清。清单支数不是泵速。现在镇静目标是什么？能不能往下减？"
-      },
-      {
-        id: "heart",
-        group: "followup",
-        title: "CK从8280降到106，还要不要查肌钙蛋白？",
-        detail: "08:59 CK 434→106（参考33–192，已回参考）。CK-MB 23.7→19.30（参考0–24）。LDH仍是463，这张没抽。心电图及床旁心脏超声如何？"
+        title: "小肠剩余少、暂时不能吃，血和肚子还要盯什么？",
+        detail: "手术中切了多长、是否造口、还有没有活力可疑的肠管，都还没记清。15:00口述：医生认为小肠剩余少、暂时不能进食，并说到可能腹部细菌易位。这是医生认为，不是诊断。血常规Hb 70，血气Hb 7.8。14:58不规则抗体筛查阴性。探视期间便两次，护士医生未反馈颜色异常。更早隐血免疫法曾阳性，最近这张便常规没有隐血。还要不要二次探查？什么时候能吃？还要不要查隐血、要不要输血？"
       }
     ];
 
@@ -3584,8 +3511,7 @@ const latestNonBloodGasReport = { h: 296.17, label: "术后296h10m · APTT 54.4"
       const state = getQuestionState();
       const container = document.getElementById("questionGroups");
       const groups = [
-        { id: "urgent", label: "优先确认 · 9项", className: "" },
-        { id: "followup", label: "器官功能与治疗计划 · 7项", className: "followup" }
+        { id: "urgent", label: "先问这4件大事", className: "" }
       ];
       setMarkup(container, groups.map(group => {
         const items = doctorQuestions.filter(question => question.group === group.id).map(question => `
@@ -3629,14 +3555,9 @@ const latestNonBloodGasReport = { h: 296.17, label: "术后296h10m · APTT 54.4"
       const state = getQuestionState();
       const pending = doctorQuestions.filter(question => !state[question.id]);
       const lines = ["请协助确认以下问题："];
-      ["urgent", "followup"].forEach(group => {
-        const questions = pending.filter(question => question.group === group);
-        if (!questions.length) return;
-        lines.push("", group === "urgent" ? "【优先确认】" : "【器官功能与治疗计划】");
-        questions.forEach((question, index) => {
-          lines.push(`${index + 1}. ${question.title}`);
-          lines.push(`   ${question.detail}`);
-        });
+      pending.forEach((question, index) => {
+        lines.push(`${index + 1}. ${question.title}`);
+        lines.push(`   ${question.detail}`);
       });
       return lines.join("\n");
     }

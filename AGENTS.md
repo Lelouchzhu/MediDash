@@ -56,7 +56,7 @@ If the family only said “high / about half”, leave mL blank rather than gues
    - `baseReadings` — ABG
    - `labReadings` — chem / CBC / coag / inflammation
    - `vitalReadings` — oral BP / HR / pressors (approximate `h`)
-   - cards, insights, timeline, `doctorQuestions`
+   - cards, insights, timeline, `doctorQuestions` (keep 3–4 big topics: vent/pressors/ICU, infection, CRRT/kidney, gut/bleeding; fold new numbers into those; do not re-expand over single-point lab wiggles)
    - `latestNonBloodGasReport` when a non-ABG clock is newer than the last arterial
    - new fields also go in `metricConfig` + `metricGroups`
 4. Update `CONTEXT.md` if the clinical story changed.

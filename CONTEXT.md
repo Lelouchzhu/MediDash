@@ -10,7 +10,7 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@a243d59ac9f3a6546d3f57bdd52f68b75b25700f/index.xhtml  
 **备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@a243d59ac9f3a6546d3f57bdd52f68b75b25700f/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
-国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是 **最新化验：术后296h10m · APTT 54.4**。9月27日15:00 口述血压 **126/36**，心跳 **89**，后来补了 MAP **56**、呼吸 **19**、CRRT速率 **120** ml/h、脱水速率 **320** mL/h。去甲仍 **4** mL/h（0.20 mg/h），多巴胺仍 **5** mL/h。CRRT「下午一点开始」，脱水量 **755** ml。22:05 钾 **4.444**（无标高）。22:10 APTT **54.4**↑（21–45）。这两张是单点复查，口述字段都空着，没有新的血压。16:34 乳酸仍是 **1.558**，P/F **126**，pH **7.323**↓。肌酐仍是 **248.90**，白细胞仍是 **23.42**，血常规Hb **70**。降钙素原仍是 **7.209**。培养细菌1 **肺炎克雷伯菌**。抗生素仍评估中，截至今早查房未换。
+国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是 **最新化验：术后296h10m · APTT 54.4**。9月27日15:00 口述血压 **126/36**，心跳 **89**，后来补了 MAP **56**、呼吸 **19**、CRRT速率 **120** ml/h、脱水速率 **320** mL/h。去甲仍 **4** mL/h（0.20 mg/h），多巴胺仍 **5** mL/h。CRRT「下午一点开始」，脱水量 **755** ml。22:05 钾 **4.444**（无标高）。22:10 APTT **54.4**↑（21–45）。这两张是单点复查，口述字段都空着，没有新的血压。16:34 乳酸仍是 **1.558**，P/F **126**，pH **7.323**↓。肌酐仍是 **248.90**，白细胞仍是 **23.42**，血常规Hb **70**。降钙素原仍是 **7.209**。培养细菌1 **肺炎克雷伯菌**。抗生素仍评估中，截至今早查房未换。查房清单已收成 **4件大事**（呼吸循环/ICU、感染、CRRT肾脏、肚子和血），不再按单点化验拆成一长串。
 
 ---
 
@@ -116,7 +116,7 @@ Trend: falling from the 170 peak through **8.206**, then **rose** to **9.893**, 
 - Screenshots for **2026-09-15 … 2026-09-26** live under `testset/reports/billing/`. Structured summary is `data/daily-care.json` (also embedded as `dailyCareData` in `index.html`).
 - **How to read:** bill lines are **issued / charged** amounts, not pump mL/h. Cross-check pressors with `vitalReadings` oral doses. Agent-received copies are narrow (~100–230 px); treat vial counts as medium confidence until hires re-upload.
 - **Care arc from bills:** piperacillin/tazobactam (9/16) → **meropenem** from 9/17 (plus tigecycline that day; cefoperazone/sulbactam co-billed 9/25). CRRT billing appears 9/17 → near-full day 9/18 → gap 9/22 → restart 9/23 → **7.08 h / 672.60 ¥ on 9/26** (fits oral pause **上午七点**). 9/26 fuller crop also bills ventilator **24 h** and ECG **24 h** (older crop had read ECG as 9.44 h). Ventilator billed most days. Sedation often propofol/remifentanil; albumin billed repeatedly.
-- UI: section **每日用药与治疗** / `dailyCareSection` (chip picker + CRRT-hour chart + lab cross-links). New doctor questions `bill-antibiotics` and `bill-sedation`.
+- UI: section **每日用药与治疗** / `dailyCareSection` (chip picker + CRRT-hour chart + lab cross-links). Doctor checklist is **4 big items** (`icu-support`, `infection`, `crrt`, `gut-bleeding`). Antibiotics, NAAT, meropenem billing, CRRT anticoagulation, sedation/weaning, surgery details, and bleeding fold into those. Do not re-expand into a 16-item list over single-point lab wiggles.
 
 ### Morning labs — 2026-09-21 09:16–09:18 (postop 139h16–18m)
 
@@ -895,7 +895,7 @@ Agrees in direction with the 06:46 ABG Hb 7.1 g/dL / Hct 21%. Do not equate the 
 | Bedside BP / HR / RR / pressors | `vitalReadings` (oral). `h` and the clock label are the **message receipt** time when one is known. The first five points stay approximate. The 9/23 15:45 and 9/24 15:50 points have no MAP. |
 | Metric catalog + categories | `metricConfig` + `metricGroups` (分类汇总 sparklines + 详细趋势). First group is **循环/支持** (`map`, `sbp`, `dbp`, `hr`, `rr`, `ne`, `da`). Dedicated BP + pressor charts sit under 循环与支持. |
 | Status cards / insights / timeline / expandable reports | HTML sections near top/middle |
-| Doctor checklist | `doctorQuestions` |
+| Doctor checklist | `doctorQuestions` — 4 big items only (`icu-support`, `infection`, `crrt`, `gut-bleeding`) |
 | Latest non-ABG clock for hero pill | `latestNonBloodGasReport` |
 | Report screenshot archive | `testset/reports/` + `testset/manifest.json` |
 
