@@ -1888,9 +1888,9 @@
           <div class="question-summary-top">
             <div>
               <h3>查房沟通清单</h3>
-              <p>先问危及当前稳定性的8项，再补充7项器官功能和治疗计划。</p>
+              <p>先问危及当前稳定性的9项，再补充7项器官功能和治疗计划。</p>
             </div>
-            <span class="question-count" id="questionCount">0 / 15 已确认</span>
+            <span class="question-count" id="questionCount">0 / 16 已确认</span>
           </div>
           <div class="progress-track" aria-hidden="true">
             <div class="progress-value" id="questionProgress"></div>
@@ -3051,6 +3051,12 @@ const latestNonBloodGasReport = { h: 289.00, label: "术后289h · 126/36", type
         detail: "9月17日起住院清单持续见美罗培南；9月25日还见头孢哌酮/舒巴坦。9/26更完整一截仍见美罗培南×6，这截没有头孢哌酮/舒巴坦。9月27日15:00口述：抗生素仍评估中，截至今早查房未换。吕大夫说现用广谱消炎药主要针对杆菌，药名没说。10:30培养细菌1写了肺炎克雷伯菌，药敏没看到。降钙素原7.209，白细胞29.72→23.42。清单是计费发出量。现用的是不是美罗培南？药敏出来没有？要不要调整？"
       },
       {
+        id: "pathogen-naat",
+        group: "urgent",
+        title: "关于抗生素，是否考虑核酸检测病原体和抗药性？",
+        detail: "10:30培养细菌1写了肺炎克雷伯菌，菌量空着，药敏那张没看到，不要编MIC。9月27日15:00口述：抗生素仍评估中，截至今早查房未换。现用消炎药是广谱、很强、主要针对杆菌的一种，药名没说。已经开始培养球菌。培养出结果慢，完整药敏还没见到。是否考虑做病原体核酸检测，并看抗药性／耐药基因？这是家属要问的，不是医嘱，也不要写成已经做了或已经有结果。"
+      },
+      {
         id: "next-window",
         group: "urgent",
         title: "CRRT下午一点再开，脱水755，脱水率320，接下来怎么盯？",
@@ -3517,7 +3523,7 @@ const latestNonBloodGasReport = { h: 289.00, label: "术后289h · 126/36", type
       const state = getQuestionState();
       const container = document.getElementById("questionGroups");
       const groups = [
-        { id: "urgent", label: "优先确认 · 8项", className: "" },
+        { id: "urgent", label: "优先确认 · 9项", className: "" },
         { id: "followup", label: "器官功能与治疗计划 · 7项", className: "followup" }
       ];
       setMarkup(container, groups.map(group => {

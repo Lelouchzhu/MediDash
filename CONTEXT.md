@@ -919,4 +919,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** 2026-09-27 15:00 oral. BP **126/36**, HR **89**, NE **4**, DA **5**. CRRT restarted **下午一点**, UF **755 ml**, rate **320 ml** (not written as /h). Antibiotics still under review; not changed as of this morning’s rounds. No new lab images. Labs unchanged: lactate **1.64**, P/F **130**, pH **7.310**, Cr **248.90**, APTT **65.2**, CBC Hb **70**. Hero **最新口述：术后289h · 126/36**. Manifest still **179**. Trend-direction only, not a survival estimate.
+**Last updated:** Added family doctor question `pathogen-naat`: whether to consider nucleic-acid testing for pathogens and resistance. Not an order and not a result. Urgent list is now 9 items (16 total). Clinical numbers unchanged from the 2026-09-27 15:00 oral. Hero still **最新口述：术后289h · 126/36**.
