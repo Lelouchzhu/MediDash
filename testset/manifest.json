@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 185,
+  "count": 190,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3419,6 +3419,107 @@
       },
       "sha256_16": "e10811480b1f1aa7",
       "bytes": 186217
+    },
+    {
+      "id": "20260927T221835__abg.jpg",
+      "path": "reports/abg/20260927T221835__abg.jpg",
+      "category": "abg",
+      "source_filename": "01a0e529-0237-783e-a7ff-af6bf59794a4.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-27T22:18:35",
+      "type": "血气",
+      "note": "Hires arterial 3520x3772. Clock 22:18:35. pH 7.3882 in 7.35-7.45 store 7.388. PCO2 40.10 in 35-45. PO2 119.60 high. HCO3 23.30. ABE -1.80. Store ABE not SBE -1.60. Lactate 1.778 high, ref 0.5-1.6. FiO2 50%. Printed P/F 239.00 low. 119.60/0.50=239.2 printed 239. The 0.37% row is not P/F. Hb 9.50 Hct 28.00 iCa 1.111 low sO2 98.50 high. Temp 36.6 is not fever. Temp-corrected pH 7.3888. Family later said transfusion yesterday; this Hb 7.8->9.5 is consistent but do not invent units from the gas sheet.",
+      "relative_h": 296.31,
+      "extracted": {
+        "ph": 7.388,
+        "pco2": 40.1,
+        "po2": 119.6,
+        "hco3": 23.3,
+        "be": -1.8,
+        "lactate": 1.778,
+        "fio2": 50,
+        "pf": 239,
+        "hb": 9.5,
+        "ca": 1.11
+      },
+      "sha256_16": "f210ae499a318c9c",
+      "bytes": 1288324
+    },
+    {
+      "id": "20260927T120000__01a0e529-0247-7964-932a-9a687169fafe.jpg",
+      "path": "reports/billing/20260927T120000__01a0e529-0247-7964-932a-9a687169fafe.jpg",
+      "category": "billing",
+      "source_filename": "01a0e529-0247-7964-932a-9a687169fafe.jpg",
+      "labeled": true,
+      "extracted": true,
+      "preferred": true,
+      "report_time": "2026-09-27T12:00:00",
+      "relative_h": 286.0,
+      "type": "住院清单",
+      "note": "Daily inpatient bill 2026-09-27. Account prepaid 58000 total 112435.64 balance -54435.64. CRRT 10.83 h / 1028.85 (95/h). Ventilator 24 h. ECG 24 h. Meropenem x6. Propofol x4. Remifentanil x3. Albumin x3 / 1236. Packed RBC 2 units (悬浮红细胞 420; leukoreduced add-on 40). Blood storage 20. Crossmatch and ABO on this bill. NE/DA vial counts are not pump mL/h. Family said transfusion yesterday; record 2 units from this bill only.",
+      "sha256_16": "56a2b390abc6b1f2",
+      "bytes": 2083369
+    },
+    {
+      "id": "20260928T015845__aptt.jpg",
+      "path": "reports/coag/20260928T015845__aptt.jpg",
+      "category": "coag",
+      "source_filename": "01a0e529-0258-78ff-9731-0c284a2d3446.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-28T01:58:45",
+      "type": "凝血",
+      "note": "APTT only. Clock 01:58:45. APTT 60.8 sec high, ref 21-45, not marked critical. Was 54.4 at 22:10. INR, PT, TT, fibrinogen not on this sheet. 60.8 is APTT seconds, not P/F. Phone status bar 5:47 is not the report clock. No identifiers in the UI.",
+      "relative_h": 299.98,
+      "extracted": {
+        "aptt": 60.8
+      },
+      "sha256_16": "933941dd3d18c0d6",
+      "bytes": 326401
+    },
+    {
+      "id": "20260928T015350__k.jpg",
+      "path": "reports/chemistry/20260928T015350__k.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0e529-026c-7749-9c18-cb8f25e45ff0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-28T01:53:50",
+      "type": "生化",
+      "note": "Dry-chemistry potassium only. Clock 01:53:50. K 4.111 mmol/L, ref 3.5-5.3, no flag. Was 4.444 at 22:05. Creatinine, urea, sodium not redrawn. Not procalcitonin and not P/F. Phone status bar 5:47 is not the report clock.",
+      "relative_h": 299.9,
+      "extracted": {
+        "k": 4.111
+      },
+      "sha256_16": "ba614bffe9163a37",
+      "bytes": 308533
+    },
+    {
+      "id": "20260928T022134__abg.jpg",
+      "path": "reports/abg/20260928T022134__abg.jpg",
+      "category": "abg",
+      "source_filename": "01a0e529-027c-7532-b2ea-c83f24830e35.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-28T02:21:34",
+      "type": "血气",
+      "note": "Hires arterial 3520x3772. Clock 02:21:34. pH 7.3377 low store 7.338. PCO2 49.90 high. PO2 76.40 low. HCO3 26.10 high. ABE 0.30. Store ABE not SBE 0.10. Lactate 1.37 in 0.5-1.6 no flag. FiO2 35%. Printed P/F 218.00 low. 76.40/0.35=218.29 printed 218. The 0.41% row is not P/F. Hb 8.00 Hct 24.00 iCa 1.15 in 1.15-1.29 sO2 95.00. Temp 37.4 is machine T, not the 9/26 15:00 fever. Temp-corrected pH 7.3311 low PCO2 50.80 high.",
+      "relative_h": 300.36,
+      "extracted": {
+        "ph": 7.338,
+        "pco2": 49.9,
+        "po2": 76.4,
+        "hco3": 26.1,
+        "be": 0.3,
+        "lactate": 1.37,
+        "fio2": 35,
+        "pf": 218,
+        "hb": 8.0,
+        "ca": 1.15
+      },
+      "sha256_16": "7b9062c2489b6ceb",
+      "bytes": 1277636
     }
   ]
 }

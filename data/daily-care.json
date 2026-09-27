@@ -2,10 +2,10 @@
   "version": 1,
   "disclaimer": "来自每日住院清单的计费发出量，不是泵上实时剂量。升压药请对照口述 mL/h。截图在 agent 侧偏窄，支数/小时标 medium confidence；有明确费用可核对的 CRRT 金额优先采用。",
   "account_snapshot": {
-    "prepaid": 51000,
-    "total_cost": 103142.72,
-    "balance": -52142.72,
-    "note": "截图时账户快照，不是单日费用。"
+    "prepaid": 58000,
+    "total_cost": 112435.64,
+    "balance": -54435.64,
+    "note": "9月27日清单顶栏账户快照，不是单日费用。"
   },
   "days": [
     {
@@ -420,6 +420,49 @@
         "去甲与多巴酚丁胺有计费支数，对照口述泵速，不要把支数当 mL/h"
       ],
       "lab_link": "同日：PCT 7.209 · Cr 159 · WBC 29.72 · 肺炎克雷伯菌 · 21:50乳酸1.377 · P/F 116 · 钾5.233 · CRRT已停·尿0"
+    },
+    {
+      "date": "2026-09-27",
+      "h": 286,
+      "label": "9月27日 · 术后D12",
+      "postop_day": 12,
+      "confidence": "medium",
+      "source": "testset/reports/billing/20260927T120000__01a0e529-0247-7964-932a-9a687169fafe.jpg",
+      "support": {
+        "ventilator": true,
+        "ventilator_h": 24,
+        "crrt": true,
+        "crrt_h": 10.83,
+        "crrt_cost": 1028.85,
+        "invasive_hemo": false,
+        "surgery": false,
+        "ecg_h": 24
+      },
+      "antibiotics": [
+        { "name": "美罗培南", "qty": 6 }
+      ],
+      "vasopressors": [
+        { "name": "去甲肾上腺素", "note": "清单支数；口述仍是去甲4+多巴胺5，勿把支数当成泵速" },
+        { "name": "多巴酚丁胺" }
+      ],
+      "sedatives": [
+        { "name": "丙泊酚", "qty": 4 },
+        { "name": "瑞芬太尼", "qty": 3 }
+      ],
+      "nutrition": [
+        { "name": "人血白蛋白(进口)", "qty": 3, "cost": 1236 },
+        { "name": "脂肪乳氨基酸葡萄糖" }
+      ],
+      "other_key": ["悬浮红细胞2单位", "去白细胞悬浮红细胞加收2单位", "储血费", "ABO血型鉴定", "交叉配血", "红细胞抗体筛查", "泮托拉唑", "布地奈德", "呋塞米", "微量泵约285小时（多泵）"],
+      "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": 5 },
+      "highlights": [
+        "血费：悬浮红细胞2单位 / 420元，去白细胞加收2单位 / 40元——对照家属说昨天应该已经有输血，不要编钟点或更多单位",
+        "CRRT 约 10.83 小时 / 1028.85 元（95元/时）——与口述下午一点再开相符",
+        "呼吸机全日 24 小时；心电监测 24 小时 / 192 元",
+        "美罗培南×6；丙泊酚×4、瑞芬太尼×3；白蛋白×3 / 1236",
+        "去甲与多巴酚丁胺有计费支数，对照口述泵速，不要把支数当 mL/h"
+      ],
+      "lab_link": "同日：16:34乳酸1.558 · P/F 126→22:18 P/F 239 · 血气Hb 7.8→9.5 · APTT 54.4 · 钾4.444 · 抗体筛查阴性"
     }
   ]
 }
