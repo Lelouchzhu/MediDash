@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 175,
+  "count": 179,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3218,6 +3218,93 @@
       "relative_h": 262.0,
       "preferred": true,
       "note": "Fuller same-day 9/26 inpatient bill (372px wide). CRRT 7.08 h / 672.60 (95/h). Ventilator 24 h. ECG 24 h / 192. Meropenem 0.5 g x6. Remifentanil x3. Propofol x2. Albumin import 10 g x3 / 1260. NE and dobutamine billed vials, not pump mL/h. Account snapshot prepaid 51000, total 103142.72, balance -52142.72. Kind was blank; image is a daily bill."
+    },
+    {
+      "id": "20260927T073648__k-na-urea-cr.jpg",
+      "path": "reports/chemistry/20260927T073648__k-na-urea-cr.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790466851303-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-27T07:36:48",
+      "type": "生化",
+      "note": "Dry-chemistry panel. Clock 07:36:48. K 5.37 high (3.5-5.3). Na 129.9 low (137-147). Cl 98.0 in 96-108. Urea 23.31 high (3.6-9.5). Creatinine 248.90 high (57-111). Phone status bar 07:45 is not the report clock. Oral fields all blank. Not procalcitonin and not P/F.",
+      "relative_h": 281.61,
+      "extracted": {
+        "k": 5.37,
+        "na": 129.9,
+        "cl": 98.0,
+        "urea": 23.31,
+        "creatinine": 248.9
+      },
+      "sha256_16": "729ce9381620eab4",
+      "bytes": 266224
+    },
+    {
+      "id": "20260927T073711__abg.jpg",
+      "path": "reports/abg/20260927T073711__abg.jpg",
+      "category": "abg",
+      "source_filename": "image-1790466851301-1.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-27T07:37:11",
+      "type": "血气",
+      "note": "Arterial. Clock 07:37:11. pH 7.310 low. PCO2 42.10 in 35-45. PO2 78.10 low. HCO3 20.70 low. ABE -5.50 low. SBE -5.20 low. Store ABE. Lactate 1.64 high, ref 0.5-1.6. FiO2 60%. Printed P/F 130.00 low. 78.10/0.60=130. The 0.21% pO2(a)/FO2(I) row is not P/F. Hb 8.00 Hct 24.00 iCa 1.10 low sO2 94.50. Temp 37.2 is not the 15:00 fever 37.4. Temp-corrected pH 7.307 PCO2 42.50. Oral fields all blank.",
+      "relative_h": 281.62,
+      "extracted": {
+        "ph": 7.31,
+        "pco2": 42.1,
+        "po2": 78.1,
+        "hco3": 20.7,
+        "be": -5.5,
+        "lactate": 1.64,
+        "fio2": 60,
+        "pf": 130,
+        "hb": 8.0,
+        "ca": 1.1
+      },
+      "sha256_16": "e5755743d91999b5",
+      "bytes": 427024
+    },
+    {
+      "id": "20260927T074249__coag.jpg",
+      "path": "reports/coag/20260927T074249__coag.jpg",
+      "category": "coag",
+      "source_filename": "image-1790466851316-3.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-27T07:42:49",
+      "type": "凝血",
+      "note": "Clock 07:42:49. APTT 65.2 high, ref 21-45. TT 12.9 low (14-21). PT 13.3 in 11-14.3. PT% 80.4 in 80-120. INR 1.11 in 0.94-1.2. Fbg 5.59 high (2-4.5). 65.2 is APTT seconds, not P/F. Phone status bar 07:45 is not the report clock. Oral fields all blank.",
+      "relative_h": 281.71,
+      "extracted": {
+        "aptt": 65.2,
+        "tt": 12.9,
+        "pt": 13.3,
+        "inr": 1.11,
+        "fbg": 5.59
+      },
+      "sha256_16": "daa935746bb5fd5c",
+      "bytes": 274191
+    },
+    {
+      "id": "20260927T074407__cbc.jpg",
+      "path": "reports/cbc/20260927T074407__cbc.jpg",
+      "category": "cbc",
+      "source_filename": "image-1790466851304-2.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-27T07:44:07",
+      "type": "血常规",
+      "note": "Clock 07:44:07. WBC 23.42 high. Hb 70.0 low. HCT 20.6. PLT 110 low. NEUT% 96.5 high. NEUT# 22.59. LYMPH# 0.29 low. Plateletcrit 0.14% low (0.17-0.35) is not procalcitonin. Oral fields all blank.",
+      "relative_h": 281.74,
+      "extracted": {
+        "wbc": 23.42,
+        "hbg": 70,
+        "plt": 110
+      },
+      "sha256_16": "7b9e11265207fe75",
+      "bytes": 311156
     }
   ]
 }
