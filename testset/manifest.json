@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 179,
+  "count": 183,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3305,6 +3305,86 @@
       },
       "sha256_16": "7b9e11265207fe75",
       "bytes": 311156
+    },
+    {
+      "id": "20260927T145856__antibody.jpg",
+      "path": "reports/other/20260927T145856__antibody.jpg",
+      "category": "other",
+      "source_filename": "01a0e2f1-0c95-7cce-a428-510f3aefdef8.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-27T14:58:56",
+      "type": "抗体筛查",
+      "note": "Irregular-antibody screen. Clock 14:58:56. Antibody I / II / III and overall result all negative. Phone status bar 4:01:01 is not the report clock. No identifiers in the UI. Not a blood gas and not MIC.",
+      "relative_h": 288.98,
+      "extracted": {
+        "antibody_i": "negative",
+        "antibody_ii": "negative",
+        "antibody_iii": "negative",
+        "antibody_result": "negative"
+      },
+      "sha256_16": "0852af25e0699e7e",
+      "bytes": 352389
+    },
+    {
+      "id": "20260927T162352__k.jpg",
+      "path": "reports/chemistry/20260927T162352__k.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0e2f1-0ca9-70d2-92af-7ae069b98449.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-27T16:23:52",
+      "type": "生化",
+      "note": "Dry-chemistry potassium only. Clock 16:23:52. K 5.133 mmol/L, ref 3.5-5.3, no flag. Was 5.37 high at 07:36. Creatinine, urea, sodium not redrawn. Not procalcitonin and not P/F. Phone status bar 4:34:34 is not the report clock.",
+      "relative_h": 290.4,
+      "extracted": {
+        "k": 5.133
+      },
+      "sha256_16": "5b01ab171b325498",
+      "bytes": 323126
+    },
+    {
+      "id": "20260927T162706__aptt.jpg",
+      "path": "reports/coag/20260927T162706__aptt.jpg",
+      "category": "coag",
+      "source_filename": "01a0e2f1-0cbb-7e63-89ca-b238c3339932.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-27T16:27:06",
+      "type": "凝血",
+      "note": "APTT only. Clock 16:27:06. APTT 67.7 sec high, ref 21-45, not marked critical. Was 65.2 at 07:42. INR, PT, TT, fibrinogen not on this sheet. 67.7 is APTT seconds, not P/F. Phone status bar 4:34:34 is not the report clock.",
+      "relative_h": 290.45,
+      "extracted": {
+        "aptt": 67.7
+      },
+      "sha256_16": "a13521eb089f3670",
+      "bytes": 333970
+    },
+    {
+      "id": "20260927T163439__abg.jpg",
+      "path": "reports/abg/20260927T163439__abg.jpg",
+      "category": "abg",
+      "source_filename": "01a0e2f1-0ccf-7592-b64c-3060caffc6da.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-27T16:34:39",
+      "type": "血气",
+      "note": "Hires arterial 3520x3772. Clock 16:34:39. pH 7.3233 low store 7.323. PCO2 43.50 in 35-45 no flag. PO2 75.70 low. HCO3 22.10 in 22-26. ABE -4.00 low. Store ABE not SBE -3.70. Lactate 1.558 in 0.5-1.6 no flag. FiO2 60%. Printed P/F 126.00 low. 75.70/0.60=126.17 printed 126. The 0.20% row is not P/F. Hb 7.80 Hct 23.00 iCa 1.11 low sO2 94.00. Temp 37.00 is not fever. Temp-corrected pH 7.3233 PCO2 43.50.",
+      "relative_h": 290.58,
+      "extracted": {
+        "ph": 7.323,
+        "pco2": 43.5,
+        "po2": 75.7,
+        "hco3": 22.1,
+        "be": -4.0,
+        "lactate": 1.558,
+        "fio2": 60,
+        "pf": 126,
+        "hb": 7.8,
+        "ca": 1.11
+      },
+      "sha256_16": "d86927b1491ba338",
+      "bytes": 1305767
     }
   ]
 }
