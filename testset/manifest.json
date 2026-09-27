@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 183,
+  "count": 185,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3385,6 +3385,40 @@
       },
       "sha256_16": "d86927b1491ba338",
       "bytes": 1305767
+    },
+    {
+      "id": "20260927T220518__k.jpg",
+      "path": "reports/chemistry/20260927T220518__k.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790521836160-1.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-27T22:05:18",
+      "type": "生化",
+      "note": "Dry-chemistry potassium only. Clock 22:05:18. K 4.444 mmol/L, ref 3.5-5.3, no flag. Was 5.133 at 16:23. Creatinine, urea, sodium not redrawn. Not procalcitonin and not P/F. Phone status bar 10:13 is not the report clock. Oral fields all blank.",
+      "relative_h": 296.09,
+      "extracted": {
+        "k": 4.444
+      },
+      "sha256_16": "8371f5d09a4b724b",
+      "bytes": 176284
+    },
+    {
+      "id": "20260927T221007__aptt.jpg",
+      "path": "reports/coag/20260927T221007__aptt.jpg",
+      "category": "coag",
+      "source_filename": "image-1790521836158-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-27T22:10:07",
+      "type": "凝血",
+      "note": "APTT only. Clock 22:10:07. APTT 54.4 sec high, ref 21-45, not marked critical. Was 67.7 at 16:27. INR, PT, TT, fibrinogen not on this sheet. 54.4 is APTT seconds, not P/F. Phone status bar 10:13 is not the report clock. Oral fields all blank.",
+      "relative_h": 296.17,
+      "extracted": {
+        "aptt": 54.4
+      },
+      "sha256_16": "e10811480b1f1aa7",
+      "bytes": 186217
     }
   ]
 }
