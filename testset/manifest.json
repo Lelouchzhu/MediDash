@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 201,
+  "count": 202,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3740,6 +3740,30 @@
       },
       "sha256_16": "58c8f0f08f380ce7",
       "bytes": 321238
+    },
+    {
+      "id": "20260928T120000__876C918D-7984-4835-95E9-782347C1F5B5_L0_001.jpg",
+      "path": "reports/billing/20260928T120000__876C918D-7984-4835-95E9-782347C1F5B5_L0_001.jpg",
+      "category": "billing",
+      "source_filename": "876C918D-7984-4835-95E9-782347C1F5B5_L0_001.jpg",
+      "labeled": true,
+      "extracted": {
+        "crrt_h": 8.54,
+        "crrt_cost": 811.3,
+        "ventilator_h": 24,
+        "ecg_h": 24,
+        "meropenem_qty": 6,
+        "ceftazidime_avibactam_qty": 2,
+        "propofol_qty": 3,
+        "remifentanil_qty": 3
+      },
+      "preferred": true,
+      "report_time": "2026-09-28T12:00:00",
+      "relative_h": 310.0,
+      "type": "住院清单",
+      "note": "Daily inpatient bill 2026-09-28 (date button). Account prepaid 58000 total 117723.22 balance -59723.22. CRRT 8.54 h / 811.30 (95/h) — fits oral 今早七点暂停; do not write 8.54 as the stop clock. Ventilator 24 h / 480. ECG 24 h / 192. Meropenem x6 / 55.98. Ceftazidime-avibactam (泰定平) x2 / 680 — billed, not a written switch. Propofol x3. Remifentanil x3. No albumin. No packed RBC; 静脉输血 1组 is a treatment fee, not 1 unit. Bronchoscopy 1 / 200 — no result on this bill. CT平扫 + 第2部位 billed. PCT assay billed, no new PCT number. NE x9 DA x4 vial counts are not pump mL/h. Micro pump 138 h. Suction nursing x5. No identifiers in the UI.",
+      "sha256_16": "930234ccac3beec8",
+      "bytes": 1781540
     }
   ]
 }
