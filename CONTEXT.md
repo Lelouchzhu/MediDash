@@ -7,8 +7,8 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **Prior agent run (Allmond-bound, then continued here):** https://cursor.com/agents/bc-01a0a01a-a6eb-72c7-b052-ba5e14ed8b1b  
 **Conversation summary (current):** [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md)  
 **Conversation summary (through 9/18 13:00 ABG):** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
-**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@d507bc688eccec65ec06f82d444c9d8c3068e7aa/index.xhtml  
-**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@d507bc688eccec65ec06f82d444c9d8c3068e7aa/index.xhtml  
+**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@acadc2e3574325f4df181f8ae93b07b101fa52b2/index.xhtml  
+**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@acadc2e3574325f4df181f8ae93b07b101fa52b2/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
 国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是 **最新口述：术后313h · 143/36**（9月28日15:00 口述新于 10:02 生化）。血压 **126/36 → 143/36**，心跳 **89 → 91**。后来补了 MAP **62**、呼吸 **17**。仍记在这一条，不另开时钟。143/36 按常规算法约 72，不要用算的去改口述 62。不要把昨天的 19 搬过来。去甲仍 **4** mL/h（0.20 mg/h），多巴胺仍 **5** mL/h。泵速没变。CRRT「今早七点暂停」。七点不是 07:00 整，也不要写成停了多久。不要把昨天的 120 / 320 搬过来。尿量字段空着，不要把「仍无尿」搬过来。这次没有新的化验单，manifest 仍是 **197**。化验数字仍停在早上：07:06 血气 P/F **139**（FiO₂ 60%），乳酸 **1.91**↑，pH **7.331**↓，血气Hb **8.7**，iCa **1.19**。08:45 血常规白细胞 **18.20**↑，Hb **90**，血小板 **114**。10:02 钾 **4.04**，钠 **136.36**↓，肌酐 **139.0**↑（这张参考 41–81），尿素 **12.06**↑，白蛋白 **31.5**↓，BNP **17678.25**↑（单子印了心衰分界，不是诊断）。09:11 APTT **49.1**↑（这张参考 23.3–32.5）。09:57 镜检：WBC内G-杆菌+；单子没写标本种类，不要写成痰培养。早上说 CT 会安排，到 15:00 还没有部位或结果，不要当成已经做了。降钙素原仍是 **7.209**。培养细菌1 **肺炎克雷伯菌**。抗生素仍评估中，截至今早查房未换。查房清单保持 **4件大事**（呼吸循环/ICU、感染、CRRT肾脏、肚子和血）；把 143/36、MAP 62、呼吸 17、CRRT 今早七点暂停、Cr 139、APTT 49.1、镜检、CT计划、BNP 折进原条。
 
