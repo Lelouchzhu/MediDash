@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 197,
+  "count": 201,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3667,6 +3667,79 @@
       },
       "sha256_16": "7ddc803dbd18d549",
       "bytes": 564767
+    },
+    {
+      "id": "20260928T094752__7ED907DB-5140-432E-8349-99C68C7D37AC_L0_001.jpg",
+      "path": "reports/imaging/20260928T094752__7ED907DB-5140-432E-8349-99C68C7D37AC_L0_001.jpg",
+      "category": "imaging",
+      "source_filename": "7ED907DB-5140-432E-8349-99C68C7D37AC_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-28T09:47:52",
+      "type": "CT平扫",
+      "relative_h": 307.8,
+      "note": "Head CT clock 09:47:52. Phone status 9:51 is not the report clock. Quote the printed 检查结果 only; do not write a diagnosis. Impression text: bilateral frontal subcortical white-matter ischemic foci; periventricular white-matter degeneration; bilateral otomastoiditis; bilateral sphenoid sinusitis. Description: slightly low-density patches in bilateral frontal subcortical white matter, blurred margins; symmetric slightly low-density foci beside lateral ventricles; midline centered; ventricles/CSF spaces not enlarged; skull/jaw bones intact, no fracture; increased density in bilateral mastoid antra; sphenoid mucosal thickening. No identifiers in the UI.",
+      "extracted": {},
+      "sha256_16": "6ea44c5f310d33b6",
+      "bytes": 423976
+    },
+    {
+      "id": "20260928T100557__61C20C7A-ECF8-47F5-8989-0D21DFD782D0_L0_001.jpg",
+      "path": "reports/imaging/20260928T100557__61C20C7A-ECF8-47F5-8989-0D21DFD782D0_L0_001.jpg",
+      "category": "imaging",
+      "source_filename": "61C20C7A-ECF8-47F5-8989-0D21DFD782D0_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-28T10:05:57",
+      "type": "CT平扫第2部位",
+      "relative_h": 308.1,
+      "note": "Chest/upper-abdomen CT clock 10:05:57, titled CT平扫检查第2部位. Phone status 9:50 is not the report clock. Quote printed 检查结果; do not write a diagnosis. Result text (phone crop punctuation run-on): bilateral pneumonia, bilateral lower-lobe consolidation, bilateral pleural effusion; vs 2026-09-15 CT some lesions new; interstitial pneumonia/edema possible; right-lung calcified focus; small pericardial effusion; peritoneal effusion. Description also has GGO/solid patches, air bronchogram, crescent pleural fluid, thickened interlobular septa, calcified nodule, hilar/mediastinal nodes, ET tube, NG tube, SVC catheter, perihepatic/perisplenic fluid. No identifiers in the UI.",
+      "extracted": {},
+      "sha256_16": "7063ac056956573d",
+      "bytes": 468073
+    },
+    {
+      "id": "20260928T210709__24941AC8-F097-4BA4-91AE-BAE94D07FC54_L0_001.jpg",
+      "path": "reports/abg/20260928T210709__24941AC8-F097-4BA4-91AE-BAE94D07FC54_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "24941AC8-F097-4BA4-91AE-BAE94D07FC54_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-28T21:07:09",
+      "type": "血气",
+      "relative_h": 319.12,
+      "note": "ABG clock 21:07:09. pH 7.373 (printed 7.3733, in 7.35-7.45). PCO2 40.70 in 35-45. PO2 69.70 low. HCO3 23.20. Store ABE -2.10, not SBE -1.90. Lactate 1.51 in 0.5-1.6, no flag. FiO2 50%. Printed P/F 139.00 low (400-500). 69.70/0.50=139.4. The 0.22% pO2(a)/FO2(I) row is not P/F. Hb 9.80 low, Hct 29% low, iCa 1.15 in 1.15-1.29, sO2 93.50. Machine T 37.00 is not the 9/26 15:00 fever. Temp-corrected pH 7.373, PCO2 40.70. No new vitals on this sheet.",
+      "extracted": {
+        "ph": 7.373,
+        "pco2": 40.7,
+        "po2": 69.7,
+        "hco3": 23.2,
+        "be": -2.1,
+        "lactate": 1.51,
+        "fio2": 50,
+        "pf": 139,
+        "hb": 9.8,
+        "ica": 1.15
+      },
+      "sha256_16": "10ee48579ce43566",
+      "bytes": 1301774
+    },
+    {
+      "id": "20260928T211746__A50098CD-A84D-4AFB-9AE5-BF219FAF8D6C_L0_001.jpg",
+      "path": "reports/chemistry/20260928T211746__A50098CD-A84D-4AFB-9AE5-BF219FAF8D6C_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "A50098CD-A84D-4AFB-9AE5-BF219FAF8D6C_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-28T21:17:46",
+      "type": "干化学钾",
+      "relative_h": 319.3,
+      "note": "Dry-chemistry potassium only. Clock 21:17:46. Phone status 9:39 is not the report clock. K 4.577 mmol/L, ref 3.5-5.3, no flag. Cr/urea/Na not redrawn. Not procalcitonin and not P/F.",
+      "extracted": {
+        "k": 4.577
+      },
+      "sha256_16": "58c8f0f08f380ce7",
+      "bytes": 321238
     }
   ]
 }
