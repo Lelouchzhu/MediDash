@@ -7,8 +7,8 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **Prior agent run (Allmond-bound, then continued here):** https://cursor.com/agents/bc-01a0a01a-a6eb-72c7-b052-ba5e14ed8b1b  
 **Conversation summary (current):** [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md)  
 **Conversation summary (through 9/18 13:00 ABG):** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
-**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@acadc2e3574325f4df181f8ae93b07b101fa52b2/index.xhtml  
-**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@acadc2e3574325f4df181f8ae93b07b101fa52b2/index.xhtml  
+**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@353595cdc6aa16e85cc13096bbff39923edb83af/index.xhtml  
+**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@353595cdc6aa16e85cc13096bbff39923edb83af/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
 国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是 **最新化验：术后319h17m · 钾4.577**（21:17 干化学钾新于 21:07 血气）。循环仍停在 9月28日15:00 口述：**143/36**，心跳 **91**，MAP **62**，呼吸 **17**。去甲仍 **4** mL/h（0.20 mg/h），多巴胺仍 **5** mL/h。CRRT「今早七点暂停」。21:07 血气：乳酸 **1.91→1.51**（0.5–1.6内，无标高），P/F 仍 **139**（FiO₂ 60%→**50%**，PO₂ 83.3→**69.7**），pH **7.331→7.373**（印 7.3733，已回 7.35–7.45），ABE **−2.1**，血气Hb **9.8**，iCa **1.15**。存 ABE，不存 SBE −1.90。单子上 0.22% 那一行不是 P/F。09:47 头颅CT和 10:05 第2部位CT已经出报告，不要再写成还没做。胸CT检查结果写了双肺炎症、双下肺实变、双侧胸腔积液，并写双肺间质性肺炎、水肿可能性大——是报告原文，不是诊断；不要把「可能性大」写成确定。头颅CT检查结果写了双侧额叶皮下白质缺血灶、双侧脑室旁白质变性、双侧中耳乳突炎、双侧蝶窦炎。15:00 口述当时还没有 CT 结果。肌酐仍 **139.0**（41–81），钾 **4.577**（3.5–5.3，无标高）。血常规仍 **90** / WBC **18.20**。APTT 仍 **49.1**（23.3–32.5）。降钙素原仍 **7.209**。培养细菌1 **肺炎克雷伯菌**。manifest **201**。查房清单保持 **4件大事**；把 P/F 仍 139、乳酸/pH 回参考、两份 CT 原文、K 4.577 折进原条。
 
