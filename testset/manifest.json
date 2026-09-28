@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 190,
+  "count": 192,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3520,6 +3520,49 @@
       },
       "sha256_16": "7b9062c2489b6ceb",
       "bytes": 1277636
+    },
+    {
+      "id": "20260927T221835__image-1790555948168-0.jpg",
+      "path": "reports/abg/20260927T221835__image-1790555948168-0.jpg",
+      "category": "abg",
+      "source_filename": "image-1790555948168-0.jpg",
+      "labeled": true,
+      "preferred": false,
+      "superseded_by": "reports/abg/20260927T221835__abg.jpg",
+      "report_time": "2026-09-27T22:18:35",
+      "type": "血气",
+      "note": "Same-clock phone crop 1680x1800 of the 22:18:35 arterial already stored from hires 3520x3772. Values match: pH 7.3882 store 7.388, PCO2 40.10, PO2 119.60, HCO3 23.30, ABE -1.80 not SBE -1.60, lactate 1.778 high, FiO2 50%, printed P/F 239.00, Hb 9.50, iCa 1.11, sO2 98.50, T 36.6. The 0.37% row is not P/F. Oral fields all blank. Do not add a vital point.",
+      "relative_h": 296.31,
+      "extracted": {
+        "ph": 7.388,
+        "pco2": 40.1,
+        "po2": 119.6,
+        "hco3": 23.3,
+        "be": -1.8,
+        "lactate": 1.778,
+        "fio2": 50,
+        "pf": 239,
+        "hb": 9.5,
+        "ca": 1.11
+      },
+      "sha256_16": "09a52a8bf59b1962",
+      "bytes": 236204
+    },
+    {
+      "id": "20260927T120000__image-1790555948166-1.jpg",
+      "path": "reports/billing/20260927T120000__image-1790555948166-1.jpg",
+      "category": "billing",
+      "source_filename": "image-1790555948166-1.jpg",
+      "labeled": true,
+      "extracted": true,
+      "preferred": false,
+      "superseded_by": "reports/billing/20260927T120000__01a0e529-0247-7964-932a-9a687169fafe.jpg",
+      "report_time": "2026-09-27T12:00:00",
+      "relative_h": 286.0,
+      "type": "住院清单",
+      "note": "Narrow 245x1800 phone crop of the same 2026-09-27 daily bill already stored at 1620x11904 (aspect ratio match; header/footer correlation 0.87-0.98). Account snapshot still prepaid 58000 / 112435.64 / -54435.64. Keep the wide crop as preferred. Oral fields all blank. Do not invent extra units or a new clock.",
+      "sha256_16": "837647594f3512c9",
+      "bytes": 60380
     }
   ]
 }
