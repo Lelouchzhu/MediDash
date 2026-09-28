@@ -83,7 +83,8 @@ If the family only said “high / about half”, leave mL blank rather than gues
 
 Categories: **循环/支持**, 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝血/血细胞, 肝/肌酶, 电解质.
 
-- First `metricGroups` entry is **循环/支持**: `map`, `sbp`, `dbp`, `hr`, `ne`, `da`.
+- First `metricGroups` entry is **循环/支持**: `map`, `sbp`, `dbp`, `hr`, `rr`, `ne`, `da`, `bnp`.
+- `bnp` uses `noRef` (sheet prints HF cutoffs; store the number, do not write a heart-failure diagnosis).
 - BP/pressor oral points live in `vitalReadings` and also draw dedicated `#bpTrend` / `#pressorTrend` via `renderMultiSeriesChart`.
 - `ne` / `da` use `noRef` (oral mL/h, not a lab reference).
 - Infection group: `pct`, `crp`, `il6`, `wbc`.

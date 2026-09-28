@@ -46,7 +46,7 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 - **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@ee70fdeeeaaff99ecc95e6011be38c6680d64e1e/index.xhtml
 - 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@ee70fdeeeaaff99ecc95e6011be38c6680d64e1e/index.xhtml
 
-灌注卡应是乳酸 **1.91**（0.5–1.6外；卡片数值会显示 **1.91**）。酸碱卡 pH **7.331**，PCO₂ **44.8**，HCO₃⁻ **23.1**，BE **−2.8**。氧合卡 **P/F 139**，FiO₂ **60%**，并写呼吸 **19**。感染卡白细胞 **18.20**，降钙素原 **7.209**，培养 **肺炎克雷伯菌**，并写抗生素仍评估。肾功能卡肌酐 **248.90**，尿素 **23.31**，钾 **4.111**，并写清单 CRRT **10.83**h。肝卡 ALT **19**，总胆红素 **21.8**。血红蛋白卡血常规 **90**，血气 **8.7**，清单 **2** 单位，iCa **1.19**。凝血卡 APTT **60.8**，这张没抽INR。循环卡应是 **126/36**，MAP **56**，心跳 **89**，呼吸 **19**，去甲 **4**，多巴胺 **5**，CRRT **120** / 脱水 **320 mL/h**。顶栏应是 **最新化验：术后306h45m · Hb 90**，并且有 **上传**。若顶栏还是术后300h21m，打开的还是旧镜像。下次更新后把钉住的提交号换成新的完整 40 位 SHA，不要改回 `@main`，也不要用短 SHA。
+灌注卡应是乳酸 **1.91**（0.5–1.6外；卡片数值会显示 **1.91**）。酸碱卡 pH **7.331**，PCO₂ **44.8**，HCO₃⁻ **23.1**，BE **−2.8**。氧合卡 **P/F 139**，FiO₂ **60%**，并写 CT早上会安排。感染卡白细胞 **18.20**，降钙素原 **7.209**，培养 **肺炎克雷伯菌**，并写镜检 WBC内G-杆菌+。肾功能卡肌酐 **139.0**，尿素 **12.06**，钾 **4.04**，这张参考 41–81。肝卡 ALT **19**，白蛋白 **31.5**。血红蛋白卡血常规 **90**，血气 **8.7**，清单 **2** 单位，iCa **1.19**。凝血卡 APTT **49.1**，本份参考 23.3–32.5，INR **1.15**，纤维蛋白原 **6.33**。循环卡应是 **126/36**，MAP **56**，心跳 **89**，呼吸 **19**，去甲 **4**，多巴胺 **5**，CRRT **120** / 脱水 **320 mL/h**。顶栏应是 **最新化验：术后308h2m · 肌酐139**，并且有 **上传**。若顶栏还是术后306h45m，打开的还是旧镜像。下次更新后把钉住的提交号换成新的完整 40 位 SHA，不要改回 `@main`，也不要用短 SHA。
 
 微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。
 
@@ -75,7 +75,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 194 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 197 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 

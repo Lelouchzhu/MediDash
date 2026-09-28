@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 194,
+  "count": 197,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3608,6 +3608,65 @@
       },
       "sha256_16": "4cd1affd8a09ca53",
       "bytes": 101408
+    },
+    {
+      "id": "20260928T091151__05528BE8-6173-44A0-94E8-4AFF4FD495B0_L0_001.jpg",
+      "path": "reports/coag/20260928T091151__05528BE8-6173-44A0-94E8-4AFF4FD495B0_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "05528BE8-6173-44A0-94E8-4AFF4FD495B0_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-28T09:11:51",
+      "type": "凝血",
+      "relative_h": 307.2,
+      "note": "Coag clock 09:11:51. Phone status 10:51 is not the report clock. APTT 49.1 high, this sheet ref 23.3-32.5 not 21-45. TT 15.1 in 14-21. PT 13.1 in 11-14.3. PT% 72.1 low (80-120). INR 1.15 in 0.94-1.2. Fbg 6.33 high (2-4.5). 49.1 is APTT seconds, not P/F. Oral: CT will be arranged in the morning; do not invent site or result. No identifiers in the UI.",
+      "extracted": {
+        "aptt": 49.1,
+        "tt": 15.1,
+        "pt": 13.1,
+        "inr": 1.15,
+        "fbg": 6.33
+      },
+      "sha256_16": "9483f94b12587f37",
+      "bytes": 411958
+    },
+    {
+      "id": "20260928T095754__423A2214-AC5D-424C-9546-708B8A844E0E_L0_001.jpg",
+      "path": "reports/other/20260928T095754__423A2214-AC5D-424C-9546-708B8A844E0E_L0_001.jpg",
+      "category": "other",
+      "source_filename": "423A2214-AC5D-424C-9546-708B8A844E0E_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-28T09:57:54",
+      "type": "镜检",
+      "relative_h": 307.96,
+      "note": "Microscopy clock 09:57:54. Phone status 10:57 is not the report clock. Printed 镜检: WBC>25/L, epithelial <10/L, intracellular G- bacilli +, mixed bacteria few. Sheet does not name the specimen; do not write sputum culture or MIC. Not procalcitonin and not P/F. Oral: CT morning planned, no site/result.",
+      "extracted": {},
+      "sha256_16": "cd37d97b516e5b80",
+      "bytes": 290383
+    },
+    {
+      "id": "20260928T100243__C7EB3FE6-9097-414A-B3FD-6384FFBA4DF8_L0_001.jpg",
+      "path": "reports/chemistry/20260928T100243__C7EB3FE6-9097-414A-B3FD-6384FFBA4DF8_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "C7EB3FE6-9097-414A-B3FD-6384FFBA4DF8_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-28T10:02:43",
+      "type": "生化",
+      "relative_h": 308.05,
+      "note": "Chemistry clock 10:02:43. ALB 31.5 low (34-48), was 27.8. Globulin blank. K 4.04 in 3.5-5.3. Na 136.36 low (137-147), was 129.9. Cl 100.02 in 96-108. Urea 12.06 high (3.1-8.8), was 23.31. Cr 139.0 high (41-81), was 248.90. Do not copy 07:36 57-111 onto this sheet. BNP 17678.25 high pg/ml; sheet prints HF cutoffs, do not write a heart-failure diagnosis. PCT not on this sheet. Oral: CT morning planned.",
+      "extracted": {
+        "alb": 31.5,
+        "k": 4.04,
+        "na": 136.36,
+        "cl": 100.02,
+        "urea": 12.06,
+        "creatinine": 139.0,
+        "bnp": 17678.25
+      },
+      "sha256_16": "7ddc803dbd18d549",
+      "bytes": 564767
     }
   ]
 }
