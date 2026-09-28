@@ -199,6 +199,12 @@
       "sedatives": [],
       "nutrition": [{ "name": "人血白蛋白" }],
       "other_key": ["甲泼尼龙", "肝素", "悬浮红细胞/血费", "有创血流动力学监测"],
+      "transfusion": {
+        "rbc_u": 4,
+        "product": "悬浮红细胞",
+        "source": "清单血费 + 口述4U",
+        "note": "清单写了血费/悬浮红细胞，单位按口述4U。不要编钟点。"
+      },
       "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": null },
       "highlights": [
         "血费入账：与口述 4U 红细胞同窗",
@@ -454,6 +460,14 @@
         { "name": "脂肪乳氨基酸葡萄糖" }
       ],
       "other_key": ["悬浮红细胞2单位", "去白细胞悬浮红细胞加收2单位", "储血费", "ABO血型鉴定", "交叉配血", "红细胞抗体筛查", "泮托拉唑", "布地奈德", "呋塞米", "微量泵约285小时（多泵）"],
+      "transfusion": {
+        "rbc_u": 2,
+        "product": "悬浮红细胞",
+        "cost": 420,
+        "add_on": "去白细胞加收2单位 / 40元",
+        "source": "清单 + 家属口述",
+        "note": "清单2单位。家属说昨天应该已经有输血。不要编钟点或更多单位。"
+      },
       "nursing": { "icu": true, "tracheal": true, "tube_care": true, "suction": 5 },
       "highlights": [
         "血费：悬浮红细胞2单位 / 420元，去白细胞加收2单位 / 40元——对照家属说昨天应该已经有输血，不要编钟点或更多单位",
