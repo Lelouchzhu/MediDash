@@ -43,8 +43,8 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 国内镜像把 `@main` 收成一份旧快照，`purge.jsdelivr.net` 和网址后面的 `?v=` 都换不掉。2026-09-22 实测 `jsd.onmicrosoft.cn` 与 `cdn.jsdmirror.com` 的 `@main` 仍停在术后149h20m（没有乳酸 2.12）。**带提交号的地址会立刻取到那一版。**
 
-- **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@ccec0f0739a28371a736cfb0bdfa626c8ab028df/index.xhtml
-- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@ccec0f0739a28371a736cfb0bdfa626c8ab028df/index.xhtml
+- **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@d507bc688eccec65ec06f82d444c9d8c3068e7aa/index.xhtml
+- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@d507bc688eccec65ec06f82d444c9d8c3068e7aa/index.xhtml
 
 灌注卡应是乳酸 **1.91**（0.5–1.6外；卡片数值会显示 **1.91**）。酸碱卡 pH **7.331**，PCO₂ **44.8**，HCO₃⁻ **23.1**，BE **−2.8**。氧合卡 **P/F 139**，FiO₂ **60%**，并写 CT早上说会安排、15:00还没结果。感染卡白细胞 **18.20**，降钙素原 **7.209**，培养 **肺炎克雷伯菌**，并写镜检 WBC内G-杆菌+。肾功能卡肌酐 **139.0**，尿素 **12.06**，钾 **4.04**，这张参考 41–81，卡头写今早七点暂停。肝卡 ALT **19**，白蛋白 **31.5**。血红蛋白卡血常规 **90**，血气 **8.7**，清单 **2** 单位，iCa **1.19**。凝血卡 APTT **49.1**，本份参考 23.3–32.5，INR **1.15**，纤维蛋白原 **6.33**。循环卡应是 **143/36**，心跳 **91**，去甲仍 **4**，多巴胺仍 **5**，CRRT今早七点暂停，没有 MAP、也没有呼吸次数。顶栏应是 **最新口述：术后313h · 143/36**，并且有 **上传**。若顶栏还是术后308h2m，打开的还是旧镜像。下次更新后把钉住的提交号换成新的完整 40 位 SHA，不要改回 `@main`，也不要用短 SHA。
 
