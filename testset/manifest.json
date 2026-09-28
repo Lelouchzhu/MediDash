@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 192,
+  "count": 194,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3563,6 +3563,51 @@
       "note": "Narrow 245x1800 phone crop of the same 2026-09-27 daily bill already stored at 1620x11904 (aspect ratio match; header/footer correlation 0.87-0.98). Account snapshot still prepaid 58000 / 112435.64 / -54435.64. Keep the wide crop as preferred. Oral fields all blank. Do not invent extra units or a new clock.",
       "sha256_16": "837647594f3512c9",
       "bytes": 60380
+    },
+    {
+      "id": "20260928T070615__abg.jpg",
+      "path": "reports/abg/20260928T070615__abg.jpg",
+      "category": "abg",
+      "source_filename": "image-1790557473892-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-28T07:06:15",
+      "type": "血气",
+      "note": "Arterial 1680x1800. Clock 07:06:15. pH 7.3311 low store 7.331. PCO2 44.80 in 35-45. PO2 83.30 in 80-100. HCO3 23.10. ABE -2.80. Store ABE not SBE -2.70. Lactate 1.91 high, ref 0.5-1.6. FiO2 60%. Printed P/F 139.00 low. 83.30/0.60=138.83 printed 139. The 0.21% pO2(a/A,T) row is not P/F. Hb 8.70 Hct 26.00 iCa 1.19 in 1.15-1.29 sO2 95.60. Temp 36.2 is not fever. Temp-corrected pH 7.3422 low PCO2 43.30. Oral fields all blank.",
+      "relative_h": 305.1,
+      "extracted": {
+        "ph": 7.331,
+        "pco2": 44.8,
+        "po2": 83.3,
+        "hco3": 23.1,
+        "be": -2.8,
+        "lactate": 1.91,
+        "fio2": 60,
+        "pf": 139,
+        "hb": 8.7,
+        "ca": 1.19
+      },
+      "sha256_16": "86d8bf00ca30777a",
+      "bytes": 238726
+    },
+    {
+      "id": "20260928T084530__cbc.jpg",
+      "path": "reports/cbc/20260928T084530__cbc.jpg",
+      "category": "cbc",
+      "source_filename": "image-1790557473885-1.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-28T08:45:30",
+      "type": "血常规",
+      "note": "CBC phone crop 312x1800. Clock 08:45:30. Phone status 8:56 is not the report clock. WBC 18.20 high (3.5-9.5). RBC 2.75 low. HB 90.0 g/L low (115-150), was 70. HCT 24.8 low. PLT 114.00 low (125-350), was 110. NEUT% 96.9 high. NEUT# 17.64 high. LYMPH# 0.18 low. Plateletcrit PCT 0.14% low (0.17-0.35) is not procalcitonin. Oral fields all blank. No identifiers in the UI.",
+      "relative_h": 306.76,
+      "extracted": {
+        "wbc": 18.2,
+        "plt": 114,
+        "hbg": 90
+      },
+      "sha256_16": "4cd1affd8a09ca53",
+      "bytes": 101408
     }
   ]
 }
