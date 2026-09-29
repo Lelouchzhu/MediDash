@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 213,
+  "count": 216,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3927,7 +3927,7 @@
       "preferred": true,
       "report_time": "2026-09-29T12:42:01",
       "type": "镜检",
-      "relative_h": 334.70,
+      "relative_h": 334.7,
       "note": "Microscopy clock 12:42:01. Phone status 3:35 is not the report clock. Printed 镜检: 白细胞>25个/L且满视野, 上皮细胞<10个/L, G-杆菌（粗短）大量可吞噬, 杂菌少量. More detail than 9/28 09:57 (WBC内G-杆菌+). Family later said this sheet is 痰培养, and the earlier WBC>25 microscopy is also sputum. Do not invent CFU/MIC or write bronchoscopy already done. Not procalcitonin and not P/F. No identifiers in the UI.",
       "extracted": {
         "specimen": "痰培养"
@@ -4010,6 +4010,62 @@
       },
       "sha256_16": "fb6f1258bda078fc",
       "bytes": 1382315
+    },
+    {
+      "id": "20260929T223117__FE227EEB-46FB-41E1-9EC9-BB427DC07A1B_L0_001.jpg",
+      "path": "reports/chemistry/20260929T223117__FE227EEB-46FB-41E1-9EC9-BB427DC07A1B_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "FE227EEB-46FB-41E1-9EC9-BB427DC07A1B_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-29T22:31:17",
+      "type": "生化",
+      "relative_h": 344.52,
+      "note": "Dry-chemistry potassium only. Clock 22:31:17. Phone status 11:24 is not the report clock. K 4.74 mmol/L, ref 3.5-5.3, abnormal column blank. Not procalcitonin and not P/F. Cr/urea/Na not on this sheet. No identifiers in the UI.",
+      "extracted": {
+        "k": 4.74
+      },
+      "sha256_16": "82e4e0df40eb08fb",
+      "bytes": 322342
+    },
+    {
+      "id": "20260929T223252__C2D96979-9391-45F2-9F38-F1A5D429970D_L0_001.jpg",
+      "path": "reports/coag/20260929T223252__C2D96979-9391-45F2-9F38-F1A5D429970D_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "C2D96979-9391-45F2-9F38-F1A5D429970D_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-29T22:32:52",
+      "type": "凝血",
+      "relative_h": 344.55,
+      "note": "APTT only. Clock 22:32:52. Phone status 11:24 is not the report clock. APTT 53.5 sec high, this sheet ref 21-45. Not the morning sheet ref 23.3-32.5. No critical-value sticker. INR/PT/TT/Fbg not on this sheet. 53.5 is APTT seconds, not P/F. No identifiers in the UI. Newer than the 22:15 arterial, so this clock is the hero.",
+      "extracted": {
+        "aptt": 53.5
+      },
+      "sha256_16": "01c699144177ec93",
+      "bytes": 336439
+    },
+    {
+      "id": "20260929T120000__33EE5757-C143-464B-BE53-2A389E66D190_L0_001.jpg",
+      "path": "reports/billing/20260929T120000__33EE5757-C143-464B-BE53-2A389E66D190_L0_001.jpg",
+      "category": "billing",
+      "source_filename": "33EE5757-C143-464B-BE53-2A389E66D190_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-29T12:00:00",
+      "type": "清单",
+      "relative_h": 334.0,
+      "note": "Daily bill footer date 2026/09/29. Noon convention h=334. Account snapshot prepaid 63000.00 / cost 124076.29 / balance -61076.29, not a single-day cost. CRRT 4.78 h / 454.10 at 95/h. Tracheostomy fee 1 / 399, trach nursing 1 day / 43, trach tube 8.0 x1 / 52, general anesthesia 1096 plus critical 329 plus age>=80 219. Meropenem qty -6 / -55.98 is a credit. Ceftazidime-avibactam x3 / 1020. Nafamostat (扶渡) x15 / 545.10. No ventilator 24h line, no ECG line, no albumin, no packed RBC. One general-treatment line is covered by the plus button (amount 60); do not invent its name. Vial counts are not pump mL/h. No identifiers in the UI.",
+      "extracted": {
+        "prepaid": 63000.0,
+        "total_cost": 124076.29,
+        "balance": -61076.29,
+        "crrt_h": 4.78,
+        "crrt_cost": 454.1,
+        "trach_fee": 399
+      },
+      "sha256_16": "3d9084553f040cd1",
+      "bytes": 1622191
     }
   ]
 }
