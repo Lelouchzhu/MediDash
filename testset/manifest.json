@@ -3640,8 +3640,10 @@
       "report_time": "2026-09-28T09:57:54",
       "type": "镜检",
       "relative_h": 307.96,
-      "note": "Microscopy clock 09:57:54. Phone status 10:57 is not the report clock. Printed 镜检: WBC>25/L, epithelial <10/L, intracellular G- bacilli +, mixed bacteria few. Sheet does not name the specimen; do not write sputum culture or MIC. Not procalcitonin and not P/F. Oral: CT morning planned, no site/result.",
-      "extracted": {},
+      "note": "Microscopy clock 09:57:54. Phone status 10:57 is not the report clock. Printed 镜检: WBC>25/L, epithelial <10/L, intracellular G- bacilli +, mixed bacteria few. Sheet did not print the specimen. Family later said this WBC>25 microscopy is 痰培养, same as 12:42. Do not invent CFU or MIC. Not procalcitonin and not P/F. Oral: CT morning planned, no site/result.",
+      "extracted": {
+        "specimen": "痰培养"
+      },
       "sha256_16": "cd37d97b516e5b80",
       "bytes": 290383
     },
@@ -3926,8 +3928,10 @@
       "report_time": "2026-09-29T12:42:01",
       "type": "镜检",
       "relative_h": 334.70,
-      "note": "Microscopy clock 12:42:01. Phone status 3:35 is not the report clock. Printed 镜检: 白细胞>25个/L且满视野, 上皮细胞<10个/L, G-杆菌（粗短）大量可吞噬, 杂菌少量. More detail than 9/28 09:57 (WBC内G-杆菌+). Sheet does not name the specimen; do not write sputum culture, bronchoscopy already done, CFU, or MIC. Not procalcitonin and not P/F. No identifiers in the UI.",
-      "extracted": {},
+      "note": "Microscopy clock 12:42:01. Phone status 3:35 is not the report clock. Printed 镜检: 白细胞>25个/L且满视野, 上皮细胞<10个/L, G-杆菌（粗短）大量可吞噬, 杂菌少量. More detail than 9/28 09:57 (WBC内G-杆菌+). Family later said this sheet is 痰培养, and the earlier WBC>25 microscopy is also sputum. Do not invent CFU/MIC or write bronchoscopy already done. Not procalcitonin and not P/F. No identifiers in the UI.",
+      "extracted": {
+        "specimen": "痰培养"
+      },
       "sha256_16": "5d295c96da21c64d",
       "bytes": 354304
     },
