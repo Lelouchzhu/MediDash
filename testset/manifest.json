@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 206,
+  "count": 208,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3771,11 +3771,11 @@
       "category": "abg",
       "source_filename": "image-1790641763077-0.jpg",
       "labeled": true,
-      "preferred": true,
+      "preferred": false,
       "report_time": "2026-09-29T06:56:20",
       "type": "血气",
       "relative_h": 328.94,
-      "note": "ABG clock 06:56:20. Phone/status identifiers and hospital name stay out of the UI. pH 7.364 in 7.35-7.45, no flag. PCO2 40.50 in 35-45. PO2 79.20 low (80-100). Store ABE -2.80, not SBE -2.60. HCO3 22.60. Lactate 1.68 high (0.5-1.6). FiO2 35%. Printed P/F 226.00 low (400-500). 79.20/0.35=226.3. The 0.40% pO2(a)/FO2(I) row is not P/F. Hb 8.80 low, Hct 26% low, iCa 1.12 low (1.15-1.29), sO2 95.00. Machine T 37.3 is not the 9/26 15:00 fever. Temp-corrected pH 7.360, PCO2 41.00. Oral fields all blank; no new vitals.",
+      "note": "ABG clock 06:56:20. Phone/status identifiers and hospital name stay out of the UI. pH 7.364 in 7.35-7.45, no flag. PCO2 40.50 in 35-45. PO2 79.20 low (80-100). Store ABE -2.80, not SBE -2.60. HCO3 22.60. Lactate 1.68 high (0.5-1.6). FiO2 35%. Printed P/F 226.00 low (400-500). 79.20/0.35=226.3. The 0.40% pO2(a)/FO2(I) row is not P/F. Hb 8.80 low, Hct 26% low, iCa 1.12 low (1.15-1.29), sO2 95.00. Machine T 37.3 is not the 9/26 15:00 fever. Temp-corrected pH 7.360, PCO2 41.00. Oral fields all blank; no new vitals. · superseded by full table crop; printed lactate 1.668 (was stored 1.68 from phone crop).",
       "extracted": {
         "ph": 7.364,
         "pco2": 40.5,
@@ -3789,7 +3789,8 @@
         "ica": 1.12
       },
       "sha256_16": "369ccda63c61ff05",
-      "bytes": 193069
+      "bytes": 193069,
+      "superseded_by": "reports/abg/20260929T065620__table__01a0eb6c-7aa9-7a31-9b9e-02e3d4e9435a.jpg"
     },
     {
       "id": "20260928T120000__image-1790641763070-1.jpg",
@@ -3834,11 +3835,11 @@
       "category": "chemistry",
       "source_filename": "image-1790647058045-1.jpg",
       "labeled": true,
-      "preferred": true,
+      "preferred": false,
       "report_time": "2026-09-29T09:23:30",
       "type": "生化",
       "relative_h": 331.39,
-      "note": "Chemistry clock 09:23:30. Phone status 9:35 is not the report clock. K 4.775 in 3.5-5.3, no flag. Na 130.13 low (137-147), was 136.36. Cl 95.05 low (96-108), was 100.02. Urea 19.93 high (3.1-8.8; printed 19.933), was 12.06. Cr 233.0 high (41-81), was 139.0. Do not copy other sheet refs. Not procalcitonin and not P/F. Alb/BNP/PCT not on this sheet. Oral fields all blank. No identifiers in the UI.",
+      "note": "Same 09:23:30 chemistry already stored as phone crop. That crop stopped before PCT. Keep file. Preferred is the longer sheet with PCT 6.8433.",
       "extracted": {
         "k": 4.775,
         "na": 130.13,
@@ -3847,7 +3848,56 @@
         "creatinine": 233.0
       },
       "sha256_16": "05c4fb723b85c6a8",
-      "bytes": 219488
+      "bytes": 219488,
+      "superseded_by": "reports/chemistry/20260929T092330__01a0eb6c-7ab9-7fef-b13a-1625ec4e9e60.jpg"
+    },
+    {
+      "id": "20260929T065620__table__01a0eb6c-7aa9-7a31-9b9e-02e3d4e9435a.jpg",
+      "path": "reports/abg/20260929T065620__table__01a0eb6c-7aa9-7a31-9b9e-02e3d4e9435a.jpg",
+      "category": "abg",
+      "source_filename": "01a0eb6c-7aa9-7a31-9b9e-02e3d4e9435a.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-29T06:56:20",
+      "type": "血气",
+      "relative_h": 328.94,
+      "note": "Same-clock full table of the 06:56:20 ABG. Phone crop kept, preferred false. pH 7.364. PCO2 40.50. PO2 79.20 low. Store ABE -2.80, not SBE -2.60. HCO3 22.60. Lactate printed 1.668 high (0.5-1.6); phone crop had been stored as 1.68. FiO2 35%. Printed P/F 226.00. The 0.40% row is not P/F. Hb 8.80, Hct 26%, iCa 1.12 low, sO2 95.00. Machine T 37.3 is not fever. Temp-corrected pH 7.360, PCO2 41.00. No identifiers in the UI.",
+      "extracted": {
+        "ph": 7.364,
+        "pco2": 40.5,
+        "po2": 79.2,
+        "hco3": 22.6,
+        "be": -2.8,
+        "lactate": 1.668,
+        "fio2": 35,
+        "pf": 226,
+        "hb": 8.8,
+        "ica": 1.12
+      },
+      "sha256_16": "7a49fab161a3c990",
+      "bytes": 1283886
+    },
+    {
+      "id": "20260929T092330__01a0eb6c-7ab9-7fef-b13a-1625ec4e9e60.jpg",
+      "path": "reports/chemistry/20260929T092330__01a0eb6c-7ab9-7fef-b13a-1625ec4e9e60.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0eb6c-7ab9-7fef-b13a-1625ec4e9e60.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-29T09:23:30",
+      "type": "生化",
+      "relative_h": 331.39,
+      "note": "Same 09:23:30 chemistry clock as the shorter phone crop. Phone status 11:35 is not the report clock. Adds 降钙素原 PCCT 6.8433 ng/ml high (0-0.05). This is procalcitonin, not CBC plateletcrit and not P/F. K 4.775, Na 130.13 low, Cl 95.05 low, urea 19.93 high (printed 19.933), Cr 233.0 high (41-81). Alb/BNP still not on this sheet. Oral later: Dr Lu plans CRRT, bronchoscopy, trach, transfusion eval — not already done. No identifiers in the UI.",
+      "extracted": {
+        "k": 4.775,
+        "na": 130.13,
+        "cl": 95.05,
+        "urea": 19.93,
+        "creatinine": 233.0,
+        "pct": 6.8433
+      },
+      "sha256_16": "876ed04401cf7b15",
+      "bytes": 408029
     }
   ]
 }
