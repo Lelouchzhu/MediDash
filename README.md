@@ -46,7 +46,7 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 - **大陆入口（当前页）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@8b60ea93d48577bbd4556d45d4d4a024df2a6ec3/index.xhtml
 - 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@8b60ea93d48577bbd4556d45d4d4a024df2a6ec3/index.xhtml
 
-灌注卡应是乳酸 **1.668**（完整表印的是 1.668；0.5–1.6外），并写 1.51→1.668、BE −2.8。酸碱卡 pH **7.364**，PCO₂ **40.5**，HCO₃⁻ **22.6**。氧合卡 **P/F 226**，FiO₂ **50%→35%**，PO₂ **79.2**，并写吕大夫今日拟气切。感染卡白细胞 **18.20**，降钙素原 **7.209→6.8433**，吕大夫说看报告明显改善，支气管镜今日再做。肾功能卡肌酐 **233.0**，尿素 **19.93**，钾 **4.775**，这张参考 41–81，卡头写停机后回升。肝卡 ALT **19**，白蛋白 **31.5**。血红蛋白卡血常规 **90**，血气 **8.8**，吕大夫：输血要评估，iCa **1.12**。凝血卡 APTT **44.2**，本份参考 23.3–32.5，INR **1.23**，纤维蛋白原 **4.338**。循环卡应是 **143/36**，MAP **62**，心跳 **91**，呼吸 **17**，去甲仍 **4**，多巴胺仍 **5**，吕大夫今日拟CRRT、气切。143/36 按常规算法约 72，不要用算的去改口述 62。顶栏应是 **最新口述：术后334h30m · 今日拟气切、CRRT**，并且有 **上传**。若顶栏还是 331h23m · 肌酐233，打开的还是旧镜像。下次更新后把钉住的提交号换成新的完整 40 位 SHA，不要改回 `@main`，也不要用短 SHA。
+灌注卡应是乳酸 **1.668**（完整表印的是 1.668；0.5–1.6外），并写 1.51→1.668、BE −2.8。酸碱卡 pH **7.364**，PCO₂ **40.5**，HCO₃⁻ **22.6**。氧合卡 **P/F 226**，FiO₂ **50%→35%**，PO₂ **79.2**，并写吕大夫今日拟气切。感染卡白细胞 **18.20**，降钙素原 **7.209→6.8433**，12:42镜检G-杆菌（粗短）大量可吞噬，10:12仍克雷伯菌无药敏。肾功能卡肌酐 **233.0**，尿素 **19.93**，钾 **4.775**，这张参考 41–81，卡头写停机后回升。肝卡 ALT **19**，白蛋白 **31.5**。血红蛋白卡血常规 **90**，血气 **8.8**，吕大夫：输血要评估，iCa **1.12**。凝血卡 APTT **44.2**，本份参考 23.3–32.5，INR **1.23**，纤维蛋白原 **4.338**。循环卡应是 **124/36**，MAP **58**，心跳 **95**，呼吸 **19**，SpO2 **92**，监护未见泵速，升压药仍停在15:00口述4/5。124/36 按常规算法约 65，不要用算的去改印出来的 58。顶栏应是 **最新化验：术后334h42m · 镜检G-杆菌**，并且有 **上传**。若顶栏还是 334h30m · 今日拟气切、CRRT，打开的还是旧镜像。下次更新后把钉住的提交号换成新的完整 40 位 SHA，不要改回 `@main`，也不要用短 SHA。
 
 微信内置浏览若只看到源码，把链接复制到系统浏览器（Chrome / Safari）。
 
@@ -75,7 +75,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 208 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 211 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 

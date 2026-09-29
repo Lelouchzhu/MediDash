@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 208,
+  "count": 211,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3898,6 +3898,62 @@
       },
       "sha256_16": "876ed04401cf7b15",
       "bytes": 408029
+    },
+    {
+      "id": "20260929T101227__2822205E-4982-469A-B4CA-B75D6B4C49D4_L0_001.jpg",
+      "path": "reports/other/20260929T101227__2822205E-4982-469A-B4CA-B75D6B4C49D4_L0_001.jpg",
+      "category": "other",
+      "source_filename": "2822205E-4982-469A-B4CA-B75D6B4C49D4_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-29T10:12:27",
+      "type": "培养",
+      "relative_h": 332.21,
+      "note": "Culture clock 10:12:27. Phone status 3:35 is not the report clock. Bacterium 1 printed 肺炎克雷伯菌. Sputum culture, secretion culture, bacteria 2/3, tips, and both colony-count rows are blank (cfu/ml unit only). Do not treat blank rows as negative or write 0 CFU. No MIC. Same organism name as 2026-09-26 10:30:59; new clock so archive separately. Sheet does not name this as a positive sputum culture. Not procalcitonin and not P/F. No identifiers in the UI.",
+      "extracted": {
+        "organism": "肺炎克雷伯菌"
+      },
+      "sha256_16": "be45bfacfc041cd9",
+      "bytes": 444996
+    },
+    {
+      "id": "20260929T124201__DFFC057D-F691-400B-B1C1-816E41A4DD50_L0_001.jpg",
+      "path": "reports/other/20260929T124201__DFFC057D-F691-400B-B1C1-816E41A4DD50_L0_001.jpg",
+      "category": "other",
+      "source_filename": "DFFC057D-F691-400B-B1C1-816E41A4DD50_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-29T12:42:01",
+      "type": "镜检",
+      "relative_h": 334.70,
+      "note": "Microscopy clock 12:42:01. Phone status 3:35 is not the report clock. Printed 镜检: 白细胞>25个/L且满视野, 上皮细胞<10个/L, G-杆菌（粗短）大量可吞噬, 杂菌少量. More detail than 9/28 09:57 (WBC内G-杆菌+). Sheet does not name the specimen; do not write sputum culture, bronchoscopy already done, CFU, or MIC. Not procalcitonin and not P/F. No identifiers in the UI.",
+      "extracted": {},
+      "sha256_16": "5d295c96da21c64d",
+      "bytes": 354304
+    },
+    {
+      "id": "20260929T150100__B884B081-4C6B-4A65-A79C-EFBC9FCCB38F_L0_001.jpg",
+      "path": "reports/other/20260929T150100__B884B081-4C6B-4A65-A79C-EFBC9FCCB38F_L0_001.jpg",
+      "category": "other",
+      "source_filename": "B884B081-4C6B-4A65-A79C-EFBC9FCCB38F_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-29T15:01:00",
+      "type": "监护",
+      "relative_h": 337.02,
+      "note": "Philips IntelliVue LCD header 15:01 (LCD crop; first OCR 19:01 was wrong). Assume 2026-09-29. Printed ABP 124/36 (58) — store printed MAP 58, do not replace with calculated ~65. HR 95, pulse 94, SpO2 92, RR 19, CVP (56) quoted only (implausibly high vs usual 3-12; do not diagnose transducer error). No NE/DA on screen; keep last oral 4/5 labeled 15:00. Phone/status identifiers stay out of the UI. Empty oral this turn — do not mark trach/CRRT/bronchoscopy done.",
+      "extracted": {
+        "sbp": 124,
+        "dbp": 36,
+        "map": 58,
+        "hr": 95,
+        "rr": 19,
+        "spo2": 92,
+        "pulse": 94,
+        "cvp": 56
+      },
+      "sha256_16": "d3e6d7cc7ab2fb4a",
+      "bytes": 1654382
     }
   ]
 }
