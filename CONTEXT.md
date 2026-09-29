@@ -7,8 +7,8 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **Prior agent run (Allmond-bound, then continued here):** https://cursor.com/agents/bc-01a0a01a-a6eb-72c7-b052-ba5e14ed8b1b  
 **Conversation summary (current):** [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md)  
 **Conversation summary (through 9/18 13:00 ABG):** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
-**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@aee662dc5a27c0a3b3af3e971d1f70fa90a903ce/index.xhtml  
-**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@aee662dc5a27c0a3b3af3e971d1f70fa90a903ce/index.xhtml  
+**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@8b60ea93d48577bbd4556d45d4d4a024df2a6ec3/index.xhtml  
+**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@8b60ea93d48577bbd4556d45d4d4a024df2a6ec3/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
 国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是 **最新口述：术后334h30m · 今日拟气切、CRRT**（12:30 收到时间新于 09:23 生化）。循环数字仍停在 9月28日15:00：**143/36**，心跳 **91**，MAP **62**，呼吸 **17**。去甲仍 **4** mL/h（0.20 mg/h），多巴胺仍 **5** mL/h。这批口述没有新的血压。吕大夫说今天要做 **CRRT**、支气管镜，是否输血要评估，然后要做 **气切**。这是计划，不要写成已经切开、已经再开血滤、或已经又输了血。支气管镜他说昨天做了一次、今天继续做一次（吸痰吸废液），不要编镜检结果。吕大夫说看报告感染好了不少；家属问是不是新加抗生素，他说一般没这么快、通常要两三天、这个才加了一天，不管怎么说今天明显改善了——这是医生的话，不是「感染已好」诊断。06:56 血气完整表：乳酸印的是 **1.668**↑（先前手机截图写成 1.68），P/F **226**（FiO₂ **35%**），pH **7.364**，ABE **−2.8**。存 ABE，不存 SBE −2.60。0.40% 那一行不是 P/F。09:19 凝血：APTT **44.2**↑（23.3–32.5），INR **1.23**↑，Fbg **4.338**。09:23 生化更长一截：肌酐 **233.0**↑，尿素 **19.93**↑，钾 **4.775**，钠 **130.13**↓，氯 **95.05**↓，降钙素原 **7.209→6.8433**（PCCT，不是血小板比积，也不是 P/F）。白蛋白 / BNP 仍没抽。血常规仍 **90** / WBC **18.20**。培养细菌1 **肺炎克雷伯菌**。9/28清单 CZA×2 / 680，美罗培南×6，CRRT **8.54 h / 811.30**，支气管镜计费1次无结果。账户 **58000 / 117723.22 / −59723.22**。manifest **208**。查房仍 4 条，标题按这次口述收紧：气切、降钙素原 6.843、今日拟 CRRT、输血要评估。不要写成已经做完。
 
