@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 204,
+  "count": 206,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3806,6 +3806,48 @@
       "note": "Narrow 291x1800 phone crop of the same 2026-09-28 daily bill already stored at 1620x10020. Header still prepaid 58000 / 117723.22 / -59723.22. Footer date button 2026-09-28. Visible fees match the preferred sheet (CZA 680, CT 223+95, ECG 192, vent 480, CRRT ~811). Keep the wide crop as preferred. Do not add a 9/29 bill day. Oral fields all blank. No identifiers in the UI.",
       "sha256_16": "26c7cbba5131d2e4",
       "bytes": 114507
+    },
+    {
+      "id": "20260929T091920__image-1790647058041-0.jpg",
+      "path": "reports/coag/20260929T091920__image-1790647058041-0.jpg",
+      "category": "coag",
+      "source_filename": "image-1790647058041-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-29T09:19:20",
+      "type": "凝血",
+      "relative_h": 331.32,
+      "note": "Coag clock 09:19:20. Phone status 9:34 is not the report clock. APTT 44.2 high, this sheet ref 23.3-32.5 not 21-45. TT 14.7 in 14-21. PT 13.7 in 11-14.3. PT% 71.3 low (80-120). INR 1.23 high (0.94-1.2; printed 1.233). Fbg 4.338 g/L; share button covers the flag and most of the ref (visible tail 5, usual 2-4.5). Do not invent a high flag. 44.2 is APTT seconds, not P/F. Oral fields all blank. No identifiers in the UI.",
+      "extracted": {
+        "aptt": 44.2,
+        "tt": 14.7,
+        "pt": 13.7,
+        "inr": 1.23,
+        "fbg": 4.338
+      },
+      "sha256_16": "87efa83121921057",
+      "bytes": 243115
+    },
+    {
+      "id": "20260929T092330__image-1790647058045-1.jpg",
+      "path": "reports/chemistry/20260929T092330__image-1790647058045-1.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790647058045-1.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-29T09:23:30",
+      "type": "生化",
+      "relative_h": 331.39,
+      "note": "Chemistry clock 09:23:30. Phone status 9:35 is not the report clock. K 4.775 in 3.5-5.3, no flag. Na 130.13 low (137-147), was 136.36. Cl 95.05 low (96-108), was 100.02. Urea 19.93 high (3.1-8.8; printed 19.933), was 12.06. Cr 233.0 high (41-81), was 139.0. Do not copy other sheet refs. Not procalcitonin and not P/F. Alb/BNP/PCT not on this sheet. Oral fields all blank. No identifiers in the UI.",
+      "extracted": {
+        "k": 4.775,
+        "na": 130.13,
+        "cl": 95.05,
+        "urea": 19.93,
+        "creatinine": 233.0
+      },
+      "sha256_16": "05c4fb723b85c6a8",
+      "bytes": 219488
     }
   ]
 }
