@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 211,
+  "count": 212,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3958,6 +3958,32 @@
       },
       "sha256_16": "d3e6d7cc7ab2fb4a",
       "bytes": 1654382
+    },
+    {
+      "id": "20260929T182833__image-1790683615548-0.jpg",
+      "path": "reports/abg/20260929T182833__image-1790683615548-0.jpg",
+      "category": "abg",
+      "source_filename": "image-1790683615548-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-29T18:28:33",
+      "type": "血气",
+      "relative_h": 340.48,
+      "note": "Arterial-style ABG clock 2026-09-29 18:28:33. Phone/status identifiers and hospital stay out of the UI. pH 7.279 low (7.35-7.45). PCO2 44.70 in 35-45. PO2 74.40 low. Store ABE -6.300, not SBE -6.000. HCO3 20.50 low. Lactate 1.844 high (0.5-1.6). FiO2 80.0%. Printed P/F 93.000 (74.40/0.80=93). The 0.14% pO2(a)/FO2(T) row is not P/F. Hb 9.30, Hct 27%, iCa 1.12 low, sO2 92.80 / FO2Hb 92.50. Machine T 36.77 is not fever. Temp-corrected pH 7.283, PCO2 44.10. Oral fields all blank — do not invent BP/NE/DA/urine, CRRT restart, or trach done. Circulation stays 15:01 124/36. latestNonBloodGas stays 339.00 17:00 start-only.",
+      "extracted": {
+        "ph": 7.279,
+        "pco2": 44.7,
+        "po2": 74.4,
+        "hco3": 20.5,
+        "be": -6.3,
+        "lactate": 1.844,
+        "fio2": 80,
+        "pf": 93,
+        "hb": 9.3,
+        "ica": 1.12
+      },
+      "sha256_16": "a7082763fb150667",
+      "bytes": 241140
     }
   ]
 }
