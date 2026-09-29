@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 212,
+  "count": 213,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3984,6 +3984,32 @@
       },
       "sha256_16": "a7082763fb150667",
       "bytes": 241140
+    },
+    {
+      "id": "20260929T221505__BBCFFC73-F238-45A0-8AD2-24D164700C0F_L0_001.jpg",
+      "path": "reports/abg/20260929T221505__BBCFFC73-F238-45A0-8AD2-24D164700C0F_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "BBCFFC73-F238-45A0-8AD2-24D164700C0F_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-29T22:15:05",
+      "type": "血气",
+      "relative_h": 344.25,
+      "note": "Hires 3520x3772 arterial ABG clock 2026-09-29 22:15:05. Phone/status identifiers and hospital stay out of the UI. pH 7.344 low. PCO2 41.50 in 35-45. PO2 136.30 high. Store ABE -3.60, not SBE -3.40. HCO3 22.10 in 22-26. Lactate 1.85 high (0.5-1.6). FiO2 still 80.0%. Printed P/F at the bottom 170.00 (136.30/0.80=170.4). A middle row also labeled 氧合指数 is blank. The 0.26% pO2(a/A,T) row is not P/F. Hb 9.30, Hct 27.00 low, iCa 1.11 low, sO2 98.80 high. Machine T 36.8 is not fever. Temp-corrected pH 7.347, PCO2 41.10. No new oral vitals. Do not write weaned, trach done, or CRRT restarted. Circulation stays 15:01 124/36. latestNonBloodGas stays 339.00 17:00 start-only.",
+      "extracted": {
+        "ph": 7.344,
+        "pco2": 41.5,
+        "po2": 136.3,
+        "hco3": 22.1,
+        "be": -3.6,
+        "lactate": 1.85,
+        "fio2": 80,
+        "pf": 170,
+        "hb": 9.3,
+        "ica": 1.11
+      },
+      "sha256_16": "fb6f1258bda078fc",
+      "bytes": 1382315
     }
   ]
 }
