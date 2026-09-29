@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 202,
+  "count": 204,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -3764,6 +3764,48 @@
       "note": "Daily inpatient bill 2026-09-28 (date button). Account prepaid 58000 total 117723.22 balance -59723.22. CRRT 8.54 h / 811.30 (95/h) — fits oral 今早七点暂停; do not write 8.54 as the stop clock. Ventilator 24 h / 480. ECG 24 h / 192. Meropenem x6 / 55.98. Ceftazidime-avibactam (泰定平) x2 / 680 — billed, not a written switch. Propofol x3. Remifentanil x3. No albumin. No packed RBC; 静脉输血 1组 is a treatment fee, not 1 unit. Bronchoscopy 1 / 200 — no result on this bill. CT平扫 + 第2部位 billed. PCT assay billed, no new PCT number. NE x9 DA x4 vial counts are not pump mL/h. Micro pump 138 h. Suction nursing x5. No identifiers in the UI.",
       "sha256_16": "930234ccac3beec8",
       "bytes": 1781540
+    },
+    {
+      "id": "20260929T065620__image-1790641763077-0.jpg",
+      "path": "reports/abg/20260929T065620__image-1790641763077-0.jpg",
+      "category": "abg",
+      "source_filename": "image-1790641763077-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-29T06:56:20",
+      "type": "血气",
+      "relative_h": 328.94,
+      "note": "ABG clock 06:56:20. Phone/status identifiers and hospital name stay out of the UI. pH 7.364 in 7.35-7.45, no flag. PCO2 40.50 in 35-45. PO2 79.20 low (80-100). Store ABE -2.80, not SBE -2.60. HCO3 22.60. Lactate 1.68 high (0.5-1.6). FiO2 35%. Printed P/F 226.00 low (400-500). 79.20/0.35=226.3. The 0.40% pO2(a)/FO2(I) row is not P/F. Hb 8.80 low, Hct 26% low, iCa 1.12 low (1.15-1.29), sO2 95.00. Machine T 37.3 is not the 9/26 15:00 fever. Temp-corrected pH 7.360, PCO2 41.00. Oral fields all blank; no new vitals.",
+      "extracted": {
+        "ph": 7.364,
+        "pco2": 40.5,
+        "po2": 79.2,
+        "hco3": 22.6,
+        "be": -2.8,
+        "lactate": 1.68,
+        "fio2": 35,
+        "pf": 226,
+        "hb": 8.8,
+        "ica": 1.12
+      },
+      "sha256_16": "369ccda63c61ff05",
+      "bytes": 193069
+    },
+    {
+      "id": "20260928T120000__image-1790641763070-1.jpg",
+      "path": "reports/billing/20260928T120000__image-1790641763070-1.jpg",
+      "category": "billing",
+      "source_filename": "image-1790641763070-1.jpg",
+      "labeled": true,
+      "extracted": true,
+      "preferred": false,
+      "superseded_by": "reports/billing/20260928T120000__876C918D-7984-4835-95E9-782347C1F5B5_L0_001.jpg",
+      "report_time": "2026-09-28T12:00:00",
+      "relative_h": 310.0,
+      "type": "住院清单",
+      "note": "Narrow 291x1800 phone crop of the same 2026-09-28 daily bill already stored at 1620x10020. Header still prepaid 58000 / 117723.22 / -59723.22. Footer date button 2026-09-28. Visible fees match the preferred sheet (CZA 680, CT 223+95, ECG 192, vent 480, CRRT ~811). Keep the wide crop as preferred. Do not add a 9/29 bill day. Oral fields all blank. No identifiers in the UI.",
+      "sha256_16": "26c7cbba5131d2e4",
+      "bytes": 114507
     }
   ]
 }
