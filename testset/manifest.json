@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 235,
+  "count": 237,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4436,7 +4436,7 @@
       "report_time": "2026-09-30T21:59:54",
       "type": "生化",
       "relative_h": 368.00,
-      "note": "Dry-chemistry potassium only. Clock 21:59:54. Phone status 10:07 is not the report clock. K 4.05 mmol/L, ref 3.5-5.3, abnormal column blank, note blank, no critical-value sticker. Do not call 4.05 low. Not procalcitonin and not P/F. Label is 术后367h59m because 54 seconds do not round the minute up; stored h is 368.00. Newer than the 21:36 arterial (h 367.60) and the 16:55 APTT, so this clock is the hero. Oral fields blank. No identifiers in the UI.",
+      "note": "Dry-chemistry potassium only. Clock 21:59:54. Phone status 10:07 is not the report clock. K 4.05 mmol/L, ref 3.5-5.3, abnormal column blank, note blank, no critical-value sticker. Do not call 4.05 low. Not procalcitonin and not P/F. Label is 术后367h59m because 54 seconds do not round the minute up; stored h is 368.00. At the time this clock was newer than the 21:36 arterial (h 367.60) and the 16:55 APTT, so the hero was this potassium. The 2026-10-01 06:44 arterial (h 376.74) is newer, so the hero is now that gas. latestNonBloodGasReport stays this potassium. Oral fields blank. No identifiers in the UI.",
       "extracted": {
         "k": 4.05
       },
@@ -4453,7 +4453,7 @@
       "report_time": "2026-09-30T21:36:09",
       "type": "血气",
       "relative_h": 367.60,
-      "note": "Arterial blood gas. Clock 21:36:09. pH 7.405 in 7.35-7.45, no flag. PCO2 44.40 in 35-45. PO2 151.00 high, ref 80-100. HCO3 27.20 high, ref 22-26. Store ABE 2.50 (in -3 to 3, abnormal column blank), not SBE 2.20. Lactate 1.67 high, ref 0.5-1.6. FiO2 still 60.0%. Printed bottom oxygenation index 252.00 low, ref 400-500. 151.00/0.60=251.7. A middle row also abbreviated oxygenation index is blank. The 0.39% pO2(a/A,T) row is not P/F and not procalcitonin. The A-a row result is blank; do not copy ctO2 11.40 onto it. Hb 8.00 low g/dL, ref 12-17.5. Hct 24.00% low. iCa 1.10 low, ref 1.15-1.29. sO2 99.20 high. Machine T 36.7 is not fever. Temp-corrected pH 7.409, PCO2 43.80. Oral fields blank. This clock is newer than the 16:42 arterial and older than the 21:59 potassium, so the hero stays the potassium. FiO2 staying at 60% is not weaned. No identifiers in the UI.",
+      "note": "Arterial blood gas. Clock 21:36:09. pH 7.405 in 7.35-7.45, no flag. PCO2 44.40 in 35-45. PO2 151.00 high, ref 80-100. HCO3 27.20 high, ref 22-26. Store ABE 2.50 (in -3 to 3, abnormal column blank), not SBE 2.20. Lactate 1.67 high, ref 0.5-1.6. FiO2 still 60.0%. Printed bottom oxygenation index 252.00 low, ref 400-500. 151.00/0.60=251.7. A middle row also abbreviated oxygenation index is blank. The 0.39% pO2(a/A,T) row is not P/F and not procalcitonin. The A-a row result is blank; do not copy ctO2 11.40 onto it. Hb 8.00 low g/dL, ref 12-17.5. Hct 24.00% low. iCa 1.10 low, ref 1.15-1.29. sO2 99.20 high. Machine T 36.7 is not fever. Temp-corrected pH 7.409, PCO2 43.80. Oral fields blank. This clock is newer than the 16:42 arterial and older than the 21:59 potassium, so at the time the hero stayed the potassium. The 2026-10-01 06:44 arterial is newer and is now the hero. FiO2 staying at 60% is not weaned. No identifiers in the UI.",
       "extracted": {
         "ph": 7.405,
         "pco2": 44.4,
@@ -4468,6 +4468,56 @@
       },
       "sha256_16": "e9c9f94f174d8e59",
       "bytes": 239422
+    },
+    {
+      "id": "20260930T120000__01a0f4b3-e556-7fb1-817b-4102889924b8.jpg",
+      "path": "reports/billing/20260930T120000__01a0f4b3-e556-7fb1-817b-4102889924b8.jpg",
+      "category": "billing",
+      "source_filename": "01a0f4b3-e556-7fb1-817b-4102889924b8.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T12:00:00",
+      "type": "清单",
+      "relative_h": 358.0,
+      "note": "Daily bill date button 2026/09/30. Noon convention h=358, not the 21:59 clock. Account snapshot prepaid 63000.00 / cost 135946.16 / balance -72946.16, not a single-day cost. Prior 9/29 snapshot was 124076.29 / -61076.29. CRRT 19.07 h / 1811.65 at 95/h. Do not write 19.07 as a start/stop clock or as the unit of UF 7060. No nafamostat on this sheet. Ventilator 24 h / 480. ECG 24 h / 192. ICU nursing 24 h / 384. Human albumin (import) 10g x4 / 1648.00 (unit 412) is an issued amount, not proof the infusion finished. No packed RBC. Ceftazidime-avibactam (泰定平) x3 / 1020. No meropenem line and no bronchoscopy fee. NE 1ml:2mg x18 / 14.58 and dobutamine x4 / 10.44 are vial counts, not the oral pumps (NE 5 mL/h, DA 5 mL/h). Dobutamine is not dopamine. Trach nursing 1 day / 43. No endotracheal-tube nursing line. PCT billed x1 / 114 with no new result; latest PCT stays 5.546. Kabiven unit price 59.4900 x1; the line total sat under the plus button, stored cost 59.49. Micro-pump 232 h / 696 is multi-pump billing, not one rate. Vial counts are not pump mL/h. No identifiers in the UI.",
+      "extracted": {
+        "prepaid": 63000.0,
+        "total_cost": 135946.16,
+        "balance": -72946.16,
+        "crrt_h": 19.07,
+        "crrt_cost": 1811.65,
+        "ventilator_h": 24,
+        "albumin_qty": 4,
+        "albumin_cost": 1648.0
+      },
+      "sha256_16": "e325186b2afc410c",
+      "bytes": 1568333
+    },
+    {
+      "id": "20261001T064423__01a0f4b3-e569-7e86-823d-5f2ce04139ff.jpg",
+      "path": "reports/abg/20261001T064423__01a0f4b3-e569-7e86-823d-5f2ce04139ff.jpg",
+      "category": "abg",
+      "source_filename": "01a0f4b3-e569-7e86-823d-5f2ce04139ff.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-01T06:44:23",
+      "type": "血气",
+      "relative_h": 376.74,
+      "note": "Arterial blood gas. Clock 2026-10-01 06:44:23. Label 术后376h44m; 23 seconds do not round the minute up. pH 7.433 in 7.35-7.45, abnormal column blank. PCO2 40.10 in 35-45. PO2 132.00 high, ref 80-100. HCO3 26.20 high, ref 22-26. tCO2 27.40 in 24-32 is not the stored HCO3. Temp-corrected cHCO-3(P,ST) 26.10 high is not the stored HCO3. Store ABE 1.90 (in -3 to 3, abnormal column blank), not SBE 1.80. Lactate 2.04 high, ref 0.5-1.6. FiO2 still 60.0%. Printed bottom oxygenation index 220.00 low, ref 400-500. 132.00/0.60=220. A middle row also abbreviated oxygenation index is blank. The 0.34% pO2(a/A,T) row is low vs 85-95; it is not P/F and not procalcitonin. The pO2(A-a) result is blank; do not copy ctO2 11.30 onto it and do not store 0. pO2(A-a,T) 33.94 high, ref 5-15. Hb ctHb 8.00 low g/dL, same as 21:36, not a new transfusion. Hct 24.00% low. iCa 1.11 low, ref 1.15-1.29. sO2 98.50 high, ref 93-98. K/Na/Cl rows blank. Machine T 36.7 is not fever. PH(T) 7.437, PCO2(T) 39.60. This clock (h 376.74) is newer than the 21:59 potassium (h 368.00), so the hero is 最新：术后376h44m. latestNonBloodGasReport stays the potassium. FiO2 staying at 60% is not weaned. Lactate 1.67 to 2.04 is not infection cured. No identifiers in the UI.",
+      "extracted": {
+        "ph": 7.433,
+        "pco2": 40.1,
+        "po2": 132.0,
+        "hco3": 26.2,
+        "be": 1.9,
+        "lactate": 2.04,
+        "fio2": 60,
+        "pf": 220,
+        "hb": 8.0,
+        "ca": 1.11
+      },
+      "sha256_16": "e9799ad15fc06cf0",
+      "bytes": 1304012
     }
   ]
 }
