@@ -7,8 +7,8 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 **Prior agent run (Allmond-bound, then continued here):** https://cursor.com/agents/bc-01a0a01a-a6eb-72c7-b052-ba5e14ed8b1b  
 **Conversation summary (current):** [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md)  
 **Conversation summary (through 9/18 13:00 ABG):** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
-**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@1957fef2f9998fe7f6fd398e71bbc787191c31b3/index.xhtml  
-**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@1957fef2f9998fe7f6fd398e71bbc787191c31b3/index.xhtml  
+**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@19633f8a0573b7033ea00a747447cf806da94b09/index.xhtml  
+**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@19633f8a0573b7033ea00a747447cf806da94b09/index.xhtml  
 **海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html  
 国内 `@main` 镜像不会跟着 main 走。上传化验已正式并入 `main`。顶栏现是 **最新化验：术后349h51m · APTT 97.6**（03:51凝血新于 02:52动脉）。家属说 17:00 开始手术，又说这场手术在 18:00 前就做完了。完成钟点没有精确到分钟，不要写成 18:00 整。9/29 清单写了气管切开费 1 次 / 399，这是计费，不是刀口描述。循环仍停在 9月29日15:01 监护仪顶栏：**124/36**，心跳 **95**，MAP **58**（印在括号里，不要用算的去改），呼吸 **19**，SpO2 **92**，脉搏 94。CVP 印的是 **（56）**，只照抄。监护仪没显示去甲或多巴胺，升压药仍停在 15:00 口述 **4** / **5** mL/h，不要编一次调量。02:52 这张血气也在手术完成之后，口述字段都空着。乳酸 **1.85→1.68**↑，P/F **170→204**（FiO₂仍 **80%**，PO₂ **162.80**），pH **7.375** 已回到 7.35–7.45，ABE **−2.10** 已回到 −3 到 3。存 ABE，不存 SBE −1.90。0.31% 那一行不是 P/F。中间一行氧合指数结果是空的。血气 Hb **9.30→7.80**↓，压积 **23%**，iCa **1.09**↓。不要把 204 写成已经撤机或感染已经好，也不要写成已经又输了血。03:36 干化学钾 **4.51**（3.5–5.3，异常栏空着）。03:51 APTT **53.5→97.6**↑，这张参考 21–45，备注写了有危急值、结果已复查，没有另印第二个数字。97.6 是 APTT 秒数，不是 pH。INR、纤维蛋白原这张没出。09:23 生化仍是肌酐 **233.0**↑，尿素 **19.93**↑，降钙素原 **6.8433**（PCCT，不是血小板比积，也不是 P/F）。血常规仍 **90** / WBC **18.20**。9/29 清单：CRRT **4.78 h / 454.10**。萘莫司他（扶渡）×15。美罗培南数量 **−6**（退费）。这张没看到呼吸机 24 小时，也没看到悬浮红细胞。manifest **219**。查房仍 4 条：FiO₂仍80%、呼吸机怎么接；美罗培南退费 / 药敏；APTT 97.6 与血滤抗凝；血气 Hb 7.80 还要不要输。危急值不等于已经出血。
 
