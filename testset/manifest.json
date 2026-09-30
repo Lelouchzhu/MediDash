@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 234,
+  "count": 235,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4436,12 +4436,38 @@
       "report_time": "2026-09-30T21:59:54",
       "type": "生化",
       "relative_h": 368.00,
-      "note": "Dry-chemistry potassium only. Clock 21:59:54. Phone status 10:07 is not the report clock. K 4.05 mmol/L, ref 3.5-5.3, abnormal column blank, note blank, no critical-value sticker. Do not call 4.05 low. Not procalcitonin and not P/F. Label is 术后367h59m because 54 seconds do not round the minute up; stored h is 368.00. Newer than the 16:42 arterial and the 16:55 APTT, so this clock is the hero. Oral fields blank. No identifiers in the UI.",
+      "note": "Dry-chemistry potassium only. Clock 21:59:54. Phone status 10:07 is not the report clock. K 4.05 mmol/L, ref 3.5-5.3, abnormal column blank, note blank, no critical-value sticker. Do not call 4.05 low. Not procalcitonin and not P/F. Label is 术后367h59m because 54 seconds do not round the minute up; stored h is 368.00. Newer than the 21:36 arterial (h 367.60) and the 16:55 APTT, so this clock is the hero. Oral fields blank. No identifiers in the UI.",
       "extracted": {
         "k": 4.05
       },
       "sha256_16": "2b72516f1f963b10",
       "bytes": 116909
+    },
+    {
+      "id": "20260930T213609__image-1790780325175-0.jpg",
+      "path": "reports/abg/20260930T213609__image-1790780325175-0.jpg",
+      "category": "abg",
+      "source_filename": "image-1790780325175-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T21:36:09",
+      "type": "血气",
+      "relative_h": 367.60,
+      "note": "Arterial blood gas. Clock 21:36:09. pH 7.405 in 7.35-7.45, no flag. PCO2 44.40 in 35-45. PO2 151.00 high, ref 80-100. HCO3 27.20 high, ref 22-26. Store ABE 2.50 (in -3 to 3, abnormal column blank), not SBE 2.20. Lactate 1.67 high, ref 0.5-1.6. FiO2 still 60.0%. Printed bottom oxygenation index 252.00 low, ref 400-500. 151.00/0.60=251.7. A middle row also abbreviated oxygenation index is blank. The 0.39% pO2(a/A,T) row is not P/F and not procalcitonin. The A-a row result is blank; do not copy ctO2 11.40 onto it. Hb 8.00 low g/dL, ref 12-17.5. Hct 24.00% low. iCa 1.10 low, ref 1.15-1.29. sO2 99.20 high. Machine T 36.7 is not fever. Temp-corrected pH 7.409, PCO2 43.80. Oral fields blank. This clock is newer than the 16:42 arterial and older than the 21:59 potassium, so the hero stays the potassium. FiO2 staying at 60% is not weaned. No identifiers in the UI.",
+      "extracted": {
+        "ph": 7.405,
+        "pco2": 44.4,
+        "po2": 151.0,
+        "hco3": 27.2,
+        "be": 2.5,
+        "lactate": 1.67,
+        "fio2": 60,
+        "pf": 252,
+        "hb": 8.0,
+        "ca": 1.10
+      },
+      "sha256_16": "e9c9f94f174d8e59",
+      "bytes": 239422
     }
   ]
 }
