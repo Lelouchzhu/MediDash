@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 228,
+  "count": 229,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4316,6 +4316,32 @@
       },
       "sha256_16": "ae0d29f156e53ab5",
       "bytes": 186514
+    },
+    {
+      "id": "20260930T122344__image-1790748990125-0.jpg",
+      "path": "reports/abg/20260930T122344__image-1790748990125-0.jpg",
+      "category": "abg",
+      "source_filename": "image-1790748990125-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T12:23:44",
+      "type": "血气",
+      "relative_h": 358.40,
+      "note": "Arterial blood gas. Clock 12:23:44. pH 7.413 in 7.35-7.45, no flag. PCO2 41.00 in 35-45. PO2 101.00 high, ref 80-100. Store ABE 1.00 (in -3 to 3, no flag), not SBE 0.90. HCO3 25.60 in 22-26. Lactate 2.05 high, ref 0.5-1.6. FiO2 60.0%. Printed bottom oxygenation index 168.00 low, ref 400-500. 101.00/0.60=168.3. A middle row also abbreviated oxygenation index is blank. The 0.26% pO2(a/A,T) row is not P/F and not procalcitonin. Hb 9.60 low g/dL, ref 12-17.5. Hct 28.00% low. iCa 1.11 low, ref 1.15-1.29. sO2 97.50. Machine T 36.5 is not fever. Temp-corrected pH 7.420, PCO2 40.10. This clock is older than the 12:56 APTT (h 358.94), so the hero stays APTT. Do not write weaned because FiO2 moved from 80% to 60%. Oral fields blank. No identifiers in the UI.",
+      "extracted": {
+        "ph": 7.413,
+        "pco2": 41.0,
+        "po2": 101.0,
+        "hco3": 25.6,
+        "be": 1.0,
+        "lactate": 2.05,
+        "fio2": 60,
+        "pf": 168,
+        "hb": 9.6,
+        "ca": 1.11
+      },
+      "sha256_16": "e1e9c3ac3975ae7e",
+      "bytes": 191751
     }
   ]
 }
