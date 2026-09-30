@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 229,
+  "count": 230,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4233,11 +4233,12 @@
       "category": "chemistry",
       "source_filename": "image-1790732956252-0.jpg",
       "labeled": true,
-      "preferred": true,
+      "preferred": false,
+      "superseded_by": "20260930T094530__93af93c8-a980-4be2-9ad9-13c3cface259.jpg",
       "report_time": "2026-09-30T09:45:30",
       "type": "生化",
       "relative_h": 355.76,
-      "note": "Chemistry clock 09:45:30. Phone status 9:48 is not the report clock. K 4.38 mmol/L, ref 3.5-5.3, abnormal column blank. Na 134.69 low, ref 137-147. Cl 96.01, ref 96-108, abnormal column blank, on the lower bound — do not invent a low arrow. Urea 18.24 high, ref 3.1-8.8, no critical-value note. Creatinine 210.0 high umol/L, ref 41-81, no critical-value note. Do not carry a 57-111 creatinine range onto this sheet. PCT and albumin not on this sheet. 210.0 is creatinine, not P/F and not procalcitonin. No new BP, urine, or CRRT. A drop from 233.0 is not CRRT restarted and not kidneys recovered. Newer than the 08:26 CBC, so this clock is the hero. No identifiers in the UI.",
+      "note": "Shorter 664x1800 crop of the 09:45:30 chemistry. It stops at creatinine and hides procalcitonin. Preferred is the 1080x2928 sheet with PCT 5.546. Do not roll the dashboard back. Phone status 9:48 is not the report clock.",
       "extracted": {
         "k": 4.38,
         "na": 134.69,
@@ -4342,6 +4343,28 @@
       },
       "sha256_16": "e1e9c3ac3975ae7e",
       "bytes": 191751
+    },
+    {
+      "id": "20260930T094530__93af93c8-a980-4be2-9ad9-13c3cface259.jpg",
+      "path": "reports/chemistry/20260930T094530__93af93c8-a980-4be2-9ad9-13c3cface259.jpg",
+      "category": "chemistry",
+      "source_filename": "93af93c8-a980-4be2-9ad9-13c3cface259.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T09:45:30",
+      "type": "生化",
+      "relative_h": 355.76,
+      "note": "Same clock 2026-09-30 09:45:30 as the shorter chemistry crop. This 1080x2928 sheet adds 降钙素原测定, abbreviation PCT, result 5.546 ng/ml, flagged high. 5.546 is fully visible. Unit fragments read ng/ and ml. Reference end 0.05 and the up arrow are visible; the plus button covers the start of the reference. Do not invent a different range. This is procalcitonin, not plateletcrit 0.11% and not P/F. K 4.38, Na 134.69 low, Cl 96.01, urea 18.24 high, Cr 210.0 high match the shorter crop. A drop from 6.8433 is not infection cured. Phone status 11:07 is not the report clock. Older than the 12:56 APTT, so the hero stays APTT. No identifiers in the UI.",
+      "extracted": {
+        "k": 4.38,
+        "na": 134.69,
+        "cl": 96.01,
+        "urea": 18.24,
+        "creatinine": 210.0,
+        "pct": 5.546
+      },
+      "sha256_16": "4f02579e19cfe05f",
+      "bytes": 783990
     }
   ]
 }
