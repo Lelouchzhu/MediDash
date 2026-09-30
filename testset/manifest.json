@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 226,
+  "count": 228,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4282,6 +4282,40 @@
       },
       "sha256_16": "86de4821340d7fd3",
       "bytes": 132373
+    },
+    {
+      "id": "20260930T124231__image-1790747810582-0.jpg",
+      "path": "reports/chemistry/20260930T124231__image-1790747810582-0.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790747810582-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T12:42:31",
+      "type": "生化",
+      "relative_h": 358.71,
+      "note": "Dry-chemistry potassium only. Clock 12:42:31. Phone status 1:55 is not the report clock. K 4.37 mmol/L, ref 3.5-5.3, abnormal column blank, note blank, no critical-value sticker. Not procalcitonin and not P/F. Cr/urea/Na not on this sheet. Oral fields blank. No identifiers in the UI.",
+      "extracted": {
+        "k": 4.37
+      },
+      "sha256_16": "eae790a24123300e",
+      "bytes": 180469
+    },
+    {
+      "id": "20260930T125628__image-1790747810580-1.jpg",
+      "path": "reports/coag/20260930T125628__image-1790747810580-1.jpg",
+      "category": "coag",
+      "source_filename": "image-1790747810580-1.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T12:56:28",
+      "type": "凝血",
+      "relative_h": 358.94,
+      "note": "APTT only. Clock 12:56:28. Phone status 1:53 is not the report clock. APTT 53.8 sec high, ref 21-45. Note blank, no critical-value sticker. Do not carry the 03:51 critical note onto this sheet, and do not say 53.8 is back inside 21-45. INR/PT/TT/Fbg not on this sheet. 53.8 is APTT seconds, not creatinine, not pH, and not P/F. Newer than the 12:42 potassium and the 10:18 albumin, so this clock is the hero. Oral fields blank. No identifiers in the UI.",
+      "extracted": {
+        "aptt": 53.8
+      },
+      "sha256_16": "ae0d29f156e53ab5",
+      "bytes": 186514
     }
   ]
 }
