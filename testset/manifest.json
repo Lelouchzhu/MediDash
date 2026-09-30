@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 223,
+  "count": 224,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4226,6 +4226,27 @@
       },
       "sha256_16": "4400187debe7c7cf",
       "bytes": 240922
+    },
+    {
+      "id": "20260930T094530__image-1790732956252-0.jpg",
+      "path": "reports/chemistry/20260930T094530__image-1790732956252-0.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790732956252-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T09:45:30",
+      "type": "生化",
+      "relative_h": 355.76,
+      "note": "Chemistry clock 09:45:30. Phone status 9:48 is not the report clock. K 4.38 mmol/L, ref 3.5-5.3, abnormal column blank. Na 134.69 low, ref 137-147. Cl 96.01, ref 96-108, abnormal column blank, on the lower bound — do not invent a low arrow. Urea 18.24 high, ref 3.1-8.8, no critical-value note. Creatinine 210.0 high umol/L, ref 41-81, no critical-value note. Do not carry a 57-111 creatinine range onto this sheet. PCT and albumin not on this sheet. 210.0 is creatinine, not P/F and not procalcitonin. No new BP, urine, or CRRT. A drop from 233.0 is not CRRT restarted and not kidneys recovered. Newer than the 08:26 CBC, so this clock is the hero. No identifiers in the UI.",
+      "extracted": {
+        "k": 4.38,
+        "na": 134.69,
+        "cl": 96.01,
+        "urea": 18.24,
+        "creatinine": 210.0
+      },
+      "sha256_16": "52ef76890462b62c",
+      "bytes": 137518
     }
   ]
 }
