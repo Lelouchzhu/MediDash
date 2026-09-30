@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 216,
+  "count": 219,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4066,6 +4066,67 @@
       },
       "sha256_16": "3d9084553f040cd1",
       "bytes": 1622191
+    },
+    {
+      "id": "20260930T025255__image-1790729073653-1.jpg",
+      "path": "reports/abg/20260930T025255__image-1790729073653-1.jpg",
+      "category": "abg",
+      "source_filename": "image-1790729073653-1.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T02:52:55",
+      "type": "血气",
+      "relative_h": 348.88,
+      "note": "Arterial ABG clock 2026-09-30 02:52:55. pH 7.375 in 7.35-7.45, no low flag. PCO2 40.40 in 35-45. PO2 162.80 high. Store ABE -2.10 (in -3 to 3, no flag), not SBE -1.90. HCO3 23.10 in 22-26. Lactate 1.68 high (0.5-1.6). FiO2 still 80.0%. Printed P/F at the bottom 204.00 (162.80/0.80=203.5). A middle row also labeled 氧合指数 is blank. The 0.31% pO2(a/A,T) row is not P/F. Hb 7.80 low, Hct 23.00 low, iCa 1.09 low, sO2 99.30 high. Machine T 36.8 is not fever. Temp-corrected pH 7.378, PCO2 40.00. No new oral vitals. Do not write weaned or infection cured. Identifiers stay out of the UI.",
+      "extracted": {
+        "ph": 7.375,
+        "pco2": 40.4,
+        "po2": 162.8,
+        "hco3": 23.1,
+        "be": -2.1,
+        "lactate": 1.68,
+        "fio2": 80,
+        "pf": 204,
+        "hb": 7.8,
+        "hct": 23,
+        "ca": 1.09
+      },
+      "sha256_16": "0ec20903f0f53fc6",
+      "bytes": 191061
+    },
+    {
+      "id": "20260930T033651__image-1790729073655-2.jpg",
+      "path": "reports/chemistry/20260930T033651__image-1790729073655-2.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790729073655-2.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T03:36:51",
+      "type": "生化",
+      "relative_h": 349.61,
+      "note": "Dry-chemistry potassium only. Clock 03:36:51. Phone status 6:16 is not the report clock. K 4.51 mmol/L, ref 3.5-5.3, abnormal column blank. Not procalcitonin and not P/F. Cr/urea/Na not on this sheet. No identifiers in the UI.",
+      "extracted": {
+        "k": 4.51
+      },
+      "sha256_16": "eca503753ac21b97",
+      "bytes": 177822
+    },
+    {
+      "id": "20260930T035101__image-1790729073656-0.jpg",
+      "path": "reports/coag/20260930T035101__image-1790729073656-0.jpg",
+      "category": "coag",
+      "source_filename": "image-1790729073656-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T03:51:01",
+      "type": "凝血",
+      "relative_h": 349.85,
+      "note": "APTT only. Clock 03:51:01. Phone status 6:16 is not the report clock. APTT 97.6 sec high, this sheet ref 21-45. Note says critical value and the result was rechecked; no second number is printed. INR/PT/TT/Fbg not on this sheet. 97.6 is APTT seconds, not pH and not P/F. No identifiers in the UI. Newer than the 02:52 arterial, so this clock is the hero.",
+      "extracted": {
+        "aptt": 97.6
+      },
+      "sha256_16": "8c2e01ff4ae22854",
+      "bytes": 193729
     }
   ]
 }
