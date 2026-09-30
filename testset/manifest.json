@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 230,
+  "count": 234,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4365,6 +4365,83 @@
       },
       "sha256_16": "4f02579e19cfe05f",
       "bytes": 783990
+    },
+    {
+      "id": "20260930T164246__image-1790777485960-2.jpg",
+      "path": "reports/abg/20260930T164246__image-1790777485960-2.jpg",
+      "category": "abg",
+      "source_filename": "image-1790777485960-2.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T16:42:46",
+      "type": "血气",
+      "relative_h": 362.71,
+      "note": "Arterial blood gas. Clock 16:42:46. pH 7.442 in 7.35-7.45, no flag. PCO2 40.20 in 35-45. PO2 118.50 high, ref 80-100. HCO3 26.80 high, ref 22-26. Store ABE 2.70 (in -3 to 3, abnormal column blank), not SBE 2.50. Lactate 1.76 high, ref 0.5-1.6. FiO2 still 60.0%. Printed bottom oxygenation index 198.00 low, ref 400-500. 118.50/0.60=197.5. A middle row also abbreviated oxygenation index is blank. The 0.30% pO2(a/A,T) row is not P/F and not procalcitonin. The A-a row result is blank; do not copy ctO2 11.60 onto it. Hb 8.30 low g/dL, ref 12-17.5. Hct 24.00% low. iCa 1.13 low, ref 1.15-1.29. sO2 98.30 high. Machine T 36.5 is not fever. Temp-corrected pH 7.449, PCO2 39.30. Oral fields blank. This clock is newer than the 15:00 oral and older than the 21:59 potassium, so the hero is the potassium. FiO2 staying at 60% is not weaned. No identifiers in the UI.",
+      "extracted": {
+        "ph": 7.442,
+        "pco2": 40.2,
+        "po2": 118.5,
+        "hco3": 26.8,
+        "be": 2.7,
+        "lactate": 1.76,
+        "fio2": 60,
+        "pf": 198,
+        "hb": 8.3,
+        "ca": 1.13
+      },
+      "sha256_16": "8c21af18acf1a91f",
+      "bytes": 239219
+    },
+    {
+      "id": "20260930T165035__image-1790777485935-0.jpg",
+      "path": "reports/chemistry/20260930T165035__image-1790777485935-0.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790777485935-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T16:50:35",
+      "type": "生化",
+      "relative_h": 362.84,
+      "note": "Dry-chemistry potassium only. Clock 16:50:35. Phone status 5:06 is not the report clock. K 4.17 mmol/L, ref 3.5-5.3, abnormal column blank, note blank, no critical-value sticker. Not procalcitonin and not P/F. Older than the 21:59 potassium. Oral fields blank. No identifiers in the UI.",
+      "extracted": {
+        "k": 4.17
+      },
+      "sha256_16": "1bb4b96e2e9b2497",
+      "bytes": 116026
+    },
+    {
+      "id": "20260930T165538__image-1790777485936-1.jpg",
+      "path": "reports/coag/20260930T165538__image-1790777485936-1.jpg",
+      "category": "coag",
+      "source_filename": "image-1790777485936-1.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T16:55:38",
+      "type": "凝血",
+      "relative_h": 362.93,
+      "note": "APTT only. Clock 16:55:38. Phone status 5:06 is not the report clock. APTT 58.6 sec high, ref 21-45. Note blank, no critical-value sticker. Do not carry the 03:51 critical note onto this sheet, and do not say 58.6 is back inside 21-45. INR/PT/TT/Fbg not on this sheet. 58.6 is APTT seconds, not creatinine, not pH, and not P/F. Older than the 21:59 potassium, so the hero is the potassium. Oral fields blank. No identifiers in the UI.",
+      "extracted": {
+        "aptt": 58.6
+      },
+      "sha256_16": "ca3dbf043197382d",
+      "bytes": 118933
+    },
+    {
+      "id": "20260930T215954__image-1790777485933-3.jpg",
+      "path": "reports/chemistry/20260930T215954__image-1790777485933-3.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790777485933-3.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T21:59:54",
+      "type": "生化",
+      "relative_h": 368.00,
+      "note": "Dry-chemistry potassium only. Clock 21:59:54. Phone status 10:07 is not the report clock. K 4.05 mmol/L, ref 3.5-5.3, abnormal column blank, note blank, no critical-value sticker. Do not call 4.05 low. Not procalcitonin and not P/F. Label is 术后367h59m because 54 seconds do not round the minute up; stored h is 368.00. Newer than the 16:42 arterial and the 16:55 APTT, so this clock is the hero. Oral fields blank. No identifiers in the UI.",
+      "extracted": {
+        "k": 4.05
+      },
+      "sha256_16": "2b72516f1f963b10",
+      "bytes": 116909
     }
   ]
 }
