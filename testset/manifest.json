@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 224,
+  "count": 225,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4247,6 +4247,23 @@
       },
       "sha256_16": "52ef76890462b62c",
       "bytes": 137518
+    },
+    {
+      "id": "20260930T101838__01a0f037-781b-74a7-874f-accdb8e1bd61.jpg",
+      "path": "reports/chemistry/20260930T101838__01a0f037-781b-74a7-874f-accdb8e1bd61.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0f037-781b-74a7-874f-accdb8e1bd61.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T10:18:38",
+      "type": "生化",
+      "relative_h": 356.31,
+      "note": "Chemistry clock 10:18:38. Phone status 10:24 is not the report clock. Serum albumin 23.2 g/L low, ref 34-48. Globulin and A/G result cells blank; do not store 0. Note blank, no critical-value sticker. 23.2 is albumin, not P/F and not procalcitonin. Cr/urea/K not on this sheet. Same batch family report: doctor plans albumin today, no transfusion for now, CRRT continues, trach wound dressed yesterday and looks okay. Family words, not an order and not a diagnosis. Do not write albumin already given, a new CRRT start clock, flow, UF, urine, or wound drainage. No new BP. Newer than the 09:45 chemistry, so this clock is the hero. No identifiers in the UI.",
+      "extracted": {
+        "alb": 23.2
+      },
+      "sha256_16": "23cfbd2e14c949e8",
+      "bytes": 340622
     }
   ]
 }
