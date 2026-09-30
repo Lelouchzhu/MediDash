@@ -143,6 +143,12 @@ class RelayFlowTest(unittest.TestCase):
         self.assertIn("push origin main", prompt)
         self.assertIn("不要移动 tag upload", prompt)
         self.assertIn("完整 40 位 SHA", prompt)
+        self.assertIn("手机状态栏不是报告时间", prompt)
+        self.assertIn("不存标准剩余碱 SBE", prompt)
+        self.assertIn("危急值只认本张", prompt)
+        self.assertIn("icu-support、infection、crrt、gut-bleeding", prompt)
+        billing = self.relay_module.build_prompt({"kind": "住院清单"})
+        self.assertNotIn("不存标准剩余碱 SBE", billing)
         self.assertNotIn("cursor/mainland-lab-upload-b98e", prompt)
         self.assertNotIn("不要改 main", prompt)
 
