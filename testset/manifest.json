@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 222,
+  "count": 223,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4199,6 +4199,33 @@
       },
       "sha256_16": "9adb812a8118df67",
       "bytes": 194596
+    },
+    {
+      "id": "20260929T221505__image-1790732312609-0.jpg",
+      "path": "reports/abg/20260929T221505__image-1790732312609-0.jpg",
+      "category": "abg",
+      "source_filename": "image-1790732312609-0.jpg",
+      "labeled": true,
+      "preferred": false,
+      "superseded_by": "20260929T221505__BBCFFC73-F238-45A0-8AD2-24D164700C0F_L0_001.jpg",
+      "report_time": "2026-09-29T22:15:05",
+      "type": "血气",
+      "relative_h": 344.25,
+      "note": "Same clock 2026-09-29 22:15:05 as the preferred 3520x3772 hires sheet. This copy is 1680x1800. Printed values match and do not replace it: pH 7.344 low, PCO2 41.50, PO2 136.30 high, store ABE -3.60 not SBE -3.40, HCO3 22.10, lactate 1.85 high, FiO2 80.0, printed P/F 170.00, middle 氧合指数 blank, 0.26% pO2(a/A,T) is not P/F, Hb 9.30, Hct 27.00, iCa 1.11, T 36.8, temp-corrected pH 7.347. Do not roll the dashboard back. Later clocks remain 07:18 ABG, 07:31 APTT 63.9, and 08:26 CBC.",
+      "extracted": {
+        "ph": 7.344,
+        "pco2": 41.5,
+        "po2": 136.3,
+        "hco3": 22.1,
+        "be": -3.6,
+        "lactate": 1.85,
+        "fio2": 80,
+        "pf": 170,
+        "hb": 9.3,
+        "ica": 1.11
+      },
+      "sha256_16": "4400187debe7c7cf",
+      "bytes": 240922
     }
   ]
 }
