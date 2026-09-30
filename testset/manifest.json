@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 219,
+  "count": 222,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4127,6 +4127,78 @@
       },
       "sha256_16": "8c2e01ff4ae22854",
       "bytes": 193729
+    },
+    {
+      "id": "20260930T071831__image-1790730217258-2.jpg",
+      "path": "reports/abg/20260930T071831__image-1790730217258-2.jpg",
+      "category": "abg",
+      "source_filename": "image-1790730217258-2.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T07:18:31",
+      "type": "血气",
+      "relative_h": 353.31,
+      "note": "Arterial ABG clock 2026-09-30 07:18:31. pH 7.392 in 7.35-7.45, no low flag. PCO2 43.20 in 35-45. PO2 138.90 high. Store ABE 0.80 (in -3 to 3, no flag), not SBE 0.60. HCO3 25.70 in 22-26. Lactate 2.16 high (0.5-1.6). FiO2 still 80.0%. Printed P/F at the bottom 174.00 (138.90/0.80=173.6). A middle row also labeled 氧合指数 is blank. The 0.26% pO2(a/A,T) row is not P/F. Hb 8.60 low, Hct 25.00 low, iCa 1.10 low, sO2 98.70 high. Machine T 36.5 is not fever. Temp-corrected pH 7.399, PCO2 42.30. No new oral vitals. Do not write weaned. Identifiers stay out of the UI.",
+      "extracted": {
+        "ph": 7.392,
+        "pco2": 43.2,
+        "po2": 138.9,
+        "hco3": 25.7,
+        "be": 0.8,
+        "lactate": 2.16,
+        "fio2": 80,
+        "pf": 174,
+        "hb": 8.6,
+        "hct": 25,
+        "ca": 1.1
+      },
+      "sha256_16": "1f6b1c06908b3b98",
+      "bytes": 238706
+    },
+    {
+      "id": "20260930T073115__image-1790730217256-1.jpg",
+      "path": "reports/coag/20260930T073115__image-1790730217256-1.jpg",
+      "category": "coag",
+      "source_filename": "image-1790730217256-1.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T07:31:15",
+      "type": "凝血",
+      "relative_h": 353.52,
+      "note": "Coag panel clock 07:31:15. Phone status 08:43 is not the report clock. APTT 63.9 sec high, ref 21-45. Note blank, no critical-value sticker. Do not carry the 03:51 critical note onto this sheet. TT 12.2 low. PT 14.3 with blank flag, ref 11-14.3. PT% 72.5 low. INR 1.19 with blank flag, ref 0.94-1.2. Fibrinogen 6.51 high, ref 2-4.5. 63.9 is APTT seconds, not pH and not P/F. No identifiers in the UI.",
+      "extracted": {
+        "aptt": 63.9,
+        "tt": 12.2,
+        "pt": 14.3,
+        "pt_pct": 72.5,
+        "inr": 1.19,
+        "fbg": 6.51
+      },
+      "sha256_16": "68130c767e150da1",
+      "bytes": 169905
+    },
+    {
+      "id": "20260930T082653__image-1790730217254-0.jpg",
+      "path": "reports/cbc/20260930T082653__image-1790730217254-0.jpg",
+      "category": "cbc",
+      "source_filename": "image-1790730217254-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-09-30T08:26:53",
+      "type": "血常规",
+      "relative_h": 354.45,
+      "note": "CBC clock 08:26:53. WBC 9.28 in 3.5-9.5, no high flag. Neutrophils 93.3% high, absolute 8.65 high. Lymphocytes 2.9% / 0.27 low. Hb 84.0 low, Hct 23.4 low, platelets 89.00 low. Plateletcrit PCT 0.11% low is not procalcitonin and not P/F. MCHC 359.0 high. WBC inside range is not infection cured. Newer than the 07:18 arterial and 07:31 coag, so this clock is the hero. No identifiers in the UI.",
+      "extracted": {
+        "wbc": 9.28,
+        "neut_pct": 93.3,
+        "neut_abs": 8.65,
+        "hgb": 84.0,
+        "hct": 23.4,
+        "plt": 89.0,
+        "plateletcrit": 0.11
+      },
+      "sha256_16": "9adb812a8118df67",
+      "bytes": 194596
     }
   ]
 }
