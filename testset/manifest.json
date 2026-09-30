@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 225,
+  "count": 226,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4264,6 +4264,24 @@
       },
       "sha256_16": "23cfbd2e14c949e8",
       "bytes": 340622
+    },
+    {
+      "id": "20260930T101838__image-1790738485250-0.jpg",
+      "path": "reports/chemistry/20260930T101838__image-1790738485250-0.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790738485250-0.jpg",
+      "labeled": true,
+      "preferred": false,
+      "superseded_by": "20260930T101838__01a0f037-781b-74a7-874f-accdb8e1bd61.jpg",
+      "report_time": "2026-09-30T10:18:38",
+      "type": "生化",
+      "relative_h": 356.31,
+      "note": "Same clock 2026-09-30 10:18:38 as the preferred 1080x2400 albumin sheet. This copy is 810x1800. Printed values match and do not replace it: albumin 23.2 g/L low, ref 34-48; globulin and A/G blank; note blank. Phone status 10:24 is not the report clock. Do not roll the dashboard back. The upload form clock 2026-09-11 11:00 is before surgery and is not a report time.",
+      "extracted": {
+        "alb": 23.2
+      },
+      "sha256_16": "86de4821340d7fd3",
+      "bytes": 132373
     }
   ]
 }
