@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 238,
+  "count": 239,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4544,6 +4544,28 @@
       },
       "sha256_16": "331f97112663bce6",
       "bytes": 193088
+    },
+    {
+      "id": "20261001T091522__image-1790818895230-0.jpg",
+      "path": "reports/coag/20261001T091522__image-1790818895230-0.jpg",
+      "category": "coag",
+      "source_filename": "image-1790818895230-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-01T09:15:22",
+      "type": "凝血",
+      "relative_h": 379.26,
+      "note": "Coag clock 2026-10-01 09:15:22. Phone status 09:39 is not the report clock. Label 术后379h15m; 22 seconds do not round the minute up; stored h is 379.26. APTT 44.4 sec high. This sheet ref is 23.3-32.5, not the 16:55 sheet ref 21-45. Do not say 44.4 is back inside 21-45. Note blank, no critical-value sticker. TT 16.4 sec, ref 14-21, abnormal column blank. PT 14.9 sec high, ref 11-14.3. PT% 62.3 low, ref 80-120. INR 1.34 high, ref 0.94-1.2. Fibrinogen 4.16 g/L, ref 2-4.5, abnormal column blank. Newer than the 08:53 CBC (h 378.90), so the hero is 最新化验：术后379h15m · APTT 44.4. Oral fields blank. Do not write bleeding stopped or CRRT stopped. No identifiers in the UI.",
+      "extracted": {
+        "aptt": 44.4,
+        "tt": 16.4,
+        "pt": 14.9,
+        "pt_pct": 62.3,
+        "inr": 1.34,
+        "fbg": 4.16
+      },
+      "sha256_16": "be54507b6afdbb4e",
+      "bytes": 166895
     }
   ]
 }
