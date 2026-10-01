@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 239,
+  "count": 242,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4525,7 +4525,8 @@
       "category": "cbc",
       "source_filename": "image-1790817325138-0.jpg",
       "labeled": true,
-      "preferred": true,
+      "preferred": false,
+      "superseded_by": "reports/cbc/20261001T085353__0F1E5D44-6BC1-4018-87E1-CC66A5A0D589_L0_001.jpg",
       "report_time": "2026-10-01T08:53:53",
       "type": "血常规",
       "relative_h": 378.90,
@@ -4566,6 +4567,71 @@
       },
       "sha256_16": "be54507b6afdbb4e",
       "bytes": 166895
+    },
+    {
+      "id": "20261001T085353__0F1E5D44-6BC1-4018-87E1-CC66A5A0D589_L0_001.jpg",
+      "path": "reports/cbc/20261001T085353__0F1E5D44-6BC1-4018-87E1-CC66A5A0D589_L0_001.jpg",
+      "category": "cbc",
+      "source_filename": "0F1E5D44-6BC1-4018-87E1-CC66A5A0D589_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-01T08:53:53",
+      "type": "血常规",
+      "relative_h": 378.90,
+      "note": "Wider copy of the same 2026-10-01 08:53:53 CBC. Printed values match the earlier phone crop: WBC 12.54, RBC 2.31, HB 77.0, HCT 20.7, PLT 90.00, NEUT 11.94, plateletcrit PCT 0.11%. Plateletcrit is not procalcitonin. Do not add a second lab point. The 10:06 chemistry and 15:00 oral are later, so this sheet is not the hero.",
+      "extracted": {
+        "wbc": 12.54,
+        "rbc": 2.31,
+        "hbg": 77.0,
+        "hct": 20.7,
+        "plt": 90.0,
+        "neut_abs": 11.94,
+        "plateletcrit": 0.11
+      },
+      "sha256_16": "632e4751a7a350ec",
+      "bytes": 887606
+    },
+    {
+      "id": "20261001T100647__4EE992C5-B8EB-496C-B5FC-DABB95CD0C1C_L0_001.jpg",
+      "path": "reports/chemistry/20261001T100647__4EE992C5-B8EB-496C-B5FC-DABB95CD0C1C_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "4EE992C5-B8EB-496C-B5FC-DABB95CD0C1C_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-01T10:06:47",
+      "type": "生化",
+      "relative_h": 380.11,
+      "note": "Chemistry clock 2026-10-01 10:06:47. Phone status 10:48 is not the report clock. Label 术后380h6m; 47 seconds do not round the minute up; stored h is 380.11. K 4.35, ref 3.5-5.3, abnormal column blank. Na 136.71 low, ref 137-147. Cl 96.91, ref 96-108, abnormal column blank. Urea 18.28 high, ref 3.1-8.8. Creatinine 211.0 high, ref 41-81. No critical-value note. Procalcitonin row, abbreviation PCT, result 5.489 high. The unit is covered by the share button. The reference end 0.05 is visible and the start is covered; do not invent the hidden start. This PCT is procalcitonin, not the CBC plateletcrit 0.11%. 5.489 is not infection cured and 211.0 is not kidneys recovered. Older than the 12:05 antibody screen and the 15:00 oral, so the hero stays the oral. No identifiers in the UI.",
+      "extracted": {
+        "k": 4.35,
+        "na": 136.71,
+        "cl": 96.91,
+        "urea": 18.28,
+        "creatinine": 211.0,
+        "pct": 5.489
+      },
+      "sha256_16": "97cbbc0310d30cd1",
+      "bytes": 526304
+    },
+    {
+      "id": "20261001T120539__9B2D88E3-14BD-4E9E-A1D7-FA14FB01A374_L0_001.jpg",
+      "path": "reports/other/20261001T120539__9B2D88E3-14BD-4E9E-A1D7-FA14FB01A374_L0_001.jpg",
+      "category": "other",
+      "source_filename": "9B2D88E3-14BD-4E9E-A1D7-FA14FB01A374_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-01T12:05:39",
+      "type": "抗体筛查",
+      "relative_h": 382.09,
+      "note": "Irregular-antibody screen. Clock 2026-10-01 12:05:39. Label 术后382h5m; 39 seconds do not round the minute up; stored h is 382.09. Antibody I / II / III and overall result all negative. Note blank. Phone status 12:10 is not the report clock. Not drug susceptibility and not a transfusion. Older than the 15:00 oral, so the hero stays the oral. No identifiers in the UI.",
+      "extracted": {
+        "antibody_i": "negative",
+        "antibody_ii": "negative",
+        "antibody_iii": "negative",
+        "antibody_result": "negative"
+      },
+      "sha256_16": "957bbdb9740334bb",
+      "bytes": 361466
     }
   ]
 }
