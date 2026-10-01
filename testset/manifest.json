@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 237,
+  "count": 238,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4518,6 +4518,32 @@
       },
       "sha256_16": "e9799ad15fc06cf0",
       "bytes": 1304012
+    },
+    {
+      "id": "20261001T085353__image-1790817325138-0.jpg",
+      "path": "reports/cbc/20261001T085353__image-1790817325138-0.jpg",
+      "category": "cbc",
+      "source_filename": "image-1790817325138-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-01T08:53:53",
+      "type": "血常规",
+      "relative_h": 378.90,
+      "note": "CBC clock 2026-10-01 08:53:53. Label 术后378h53m; 53 seconds do not round the minute up; stored h is 378.90. WBC 12.54 high, ref 3.5-9.5. RBC 2.31 low. HB 77.0 g/L low, ref 115-150. HCT 20.7% low. MCV 89.6 in 82-100. MCH 33.3 in 27-34. MCHC 372.0 high, ref 316-354. PLT 90.00 low, ref 125-350. LYMPH% 2.2 low, MONO% 1.8 low, NEUT% 95.3 high, EOS% 0.7 in range, BASO% 0.0 in range. LYMPH 0.28 low, MONO 0.23 in 0.12-1, NEUT 11.94 high, EOS 0.09 in range, BASO 0.00 in range. The PCT row is plateletcrit 0.11% low, ref 0.17-0.35, not procalcitonin and not P/F. Procalcitonin stays 5.546. Notes blank, no critical-value sticker. Newer than the 06:44 arterial (h 376.74), so the hero is 最新化验：术后378h53m · 白细胞 12.54. Oral fields blank. WBC leaving the reference is not an infection diagnosis. HB 77.0 is not a new transfusion. No identifiers in the UI.",
+      "extracted": {
+        "wbc": 12.54,
+        "rbc": 2.31,
+        "hbg": 77.0,
+        "hct": 20.7,
+        "plt": 90.0,
+        "neut_pct": 95.3,
+        "neut_abs": 11.94,
+        "lymph_pct": 2.2,
+        "lymph_abs": 0.28,
+        "plateletcrit": 0.11
+      },
+      "sha256_16": "331f97112663bce6",
+      "bytes": 193088
     }
   ]
 }
