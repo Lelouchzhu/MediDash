@@ -1062,7 +1062,7 @@
       ],
       "nursing": {
         "icu": true,
-        "tracheal": true,
+        "tracheal": false,
         "tube_care": false,
         "suction": 5
       },
