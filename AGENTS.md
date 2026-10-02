@@ -34,6 +34,8 @@ Self-contained mobile perioperative monitoring dashboard. **Not medical advice.*
 
 `be` on ABG sheets is **ABE** (this machine also prints SBE — store ABE).
 
+Blood-gas sheets are **arterial** unless the family explicitly says 静脉, or the sheet itself prints 静脉. Do not infer venous from a low PO₂ or a low printed index. The 2026-10-02 16:25:04 sheet stays venous because the family said so.
+
 ## Norepinephrine concentration
 
 Family-confirmed **0.05 mg/mL**. Convert only NE. **Do not invent dopamine mg/h.** **Do not invent weight.**
