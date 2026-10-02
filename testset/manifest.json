@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 249,
+  "count": 252,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4778,11 +4778,12 @@
       "category": "chemistry",
       "source_filename": "BB4BCBD7-9B98-4156-A80A-93EF3C357052_L0_001.jpg",
       "labeled": true,
-      "preferred": true,
+      "preferred": false,
+      "superseded_by": "reports/chemistry/20261002T092403__image-1790923476441-2.jpg",
       "report_time": "2026-10-02T09:24:03",
       "type": "生化",
       "relative_h": 403.40,
-      "note": "Chemistry clock 2026-10-02 09:24:03. Phone status 09:58 is not the report clock. Label 术后403h24m; 3 seconds do not round the minute up; stored h is 403.40. K 4.80, ref 3.5-5.3, abnormal column blank. Do not call 4.80 high. Na 133.09 low, ref 137-147. Cl 95.60 low, ref 96-108. Urea 24.64 high, ref 3.1-8.8, no critical-value note. Creatinine 286.0 high umol/L, ref 41-81, no critical-value note. No procalcitonin on this sheet; procalcitonin stays 5.489. Newer than the 06:43 arterial (h 400.73), the 08:58 CBC (h 402.97), and the 09:21 coag (h 403.36), so latestNonBloodGasReport is this chemistry and the hero is 最新化验：术后403h24m · 肌酐 286.0. 286.0 is not a CRRT restart and not kidneys recovered.",
+      "note": "Shorter crop of the 2026-10-02 09:24:03 chemistry. Phone status 09:58 is not the report clock. K 4.80, Na 133.09, Cl 95.60, urea 24.64, creatinine 286.0 match the fuller sheet. This crop stops before the procalcitonin row, so it is not preferred. Do not add a second lab point. The fuller sheet is preferred and shows PCT 5.754.",
       "extracted": {
         "k": 4.80,
         "na": 133.09,
@@ -4792,6 +4793,74 @@
       },
       "sha256_16": "5d2b8132ba361f48",
       "bytes": 383819
+    },
+    {
+      "id": "20261002T092403__image-1790923476441-2.jpg",
+      "path": "reports/chemistry/20261002T092403__image-1790923476441-2.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1790923476441-2.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-02T09:24:03",
+      "type": "生化",
+      "relative_h": 403.40,
+      "note": "Fuller copy of the same 2026-10-02 09:24:03 chemistry. Phone status 10:36 is not the report clock. K 4.80, Na 133.09 low, Cl 95.60 low, urea 24.64 high, creatinine 286.0 high match the shorter crop. This sheet also shows procalcitonin, abbreviation PCT, 5.754 high ng/ml, ref 0-0.05. Same clock as creatinine 286.0, not a new draw. Plateletcrit 0.11% is not this row. Do not add a second lab point. The 13:55 coag (h 407.92) is newer, so the hero is that coag panel.",
+      "extracted": {
+        "k": 4.80,
+        "na": 133.09,
+        "cl": 95.60,
+        "urea": 24.64,
+        "creatinine": 286.0,
+        "pct": 5.754
+      },
+      "sha256_16": "f0476152ba4b0e04",
+      "bytes": 171475
+    },
+    {
+      "id": "20261002T134147__image-1790923476442-0.jpg",
+      "path": "reports/cbc/20261002T134147__image-1790923476442-0.jpg",
+      "category": "cbc",
+      "source_filename": "image-1790923476442-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-02T13:41:47",
+      "type": "血常规",
+      "relative_h": 407.70,
+      "note": "CBC clock 2026-10-02 13:41:47. Phone status 2:09 is not the report clock. Label 术后407h41m; 47 seconds do not round the minute up; stored h is 407.70. WBC 12.86 high, ref 3.5-9.5. RBC 2.80 low. HB 87.0 g/L low, ref 115-150. HCT 25.8 low. MCHC 337.0 in 316-354, no flag. PLT 87.00 low. NEUT% 94.9 high, NEUT# 12.21 high. LYMPH% 1.9 low, LYMPH# 0.24 low. MONO% 1.8 low, MONO# 0.23 in 0.12-1. P-LCR 43.90% high, ref 13-43. The PCT row is plateletcrit 0.11% low, ref 0.17-0.35, not procalcitonin. Procalcitonin is the 09:24 chemistry 5.754. Notes blank. Newer than the 09:24 chemistry and older than the 13:55 coag, so this sheet is not the hero. HB 87.0 is not ABG Hb 8.10 and is not proof the issued 2 units were infused.",
+      "extracted": {
+        "wbc": 12.86,
+        "rbc": 2.80,
+        "hbg": 87.0,
+        "hct": 25.8,
+        "plt": 87.0,
+        "neut_pct": 94.9,
+        "neut_abs": 12.21,
+        "plateletcrit": 0.11
+      },
+      "sha256_16": "c891e849b7bdb0d8",
+      "bytes": 162800
+    },
+    {
+      "id": "20261002T135526__image-1790923476439-1.jpg",
+      "path": "reports/coag/20261002T135526__image-1790923476439-1.jpg",
+      "category": "coag",
+      "source_filename": "image-1790923476439-1.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-02T13:55:26",
+      "type": "凝血",
+      "relative_h": 407.92,
+      "note": "Coag clock 2026-10-02 13:55:26. Phone status 2:08 is not the report clock. Label 术后407h55m; 26 seconds do not round the minute up; stored h is 407.92. APTT 54.5 high sec. This sheet ref is 21-45, not the 09:21 sheet's 23.3-32.5. 54.5 is high on 21-45. Do not say it is back inside 21-45, and do not apply the morning range. Note blank. TT 13.8 low, ref 14-21. PT 14.1, ref 11-14.3, abnormal column blank. PT% 74.4 low, ref 80-120. INR 1.17, ref 0.94-1.2, abnormal column blank. Fibrinogen 5.15 high g/L, ref 2-4.5. 54.5 is APTT seconds, not creatinine and not P/F. Newer than the 13:41 CBC and the 09:24 chemistry, so the hero is 最新化验：术后407h55m · APTT 54.5.",
+      "extracted": {
+        "aptt": 54.5,
+        "tt": 13.8,
+        "pt": 14.1,
+        "pt_pct": 74.4,
+        "inr": 1.17,
+        "fbg": 5.15
+      },
+      "sha256_16": "9e699c2a8cc8191b",
+      "bytes": 242468
     }
   ]
 }
