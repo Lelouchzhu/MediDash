@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 246,
+  "count": 249,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4669,7 +4669,7 @@
       "report_time": "2026-10-02T00:22:12",
       "type": "生化",
       "relative_h": 394.37,
-      "note": "Dry-chemistry potassium only. Clock 2026-10-02 00:22:12. Phone status 1:17 is not the report clock. Label 术后394h22m; 12 seconds do not round the minute up; stored h is 394.37. K 4.67 mmol/L, ref 3.5-5.3, abnormal column blank, note blank. Do not call 4.67 high. Not procalcitonin and not P/F. Newer than the 23:54 arterial and older than the 06:43 arterial, so latestNonBloodGasReport is this potassium and the hero is the 06:43 gas.",
+      "note": "Dry-chemistry potassium only. Clock 2026-10-02 00:22:12. Phone status 1:17 is not the report clock. Label 术后394h22m; 12 seconds do not round the minute up; stored h is 394.37. K 4.67 mmol/L, ref 3.5-5.3, abnormal column blank, note blank. Do not call 4.67 high. Not procalcitonin and not P/F. Newer than the 23:54 arterial and older than the 06:43 arterial, so at that time latestNonBloodGasReport was this potassium and the hero was the 06:43 gas. The 10/2 09:24 chemistry (h 403.40) is newer.",
       "extracted": {
         "k": 4.67
       },
@@ -4686,7 +4686,7 @@
       "report_time": "2026-10-02T06:43:31",
       "type": "动脉血气",
       "relative_h": 400.73,
-      "note": "Arterial ABG clock 2026-10-02 06:43:31. Label 术后400h43m; 31 seconds do not round the minute up; stored h is 400.73. pH 7.454 high, ref 7.35-7.45. PCO2 32.10 low, ref 35-45. PO2 90.30 in 80-100, no high flag. Store cHCO3 22.00, ref 22-26, abnormal column blank. tCO2 23.00 low is not the stored HCO3. Store ABE -1.90, ref -3 to 3, abnormal column blank; do not store SBE -1.50. Lactate 1.69 high, ref 0.5-1.6. FiO2 60.0%. Bottom oxygenation index 150.00 low, ref 400-500. 90.30/0.60=150.5. The middle oxygenation-index row is blank. The 0.22% row is not P/F and not procalcitonin. The A-a row is blank; do not copy ctO2 11.10. ctHb 8.10 low, Hct 24.00 low, iCa 1.08 low. Machine T 36.5 is not fever. Newer than the 00:22 potassium (h 394.37), so the hero is 最新：术后400h43m.",
+      "note": "Arterial ABG clock 2026-10-02 06:43:31. Label 术后400h43m; 31 seconds do not round the minute up; stored h is 400.73. pH 7.454 high, ref 7.35-7.45. PCO2 32.10 low, ref 35-45. PO2 90.30 in 80-100, no high flag. Store cHCO3 22.00, ref 22-26, abnormal column blank. tCO2 23.00 low is not the stored HCO3. Store ABE -1.90, ref -3 to 3, abnormal column blank; do not store SBE -1.50. Lactate 1.69 high, ref 0.5-1.6. FiO2 60.0%. Bottom oxygenation index 150.00 low, ref 400-500. 90.30/0.60=150.5. The middle oxygenation-index row is blank. The 0.22% row is not P/F and not procalcitonin. The A-a row is blank; do not copy ctO2 11.10. ctHb 8.10 low, Hct 24.00 low, iCa 1.08 low. Machine T 36.5 is not fever. Newer than the 00:22 potassium (h 394.37), so at that time the hero was 最新：术后400h43m. The 10/2 09:24 chemistry (h 403.40) is newer, so the hero is now that chemistry.",
       "extracted": {
         "ph": 7.454,
         "pco2": 32.1,
@@ -4725,6 +4725,73 @@
       },
       "sha256_16": "9b57ec0b06568cbe",
       "bytes": 1291462
+    },
+    {
+      "id": "20261002T085826__C3952F35-AC7B-43EE-9862-BF6E795E572A_L0_001.jpg",
+      "path": "reports/cbc/20261002T085826__C3952F35-AC7B-43EE-9862-BF6E795E572A_L0_001.jpg",
+      "category": "cbc",
+      "source_filename": "C3952F35-AC7B-43EE-9862-BF6E795E572A_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-02T08:58:26",
+      "type": "血常规",
+      "relative_h": 402.97,
+      "note": "CBC clock 2026-10-02 08:58:26. Label 术后402h58m; 26 seconds do not round the minute up; stored h is 402.97. WBC 13.43 high, ref 3.5-9.5. RBC 2.73 low. HB 86.0 g/L low, ref 115-150. HCT 23.5 low. MCHC 366.0 high, ref 316-354. PLT 84.00 low, ref 125-350. NEUT% 95.9 high, NEUT# 12.89 high. LYMPH% 2.1 low, LYMPH# 0.28 low. MONO% 1.3 low, MONO# 0.17 in 0.12-1. The PCT row is plateletcrit 0.11% low, ref 0.17-0.35, not procalcitonin. Procalcitonin stays 5.489. Notes blank. Newer than the 06:43 arterial and older than the 09:21 coag and 09:24 chemistry, so this sheet is not the hero. HB 86.0 is not the same method as ABG Hb 8.10 and is not proof the issued 2 units were infused.",
+      "extracted": {
+        "wbc": 13.43,
+        "rbc": 2.73,
+        "hbg": 86.0,
+        "hct": 23.5,
+        "plt": 84.0,
+        "neut_pct": 95.9,
+        "neut_abs": 12.89,
+        "plateletcrit": 0.11
+      },
+      "sha256_16": "73033b75c99de304",
+      "bytes": 886560
+    },
+    {
+      "id": "20261002T092133__D39AF6C4-D3B2-4ABB-973D-7626E2692568_L0_001.jpg",
+      "path": "reports/coag/20261002T092133__D39AF6C4-D3B2-4ABB-973D-7626E2692568_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "D39AF6C4-D3B2-4ABB-973D-7626E2692568_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-02T09:21:33",
+      "type": "凝血",
+      "relative_h": 403.36,
+      "note": "Coag clock 2026-10-02 09:21:33. Phone status 09:51 is not the report clock. Label 术后403h21m; 33 seconds do not round the minute up; stored h is 403.36. APTT 39.6 high sec. This sheet ref is 23.3-32.5, not an older sheet's 21-45. 39.6 is still high. Do not say it is back inside 21-45, and do not carry the 03:51 critical-value note. Note blank. TT 16.7, ref 14-21, abnormal column blank. PT 15.0 high, ref 11-14.3. PT% 55.6 low, ref 80-120. INR 1.33 high, ref 0.94-1.2. Fibrinogen 4.88 high g/L, ref 2-4.5. 39.6 is APTT seconds, not creatinine and not P/F. Older than the 09:24 chemistry, so this sheet is not the hero.",
+      "extracted": {
+        "aptt": 39.6,
+        "tt": 16.7,
+        "pt": 15.0,
+        "pt_pct": 55.6,
+        "inr": 1.33,
+        "fbg": 4.88
+      },
+      "sha256_16": "6035352a3a0ba682",
+      "bytes": 419699
+    },
+    {
+      "id": "20261002T092403__BB4BCBD7-9B98-4156-A80A-93EF3C357052_L0_001.jpg",
+      "path": "reports/chemistry/20261002T092403__BB4BCBD7-9B98-4156-A80A-93EF3C357052_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "BB4BCBD7-9B98-4156-A80A-93EF3C357052_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-02T09:24:03",
+      "type": "生化",
+      "relative_h": 403.40,
+      "note": "Chemistry clock 2026-10-02 09:24:03. Phone status 09:58 is not the report clock. Label 术后403h24m; 3 seconds do not round the minute up; stored h is 403.40. K 4.80, ref 3.5-5.3, abnormal column blank. Do not call 4.80 high. Na 133.09 low, ref 137-147. Cl 95.60 low, ref 96-108. Urea 24.64 high, ref 3.1-8.8, no critical-value note. Creatinine 286.0 high umol/L, ref 41-81, no critical-value note. No procalcitonin on this sheet; procalcitonin stays 5.489. Newer than the 06:43 arterial (h 400.73), the 08:58 CBC (h 402.97), and the 09:21 coag (h 403.36), so latestNonBloodGasReport is this chemistry and the hero is 最新化验：术后403h24m · 肌酐 286.0. 286.0 is not a CRRT restart and not kidneys recovered.",
+      "extracted": {
+        "k": 4.80,
+        "na": 133.09,
+        "cl": 95.60,
+        "urea": 24.64,
+        "creatinine": 286.0
+      },
+      "sha256_16": "5d2b8132ba361f48",
+      "bytes": 383819
     }
   ]
 }
