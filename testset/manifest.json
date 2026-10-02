@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 252,
+  "count": 253,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4861,6 +4861,36 @@
       },
       "sha256_16": "9e699c2a8cc8191b",
       "bytes": 242468
+    },
+    {
+      "id": "20261002T162504__25A445E8-2782-4AC9-8BBF-94AFF913BDE0_L0_001.jpg",
+      "path": "reports/abg/20261002T162504__25A445E8-2782-4AC9-8BBF-94AFF913BDE0_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "25A445E8-2782-4AC9-8BBF-94AFF913BDE0_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-02T16:25:04",
+      "type": "静脉血气",
+      "relative_h": 410.42,
+      "note": "Family said this sheet is venous blood. The header does not print 静脉. Clock 2026-10-02 16:25:04. Four seconds do not round the minute up. Stored h is 410.42, label 术后410h25m. pH 7.286 low, ref 7.35-7.45. Do not store 7.288. PCO2 38.00, ref 35-45, abnormal column blank. Store ABE -8.90 low, not SBE -8.30. cHCO3 17.70 low. Lactate 2.69 high, ref 0.5-1.6. This does not replace arterial lactate 1.69. FiO2 60.0 unflagged. Bottom index 69.00 low is this venous PO2/FiO2 (41.20/0.60=68.67), not arterial P/F. The 0.10% row is not P/F. The middle index row is blank. The A-a row is blank; do not copy ctO2 12.20. ctHb 12.40 g/dl, ref 12-17.5, not flagged. Not CBC 87.0 and not arterial Hb 8.10. cCa2+ 0.36 low, ref 1.15-1.29, note blank. sO2 71.00 low. Hct 36.00 low, ref 37-43. Bottom PO2 41.20, reference cell is a dash, not flagged. pf stays null. Hero is 最新化验：术后410h25m · 静脉pH 7.286.",
+      "extracted": {
+        "sample": "静脉",
+        "ph": 7.286,
+        "pco2": 38.0,
+        "po2": 41.2,
+        "hco3": 17.7,
+        "abe": -8.9,
+        "lactate": 2.69,
+        "fio2": 60.0,
+        "pf": null,
+        "hb_g_dl": 12.4,
+        "ca": 0.36,
+        "so2": 71.0,
+        "hct": 36.0,
+        "bottom_index": 69.0
+      },
+      "sha256_16": "2fcfaa9dfb6cf095",
+      "bytes": 1366082
     }
   ]
 }
