@@ -57,6 +57,7 @@ Rules:
 - `.question-text > strong` is the title and is `display: block`. Detail `<strong>` must stay inline. Do **not** change the selector back to `.question-text strong { display: block }`, or every number becomes its own line.
 - A new lab updates the short line in place. It does not grow the paragraph. Sheet-by-sheet “不要写成…”, empty-row notes, phone status-bar times, and the full APTT history go to `data/narratives.json` only.
 - Do not add `.insight` cards or a 诊疗时间线 section. Trend series, the raw ABG table, status cards, and 每日用药与治疗 stay. Trends and the medication list keep all history.
+- The bedside text list under 循环与支持 is off the page. Blood-pressure and pressor charts stay. The removed rows are `page_text_archive.vital_list` in `data/narratives.json`. Do not paste that list back.
 - Imaging cards quote the printed 检查结果, not a retelling of the whole 检查描述.
 - Status cards stay one or two short lines. Do not move the question essay up into the cards.
 
