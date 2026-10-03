@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 261,
+  "count": 266,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5086,6 +5086,121 @@
     },
     "sha256_16": "a4504881fa322dd9",
     "bytes": 2045652
-  }
+  },
+    {
+      "id": "20261003T023934__01a0ff74-6c89-7acd-b0bd-7e1b05b6fde5.jpg",
+      "path": "reports/abg/20261003T023934__01a0ff74-6c89-7acd-b0bd-7e1b05b6fde5.jpg",
+      "category": "abg",
+      "source_filename": "01a0ff74-6c89-7acd-b0bd-7e1b05b6fde5.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-03T02:39:34",
+      "type": "动脉血气",
+      "relative_h": 420.66,
+      "note": "No 静脉 printed on the sheet, and this upload did not say 静脉, so store it as arterial. Clock 2026-10-03 02:39:34. Thirty-four seconds do not round the minute up. Stored h is 420.66, label 术后420h39m. pH 7.439 unflagged, ref 7.35-7.45. PCO2 31.80 low. PO2 107.40 high. Store ABE -3.10 low, not SBE -2.50. cHCO3 21.10 low. Lactate 2.37 high. FiO2 60.0 unflagged. Bottom index 179.00 low is arterial P/F. 107.40/0.60=179. The 0.27% row is not P/F. The middle index row is blank. The A-a row is blank; do not copy ctO2 13.60. Hb 9.80 low g/dl. iCa 1.05 low. T 37.0 unflagged. Newer than the 22:07 potassium and older than the 08:00 coag, so the hero is the coag.",
+      "extracted": {
+        "sample": "动脉",
+        "ph": 7.439,
+        "pco2": 31.8,
+        "po2": 107.4,
+        "hco3": 21.1,
+        "abe": -3.1,
+        "lactate": 2.37,
+        "fio2": 60.0,
+        "pf": 179,
+        "hb_g_dl": 9.8,
+        "ca": 1.05
+      },
+      "sha256_16": "ae50a738fbdf5066",
+      "bytes": 1301504
+    },
+    {
+      "id": "20261003T025452__01a0ff74-6c74-7ab7-98f6-b289c57ad96f.jpg",
+      "path": "reports/chemistry/20261003T025452__01a0ff74-6c74-7ab7-98f6-b289c57ad96f.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0ff74-6c74-7ab7-98f6-b289c57ad96f.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-03T02:54:52",
+      "type": "干化学",
+      "relative_h": 420.91,
+      "note": "Dry chemistry, potassium only. 4.13 mmol/L, ref 3.5-5.3, abnormal column blank, note blank. Do not call it high or low. Not procalcitonin and not P/F. Phone status 4:51 is not the clock. Fifty-two seconds do not round the minute up. Stored h is 420.91, label 术后420h54m. Older than the 07:52 chemistry and the 08:00 coag.",
+      "extracted": {
+        "k": 4.13
+      },
+      "sha256_16": "5e684feec9a1194c",
+      "bytes": 304750
+    },
+    {
+      "id": "20261003T074237__01a0ff74-6cd3-7a0a-a296-fc72dec2612e.jpg",
+      "path": "reports/cbc/20261003T074237__01a0ff74-6cd3-7a0a-a296-fc72dec2612e.jpg",
+      "category": "cbc",
+      "source_filename": "01a0ff74-6cd3-7a0a-a296-fc72dec2612e.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-03T07:42:37",
+      "type": "血常规",
+      "relative_h": 425.71,
+      "note": "WBC 13.63 high. RBC 3.01 low. HB 102.0 low g/L, ref 115-150. HCT 27.6 low. MCV 91.7 unflagged. MCH 33.9 unflagged, ref 27-34. MCHC 370.0 high. PLT 82.00 low. LYMPH% 1.6 low, LYMPH# 0.22 low. MONO% 1.8 low, MONO# 0.24 unflagged. NEUT% 95.1 high, NEUT# 12.97 high. P-LCR 46.20 high, ref 13-43. The PCT row is plateletcrit 0.10% low, not procalcitonin. Procalcitonin stays 5.754. Notes blank. Thirty-seven seconds do not round the minute up. Stored h is 425.71, label 术后425h42m. Phone status 7:49 is not the clock. 102.0 still below 115-150 is not proof the issued 2 RBC units were infused.",
+      "extracted": {
+        "wbc": 13.63,
+        "rbc": 3.01,
+        "hb_g_l": 102.0,
+        "hct": 27.6,
+        "plt": 82.0,
+        "neut_pct": 95.1,
+        "neut_abs": 12.97,
+        "plateletcrit_pct": 0.1,
+        "p_lcr": 46.2
+      },
+      "sha256_16": "a2e8f1aec7bdbcc7",
+      "bytes": 946685
+    },
+    {
+      "id": "20261003T075258__01a0ff74-6ce9-7b6e-9ae4-405132f2ddca.jpg",
+      "path": "reports/chemistry/20261003T075258__01a0ff74-6ce9-7b6e-9ae4-405132f2ddca.jpg",
+      "category": "chemistry",
+      "source_filename": "01a0ff74-6ce9-7b6e-9ae4-405132f2ddca.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-03T07:52:58",
+      "type": "干化学",
+      "relative_h": 425.88,
+      "note": "K 3.79 unflagged, ref 3.5-5.3. Do not call it low. Na 135 low, ref 137-147. Cl 97 unflagged, ref 96-108. Urea 13.08 high. This sheet ref is 3.6-9.5, not the 09:24 sheet's 3.1-8.8. Creatinine 143.40 high umol/L. This sheet ref is 57-111, not the 09:24 sheet's 41-81. Notes blank, no 危急值. The drop is not kidneys recovered and not a new CRRT clock. No procalcitonin on this sheet. Phone status 8:02 is not the clock. Fifty-eight seconds do not round the minute up. Stored h is 425.88, label 术后425h52m. Older than the 08:00 coag.",
+      "extracted": {
+        "k": 3.79,
+        "na": 135,
+        "cl": 97,
+        "urea": 13.08,
+        "creatinine": 143.4,
+        "urea_ref": "3.6-9.5",
+        "creatinine_ref": "57-111"
+      },
+      "sha256_16": "08d3999d3ab2759b",
+      "bytes": 490458
+    },
+    {
+      "id": "20261003T080039__01a0ff74-6cfc-7a60-be21-ff276141993c.jpg",
+      "path": "reports/coag/20261003T080039__01a0ff74-6cfc-7a60-be21-ff276141993c.jpg",
+      "category": "coag",
+      "source_filename": "01a0ff74-6cfc-7a60-be21-ff276141993c.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-03T08:00:39",
+      "type": "凝血",
+      "relative_h": 426.01,
+      "note": "APTT 38.9 sec, ref 21-45, abnormal column blank. Do not say bleeding stopped, and do not apply the 09:21 sheet ref 23.3-32.5. TT 13.7 low, ref 14-21. PT 12.5 unflagged, ref 11-14.3. PT% 88.3 unflagged, ref 80-120. INR 1.04 unflagged, ref 0.94-1.2. Fibrinogen 4.14 unflagged, ref 2-4.5. Notes blank. Phone status 8:02 is not the clock. Thirty-nine seconds do not round the minute up. Stored h is 426.01, label 术后426h00m. Newer than the 02:39 arterial gas, so latestNonBloodGasReport is this sheet and the hero is 最新化验：术后426h00m · APTT 38.9.",
+      "extracted": {
+        "aptt": 38.9,
+        "tt": 13.7,
+        "pt": 12.5,
+        "pt_pct": 88.3,
+        "inr": 1.04,
+        "fbg": 4.14,
+        "aptt_ref": "21-45"
+      },
+      "sha256_16": "d5f34f0e8a490fb8",
+      "bytes": 520332
+    }
   ]
 }
