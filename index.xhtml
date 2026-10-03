@@ -475,6 +475,10 @@
     .legend-dot.ne { background: #c76a16; }
     .legend-dot.da { background: #7257a3; }
     .legend-band { width: 18px; height: 8px; border-radius: 3px; background: var(--green-soft); }
+    .legend-tick { width: 14px; height: 4px; border-radius: 2px; }
+    .legend-tick.tx { background: #bd3b3b; }
+    .legend-tick.crrt { background: #2a7a9b; }
+    .legend-tick.tube { background: #6b4c9a; }
 
     .vitals-charts { display: grid; gap: 16px; margin-bottom: 12px; }
     .vitals-charts .chart-wrap { min-height: 240px; }
@@ -1304,7 +1308,7 @@
       <div class="section-head">
         <div>
           <h2 id="trendHeading">详细趋势</h2>
-          <p>先选分类，再选指标；触摸数据点查看时间与样本</p>
+          <p>先选分类，再选指标。横轴另标输血、CRRT、插管。</p>
         </div>
       </div>
       <div class="panel chart-panel">
@@ -1325,13 +1329,16 @@
           <div class="chart-delta" id="chartDelta"></div>
         </div>
         <div class="chart-wrap" id="chartWrap">
-          <svg xmlns="http://www.w3.org/2000/svg" id="trendChart" viewBox="0 0 760 320" role="img" aria-labelledby="chartTitle chartSubtitle"></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" id="trendChart" viewBox="0 0 760 360" role="img" aria-labelledby="chartTitle chartSubtitle"></svg>
           <div class="chart-tooltip" id="chartTooltip" role="status"></div>
         </div>
         <div class="legend">
           <span class="legend-item"><span class="legend-dot"></span>动脉/常规点</span>
           <span class="legend-item"><span class="legend-dot venous"></span>静脉血</span>
           <span class="legend-item"><span class="legend-band"></span>参考范围</span>
+          <span class="legend-item"><span class="legend-tick tx"></span>输血（清单日）</span>
+          <span class="legend-item"><span class="legend-tick crrt"></span>CRRT（有计费）</span>
+          <span class="legend-item"><span class="legend-tick tube"></span>插管 / 气切</span>
         </div>
         <!-- 文字记录保存在 data/narratives.json，本页不显示。查房和汇总只留短句。不要把长解释或文字卡片写回 index.html。 -->
       </div>
@@ -2321,6 +2328,55 @@
       });
     }
 
+    function careAxisModel() {
+      const days = dailyCareData.days || [];
+      const points = [];
+      const firstTube = days.find(day => day.nursing && day.nursing.tracheal);
+      if (firstTube) {
+        points.push({
+          h: firstTube.h,
+          kind: "tube",
+          label: "插管",
+          tip: `${firstTube.label}<br/>气管插管护理从这天清单开始<br/>没有单独的插管钟点`
+        });
+      }
+      const trach = days.find(day => (day.other_key || []).some(item => String(item).includes("气管切开")));
+      if (trach && (!firstTube || trach.date !== firstTube.date)) {
+        points.push({
+          h: trach.h,
+          kind: "tube",
+          label: "气切",
+          tip: `${trach.label}<br/>清单有气管切开费和气管切开插管<br/>17:00是手术开始。家属没说就是气切<br/>这是清单日，不编分钟`
+        });
+      }
+      days.forEach(day => {
+        const tx = careTransfusion(day);
+        if (!tx) return;
+        points.push({
+          h: day.h,
+          kind: "tx",
+          label: `输${tx.rbc_u}U`,
+          tip: `${day.label}<br/>${careTransfusionLabel(tx)}<br/>清单发出量，不编钟点<br/>不是已经输完`
+        });
+      });
+      const spans = [];
+      let open = null;
+      days.forEach(day => {
+        if (day.support && day.support.crrt) {
+          if (!open) open = { start: day, end: day, days: [day] };
+          else {
+            open.end = day;
+            open.days.push(day);
+          }
+        } else if (open) {
+          spans.push(open);
+          open = null;
+        }
+      });
+      if (open) spans.push(open);
+      return { points, spans };
+    }
+
     function renderChart() {
       const svg = ensureSvg(document.getElementById("trendChart"));
       const tooltip = document.getElementById("chartTooltip");
@@ -2335,8 +2391,8 @@
 
       if (data.length < 1) return;
 
-      const W = 760, H = 320;
-      const pad = { l: 54, r: 22, t: 26, b: 53 };
+      const W = 760, H = 360;
+      const pad = { l: 54, r: 22, t: 26, b: 78 };
       const xMinRaw = Math.min(...data.map(d => d.h));
       const xMaxRaw = Math.max(...data.map(d => d.h));
       const xGap = Math.max((xMaxRaw - xMinRaw) * .04, 1);
@@ -2392,17 +2448,112 @@
         svg.appendChild(text);
       }
 
+      const axisY = H - pad.b;
       const tickCount = Math.min(5, Math.max(2, data.length - 1));
       for (let i = 0; i <= tickCount; i++) {
         const hour = xMinRaw + (xMaxRaw - xMinRaw) * i / tickCount;
         const xx = x(hour);
         const text = createSvg("text", {
-          x: xx, y: H - 23, "text-anchor": "middle",
+          x: xx, y: axisY + 16, "text-anchor": "middle",
           fill: "#7c8c87", "font-size": "10"
         });
         text.textContent = hour < 0 ? `术前${Math.abs(Math.round(hour))}h` : `+${Math.round(hour)}h`;
         svg.appendChild(text);
       }
+
+      const showAxisTip = (anchorX, html) => {
+        setMarkup(tooltip, html);
+        tooltip.style.display = "block";
+        const wrapRect = document.getElementById("chartWrap").getBoundingClientRect();
+        const scaleX = wrapRect.width / W;
+        const scaleY = wrapRect.height / H;
+        tooltip.style.left = `${Math.min(anchorX * scaleX + 8, wrapRect.width - 195)}px`;
+        tooltip.style.top = `${Math.max(8, axisY * scaleY - 72)}px`;
+      };
+      const axisColors = { tx: "#bd3b3b", tube: "#6b4c9a", crrt: "#2a7a9b" };
+      const placed = [];
+      const occupy = (px, lane) => placed.push({ x: px, lane });
+      const laneFor = px => {
+        let lane = 0;
+        while (placed.some(item => item.lane === lane && Math.abs(item.x - px) < 44)) lane += 1;
+        return Math.min(lane, 2);
+      };
+      const model = careAxisModel();
+      model.spans.forEach(span => {
+        const h1 = span.start.h - 12;
+        const h2 = span.end.h + 12;
+        if (h2 < xMin || h1 > xMax) return;
+        const x1 = x(Math.max(h1, xMin));
+        const x2 = x(Math.min(h2, xMax));
+        const bar = createSvg("rect", {
+          x: x1, y: axisY - 4, width: Math.max(6, x2 - x1), height: 5, rx: 2,
+          fill: axisColors.crrt
+        });
+        svg.appendChild(bar);
+        const text = createSvg("text", {
+          fill: axisColors.crrt, "font-size": "10", "font-weight": "700"
+        });
+        text.textContent = "CRRT";
+        if (x2 - x1 > 36) {
+          const labelX = Math.min(x1 + 18, x2 - 8);
+          occupy(labelX, 0);
+          text.setAttribute("x", Math.min(x1 + 2, x2 - 28));
+          text.setAttribute("y", axisY + 32);
+          text.setAttribute("text-anchor", "start");
+        } else {
+          const mid = (x1 + x2) / 2;
+          const lane = laneFor(mid);
+          occupy(mid, lane);
+          text.setAttribute("x", mid);
+          text.setAttribute("y", axisY + 32 + lane * 13);
+          text.setAttribute("text-anchor", "middle");
+        }
+        svg.appendChild(text);
+        const hours = span.days.map(day => day.support.crrt_h).filter(value => value != null);
+        const tip = `${span.start.label} → ${span.end.label}<br/>CRRT 有计费的日子<br/>${hours.length ? hours.join(" h · ") + " h" : "小时数空着"}<br/>不是开机或停机钟点`;
+        const hit = createSvg("rect", {
+          x: x1, y: axisY - 8, width: Math.max(6, x2 - x1), height: 14,
+          fill: "transparent", tabindex: "0", role: "button", "aria-label": "CRRT计费"
+        });
+        hit.addEventListener("click", () => showAxisTip((x1 + x2) / 2, tip));
+        hit.addEventListener("focus", () => showAxisTip((x1 + x2) / 2, tip));
+        hit.addEventListener("blur", () => { tooltip.style.display = "none"; });
+        svg.appendChild(hit);
+      });
+      model.points.filter(point => point.h >= xMin && point.h <= xMax).sort((a, b) => a.h - b.h).forEach(point => {
+        const xx = x(point.h);
+        const color = axisColors[point.kind];
+        svg.appendChild(createSvg("line", {
+          x1: xx, x2: xx, y1: axisY - 18, y2: axisY - 4,
+          stroke: color, "stroke-width": "1.6"
+        }));
+        const marker = point.kind === "tx"
+          ? createSvg("polygon", {
+            points: `${xx},${axisY - 12} ${xx + 5},${axisY - 7} ${xx},${axisY - 2} ${xx - 5},${axisY - 7}`,
+            fill: color
+          })
+          : createSvg("polygon", {
+            points: `${xx},${axisY - 14} ${xx + 5.5},${axisY - 4} ${xx - 5.5},${axisY - 4}`,
+            fill: color
+          });
+        svg.appendChild(marker);
+        const lane = laneFor(xx);
+        occupy(xx, lane);
+        const text = createSvg("text", {
+          x: xx, y: axisY + 32 + lane * 13, "text-anchor": "middle",
+          fill: color, "font-size": "10", "font-weight": "700"
+        });
+        text.textContent = point.label;
+        svg.appendChild(text);
+        const hit = createSvg("rect", {
+          x: xx - 16, y: axisY - 18, width: 32, height: 20,
+          fill: "transparent", tabindex: "0", role: "button", "aria-label": point.label
+        });
+        hit.addEventListener("click", () => showAxisTip(xx, point.tip));
+        hit.addEventListener("focus", () => showAxisTip(xx, point.tip));
+        hit.addEventListener("blur", () => { tooltip.style.display = "none"; });
+        svg.appendChild(hit);
+      });
 
       const segments = [];
       let current = [];
