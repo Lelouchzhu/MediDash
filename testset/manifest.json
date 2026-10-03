@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 259,
+  "count": 260,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5031,6 +5031,36 @@
     },
     "sha256_16": "a4dc2d8d7cfa91d3",
     "bytes": 285730
+  },
+  {
+    "id": "20261002T215135__01a0ff1b-3c3e-79ab-8a04-f5242badf4dc.jpg",
+    "path": "reports/abg/20261002T215135__01a0ff1b-3c3e-79ab-8a04-f5242badf4dc.jpg",
+    "category": "abg",
+    "source_filename": "01a0ff1b-3c3e-79ab-8a04-f5242badf4dc.jpg",
+    "labeled": true,
+    "preferred": true,
+    "report_time": "2026-10-02T21:51:35",
+    "type": "静脉血气",
+    "relative_h": 415.86,
+    "note": "Family said this sheet is venous. The sheet itself does not print 静脉. Clock 2026-10-02 21:51:35. Thirty-five seconds do not round the minute up. Stored h is 415.86, label 术后415h51m, same minute label as the 21:51:57 CBC but 22 seconds earlier. pH 7.327 low, ref 7.35-7.45. PCO2 38.60, ref 35-45, abnormal column blank. Store PO2 32.30. The reference cell is a dash, so that row is not flagged high or low. pO2(T) is also 32.30 low and is not a second stored PO2. Store ABE -6.20 low, not SBE -5.70. cHCO3 19.80 low. Lactate 2.73 high, ref 0.5-1.6. This is venous lactate, not the arterial 2.35 two minutes later. FiO2 60.0 unflagged. Bottom index 54.00 low is not arterial P/F. 32.30/0.60=53.83, printed 54. The 0.08% row is not P/F. The middle index row is blank. The A-a row is blank; do not copy ctO2 9.60. Hb 11.90 low g/dl. iCa 0.38 low. The 16:25 venous calcium stays 0.36. The 21:53 arterial calcium stays 1.02. sO2 58.20 low. Hct 35.00 low. T 37.0 unflagged, not fever. Older than the 21:53 arterial and the 22:07 potassium, so the hero stays 最新化验：术后416h07m · 钾 4.37.",
+    "extracted": {
+      "sample": "静脉",
+      "ph": 7.327,
+      "pco2": 38.6,
+      "po2": 32.3,
+      "hco3": 19.8,
+      "abe": -6.2,
+      "lactate": 2.73,
+      "fio2": 60.0,
+      "pf": null,
+      "hb_g_dl": 11.9,
+      "ca": 0.38,
+      "so2": 58.2,
+      "hct": 35.0,
+      "bottom_index": 54.0
+    },
+    "sha256_16": "13581c932c77164f",
+    "bytes": 1325246
   }
   ]
 }
