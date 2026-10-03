@@ -60,6 +60,7 @@ If the family only said “high / about half”, leave mL blank rather than gues
    - `vitalReadings` — oral BP / HR / pressors (approximate `h`)
    - status cards and `doctorQuestions` (keep exactly 4 ids: `icu-support`, `infection`, `crrt`, `gut-bleeding`; fold new numbers into those; do not re-expand over single-point lab wiggles)
    - written narrative only in `data/narratives.json`. Do **not** add insight cards or a timeline section to `index.html`. The page does not load that file. Trend series and 每日用药与治疗 keep the full history.
+   - The 4 question details and the organ-summary bullets on the page stay short: latest numbers in `<strong>`, then the actual question. Do not paste the running caveat essay back into `index.html`. That long wording belongs in `data/narratives.json` (`page_text_archive` already holds the text removed on 2026-10-03).
    - `latestNonBloodGasReport` when a non-ABG clock is newer than the last arterial
    - new fields also go in `metricConfig` + `metricGroups`
 4. Update `CONTEXT.md` if the clinical story changed.
