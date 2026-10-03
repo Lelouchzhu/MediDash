@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 269,
+  "count": 270,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5281,6 +5281,33 @@
     },
     "sha256_16": "dd2ec4937c7b59de",
     "bytes": 1323481
+  },
+  {
+    "id": "20261003T083128__678386C6-34E9-496F-96E6-368EC0D96FA7_L0_001.jpg",
+    "path": "reports/abg/20261003T083128__678386C6-34E9-496F-96E6-368EC0D96FA7_L0_001.jpg",
+    "category": "abg",
+    "source_filename": "678386C6-34E9-496F-96E6-368EC0D96FA7_L0_001.jpg",
+    "labeled": true,
+    "preferred": true,
+    "report_time": "2026-10-03T08:31:28",
+    "type": "动脉血气",
+    "relative_h": 426.52,
+    "note": "Family said this sheet is arterial. The header does not print 动脉. Clock 2026-10-03 08:31:28. Twenty-eight seconds do not round the minute up. Stored h is 426.52, label 术后426h31m. Newer than the 08:00 coag and older than the 09:14 venous and the 09:56 oral, so the hero stays 最新口述：术后427h56m · 140/40. Lactate and pH big numbers stay on the later venous gas. pH 7.427 unflagged. PCO2 39.60 unflagged, ref 35-45. PO2 107.30 high, ref 80-100. pO2(T) is the same 107.30 and is not a second PO2. Store ABE 1.20 unflagged, not SBE 1.10. cHCO3 25.50 unflagged. Lactate 2.98 high. FiO2 60 unflagged. Bottom index 179.00 low is arterial P/F. 107.30/0.60=178.83, printed 179. The 0.28% row is not P/F. The middle index row is blank. The A-a row is blank; do not copy ctO2 14.10. ctHb 10.20 low. Hct 30.00 low. iCa 1.09 low.",
+    "extracted": {
+      "sample": "动脉",
+      "ph": 7.427,
+      "pco2": 39.6,
+      "po2": 107.3,
+      "hco3": 25.5,
+      "abe": 1.2,
+      "lactate": 2.98,
+      "fio2": 60,
+      "pf": 179,
+      "hb_g_dl": 10.2,
+      "ca": 1.09
+    },
+    "sha256_16": "880bb15d25ac705e",
+    "bytes": 1314286
   }
   ]
 }
