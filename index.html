@@ -2492,29 +2492,36 @@
           fill: axisColors.crrt, "font-size": "10", "font-weight": "700"
         });
         text.textContent = "CRRT";
+        text.style.cursor = "pointer";
+        let labelX;
+        let labelY;
         if (x2 - x1 > 36) {
-          const labelX = Math.min(x1 + 18, x2 - 8);
+          labelX = Math.min(x1 + 18, x2 - 8);
+          labelY = axisY + 32;
           occupy(labelX, 0);
           text.setAttribute("x", Math.min(x1 + 2, x2 - 28));
-          text.setAttribute("y", axisY + 32);
+          text.setAttribute("y", labelY);
           text.setAttribute("text-anchor", "start");
         } else {
-          const mid = (x1 + x2) / 2;
-          const lane = laneFor(mid);
-          occupy(mid, lane);
-          text.setAttribute("x", mid);
-          text.setAttribute("y", axisY + 32 + lane * 13);
+          labelX = (x1 + x2) / 2;
+          const lane = laneFor(labelX);
+          occupy(labelX, lane);
+          labelY = axisY + 32 + lane * 13;
+          text.setAttribute("x", labelX);
+          text.setAttribute("y", labelY);
           text.setAttribute("text-anchor", "middle");
         }
         svg.appendChild(text);
         const hours = span.days.map(day => day.support.crrt_h).filter(value => value != null);
         const tip = `${span.start.label} → ${span.end.label}<br/>CRRT 有计费的日子<br/>${hours.length ? hours.join(" h · ") + " h" : "小时数空着"}<br/>不是开机或停机钟点`;
+        const showSpan = () => showAxisTip((x1 + x2) / 2, tip);
+        text.addEventListener("click", showSpan);
         const hit = createSvg("rect", {
-          x: x1, y: axisY - 8, width: Math.max(6, x2 - x1), height: 14,
+          x: labelX - 22, y: labelY - 14, width: 48, height: 18,
           fill: "transparent", tabindex: "0", role: "button", "aria-label": "CRRT计费"
         });
-        hit.addEventListener("click", () => showAxisTip((x1 + x2) / 2, tip));
-        hit.addEventListener("focus", () => showAxisTip((x1 + x2) / 2, tip));
+        hit.addEventListener("click", showSpan);
+        hit.addEventListener("focus", showSpan);
         hit.addEventListener("blur", () => { tooltip.style.display = "none"; });
         svg.appendChild(hit);
       });
@@ -2542,13 +2549,18 @@
           fill: color, "font-size": "10", "font-weight": "700"
         });
         text.textContent = point.label;
+        text.style.cursor = "pointer";
+        const showPoint = () => showAxisTip(xx, point.tip);
+        text.addEventListener("click", showPoint);
+        marker.style.cursor = "pointer";
+        marker.addEventListener("click", showPoint);
         svg.appendChild(text);
         const hit = createSvg("rect", {
-          x: xx - 16, y: axisY - 18, width: 32, height: 20,
+          x: xx - 20, y: axisY - 18, width: 40, height: 32 + lane * 13 + 8,
           fill: "transparent", tabindex: "0", role: "button", "aria-label": point.label
         });
-        hit.addEventListener("click", () => showAxisTip(xx, point.tip));
-        hit.addEventListener("focus", () => showAxisTip(xx, point.tip));
+        hit.addEventListener("click", showPoint);
+        hit.addEventListener("focus", showPoint);
         hit.addEventListener("blur", () => { tooltip.style.display = "none"; });
         svg.appendChild(hit);
       });
