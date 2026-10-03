@@ -67,7 +67,7 @@ def build_prompt(fields: dict) -> str:
             "请改：",
             "- 截图写入 testset/reports/billing/，命名 {YYYYMMDDTHHMMSS}__{original}，登记 testset/manifest.json（category=billing；旧图不删，同时钟用 preferred / superseded_by）",
             "- 更新 data/daily-care.json，并同步 index.html 里的 dailyCareData",
-            "- 刷新「每日用药与治疗」相关 insights / 时间线；抗感染、CRRT、镇静并进现有 3–4 条查房大事，不要另开一长串",
+            "- 用药清单仍在页面上，保留全部历史。不要把文字卡片或时间线写回 index.html。若要留下文字说明，只追加到 data/narratives.json。抗感染、CRRT、镇静并进现有 4 条查房大事，不要另开一长串",
             "- 若口述同时带来血压/升压药/尿量，再改 vitalReadings 与状态卡；没有就别编",
             "- 临床故事有变化时更新 CONTEXT.md",
         ]
@@ -89,7 +89,7 @@ def build_prompt(fields: dict) -> str:
             "",
             "请改 index.html：",
             "- baseReadings、labReadings、vitalReadings",
-            "- 状态卡、insights 解读、时间线、可展开报告、latestNonBloodGasReport",
+            "- 状态卡、可展开报告、latestNonBloodGasReport。不要把文字卡片或时间线写回 index.html。文字说明只追加到 data/narratives.json，页面不读取该文件",
             "- doctorQuestions 查房询问：保持 3–4 件大事（呼吸循环/ICU、感染、CRRT肾脏、肚子和血）。四条 id 保持 icu-support、infection、crrt、gut-bleeding，只改标题和正文。按新结果改这几条的数字和问法，不要因单点化验波动再拆回一长串。家属点名要问的大事（例如核酸检测）并进对应大项，不要另开一串小项。",
             "- 能保存的截图写入 testset/reports，并登记 testset/manifest.json（旧图不要删，同时钟用 preferred / superseded_by）",
             "- 若单子类型是住院清单/每日清单，按 billing 路径处理：testset/reports/billing/ + data/daily-care.json + dailyCareData",
