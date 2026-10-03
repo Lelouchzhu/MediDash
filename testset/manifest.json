@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 267,
+  "count": 268,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5229,6 +5229,30 @@
     },
     "sha256_16": "34aad7ee4d718906",
     "bytes": 1314300
+  },
+  {
+    "id": "20261003T095606__01a0ff78-e5f5-7fdb-97c9-d5052f87a346.jpg",
+    "path": "reports/other/20261003T095606__01a0ff78-e5f5-7fdb-97c9-d5052f87a346.jpg",
+    "category": "other",
+    "source_filename": "01a0ff78-e5f5-7fdb-97c9-d5052f87a346.jpg",
+    "labeled": true,
+    "preferred": true,
+    "report_time": "2026-10-03T09:56:06",
+    "type": "口述",
+    "relative_h": 427.94,
+    "note": "Morning oral. Receipt is the message time 2026-10-03 09:56:06. Six seconds do not round the minute up. Stored h is 427.94, label 10月3日09:56. 今早 and 刚才 are not a second clock. The cropped phone status bar is not the clock. Row 1 140_40_64 is blood pressure: 140/40 and stated MAP 64. (140+2*40)/3 is about 73; do not replace 64. Row 2 pulse 87 is stored on hr. Row 3 RR 24. Row 4 pressors in the stated order dopamine then norepinephrine: da 5 mL/h, ne 3 mL/h = 0.15 mg/h at 0.05 mg/mL. Do not convert dopamine to mg/h. No urine, CRRT, SpO2, albumin, or stool on this sentence. Newer than the 08:00 coag, so the hero is 最新口述：术后427h56m · 140/40.",
+    "extracted": {
+      "sbp": 140,
+      "dbp": 40,
+      "map": 64,
+      "hr": 87,
+      "rr": 24,
+      "da_ml_h": 5,
+      "ne_ml_h": 3,
+      "ne_mg_h": 0.15
+    },
+    "sha256_16": "523d17ebda592667",
+    "bytes": 137648
   }
   ]
 }
