@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 268,
+  "count": 269,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5253,6 +5253,34 @@
     },
     "sha256_16": "523d17ebda592667",
     "bytes": 137648
+  },
+  {
+    "id": "20261003T091435__18FE5124-0344-481A-ADAC-21C3213413E9_L0_001.jpg",
+    "path": "reports/abg/20261003T091435__18FE5124-0344-481A-ADAC-21C3213413E9_L0_001.jpg",
+    "category": "abg",
+    "source_filename": "18FE5124-0344-481A-ADAC-21C3213413E9_L0_001.jpg",
+    "labeled": true,
+    "preferred": true,
+    "report_time": "2026-10-03T09:14:35",
+    "type": "静脉血气",
+    "relative_h": 427.24,
+    "note": "Family said this sheet is venous. The header does not print 静脉. Clock 2026-10-03 09:14:35. Thirty-five seconds do not round the minute up. Stored h is 427.24, label 术后427h14m. Newer than the 02:39 arterial and older than the 09:56 oral, so the hero stays 最新口述：术后427h56m · 140/40. The big lactate and pH follow this newest gas. pH 7.459 high. PCO2 36.80 unflagged, ref 35-45. Store bottom PO2 101.20; reference cell is a dash and the row is not flagged. Store ABE 1.70 unflagged, not SBE 1.80. cHCO3 25.50 unflagged. Lactate 2.17 high. FiO2 60 unflagged. Bottom index 169.00 low is this venous sample, 101.20/0.60=168.67 printed 169, not arterial P/F. The 0.26% row is not P/F. The middle index row is blank. The A-a row is blank; do not copy ctO2 14.10. ctHb 10.30 low, ref 12-17.5. Hct 30.00 low, ref 37-43. iCa 1.11 low. pf is null.",
+    "extracted": {
+      "sample": "静脉",
+      "ph": 7.459,
+      "pco2": 36.8,
+      "po2": 101.2,
+      "hco3": 25.5,
+      "abe": 1.7,
+      "lactate": 2.17,
+      "fio2": 60,
+      "pf": null,
+      "bottom_index": 169.0,
+      "hb_g_dl": 10.3,
+      "ca": 1.11
+    },
+    "sha256_16": "dd2ec4937c7b59de",
+    "bytes": 1323481
   }
   ]
 }
