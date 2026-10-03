@@ -34,7 +34,7 @@ Self-contained mobile perioperative monitoring dashboard. **Not medical advice.*
 
 `be` on ABG sheets is **ABE** (this machine also prints SBE — store ABE).
 
-Blood-gas sheets are **arterial** unless the family explicitly says 静脉, or the sheet itself prints 静脉. Do not infer venous from a low PO₂ or a low printed index. The 2026-10-02 16:25:04 sheet stays venous because the family said so. The 2026-10-03 02:38:18 and 09:14:35 sheets are venous because the family said 静脉血. The 2026-10-03 02:39:34 and 08:31:28 sheets are arterial (02:39 had no venous label; 08:31 because the family said 动脉血). Do not reclassify them.
+Blood-gas sheets are **arterial** unless the family explicitly says 静脉, or the sheet itself prints 静脉. Do not infer venous from a low PO₂ or a low printed index. The 2026-10-02 16:25:04 sheet stays venous because the family said so. The 2026-10-03 02:38:18 and 09:14:35 sheets are venous because the family said 静脉血. The 2026-10-03 02:39:34 and 08:31:28 sheets are arterial (02:39 had no venous label; 08:31 because the family said 动脉血). The 2026-10-03 23:02:38 sheet is arterial because the header does not print 静脉 and the family did not say 静脉. Do not reclassify them.
 
 ## Page copy — do not get this wrong
 

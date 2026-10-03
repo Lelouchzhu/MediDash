@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 272,
+  "count": 273,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5356,6 +5356,32 @@
     },
     "sha256_16": "a2f5ce7369e62b38",
     "bytes": 287290
-  }
+  },
+    {
+      "id": "20261003T120000__9816C999-2575-4ED9-8945-6DC2C4AC5F01_L0_001.jpg",
+      "path": "reports/billing/20261003T120000__9816C999-2575-4ED9-8945-6DC2C4AC5F01_L0_001.jpg",
+      "category": "billing",
+      "source_filename": "9816C999-2575-4ED9-8945-6DC2C4AC5F01_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-03T12:00:00",
+      "type": "住院清单",
+      "relative_h": 430.0,
+      "note": "Daily bill. Date button 2026-10-3, noon convention h 430. Account snapshot prepaid 81000.00 / cost 157614.64 / balance -76614.64, not a single-day cost. The footer day total is covered by the date button; do not invent it. CRRT 6.17 h / 586.15 at 95/h. 6.17 is billed hours, not the oral about-2-PM start and not the 300 ml ultrafiltration. No hemofilter, circuit, or nafamostat line. Absence is not proof nafamostat stopped. Citrate solution 10 bags / 149.80 is an issued count, not a pump rate and not a citrate diagnosis. The 07:43 oral said the anticoagulant differed and did not name it. Ventilator 24 h / 480. No packed RBC line and no venous-transfusion fee. The 10/2 issued 2 units are not proof they were infused. Albumin import x4 / 1648 is issued. Enteral formula (瑞能) qty -1 bottle / -38.31 is a credit, not a new bottle and not the 200 mL that was not infused. Ceftazidime-avibactam x3 / 1020. No meropenem line. NE x9 and dobutamine x4 are vial counts; the 09:56 oral stays dopamine 5 and norepinephrine 3 mL/h. Propofol x1 at unit price 10.9200; the amount glyph is covered by the plus button. No oliceridine line. Somatostatin x3 / 34.71. Bumetanide x1 / 21.93 is not remifentanil. Micro pump 24 h / 72 is multi-pump billing. ABG x6 and potassium x3 are charges, not new results. K stays 4.00. Trach nursing 1 day / 43. No endotracheal-tube nursing line. Noon is older than the 23:22 potassium, so this bill is not the hero.",
+      "extracted": {
+        "prepaid": 81000,
+        "total_cost": 157614.64,
+        "balance": -76614.64,
+        "ventilator_h": 24,
+        "crrt_h": 6.17,
+        "crrt_cost": 586.15,
+        "albumin_qty": 4,
+        "albumin_cost": 1648,
+        "enteral_qty": -1,
+        "enteral_cost": -38.31
+      },
+      "sha256_16": "fbbc202ddf7690c9",
+      "bytes": 1222683
+    }
   ]
 }
