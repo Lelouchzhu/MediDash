@@ -5,7 +5,8 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 
 **Source of truth repo:** `https://github.com/Lelouchzhu/MediDash` (not the Allmond fork)  
 **Prior agent run (Allmond-bound, then continued here):** https://cursor.com/agents/bc-01a0a01a-a6eb-72c7-b052-ba5e14ed8b1b  
-**Conversation summary (current):** [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md)  
+**Conversation summary (current):** [`docs/transcripts/2026-10-03-bc-f66f1668-summary.md`](docs/transcripts/2026-10-03-bc-f66f1668-summary.md)  
+**Conversation summary (through 9/21):** [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md)  
 **Conversation summary (through 9/18 13:00 ABG):** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
 **大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@145468a15db2433ad5ba4d0179ecd372a35aab74/index.xhtml  
 **备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@145468a15db2433ad5ba4d0179ecd372a35aab74/index.xhtml  
@@ -23,6 +24,27 @@ It summarizes decisions, data conventions, and clinical state from prior agent r
 3. Do **not** push clinical updates to `Lelouchzhu/Allmond` (that repo is a fork of unrelated bioinformatics code).
 4. Serve locally via `.cursor/environment.json` → `python3 -m http.server 8080`.
 5. Keep UI de-identified: prefer relative postop hours; clock times may be stored in notes when the family confirms them.
+6. Keep 查房 `detail` and 器官与化验汇总 bullets short. Follow the section below. Do not paste long explanations back onto the page.
+
+---
+
+## Page copy — do not get this wrong / 页面文字不要再写成长段
+
+查房四条和器官汇总曾经把每一张新单子的边界都接在可见段落末尾。2026-10-03 家属要求：文字记录可以留在数据库，显示在 `index.html` 上的必须精炼，关键数字要醒目。拿下来的长段在 `data/narratives.json` 的 `page_text_archive`。不要贴回去。
+
+| 页面位置 | 代码 | 可见长度 |
+|----------|------|----------|
+| 查房四条 | `doctorQuestions` 的 `detail` | 4 到 6 行。最新动脉、会改大数字的最新静脉、最新口述，最后是要问的那一句。 |
+| 器官与化验汇总 | 每个 `.report-body` 的 `ul` | 3 到 5 条。最新结果、这一张自己的参考、一句边界。 |
+
+- 仍是 4 个 id：`icu-support`、`infection`、`crrt`、`gut-bleeding`。标题保持一行变化。不要再拆出第五条。
+- 关键数字放在 `<strong>` 里。样式让这些字是深色 `--ink`，周围句子保持浅色。
+- 查房换行用 `<br/>`。复制未问内容走 `plainDetail`，会去掉标签。
+- 标题的粗体是 `.question-text > strong`，并且独占一行。detail 里的 `<strong>` 必须留在行内。不要把选择器改回 `.question-text strong { display: block }`。
+- 新单子来了，改短句里的最新数字。不要把短句再养成长段。逐张的「不要写成…」、空行、手机状态栏时间、凝血全表，只追加到 `data/narratives.json`。
+- 不要把文字卡片或诊疗时间线写回页面。趋势、原始血气表、状态卡、用药清单留下。趋势和用药保留全部历史。
+- 影像卡只引用检查结果原文，不把整段检查描述搬上页面。
+- 状态卡保持一两行。不要把查房长文搬进卡片。
 
 ---
 
@@ -992,7 +1014,7 @@ Agrees in direction with the 06:46 ABG Hb 7.1 g/dL / Hct 21%. Do not equate the 
 | Metric catalog + categories | `metricConfig` + `metricGroups` (分类汇总 sparklines + 详细趋势). First group is **循环/支持** (`map`, `sbp`, `dbp`, `hr`, `rr`, `ne`, `da`). Dedicated BP + pressor charts sit under 循环与支持. |
 | Status cards / expandable reports | HTML sections near top/middle |
 | Written narrative (former insight cards and 诊疗时间线) | `data/narratives.json` only. The page does not load it. Do not write those cards back into `index.html`. |
-| Doctor checklist | `doctorQuestions` — 4 big items only (`icu-support`, `infection`, `crrt`, `gut-bleeding`) |
+| Doctor checklist | `doctorQuestions` — 4 big items only (`icu-support`, `infection`, `crrt`, `gut-bleeding`). `detail` is a few short lines with `<strong>` numbers, then the question. Not a running essay. |
 | Latest non-ABG clock for hero pill | `latestNonBloodGasReport` |
 | Report screenshot archive | `testset/reports/` + `testset/manifest.json` |
 
@@ -1001,7 +1023,7 @@ Update flow when new reports arrive:
 1. **Backup the screenshot** into `testset/reports/<category>/` (or `inbox/`) and register in `manifest.json`.
 2. Read report clock → compute `h` from surgery end.
 3. Append/update `baseReadings` / `labReadings` / `vitalReadings`; ensure new fields exist in `metricConfig` + `metricGroups`.
-4. Refresh status cards, expandable reports, and checklist copy. Append any written note to `data/narratives.json` only. Do not add insight cards or a timeline section to `index.html`.
+4. Refresh status cards, the short organ-summary bullets, and the short checklist lines. Append the long note to `data/narratives.json` only. Do not add insight cards or a timeline section, and do not paste the caveat essay back into `index.html`. See **Page copy — do not get this wrong**.
 5. Commit message should name the key values (PCT, Cr, APTT, etc.).
 6. Push **MediDash**.
 
@@ -1022,4 +1044,4 @@ Update flow when new reports arrive:
 - To continue work: start a **new Cloud Agent on MediDash**, and tell it to read `AGENTS.md` + `CONTEXT.md` first.
 - Optional: paste a short “since CONTEXT.md” delta in the first user message when something changed after this file’s date.
 
-**Last updated:** same-clock copies of the 22:18 ABG and 9/27 bill (oral all blank). Numbers unchanged. Hero still **最新：术后300h21m**. Latest labs still 02:21 P/F **218** / lactate **1.37** / pH **7.338↓** / Hb **8.0**, APTT **60.8**, K **4.111**, packed RBC **2 units**. No new vital point. Checklist still 4 items. Manifest **192**.
+**Last updated:** 2026-10-03. Hero is **最新口述：术后427h56m · 140/40** (received 09:56; MAP **64**, pulse **87**, RR **24**, dopamine **5**, norepinephrine **3** mL/h). Big lactate **2.17** and big pH **7.459** are the 09:14 venous gas. Arterial P/F **179** and hidden Hb **10.2** are the 08:31 arterial gas (lactate **2.98**, pH **7.427**, PO₂ **107.30**, ABE **1.20**). Creatinine **143.40** (ref 57–111), potassium **3.79**, APTT **38.9** (ref 21–45, flag blank), CBC Hb **102.0**. Checklist still 4 items; the visible text is short. Manifest **270**. Page content SHA `145468a15db2433ad5ba4d0179ecd372a35aab74`.
