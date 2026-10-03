@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 260,
+  "count": 261,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5061,6 +5061,31 @@
     },
     "sha256_16": "13581c932c77164f",
     "bytes": 1325246
+  },
+  {
+    "id": "20261002T120000__DD821FDE-A228-4997-A5CE-F1B10105EB5B_L0_001.jpg",
+    "path": "reports/billing/20261002T120000__DD821FDE-A228-4997-A5CE-F1B10105EB5B_L0_001.jpg",
+    "category": "billing",
+    "source_filename": "DD821FDE-A228-4997-A5CE-F1B10105EB5B_L0_001.jpg",
+    "labeled": true,
+    "preferred": true,
+    "report_time": "2026-10-02T12:00:00",
+    "type": "住院清单",
+    "relative_h": 406.0,
+    "note": "Daily bill. Date button 2026-10-02, noon convention h 406. Account snapshot prepaid 71000.00 / cost 151409.90 / balance -80409.90, not a single-day cost. The footer day total is covered by the date button; do not invent it. CRRT 9.87 h / 937.65 at 95/h, plus hemofilter 300 and circuit 725. 9.87 is billed hours, not the oral about-2-PM start and not the 300 ml ultrafiltration. Nafamostat x15 / 545.10 and citrate solution 10 bags / 149.80 are issued counts, not a written anticoagulation plan and not a pump rate. Ventilator 24 h / 480. Packed RBC 2 units / 420 plus leukoreduced add-on 2 units / 40 is a new day's issued amount, not proof the 10/1 units were infused. Venous-transfusion 2 groups is a treatment fee, not 2 more RBC units. Albumin import x4 / 1648 is issued. Enteral formula (瑞能) 1 bottle / 38.31 is issued, not the oral sugar water and not feeding restored. Ceftazidime-avibactam x3 / 1020. No meropenem line. Culture billed once with no result. NE x18 and dobutamine x6 are vials, not the prior oral 5 mL/h pumps. Noon is older than the 22:07 potassium, so this bill is not the hero.",
+    "extracted": {
+      "prepaid": 71000,
+      "total_cost": 151409.9,
+      "balance": -80409.9,
+      "ventilator_h": 24,
+      "crrt_h": 9.87,
+      "crrt_cost": 937.65,
+      "rbc_u": 2,
+      "albumin_qty": 4,
+      "albumin_cost": 1648
+    },
+    "sha256_16": "a4504881fa322dd9",
+    "bytes": 2045652
   }
   ]
 }
