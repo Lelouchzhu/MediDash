@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 254,
+  "count": 259,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -4921,6 +4921,116 @@
       },
       "sha256_16": "36764581e5267437",
       "bytes": 1359129
-    }
+    },
+  {
+    "id": "20261002T164030__01a0ff14-8391-7be6-a684-17d143b937b1.jpg",
+    "path": "reports/chemistry/20261002T164030__01a0ff14-8391-7be6-a684-17d143b937b1.jpg",
+    "category": "chemistry",
+    "source_filename": "01a0ff14-8391-7be6-a684-17d143b937b1.jpg",
+    "labeled": true,
+    "preferred": true,
+    "report_time": "2026-10-02T16:40:30",
+    "type": "干化学钾",
+    "relative_h": 410.68,
+    "note": "Dry-chemistry potassium only. Clock 2026-10-02 16:40:30. Phone status 17:04 is not the clock. Thirty seconds do not round the minute up. Stored h is 410.68, label 术后410h40m. K 4.75, ref 3.5-5.3, abnormal column blank. Do not call it high. Note blank. Newer than the 16:27 arterial and older than the 21:51 CBC, so this sheet is not the hero. Creatinine stays 286.0.",
+    "extracted": {
+      "k": 4.75
+    },
+    "sha256_16": "f0464bbd0d3029eb",
+    "bytes": 285204
+  },
+  {
+    "id": "20261002T215157__01a0ff14-83d8-700b-8918-a3dc67126176.jpg",
+    "path": "reports/cbc/20261002T215157__01a0ff14-83d8-700b-8918-a3dc67126176.jpg",
+    "category": "cbc",
+    "source_filename": "01a0ff14-83d8-700b-8918-a3dc67126176.jpg",
+    "labeled": true,
+    "preferred": true,
+    "report_time": "2026-10-02T21:51:57",
+    "type": "血常规",
+    "relative_h": 415.87,
+    "note": "Clock 2026-10-02 21:51:57. Fifty-seven seconds do not round the minute up. Stored h is 415.87, label 术后415h51m. WBC 11.50 high, ref 3.5-9.5. RBC 2.28 low. HB 73.0 low g/L, ref 115-150. HCT 21.1 low. PLT 65.00 low. NEUT% 95.0 high, NEUT# 10.92 high. LYMPH% 1.8 low, LYMPH# 0.21 low. MONO% 1.8 low, MONO# 0.21 in 0.12-1. P-LCR 45.10 high, ref 13-43. The PCT row is plateletcrit 0.08% low, ref 0.17-0.35, not procalcitonin. Procalcitonin stays 5.754. Notes blank. Older than the 21:53 arterial, so this sheet is not the hero. HB 73.0 is not ABG Hb 8.00 and is not proof the issued 2 units were infused.",
+    "extracted": {
+      "wbc": 11.5,
+      "rbc": 2.28,
+      "hbg": 73.0,
+      "hct": 21.1,
+      "plt": 65.0,
+      "neut_pct": 95.0,
+      "neut_abs": 10.92,
+      "plateletcrit": 0.08
+    },
+    "sha256_16": "abdfc8c80d02bd95",
+    "bytes": 869368
+  },
+  {
+    "id": "20261002T215341__01a0ff14-83c6-70d0-86c7-9b4c63a98c0f.jpg",
+    "path": "reports/abg/20261002T215341__01a0ff14-83c6-70d0-86c7-9b4c63a98c0f.jpg",
+    "category": "abg",
+    "source_filename": "01a0ff14-83c6-70d0-86c7-9b4c63a98c0f.jpg",
+    "labeled": true,
+    "preferred": true,
+    "report_time": "2026-10-02T21:53:41",
+    "type": "动脉血气",
+    "relative_h": 415.89,
+    "note": "Default arterial. Family did not say venous and the sheet does not print 静脉. Clock 2026-10-02 21:53:41. Forty-one seconds do not round the minute up. Stored h is 415.89, label 术后415h53m. pH 7.430, ref 7.35-7.45, abnormal column blank. PCO2 35.00, ref 35-45, abnormal column blank, sitting on the lower edge. Store PO2 67.80 low, ref 80-100. pO2(T) is also 67.80 low and is not a second stored PO2. Store ABE -1.60, ref -3 to 3, abnormal column blank, not SBE -1.30. cHCO3 22.70, ref 22-26, abnormal column blank. Lactate 2.35 high, ref 0.5-1.6. Arterial series from 1.90, not venous 2.69. FiO2 60.0 unflagged. Bottom index 113.00 low is arterial P/F. 67.80/0.60=113. The 0.17% row is not P/F. The middle index row is blank. The A-a row is blank; do not copy ctO2 10.50. Hb 8.00 low g/dl. iCa 1.02 low. sO2 92.60 low. Hct 24.00 low. T 37.0 unflagged, not fever. Older than the 22:07 potassium, so this sheet is not the hero.",
+    "extracted": {
+      "sample": "动脉",
+      "ph": 7.43,
+      "pco2": 35.0,
+      "po2": 67.8,
+      "hco3": 22.7,
+      "abe": -1.6,
+      "lactate": 2.35,
+      "fio2": 60.0,
+      "pf": 113,
+      "hb_g_dl": 8.0,
+      "ca": 1.02,
+      "so2": 92.6,
+      "hct": 24.0,
+      "bottom_index": 113.0
+    },
+    "sha256_16": "86b0575dc5c3cc57",
+    "bytes": 1304510
+  },
+  {
+    "id": "20261002T220723__01a0ff14-83a1-78db-846e-1c93970af6ee.jpg",
+    "path": "reports/coag/20261002T220723__01a0ff14-83a1-78db-846e-1c93970af6ee.jpg",
+    "category": "coag",
+    "source_filename": "01a0ff14-83a1-78db-846e-1c93970af6ee.jpg",
+    "labeled": true,
+    "preferred": true,
+    "report_time": "2026-10-02T22:07:23",
+    "type": "凝血",
+    "relative_h": 416.12,
+    "note": "Clock 2026-10-02 22:07:23. Phone status 23:38 is not the clock. Twenty-three seconds do not round the minute up. Stored h is 416.12, label 术后416h07m, same minute label as the 22:07:32 potassium but 9 seconds earlier. APTT 59.5 high sec. This sheet ref is 21-45, not the 09:21 sheet 23.3-32.5. Do not say 59.5 is back inside 21-45. Note blank. TT 13.3 low, ref 14-21. PT 14.5 high, ref 11-14.3. PT% 71.4 low, ref 80-120. INR 1.21 high, ref 0.94-1.2. Fibrinogen 4.34, ref 2-4.5, abnormal column blank. Coming back inside is not bleeding stopped. The 22:07:32 potassium is newer, so this sheet is not the hero.",
+    "extracted": {
+      "aptt": 59.5,
+      "tt": 13.3,
+      "pt": 14.5,
+      "pt_pct": 71.4,
+      "inr": 1.21,
+      "fbg": 4.34
+    },
+    "sha256_16": "629a6078a53b3c23",
+    "bytes": 415982
+  },
+  {
+    "id": "20261002T220732__01a0ff14-83b1-74fd-b38d-dbfb9600f74f.jpg",
+    "path": "reports/chemistry/20261002T220732__01a0ff14-83b1-74fd-b38d-dbfb9600f74f.jpg",
+    "category": "chemistry",
+    "source_filename": "01a0ff14-83b1-74fd-b38d-dbfb9600f74f.jpg",
+    "labeled": true,
+    "preferred": true,
+    "report_time": "2026-10-02T22:07:32",
+    "type": "干化学钾",
+    "relative_h": 416.13,
+    "note": "Dry-chemistry potassium only. Clock 2026-10-02 22:07:32. Phone status 23:39 is not the clock. Thirty-two seconds do not round the minute up. Stored h is 416.13, label 术后416h07m. K 4.37, ref 3.5-5.3, abnormal column blank. Do not call it low. Note blank. Series 4.80 then 16:40 4.75 then 4.37, all unflagged. Newer than the 21:53 arterial, so the hero is 最新化验：术后416h07m · 钾 4.37. Creatinine stays 286.0. This is not a new CRRT clock.",
+    "extracted": {
+      "k": 4.37
+    },
+    "sha256_16": "a4dc2d8d7cfa91d3",
+    "bytes": 285730
+  }
   ]
 }
