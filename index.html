@@ -1196,7 +1196,7 @@
       <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能、用药治疗与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
-        <span class="pill" id="latestTimePill">最新口述：术后464h24m · 血小板已下单</span>
+        <span class="pill" id="latestTimePill">最新：术后467h20m</span>
         <span class="pill">数据已去标识化</span>
       </div>
     </header>
@@ -1230,24 +1230,24 @@
             <span class="status-name">组织灌注</span>
             <span class="level">偏高</span>
           </div>
-          <div class="status-value"><span id="latestLactate">1.74</span><span class="status-unit">mmol/L</span></div>
-          <div class="status-note">20:05动脉<strong>1.74</strong>↑ · 19:57静脉 <strong>2.08</strong><br>比这张早 · 17:42静脉是2.38</div>
+          <div class="status-value"><span id="latestLactate">1.92</span><span class="status-unit">mmol/L</span></div>
+          <div class="status-note">01:20动脉<strong>1.92</strong>↑ · 前次20:05是<strong>1.74</strong><br>仍高于这张参考0.5–1.6</div>
         </button>
         <button class="status-card red" type="button" data-metric-jump="pf">
           <div class="status-top">
             <span class="status-name">氧合</span>
             <span class="level">仍低</span>
           </div>
-          <div class="status-value"><span id="latestPf">249</span><span class="status-unit">P/F</span></div>
-          <div class="status-note">20:05动脉<strong>249</strong> · FiO₂ <strong>50%</strong><br>19:57静脉34.40÷0.50≈69，不能当动脉P/F</div>
+          <div class="status-value"><span id="latestPf">176</span><span class="status-unit">P/F</span></div>
+          <div class="status-note">01:20动脉<strong>176</strong> · FiO₂ <strong>50%</strong><br>PO₂ <strong>87.80</strong> · 前次动脉P/F 249</div>
         </button>
         <button class="status-card red" type="button" data-metric-jump="hco3">
           <div class="status-top">
             <span class="status-name">酸碱</span>
-            <span class="level">偏高</span>
+            <span class="level">在参考内</span>
           </div>
-          <div class="status-value"><span id="latestPh">7.460</span><span class="status-unit">pH</span></div>
-          <div class="status-note">20:05动脉<strong>7.460</strong>↑ · HCO₃⁻ <strong>22.70</strong>异常栏空着<br>ABE <strong>−1.20</strong> 异常栏空着 · 静脉pH是7.344</div>
+          <div class="status-value"><span id="latestPh">7.442</span><span class="status-unit">pH</span></div>
+          <div class="status-note">01:20动脉<strong>7.442</strong> · PCO₂ <strong>35.20</strong><br>HCO₃⁻ <strong>23.50</strong> · ABE <strong>−0.60</strong>，异常栏都空着</div>
         </button>
         <div class="status-card red">
           <div class="status-top">
@@ -1287,7 +1287,7 @@
             <span class="level">仍低于115</span>
           </div>
           <div class="status-value">95.0<span class="status-unit">g/L</span></div>
-          <span id="latestHb" hidden>10.3</span>
+          <span id="latestHb" hidden>10.2</span>
           <div class="status-note">血小板 <strong>82</strong>→<strong>45</strong> · 已下单，尚未输<br>若再便血会复查 · 否则明早5点多抽血</div>
         </button>
       </div>
@@ -1429,6 +1429,23 @@
         <details class="report" open>
           <summary>
             <div>
+              <div class="report-title">最新动脉血气</div>
+              <div class="report-meta">术后467h20m · 10月5日01:20 · FiO₂ 50%</div>
+            </div>
+            <span class="report-badge red">P/F 176</span>
+          </summary>
+          <div class="report-body">
+            <ul>
+              <li>动脉 P/F <strong>249→176</strong> ↓ · PO₂ <strong>87.80</strong> · FiO₂仍 <strong>50%</strong>。单上 <strong>0.27%</strong> 是比值，不是 P/F。</li>
+              <li>乳酸 <strong>1.74→1.92</strong> ↑（参考 0.5–1.6）。这是数字变化，不作诊断。</li>
+              <li>pH <strong>7.442</strong> · PCO₂ <strong>35.20</strong> · HCO₃⁻ <strong>23.50</strong> · ABE <strong>−0.60</strong>，这些项目异常栏空着。</li>
+              <li>ctHb <strong>10.20</strong> ↓ · Hct <strong>30.00</strong> ↓ · iCa <strong>1.07</strong> ↓ · sO₂ <strong>97.10</strong>。血气Hb不要和血常规Hb 95.0逐点等同。</li>
+            </ul>
+          </div>
+        </details>
+        <details class="report" open>
+          <summary>
+            <div>
               <div class="report-title">下肢动静脉彩超</div>
               <div class="report-meta">术后188h19m · 9月23日10:19</div>
             </div>
@@ -1555,8 +1572,8 @@
           <div class="report-body">
             <ul>
               <li>血常规血红蛋白 <strong>95.0</strong> ↓ · 血小板 <strong>45</strong> · 红细胞 <strong>3.03</strong> ↓ · 压积 <strong>27.2</strong> ↓（10月4日21:51，参考 115–150）。异常栏血小板印了 PL。备注：有危急值，结果已复查。没有第二个数字。</li>
-              <li>血气血红蛋白：20:05动脉 <strong>10.30</strong> ↓ · 19:57静脉 <strong>18.60</strong> ↑。和血常规不是同一种。都不是今天的单位数。</li>
-              <li>钾 <strong>3.74</strong>（20:06，参考 3.5–5.3，异常栏空着）· 钠仍 <strong>132</strong> ↓ · 动脉钙 <strong>1.06</strong> ↓ · 静脉钙 <strong>0.47</strong> ↓。</li>
+              <li>血气血红蛋白：01:20动脉 <strong>10.20</strong> ↓ · 前次20:05动脉 <strong>10.30</strong> ↓ · 19:57静脉 <strong>18.60</strong> ↑。和血常规不是同一种。</li>
+              <li>钾 <strong>3.74</strong>（20:06，参考 3.5–5.3，异常栏空着）· 钠仍 <strong>132</strong> ↓ · 最新动脉钙 <strong>1.07</strong> ↓ · 19:57静脉钙 <strong>0.47</strong> ↓。</li>
               <li>10:06口述今天输血，没说几单位。不要写成10月2日发出的 <strong>2</strong> 单位就是这一次。白蛋白 <strong>23.2</strong> ↓。</li>
               <li>22:24口述：医院说可能要输血小板，已下单给输血科；家属说大概率需要家属献血小板。尚未说已经输上。今晚不再便血则明早5点多抽血、约8–9点出结果；若再便血则再抽血看血小板。</li>
               <li>15:00会诊：不建议肠镜，可能导致二次伤害。增强CT今天先观察，明天再定。造影剂对肾压力大。昨天便仍是 <strong>350</strong> mL。</li>
@@ -1907,7 +1924,8 @@
       { h: 459.71, label: "术后459h42m", sample: "动脉", ph: 7.427, pco2: 34.2, po2: 134.6, hco3: 22.0, be: -2.3, lactate: 1.87, fio2: 50, pf: 269, hb: 10.5, ca: 1.07 },
       { h: 459.71, label: "术后459h42m", sample: "静脉", ph: 7.327, pco2: 43.0, po2: 33.6, hco3: 22.0, be: -4.0, lactate: 2.38, fio2: 50, pf: null, hb: 16.2, ca: 0.42 },
       { h: 461.97, label: "术后461h57m", sample: "静脉", ph: 7.344, pco2: 38.1, po2: 34.4, hco3: 20.3, be: -5.4, lactate: 2.08, fio2: 50, pf: null, hb: 18.6, ca: 0.47 },
-      { h: 462.09, label: "术后462h05m", sample: "动脉", ph: 7.460, pco2: 32.6, po2: 124.4, hco3: 22.7, be: -1.2, lactate: 1.74, fio2: 50, pf: 249, hb: 10.3, ca: 1.06 }
+      { h: 462.09, label: "术后462h05m", sample: "动脉", ph: 7.460, pco2: 32.6, po2: 124.4, hco3: 22.7, be: -1.2, lactate: 1.74, fio2: 50, pf: 249, hb: 10.3, ca: 1.06 },
+      { h: 467.35, label: "术后467h20m", sample: "动脉", ph: 7.442, pco2: 35.2, po2: 87.8, hco3: 23.5, be: -0.6, lactate: 1.92, fio2: 50, pf: 176, hb: 10.2, ca: 1.07 }
     ];
 
     const labReadings = [
@@ -2128,8 +2146,8 @@
       {
         id: "icu-support",
         group: "urgent",
-        title: "呼吸循环：P/F 249，气切接机和升压药怎么调？",
-        detail: "20:05 动脉 P/F <strong>249</strong> · FiO₂ <strong>50%</strong> · 乳酸 <strong>1.74</strong>↑<br/>pH <strong>7.460</strong>↑ · HCO₃⁻ <strong>22.70</strong> 异常栏空着<br/>249 是20:05动脉底部氧合指数；0.38% 不是 P/F<br/>19:57静脉 PO₂ <strong>34.40</strong>÷0.50≈<strong>69</strong>，静脉样本不能当动脉P/F<br/>气切处接机吗？血压 <strong>126/64</strong> · 多巴胺仍 <strong>5</strong> mL/h"
+        title: "呼吸循环：P/F降至176，FiO₂ 50%，接机怎么调？",
+        detail: "01:20 动脉 P/F <strong>249→176</strong> · FiO₂ <strong>50%</strong> · PO₂ <strong>87.80</strong><br/>乳酸 <strong>1.74→1.92</strong>↑ · pH <strong>7.442</strong><br/>PCO₂ <strong>35.20</strong> · HCO₃⁻ <strong>23.50</strong> · ABE <strong>−0.60</strong>，异常栏空着<br/>气切处是否仍接机，当前氧疗 / 呼吸机目标怎么调？<br/>循环仍停在15:00口述 <strong>126/64</strong> · 多巴胺 <strong>5</strong> mL/h，请同步当前泵速"
       },
       {
         id: "infection",

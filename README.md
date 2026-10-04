@@ -54,6 +54,8 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 **10月4日每日清单：** 「每日用药与治疗」默认打开10月4日。账户快照是预交款 **81000**、费用 **168172.26**、余额 **−87172.26**，不是单日费用。CRRT计费 **13.64** 小时 / **1295.80** 元，另有血滤器1支 / 300元、血液回路1支 / 725元；这不是10:30开机钟点，也不是脱水2400 mL。悬浮红细胞发出 **4单位 / 840元**，不是已经输完，也不是血小板。清单没看到血小板制品；22:24口述仍是血小板已下单、尚未说已经输上。降钙素原检测计费1项 / 114元，没有结果，降钙素原仍是 **5.754**。萘莫司他数量 **−14支 / −508.76元** 是退费，不是新发出14支。
 
+**10月5日01:20动脉血气（当前）：** 顶栏是 **最新：术后467h20m**。FiO₂仍 **50%**，动脉 P/F **249→176**，PO₂ **87.80**；单上 **0.27%** 不是 P/F。乳酸 **1.74→1.92**↑。pH **7.442**、PCO₂ **35.20**、HCO₃⁻ **23.50**、ABE **−0.60** 的异常栏都空着。血气 ctHb **10.20**↓、Hct **30.00**↓、iCa **1.07**↓、sO₂ **97.10**。表单03:47只说明截图是动脉血气，不另建钟点。没有新的血压、升压药、CRRT、尿量、血小板或输注结果；血小板仍是 **45**，22:24口述仍是已下单、尚未说已经输上。
+
 海外备用：https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
 **上传化验**已正式并入 `main`。家属大陆入口仍是上面带提交号的 `index.xhtml`。上传完成后的手机结果页用这次提交的 GitHub 预览，避免干等国内镜像缓存。
@@ -79,7 +81,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 284 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 285 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 

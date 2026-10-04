@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 284,
+  "count": 285,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5690,6 +5690,37 @@
       },
       "sha256_16": "ae84c3b03e3467d",
       "bytes": 2096913
+    },
+    {
+      "id": "20261005T012054__image-1791143270451-0.jpg",
+      "path": "reports/abg/20261005T012054__image-1791143270451-0.jpg",
+      "category": "abg",
+      "source_filename": "image-1791143270451-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-05T01:20:54",
+      "type": "动脉血气",
+      "relative_h": 467.35,
+      "note": "Arterial blood gas. The upload oral at 03:47 identifies the screenshot as arterial but does not create a separate lab or vital point; use the clear sheet clock 2026-10-05 01:20:54. Fifty-four seconds do not round the minute up. Stored h is 467.35, label 术后467h20m. pH 7.442, PCO2 35.20, PO2 87.80, HCO3 23.50, and ABE -0.60 have blank abnormal columns. Store ABE, not SBE -0.30. Standard bicarbonate 24.20 and temperature-corrected pH 7.448 / PCO2 34.60 / PO2 85.60 are not separate stored trend values. Lactate 1.92 high, ref 0.5-1.6. FiO2 50.0%. Printed bottom P/F 176 low, ref 400-500; 87.80/0.50=175.6. The 0.27% row is a ratio, not P/F. ctHb 10.20 low g/dl, Hct 30.00 low, cCa2+ 1.07 low, sO2 97.10 with blank flag, ctO2 14.00 low, and temperature-corrected A-a 31.00 high. Machine temperature 36.6 is not a bedside temperature. Na, K, Cl, glucose, and note are blank. This arterial gas is newer than the 22:24 oral, so the hero is 最新：术后467h20m. latestNonBloodGasReport remains the 22:24 platelet-order oral. No new labReadings or vitalReadings row. Hospital name stays out of the UI.",
+      "extracted": {
+        "sample": "动脉",
+        "ph": 7.442,
+        "pco2": 35.2,
+        "po2": 87.8,
+        "hco3": 23.5,
+        "abe": -0.6,
+        "lactate": 1.92,
+        "fio2": 50,
+        "pf": 176,
+        "hb_g_dl": 10.2,
+        "hct": 30.0,
+        "ca": 1.07,
+        "so2": 97.1,
+        "cto2": 14.0,
+        "aa_temp": 31.0
+      },
+      "sha256_16": "aabfd5f38927dcd2",
+      "bytes": 191966
     }
   ]
 }
