@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 280,
+  "count": 283,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5585,6 +5585,80 @@
       },
       "sha256_16": "d67661856e8d7f9c",
       "bytes": 196211
+    },
+    {
+      "id": "20261004T195759__7FB5563E-4D7F-4805-B76E-A43031241E71_L0_001.jpg",
+      "path": "reports/abg/20261004T195759__7FB5563E-4D7F-4805-B76E-A43031241E71_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "7FB5563E-4D7F-4805-B76E-A43031241E71_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-04T19:57:59",
+      "type": "静脉血气",
+      "relative_h": 461.97,
+      "note": "Family said the first sheet is 静脉血. Header does not print 静脉. Clock 2026-10-04 19:57:59. Fifty-nine seconds do not round the minute up. Stored h is 461.97, label 术后461h57m. Older than the 20:05 arterial gas (h 462.09), so this sheet is not the hero. Big lactate 1.74 and big pH 7.460 stay the arterial sample. Arterial P/F stays 249. Hidden Hb stays 10.3. The later 21:51 CBC is the hero. pH 7.344 low, ref 7.35-7.45. PH(T) 7.351 sits on 7.35 with a blank flag and is not a second pH. PCO2 38.10, ref 35-45, abnormal column blank. Do not call CO2 low. PCO2(T) 37.30 is inside 32-46 with a blank flag and is not the stored PCO2. Store ABE -5.40 low, ref -3 to 3. Do not store SBE -4.80 low. tCO2 21.40 low is not HCO3. Store cHCO3(P) 20.30 low, ref 22-26. Standard bicarbonate 19.80 low is not the stored HCO3. Lactate 2.08 high, ref 0.5-1.6, from the 17:42 venous 2.38. It does not replace arterial lactate 1.74. FiO2 50.0 unflagged, not weaned. Bottom index 69.00 low, ref 400-500. 34.40/0.50=68.8, printed 69. Venous sample, not arterial P/F. The 0.11% row is a percent, not P/F. The middle oxygenation-index row is blank. The A-a row is blank; do not copy ctO2 17.40 or the temp-corrected A-a 37.60 high, ref 5-15. PO2 34.40, reference cell is a dash, no high or low flag. pO2(T) 33.20 low is not a second PO2. sO2 67.90 low, ref 93-98, venous saturation. ctHb 18.60 high g/dl, ref 12-17.5. Not the later CBC 95.0 and not arterial 10.30. Hct 55.00 high, ref 37-43. cCa2+ 0.47 low, ref 1.15-1.29. The 17:42 venous calcium stays 0.42 and arterial calcium stays 1.06. Do not call 0.47 a correction and do not diagnose citrate. Na, K, Cl, glucose, and the note are blank. No critical-value note. Machine T 36.5 is not the low fever. Hospital name stays out of the UI. No new vital row.",
+      "extracted": {
+        "sample": "静脉",
+        "ph": 7.344,
+        "pco2": 38.1,
+        "po2": 34.4,
+        "hco3": 20.3,
+        "abe": -5.4,
+        "sbe": -4.8,
+        "lactate": 2.08,
+        "fio2": 50,
+        "pf": null,
+        "hb_g_dl": 18.6,
+        "hct": 55.0,
+        "ca": 0.47,
+        "so2": 67.9,
+        "bottom_index": 69
+      },
+      "sha256_16": "d13707a9ba6b1ed0",
+      "bytes": 1351142
+    },
+    {
+      "id": "20261004T200607__86720CAB-10C7-4C44-A86B-17094A21DAD6_L0_001.jpg",
+      "path": "reports/chemistry/20261004T200607__86720CAB-10C7-4C44-A86B-17094A21DAD6_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "86720CAB-10C7-4C44-A86B-17094A21DAD6_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-04T20:06:07",
+      "type": "干化学钾",
+      "relative_h": 462.10,
+      "note": "Dry chemistry potassium only. Clock 2026-10-04 20:06:07. Seven seconds do not round the minute up. Stored h is 462.10, label 术后462h06m. K 3.74, ref 3.5-5.3, abnormal column blank, note blank. Do not call 3.74 low. Not procalcitonin and not P/F. Creatinine, urea, sodium, and chloride are not on this sheet. Phone status 20:07 is not the clock. Newer than the 20:05 arterial gas and older than the 21:51 CBC, so this sheet is not the hero. The 07:44 potassium 3.99 stays on that row. No new vital row. Hospital name stays out of the UI.",
+      "extracted": {
+        "sample": "生化",
+        "k": 3.74
+      },
+      "sha256_16": "358012f0873b921c",
+      "bytes": 286920
+    },
+    {
+      "id": "20261004T215130__30CBD2BC-96CF-416E-9424-68B04D51B4A5_L0_001.jpg",
+      "path": "reports/cbc/20261004T215130__30CBD2BC-96CF-416E-9424-68B04D51B4A5_L0_001.jpg",
+      "category": "cbc",
+      "source_filename": "30CBD2BC-96CF-416E-9424-68B04D51B4A5_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-04T21:51:30",
+      "type": "血常规",
+      "relative_h": 463.86,
+      "note": "CBC. Clock 2026-10-04 21:51:30. Thirty seconds do not round the minute up. Stored h is 463.86, label 术后463h51m. Newer than the 20:05 arterial gas, so latestNonBloodGasReport is this sheet and the hero is 最新化验：术后463h51m · 血小板 45. Big lactate 1.74, big pH 7.460, and P/F 249 stay the arterial gas. WBC 10.18 high, ref 3.5-9.5, from 13.63. RBC 3.03 low. HB 95.0 low g/L, ref 115-150, from 102.0. HCT 27.2 low. MCV 89.8, MCH 31.4, and MCHC 349.0 have blank flags. PLT 45.00, ref 125-350, abnormal column prints PL, not a plain arrow. Note says 有危急值，结果已复查. No second number is printed. 45 is not bleeding started and not proof today's transfusion worked. NEUT% 92.7 high, NEUT abs 9.44 high. LYMPH% 2.1 low, LYMPH abs 0.21 low. MONO% 2.9 low, MONO abs 0.30 blank. EOS% 2.1 and EOS abs 0.21 blank. BASO% 0.2 and BASO abs 0.02 blank. The PCT row is plateletcrit 0.06 low, ref 0.17-0.35, not procalcitonin. Procalcitonin stays 5.754. P-LCR 52.50 high. Hospital name stays out of the UI. No new vital row.",
+      "extracted": {
+        "sample": "血常规",
+        "wbc": 10.18,
+        "rbc": 3.03,
+        "hbg": 95.0,
+        "hct": 27.2,
+        "plt": 45.0,
+        "neut_pct": 92.7,
+        "neut_abs": 9.44,
+        "plateletcrit_pct": 0.06
+      },
+      "sha256_16": "76f7b47cdf600cab",
+      "bytes": 885433
     }
   ]
 }
