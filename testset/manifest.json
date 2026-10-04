@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 288,
+  "count": 289,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5789,6 +5789,26 @@
       },
       "sha256_16": "ae734c7ee38188f0",
       "bytes": 396419
+    },
+    {
+      "id": "20261003T135101__image-1791155403167-0.jpg",
+      "path": "reports/imaging/20261003T135101__image-1791155403167-0.jpg",
+      "category": "imaging",
+      "source_filename": "image-1791155403167-0.jpg",
+      "labeled": true,
+      "preferred": false,
+      "superseded_by": "reports/imaging/20261003T135101__3A13B697-8D48-47CC-9228-13CD8752552D_L0_001.jpg",
+      "report_time": "2026-10-03T13:51:01",
+      "type": "胸部正位片",
+      "relative_h": 431.85,
+      "note": "Same-clock 810x1800 recompressed copy of the preferred 1080x2400 chest AP screenshot. The report text and clock match; keep the larger file preferred and do not create a second imaging event or any baseReadings, labReadings, or vitalReadings point. Phone status 5:39 is not the report clock. Preserve the printed result as report wording, not a dashboard diagnosis.",
+      "extracted": {
+        "exam": "胸部正位片",
+        "description": "双肺紊乱增粗加重，肺野透明度减低，密度增高，其内见条片状高密度影；双肺门无增大、增浓；心影大小、形态如常；纵隔居中，双侧膈面及肋膈角模糊；其它：未见异常。",
+        "result": "双肺炎症，积液进一步行CT检查双侧膈面及肋膈角显示不清，考虑胸腔积液气管插管上腔静脉留置管"
+      },
+      "sha256_16": "6b6bdcd2c98e1db1",
+      "bytes": 225925
     }
   ]
 }
