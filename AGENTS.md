@@ -97,6 +97,10 @@ If the family only said “high / about half”, leave mL blank rather than gues
    `https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@<sha>/index.xhtml`
    Then replace the pinned SHA in `README.md` and `CONTEXT.md`. `@main` on those mirrors stays on an old snapshot; `purge.jsdelivr.net` and `?v=` do not move it.
 
+### Validation default
+
+For routine lab-screenshot, oral-note, and daily-list updates, **do not use computer use by default**. Keep the urgent path fast: validate JSON, extract the dashboard `<script>` and run `node --check`, rebuild `index.xhtml`, check focused HTML/XHTML markers, and verify the pushed GitHub raw content plus htmlpreview HTTP response. Use computer use only when the user explicitly requests GUI testing, when interactive UI behavior changed and cannot be covered by these checks, or when non-GUI results are inconclusive.
+
 ### Same-clock replace and hires
 
 - **Keep the old file.** Never delete a superseded screenshot.
