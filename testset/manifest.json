@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 287,
+  "count": 288,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5770,6 +5770,25 @@
       },
       "sha256_16": "e5a3e104276ff2ee",
       "bytes": 113293
+    },
+    {
+      "id": "20261003T135101__3A13B697-8D48-47CC-9228-13CD8752552D_L0_001.jpg",
+      "path": "reports/imaging/20261003T135101__3A13B697-8D48-47CC-9228-13CD8752552D_L0_001.jpg",
+      "category": "imaging",
+      "source_filename": "3A13B697-8D48-47CC-9228-13CD8752552D_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-03T13:51:01",
+      "type": "胸部正位片",
+      "relative_h": 431.85,
+      "note": "Chest AP radiograph. Clock 2026-10-03 13:51:01, stored h 431.85, label 术后431h51m; one second does not round the minute up. Description printed: 双肺紊乱增粗加重，肺野透明度减低，密度增高，其内见条片状高密度影；双肺门无增大、增浓；心影大小、形态如常；纵隔居中，双侧膈面及肋膈角模糊；其它：未见异常。 Result is printed as run-on text: 双肺炎症，积液进一步行CT检查双侧膈面及肋膈角显示不清，考虑胸腔积液气管插管上腔静脉留置管. Preserve this as report wording, not a new diagnosis. The phrase 积液进一步行CT检查 is a recommendation, not proof that a new CT was completed. This report is older than the current 2026-10-05 potassium and gases, so it does not replace the hero or create baseReadings, labReadings, or vitalReadings points. Phone status 5:39 is not the report clock. Hospital name stays out of the UI.",
+      "extracted": {
+        "exam": "胸部正位片",
+        "description": "双肺紊乱增粗加重，肺野透明度减低，密度增高，其内见条片状高密度影；双肺门无增大、增浓；心影大小、形态如常；纵隔居中，双侧膈面及肋膈角模糊；其它：未见异常。",
+        "result": "双肺炎症，积液进一步行CT检查双侧膈面及肋膈角显示不清，考虑胸腔积液气管插管上腔静脉留置管"
+      },
+      "sha256_16": "ae734c7ee38188f0",
+      "bytes": 396419
     }
   ]
 }

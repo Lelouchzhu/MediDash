@@ -58,6 +58,8 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 **10月5日01:31当前更新（覆盖上面的01:20顶栏说明）：** 顶栏是 **最新化验：术后467h31m · 钾 3.65**。01:31:11干化学只看到钾 **3.65 mmol/L**，参考 **3.5–5.3**，异常栏和备注都空着。01:37是手机状态栏，不是报告时间。01:13:00是家属明确说明的静脉血气：pH **7.360**、乳酸 **2.38**↑、HCO₃⁻ **24.00**、ABE **−1.50**、ctHb **14.10**、iCa **0.48**↓、FiO₂ **50%**。底部指数 **65** 来自静脉样本，不是动脉 P/F；状态卡仍采用稍后的01:20动脉 P/F **176**、乳酸 **1.92**、pH **7.442**。没有新的生命体征。
 
+**10月3日13:51胸部正位片（此次补录，不覆盖当前顶栏）：** 报告时间 **2026-10-03 13:51:01**，术后 **431h51m**。检查结果页面原文标点连写为「**双肺炎症，积液进一步行CT检查双侧膈面及肋膈角显示不清，考虑胸腔积液气管插管上腔静脉留置管**」。这里只保留报告原文，不写成本页诊断。「进一步行CT检查」是报告建议，不是已经完成新的CT。该影像早于10月5日当前化验，不新增血气、生化或生命体征趋势点。
+
 海外备用：https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
 **上传化验**已正式并入 `main`。家属大陆入口仍是上面带提交号的 `index.xhtml`。上传完成后的手机结果页用这次提交的 GitHub 预览，避免干等国内镜像缓存。
@@ -83,7 +85,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 287 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 288 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 
