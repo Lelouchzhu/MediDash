@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 289,
+  "count": 290,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5809,6 +5809,37 @@
       },
       "sha256_16": "6b6bdcd2c98e1db1",
       "bytes": 225925
+    },
+    {
+      "id": "20261005T065635__image-1791158161124-0.jpg",
+      "path": "reports/abg/20261005T065635__image-1791158161124-0.jpg",
+      "category": "abg",
+      "source_filename": "image-1791158161124-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-05T06:56:35",
+      "type": "动脉血气",
+      "relative_h": 472.94,
+      "note": "Family explicitly identified this screenshot as arterial blood gas. Clock 2026-10-05 06:56:35; 35 seconds do not round the minute up. Stored h is 472.94, label 术后472h56m. pH 7.485 high, PCO2 34.60 low, PO2 97.70 with blank abnormal column, plasma HCO3 25.50 with blank abnormal column, ABE 2.10 with blank abnormal column, lactate 1.97 high, FiO2 50.0%, printed bottom P/F 195 low. The 0.30% row is pO2(a/A,T), not P/F. Store plasma HCO3, not standard HCO3 26.30. Store ABE, not SBE 2.00. ctHb 7.20 low, Hct 21.00 low, iCa 1.05 low, sO2 97.70 with blank abnormal column, ctO2 9.90 low, temperature-corrected A-a 29.67 high. Machine temperature 36.7 is not bedside fever. Sodium, potassium, chloride, glucose, and note are blank. No new vital, chemistry, CBC, coagulation, CRRT, urine, or transfusion point.",
+      "extracted": {
+        "sample": "动脉",
+        "ph": 7.485,
+        "pco2": 34.6,
+        "po2": 97.7,
+        "hco3": 25.5,
+        "abe": 2.1,
+        "lactate": 1.97,
+        "fio2": 50,
+        "pf": 195,
+        "hb_g_dl": 7.2,
+        "hct": 21.0,
+        "ca": 1.05,
+        "so2": 97.7,
+        "cto2": 9.9,
+        "aa_temp": 29.67
+      },
+      "sha256_16": "624ed226cb55c35cb",
+      "bytes": 198710
     }
   ]
 }
