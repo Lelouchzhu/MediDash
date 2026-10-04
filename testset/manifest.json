@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 283,
+  "count": 284,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5659,6 +5659,37 @@
       },
       "sha256_16": "76f7b47cdf600cab",
       "bytes": 885433
+    },
+    {
+      "id": "20261004T120000__C0230E9D-E301-488D-AFF9-D909AFDF28D4_L0_001.jpg",
+      "path": "reports/billing/20261004T120000__C0230E9D-E301-488D-AFF9-D909AFDF28D4_L0_001.jpg",
+      "category": "billing",
+      "source_filename": "C0230E9D-E301-488D-AFF9-D909AFDF28D4_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-04T12:00:00",
+      "type": "住院清单",
+      "relative_h": 454.0,
+      "note": "Daily bill. Date button 2026/10/04; no report clock, so noon convention h 454. Account snapshot prepaid 81000.00 / cost 168172.26 / balance -87172.26, not a single-day cost. Footer day total is covered by the date button; do not invent it. CRRT 13.64 h / 1295.80 at 95/h, plus hemofilter 300 and circuit 725. Billed hours are not the oral 10:30 start and not 2400 ml ultrafiltration. Ventilator 24 h / 480 and ECG 24 h / 192. Citrate solution 15 bags / 224.70 is issued count; nafamostat qty -14 / -508.76 is a credit, not 14 newly issued. Packed RBC 4 units / 840 plus leukoreduced add-on 4 units / 80 is issued, not proof of transfusion and not platelets. No platelet product line was seen; the 22:24 oral remains ordered but not reported transfused. Albumin x4 / 1648. Ceftazidime-avibactam x3 / 1020. No meropenem or enteral-formula line. Propofol x2 / 21.84. Dobutamine x2 is vial count, not dopamine pump rate; no norepinephrine or dopamine line was seen. PCT test x1 / 114 is billing without a result and is procalcitonin testing, not plateletcrit or P/F. Noon bill is older than the 22:24 oral and does not replace the hero.",
+      "extracted": {
+        "prepaid": 81000,
+        "total_cost": 168172.26,
+        "balance": -87172.26,
+        "ventilator_h": 24,
+        "ecg_h": 24,
+        "crrt_h": 13.64,
+        "crrt_cost": 1295.8,
+        "rbc_u": 4,
+        "rbc_cost": 840,
+        "albumin_qty": 4,
+        "albumin_cost": 1648,
+        "ceftazidime_avibactam_qty": 3,
+        "nafamostat_qty": -14,
+        "nafamostat_cost": -508.76,
+        "pct_test_count": 1
+      },
+      "sha256_16": "ae84c3b03e3467d",
+      "bytes": 2096913
     }
   ]
 }

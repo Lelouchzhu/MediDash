@@ -52,6 +52,8 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 **22:24紧急更新（覆盖上面的21:51顶栏说明）：** 顶栏是 **最新口述：术后464h24m · 血小板已下单**。血小板仍是21:51的 **45**；医院电话说可能输血小板，已下单给输血科，尚未说已经输上。家属说大概率需要家属献血小板，只作家属转述，不写成输血科已确认要求。今晚不再便血则明早5点多抽血、约8–9点出结果；若再便血则再抽血看血小板。这些约数不建未来化验点。查房仍是4条，第四条标题是 **血小板45，已下单给输血科**。
 
+**10月4日每日清单：** 「每日用药与治疗」默认打开10月4日。账户快照是预交款 **81000**、费用 **168172.26**、余额 **−87172.26**，不是单日费用。CRRT计费 **13.64** 小时 / **1295.80** 元，另有血滤器1支 / 300元、血液回路1支 / 725元；这不是10:30开机钟点，也不是脱水2400 mL。悬浮红细胞发出 **4单位 / 840元**，不是已经输完，也不是血小板。清单没看到血小板制品；22:24口述仍是血小板已下单、尚未说已经输上。降钙素原检测计费1项 / 114元，没有结果，降钙素原仍是 **5.754**。萘莫司他数量 **−14支 / −508.76元** 是退费，不是新发出14支。
+
 海外备用：https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
 **上传化验**已正式并入 `main`。家属大陆入口仍是上面带提交号的 `index.xhtml`。上传完成后的手机结果页用这次提交的 GitHub 预览，避免干等国内镜像缓存。
@@ -77,7 +79,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 283 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 284 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 
