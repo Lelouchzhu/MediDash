@@ -56,6 +56,8 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 **10月5日01:20动脉血气（当前）：** 顶栏是 **最新：术后467h20m**。FiO₂仍 **50%**，动脉 P/F **249→176**，PO₂ **87.80**；单上 **0.27%** 不是 P/F。乳酸 **1.74→1.92**↑。pH **7.442**、PCO₂ **35.20**、HCO₃⁻ **23.50**、ABE **−0.60** 的异常栏都空着。血气 ctHb **10.20**↓、Hct **30.00**↓、iCa **1.07**↓、sO₂ **97.10**。表单03:47只说明截图是动脉血气，不另建钟点。没有新的血压、升压药、CRRT、尿量、血小板或输注结果；血小板仍是 **45**，22:24口述仍是已下单、尚未说已经输上。
 
+**10月5日01:31当前更新（覆盖上面的01:20顶栏说明）：** 顶栏是 **最新化验：术后467h31m · 钾 3.65**。01:31:11干化学只看到钾 **3.65 mmol/L**，参考 **3.5–5.3**，异常栏和备注都空着。01:37是手机状态栏，不是报告时间。01:13:00是家属明确说明的静脉血气：pH **7.360**、乳酸 **2.38**↑、HCO₃⁻ **24.00**、ABE **−1.50**、ctHb **14.10**、iCa **0.48**↓、FiO₂ **50%**。底部指数 **65** 来自静脉样本，不是动脉 P/F；状态卡仍采用稍后的01:20动脉 P/F **176**、乳酸 **1.92**、pH **7.442**。没有新的生命体征。
+
 海外备用：https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
 **上传化验**已正式并入 `main`。家属大陆入口仍是上面带提交号的 `index.xhtml`。上传完成后的手机结果页用这次提交的 GitHub 预览，避免干等国内镜像缓存。
@@ -81,7 +83,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 285 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 287 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 

@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 285,
+  "count": 287,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5721,6 +5721,55 @@
       },
       "sha256_16": "aabfd5f38927dcd2",
       "bytes": 191966
+    },
+    {
+      "id": "20261005T011300__image-1791144136253-1.jpg",
+      "path": "reports/abg/20261005T011300__image-1791144136253-1.jpg",
+      "category": "abg",
+      "source_filename": "image-1791144136253-1.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-05T01:13:00",
+      "type": "静脉血气",
+      "relative_h": 467.22,
+      "note": "Venous blood gas; the family explicitly identifies the second screenshot as venous. Clock 2026-10-05 01:13:00, stored h 467.22, label 术后467h13m. pH 7.360, PCO2 43.40, HCO3 24.00, and ABE -1.50 have blank abnormal columns. Store ABE, not SBE -1.60. Do not store standard bicarbonate 22.40 or temperature-corrected pH 7.366 / PCO2 42.60 / PO2 31.70 as extra trend points. Lactate 2.38 high, ref 0.5-1.6. FiO2 50.0%. PO2 32.60 has a dash reference. Printed bottom index 65 is from this venous sample and must not be treated as arterial P/F; store pf null. The 0.10% row is not P/F. ctHb 14.10, Hct 41.00, cCa2+ 0.48 low, sO2 66.30 low, ctO2 12.80 low, and temperature-corrected A-a 36.98 high. Machine temperature 36.6 is not a bedside temperature. Na, K, Cl, glucose, and note are blank. This venous gas is earlier than the 01:20 arterial gas, so the arterial status-card values remain P/F 176, lactate 1.92, and pH 7.442. No new vital row. Hospital name stays out of the UI.",
+      "extracted": {
+        "sample": "静脉",
+        "ph": 7.36,
+        "pco2": 43.4,
+        "po2": 32.6,
+        "hco3": 24.0,
+        "abe": -1.5,
+        "lactate": 2.38,
+        "fio2": 50,
+        "pf": null,
+        "hb_g_dl": 14.1,
+        "hct": 41.0,
+        "ca": 0.48,
+        "so2": 66.3,
+        "cto2": 12.8,
+        "aa_temp": 36.98
+      },
+      "sha256_16": "3541e651a57a3165",
+      "bytes": 202180
+    },
+    {
+      "id": "20261005T013111__image-1791144136251-0.jpg",
+      "path": "reports/chemistry/20261005T013111__image-1791144136251-0.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1791144136251-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-05T01:31:11",
+      "type": "干化学钾",
+      "relative_h": 467.52,
+      "note": "Dry chemistry potassium only. Clock 2026-10-05 01:31:11. Eleven seconds do not round the minute up. Stored h is 467.52, label 术后467h31m. K 3.65 mmol/L, ref 3.5-5.3, abnormal column blank, note blank. Do not call 3.65 low. Not procalcitonin, plateletcrit, or P/F. Creatinine, urea, sodium, and chloride are not on this sheet. Phone status 01:37 is not the report clock. This sheet is newer than the 01:20 arterial gas, so the hero is 最新化验：术后467h31m · 钾 3.65. No new vital row. Hospital name stays out of the UI.",
+      "extracted": {
+        "sample": "生化",
+        "k": 3.65
+      },
+      "sha256_16": "e5a3e104276ff2ee",
+      "bytes": 113293
     }
   ]
 }
