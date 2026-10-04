@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 277,
+  "count": 278,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5494,6 +5494,36 @@
       },
       "sha256_16": "d1e83beb1c7d942d",
       "bytes": 1347625
+    },
+    {
+      "id": "20261004T174220__image-1791107966306-0.jpg",
+      "path": "reports/abg/20261004T174220__image-1791107966306-0.jpg",
+      "category": "abg",
+      "source_filename": "image-1791107966306-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-04T17:42:20",
+      "type": "动脉血气",
+      "relative_h": 459.71,
+      "note": "Family said 动脉血气. Header does not print 动脉. Clock 2026-10-04 17:42:20. Twenty seconds do not round the minute up. Stored h is 459.71, label 术后459h42m. Newer than the 15:00 oral (h 457.00), so the hero is 最新：术后459h42m. Big lactate 1.87, big pH 7.427, P/F 269, and hidden Hb 10.5 follow this arterial sample. latestNonBloodGasReport stays the 15:00 oral. Circulation card stays 126/64. pH 7.427, ref 7.35-7.45, abnormal column blank. PH(T) 7.431 blank is not a second pH. PCO2 34.20 low, ref 35-45. PCO2(T) 33.80 is inside 32-46 with a blank flag and is not the stored PCO2. PO2 134.60 high, ref 80-100. pO2(T) 132.80 high is not a second PO2. Store ABE -2.30, ref -3 to 3, abnormal column blank. Do not call it low. Do not store SBE -1.80. tCO2 23.10 low is not HCO3. Store cHCO3(P) 22.00, ref 22-26, abnormal column blank, on the lower bound. Do not call it low. Standard bicarbonate 23.00, blank flag, is not the stored HCO3. Lactate 1.87 high, ref 0.5-1.6, from the 13:33 arterial 2.50. Still above range. It does not replace venous lactate 3.00. FiO2 50.0 unflagged, not weaned. Bottom index 269.00 low, ref 400-500. 134.60/0.50=269.2, printed 269. This is arterial P/F. The 0.42% pO2(a/A,T) row is a percent, not P/F. The middle oxygenation-index row is blank. The A-a row is blank; do not copy ctO2 14.70 or the temp-corrected A-a 24.82 high, ref 5-15. sO2 98.30 high, ref 93-98. ctHb 10.50 low g/dl, ref 12-17.5. Not CBC 102.0, not venous 12.10, and not proof today's transfusion worked. Hct 31.00 low, ref 37-43. cCa2+ 1.07 low, ref 1.15-1.29. Venous calcium stays 0.43. Do not call 1.07 a correction and do not diagnose citrate. Na, K, Cl, glucose, and the note are blank. No critical-value note. Machine T 36.7 is not the low fever. Hospital name stays out of the UI. No new vital row.",
+      "extracted": {
+        "sample": "动脉",
+        "ph": 7.427,
+        "pco2": 34.2,
+        "po2": 134.6,
+        "hco3": 22.0,
+        "abe": -2.3,
+        "sbe": -1.8,
+        "lactate": 1.87,
+        "fio2": 50,
+        "pf": 269,
+        "hb_g_dl": 10.5,
+        "hct": 31.0,
+        "ca": 1.07,
+        "so2": 98.3
+      },
+      "sha256_16": "dbac9c1089cd6641",
+      "bytes": 197562
     }
   ]
 }
