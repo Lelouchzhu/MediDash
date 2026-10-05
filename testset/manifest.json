@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 295,
+  "count": 296,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6002,6 +6002,27 @@
       },
       "sha256_16": "9463f4f19250bcde",
       "bytes": 402602
+    },
+    {
+      "id": "20261005T104323__4ADFE3A4-E014-4B91-B839-B69B8C7E7E4C_L0_001.jpg",
+      "path": "reports/other/20261005T104323__4ADFE3A4-E014-4B91-B839-B69B8C7E7E4C_L0_001.jpg",
+      "category": "other",
+      "source_filename": "4ADFE3A4-E014-4B91-B839-B69B8C7E7E4C_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-05T10:43:23",
+      "type": "真菌培养及鉴定",
+      "relative_h": 476.72,
+      "note": "Fungal culture/identification report. Clock 2026-10-05 10:43:23; 23 seconds do not round the minute up. Stored h is 476.72, label 术后476h43m. The only populated result is the row printed 细菌1: 白色假丝酵母菌. 真菌药敏试验、two 真菌培养及鉴定结果 rows, and 备注 are blank. The sheet does not show specimen source, quantity, susceptibility result, or MIC; do not infer them or turn this result alone into an infection diagnosis. Phone status 12:36 is not the report clock. Hospital name stays out of the UI. No new baseReadings, labReadings, or vitalReadings numeric point.",
+      "extracted": {
+        "test": "真菌培养及鉴定",
+        "printed_row": "细菌1",
+        "organism": "白色假丝酵母菌",
+        "susceptibility": null,
+        "specimen": null
+      },
+      "sha256_16": "23a640c7e8aca296",
+      "bytes": 318626
     }
   ]
 }
