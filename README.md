@@ -62,6 +62,8 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 **10月5日07:02当前更新（覆盖上面的06:56顶栏说明）：** 顶栏是 **最新：术后473h02m · 静脉血气**。家属明确说明这是静脉血气。pH **7.382**、PCO₂ **41.20**、HCO₃⁻ **23.90**、ABE **−1.20** 的异常栏空着；乳酸 **2.32**↑，FiO₂ **50%**。PO₂ **31.30**，底部指数 **63** 来自静脉样本，不能当动脉 P/F，单上 **0.10%** 也不是 P/F。动脉 P/F 仍是06:56的 **195**。静脉 ctHb **13.90**、iCa **0.45**↓；与06:56动脉 ctHb **7.20**、血常规 Hb **95.0 g/L**不是同一管或同一种结果。没有新的生命体征、CRRT、尿量、血小板或输注结果。
 
+**10月5日09:12当前更新（覆盖上面的07:02顶栏说明）：** 顶栏是 **最新化验：术后475h12m · 血常规血小板 52**。白细胞 **10.18→9.96**↑（参考3.5–9.5），中性粒 **93.1% / 9.27**↑；不据单点下降判断感染是否改善。血红蛋白 **95.0→92.0 g/L**↓、红细胞 **2.81**↓、压积 **24.2**↓。血小板 **45→52**↓；这张备注空着，没有写危急值，且单凭数值上升不能确认是否已经输上血小板。血小板比积 PCT **0.07%**↓是血常规指标，不是生化降钙素原；降钙素原仍是 **5.754**，动脉 P/F 仍是 **195**。没有新的生命体征、CRRT、尿量、血气或明确输注结果。
+
 **10月3日13:51胸部正位片（此次补录，不覆盖当前顶栏）：** 报告时间 **2026-10-03 13:51:01**，术后 **431h51m**。检查结果页面原文标点连写为「**双肺炎症，积液进一步行CT检查双侧膈面及肋膈角显示不清，考虑胸腔积液气管插管上腔静脉留置管**」。这里只保留报告原文，不写成本页诊断。「进一步行CT检查」是报告建议，不是已经完成新的CT。该影像早于10月5日当前化验，不新增血气、生化或生命体征趋势点。
 
 海外备用：https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
@@ -89,7 +91,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 291 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 292 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 
