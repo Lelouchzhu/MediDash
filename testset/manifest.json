@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 296,
+  "count": 297,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6023,6 +6023,47 @@
       },
       "sha256_16": "23a640c7e8aca296",
       "bytes": 318626
+    },
+    {
+      "id": "20261005T161027__2FDC6B66-196A-4A7B-B1F7-637B1B1DFB82_L0_001.jpg",
+      "path": "reports/cbc/20261005T161027__2FDC6B66-196A-4A7B-B1F7-637B1B1DFB82_L0_001.jpg",
+      "category": "cbc",
+      "source_filename": "2FDC6B66-196A-4A7B-B1F7-637B1B1DFB82_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-05T16:10:27",
+      "type": "血常规",
+      "relative_h": 482.17,
+      "note": "CBC. Clock 2026-10-05 16:10:27; 27 seconds do not round the minute up. Stored h is 482.17, label 术后482h10m. WBC 10.41 high (ref 3.5-9.5). RBC 2.55 low, Hb 83.0 low g/L, Hct 22.5 low. MCV 88.2 and MCH 32.5 have blank abnormal columns; MCHC 369.0 high. Platelets 55.00 low (ref 125-350), up numerically from 52, but this sheet cannot establish whether platelets were transfused. Lymphocytes 2.6% low / 0.27 low, monocytes 3.5% / 0.36 with blank flags, neutrophils 92.3% high / 9.61 high, eosinophils 1.6% / 0.17 with blank flags, basophils 0.0% / 0.00 with blank flags. RDW-CV 14.80 and RDW-SD 48.50 have blank flags. PDW 18.20 high, MPV 14.00 has blank flag, P-LCR 49.80 high. Plateletcrit PCT 0.08% low is a CBC platelet index, not biochemical procalcitonin and not P/F. Notes are blank. Oral at 15:45: BP 122/28, stated MAP 53, pulse 81, respiration 21; dopamine 4 mL/h was then stated and later explicitly confirmed as mL/h. Do not convert dopamine to mg/h or invent weight. Family says platelets cannot be prepared until tomorrow. No norepinephrine, CRRT, urine, or transfusion amount was stated.",
+      "extracted": {
+        "sample": "血常规",
+        "wbc": 10.41,
+        "rbc": 2.55,
+        "hbg": 83.0,
+        "hct": 22.5,
+        "mcv": 88.2,
+        "mch": 32.5,
+        "mchc": 369.0,
+        "plt": 55.0,
+        "lymph_pct": 2.6,
+        "mono_pct": 3.5,
+        "neut_pct": 92.3,
+        "eos_pct": 1.6,
+        "baso_pct": 0.0,
+        "lymph_abs": 0.27,
+        "mono_abs": 0.36,
+        "neut_abs": 9.61,
+        "eos_abs": 0.17,
+        "baso_abs": 0.0,
+        "rdw_cv": 14.8,
+        "rdw_sd": 48.5,
+        "pdw": 18.2,
+        "mpv": 14.0,
+        "plcr": 49.8,
+        "plateletcrit_pct": 0.08
+      },
+      "sha256_16": "ea5df0c6a83a51d6",
+      "bytes": 1031063
     }
   ]
 }
