@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 290,
+  "count": 291,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -5840,6 +5840,38 @@
       },
       "sha256_16": "624ed226cb55c35c",
       "bytes": 198710
+    },
+    {
+      "id": "20261005T070219__image-1791159173484-0.jpg",
+      "path": "reports/abg/20261005T070219__image-1791159173484-0.jpg",
+      "category": "abg",
+      "source_filename": "image-1791159173484-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-05T07:02:19",
+      "type": "静脉血气",
+      "relative_h": 473.04,
+      "note": "Family explicitly identified this screenshot as venous blood gas. Clock 2026-10-05 07:02:19; 19 seconds do not round the minute up. Stored h is 473.04, label 术后473h02m. pH 7.382, PCO2 41.20, plasma HCO3 23.90, and ABE -1.20 have blank abnormal columns. Store plasma HCO3, not standard HCO3 22.70; store ABE, not SBE -1.10. Lactate 2.32 high, ref 0.5-1.6. FiO2 50.0%. PO2 31.30. Printed bottom index 63 is from this venous sample and must not be treated as arterial P/F; store pf null. The 0.10% row is pO2(a/A,T), not P/F. ctHb 13.90 and Hct 41.00 have blank abnormal columns. iCa 0.45 low, sO2 60.80 low, ctO2 11.70 low, temperature-corrected A-a 37.40 high, and pO2(T) 30.60 low. Temperature-corrected pH 7.386 and PCO2 40.70 are not separate trend points. Machine temperature 36.7 is not a bedside temperature. Sodium, potassium, chloride, glucose, and note are blank. This report is newer than the 06:56 arterial gas, so hero lactate and pH follow this venous gas; arterial P/F remains 195 and arterial ctHb remains 7.20. No new labReadings or vitalReadings row.",
+      "extracted": {
+        "sample": "静脉",
+        "ph": 7.382,
+        "pco2": 41.2,
+        "po2": 31.3,
+        "hco3": 23.9,
+        "abe": -1.2,
+        "lactate": 2.32,
+        "fio2": 50,
+        "pf": null,
+        "hb_g_dl": 13.9,
+        "hct": 41.0,
+        "ca": 0.45,
+        "so2": 60.8,
+        "cto2": 11.7,
+        "aa_temp": 37.4,
+        "po2_temp": 30.6
+      },
+      "sha256_16": "a55ccf36f3fb8bb2",
+      "bytes": 201899
     }
   ]
 }
