@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 301,
+  "count": 302,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6168,6 +6168,36 @@
       },
       "sha256_16": "6e7aa7e50f6af66c",
       "bytes": 394686
+    },
+    {
+      "id": "20261005T120000__277C20EA-4116-40E5-9BB8-447A470B257D_L0_001.jpg",
+      "path": "reports/billing/20261005T120000__277C20EA-4116-40E5-9BB8-447A470B257D_L0_001.jpg",
+      "category": "billing",
+      "source_filename": "277C20EA-4116-40E5-9BB8-447A470B257D_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-05T12:00:00",
+      "type": "住院清单",
+      "relative_h": 478.0,
+      "note": "Daily bill. Date button 2026/10/05; no report clock, so noon convention h 478. Account snapshot prepaid 81000.00 / cost 176633.16 / balance -95633.16, not a single-day cost. Footer day total is covered by the date button; do not invent it. CRRT 8.48 h / 805.60 at 95/h. No hemofilter, circuit, citrate, or nafamostat line was seen. Ventilator 24 h / 480 and ECG 24 h / 192. Micro-pump 120 h / 360 is multi-pump billing, not a single pump rate. Gastroscopy billing: upper GI endoscopy 1 / 226 plus endoscopic biopsy sampling 1 / 57; this is a charge, not a formal gastroscopy report. Apheresis platelets 1 treatment-qty / 1400 plus leukoreduced apheresis-platelet add-on 1 / 140 and storage fee 10200 ml / 100; issued quantity, consistent with the 18:00 oral that platelets were infused, but not a clock or proof of effect. No packed-RBC line. IV transfusion 3 groups / 33 is a treatment fee. Albumin, propofol, meropenem, and citrate were not seen. NE 9 vials / 7.29 and dobutamine 4 / 10.44 are vial counts; 15:45 oral still has dopamine 4 mL/h and NE blank. PCT test x1 / 114 is a charge with no new result; PCT stays 3.261. Thrombin powder 1 / 51.87. Ceftazidime-avibactam x3 / 1020. Does not replace the 21:58 coag hero (h 487.97).",
+      "extracted": {
+        "prepaid": 81000,
+        "total_cost": 176633.16,
+        "balance": -95633.16,
+        "ventilator_h": 24,
+        "ecg_h": 24,
+        "crrt_h": 8.48,
+        "crrt_cost": 805.6,
+        "plt_apheresis_qty": 1,
+        "plt_apheresis_cost": 1400,
+        "albumin_qty": 0,
+        "ceftazidime_avibactam_qty": 3,
+        "pct_test_count": 1,
+        "endoscopy_count": 1,
+        "pump_h": 120
+      },
+      "sha256_16": "5a57e453303fb4d5",
+      "bytes": 1657930
     }
   ]
 }
