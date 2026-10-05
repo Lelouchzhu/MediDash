@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 297,
+  "count": 298,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6064,6 +6064,29 @@
       },
       "sha256_16": "ea5df0c6a83a51d6",
       "bytes": 1031063
+    },
+    {
+      "id": "20261005T164443__C8BBEA9F-4CC9-490D-B024-1FD01E3F676B_L0_001.jpg",
+      "path": "reports/coag/20261005T164443__C8BBEA9F-4CC9-490D-B024-1FD01E3F676B_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "C8BBEA9F-4CC9-490D-B024-1FD01E3F676B_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-05T16:44:43",
+      "type": "凝血",
+      "relative_h": 482.75,
+      "note": "Coagulation report. Clock 2026-10-05 16:44:43; 43 seconds do not round the minute up. Stored h is 482.75, label 术后482h44m. APTT 35.9 sec high (ref 23.3-32.5), TT 18.5 sec has blank abnormal column (ref 14-21), PT 15.8 sec high (ref 11-14.3), PT% 56.9% low (ref 80-120), INR 1.43 high (ref 0.94-1.2), and fibrinogen 2.04 g/L has blank abnormal column (ref 2-4.5). All note rows are blank. Do not infer a diagnosis, bleeding source, endoscopy result, or anticoagulation plan. Family oral received at 17:15 says gastroscopy is about to begin; this is a plan/start status, not a completed procedure or result.",
+      "extracted": {
+        "sample": "凝血",
+        "aptt": 35.9,
+        "tt": 18.5,
+        "pt": 15.8,
+        "pt_pct": 56.9,
+        "inr": 1.43,
+        "fbg": 2.04
+      },
+      "sha256_16": "2286ad31170d5f8b",
+      "bytes": 544429
     }
   ]
 }
