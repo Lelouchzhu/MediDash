@@ -112,7 +112,7 @@ For routine lab-screenshot, oral-note, and daily-list updates, **do not use comp
 
 ## Dashboard trends
 
-`index.html` has **分类汇总** (all metrics by system with sparklines) plus **详细趋势** (pick category → pick metric). The detailed-trend x-axis also marks transfusion (billing day, issued units), CRRT (days with a charge, drawn as a span), and airway (intubation from the first tracheal-nursing bill day; 气切 on the 9/29 bill day). Those marks are not start/stop clocks. Do not invent a minute for them.
+`index.html` has **分类汇总** (all metrics by system with sparklines) plus **详细趋势** (pick category → pick metric). The detailed-trend x-axis marks transfusion (billing day, issued units), CRRT (days with a charge, drawn as a span), airway (intubation from the first tracheal-nursing bill day; 气切 on the 9/29 bill day), and **胃镜 at the family-specified 2026-10-05 18:00** (`h: 484.00`). Billing-day marks are not start/stop clocks; do not invent a minute for those. The gastroscopy mark uses the 18:00 oral the family asked to put on the charts; it is not a formal endoscopy report and not the noon billing charge.
 
 Categories: **循环/支持**, 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝血/血细胞, 肝/肌酶, 电解质.
 

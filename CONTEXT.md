@@ -3,6 +3,8 @@
 This file is the **readable memory** for future Cloud Agents working on `Lelouchzhu/MediDash`.  
 It summarizes decisions, data conventions, and clinical state from prior agent runs. It is **not** a full chat transcript dump.
 
+**Chart mark (family request):** put yesterday’s gastroscopy on the detailed-trend x-axis and the daily-care chart at **2026-10-05 18:00**, postop **484h00m** (`h: 484.00`). This is the oral clock the family asked to plot. It is **not** a formal endoscopy report, not a diagnosis, and not the noon-convention billing hour **478**. The Oct 5 bill still has upper-GI endoscopy **1 / 226** plus biopsy sampling **1 / 57** as charges. Stored as `procedures[]` on the 2026-10-05 day in `data/daily-care.json` / `dailyCareData`. Hero stays the 08:00 oral.
+
 **Current update (morning labs, clocks before the 08:00 oral):** three reports on 2026-10-06. Hero stays **最新口述：术后498h00m · 147/46** because all three clocks are earlier than `h: 498.00`. `latestNonBloodGasReport` is unchanged. Do not invent vitals. Manifest **305**.
 
 - **CBC 07:12:03**, postop **497h12m** (`h: 497.20`; 3 seconds do not round the minute up). WBC **10.70→11.15↑**, RBC **2.98↓**, Hb **69.0→92.0↓ g/L**, Hct **26.5↓**, platelets **95→77.00↓**. Neutrophils **86.7% / 9.67↑**. Plateletcrit PCT **0.10%↓** is not biochemical procalcitonin **3.261** and not P/F. Notes blank. 07:12 is before the 08:00 bright-red stool oral; do not call **92** proof that bleeding stopped or that transfusion was sufficient. Screenshot: `testset/reports/cbc/20261006T071203__3CBB1FE6-806F-4457-9FEA-2CA63DFDA726_L0_001.jpg`.
@@ -1116,5 +1118,5 @@ Update flow when new reports arrive:
 
 **Current superseding snapshot (2026-10-06 08:00):** Hero is **最新口述：术后498h00m · 147/46**. BP **147/46**, norepinephrine **0**, dopamine **4→2** mL/h. Pulse, MAP, RR, CRRT, and urine blank; do not carry 15:45 **81 / 53 / 21** and do not store calculated MAP ~80. After yesterday’s transfusion discussion, stool about **450 mL** 鲜红; total stool, not pure blood. 「出血更严重」 is oral, not a diagnosis.
 
-**Current superseding snapshot (2026-10-06 morning labs, still under the 08:00 oral hero):** CBC 07:12 Hb **69→92**, PLT **95→77**, WBC **11.15**. Arterial ABG 07:37 P/F **195→510** on printed FiO₂ **25%**, lactate **2.12**, pH **7.450**, iCa **1.13**. Do not claim weaned from 50% to 25%. Coag 07:41 APTT **44.1** on ref **21–45**. Cr stays **108.0**, PCT stays **3.261**. Manifest **305**.
+**Current superseding snapshot (2026-10-06 morning labs, still under the 08:00 oral hero):** CBC 07:12 Hb **69→92**, PLT **95→77**, WBC **11.15**. Arterial ABG 07:37 P/F **195→510** on printed FiO₂ **25%**, lactate **2.12**, pH **7.450**, iCa **1.13**. Do not claim weaned from 50% to 25%. Coag 07:41 APTT **44.1** on ref **21–45**. Cr stays **108.0**, PCT stays **3.261**. Manifest **305**. Family asked to plot yesterday’s gastroscopy at **18:00** (`h: 484.00`) on the detailed-trend x-axis and the daily-care chart; that mark is the oral clock, not a formal report and not billing noon **478**.
 
