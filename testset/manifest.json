@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 302,
+  "count": 305,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6198,6 +6198,99 @@
       },
       "sha256_16": "5a57e453303fb4d5",
       "bytes": 1657930
+    },
+    {
+      "id": "20261006T071203__3CBB1FE6-806F-4457-9FEA-2CA63DFDA726_L0_001.jpg",
+      "path": "reports/cbc/20261006T071203__3CBB1FE6-806F-4457-9FEA-2CA63DFDA726_L0_001.jpg",
+      "category": "cbc",
+      "source_filename": "3CBB1FE6-806F-4457-9FEA-2CA63DFDA726_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-06T07:12:03",
+      "type": "血常规",
+      "relative_h": 497.2,
+      "note": "CBC. Clock 2026-10-06 07:12:03; 3 seconds do not round the minute up. Stored h is 497.20, label 术后497h12m. This clock is earlier than the already-shipped 08:00 oral (h 498.00); hero stays 最新口述：术后498h00m · 147/46. WBC 11.15 high (ref 3.5-9.5). RBC 2.98 low, Hb 69.0→92.0 low g/L, Hct 26.5 low. MCV 88.9, MCH 30.9, and MCHC 347.0 have blank abnormal columns. Platelets 95→77.00 low (ref 125-350). Lymphocytes 4.5% low / 0.50 low, monocytes 4.1% / 0.46 with blank flags, neutrophils 86.7% high / 9.67 high, eosinophils 4.4% / 0.49 and basophils 0.3% / 0.03 with blank flags. RDW-CV 15.10 high; RDW-SD 49.30 blank. PDW 16.80 and MPV 12.50 have blank flags. P-LCR 44.40 high. Plateletcrit PCT 0.10% low is a CBC platelet index, not biochemical procalcitonin 3.261 and not P/F. Notes are blank. Do not claim transfusion sufficient, bleeding stopped, or that 92 is after the 08:00 bright-red stool oral. No new BP, pressor, CRRT, or urine clock on this sheet.",
+      "extracted": {
+        "sample": "血常规",
+        "wbc": 11.15,
+        "rbc": 2.98,
+        "hbg": 92.0,
+        "hct": 26.5,
+        "mcv": 88.9,
+        "mch": 30.9,
+        "mchc": 347.0,
+        "plt": 77.0,
+        "lymph_pct": 4.5,
+        "mono_pct": 4.1,
+        "neut_pct": 86.7,
+        "eos_pct": 4.4,
+        "baso_pct": 0.3,
+        "lymph_abs": 0.5,
+        "mono_abs": 0.46,
+        "neut_abs": 9.67,
+        "eos_abs": 0.49,
+        "baso_abs": 0.03,
+        "rdw_cv": 15.1,
+        "rdw_sd": 49.3,
+        "pdw": 16.8,
+        "mpv": 12.5,
+        "plcr": 44.4,
+        "plateletcrit_pct": 0.1
+      },
+      "sha256_16": "8fd85e8a89f2092a",
+      "bytes": 876693
+    },
+    {
+      "id": "20261006T073713__3D1E2010-F657-4445-9D40-3409545260A4_L0_001.jpg",
+      "path": "reports/abg/20261006T073713__3D1E2010-F657-4445-9D40-3409545260A4_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "3D1E2010-F657-4445-9D40-3409545260A4_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-06T07:37:13",
+      "type": "血气",
+      "relative_h": 497.62,
+      "note": "Arterial blood gas by default: header does not print 静脉 and the family did not say 静脉. Clock 2026-10-06 07:37:13; 13 seconds do not round the minute up. Stored h is 497.62, label 术后497h37m. Earlier than the 08:00 oral (h 498.00), so hero stays that oral. pH 7.450 at the 7.35-7.45 ceiling with blank abnormal column. PCO2 32.50 low. PO2 127.50 high. Store ABE -1.90 (blank flag), not SBE -1.40. Plasma HCO3 22.10 (ref 22-26, blank flag). Lactate 2.12 high (ref 0.5-1.6). ctHb 10.50 low, sO2 98.40 high, Hct 31.00 low, iCa 1.13 low. FiO2 printed 25.0%. Middle 氧合指数 empty; do not store 0. pO2(a/A,T) 0.88% low is not P/F. Printed bottom pO2(a)/FO2(I) 510.00 high (ref 400-500); 127.50/0.25=510. Do not claim weaned from the prior 50% sheet to 25%. Do not store standard HCO3 23.40 or temperature-corrected pH/PCO2 as extra points. Machine T 36.5 is not a bedside temperature. No new BP, pressor, CRRT, urine, or stool clock.",
+      "extracted": {
+        "sample": "动脉",
+        "ph": 7.45,
+        "pco2": 32.5,
+        "po2": 127.5,
+        "hco3": 22.1,
+        "be": -1.9,
+        "lactate": 2.12,
+        "fio2": 25,
+        "pf": 510,
+        "hb": 10.5,
+        "hct": 31.0,
+        "so2": 98.4,
+        "ca": 1.13
+      },
+      "sha256_16": "a08ae4e57bcb274b",
+      "bytes": 1350231
+    },
+    {
+      "id": "20261006T074127__D37367BD-3244-48ED-BED7-D5344FB43292_L0_001.jpg",
+      "path": "reports/coag/20261006T074127__D37367BD-3244-48ED-BED7-D5344FB43292_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "D37367BD-3244-48ED-BED7-D5344FB43292_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-06T07:41:27",
+      "type": "凝血",
+      "relative_h": 497.69,
+      "note": "Coagulation report. Clock 2026-10-06 07:41:27; 27 seconds do not round the minute up. Stored h is 497.69, label 术后497h41m. Phone status 09:46 is not the report clock. Earlier than the 08:00 oral, so hero stays that oral. APTT 42.8→44.1 sec has blank abnormal column on this sheet's ref 21-45. Do not reuse any 23.3-32.5 reference. TT 15.9 sec, PT 12.3 sec, PT% 90.4%, INR 1.02, and fibrinogen 3.10 g/L all have blank abnormal columns. Notes are blank. One in-range panel is not proof that bleeding stopped.",
+      "extracted": {
+        "sample": "凝血",
+        "aptt": 44.1,
+        "tt": 15.9,
+        "pt": 12.3,
+        "pt_pct": 90.4,
+        "inr": 1.02,
+        "fbg": 3.1
+      },
+      "sha256_16": "d0aab9c9d5161da1",
+      "bytes": 398020
     }
   ]
 }
