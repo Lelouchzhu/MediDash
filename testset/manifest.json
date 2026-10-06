@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 306,
+  "count": 311,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6314,6 +6314,128 @@
       },
       "sha256_16": "9ddfe57cc980ddfa",
       "bytes": 398970
+    },
+    {
+      "id": "20261006T155105__01a11063-485e-79f6-a763-6b91bb2ddc4f.jpg",
+      "path": "reports/cbc/20261006T155105__01a11063-485e-79f6-a763-6b91bb2ddc4f.jpg",
+      "category": "cbc",
+      "source_filename": "01a11063-485e-79f6-a763-6b91bb2ddc4f.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-06T15:51:05",
+      "type": "血常规",
+      "relative_h": 505.85,
+      "note": "CBC. Clock 2026-10-06 15:51:05; 5 seconds do not round the minute up. Stored h is 505.85, label 术后505h51m. Later than the 15:00 oral (h 505.00), earlier than the 16:40 arterial. WBC 11.15→9.28 (ref 3.5-9.5, blank flag). Do not call a single in-range WBC infection recovery. RBC 2.93 low, Hb 92.0→89.0 low g/L, Hct 24.9 low. Platelets still 77.00 low. Neutrophils 93.2% / 8.65 high. Plateletcrit PCT 0.09% low is not biochemical procalcitonin 3.926 and not P/F. Notes blank. No new BP, pressor, CRRT, urine, or stool clock.",
+      "extracted": {
+        "sample": "血常规",
+        "wbc": 9.28,
+        "rbc": 2.93,
+        "hbg": 89.0,
+        "hct": 24.9,
+        "plt": 77.0,
+        "neut_pct": 93.2,
+        "neut_abs": 8.65,
+        "plateletcrit_pct": 0.09
+      },
+      "sha256_16": "49c95c13f1999dbf",
+      "bytes": 862709
+    },
+    {
+      "id": "20261006T161055__01a11063-484b-7dac-a4f4-9921ddab5306.jpg",
+      "path": "reports/abg/20261006T161055__01a11063-484b-7dac-a4f4-9921ddab5306.jpg",
+      "category": "abg",
+      "source_filename": "01a11063-484b-7dac-a4f4-9921ddab5306.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-06T16:10:55",
+      "type": "血气",
+      "relative_h": 506.18,
+      "note": "Arterial blood gas by default: header does not print 静脉 and the family did not say 静脉. Clock 2026-10-06 16:10:55; 55 seconds do not round the minute up. Stored h is 506.18, label 术后506h10m. pH 7.470 high. PCO2 29.80 low. PO2 90.60 (80-100, blank flag). Store ABE -2.50 (blank flag), not SBE -1.90. Plasma HCO3 21.20 (ref 22-26, blank flag). Lactate result empty — do not store or carry 2.12/2.23. iCa result empty — do not store. ctHb 9.30 low, sO2 97.10 blank, Hct 27.00 low. FiO2 printed 50.0%. Middle 氧合指数 empty. pO2(a,T) 0.28% low (printed ref 0.7) is not P/F. Printed bottom P/F 181.00 low (90.60/0.50=181.2, printed 181). Do not claim FiO2 changed from the morning 25% sheet to 50% as a treatment conclusion. Machine T 37.0 is not bedside. Do not store standard HCO3 22.90 or temperature-corrected pH/PCO2 as extra points.",
+      "extracted": {
+        "sample": "动脉",
+        "ph": 7.47,
+        "pco2": 29.8,
+        "po2": 90.6,
+        "hco3": 21.2,
+        "be": -2.5,
+        "fio2": 50,
+        "pf": 181,
+        "hb": 9.3,
+        "hct": 27.0,
+        "so2": 97.1
+      },
+      "sha256_16": "fbdf24260ffa54e6",
+      "bytes": 1274284
+    },
+    {
+      "id": "20261006T161422__01a11063-483c-78d4-b5bd-38c24fb8e87a.jpg",
+      "path": "reports/coag/20261006T161422__01a11063-483c-78d4-b5bd-38c24fb8e87a.jpg",
+      "category": "coag",
+      "source_filename": "01a11063-483c-78d4-b5bd-38c24fb8e87a.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-06T16:14:22",
+      "type": "凝血",
+      "relative_h": 506.24,
+      "note": "Coagulation. Clock 2026-10-06 16:14:22; 22 seconds do not round the minute up. Stored h is 506.24, label 术后506h14m. Phone status 16:18 is not the report clock. APTT 44.1→31.4 sec blank abnormal column on this sheet's 23.3-32.5. Do not reuse 21-45. TT 16.5 and PT 14.3 (ceiling of 11-14.3) blank flags. PT% 60.8 low. INR 1.27 high. Fibrinogen 2.84 blank. Notes empty. One APTT inside this sheet's range is not proof that bleeding stopped.",
+      "extracted": {
+        "sample": "凝血",
+        "aptt": 31.4,
+        "tt": 16.5,
+        "pt": 14.3,
+        "pt_pct": 60.8,
+        "inr": 1.27,
+        "fbg": 2.84
+      },
+      "sha256_16": "76c99ef3cd355706",
+      "bytes": 407261
+    },
+    {
+      "id": "20261006T161953__01a11063-482a-764f-8ca3-fb971448f79d.jpg",
+      "path": "reports/chemistry/20261006T161953__01a11063-482a-764f-8ca3-fb971448f79d.jpg",
+      "category": "chemistry",
+      "source_filename": "01a11063-482a-764f-8ca3-fb971448f79d.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-06T16:19:53",
+      "type": "生化",
+      "relative_h": 506.33,
+      "note": "Dry-chemistry potassium only. Clock 2026-10-06 16:19:53; 53 seconds do not round the minute up. Stored h is 506.33, label 术后506h19m. Phone status 16:28 is not the report clock. K 4.40→3.99 mmol/L (ref 3.5-5.3, blank flag). Notes blank. Newest non-ABG; still earlier than the 16:40 arterial so hero is that ABG. Creatinine stays 191.0. No new BP, pressor, CRRT, or urine.",
+      "extracted": {
+        "sample": "生化",
+        "k": 3.99
+      },
+      "sha256_16": "6339e2e068d1632f",
+      "bytes": 286675
+    },
+    {
+      "id": "20261006T164014__01a11063-4818-777e-8714-af65faa5b649.jpg",
+      "path": "reports/abg/20261006T164014__01a11063-4818-777e-8714-af65faa5b649.jpg",
+      "category": "abg",
+      "source_filename": "01a11063-4818-777e-8714-af65faa5b649.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-06T16:40:14",
+      "type": "血气",
+      "relative_h": 506.67,
+      "note": "Arterial blood gas by default: header does not print 静脉 and the family did not say 静脉. Clock 2026-10-06 16:40:14; 14 seconds do not round the minute up. Stored h is 506.67, label 术后506h40m. Newer than K 16:19 (h 506.33), so hero becomes 最新：术后506h40m · 动脉血气. pH 7.432 (7.35-7.45, blank flag). PCO2 35.10 blank. PO2 83.40 blank. Store ABE -1.40 (blank flag), not SBE -1.10. Plasma HCO3 22.90 blank. Lactate 2.12→2.23 high. The 16:10 sheet lactate was empty — do not treat 2.23 as that earlier tube. ctHb 9.40 low, sO2 96.20 blank, Hct 28.00 low, iCa 1.08 low. FiO2 printed 50.0%. Middle 氧合指数 empty. pO2(a,T) 0.26% low is not P/F. Printed bottom P/F 510→167.00 low (83.40/0.50=166.8, printed 167). Do not claim weaned or that FiO2 was raised from the morning 25% sheet to 50%. Machine T 37.0 is not bedside. Do not store standard HCO3 23.60 or temperature-corrected values as extra points. Blood-gas ctHb is not CBC Hb 89.0.",
+      "extracted": {
+        "sample": "动脉",
+        "ph": 7.432,
+        "pco2": 35.1,
+        "po2": 83.4,
+        "hco3": 22.9,
+        "be": -1.4,
+        "lactate": 2.23,
+        "fio2": 50,
+        "pf": 167,
+        "hb": 9.4,
+        "hct": 28.0,
+        "so2": 96.2,
+        "ca": 1.08
+      },
+      "sha256_16": "9c3ea3635fcccd19",
+      "bytes": 1256324
     }
   ]
 }
