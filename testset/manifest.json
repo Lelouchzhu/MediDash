@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 315,
+  "count": 316,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6533,6 +6533,36 @@
       },
       "sha256_16": "9c3ea3635fcccd19",
       "bytes": 1256324
+    },
+    {
+      "id": "20261006T163958__6DEDF839-C351-4AB3-A448-9FA0E9A188E3_L0_001.jpg",
+      "path": "reports/abg/20261006T163958__6DEDF839-C351-4AB3-A448-9FA0E9A188E3_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "6DEDF839-C351-4AB3-A448-9FA0E9A188E3_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-06T16:39:58",
+      "type": "血气",
+      "relative_h": 506.67,
+      "note": "Venous blood gas because the family said 这张是静脉. Clock 2026-10-06 16:39:58; 58 seconds do not round the minute up. Stored h is 506.67, label 术后506h39m. This is not a reclassify of the 16:40:14 arterial (different printed numbers, 16 seconds later). Hero stays 最新：术后506h40m · 动脉血气. pH 7.344 low. PCO2 36.00 blank (35-45). Top PO2 row empty; pO2(T) and bottom PO2 both 31.30. Store ABE -6.50 low, not SBE -5.80. Plasma HCO3 19.20 low. Lactate 2.42 high. iCa 0.39 low. ctHb 13.50 blank, sO2 60.80 low, Hct 40.00 blank. FiO2 printed 50.0%. Middle 氧合指数 empty. pO2(a,T) 0.10% low is not P/F. Printed bottom index 63 low (31.30/0.50=62.6, printed 63) is venous, not arterial P/F. Arterial P/F stays 167. Do not treat 2.42/0.39 as the later arterial 2.23/1.08. Machine T 37.0 is not bedside. Do not store standard HCO3 19.00 or temperature-corrected values as extra points. Blood-gas ctHb is not CBC Hb 89.0.",
+      "extracted": {
+        "sample": "静脉",
+        "ph": 7.344,
+        "pco2": 36.0,
+        "po2": 31.3,
+        "hco3": 19.2,
+        "be": -6.5,
+        "lactate": 2.42,
+        "fio2": 50,
+        "pf": null,
+        "hb": 13.5,
+        "hct": 40.0,
+        "so2": 60.8,
+        "ca": 0.39,
+        "bottom_index": 63
+      },
+      "sha256_16": "5875947f2f5b32bc",
+      "bytes": 1361250
     }
   ]
 }
