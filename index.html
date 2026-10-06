@@ -1224,7 +1224,7 @@
             <span class="level">10月6日15:00</span>
           </div>
           <div class="status-value">106/33</div>
-          <div class="status-note">MAP <strong>50</strong> · 脉搏<strong>80</strong><br>去甲、多巴胺这句未填，不把08:00的<strong>0 / 2</strong>搬过来</div>
+          <div class="status-note">MAP <strong>50</strong> · 脉搏<strong>80</strong><br>去甲<strong>0</strong> · 多巴胺<strong>0</strong> mL/h · 这句没给新钟点，记在15:00</div>
         </button>
         <button class="status-card red" type="button" data-metric-jump="lactate">
           <div class="status-top">
@@ -1605,7 +1605,7 @@
           </summary>
           <div class="report-body">
             <ul>
-              <li>15:00口述：血压 <strong>147/46→106/33</strong> · MAP <strong>50</strong> · 脉搏 <strong>80</strong>。去甲、多巴胺这句未填，不把08:00的 <strong>0 / 2</strong> 搬过来。按公式约57，不替换口述50。</li>
+              <li>15:00口述：血压 <strong>147/46→106/33</strong> · MAP <strong>50</strong> · 脉搏 <strong>80</strong>。后来补了去甲 <strong>0</strong>、多巴胺 <strong>0</strong> mL/h，没有新钟点，不另开一行。去甲按0.05 mg/mL是 <strong>0</strong> mg/h。不换算多巴胺毫克，也不编体重。</li>
               <li>同一句：便血约 <strong>300 mL</strong>，呈车厘子色；这是大便总量，不是纯血。不要和08:00鲜红便约 <strong>450 mL</strong>、10月5日黑便约500 mL混成同一条。</li>
               <li>07:12血常规：血红蛋白仍 <strong>92.0</strong> ↓ · 血小板仍 <strong>77</strong> ↓。不把92写成出血已停。</li>
               <li>18:00胃镜口述「<strong>基本排除了胃出血</strong>」，没有正式报告。颜色不能单凭定位。</li>
@@ -2130,7 +2130,7 @@
       { h: 481.75, label: "10月5日15:45", sample: "口述", sbp: 122, dbp: 28, map: 53, hr: 81, rr: 21 },
       { h: 481.83, label: "10月5日15:50", sample: "口述", da: 4 },
       { h: 498.00, label: "10月6日08:00", sample: "口述", sbp: 147, dbp: 46, ne: 0, da: 2 },
-      { h: 505.00, label: "10月6日15:00", sample: "口述", sbp: 106, dbp: 33, map: 50, hr: 80 }
+      { h: 505.00, label: "10月6日15:00", sample: "口述", sbp: 106, dbp: 33, map: 50, hr: 80, ne: 0, da: 0 }
     ];
 
     const metricConfig = {
@@ -2198,8 +2198,8 @@
       {
         id: "icu-support",
         group: "urgent",
-        title: "呼吸循环：106/33、MAP 50，P/F 510（FiO₂印25%），怎么调？",
-        detail: "15:00口述血压 <strong>147/46→106/33</strong> · MAP <strong>50</strong> · 脉搏 <strong>80</strong><br/>去甲、多巴胺这句未填，不把08:00的 <strong>0 / 2</strong> 搬过来。106/33按公式约57，不替换口述50<br/>07:37动脉 P/F <strong>510</strong> ↑ · FiO₂印 <strong>25%</strong> · PO₂ <strong>127.50</strong>；不要写成已经从50%撤到25%<br/>07:37动脉乳酸 <strong>2.12</strong>↑ · 07:02静脉乳酸 <strong>2.32</strong>↑，不是同一管<br/>血压下来、MAP 50，气切处是否仍接机，当前氧疗和升压目标怎么安排？"
+        title: "呼吸循环：106/33、MAP 50，升压药0/0，怎么调？",
+        detail: "15:00口述血压 <strong>147/46→106/33</strong> · MAP <strong>50</strong> · 脉搏 <strong>80</strong><br/>后来补了去甲 <strong>0</strong>、多巴胺 <strong>2→0</strong> mL/h，没有新钟点，记在15:00。去甲按0.05 mg/mL是 <strong>0</strong> mg/h<br/>07:37动脉 P/F <strong>510</strong> ↑ · FiO₂印 <strong>25%</strong> · PO₂ <strong>127.50</strong>；不要写成已经从50%撤到25%<br/>07:37动脉乳酸 <strong>2.12</strong>↑ · 07:02静脉乳酸 <strong>2.32</strong>↑，不是同一管<br/>血压下来、MAP 50、升压药都是0，气切处是否仍接机，当前氧疗和升压目标怎么安排？"
       },
       {
         id: "infection",
