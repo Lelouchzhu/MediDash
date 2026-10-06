@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 305,
+  "count": 306,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6291,6 +6291,29 @@
       },
       "sha256_16": "d0aab9c9d5161da1",
       "bytes": 398020
+    },
+    {
+      "id": "20261006T102648__9A6D8733-9755-4997-9333-4FFEC5967A98_L0_001.jpg",
+      "path": "reports/chemistry/20261006T102648__9A6D8733-9755-4997-9333-4FFEC5967A98_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "9A6D8733-9755-4997-9333-4FFEC5967A98_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-06T10:26:48",
+      "type": "生化",
+      "relative_h": 500.45,
+      "note": "Chemistry/procalcitonin report. Clock 2026-10-06 10:26:48; 48 seconds do not round the minute up. Stored h is 500.45, label 术后500h26m. Phone status 12:21 is not the report clock. Newer than the 08:00 oral (h 498.00) and the 07:37 arterial (h 497.62), so hero becomes 最新化验：术后500h26m · 肌酐 191.0. K 4.40 (ref 3.5-5.3, blank flag). Na 137.63 (137-147, blank). Cl 98.73 (96-108, blank). Urea 9.73→17.40 high (ref 3.1-8.8). Creatinine 108.0→191.0 high umol/L (this sheet ref 41-81). Biochemical procalcitonin PCT 3.261→3.926 ng/mL high (ref 0-0.05); this is not CBC plateletcrit 0.10% and not arterial P/F 510. Notes blank. Number changes are not kidney recovery, CRRT stop/start, or an infection diagnosis. No new BP, pressor, CRRT, urine, or stool clock. Albumin stays 36.2.",
+      "extracted": {
+        "sample": "生化",
+        "k": 4.4,
+        "na": 137.63,
+        "cl": 98.73,
+        "urea": 17.4,
+        "creatinine": 191.0,
+        "pct": 3.926
+      },
+      "sha256_16": "9ddfe57cc980ddfa",
+      "bytes": 398970
     }
   ]
 }
