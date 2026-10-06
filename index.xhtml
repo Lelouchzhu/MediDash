@@ -2485,7 +2485,7 @@
       if (data.length < 1) return;
 
       const W = 760, H = 360;
-      const pad = { l: 54, r: 22, t: 26, b: 78 };
+      const pad = { l: 54, r: 40, t: 26, b: 78 };
       const xMinRaw = Math.min(...data.map(d => d.h));
       const xMaxRaw = Math.max(...data.map(d => d.h));
       const xGap = Math.max((xMaxRaw - xMinRaw) * .04, 1);
@@ -2642,10 +2642,14 @@
             fill: color
           });
         svg.appendChild(marker);
-        const lane = laneFor(xx);
+        let lane = laneFor(xx);
+        if (point.kind === "endo") lane = Math.max(lane, 1);
         occupy(xx, lane);
+        const nearRight = xx > W - pad.r - 28;
         const text = createSvg("text", {
-          x: xx, y: axisY + 32 + lane * 13, "text-anchor": "middle",
+          x: nearRight ? xx - 6 : xx,
+          y: axisY + 32 + lane * 13,
+          "text-anchor": nearRight ? "end" : "middle",
           fill: color, "font-size": "10", "font-weight": "700"
         });
         text.textContent = point.label;
@@ -3181,11 +3185,11 @@
       if (!svg || !tooltip) return;
       clearNode(svg);
       const width = 760, height = 232;
-      const pad = { top: 28, right: 18, bottom: 36, left: 44 };
+      const pad = { top: 28, right: 28, bottom: 36, left: 44 };
       const days = dailyCareData.days;
       const xs = days.map(d => d.h).concat(careProcedures().map(proc => proc.h).filter(h => h != null));
       const minX = Math.min(...xs) - 4;
-      const maxX = Math.max(...xs) + 4;
+      const maxX = Math.max(...xs) + 18;
       const crrtVals = days.map(d => d.support.crrt_h).filter(v => v != null);
       const maxY = Math.max(24, ...(crrtVals.length ? crrtVals : [12])) * 1.15;
       const xScale = h => pad.left + ((h - minX) / (maxX - minX)) * (width - pad.left - pad.right);
@@ -3274,15 +3278,23 @@
           tabindex: "0",
           role: "button"
         });
-        const label = createSvg("text", { x: cx + 10, y: cy + 4, fill: "#9a4a09", "font-size": "11", "font-weight": "650" });
+        const nearRight = cx > width - pad.right - 90;
+        const label = createSvg("text", {
+          x: nearRight ? cx - 10 : cx + 10,
+          y: cy + 4,
+          "text-anchor": nearRight ? "end" : "start",
+          fill: "#9a4a09",
+          "font-size": "11",
+          "font-weight": "650"
+        });
         label.textContent = `胃镜 ${careProcedureClock(proc)}`;
         const show = () => {
           selectedCareDate = proc.date;
           renderCareDayChips();
           renderCareDayPanel();
           tooltip.style.display = "block";
-          tooltip.style.left = `${Math.min(cx + 8, width - 200)}px`;
-          tooltip.style.top = `${Math.max(8, cy + 12)}px`;
+          tooltip.style.left = `${Math.min(Math.max(8, cx - 120), width - 200)}px`;
+          tooltip.style.top = `${Math.max(8, cy + 14)}px`;
           setMarkup(tooltip, `<strong>${proc.dayLabel}</strong><br/>胃镜 ${careProcedureClock(proc)}<br/>家属指定钟点<br/>清单检查费是计费，不是这个钟点`);
         };
         mark.addEventListener("click", show);
