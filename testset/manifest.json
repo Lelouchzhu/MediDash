@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 311,
+  "count": 312,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6339,6 +6339,34 @@
       },
       "sha256_16": "49c95c13f1999dbf",
       "bytes": 862709
+    },
+    {
+      "id": "20261006T161044__01a1106c-1c11-79e8-9810-564f0478134c.jpg",
+      "path": "reports/abg/20261006T161044__01a1106c-1c11-79e8-9810-564f0478134c.jpg",
+      "category": "abg",
+      "source_filename": "01a1106c-1c11-79e8-9810-564f0478134c.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-06T16:10:44",
+      "type": "血气",
+      "relative_h": 506.18,
+      "note": "Venous because the family said 静脉血. Clock 2026-10-06 16:10:44; 44 seconds do not round the minute up. Stored h is 506.18, label 术后506h10m. This is a different tube from the 16:10:55 arterial (11 seconds later; different printed numbers). Do not reclassify 16:10:55. pH 7.369 blank (7.35-7.45). PCO2 28.80 low. Top PO2 row empty; store PO2 30.90 from the bottom 氧分压 row / pO2(T). Store ABE -9.10 low, not SBE -7.60. Plasma HCO3 16.20 low. Lactate empty; iCa empty — do not store or carry 2.23/1.08. ctHb 13.40 blank, sO2 63.20 low, Hct 39.00 blank. FiO2 printed 21.0%. Do not claim weaned from 50% or 25% to 21%. Middle 氧合指数 empty. pO2(a,T) 0.27% low is not P/F. Printed bottom index 147.00 low is venous (30.90/0.21=147.14, printed 147), not arterial P/F. Arterial P/F stays 16:40 167. Machine T 37.0 is not bedside. Blood-gas ctHb is not CBC 89.0 and not 16:10:55 arterial 9.30. Do not store standard HCO3 17.60 as an extra point.",
+      "extracted": {
+        "sample": "静脉",
+        "ph": 7.369,
+        "pco2": 28.8,
+        "po2": 30.9,
+        "hco3": 16.2,
+        "be": -9.1,
+        "fio2": 21,
+        "pf": null,
+        "printed_index": 147,
+        "hb": 13.4,
+        "hct": 39.0,
+        "so2": 63.2
+      },
+      "sha256_16": "c9f19f92802da882",
+      "bytes": 1281979
     },
     {
       "id": "20261006T161055__01a11063-484b-7dac-a4f4-9921ddab5306.jpg",
