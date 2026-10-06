@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 318,
+  "count": 319,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6574,7 +6574,7 @@
       "report_time": "2026-10-06T22:19:48",
       "type": "生化",
       "relative_h": 512.33,
-      "note": "Dry-chem K only. Clock 2026-10-06 22:19:48; 48 seconds do not round the minute up. Stored h is 512.33, label 术后512h19m. Phone status 22:35 is not the report clock. K 3.99→4.05 mmol/L, ref 3.5-5.3, abnormal column blank, notes blank. Creatinine stays 191.0. This is the newest non-ABG, but the 22:20:19 venous gas is later so the hero follows that gas. Do not mix with chem PCT 3.926 or CBC plateletcrit 0.09% or arterial P/F 167.",
+      "note": "Dry-chem K only. Clock 2026-10-06 22:19:48; 48 seconds do not round the minute up. Stored h is 512.33, label 术后512h19m. Phone status 22:35 is not the report clock. K 3.99→4.05 mmol/L, ref 3.5-5.3, abnormal column blank, notes blank. Creatinine stays 191.0. This is the newest non-ABG, but the 22:20:40 venous gas is later so the hero follows that gas. Do not mix with chem PCT 3.926 or CBC plateletcrit 0.09% or arterial P/F 108.",
       "extracted": {
         "sample": "生化",
         "k": 4.05
@@ -6592,9 +6592,9 @@
       "report_time": "2026-10-06T22:20:19",
       "type": "血气",
       "relative_h": 512.34,
-      "note": "Venous blood gas because the family said 这是静脉 (queued follow-up on this upload). Clock 2026-10-06 22:20:19; 19 seconds do not round the minute up. Stored h is 512.34, label 术后512h20m. Header does not print 静脉. Do not infer venous from PO2 53.90. Hero is 最新：术后512h20m · 静脉血气 because this gas is later than dry-chem K 22:19 (h 512.33). pH 7.475 high. PCO2 32.30 low. Top PO2 filled 53.90 low; pO2(T) also 53.90. Store ABE -0.30 blank (ref -3 to 3), not SBE 0.00. Plasma HCO3 23.20 blank (22-26). Lactate 2.53 high. iCa 1.08 low. ctHb 9.30 low, sO2 89.70 low, Hct 27.00 low. FiO2 printed 50.0%. Middle 氧合指数 empty. pO2(a,T) 0.17% low is not P/F. Printed bottom index 108 low (53.90/0.50=107.8, printed 108) is venous, not arterial P/F. Arterial P/F stays 167 from 16:40. Do not treat 2.53/1.08 as the earlier 16:40 arterial 2.23/1.08. Machine T 37.0 is not bedside. Do not store standard HCO3 24.40 or temperature-corrected extras. Blood-gas ctHb is not CBC Hb 89.0. Na/K/Cl/glucose empty.",
+      "note": "Arterial blood gas. Header does not print 静脉. The later family follow-up 这是静脉 attached the 22:20:40 sheet, not this one. Clock 2026-10-06 22:20:19; 19 seconds do not round the minute up. Stored h is 512.34, label 术后512h20m. pH 7.475 high. PCO2 32.30 low. Top PO2 filled 53.90 low; pO2(T) also 53.90. Store ABE -0.30 blank (ref -3 to 3), not SBE 0.00. Plasma HCO3 23.20 blank (22-26). Lactate 2.53 high. iCa 1.08 low. ctHb 9.30 low, sO2 89.70 low, Hct 27.00 low. FiO2 printed 50.0%. Middle 氧合指数 empty. pO2(a,T) 0.17% low is not P/F. Printed bottom index 108 low (53.90/0.50=107.8, printed 108) is arterial P/F. Do not put the later 22:20:40 venous bottom index 60 on the P/F card. Do not treat 2.53/1.08 as 16:40 arterial 2.23/1.08 or as 22:20:40 venous 2.78/0.42. Machine T 37.0 is not bedside. Do not store standard HCO3 24.40 or temperature-corrected extras. Blood-gas ctHb is not CBC Hb 89.0. Na/K/Cl/glucose empty.",
       "extracted": {
-        "sample": "静脉",
+        "sample": "动脉",
         "ph": 7.475,
         "pco2": 32.3,
         "po2": 53.9,
@@ -6602,7 +6602,7 @@
         "be": -0.3,
         "lactate": 2.53,
         "fio2": 50,
-        "pf": null,
+        "pf": 108,
         "hb": 9.3,
         "hct": 27.0,
         "so2": 89.7,
@@ -6611,6 +6611,36 @@
       },
       "sha256_16": "7b0499095e70fb62",
       "bytes": 1358929
+    },
+    {
+      "id": "20261006T222040__38B08E92-6E8D-4DDB-AE76-F58595D2FA1C_L0_001.jpg",
+      "path": "reports/abg/20261006T222040__38B08E92-6E8D-4DDB-AE76-F58595D2FA1C_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "38B08E92-6E8D-4DDB-AE76-F58595D2FA1C_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-06T22:20:40",
+      "type": "血气",
+      "relative_h": 512.34,
+      "note": "Venous blood gas because the family said 这是静脉 on this attached sheet. Clock 2026-10-06 22:20:40; 40 seconds do not round the minute up. Stored h is 512.34, label 术后512h20m. This is not a reclassify of the 22:20:19 arterial (different printed numbers, 21 seconds earlier). Header does not print 静脉. Do not infer venous from PO2 29.90. Hero is 最新：术后512h20m · 静脉血气. pH 7.378 blank (7.35-7.45). PCO2 33.80 low. Top PO2 row empty; pO2(T) and bottom PO2 both 29.90. Store ABE -5.70 low, not SBE -4.80. Plasma HCO3 19.50 low. Lactate 2.78 high. iCa 0.42 low. ctHb 13.50 blank, sO2 61.10 low, Hct 40.00 blank. FiO2 printed 50.0%. Middle 氧合指数 empty. pO2(a,T) 0.09% low is not P/F. Printed bottom index 60 low (29.90/0.50=59.8, printed 60) is venous, not arterial P/F. Arterial P/F is 22:20:19 printed 108. Do not treat 2.78/0.42 as 22:20:19 arterial 2.53/1.08 or 16:40 arterial 2.23/1.08. Machine T 37.0 is not bedside. Do not store standard HCO3 19.70 or temperature-corrected extras. Blood-gas ctHb is not CBC Hb 89.0. Na/K/Cl/glucose empty.",
+      "extracted": {
+        "sample": "静脉",
+        "ph": 7.378,
+        "pco2": 33.8,
+        "po2": 29.9,
+        "hco3": 19.5,
+        "be": -5.7,
+        "lactate": 2.78,
+        "fio2": 50,
+        "pf": null,
+        "hb": 13.5,
+        "hct": 40.0,
+        "so2": 61.1,
+        "ca": 0.42,
+        "bottom_index": 60
+      },
+      "sha256_16": "eb04f9a7b2270f72",
+      "bytes": 1337080
     }
   ]
 }
