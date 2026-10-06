@@ -82,6 +82,8 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 **10月6日16:40当前更新（覆盖上面的15:00顶栏说明）：** 顶栏是 **最新：术后506h40m · 动脉血气**。16:40动脉：P/F **510→167**↓，FiO₂印 **50%**，PO₂ **83.40**，乳酸 **2.23**↑，pH **7.432**，PCO₂ **35.10**，HCO₃⁻ **22.90**，ABE **−1.40**（这张异常栏空着）。单上 **0.26%** 不是 P/F。不要写成已经从早上那张印 **25%** 改到 **50%**。16:10:55那张动脉 P/F **181**，乳酸和钙空着，不编。16:19钾 **4.40→3.99**，异常栏空着。16:14 APTT **31.4**（本张参考23.3–32.5），INR **1.27**↑。15:51血红蛋白 **92.0→89.0**↓，白细胞 **9.28**，血小板仍 **77**，血小板比积 **0.09%** 不是降钙素原。降钙素原仍 **3.926**，肌酐仍 **191.0**。口述后来补了呼吸 **20**，仍记在15:00：血压 **106/33**，MAP **50**，去甲 **0**，多巴胺 **0**。
 
+**10月5日08:54痰培养补录（不改16:40顶栏）：** 报告 **2026-10-05 08:54:33**，术后 **474h54m**。痰培养+药敏印 **培养经鉴定无致病菌生长**。分泌物培养、细菌1–3、提示、菌量和备注空着，空行不是阴性。16:47是10月6日手机状态栏，不是报告时间。这张早于10:43真菌培养「细菌1」**白色假丝酵母菌**，不是同一标本，不把痰培养写成假丝已经消失或感染已经好转。同批另两张是16:40动脉血气和16:19钾的同钟点复件，字节相同，不重录数字，16:40仍按动脉记。
+
 **10月3日13:51胸部正位片（此次补录，不覆盖当前顶栏）：** 报告时间 **2026-10-03 13:51:01**，术后 **431h51m**。检查结果页面原文标点连写为「**双肺炎症，积液进一步行CT检查双侧膈面及肋膈角显示不清，考虑胸腔积液气管插管上腔静脉留置管**」。这里只保留报告原文，不写成本页诊断。「进一步行CT检查」是报告建议，不是已经完成新的CT。该影像早于10月5日当前化验，不新增血气、生化或生命体征趋势点。
 
 海外备用：https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
@@ -109,7 +111,7 @@ Start Cloud Agents on **this** repository and read these first:
 | [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
 | [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
 | [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries (newest first) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 312 reports) |
+| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 315 reports) |
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 
