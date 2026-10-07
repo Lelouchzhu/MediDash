@@ -73,7 +73,8 @@ Creatinine, potassium, and procalcitonin on those morning sheets stayed **108.0 
 
 **Source of truth repo:** `https://github.com/Lelouchzhu/MediDash` (not the Allmond fork)  
 **Prior agent run (Allmond-bound, then continued here):** https://cursor.com/agents/bc-01a0a01a-a6eb-72c7-b052-ba5e14ed8b1b  
-**Conversation summary (current):** [`docs/transcripts/2026-10-03-bc-f66f1668-summary.md`](docs/transcripts/2026-10-03-bc-f66f1668-summary.md)  
+**Conversation summary (current):** [`docs/transcripts/2026-10-07-bc-f66f1668-summary.md`](docs/transcripts/2026-10-07-bc-f66f1668-summary.md)  
+**Conversation summary (through 10/3 09:56 oral):** [`docs/transcripts/2026-10-03-bc-f66f1668-summary.md`](docs/transcripts/2026-10-03-bc-f66f1668-summary.md)  
 **Conversation summary (through 9/21):** [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md)  
 **Conversation summary (through 9/18 13:00 ABG):** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
 **大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@28cec2b513c2d9d09b5b322ac06f01427b5aabe9/index.xhtml
@@ -93,6 +94,7 @@ Creatinine, potassium, and procalcitonin on those morning sheets stayed **108.0 
 4. Serve locally via `.cursor/environment.json` → `python3 -m http.server 8080`.
 5. Keep UI de-identified: prefer relative postop hours; clock times may be stored in notes when the family confirms them.
 6. Keep 查房 `detail` and 器官与化验汇总 bullets short. Follow the section below. Do not paste long explanations back onto the page.
+7. When a long run ends, add a dated summary under `docs/transcripts/` and point this file and `docs/transcripts/README.md` at it. Do not dump full chat bubbles into the repo.
 
 ---
 
