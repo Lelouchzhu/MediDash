@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 323,
+  "count": 326,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6743,6 +6743,72 @@
       },
       "sha256_16": "89019555e12a97df",
       "bytes": 1325065
+    },
+    {
+      "id": "20261007T072123__21B0812B-3E40-4DD0-8646-BF01C00D55EF_L0_001.jpg",
+      "path": "reports/chemistry/20261007T072123__21B0812B-3E40-4DD0-8646-BF01C00D55EF_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "21B0812B-3E40-4DD0-8646-BF01C00D55EF_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-07T07:21:23",
+      "type": "生化",
+      "relative_h": 521.36,
+      "note": "Dry chemistry. Clock 2026-10-07 07:21:23; 23 seconds do not round the minute up. Stored h is 521.36, label 术后521h21m. Phone status 08:38 is not the report clock. K 4.01 blank (3.5-5.3). Na 136 low (137-147). Cl 101 blank (96-108). Urea 13.20 high on this sheet ref 3.6-9.5, not the prior sheet 3.1-8.8. Creatinine 122.80 high on this sheet ref 57-111, not the 10:26 sheet 41-81. Notes empty. The drop from 191.0 is not kidney recovery and not a CRRT stop. No PCT on this sheet. Earlier than the 08:06 oral, so the hero stays that oral.",
+      "extracted": {
+        "k": 4.01,
+        "na": 136,
+        "cl": 101,
+        "urea": 13.2,
+        "creatinine": 122.8
+      },
+      "sha256_16": "f47a10de6160710d",
+      "bytes": 390009
+    },
+    {
+      "id": "20261007T072148__1734476F-884F-43FD-87F1-E90F31A2C234_L0_001.jpg",
+      "path": "reports/coag/20261007T072148__1734476F-884F-43FD-87F1-E90F31A2C234_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "1734476F-884F-43FD-87F1-E90F31A2C234_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-07T07:21:48",
+      "type": "凝血",
+      "relative_h": 521.36,
+      "note": "Coagulation. Clock 2026-10-07 07:21:48; 48 seconds do not round the minute up. Stored h is 521.36, label 术后521h21m. Phone status 08:38 is not the report clock. APTT 44.9 sec blank on this sheet ref 21-45. Do not reuse the 16:14 sheet ref 23.3-32.5. TT 13.9 low (14-21). PT 13.3 blank (11-14.3). PT% 80.2 blank (80-120). INR 1.11 blank (0.94-1.2). Fibrinogen 3.19 blank (2-4.5). Notes empty. An in-range APTT is not proof bleeding stopped.",
+      "extracted": {
+        "aptt": 44.9,
+        "tt": 13.9,
+        "pt": 13.3,
+        "ptPct": 80.2,
+        "inr": 1.11,
+        "fbg": 3.19
+      },
+      "sha256_16": "0e16ad22b7d77eed",
+      "bytes": 401391
+    },
+    {
+      "id": "20261007T072426__0321A045-BD4D-4CC8-9524-E39C22748D66_L0_001.jpg",
+      "path": "reports/cbc/20261007T072426__0321A045-BD4D-4CC8-9524-E39C22748D66_L0_001.jpg",
+      "category": "cbc",
+      "source_filename": "0321A045-BD4D-4CC8-9524-E39C22748D66_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-07T07:24:26",
+      "type": "血常规",
+      "relative_h": 521.41,
+      "note": "CBC. Clock 2026-10-07 07:24:26; 26 seconds do not round the minute up. Stored h is 521.41, label 术后521h24m. WBC 14.47 high (3.5-9.5). RBC 2.60 low. Hb 85.0 low g/L. Hct 23.5 low. Platelets 84.00 low. Neutrophils 88.8% / 12.86 high. This crop does not print plateletcrit. 0.09% from 15:51 is not procalcitonin 3.926 and not arterial P/F 202. Blood-gas ctHb 12.90 is not this CBC. One higher WBC is not an infection diagnosis. Hb 85.0 is not proof bleeding stopped or worsened as a diagnosis.",
+      "extracted": {
+        "wbc": 14.47,
+        "rbc": 2.6,
+        "hbg": 85.0,
+        "hct": 23.5,
+        "plt": 84,
+        "neutPct": 88.8,
+        "neutAbs": 12.86
+      },
+      "sha256_16": "563216bd14d25154",
+      "bytes": 715448
     }
   ]
 }
