@@ -86,9 +86,9 @@ Creatinine, potassium, and procalcitonin on those morning sheets stayed **108.0 
 **Conversation summary (through 10/3 09:56 oral):** [`docs/transcripts/2026-10-03-bc-f66f1668-summary.md`](docs/transcripts/2026-10-03-bc-f66f1668-summary.md)  
 **Conversation summary (through 9/21):** [`docs/transcripts/2026-09-21-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-21-bc-01a0a01a-summary.md)  
 **Conversation summary (through 9/18 13:00 ABG):** [`docs/transcripts/2026-09-18-bc-01a0a01a-summary.md`](docs/transcripts/2026-09-18-bc-01a0a01a-summary.md)  
-**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@c09ae92f87b9f94ab25c7770f6adcfcec8bf693d/index.xhtml
-**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@c09ae92f87b9f94ab25c7770f6adcfcec8bf693d/index.xhtml
-**海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/c09ae92f87b9f94ab25c7770f6adcfcec8bf693d/index.html
+**大陆入口（提交号，不要用 @main）:** https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@cb850add4f20db92fd325d8f67b0ff6116a39e71/index.xhtml
+**备用国内镜像:** https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@cb850add4f20db92fd325d8f67b0ff6116a39e71/index.xhtml
+**海外备用:** https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/cb850add4f20db92fd325d8f67b0ff6116a39e71/index.html
 
 ## STOP — archive below this line
 
