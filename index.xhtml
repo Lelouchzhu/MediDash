@@ -468,7 +468,9 @@
 
     .legend-item { display: flex; align-items: center; gap: 5px; }
     .legend-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
-    .legend-dot.venous { background: #fff; border: 2px solid var(--blue); }
+    .legend-dot.venous { background: #fff; border: 2px solid #5b4b8a; }
+    .legend-line { width: 16px; height: 0; border-top: 3px solid var(--green); }
+    .legend-line.venous { border-top-style: dashed; border-top-color: #5b4b8a; }
     .legend-dot.sbp { background: #bd3b3b; }
     .legend-dot.dbp { background: #3978a8; }
     .legend-dot.map { background: #167a5b; }
@@ -776,43 +778,6 @@
     .event-time { color: var(--muted); font-size: 10px; font-weight: 700; }
     .event-title { margin-top: 2px; font-size: 13px; font-weight: 760; }
     .event-desc { margin-top: 2px; color: var(--muted); font-size: 11px; }
-
-    .table-wrap {
-      overflow-x: auto;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: #fff;
-    }
-
-    table {
-      width: 100%;
-      min-width: 810px;
-      border-collapse: collapse;
-      font-size: 11px;
-      font-variant-numeric: tabular-nums;
-    }
-
-    th, td {
-      padding: 10px 9px;
-      border-bottom: 1px solid var(--line);
-      text-align: right;
-      white-space: nowrap;
-    }
-
-    th {
-      position: sticky;
-      top: 0;
-      z-index: 1;
-      background: #edf3ef;
-      color: var(--muted);
-      font-weight: 760;
-    }
-
-    th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; }
-    tbody tr:last-child td { border-bottom: 0; }
-    tbody tr.latest { background: var(--green-soft); }
-    tbody tr.venous { color: var(--blue); }
-    tbody tr.uncertain { color: var(--orange); }
 
     .action-bar {
       position: fixed;
@@ -1309,7 +1274,7 @@
       <div class="section-head">
         <div>
           <h2 id="trendHeading">详细趋势</h2>
-          <p>先选分类，再选指标。横轴另标输血、CRRT、插管、胃镜。</p>
+          <p>先选分类，再选指标。动脉实线、静脉虚线，两条线不相接。横轴另标输血、CRRT、插管、胃镜。</p>
         </div>
       </div>
       <div class="panel chart-panel">
@@ -1334,8 +1299,8 @@
           <div class="chart-tooltip" id="chartTooltip" role="status"></div>
         </div>
         <div class="legend">
-          <span class="legend-item"><span class="legend-dot"></span>动脉/常规点</span>
-          <span class="legend-item"><span class="legend-dot venous"></span>静脉血</span>
+          <span class="legend-item"><span class="legend-line"></span>动脉实线</span>
+          <span class="legend-item"><span class="legend-line venous"></span>静脉虚线</span>
           <span class="legend-item"><span class="legend-band"></span>参考范围</span>
           <span class="legend-item"><span class="legend-tick tx"></span>输血（清单日）</span>
           <span class="legend-item"><span class="legend-tick crrt"></span>CRRT（有计费）</span>
@@ -1680,34 +1645,7 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="rawHeading">
-      <div class="section-head">
-        <div>
-          <h2 id="rawHeading">原始血气表</h2>
-          <p>横向滑动查看全部字段</p>
-        </div>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>相对时间</th>
-              <th>样本</th>
-              <th>pH</th>
-              <th>PCO₂</th>
-              <th>HCO₃⁻</th>
-              <th>BE</th>
-              <th>乳酸</th>
-              <th>FiO₂</th>
-              <th>P/F</th>
-              <th>Hb</th>
-              <th>iCa</th>
-            </tr>
-          </thead>
-          <tbody id="rawTableBody"></tbody>
-        </table>
-      </div>
-    </section>
+    <!-- 原始血气表不在这页。血气数值在脚本 baseReadings，截图在 testset。 -->
 
     <footer>
       自定义新增的数据仅保存在当前浏览器，不会上传服务器。页面不包含姓名、证件号、医院或住址。
@@ -2687,28 +2625,24 @@
         svg.appendChild(hit);
       });
 
-      const segments = [];
-      let current = [];
-      data.forEach(d => {
-        if (d.sample === "静脉" && cfg.arterialOnly) {
-          if (current.length) segments.push(current);
-          current = [];
-        } else {
-          current.push(d);
-        }
-      });
-      if (current.length) segments.push(current);
-
-      segments.forEach(segment => {
-        if (segment.length < 2) return;
-        const pathData = segment.map((d, i) =>
+      const drawSeries = (points, stroke, dash) => {
+        if (points.length < 2) return;
+        const pathData = points.map((d, i) =>
           `${i ? "L" : "M"} ${x(d.h).toFixed(2)} ${y(d[selectedMetric]).toFixed(2)}`
         ).join(" ");
-        svg.appendChild(createSvg("path", {
-          d: pathData, fill: "none", stroke: cfg.color,
+        const attrs = {
+          d: pathData, fill: "none", stroke,
           "stroke-width": "3.2", "stroke-linecap": "round", "stroke-linejoin": "round"
-        }));
-      });
+        };
+        if (dash) attrs["stroke-dasharray"] = dash;
+        svg.appendChild(createSvg("path", attrs));
+      };
+      const arterial = data.filter(d => d.sample === "动脉");
+      const venous = data.filter(d => d.sample === "静脉");
+      const other = data.filter(d => d.sample !== "动脉" && d.sample !== "静脉");
+      drawSeries(arterial, cfg.color);
+      drawSeries(venous, "#5b4b8a", "7 5");
+      drawSeries(other, cfg.color);
 
       data.forEach(d => {
         const cx = x(d.h);
@@ -2716,7 +2650,7 @@
         const circle = createSvg("circle", {
           cx, cy, r: d.sample === "静脉" ? 6.5 : 5.5,
           fill: d.sample === "静脉" ? "#fff" : cfg.color,
-          stroke: d.sample === "静脉" ? "#3978a8" : "#fff",
+          stroke: d.sample === "静脉" ? "#5b4b8a" : "#fff",
           "stroke-width": d.sample === "静脉" ? 3 : 2,
           tabindex: "0", role: "button",
           "aria-label": `${d.label} ${cfg.label} ${formatValue(d[selectedMetric], cfg.decimals)} ${cfg.unit}`
@@ -2738,8 +2672,9 @@
         svg.appendChild(circle);
       });
 
-      const first = data[0][selectedMetric];
-      const last = data.at(-1)[selectedMetric];
+      const seriesForDelta = arterial.length ? arterial : data;
+      const first = seriesForDelta[0][selectedMetric];
+      const last = seriesForDelta.at(-1)[selectedMetric];
       const rawDelta = last - first;
       const delta = `${rawDelta >= 0 ? "+" : ""}${formatValue(rawDelta, cfg.decimals)}`;
       const directionGood =
@@ -2747,33 +2682,8 @@
         (cfg.better === "up" && rawDelta > 0) ||
         (cfg.better === "range" && last >= cfg.minRef && last <= cfg.maxRef);
       const deltaEl = document.getElementById("chartDelta");
-      setMarkup(deltaEl, `<strong style="color:${directionGood ? "var(--green)" : "var(--orange)"}">${delta}</strong>区间变化`);
-    }
-
-    function renderRawTable() {
-      const body = document.getElementById("rawTableBody");
-      const readings = allReadings();
-      setMarkup(body, readings.map((d, index) => {
-        const classes = [
-          index === readings.length - 1 ? "latest" : "",
-          d.sample === "静脉" ? "venous" : "",
-          d.quality === "uncertain" ? "uncertain" : ""
-        ].filter(Boolean).join(" ");
-        const cell = (value, decimals = 1) => value == null ? "—" : Number(value).toFixed(decimals);
-        return `<tr class="${classes}">
-          <td>${d.label || relativeLabel(d.h)}</td>
-          <td>${d.sample}${d.quality === "uncertain" ? " ⚠" : ""}</td>
-          <td>${cell(d.ph, 3)}</td>
-          <td>${cell(d.pco2)}</td>
-          <td>${cell(d.hco3)}</td>
-          <td>${cell(d.be)}</td>
-          <td>${cell(d.lactate, 2)}</td>
-          <td>${cell(d.fio2, 0)}</td>
-          <td>${d.sample === "静脉" ? "不适用" : cell(d.pf, 0)}</td>
-          <td>${cell(d.hb)}</td>
-          <td>${cell(d.ca, 2)}</td>
-        </tr>`;
-      }).join(""));
+      const deltaName = arterial.length && venous.length ? "动脉区间变化" : "区间变化";
+      setMarkup(deltaEl, `<strong style="color:${directionGood ? "var(--green)" : "var(--orange)"}">${delta}</strong>${deltaName}`);
     }
 
     function updateLatest() {
@@ -3343,7 +3253,6 @@
       renderCategoryOverview();
       renderChart();
       renderVitalsCharts();
-      renderRawTable();
       updateLatest();
       renderQuestions();
       renderDailyCare();
