@@ -89,7 +89,7 @@ openssl rand -hex 24
 ```text
 CURSOR_API_KEY       Cursor Dashboard 生成的 API key
 UPLOAD_TOKEN         上一步生成的 48 位随机口令
-MEDIDASH_AGENT_ID    bc-f66f1668-9237-4998-b08a-816b026db98e
+MEDIDASH_AGENT_ID    bc-57f4b5cb-9bf7-4eb9-9cb6-334a790a0abf
 ```
 
 不要把值贴进聊天、截图或提交到 Git。
@@ -120,11 +120,13 @@ HOST=0.0.0.0
 PORT=9000
 CURSOR_API_KEY=<你的 Cursor API key>
 UPLOAD_TOKEN=<随机上传口令>
-MEDIDASH_AGENT_ID=bc-f66f1668-9237-4998-b08a-816b026db98e
+MEDIDASH_AGENT_ID=bc-57f4b5cb-9bf7-4eb9-9cb6-334a790a0abf
 RELAY_DRY_RUN=1
 ```
 
 `RELAY_DRY_RUN=1` 必须先保留，避免配置测试时真的触发 Agent。
+
+换对话时只改 `MEDIDASH_AGENT_ID`。`UPLOAD_TOKEN` 和 `CURSOR_API_KEY` 保持原值。重新生成口令会让手机上已保存的口令对不上，上传会返回 401。
 
 ## 6. 配置 HTTP 触发器与 CORS
 
@@ -206,7 +208,7 @@ curl 'https://你的地址/health'
 预期：
 
 ```json
-{"ok":true,"dryRun":true,"agentId":"bc-f66f1668-9237-4998-b08a-816b026db98e","branch":"main","latestUrl":"https://你的地址/latest"}
+{"ok":true,"dryRun":true,"agentId":"bc-57f4b5cb-9bf7-4eb9-9cb6-334a790a0abf","branch":"main","latestUrl":"https://你的地址/latest"}
 ```
 
 如果访问超时，先检查出网、端口 9000、启动命令和公网 URL 是否开启。
@@ -317,7 +319,7 @@ https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/<新�
 export CURSOR_API_KEY='...'
 export UPLOAD_TOKEN='...'
 export RELAY_DRY_RUN='1'
-export MEDIDASH_AGENT_ID='bc-f66f1668-9237-4998-b08a-816b026db98e'
+export MEDIDASH_AGENT_ID='bc-57f4b5cb-9bf7-4eb9-9cb6-334a790a0abf'
 
 bash deploy/aliyun-fc/build-package.sh
 cd deploy/aliyun-fc

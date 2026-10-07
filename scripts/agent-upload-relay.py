@@ -20,10 +20,9 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib import error, parse, request
 
-# Default id is the retired conversation. Its follow-up turns error.
-# Set MEDIDASH_AGENT_ID to the replacement agent before the next family upload.
+# Family uploads follow up this agent. Override with MEDIDASH_AGENT_ID.
 AGENT_ID = os.environ.get(
-    "MEDIDASH_AGENT_ID", "bc-f66f1668-9237-4998-b08a-816b026db98e"
+    "MEDIDASH_AGENT_ID", "bc-57f4b5cb-9bf7-4eb9-9cb6-334a790a0abf"
 )
 UPLOAD_TOKEN = os.environ.get("UPLOAD_TOKEN", "")
 CURSOR_API_KEY = os.environ.get("CURSOR_API_KEY", "")

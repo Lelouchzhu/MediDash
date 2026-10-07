@@ -2,7 +2,7 @@
 
 ## 新 agent 先读这里
 
-上一任 `bc-f66f1668-9237-4998-b08a-816b026db98e` 的续聊已经多次报错。不要 resume 那个对话。在本仓库 `main` 上新开一个 agent。
+上一任 `bc-f66f1668-9237-4998-b08a-816b026db98e` 的续聊已经多次报错。不要 resume 那个对话。当前上传对话是 `bc-57f4b5cb-9bf7-4eb9-9cb6-334a790a0abf`。
 
 ### 读取顺序
 
@@ -26,7 +26,7 @@
 - 血气默认动脉，除非家属这句话点名，或单子抬头印了静脉。不要凭低 PO₂ 推断。`be` 存 ABE，不存 SBE。化学降钙素原、血小板比积、动脉 P/F 是三件事。
 - 页面保持正好 4 条查房短句，关键数字用 `<strong>`。长解释只追加到 `data/narratives.json`。
 - 大陆链接钉死含 `index.xhtml` 的那次提交 `28cec2b513c2d9d09b5b322ac06f01427b5aabe9`。只改文档时不要换这个 SHA。不要用 `@main`，不要用短 SHA，不要移动 tag `upload`。
-- 上传中继的默认 agent 仍是旧 id `bc-f66f1668-9237-4998-b08a-816b026db98e`（`scripts/agent-upload-relay.py` 的 `MEDIDASH_AGENT_ID`，以及已部署的阿里云函数环境变量）。新 agent 知道自己的 bcId 之后，再改仓库默认值和线上环境变量。改之前，家属上传仍会打到旧对话，续聊会失败。
+- 仓库默认 `MEDIDASH_AGENT_ID` 是 `bc-57f4b5cb-9bf7-4eb9-9cb6-334a790a0abf`（`scripts/agent-upload-relay.py` 和 `deploy/aliyun-fc/s.yaml`）。线上函数环境变量也要改成同一个 id。函数上如果还留着旧 id，家属上传仍会打到旧对话。`UPLOAD_TOKEN` 和 `CURSOR_API_KEY` 不用换。
 
 ## Canonical repository
 
@@ -158,9 +158,9 @@ Categories: **循环/支持**, 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝
 
 The page cannot call `api.cursor.com` (no CORS, and the Cursor key must not be in the public HTML). **上传** POSTs screenshots plus oral notes to `scripts/agent-upload-relay.py`, which follows up this agent:
 
-`POST https://api.cursor.com/v1/agents/bc-f66f1668-9237-4998-b08a-816b026db98e/runs`
+`POST https://api.cursor.com/v1/agents/bc-57f4b5cb-9bf7-4eb9-9cb6-334a790a0abf/runs`
 
-That agent id is the one whose follow-up turns already error. Do not resume it. After the replacement agent exists, put its bcId in `MEDIDASH_AGENT_ID` here and on the deployed relay. Until that env var changes, family uploads still hit the old conversation.
+The repo default is that id. Do not resume `bc-f66f1668-9237-4998-b08a-816b026db98e`. The deployed function's `MEDIDASH_AGENT_ID` must be the same value. If that env var is still the old id, family uploads still hit the old conversation. Leave `UPLOAD_TOKEN` and `CURSOR_API_KEY` unchanged.
 
 Run the relay on a host the hospital network can reach. Default `MEDIDASH_UPDATE_BRANCH` is `main`. Redeploy any old relay that still points at `cursor/mainland-lab-upload-b98e`.
 
