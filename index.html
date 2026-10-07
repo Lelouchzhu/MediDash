@@ -1189,7 +1189,7 @@
             <span class="level">10月7日15:19</span>
           </div>
           <div class="status-value">116/42</div>
-          <div class="status-note">MAP <strong>60</strong> · 脉搏<strong>86</strong> · 呼吸<strong>17</strong><br>去甲、多巴胺这句没说</div>
+          <div class="status-note">MAP <strong>60</strong> · 脉搏<strong>86</strong> · 呼吸<strong>17</strong><br>去甲<strong>0</strong> · 多巴胺<strong>0</strong> mL/h</div>
         </button>
         <button class="status-card red" type="button" data-metric-jump="lactate">
           <div class="status-top">
@@ -1569,7 +1569,7 @@
           </summary>
           <div class="report-body">
             <ul>
-              <li>15:19口述：血压 <strong>116/42</strong> · MAP <strong>60</strong> · 脉搏 <strong>86</strong> · 呼吸 <strong>17</strong>。去甲、多巴胺这句没说。</li>
+              <li>15:19口述：血压 <strong>116/42</strong> · MAP <strong>60</strong> · 脉搏 <strong>86</strong> · 呼吸 <strong>17</strong> · 去甲 <strong>0</strong> · 多巴胺 <strong>0</strong> mL/h。</li>
               <li>15:00仍是上一句：便血约 <strong>300 mL</strong>，呈车厘子色；这是大便总量，不是纯血。15:19没再说便血。</li>
               <li>07:24血常规：血红蛋白 <strong>89.0→85.0</strong> ↓ · 血小板 <strong>77→84.00</strong> ↓。不把84写成出血已停。07:28:48静脉ctHb <strong>12.60</strong> 不是血常规。10月6日清单悬浮红细胞 <strong>3.5</strong> 单位是发出量。</li>
               <li>18:00胃镜口述「<strong>基本排除了胃出血</strong>」，没有正式报告。</li>
@@ -2086,7 +2086,7 @@
       { h: 498.00, label: "10月6日08:00", sample: "口述", sbp: 147, dbp: 46, ne: 0, da: 2 },
       { h: 505.00, label: "10月6日15:00", sample: "口述", sbp: 106, dbp: 33, map: 50, hr: 80, rr: 20, ne: 0, da: 0 },
       { h: 522.10, label: "10月7日08:06", sample: "口述", sbp: 112, dbp: 48, map: 65, hr: 85, rr: 18 },
-      { h: 529.32, label: "10月7日15:19", sample: "口述", sbp: 116, dbp: 42, map: 60, hr: 86, rr: 17 }
+      { h: 529.32, label: "10月7日15:19", sample: "口述", sbp: 116, dbp: 42, map: 60, hr: 86, rr: 17, ne: 0, da: 0 }
     ];
 
     const metricConfig = {
@@ -2155,7 +2155,7 @@
         id: "icu-support",
         group: "urgent",
         title: "呼吸循环：动脉P/F仍202，07:28静脉底部63不是P/F，怎么调？",
-        detail: "01:56:43动脉 P/F <strong>202</strong> · FiO₂印 <strong>50%</strong> · PO₂ <strong>101.10</strong>。不要把07:28:48静脉底部 <strong>63</strong> 当动脉P/F<br/>07:28:48静脉（家属说静脉）乳酸 <strong>2.68</strong>↑ · pH <strong>7.395</strong> · PO₂ <strong>25.30</strong> · ABE <strong>−4.80</strong>↓。FiO₂印 <strong>40%</strong>。单上 <strong>0.10%</strong> 不是 P/F<br/>15:19口述血压 <strong>116/42</strong> · MAP <strong>60</strong> · 脉搏 <strong>86</strong> · 呼吸 <strong>17</strong>。去甲、多巴胺这句没说<br/>气切处是否仍接机，当前氧疗和升压目标怎么安排？"
+        detail: "01:56:43动脉 P/F <strong>202</strong> · FiO₂印 <strong>50%</strong> · PO₂ <strong>101.10</strong>。不要把07:28:48静脉底部 <strong>63</strong> 当动脉P/F<br/>07:28:48静脉（家属说静脉）乳酸 <strong>2.68</strong>↑ · pH <strong>7.395</strong> · PO₂ <strong>25.30</strong> · ABE <strong>−4.80</strong>↓。FiO₂印 <strong>40%</strong>。单上 <strong>0.10%</strong> 不是 P/F<br/>15:19口述血压 <strong>116/42</strong> · MAP <strong>60</strong> · 脉搏 <strong>86</strong> · 呼吸 <strong>17</strong> · 去甲 <strong>0</strong> · 多巴胺 <strong>0</strong> mL/h<br/>气切处是否仍接机，当前氧疗和升压目标怎么安排？"
       },
       {
         id: "infection",
@@ -2173,7 +2173,7 @@
         id: "gut-bleeding",
         group: "urgent",
         title: "肚子和血：Hb 89.0→85.0，APTT本张21–45，怎么看？",
-        detail: "07:24血红蛋白 <strong>89.0→85.0</strong>↓ · 血小板 <strong>77→84.00</strong>↓。07:28:48静脉ctHb <strong>12.60</strong> 不是血常规<br/>07:21 APTT <strong>44.9</strong>，本张参考 <strong>21–45</strong>，异常栏空着。不要套16:14那张 <strong>23.3–32.5</strong>。TT <strong>13.9</strong>↓<br/>INR <strong>1.11</strong>（0.94–1.2，异常栏空着）。一项在参考内不等于出血已经停<br/>15:19血压 <strong>116/42</strong> · MAP <strong>60</strong>。15:00便血约 <strong>300 mL</strong> 是大便总量，15:19没再说<br/>还要不要再查下一步？"
+        detail: "07:24血红蛋白 <strong>89.0→85.0</strong>↓ · 血小板 <strong>77→84.00</strong>↓。07:28:48静脉ctHb <strong>12.60</strong> 不是血常规<br/>07:21 APTT <strong>44.9</strong>，本张参考 <strong>21–45</strong>，异常栏空着。不要套16:14那张 <strong>23.3–32.5</strong>。TT <strong>13.9</strong>↓<br/>INR <strong>1.11</strong>（0.94–1.2，异常栏空着）。一项在参考内不等于出血已经停<br/>15:19血压 <strong>116/42</strong> · MAP <strong>60</strong> · 升压药 <strong>0/0</strong>。15:00便血约 <strong>300 mL</strong> 是大便总量，15:19没再说<br/>还要不要再查下一步？"
       }
     ];
 

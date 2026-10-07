@@ -1171,6 +1171,12 @@
       "title_html": "15:19口述血压<strong>116/42</strong>，MAP <strong>60</strong>",
       "text": "2026-10-07 15:19，术后529h19m，h 529.32。血压116/42，口述MAP 60。116/42按常规算法约67，不替换口述的60。脉搏86，呼吸17。去甲和多巴胺没说，不把上一句的空着写成0。CRRT、尿量、便血没说。15:00车厘子色便约300 mL仍是更早的一句。顶栏是最新口述：术后529h19m · 116/42。没有新化验。动脉P/F仍202。07:28:48静脉底部63仍不是P/F。",
       "text_html": "2026-10-07 <strong>15:19</strong>，术后<strong>529h19m</strong>，h 529.32。血压<strong>116/42</strong>，口述MAP <strong>60</strong>。116/42按常规算法约67，不替换口述的60。脉搏<strong>86</strong>，呼吸<strong>17</strong>。去甲和多巴胺没说，不把上一句的空着写成0。CRRT、尿量、便血没说。15:00车厘子色便约300 mL仍是更早的一句。顶栏是最新口述：术后529h19m · 116/42。没有新化验。动脉P/F仍202。07:28:48静脉底部63仍不是P/F。"
+    },
+    {
+      "title": "15:19升压药仍是去甲0、多巴胺0",
+      "title_html": "15:19升压药仍是去甲<strong>0</strong>、多巴胺<strong>0</strong>",
+      "text": "同一句15:19口述补上：去甲0 mL/h，按0.05 mg/mL是0 mg/h。多巴胺0 mL/h，不换算mg/h。不另开钟点。血压仍116/42，MAP仍60，脉搏86，呼吸17。",
+      "text_html": "同一句15:19口述补上：去甲<strong>0</strong> mL/h，按0.05 mg/mL是0 mg/h。多巴胺<strong>0</strong> mL/h，不换算mg/h。不另开钟点。血压仍<strong>116/42</strong>，MAP仍<strong>60</strong>，脉搏<strong>86</strong>，呼吸<strong>17</strong>。"
     }
   ],
   "timeline": {
@@ -3840,6 +3846,15 @@
         "title_html": "口述血压<strong>116/42</strong>，MAP <strong>60</strong>",
         "text": "脉搏86，呼吸17。去甲和多巴胺没说。顶栏跟这句。",
         "text_html": "脉搏<strong>86</strong>，呼吸<strong>17</strong>。去甲和多巴胺没说。顶栏跟这句。"
+      },
+      {
+        "color": "var(--orange)",
+        "time": "术后529小时19分 · 10月7日15:19",
+        "time_html": "术后529小时19分 · 10月7日15:19",
+        "title": "升压药仍是0/0",
+        "title_html": "升压药仍是<strong>0/0</strong>",
+        "text": "去甲0 mL/h，多巴胺0 mL/h。记在15:19这句上。",
+        "text_html": "去甲<strong>0</strong> mL/h，多巴胺<strong>0</strong> mL/h。记在15:19这句上。"
       }
     ]
   },
