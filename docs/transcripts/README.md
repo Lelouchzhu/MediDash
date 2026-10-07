@@ -2,6 +2,8 @@
 
 Dated summaries of prior Cursor Cloud Agent conversations for MediDash handoff.
 
+A new agent reads [`AGENTS.md`](../../AGENTS.md) first, then the current file in the table, then `CONTEXT.md` only through **STOP — archive below this line**. Do not resume `bc-f66f1668`; follow-up turns on that conversation already error.
+
 | File | Agent | Notes |
 |------|-------|-------|
 | [2026-10-07-bc-f66f1668-summary.md](2026-10-07-bc-f66f1668-summary.md) | `bc-f66f1668…` | **Current.** Through 10/6 22:20:40 venous ABG. 「这是静脉」names the sheet attached to that message. 22:20:19 is arterial P/F **108**. |

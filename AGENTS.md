@@ -1,5 +1,33 @@
 # MediDash — Cloud Agent Handoff
 
+## 新 agent 先读这里
+
+上一任 `bc-f66f1668-9237-4998-b08a-816b026db98e` 的续聊已经多次报错。不要 resume 那个对话。在本仓库 `main` 上新开一个 agent。
+
+### 读取顺序
+
+只按这个顺序读，读完就停：
+
+1. 本文件 `AGENTS.md`。规则在这里。不要把下面的历史样本锁再抄一遍进对话。
+2. [`docs/transcripts/2026-10-07-bc-f66f1668-summary.md`](docs/transcripts/2026-10-07-bc-f66f1668-summary.md)。当前临床锁，大约 100 行。
+3. [`CONTEXT.md`](CONTEXT.md) 只读到标题 **STOP — archive below this line**。停在那里。
+
+### 不要读
+
+- `CONTEXT.md` 里 STOP 标题之后的长段。那是 10 月 3 日之前的旧档，顶栏仍写钾 4.37，和现在不符。整文件大约 250KB。整段读进去会把对话撑爆，下一轮更新会再报错。要查旧钟点时按日期搜索那一段，不要整段读入。
+- `data/narratives.json`（大约 770KB）。页面不读它。追加说明时用搜索定位，不要整文件读入。
+- `index.html` 全文（大约 220KB）。改数时只搜索 `baseReadings` 末尾、`labReadings` 末尾、`vitalReadings` 末尾、`doctorQuestions`、`latestNonBloodGasReport` 和状态卡。
+- 更早的 transcript、`testset/` 里的图片、`README.md` 里的历史长段。这一张单子对不上号时再打开对应文件。
+
+### 这一任不要再弄错
+
+- 「这是静脉」或「这是动脉」只点这一条消息附上的那张血气。不改钟点不同的旧单，同一分钟里两张数字不同就各记各的。当前锁：22:20:40 静脉，底部 **60** 不是 P/F；22:20:19 动脉，底部 **108** 是动脉 P/F。
+- 口述全空，并且没有新图：不改页面，不 commit，不 push。
+- 血气默认动脉，除非家属这句话点名，或单子抬头印了静脉。不要凭低 PO₂ 推断。`be` 存 ABE，不存 SBE。化学降钙素原、血小板比积、动脉 P/F 是三件事。
+- 页面保持正好 4 条查房短句，关键数字用 `<strong>`。长解释只追加到 `data/narratives.json`。
+- 大陆链接钉死含 `index.xhtml` 的那次提交 `28cec2b513c2d9d09b5b322ac06f01427b5aabe9`。只改文档时不要换这个 SHA。不要用 `@main`，不要用短 SHA，不要移动 tag `upload`。
+- 上传中继的默认 agent 仍是旧 id `bc-f66f1668-9237-4998-b08a-816b026db98e`（`scripts/agent-upload-relay.py` 的 `MEDIDASH_AGENT_ID`，以及已部署的阿里云函数环境变量）。新 agent 知道自己的 bcId 之后，再改仓库默认值和线上环境变量。改之前，家属上传仍会打到旧对话，续聊会失败。
+
 ## Canonical repository
 
 **All new lab results and dashboard updates must be committed and pushed to this repo (`Lelouchzhu/MediDash`) on `main`.**
@@ -8,12 +36,14 @@ Do **not** update `Lelouchzhu/Allmond` for clinical dashboard work.
 
 ## Read first
 
-1. **[`CONTEXT.md`](CONTEXT.md)** — clinical timeline, PCT naming traps, latest labs
-2. **[`testset/README.md`](testset/README.md)** — **mandatory screenshot backup + extraction testset**
-3. **[`docs/transcripts/`](docs/transcripts/)** — prior agent conversation summaries. Start with [`docs/transcripts/2026-10-07-bc-f66f1668-summary.md`](docs/transcripts/2026-10-07-bc-f66f1668-summary.md)
-4. This file — short operating rules
-5. **`index.html`** — live dashboard (categorized trends for all metrics)
-6. **[`README.md`](README.md)** — product overview for humans starting the repo
+Follow **新 agent 先读这里** above. Do not read the whole repo on startup.
+
+1. This file — operating rules and the stop list
+2. [`docs/transcripts/2026-10-07-bc-f66f1668-summary.md`](docs/transcripts/2026-10-07-bc-f66f1668-summary.md) — current clinical lock
+3. [`CONTEXT.md`](CONTEXT.md) — only through **STOP — archive below this line**
+4. On a real upload, the matching slice of `index.html` and [`testset/README.md`](testset/README.md) for how to archive the screenshot
+
+Older transcripts and [`README.md`](README.md) are for humans and for clocks this summary does not cover.
 
 ## Purpose
 
@@ -129,6 +159,8 @@ Categories: **循环/支持**, 灌注/酸碱, 氧合, 感染/炎症, 肾脏, 凝
 The page cannot call `api.cursor.com` (no CORS, and the Cursor key must not be in the public HTML). **上传** POSTs screenshots plus oral notes to `scripts/agent-upload-relay.py`, which follows up this agent:
 
 `POST https://api.cursor.com/v1/agents/bc-f66f1668-9237-4998-b08a-816b026db98e/runs`
+
+That agent id is the one whose follow-up turns already error. Do not resume it. After the replacement agent exists, put its bcId in `MEDIDASH_AGENT_ID` here and on the deployed relay. Until that env var changes, family uploads still hit the old conversation.
 
 Run the relay on a host the hospital network can reach. Default `MEDIDASH_UPDATE_BRANCH` is `main`. Redeploy any old relay that still points at `cursor/mainland-lab-upload-b98e`.
 

@@ -20,6 +20,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib import error, parse, request
 
+# Default id is the retired conversation. Its follow-up turns error.
+# Set MEDIDASH_AGENT_ID to the replacement agent before the next family upload.
 AGENT_ID = os.environ.get(
     "MEDIDASH_AGENT_ID", "bc-f66f1668-9237-4998-b08a-816b026db98e"
 )

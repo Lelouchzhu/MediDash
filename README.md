@@ -110,14 +110,15 @@ Then open [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
 ## Cloud Agent / handoff
 
-Start Cloud Agents on **this** repository and read these first:
+Start a **new** Cloud Agent on **this** repository. Do not resume `bc-f66f1668`; its follow-up turns already error. Read only this, then stop:
 
-| File | Role |
-|------|------|
-| [`AGENTS.md`](AGENTS.md) | Operating rules: MediDash `main` only, testset backup, same-clock/hires replace, `node --check` |
-| [`CONTEXT.md`](CONTEXT.md) | Living clinical memory (timeline, latest labs, bedside) |
-| [`docs/transcripts/`](docs/transcripts/) | Dated conversation summaries. Current: [`2026-10-07-bc-f66f1668-summary.md`](docs/transcripts/2026-10-07-bc-f66f1668-summary.md) |
-| [`testset/`](testset/) | Screenshot archive + `manifest.json` (currently 319 reports) |
+| Order | File | Role |
+|------|------|------|
+| 1 | [`AGENTS.md`](AGENTS.md) | Rules and the do-not-read list. Section **新 agent 先读这里**. |
+| 2 | [`docs/transcripts/2026-10-07-bc-f66f1668-summary.md`](docs/transcripts/2026-10-07-bc-f66f1668-summary.md) | Current clinical lock through 10/6 22:20:40. |
+| 3 | [`CONTEXT.md`](CONTEXT.md) through **STOP — archive below this line** | Latest labs only. The paragraph under that heading is an old archive. |
+
+Do not load `CONTEXT.md` past that heading, `data/narratives.json`, or all of `index.html` on startup. Screenshot archive is [`testset/`](testset/) (`manifest.json`, currently 319 reports); open a file only when the new sheet needs it.
 
 Config: [`.cursor/environment.json`](.cursor/environment.json) starts the dashboard server on port **8080**.
 
