@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 319,
+  "count": 322,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6641,6 +6641,78 @@
       },
       "sha256_16": "eb04f9a7b2270f72",
       "bytes": 1337080
+    },
+    {
+      "id": "20261007T015643__image-1791343762297-1.jpg",
+      "path": "reports/abg/20261007T015643__image-1791343762297-1.jpg",
+      "category": "abg",
+      "source_filename": "image-1791343762297-1.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-07T01:56:43",
+      "type": "血气",
+      "relative_h": 515.95,
+      "note": "Arterial blood gas. Header does not print 静脉 and the family did not say 静脉. Do not infer venous from any row named 静脉血氧分压差; that row is empty. Clock 2026-10-07 01:56:43; 43 seconds do not round the minute up. Stored h is 515.95, label 术后515h56m. pH 7.509 high. PCO2 32.50 low. PO2 101.10 high. Store ABE 2.30 blank (ref -3 to 3), not SBE 2.40. Plasma HCO3 25.30 blank (22-26). Lactate 2.67 high. iCa 1.07 low. ctHb 8.90 low g/dl, sO2 97.50 blank, Hct 26.00 low. FiO2 printed 50.0%. Middle 氧合指数 empty; do not store 0. pO2(a/A,T) 0.32% low is not P/F. Printed bottom index 202.00 low (101.10/0.50=202.2, printed 202.00) is arterial P/F, ref 400-500. Do not put 22:20:40 venous bottom 60 on the P/F card. Machine T 37.0 is not bedside. Do not store standard HCO3 26.60 or temperature-corrected extras. Blood-gas ctHb is not CBC Hb 89.0. Na/K/Cl/glucose empty.",
+      "extracted": {
+        "sample": "动脉",
+        "ph": 7.509,
+        "pco2": 32.5,
+        "po2": 101.1,
+        "hco3": 25.3,
+        "be": 2.3,
+        "lactate": 2.67,
+        "fio2": 50,
+        "pf": 202,
+        "hb": 8.9,
+        "hct": 26.0,
+        "so2": 97.5,
+        "ca": 1.07,
+        "bottom_index": 202
+      },
+      "sha256_16": "b21f701b60810675",
+      "bytes": 426410
+    },
+    {
+      "id": "20261007T021547__image-1791343762303-0.jpg",
+      "path": "reports/chemistry/20261007T021547__image-1791343762303-0.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1791343762303-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-07T02:15:47",
+      "type": "生化",
+      "relative_h": 516.26,
+      "note": "Dry-chemistry potassium only. Clock 2026-10-07 02:15:47; 47 seconds do not round the minute up. Stored h is 516.26, label 术后516h15m. K 4.13 mmol/L, ref 3.5-5.3, abnormal column blank, notes empty. Phone status 4:10 is not the report time. Newer than the 01:56 arterial, so latestNonBloodGasReport and the hero follow this potassium. Creatinine stays 191.0. Not plateletcrit and not P/F.",
+      "extracted": {
+        "k": 4.13,
+        "ref": "3.5-5.3",
+        "flag": ""
+      },
+      "sha256_16": "d97a79e0d9e4812c",
+      "bytes": 185113
+    },
+    {
+      "id": "20261006T120000__image-1791343762300-2.jpg",
+      "path": "reports/billing/20261006T120000__image-1791343762300-2.jpg",
+      "category": "billing",
+      "source_filename": "image-1791343762300-2.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-06T12:00:00",
+      "type": "住院清单",
+      "relative_h": 502.0,
+      "note": "Daily bill date button 2026-10-6, noon convention h 502. Account snapshot prepaid 81000.00, cost 181569.12, balance -100569.12. CRRT billed 10.6 h / 1007.00. Packed RBC issued 3.5 units / 735 plus leukoreduced add-on 3.5 / 70. Ventilator 24 h / 480. Not a pump rate and not proof of completed transfusion. Narrow 372px screenshot; medium confidence on item names.",
+      "extracted": {
+        "prepaid": 81000,
+        "total_cost": 181569.12,
+        "balance": -100569.12,
+        "crrt_h": 10.6,
+        "crrt_cost": 1007,
+        "rbc_u": 3.5,
+        "ventilator_h": 24
+      },
+      "sha256_16": "5e11e4c473d1e655",
+      "bytes": 132408
     }
   ]
 }
