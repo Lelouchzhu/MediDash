@@ -20,7 +20,7 @@ resources:
         PORT: "9000"
         UPLOAD_TOKEN: ${env('UPLOAD_TOKEN')}
         CURSOR_API_KEY: ${env('CURSOR_API_KEY')}
-        MEDIDASH_AGENT_ID: ${env('MEDIDASH_AGENT_ID', 'bc-f66f1668-9237-4998-b08a-816b026db98e')}
+        MEDIDASH_AGENT_ID: ${env('MEDIDASH_AGENT_ID', 'bc-57f4b5cb-9bf7-4eb9-9cb6-334a790a0abf')}
         MEDIDASH_UPDATE_BRANCH: ${env('MEDIDASH_UPDATE_BRANCH', 'main')}
         RELAY_DRY_RUN: ${env('RELAY_DRY_RUN', '1')}
       customRuntimeConfig:

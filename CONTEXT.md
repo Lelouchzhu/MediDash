@@ -2,7 +2,7 @@
 
 New agents: read [`AGENTS.md`](AGENTS.md) first, then the current transcript, then **only this file through the STOP heading** below. Do not read the archive paragraph after that heading. This file is about 250KB. Loading it whole is what made follow-up turns on `bc-f66f1668` fail. It is **not** a chat dump.
 
-Do not resume `bc-f66f1668-9237-4998-b08a-816b026db98e`. Start a new agent on MediDash `main`.
+Do not resume `bc-f66f1668-9237-4998-b08a-816b026db98e`. Current upload agent is `bc-57f4b5cb-9bf7-4eb9-9cb6-334a790a0abf`.
 
 **Chart mark (family request):** put yesterday’s gastroscopy on the detailed-trend x-axis and the daily-care chart at **2026-10-05 18:00**, postop **484h00m** (`h: 484.00`). This is the oral clock the family asked to plot. It is **not** a formal endoscopy report, not a diagnosis, and not the noon-convention billing hour **478**. The Oct 5 bill still has upper-GI endoscopy **1 / 226** plus biopsy sampling **1 / 57** as charges. Stored as `procedures[]` on the 2026-10-05 day in `data/daily-care.json` / `dailyCareData`. The gastroscopy mark does not move the hero.
 
