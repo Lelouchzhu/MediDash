@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 331,
+  "count": 332,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6934,6 +6934,28 @@
       "preferred": true,
       "sha256_16": "e6b2a6a7c3cfff13",
       "bytes": 401567
+    },
+    {
+      "id": "20261007T120000__E7763AC8-EA58-4E7B-88C7-977258421344_L0_001.jpg",
+      "path": "reports/billing/20261007T120000__E7763AC8-EA58-4E7B-88C7-977258421344_L0_001.jpg",
+      "category": "billing",
+      "source_filename": "E7763AC8-EA58-4E7B-88C7-977258421344_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-07T12:00:00",
+      "type": "住院清单",
+      "relative_h": 526.0,
+      "note": "Daily bill date button 2026-10-7, noon convention h 526. Account snapshot prepaid 86000.00, cost 186949.86, balance -100949.86. CRRT billed 8.67 h / 823.65. No hemofilter, circuit, citrate, or nafamostat line. No packed RBC or pressor line. Does not replace the 01:30 APTT hero.",
+      "extracted": {
+        "prepaid": 86000,
+        "total_cost": 186949.86,
+        "balance": -100949.86,
+        "crrt_h": 8.67,
+        "crrt_cost": 823.65,
+        "ventilator_h": 24
+      },
+      "sha256_16": "29defb73a6f01639",
+      "bytes": 1544803
     }
   ]
 }
