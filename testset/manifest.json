@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 332,
+  "count": 333,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6956,6 +6956,36 @@
       },
       "sha256_16": "29defb73a6f01639",
       "bytes": 1544803
+    },
+    {
+      "id": "20261008T072810__7F1BDBB4-14A0-4947-BC8B-071525B131C1_L0_001.jpg",
+      "path": "reports/abg/20261008T072810__7F1BDBB4-14A0-4947-BC8B-071525B131C1_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "7F1BDBB4-14A0-4947-BC8B-071525B131C1_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-08T07:28:10",
+      "type": "血气",
+      "relative_h": 545.47,
+      "note": "Arterial blood gas. Header does not print 静脉 and the family did not say 静脉. This is not the 2026-10-07 07:28:48 venous sheet. Clock 2026-10-08 07:28:10; 10 seconds do not round the minute up. Stored h is 545.47, label 术后545h28m. pH 7.477 high. PCO2 32.50 low. PO2 119.40 high. Store ABE -0.10 blank, not SBE 0.00. Plasma HCO3 23.50 blank. Lactate 3.19 high. iCa 1.11 low. ctHb 6.50 low g/dl, Hct 19.00 low, sO2 98.10 high. FiO2 printed 50.0%. Middle 氧合指数 empty. pO2(a/A,T) 0.37% is not P/F. Printed bottom index 239.00 low (119.40/0.50=238.8) is arterial P/F. Do not put the Oct 7 07:28:48 venous bottom 63 on the P/F card. Machine T 37.0 is not bedside. Newer than the 01:30 APTT, so the hero follows this arterial gas. Blood-gas ctHb is not CBC Hb 68.0.",
+      "extracted": {
+        "sample": "动脉",
+        "ph": 7.477,
+        "pco2": 32.5,
+        "po2": 119.4,
+        "hco3": 23.5,
+        "be": -0.1,
+        "lactate": 3.19,
+        "fio2": 50,
+        "pf": 239,
+        "hb": 6.5,
+        "hct": 19.0,
+        "so2": 98.1,
+        "ca": 1.11,
+        "bottom_index": 239
+      },
+      "sha256_16": "e9f060ae415c371b",
+      "bytes": 1347632
     }
   ]
 }
