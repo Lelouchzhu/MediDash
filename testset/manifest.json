@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 327,
+  "count": 331,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6839,6 +6839,101 @@
       },
       "sha256_16": "eb3126bba1d3bca8",
       "bytes": 1334830
+    },
+    {
+      "id": "20261007T220902__262743A0-FF81-499C-ABDE-988D52EE3E2E_L0_001.jpg",
+      "path": "reports/abg/20261007T220902__262743A0-FF81-499C-ABDE-988D52EE3E2E_L0_001.jpg",
+      "category": "abg",
+      "source_filename": "262743A0-FF81-499C-ABDE-988D52EE3E2E_L0_001.jpg",
+      "report_time": "2026-10-07T22:09:02",
+      "type": "血气",
+      "relative_h": 536.15,
+      "note": "Arterial blood gas. Header does not print 静脉 and the family did not say 静脉. Clock 2026-10-07 22:09:02; 2 seconds do not round the minute up. Stored h is 536.15, label 术后536h09m. pH 7.492 high. PCO2 31.20 low. PO2 125.90 high. Store ABE 0.00 blank, not SBE 0.10. Plasma HCO3 23.40 blank. Lactate 3.23 high. iCa 1.12 low. ctHb 6.70 low g/dl, Hct 20.00 low, sO2 98.60 blank. FiO2 printed 50.0%. Middle 氧合指数 empty. pO2(a/A,T) 0.39% is not P/F. Printed bottom index 252.00 low (125.90/0.50=251.8) is arterial P/F. Do not put 07:28:48 venous bottom 63 on the P/F card. Machine T 37.0 is not bedside. Blood-gas ctHb is not CBC Hb 68.0.",
+      "extracted": {
+        "sample": "动脉",
+        "ph": 7.492,
+        "pco2": 31.2,
+        "po2": 125.9,
+        "hco3": 23.4,
+        "be": 0.0,
+        "lactate": 3.23,
+        "fio2": 50,
+        "pf": 252,
+        "hb": 6.7,
+        "hct": 20.0,
+        "so2": 98.6,
+        "ca": 1.12,
+        "bottom_index": 252
+      },
+      "labeled": true,
+      "preferred": true,
+      "sha256_16": "18316c7a79a0abec",
+      "bytes": 1349729
+    },
+    {
+      "id": "20261007T221823__E4164646-335B-485D-80A4-013C9C58A049_L0_001.jpg",
+      "path": "reports/chemistry/20261007T221823__E4164646-335B-485D-80A4-013C9C58A049_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "E4164646-335B-485D-80A4-013C9C58A049_L0_001.jpg",
+      "report_time": "2026-10-07T22:18:23",
+      "type": "生化",
+      "relative_h": 536.31,
+      "note": "Dry-chemistry potassium only. Clock 2026-10-07 22:18:23; 23 seconds do not round the minute up. Stored h is 536.31, label 术后536h18m. Phone status 01:58 on Oct 8 is not the report clock. K 4.56 blank (3.5-5.3). Notes empty. No creatinine. Creatinine stays 122.80.",
+      "extracted": {
+        "k": 4.56,
+        "ref": "3.5-5.3",
+        "flag": ""
+      },
+      "labeled": true,
+      "preferred": true,
+      "sha256_16": "9c3429faf26f2a48",
+      "bytes": 285363
+    },
+    {
+      "id": "20261008T011730__775E1649-4AC2-4795-9EF0-A55571BCE803_L0_001.jpg",
+      "path": "reports/cbc/20261008T011730__775E1649-4AC2-4795-9EF0-A55571BCE803_L0_001.jpg",
+      "category": "cbc",
+      "source_filename": "775E1649-4AC2-4795-9EF0-A55571BCE803_L0_001.jpg",
+      "report_time": "2026-10-08T01:17:30",
+      "type": "血常规",
+      "relative_h": 539.29,
+      "note": "CBC. Clock 2026-10-08 01:17:30; 30 seconds do not round the minute up. Stored h is 539.29, label 术后539h17m. WBC 11.68 high. Hb 68.0 low g/L. Platelets 96.00 low. Neutrophils 84.6% / 9.89 high. Plateletcrit PCT 0.13% low is not procalcitonin 3.926 and not P/F 252. Notes empty. Not a bleeding diagnosis.",
+      "extracted": {
+        "wbc": 11.68,
+        "rbc": 2.12,
+        "hbg": 68.0,
+        "hct": 19.5,
+        "plt": 96,
+        "neutPct": 84.6,
+        "neutAbs": 9.89,
+        "plateletcrit": 0.13
+      },
+      "labeled": true,
+      "preferred": true,
+      "sha256_16": "b697474bcc5a5775",
+      "bytes": 897595
+    },
+    {
+      "id": "20261008T013058__0661213A-FAC9-4A2A-A936-A3EECC673402_L0_001.jpg",
+      "path": "reports/coag/20261008T013058__0661213A-FAC9-4A2A-A936-A3EECC673402_L0_001.jpg",
+      "category": "coag",
+      "source_filename": "0661213A-FAC9-4A2A-A936-A3EECC673402_L0_001.jpg",
+      "report_time": "2026-10-08T01:30:58",
+      "type": "凝血",
+      "relative_h": 539.52,
+      "note": "Coagulation. Clock 2026-10-08 01:30:58; 58 seconds do not round the minute up. Stored h is 539.52, label 术后539h30m. Phone status 01:57 is not the report clock. APTT 47.0 high on this sheet ref 21-45. Do not reuse 23.3-32.5. TT 16.3, PT 12.8, PT% 85.4, INR 1.07, fibrinogen 2.94 all blank. Notes empty. Newer than the 22:09 arterial, so the hero follows this APTT. An APTT above range is not proof bleeding started.",
+      "extracted": {
+        "aptt": 47.0,
+        "tt": 16.3,
+        "pt": 12.8,
+        "ptPct": 85.4,
+        "inr": 1.07,
+        "fbg": 2.94
+      },
+      "labeled": true,
+      "preferred": true,
+      "sha256_16": "e6b2a6a7c3cfff13",
+      "bytes": 401567
     }
   ]
 }
