@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 342,
+  "count": 343,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -7209,6 +7209,38 @@
       },
       "sha256_16": "7ace9606858cb051",
       "bytes": 427511
+    },
+    {
+      "id": "20261009T010022__image-1791497134262-0.jpg",
+      "path": "reports/abg/20261009T010022__image-1791497134262-0.jpg",
+      "category": "abg",
+      "source_filename": "image-1791497134262-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-09T01:00:22",
+      "type": "血气",
+      "relative_h": 563.01,
+      "note": "Venous blood gas because the family said 截图是静脉血气报告. Header does not print 静脉. Do not infer venous from PO2 28.60 or bottom index 57. Does not reclassify the 00:57:49 arterial sheet. Clock 2026-10-09 01:00:22; 22 seconds do not round the minute up. Stored h is 563.01, label 术后563h00m. pH 7.408 blank (7.35-7.45). PCO2 37.10 blank (35-45). Store ABE -1.80 blank, not SBE -1.40. Plasma HCO3 22.90 blank. Lactate 2.92 high. iCa 0.35 low. ctHb 13.80 blank inside 12-17.5. Hct 41.00 blank inside 37-43. sO2 60.70 low. FiO2 printed 50.0%. Middle 氧合指数 empty. pO2(a/A,T) 0.09% is not P/F. pO2(T) 27.80 low; bottom PO2 28.60. Printed bottom index 57.00 low (28.60/0.50=57.2) is this venous sample, not arterial P/F. Arterial P/F stays 310. Machine T 36.6 is not bedside. Earlier than the 01:07 potassium, so the hero stays the potassium. Venous ctHb is not CBC Hb 65.0 and not arterial ctHb 9.30.",
+      "extracted": {
+        "sample": "静脉",
+        "ph": 7.408,
+        "pco2": 37.1,
+        "po2": 28.6,
+        "po2_t": 27.8,
+        "hco3": 22.9,
+        "be": -1.8,
+        "sbe": -1.4,
+        "lactate": 2.92,
+        "fio2": 50,
+        "pf": null,
+        "hb": 13.8,
+        "hct": 41.0,
+        "so2": 60.7,
+        "ca": 0.35,
+        "bottom_index": 57
+      },
+      "sha256_16": "7a3bdc3d095ecf42",
+      "bytes": 425209
     }
   ]
 }
