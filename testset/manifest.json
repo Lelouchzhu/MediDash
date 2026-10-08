@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 339,
+  "count": 341,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -7145,6 +7145,38 @@
       },
       "sha256_16": "9fa5fc0e3b335bfa",
       "bytes": 1296908
+    },
+    {
+      "id": "20261009T010731__image-1791495813589-1.jpg",
+      "path": "reports/chemistry/20261009T010731__image-1791495813589-1.jpg",
+      "category": "chemistry",
+      "source_filename": "image-1791495813589-1.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-09T01:07:31",
+      "type": "生化",
+      "relative_h": 563.13,
+      "note": "Dry-chemistry potassium only. Clock 2026-10-09 01:07:31; 31 seconds do not round the minute up. Stored h is 563.13, label 术后563h07m. Phone status 01:11 is not the report clock. K 4.29 blank (3.5-5.3). Notes empty. Not plateletcrit and not arterial P/F 318. Newer than the 22:03 venous gas, so the hero follows this potassium. Creatinine stays 230.0. Oral fields were blank. A value inside the reference is not kidney recovery.",
+      "extracted": {
+        "k": 4.29
+      },
+      "sha256_16": "b8457a7eb0a637e1",
+      "bytes": 185132
+    },
+    {
+      "id": "image-1791495813591-0.jpg",
+      "path": "reports/billing/image-1791495813591-0.jpg",
+      "category": "billing",
+      "source_filename": "image-1791495813591-0.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": null,
+      "type": "住院清单",
+      "relative_h": null,
+      "note": "Daily bill crop is 269x1800 pixels. Header and line items are not readable enough to extract a date, account snapshot, CRRT hours, ventilator hours, or drug quantities. No dailyCareData day was added. Do not invent the date or the charges. Kept so a wider resend can supersede it.",
+      "extracted": {},
+      "sha256_16": "4ac95844f61c28a0",
+      "bytes": 112346
     }
   ]
 }
