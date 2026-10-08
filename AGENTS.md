@@ -25,7 +25,7 @@
 - 口述全空，并且没有新图：不改页面，不 commit，不 push。
 - 血气默认动脉，除非家属这句话点名，或单子抬头印了静脉。不要凭低 PO₂ 推断。`be` 存 ABE，不存 SBE。化学降钙素原、血小板比积、动脉 P/F 是三件事。
 - 页面保持正好 4 条查房短句，关键数字用 `<strong>`。长解释只追加到 `data/narratives.json`。
-- 大陆链接钉死含 `index.xhtml` 的那次提交 `9799614a1936b716f026092216307bab1d37e45f`。只改文档时不要换这个 SHA。不要用 `@main`，不要用短 SHA，不要移动 tag `upload`。
+- 大陆链接钉死含 `index.xhtml` 的那次提交 `60ffd4e619cf8100740103e726697d2eaa9ea653`。只改文档时不要换这个 SHA。不要用 `@main`，不要用短 SHA，不要移动 tag `upload`。
 - 上传中继的默认 agent 仍是旧 id `bc-f66f1668-9237-4998-b08a-816b026db98e`（`scripts/agent-upload-relay.py` 的 `MEDIDASH_AGENT_ID`，以及已部署的阿里云函数环境变量）。新 agent 知道自己的 bcId 之后，再改仓库默认值和线上环境变量。改之前，家属上传仍会打到旧对话，续聊会失败。
 
 ## Canonical repository
@@ -182,8 +182,8 @@ origin and avoids HTTPS-to-HTTP Mixed Content. Never commit
 
 大陆入口只有 `index.xhtml`（国内 CDN 按 `application/xhtml+xml` 打开；`index.html` 在镜像上是 `text/plain`，浏览器会显示源码）。不要再放 `hub.xhtml`。动态 HTML 必须走 `setMarkup` / `createSvg`；不要对 SVG 用 `innerHTML`，也不要插入未闭合的 `<br>` / `<input>`，否则趋势图在大陆入口会空白。
 
-- **大陆入口（提交号，不要用 @main）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@9799614a1936b716f026092216307bab1d37e45f/index.xhtml
-- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@9799614a1936b716f026092216307bab1d37e45f/index.xhtml
+- **大陆入口（提交号，不要用 @main）**: https://jsd.onmicrosoft.cn/gh/Lelouchzhu/MediDash@60ffd4e619cf8100740103e726697d2eaa9ea653/index.xhtml
+- 备用国内镜像: https://cdn.jsdmirror.com/gh/Lelouchzhu/MediDash@60ffd4e619cf8100740103e726697d2eaa9ea653/index.xhtml
 - 海外备用: https://htmlpreview.github.io/?https://github.com/Lelouchzhu/MediDash/blob/main/index.html
 
 微信若停在源码页，改用系统浏览器。国内 `@main` 快照会滞后（2026-09-22 实测仍是术后149h20m）。给家属的链接必须带提交号。
