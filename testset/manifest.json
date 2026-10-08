@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 336,
+  "count": 338,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -7064,6 +7064,55 @@
       },
       "sha256_16": "7888321afd5975f6",
       "bytes": 1350090
+    },
+    {
+      "id": "20261008T214605__01a11bf3-159f-7502-8d48-2fc33e630dcb.jpg",
+      "path": "reports/abg/20261008T214605__01a11bf3-159f-7502-8d48-2fc33e630dcb.jpg",
+      "category": "abg",
+      "source_filename": "01a11bf3-159f-7502-8d48-2fc33e630dcb.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-08T21:46:05",
+      "type": "血气",
+      "relative_h": 559.77,
+      "note": "Arterial blood gas. Header does not print 静脉 and the family did not say 静脉 on this sheet. This does not reclassify the 17:35:37 venous sheet. Clock 2026-10-08 21:46:05; 5 seconds do not round the minute up. Stored h is 559.77, label 术后559h46m. pH 7.493 high. PCO2 28.00 low. PO2 159.10 high. Store ABE -2.30 blank, not SBE -1.70. Plasma HCO3 21.00 low. Standard HCO3 23.00 blank. Lactate 3.85 high. iCa 1.01 low. ctHb 8.30 low g/dl, Hct 24.00 low, sO2 98.80 high. FiO2 printed 50.0%. Middle 氧合指数 empty. pO2(a/A,T) 0.48% is not P/F. Printed bottom index 318.00 low (159.10/0.50=318.2) is arterial P/F. pO2(T) 156.80 high. Machine T 36.6 is not bedside. Earlier than the 21:58 potassium, so the hero follows the potassium. Blood-gas ctHb is not CBC Hb 65.0. The 17:35 venous bottom 61 is not this P/F.",
+      "extracted": {
+        "sample": "动脉",
+        "ph": 7.493,
+        "pco2": 28.0,
+        "po2": 159.1,
+        "po2_t": 156.8,
+        "hco3": 21.0,
+        "be": -2.3,
+        "sbe": -1.7,
+        "lactate": 3.85,
+        "fio2": 50,
+        "pf": 318,
+        "hb": 8.3,
+        "hct": 24.0,
+        "so2": 98.8,
+        "ca": 1.01,
+        "bottom_index": 318
+      },
+      "sha256_16": "c6993023afc06b91",
+      "bytes": 1325839
+    },
+    {
+      "id": "20261008T215811__01a11bf3-1585-7757-a50d-911f4f5eb970.jpg",
+      "path": "reports/chemistry/20261008T215811__01a11bf3-1585-7757-a50d-911f4f5eb970.jpg",
+      "category": "chemistry",
+      "source_filename": "01a11bf3-1585-7757-a50d-911f4f5eb970.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-08T21:58:11",
+      "type": "生化",
+      "relative_h": 559.97,
+      "note": "Dry-chemistry potassium only. Clock 2026-10-08 21:58:11; 11 seconds do not round the minute up. Stored h is 559.97, label 术后559h58m. Phone status 22:27 is not the report clock. K 4.61 blank (3.5-5.3). Notes empty. Not plateletcrit 0.14% and not arterial P/F 318. Newer than the 21:46 arterial, so the hero follows this potassium. Creatinine stays 230.0. A value inside the reference is not kidney recovery.",
+      "extracted": {
+        "k": 4.61
+      },
+      "sha256_16": "7f9b2f4460b4351f",
+      "bytes": 286363
     }
   ]
 }
