@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 334,
+  "count": 335,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -7010,6 +7010,28 @@
       },
       "sha256_16": "eeff3559d74adf2a",
       "bytes": 904186
+    },
+    {
+      "id": "20261008T093256__B747C6EB-95F2-463A-A402-FD5AD3C1497C_L0_001.jpg",
+      "path": "reports/chemistry/20261008T093256__B747C6EB-95F2-463A-A402-FD5AD3C1497C_L0_001.jpg",
+      "category": "chemistry",
+      "source_filename": "B747C6EB-95F2-463A-A402-FD5AD3C1497C_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-08T09:32:56",
+      "type": "生化",
+      "relative_h": 547.55,
+      "note": "Chemistry. Clock 2026-10-08 09:32:56; 56 seconds do not round the minute up. Stored h is 547.55, label 术后547h32m. Phone status 11:36 is not the report clock. K 4.98 blank (3.5-5.3). Na 138.83 blank (137-147). Cl 98.11 blank (96-108). Urea 25.42 high on this sheet ref 3.1-8.8, not 3.6-9.5. Creatinine 230.0 high on this sheet ref 41-81, not the 07:21 sheet 57-111. Procalcitonin 4.574 high (0-0.05) is not plateletcrit 0.14% and not P/F 239. Notes and 备注2 empty. Earlier than the 09:56 oral, so the hero stays that oral. The creatinine rise is not kidney recovery and not proof CRRT restarted.",
+      "extracted": {
+        "k": 4.98,
+        "na": 138.83,
+        "cl": 98.11,
+        "urea": 25.42,
+        "creatinine": 230.0,
+        "pct": 4.574
+      },
+      "sha256_16": "7bce7d247185efeb",
+      "bytes": 397436
     }
   ]
 }
