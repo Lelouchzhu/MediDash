@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 338,
+  "count": 339,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -7113,6 +7113,38 @@
       },
       "sha256_16": "7f9b2f4460b4351f",
       "bytes": 286363
+    },
+    {
+      "id": "20261008T220321__01a11bf3-bc3d-7ed2-9419-9a58cf5a6150.jpg",
+      "path": "reports/abg/20261008T220321__01a11bf3-bc3d-7ed2-9419-9a58cf5a6150.jpg",
+      "category": "abg",
+      "source_filename": "01a11bf3-bc3d-7ed2-9419-9a58cf5a6150.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-08T22:03:21",
+      "type": "血气",
+      "relative_h": 560.06,
+      "note": "Venous blood gas because the family said 这个是静脉 on this sheet. Header does not print 静脉. Do not infer venous from PO2 26.60 or bottom index 53. Does not reclassify the 21:46:05 arterial sheet. Clock 2026-10-08 22:03:21; 21 seconds do not round the minute up. Stored h is 560.06, label 术后560h03m. pH 7.368 blank (7.35-7.45). PCO2 36.50 blank (35-45). Store ABE -4.80 low, not SBE -4.20. Plasma HCO3 20.50 low. Lactate 4.15 high. iCa 0.40 low. ctHb 12.00 blank on the low edge of 12-17.5. Hct 35.00 low, sO2 49.20 low. FiO2 printed 50.0%. Middle 氧合指数 empty. pO2(a/A,T) 0.08% is not P/F. pO2(T) 25.90 low; bottom PO2 26.60. Printed bottom index 53.00 low (26.60/0.50=53.2) is this venous sample, not arterial P/F. Arterial P/F stays 318. Machine T 36.6 is not bedside. Newer than the 21:58 potassium, so the hero follows this venous gas. Venous ctHb is not CBC Hb 65.0 and not arterial ctHb 8.30.",
+      "extracted": {
+        "sample": "静脉",
+        "ph": 7.368,
+        "pco2": 36.5,
+        "po2": 26.6,
+        "po2_t": 25.9,
+        "hco3": 20.5,
+        "be": -4.8,
+        "sbe": -4.2,
+        "lactate": 4.15,
+        "fio2": 50,
+        "pf": null,
+        "hb": 12.0,
+        "hct": 35.0,
+        "so2": 49.2,
+        "ca": 0.4,
+        "bottom_index": 53
+      },
+      "sha256_16": "9fa5fc0e3b335bfa",
+      "bytes": 1296908
     }
   ]
 }

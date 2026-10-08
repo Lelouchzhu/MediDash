@@ -1163,7 +1163,7 @@
       <p class="hero-sub">以手术结束为零点，汇总血气、循环、器官功能、用药治疗与影像变化。点击状态卡可切换对应趋势。</p>
       <div class="hero-meta">
         <span class="pill">手术：D0 10:00–14:00</span>
-        <span class="pill" id="latestTimePill">最新化验：术后559h58m · 钾 4.61</span>
+        <span class="pill" id="latestTimePill">最新：术后560h03m · 静脉血气</span>
         <span class="pill">数据已去标识化</span>
       </div>
     </header>
@@ -1197,8 +1197,8 @@
             <span class="status-name">组织灌注</span>
             <span class="level">偏高</span>
           </div>
-          <div class="status-value"><span id="latestLactate">3.85</span><span class="status-unit">mmol/L</span></div>
-          <div class="status-note">21:46:05动脉<strong>3.19→3.85</strong>↑ · 参考0.5–1.6<br/>大数字跟这张动脉 · 17:35:37静脉是<strong>3.30</strong></div>
+          <div class="status-value"><span id="latestLactate">4.15</span><span class="status-unit">mmol/L</span></div>
+          <div class="status-note">22:03:21静脉<strong>3.30→4.15</strong>↑ · 参考0.5–1.6<br/>大数字跟这张静脉 · 21:46:05动脉仍<strong>3.85</strong></div>
         </button>
         <button class="status-card red" type="button" data-metric-jump="pf">
           <div class="status-top">
@@ -1206,15 +1206,15 @@
             <span class="level">仍低于400–500</span>
           </div>
           <div class="status-value"><span id="latestPf">318</span><span class="status-unit">P/F</span></div>
-          <div class="status-note">21:46:05动脉<strong>239→318</strong> · FiO₂印<strong>50%</strong><br/><strong>0.48%</strong>不是P/F · 17:35:37静脉底部<strong>61</strong>也不是</div>
+          <div class="status-note">21:46:05动脉<strong>239→318</strong> · FiO₂印<strong>50%</strong><br/><strong>0.48%</strong>不是P/F · 22:03:21静脉底部<strong>53</strong>也不是</div>
         </button>
         <button class="status-card orange" type="button" data-metric-jump="hco3">
           <div class="status-top">
             <span class="status-name">酸碱</span>
-            <span class="level">pH偏高</span>
+            <span class="level">静脉pH在参考内</span>
           </div>
-          <div class="status-value"><span id="latestPh">7.493</span><span class="status-unit">pH</span></div>
-          <div class="status-note">21:46:05动脉 pH <strong>7.493</strong>↑ · HCO₃⁻ <strong>21.00</strong>↓ · ABE <strong>−2.30</strong><br/>ABE异常栏空着 · 不存SBE −1.70</div>
+          <div class="status-value"><span id="latestPh">7.368</span><span class="status-unit">pH</span></div>
+          <div class="status-note">22:03:21静脉 pH <strong>7.368</strong>（异常栏空）· HCO₃⁻ <strong>20.50</strong>↓ · ABE <strong>−4.80</strong>↓<br/>大数字跟这张静脉 · 21:46:05动脉 pH 仍 <strong>7.493</strong>↑</div>
         </button>
         <div class="status-card red">
           <div class="status-top">
@@ -1255,7 +1255,7 @@
           </div>
           <div class="status-value">65.0<span class="status-unit">g/L</span></div>
           <span id="latestHb" hidden="hidden">8.3</span>
-          <div class="status-note">血小板<strong>96→101.00</strong>↓ · Hb <strong>68.0→65.0</strong>↓<br/>21:46:05动脉ctHb <strong>8.30</strong>不是血常规 · 便约<strong>300</strong> mL是15:00总量</div>
+          <div class="status-note">血小板<strong>96→101.00</strong>↓ · Hb <strong>68.0→65.0</strong>↓<br/>22:03静脉ctHb <strong>12.00</strong>、动脉 <strong>8.30</strong> 都不是血常规</div>
         </button>
       </div>
     </section>
@@ -1406,7 +1406,7 @@
           <div class="report-body">
             <ul>
               <li>10月8日21:46:05动脉 P/F <strong>239→318</strong> ↓ · PO₂ <strong>159.10</strong> · FiO₂印 <strong>50%</strong>。中间氧合指数空着。<strong>0.48%</strong> 是比值，不是 P/F。抬头没有印静脉。</li>
-              <li>乳酸 <strong>3.19→3.85</strong> ↑（参考 0.5–1.6）。这是这张动脉的数，不是17:35:37静脉的 <strong>3.30</strong>。</li>
+              <li>乳酸 <strong>3.19→3.85</strong> ↑（参考 0.5–1.6）。这是这张动脉的数，不是22:03:21静脉的 <strong>4.15</strong>。</li>
               <li>pH <strong>7.493</strong> ↑ · PCO₂ <strong>28.00</strong> ↓ · HCO₃⁻ <strong>21.00</strong> ↓（22–26）· ABE <strong>−2.30</strong>（−3–3，异常栏空着）。存ABE，不存SBE −1.70。</li>
               <li>ctHb <strong>8.30</strong> ↓ g/dl · Hct <strong>24.00</strong> ↓ · iCa <strong>1.01</strong> ↓。血气Hb不要和血常规Hb 65.0逐点等同。</li>
             </ul>
@@ -1416,16 +1416,16 @@
           <summary>
             <div>
               <div class="report-title">最新静脉血气</div>
-              <div class="report-meta">术后555h35m · 10月8日17:35:37 · 家属说静脉</div>
+              <div class="report-meta">术后560h03m · 10月8日22:03:21 · 家属说静脉</div>
             </div>
             <span class="report-badge orange">静脉 · 非P/F</span>
           </summary>
           <div class="report-body">
             <ul>
-              <li>家属说这张是静脉。pH <strong>7.375</strong>（7.35–7.45，异常栏空着）· PCO₂ <strong>35.00</strong>（35–45，异常栏空着）· HCO₃⁻ <strong>20.00</strong> ↓ · ABE <strong>−5.20</strong> ↓。存ABE，不存SBE −4.50。</li>
-              <li>乳酸 <strong>2.68→3.30</strong> ↑ · iCa <strong>0.41</strong> ↓。不要当成21:46:05动脉的 <strong>3.85</strong> / <strong>1.01</strong>。FiO₂印 <strong>50.0%</strong>。</li>
-              <li>体温下氧分压 <strong>29.50</strong> ↓，底部氧分压 <strong>30.40</strong>。底部指数 <strong>61</strong> 来自静脉样本，不能当动脉 P/F。30.40÷0.50=60.8，印的是61.00。单上 <strong>0.09%</strong> 也不是 P/F。动脉 P/F 是21:46:05的 <strong>318</strong>。</li>
-              <li>ctHb <strong>11.90</strong> ↓ g/dl · Hct <strong>35.00</strong> ↓ · sO₂ <strong>59.80</strong> ↓。这不是血常规 <strong>65.0</strong>，也不是动脉 ctHb <strong>8.30</strong>。</li>
+              <li>家属说这张是静脉。pH <strong>7.368</strong>（7.35–7.45，异常栏空着）· PCO₂ <strong>36.50</strong>（35–45，异常栏空着）· HCO₃⁻ <strong>20.50</strong> ↓ · ABE <strong>−4.80</strong> ↓。存ABE，不存SBE −4.20。</li>
+              <li>乳酸 <strong>3.30→4.15</strong> ↑ · iCa <strong>0.40</strong> ↓。不要当成21:46:05动脉的 <strong>3.85</strong> / <strong>1.01</strong>。FiO₂印 <strong>50.0%</strong>。</li>
+              <li>体温下氧分压 <strong>25.90</strong> ↓，底部氧分压 <strong>26.60</strong>。底部指数 <strong>53</strong> 来自静脉样本，不能当动脉 P/F。26.60÷0.50=53.2，印的是53.00。单上 <strong>0.08%</strong> 也不是 P/F。动脉 P/F 仍是 <strong>318</strong>。</li>
+              <li>ctHb <strong>12.00</strong>（12–17.5，异常栏空着）· Hct <strong>35.00</strong> ↓ · sO₂ <strong>49.20</strong> ↓。这不是血常规 <strong>65.0</strong>，也不是动脉 ctHb <strong>8.30</strong>。</li>
             </ul>
           </div>
         </details>
@@ -1522,7 +1522,7 @@
             <ul>
               <li>09:32肌酐 <strong>122.80→230.0</strong> ↑（本张参考 <strong>41–81</strong>）。不要套07:21那张 <strong>57–111</strong>，也不写成已经恢复或已经再开。尿素 <strong>25.42</strong> ↑（本张 <strong>3.1–8.8</strong>）。</li>
               <li>21:58钾 <strong>4.98→4.61</strong>，参考3.5–5.3，异常栏空着。钠 <strong>138.83</strong>、氯 <strong>98.11</strong> 仍是09:32，异常栏空着。</li>
-              <li>21:46:05动脉离子钙 <strong>1.01</strong> ↓。17:35:37静脉钙 <strong>0.41</strong> ↓是另一管。</li>
+              <li>21:46:05动脉离子钙 <strong>1.01</strong> ↓。22:03:21静脉钙 <strong>0.40</strong> ↓是另一管。</li>
               <li>15:00口述：CRRT约 <strong>15:30</strong> 开始，左右不是精确分钟。没有流速和脱水。10月7日清单 <strong>8.67</strong> 小时不是这次开机。</li>
             </ul>
           </div>
@@ -1572,7 +1572,7 @@
             <ul>
               <li>15:00口述：血压 <strong>134/50</strong> · MAP <strong>71</strong> · 脉搏 <strong>74</strong> · 去甲 <strong>0</strong> · 多巴胺 <strong>0</strong> mL/h。呼吸这句没说。芬太尼停药。</li>
               <li>09:56那句：昨晚便两次约 <strong>700 mL</strong>，是大便总量。今天下午输血 <strong>300 mL</strong> 是血，不是那次大便，也没说成分。</li>
-              <li>08:32血红蛋白仍 <strong>65.0</strong> ↓ · 血小板仍 <strong>101</strong> ↓。21:46动脉ctHb <strong>8.30</strong> 不是这张血常规。300 mL 不换算成单位。</li>
+              <li>08:32血红蛋白仍 <strong>65.0</strong> ↓ · 血小板仍 <strong>101</strong> ↓。22:03静脉ctHb <strong>12.00</strong>、动脉 <strong>8.30</strong> 都不是这张血常规。300 mL 不换算成单位。</li>
               <li>助理大夫转述：持续血便、胃液始终黑色，怀疑胃还在出血。消化科来只是会诊，做不做自己决定。10月5日胃镜没有正式所见。</li>
             </ul>
           </div>
@@ -1913,7 +1913,8 @@
       { h: 536.15, label: "术后536h09m", sample: "动脉", ph: 7.492, pco2: 31.20, po2: 125.90, hco3: 23.40, be: 0.00, lactate: 3.23, fio2: 50, pf: 252, hb: 6.70, ca: 1.12 },
       { h: 545.47, label: "术后545h28m", sample: "动脉", ph: 7.477, pco2: 32.50, po2: 119.40, hco3: 23.50, be: -0.10, lactate: 3.19, fio2: 50, pf: 239, hb: 6.50, ca: 1.11 },
       { h: 555.59, label: "术后555h35m", sample: "静脉", ph: 7.375, pco2: 35.00, po2: 30.40, hco3: 20.00, be: -5.20, lactate: 3.30, fio2: 50, pf: null, hb: 11.90, ca: 0.41 },
-      { h: 559.77, label: "术后559h46m", sample: "动脉", ph: 7.493, pco2: 28.00, po2: 159.10, hco3: 21.00, be: -2.30, lactate: 3.85, fio2: 50, pf: 318, hb: 8.30, ca: 1.01 }
+      { h: 559.77, label: "术后559h46m", sample: "动脉", ph: 7.493, pco2: 28.00, po2: 159.10, hco3: 21.00, be: -2.30, lactate: 3.85, fio2: 50, pf: 318, hb: 8.30, ca: 1.01 },
+      { h: 560.06, label: "术后560h03m", sample: "静脉", ph: 7.368, pco2: 36.50, po2: 26.60, hco3: 20.50, be: -4.80, lactate: 4.15, fio2: 50, pf: null, hb: 12.00, ca: 0.40 }
     ];
 
     const labReadings = [
@@ -2168,8 +2169,8 @@
       {
         id: "icu-support",
         group: "urgent",
-        title: "呼吸循环：动脉P/F 239→318（FiO₂印50%），乳酸3.85，怎么看？",
-        detail: "21:46:05动脉 P/F <strong>239→318</strong> · FiO₂印 <strong>50%</strong> · PO₂ <strong>159.10</strong>。中间空着，<strong>0.48%</strong> 不是 P/F<br/>乳酸 <strong>3.19→3.85</strong>↑ · pH <strong>7.493</strong>↑ · ABE <strong>−2.30</strong>（−3–3，异常栏空）。不存 SBE −1.70。17:35静脉底部 <strong>61</strong> 不是这张 P/F<br/>15:00口述血压 <strong>134/50</strong> · MAP <strong>71</strong> · 脉搏 <strong>74</strong> · 去甲 <strong>0</strong> · 多巴胺 <strong>0</strong> mL/h<br/>气切处是否仍接机，当前氧疗和升压目标怎么安排？"
+        title: "呼吸循环：动脉P/F仍318，22:03静脉乳酸4.15，怎么看？",
+        detail: "21:46:05动脉 P/F <strong>239→318</strong> · FiO₂印 <strong>50%</strong> · PO₂ <strong>159.10</strong>。中间空着，<strong>0.48%</strong> 不是 P/F<br/>22:03:21静脉乳酸 <strong>3.30→4.15</strong>↑ · pH <strong>7.368</strong>（异常栏空）· ABE <strong>−4.80</strong>↓。底部 <strong>53</strong> 不是动脉 P/F<br/>15:00口述血压 <strong>134/50</strong> · MAP <strong>71</strong> · 脉搏 <strong>74</strong> · 去甲 <strong>0</strong> · 多巴胺 <strong>0</strong> mL/h<br/>气切处是否仍接机，当前氧疗和升压目标怎么安排？"
       },
       {
         id: "infection",
@@ -2181,13 +2182,13 @@
         id: "crrt",
         group: "urgent",
         title: "CRRT肾脏：约15:30开始，肌酐仍230.0，抗凝怎么配？",
-        detail: "09:32肌酐仍 <strong>230.0</strong>↑，本张参考 <strong>41–81</strong>。不要套57–111，也不写成已经恢复或已经再开<br/>尿素仍 <strong>25.42</strong>↑。21:58钾 <strong>4.98→4.61</strong>，参考3.5–5.3，异常栏空着<br/>21:46:05动脉钙 <strong>1.01</strong>↓。17:35:37静脉钙 <strong>0.41</strong>↓，不是动脉那张<br/>15:00口述：CRRT约 <strong>15:30</strong> 开始，左右不是精确分钟。没有流速和脱水。清单 <strong>8.67</strong> 小时不是这次开机<br/>已经说约15:30开始。实际抗凝、流速、脱水和监测目标是什么？"
+        detail: "09:32肌酐仍 <strong>230.0</strong>↑，本张参考 <strong>41–81</strong>。不要套57–111，也不写成已经恢复或已经再开<br/>尿素仍 <strong>25.42</strong>↑。21:58钾 <strong>4.98→4.61</strong>，参考3.5–5.3，异常栏空着<br/>21:46:05动脉钙 <strong>1.01</strong>↓。22:03:21静脉钙 <strong>0.40</strong>↓，不是动脉那张<br/>15:00口述：CRRT约 <strong>15:30</strong> 开始，左右不是精确分钟。没有流速和脱水。清单 <strong>8.67</strong> 小时不是这次开机<br/>已经说约15:30开始。实际抗凝、流速、脱水和监测目标是什么？"
       },
       {
         id: "gut-bleeding",
         group: "urgent",
         title: "肚子和血：下午输血300mL，Hb仍65.0，怎么看？",
-        detail: "08:32血红蛋白仍 <strong>65.0</strong>↓ · 血小板仍 <strong>101</strong>↓。21:46动脉ctHb <strong>8.30</strong>、17:35静脉 <strong>11.90</strong> 都不是血常规<br/>15:00口述：下午输血 <strong>300 mL</strong>，没说成分，不换算成单位。昨晚便两次约 <strong>700 mL</strong> 是大便总量<br/>助理大夫转述：持续血便、胃液始终黑色，怀疑胃还在出血。这是口述，不是诊断<br/>消化科来只是会诊，做不做还是自己决定。10月5日胃镜没有正式所见<br/>300 mL 之后还要不要再查血红蛋白？"
+        detail: "08:32血红蛋白仍 <strong>65.0</strong>↓ · 血小板仍 <strong>101</strong>↓。22:03静脉ctHb <strong>12.00</strong>、21:46动脉 <strong>8.30</strong> 都不是血常规<br/>15:00口述：下午输血 <strong>300 mL</strong>，没说成分，不换算成单位。昨晚便两次约 <strong>700 mL</strong> 是大便总量<br/>助理大夫转述：持续血便、胃液始终黑色，怀疑胃还在出血。这是口述，不是诊断<br/>消化科来只是会诊，做不做还是自己决定。10月5日胃镜没有正式所见<br/>300 mL 之后还要不要再查血红蛋白？"
       }
     ];
 
