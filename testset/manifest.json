@@ -13,7 +13,7 @@
     "inbox",
     "billing"
   ],
-  "count": 333,
+  "count": 334,
   "reports": [
     {
       "id": "01a0a019-fba0-7288-a38e-7d89fde0feee.jpg",
@@ -6986,6 +6986,30 @@
       },
       "sha256_16": "e9f060ae415c371b",
       "bytes": 1347632
+    },
+    {
+      "id": "20261008T083224__0A203663-D6E7-45F1-A4DE-2511427044A2_L0_001.jpg",
+      "path": "reports/cbc/20261008T083224__0A203663-D6E7-45F1-A4DE-2511427044A2_L0_001.jpg",
+      "category": "cbc",
+      "source_filename": "0A203663-D6E7-45F1-A4DE-2511427044A2_L0_001.jpg",
+      "labeled": true,
+      "preferred": true,
+      "report_time": "2026-10-08T08:32:24",
+      "type": "血常规",
+      "relative_h": 546.54,
+      "note": "CBC. Clock 2026-10-08 08:32:24; 24 seconds do not round the minute up. Stored h is 546.54, label 术后546h32m. WBC 11.64 high (3.5-9.5). Hb 65.0 low g/L. Platelets 101.00 low. Neutrophils 90.3% / 10.51 high. Plateletcrit 0.14% low is not procalcitonin 3.926 and not P/F 239. Notes empty. Newer than the 07:28:10 arterial, so the hero follows this hemoglobin. Not a bleeding diagnosis and not infection recovery.",
+      "extracted": {
+        "wbc": 11.64,
+        "rbc": 2.03,
+        "hbg": 65.0,
+        "hct": 17.9,
+        "plt": 101,
+        "neutPct": 90.3,
+        "neutAbs": 10.51,
+        "plateletcrit": 0.14
+      },
+      "sha256_16": "eeff3559d74adf2a",
+      "bytes": 904186
     }
   ]
 }
